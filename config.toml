@@ -38,22 +38,27 @@ pygmentsOptions = "linenos=table"
   series = "series"
 
 [[menu.main]]
-  name = "Archives"
+  name = "归档"
   weight = 1
   identifier = "archives"
   url = "/archives/"
 [[menu.main]]
-  name = "Categories"
+  name = "分类"
   weight = 2
   identifier = "categories"
   url = "/categories/"
 [[menu.main]]
-  name = "Tags"
+  name = "标签"
   weight = 3
   identifier = "tags"
   url = "/tags/"
 [[menu.main]]
-  name = "About"
+  name = "留言"
   weight = 4
+  identifier = "guestbook"
+  url = "/guestbook/"
+[[menu.main]]
+  name = "关于"
+  weight = 5
   identifier = "about"
   url = "/about/"

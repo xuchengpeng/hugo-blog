@@ -1,0 +1,9 @@
+
+{{ define "main" }}
+  <div class="main" role="main">
+    <article class="article about">
+      {{ .Content }}
+    </article>
+    {{ partial "comments.html" . }}
+  </div>
+{{ end }}

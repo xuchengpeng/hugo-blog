@@ -1,7 +1,7 @@
 
 {{ define "main" }}
   <div class="breadcrumb">
-    Archives
+    归档
   </div>
   <div class="main" role="main">
     {{ $paginator := .Paginate ((where .Site.Pages "Kind" "page").GroupByDate "2006-01") -}}

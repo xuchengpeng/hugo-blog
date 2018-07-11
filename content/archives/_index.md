@@ -1,3 +1,3 @@
 +++
-title = "Archives"
+title = "归档"
 +++
