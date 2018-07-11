@@ -1,0 +1,12 @@
+<ul class="article-tags">
+  {{- if .Params.tags }}
+  {{- range .Params.tags }}
+  <li class="article-meta-tags">
+    <a href="{{ "/" | relURL }}tags/{{ . | urlize }}/">
+      <i class="fas fa-tag"></i>
+      {{ . }}
+    </a>&nbsp;
+  </li>
+  {{- end }}
+  {{- end }}
+</ul>

@@ -1,0 +1,12 @@
+<ul class="pager article-pager">
+  {{- if .NextInSection }}
+  <li class="pager-newer">
+      <a href="{{ .NextInSection.Permalink | relURL }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">&lt; {{ .NextInSection.Title }}</a>
+  </li>
+  {{- end }}
+  {{- if .PrevInSection }}
+  <li class="pager-older">
+    <a href="{{ .PrevInSection.Permalink | relURL }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">{{ .PrevInSection.Title }} &gt;</a>
+  </li>
+  {{- end }}
+</ul>

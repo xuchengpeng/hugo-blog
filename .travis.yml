@@ -1,0 +1,30 @@
+language: go
+
+addons:
+  apt:
+    update: true
+
+install:
+  - go get -v github.com/gohugoio/hugo
+
+script:
+  - hugo
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "xuchengpeng"  #修改name
+  - git config user.email "330476629@qq.com"  #修改email
+  - git add .
+  - git commit -m "Site updated"
+  - git push --force --quiet "https://${TRAVIS_TOKEN}@${GH_REF}" master:master  #TRAVIS_TOKEN是在Travis中配置token的名称
+
+sudo: required
+
+branches:
+  only:
+    - hugo
+
+env:
+ global:
+   - GH_REF: github.com/xuchengpeng/xuchengpeng.github.io.git # GitHub博客仓库的地址
