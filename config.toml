@@ -5,6 +5,9 @@ theme = "whiteplain"
 paginate = "10"
 
 copyright = "&copy; Copyright 2018 xuchengpeng"
+pygmentsCodefences = true
+pygmentsUseClasses = true
+pygmentsOptions = "linenos=table"
 
 [permalinks]
   post = "/:year/:month/:day/:filename/"
