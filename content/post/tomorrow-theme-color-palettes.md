@@ -16,7 +16,7 @@ tags:
 A theme should not get in your way but should aid your programming with easily identifiable colours that add meaning and enhance legibility. This was the main focus when developing Tomorrow. 
 
 Check out [base16](https://github.com/chriskempson/base16) the next evolution of Tomorrow Theme!
-<!-- more -->
+<!--more-->
 
 ## Take a look!
 Tomorrow theme variations in shown in TextMate with Ruby code and the font "Menlo". 

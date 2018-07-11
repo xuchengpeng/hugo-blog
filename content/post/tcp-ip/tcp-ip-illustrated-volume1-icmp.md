@@ -18,7 +18,7 @@ ICMP 报文格式中，类型字段可以有15个不同的值，以描述特定�
 检验和字段覆盖整个ICMP报文。使用的算法与IP首部检验和算法相同。ICMP的检验和是必需的。
 
 ![](/images/tcp-ip/icmp-format.jpg)
-<!-- more -->
+<!--more-->
 
 ## ICMP 报文的类型
 

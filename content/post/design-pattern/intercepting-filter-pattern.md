@@ -24,7 +24,7 @@ Target - Target 对象是请求处理程序。
 InterceptingFilterDemo，我们的演示类使用 Client 来演示拦截过滤器设计模式。
 
 ![](/images/design-pattern/interceptingfilter_pattern_uml_diagram.jpg)
-<!-- more -->
+<!--more-->
 
 ### 步骤 1
 创建过滤器接口 Filter。

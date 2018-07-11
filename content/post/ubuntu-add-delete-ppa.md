@@ -26,7 +26,7 @@ PPA 的一般形式是： **ppa:user/ppa-name**
 * 删除 PPA 源的命令格式则为：sudo add-apt-repository -r ppa:user/ppa-name
 * 然后进入 /etc/apt/sources.list.d 目录，将相应 ppa 源的保存文件删除。
 * 最后同样更新一下：sudo apt-get update
-<!-- more -->
+<!--more-->
 
 Ubuntu 下安装 emacs25：
 ```sh

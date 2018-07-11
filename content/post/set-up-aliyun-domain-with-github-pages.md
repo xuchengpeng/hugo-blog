@@ -15,7 +15,7 @@ tags:
 
 首先在 [阿里云](https://www.aliyun.com) 上注册一个域名，阿里云域名更有 [域名一元购专题](https://wanwang.aliyun.com/domain/1yuan)，价格十分便宜。
 
-<!-- more -->
+<!--more-->
 
 ## 设置Custom domain
 

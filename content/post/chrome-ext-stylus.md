@@ -14,7 +14,7 @@ tags:
 
 去年 9 月底，流行的浏览器扩展 [Stylish](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe) 及其用户社区 userstyles.org (USo) 更换了所有者。新所有者 Justin Hindman 日前正式宣布 Stylish 及 USo 成为数据分析公司 SimilarWeb 的一部分，最近更新的 Chrome 版已经开始默认收集用户信息。根据 uBlock Origin 作者 gorhill 分析，新的 Chrome 版会记录使用者浏览的每一个链接，包括从哪来和到哪去，加上唯一用户标识符及其他一些信息并进行两次 base64 编码后，发回 https://api.userstyles.org/tic/stats 。目前用户还可以选择排除（opt-out），虽然选择排除后 Stylish 的功能将受到很大限制。根据最后更新时间可以推断，其他浏览器版（Firefox、Safari、Opera）暂未受影响。AMO 审核人员 rctgamer3 表示 Stylish 还没有提交新版。"
 
-<!-- more -->
+<!--more-->
 
 ## 为什么要用Stylus替换Stylish
 

@@ -42,7 +42,7 @@ $ git clone https://github.com/xuchengpeng/emacs.d.git ~/.emacs.d
 * [清华ELPA镜像](https://mirror.tuna.tsinghua.edu.cn/help/elpa/)
 * [Emacs China ELPA镜像](https://elpa.emacs-china.org/)
 
-<!-- more -->
+<!--more-->
 ## Customization
 
 To add your own customization,  create a file `~/.emacs.d/lisp/init-afterload-private.el` which looks like this:

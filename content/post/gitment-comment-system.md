@@ -12,7 +12,7 @@ tags:
 
 [Gitment](https://github.com/imsun/gitment) 是作者实现的一款基于 GitHub Issues 的评论系统。支持在前端直接引入，不需要任何后端代码。可以在页面进行登录、查看、评论、点赞等操作，同时有完整的 Markdown / GFM 和代码高亮支持。尤为适合各种基于 GitHub Pages 的静态博客或项目页面。
 
-<!-- more -->
+<!--more-->
 
 ## 注册 OAuth Application
 

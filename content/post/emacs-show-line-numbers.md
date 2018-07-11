@@ -27,7 +27,7 @@ Put this in your emacs init file:
 (when (version<= "26.0.50" emacs-version )
   (global-display-line-numbers-mode))
 ```
-<!-- more -->
+<!--more-->
 display-line-numbers-mode is written by Eli Zaretskii.
 
 ## linum-mode

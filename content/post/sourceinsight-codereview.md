@@ -12,7 +12,7 @@ tags:
 
 这是一个SourceInsight使用的本地代码检视工具，利用Macro实现。
 
-<!-- more -->
+<!--more-->
 
 ## 创建CodeReview.em文件
 将代码保存为CodeReview.em文件。

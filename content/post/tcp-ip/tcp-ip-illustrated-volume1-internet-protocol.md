@@ -18,7 +18,7 @@ IP是TCP/IP协议族中最为核心的协议。所有的TCP、UDP、ICMP及IGMP�
 ## IP首部 ##
 
 ![](/images/tcp-ip/ip-format.jpg)
-<!-- more -->
+<!--more-->
 
 普通的IP首部长为20个字节，除非含有选项字段。
 

@@ -18,7 +18,7 @@ tags:
 NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模式的用法。
 
 ![](/images/design-pattern/null_pattern_uml_diagram.jpg)
-<!-- more -->
+<!--more-->
 
 ### 步骤 1 ###
 创建一个抽象类。

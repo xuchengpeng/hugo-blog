@@ -22,7 +22,7 @@ Controller（控制器） - 控制器作用于模型和视图上。它控制数�
 MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式的用法。
 
 ![](/images/design-pattern/mvc_pattern_uml_diagram.jpg)
-<!-- more -->
+<!--more-->
 
 ### 步骤 1
 创建模型。

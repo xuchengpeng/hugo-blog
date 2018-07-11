@@ -21,7 +21,7 @@ tags:
 [gulp](https://gulpjs.com/) 用自动化构建工具增强你的工作流程！
 
 我们可以通过一些 gulp 插件实现对html、css、js、image等静态资源的高效压缩，通过压缩这些静态资源，可以减少请求的数据量从而达到优化博客访问速度的目的。
-<!-- more -->
+<!--more-->
 ## 安装 gulp 及插件
 
 * 基本：[gulp](https://www.npmjs.com/package/gulp)

@@ -22,7 +22,7 @@ tags:
 
 为了描述方便，在以下说明中，将前者称为 {% label primary@站点配置文件 %}， 后者称为 {% label info@主题配置文件 %}。
 
-<!-- more -->
+<!--more-->
 
 ## 安装
 
@@ -609,7 +609,7 @@ categories:
 tags:
 ---
 
-<!-- more -->
+<!--more-->
 
 ```
 

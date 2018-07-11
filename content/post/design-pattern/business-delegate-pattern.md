@@ -22,7 +22,7 @@ tags:
 BusinessDelegatePatternDemo，我们的演示类使用 BusinessDelegate 和 Client 来演示业务代表模式的用法。
 
 ![](/images/design-pattern/business_delegate_pattern_uml_diagram.jpg)
-<!-- more -->
+<!--more-->
 
 ### 步骤 1
 创建 BusinessService 接口。

@@ -44,7 +44,7 @@ tags:
 (if window-system
     (set-font))
 ```
-<!-- more -->
+<!--more-->
 
 分别为中文和英文字体定义一个列表，系统中存在这个字体就设定：
 ```el

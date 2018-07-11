@@ -22,7 +22,7 @@ tags:
 CompositeEntityPatternDemo，我们的演示类使用 Client 类来演示组合实体模式的用法。
 
 ![](/images/design-pattern/compositeentity_pattern_uml_diagram.jpg)
-<!-- more -->
+<!--more-->
 
 ### 步骤 1
 创建依赖对象。

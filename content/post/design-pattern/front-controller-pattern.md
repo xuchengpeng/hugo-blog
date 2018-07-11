@@ -22,7 +22,7 @@ tags:
 FrontControllerPatternDemo，我们的演示类使用 FrontController 来演示前端控制器设计模式。
 
 ![](/images/design-pattern/frontcontroller_pattern_uml_diagram.jpg)
-<!-- more -->
+<!--more-->
 
 ### 步骤 1
 创建视图。

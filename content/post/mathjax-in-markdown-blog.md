@@ -33,7 +33,7 @@ tags:
 
 <script src='https://cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async></script>
 ```
-<!-- more -->
+<!--more-->
 
 接下来就可以在Markdown中使用LaTeX代码来编写公式了。注意要用 `$`（行内代码）或 `$$`(代码块）来把数学代码和正常文字区分开。
 

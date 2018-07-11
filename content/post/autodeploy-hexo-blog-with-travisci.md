@@ -25,7 +25,7 @@ CI 是 `Continuous Integration` 的缩写，持续集成之意。
 
 当我们每次进行push等动作时，Travis CI 会自动检测我们的提交，然后根据配置文件，搭建虚拟主机来运行测试，构建等指令。在这里，就是运行 `hexo deploy --generate` 等命令来自动生成、部署静态网页。
 
-<!-- more -->
+<!--more-->
 
 ## Hexo 搭建
 

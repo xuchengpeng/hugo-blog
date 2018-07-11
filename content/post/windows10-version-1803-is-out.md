@@ -27,7 +27,7 @@ SHA-1: D5E89FB54169F5A2E610C75813CE833A4CB9A4E4
 释出时间: 2018-04-30
 下载地址：
 ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86_dvd_12063452.iso|3480692736|0EC3C40EF13D772798209981F18B6A5D|/
-<!-- more -->
+<!--more-->
 
 ## 简体中文 VL 版
 **专业版、企业版、教育版、专业工作站版、专业教育版**

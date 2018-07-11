@@ -30,7 +30,7 @@ tags:
 
 (provide 'init)
 ```
-<!-- more -->
+<!--more-->
 ## use-package 延迟加载的只言片语
 
 Emacs lisp 有一项 auto-load 的技术，类似延迟加载，合理运用延迟，让笔者的 Emacs 启动加载时间减少一半，因为笔者用 use-package 了这个插件,而 use-package 又集 成了延迟加载的功能，所以笔者就直接拿自己的代码举例了

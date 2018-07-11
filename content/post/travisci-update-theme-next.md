@@ -30,7 +30,7 @@ tags:
 11. OPTIONAL `after_deploy`
 12. `after_script`
 
-<!-- more -->
+<!--more-->
 
 ## 在 before_install 阶段更新 NexT 主题源码
 

@@ -23,7 +23,7 @@ tags:
 * Linux 4.15 kernel
 * Certification as a guest on AWS, Microsoft Azure, Joyent, IBM, Google Cloud Platform and Rackspace
 * Easily configure networking through netplan.io
-<!-- more -->
+<!--more-->
 
 ## Download Ubuntu 18.04 LTS ##
 

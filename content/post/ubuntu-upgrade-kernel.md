@@ -50,7 +50,7 @@ $ update-grub
 # 重启后再查看内核版本验证 uname -a
 $ reboot
 ```
-<!-- more -->
+<!--more-->
 
 ### Linode
 在 Linode 提供的服务器上面，需要将 Boot Setting 下 Kernel 设定为 **GRUB 2**。

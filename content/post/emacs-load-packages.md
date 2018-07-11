@@ -37,7 +37,7 @@ load-file "~/.emacs.d/lisp/init-example.el"
 ```
 
 这是最为原始的方式，填写的路径必须是绝对路径，这个路径也不会加入到emacs中load-path里。它也不会优先寻找编译过.elc文件（显然编译过文件的会更快些）。这种方式已经被抛弃，仅作为历史提一下。
-<!-- more -->
+<!--more-->
 
 ## require
 

@@ -13,7 +13,7 @@ tags:
 
 [Gitalk](https://github.com/gitalk/gitalk) 是一个基于 Github Issue 和 Preact 开发的评论插件。
 
-<!-- more -->
+<!--more-->
 
 ## 特性
 * 使用 Github 登录

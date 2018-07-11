@@ -22,7 +22,7 @@ tags:
 TransferObjectPatternDemo，我们的演示类在这里是作为一个客户端，将使用 StudentBO 和 Student 来演示传输对象设计模式。
 
 ![](/images/design-pattern/transferobject_pattern_uml_diagram.jpg)
-<!-- more -->
+<!--more-->
 
 ### 步骤 1
 创建传输对象。

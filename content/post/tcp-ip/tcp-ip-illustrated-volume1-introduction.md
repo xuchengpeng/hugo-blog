@@ -19,7 +19,7 @@ TCP/IP 通常被认为是一个四层协议系统：
 4. 应用层：负责处理特定的应用程序细节。
 
 ![](/images/tcp-ip/tcp-ip-layers.jpg)
-<!-- more -->
+<!--more-->
 
 ## 封装
 

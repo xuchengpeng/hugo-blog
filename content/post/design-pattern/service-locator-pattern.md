@@ -24,7 +24,7 @@ Context / 初始的 Context - JNDI Context 带有对要查找的服务的引用�
 ServiceLocatorPatternDemo，我们的演示类在这里是作为一个客户端，将使用 ServiceLocator 来演示服务定位器设计模式。
 
 ![](/images/design-pattern/servicelocator_pattern_uml_diagram.jpg)
-<!-- more -->
+<!--more-->
 
 ### 步骤 1
 创建服务接口 Service。

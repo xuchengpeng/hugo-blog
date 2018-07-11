@@ -17,7 +17,7 @@ tags:
 * 纵向单元格的合并：基于rowspan属性，即使一个单元格占多行的空间。
 
 可以从Word或者Excel中复制表格，通过网站 [No-Cruft Excel to HTML Table Converter](http://pressbin.com/tools/excel_to_html_table/index.html) 转换获得html代码。
-<!-- more -->
+<!--more-->
 
 ## 合并行
 
