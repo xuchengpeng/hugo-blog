@@ -7,14 +7,14 @@ categories = [ "emacs" ]
 tags = [ "mode-line", "diminish" ]
 +++
 
-## 一些常用的mode-line包
+### 一些常用的mode-line包
 
 * [powerline](https://github.com/milkypostman/powerline)
 * [smart-mode-line](https://github.com/Malabarba/smart-mode-line)
 * [spaceline](https://github.com/TheBB/spaceline)
 * [telephone-line](https://github.com/dbordak/telephone-line)
 
-## 了解mode-line
+### 了解mode-line
 
 mode-line初始值：
 ```el
@@ -25,7 +25,7 @@ mode-line初始值：
 
 <!--more-->
 
-### mode-line变量
+#### mode-line变量
 
 * mode-line-mule-info：显示当前语言环境、编码信息和输入法；
 * mode-line-modified：显示当前内容是否被修改，`**`表示已经被修改，`--`表示没有被修改，`%%`表示只读，`%*`表示只读但是被修改；
@@ -44,7 +44,7 @@ mode-line初始值：
 * minor-mode-alist：包含当前buffer激活的所有minor modes；
 * global-mode-string：This variable holds a mode line construct that, by default, appears in the mode line just after the which-func-mode minor mode if set, else after mode-line-modes. The command display-time sets global-mode-string to refer to the variable display-time-string, which holds a string containing the time and load information. The ‘%M’ construct substitutes the value of global-mode-string, but that is obsolete, since the variable is included in the mode line from mode-line-format.
 
-### %-Constructs in the Mode Line
+#### %-Constructs in the Mode Line
 
 * %b：当前buffer名称；
 * %c：当前列号，从最左边0开始计算；
@@ -73,7 +73,7 @@ mode-line初始值：
 * %m：mode-name；
 * %M：global-mode-string；
 
-## 自定义mode-line
+### 自定义mode-line
 
 修改`mode-line-format`的值：
 ```el
@@ -159,7 +159,7 @@ mode-line初始值：
                  ))
 ```
 
-## 隐藏mode-line上的minor mode
+### 隐藏mode-line上的minor mode
 
 使用[diminish](https://github.com/emacsmirror/diminish)：
 ```el
