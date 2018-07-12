@@ -50,7 +50,7 @@ blockquote blockquote blockquote blockquote {
 
 /* Site header */
 .site-header {
-  max-width: 70%;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -110,7 +110,7 @@ blockquote blockquote blockquote blockquote {
 
 /* Breadcrumb */
 .breadcrumb {
-  max-width: 70%;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
@@ -125,7 +125,7 @@ blockquote blockquote blockquote blockquote {
 
 /* Main contents */
 .main {
-  max-width: 70%;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -408,7 +408,7 @@ blockquote blockquote blockquote blockquote {
 
 /* Site footer */
 .site-footer {
-  max-width: 70%;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 70px;
