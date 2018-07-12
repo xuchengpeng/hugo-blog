@@ -1,7 +1,7 @@
 <ul class="article-tags">
   {{- if .Params.tags }}
   {{- range .Params.tags }}
-  <li class="article-meta-tags">
+  <li>
     <a href="{{ "/" | relURL }}tags/{{ . | urlize }}/">
       <i class="fas fa-tag"></i>
       {{ . }}
