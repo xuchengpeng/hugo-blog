@@ -1,9 +1,10 @@
 
 {{ define "main" }}
   <div class="breadcrumb">
-    归档
+    Archives
   </div>
   <div class="main" role="main">
+    <h2>Total {{ len (where .Site.RegularPages "Section" "==" "post") }} posts</h2>
     {{ $paginator := .Paginate ((where .Site.Pages "Kind" "page").GroupByDate "2006-01") -}}
     <section class="archives">
       <ul>
