@@ -2,7 +2,7 @@ html {
   font-size: 1em;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Avenir Next', Avenir, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   color: #444444;
   overflow-y: scroll;
   line-height: 1.2;
@@ -21,7 +21,7 @@ hr {
   margin: 0;
 }
 pre, code {
-  font-family: monospace, serif;
+  font-family: "Lucida Console", Monaco, monospace;
   background-color: lightgray;
   padding-left: 4px;
   padding-right: 4px;
@@ -50,7 +50,7 @@ blockquote blockquote blockquote blockquote {
 
 /* Site header */
 .site-header {
-  max-width: 1000px;
+  max-width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -110,7 +110,7 @@ blockquote blockquote blockquote blockquote {
 
 /* Breadcrumb */
 .breadcrumb {
-  max-width: 1000px;
+  max-width: 70%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
@@ -125,7 +125,7 @@ blockquote blockquote blockquote blockquote {
 
 /* Main contents */
 .main {
-  max-width: 1000px;
+  max-width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -408,7 +408,7 @@ blockquote blockquote blockquote blockquote {
 
 /* Site footer */
 .site-footer {
-  max-width: 1000px;
+  max-width: 70%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 70px;
