@@ -295,21 +295,14 @@ blockquote blockquote blockquote blockquote {
   padding-left: 0;
 }
 
-/* pager */
-.pager {
+/* post-nav */
+.post-nav {
   list-style-type: none;
   padding: 0;
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-.pager-newer {
-  float: right;
-  margin-right: 40px;
-}
-.pager-older {
-  float: left;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
 /* About */
@@ -620,7 +613,7 @@ blockquote blockquote blockquote blockquote {
 }
 
 @media print {
-  .site-header, .site-header-bottom, .toc, .site-footer, .pager, .article-comments, .article-share {
+  .site-header, .site-header-bottom, .toc, .site-footer, .post-nav, .article-comments, .article-share {
     display: none;
   }
   .main, .breadcrumb {
