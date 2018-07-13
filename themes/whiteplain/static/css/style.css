@@ -53,8 +53,22 @@ blockquote blockquote blockquote blockquote {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
+}
+.site-navi {
   display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-align-items: baseline;
+  align-items: baseline;
+  padding-bottom: 8px;
+}
+.site-navi a {
+  color: inherit;
+  text-decoration: none;
+}
+.site-navi a:hover, .site-navi a:active {
+  color: gray;
 }
 .site-title {
   -webkit-flex-grow: 1;
@@ -64,6 +78,27 @@ blockquote blockquote blockquote blockquote {
   margin-top: 10px;
   padding: 0;
   font-weight: normal;
+}
+.site-navi-items {
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  font-size: 1.2em;
+  list-style-type: none;
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+.site-navi-items li {
+  padding-left: 20px;
+  white-space: nowrap;
 }
 .site-header-bottom {
   margin-top: 0;
@@ -429,7 +464,7 @@ blockquote blockquote blockquote blockquote {
 }
 .terms-category > ul {
   margin: 0;
-  padding: 0 20px 0 20px;
+  padding: 0;
 }
 .terms-category > ul > li {
   padding: 0 0 3px 0;
@@ -455,7 +490,6 @@ blockquote blockquote blockquote blockquote {
 .terms-tag {
 	margin-bottom: 25px;
 	overflow: hidden;
-	padding: 0 20px 0 20px;
 }
 
 .terms-taglist__link {
@@ -553,46 +587,6 @@ blockquote blockquote blockquote blockquote {
   text-align: center;
 }
 
-/* nav */
-.site-nav {
-    position: relative;
-    margin: 20px 0;
-}
-.site-nav ul {
-    margin: 0;
-    padding: 0;
-}
-.site-nav li {
-    margin: 0 5px 10px 0;
-    padding: 0;
-    list-style: none;
-    display: inline-block;
-}
-.site-nav a {
-    padding: 3px 12px;
-    text-decoration: none;
-    color: gray;
-    line-height: 100%;
-}
-.site-nav a:hover {
-    color: black;
-}
-.site-nav .current a {
-    background: #999;
-    color: #fff;
-    border-radius: 5px;
-    display: none;
-}
-/* right nav */
-.site-nav.right ul {
-    text-align: right;
-}
-
-/* center nav */
-.site-nav.center ul {
-    text-align: center;
-}
-
 /* Mobile */
 @media screen and (max-width: 768px) {
   .site-header, .site-header-bottom, .main, .breadcrumb, .site-footer {
@@ -611,65 +605,17 @@ blockquote blockquote blockquote blockquote {
   .archives ul.taxonomies, .archives .archives-item time {
     display: none;
   }
+  .site-navi {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
   .terms-category, .archives {
     padding: 0;
   }
+  
   .terms-tag {
 	margin-bottom: 20px;
-  }
-  
-  .site-nav {
-      position: relative;
-      min-height: 40px;
-  }    
-  .site-nav ul {
-      width: 180px;
-      padding: 5px 0;
-      position: relative;
-      top: 0;
-      left: 0;
-      border: solid 1px #aaa;
-      background: #fff url(images/icon-menu.png) no-repeat 10px 11px;
-      border-radius: 5px;
-      box-shadow: 0 1px 2px rgba(0,0,0,.3);
-  }
-  .site-nav li {
-      display: none; /* hide all <li> items */
-      margin: 0;
-  }
-  .site-nav .current {
-      display: block; /* show only current <li> item */
-  }
-  .site-nav a {
-      display: block;
-      padding: 5px 5px 5px 32px;
-      text-align: left;
-  }
-  .site-nav .current a {
-      background: none;
-      color: #666;
-  }
-  /* on nav hover */
-  .site-nav ul:hover {
-      background-image: none;
-  }
-  .site-nav ul:hover li {
-      display: block;
-      margin: 0 0 5px;
-  }
-  .site-nav ul:hover .current {
-      background: url(images/icon-check.png) no-repeat 10px 7px;
-  }
-  /* right nav */
-  .site-nav.right ul {
-      left: auto;
-      right: 0;
-  }
-  /* center nav */
-  .site-nav.center ul {
-      left: 50%;
-      margin-left: -90px;
-  }
+}
 }
 
 @media print {
