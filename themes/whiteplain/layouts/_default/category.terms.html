@@ -7,9 +7,9 @@
   <div class="main" role="main">
     <h2>Total {{ len .Data.Terms }} categories</h2>
     <section class="terms-category">
-      <ul>
+      <ul class="terms-category">
         {{- range .Data.Terms.Alphabetical }}
-        <li>
+        <li class="terms-category">
           <a href="{{ "/" | relURL }}{{ $data.Plural | urlize }}/{{ .Name | urlize }}/">{{ .Name | humanize }}({{ .Count }})</a>
         </li>
         {{- end}}
