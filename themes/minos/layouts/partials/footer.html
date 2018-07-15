@@ -1,0 +1,20 @@
+<footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; {{ now.Format "2006"}} {{ or .Site.Author .Site.Title }}&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    {{ template "_internal/google_analytics_async.html" . }}
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>

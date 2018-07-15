@@ -1,0 +1,4 @@
+name = "Minos"
+homepage = "http://xuchengpeng.com"
+tags = ["blog", "minimal"]
+features = ["blog", ""]

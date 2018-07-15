@@ -1,0 +1,10 @@
+{{ define "main" }}
+    <section id="main" class="outer">
+        {{ if .Params.mathjax }}{{ partial "mathjax_support.html" . }}{{ end }}
+        {{ partial "article.html" . }}
+        {{ if and (not .Params.nocomment) .Site.Params.disqusShortname }}
+            {{ template "_internal/disqus.html" . }}
+        {{ end }}
+        {{ partial "comments.html" . }}
+    </section>
+{{ end }}
