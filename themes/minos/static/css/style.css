@@ -668,7 +668,7 @@ a.article-title:hover,
 .article-toc {
   display: none;
   position: fixed;
-  left: 50%;
+  left: 55%;
   top: 110px;
   font-size: 0.9em;
   width: 260px;
