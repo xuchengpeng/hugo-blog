@@ -93,7 +93,7 @@ input,
 button {
   margin: 0;
   padding: 0;
-  font: 16px 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
+  font: 16px 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
 }
 input::-moz-focus-inner,
 button::-moz-focus-inner {
@@ -107,7 +107,7 @@ body,
 }
 body {
   background: #fff;
-  font: 16px 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
+  font: 16px 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
   -webkit-text-size-adjust: 100%;
 }
 .outer {
@@ -503,10 +503,9 @@ a.article-title:hover,
   padding: 10px 0;
 }
 .article-entry blockquote {
-  font-family: 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
+  font-family: 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
   font-size: 1.4em;
   margin: 1.4em 20px;
-  text-align: center;
 }
 .article-entry blockquote footer {
   font-size: 16px;
@@ -1076,13 +1075,13 @@ pre .php .xml {
 .fancybox-skin {
   padding: 0 !important;
   border-radius: 0;
-  font-family: 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
+  font-family: 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
 }
 .fancybox-skin .fancybox-title .child {
   background: none;
   font-weight: 400;
   font-size: 16px;
-  font-family: 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
+  font-family: 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
   text-shadow: 1px 3px 3px rgba(0,0,0,0.5);
 }
 
