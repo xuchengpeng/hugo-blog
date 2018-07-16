@@ -618,12 +618,12 @@ a.article-title:hover,
   }
 }
 #article-nav-newer {
-  float: left;
-  text-align: left;
-}
-#article-nav-older {
   float: right;
   text-align: right;
+}
+#article-nav-older {
+  float: left;
+  text-align: left;
 }
 .article-nav-caption {
   text-transform: uppercase;
