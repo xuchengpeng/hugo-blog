@@ -2,6 +2,9 @@
     <div class="outer">
         <div id="footer-info" class="inner">
             &copy; {{ now.Format "2006"}} {{ or .Site.Author .Site.Title }}&nbsp;
+            <a href="{{ .Site.RSSLink }}" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
         </div>
     </div>
