@@ -1,21 +1,19 @@
----
-title: "Chuck's Emacs Configuration"
-comments: true
-date: 2018-03-26 07:33:23
-udpated: 2018-03-26 07:33:23
-categories:
-- Software
-- emacs
-tags:
-- emacs
-- use-package
----
++++
+title = "Chuck's Emacs Configuration"
+date = 2018-03-26T07:33:23+08:00
+draft = false
+comments = true
+mathjax = false
+toc = true
+categories = [ "Software", "emacs" ]
+tags = [ "emacs", "use-package" ]
++++
 
 Chuck's Emacs Configuration with [use-package](https://github.com/jwiegley/use-package)
 
 ## Documents
 
-http://xuchengpeng.com/emacs.d/
+http://xuchengpeng.com/
 
 ## Install
 
@@ -23,46 +21,40 @@ http://xuchengpeng.com/emacs.d/
 $ git clone https://github.com/xuchengpeng/emacs.d.git ~/.emacs.d
 ```
 
-## ELPA mirror
-可以在 `~/.emacs.d/lisp/init-preload-private.el` 文件里面定义自己使用的 ELPA 镜像。
-```el
-(setq package-archives
-      '(("melpa" . "E:/GitHub/elpa-mirror/melpa")
-        ("org"   . "E:/GitHub/elpa-mirror/org")
-        ("gnu"   . "E:/GitHub/elpa-mirror/gnu")
-       )
-)
-
-(provide 'init-preload-private)
-```
-*可以从 [d12frosted/elpa-mirror](https://github.com/d12frosted/elpa-mirror) 下载到本地。*
-
-或者可以使用其他的镜像：
-
-* [清华ELPA镜像](https://mirror.tuna.tsinghua.edu.cn/help/elpa/)
-* [Emacs China ELPA镜像](https://elpa.emacs-china.org/)
-
-<!--more-->
 ## Customization
 
-To add your own customization,  create a file `~/.emacs.d/lisp/init-afterload-private.el` which looks like this:
-```el
-... your code here ...
+Create a `*.el` file in `~/.emacs.d/personal/preload`, and change the configurations, then restart emacs.
 
-(provide 'init-afterload-private)
+For example:
+```el
+(setq dotemacs-full-name "user name")           ; User full name
+(setq dotemacs-mail-address "user@email.com")   ; Email address
+(setq dotemacs-package-archives 'emacs-china)   ; Package repo: melpa, emacs-china, tuna or custom
+(setq dotemacs-theme 'dark)                     ; Color theme: default, dark or light
+(setq dotemacs-company-enable-yas t)            ; Enable/disable yasnippet for company: t or nil
+(setq dotemacs-benchmark-enabled t)             ; Enable/disable initialization benchmark: t or nil
 ```
 
-If you need initialisation code which executes earlier in the startup process, you can also create an `~/.emacs.d/lisp/init-preload-private.el` file which looks like this:
+If `dotemacs-package-archives` is set to `custom`, you need to set `dotemacs-custom-package-archives`.
 ```el
-... your code here ...
-
-(provide 'init-preload-private)
+(setq dotemacs-package-archives         'custom     ; Package repo: melpa, emacs-china, tuna or custom
+      dotemacs-custom-package-archives  '(("gnu"   . "D:/Software/emacs/elpa-mirror/gnu/")
+                                          ("melpa" . "D:/Software/emacs/elpa-mirror/melpa/")
+                                          ("org"   . "D:/Software/emacs/elpa-mirror/org/")
+                                         )
+)
 ```
+
+You and can use [emacs-china](https://elpa.emacs-china.org/) or [tuna](https://mirror.tuna.tsinghua.edu.cn/help/elpa/), or clone it from [d12frosted/elpa-mirror](https://github.com/d12frosted/elpa-mirror) to local disk.
+
+## Personalizing
+
+To add your own configurations,  create `*.el` files in `~/.emacs.d/personal`. Sometimes you might want to load code before dotemacs has started loading, create `*.el` files in `~/.emacs.d/personal/preload`.
 
 ## Install fonts(Optional)
 
-Install [Source Code Pro](https://github.com/adobe-fonts/source-code-pro).
+Install [DejaVu Sans Mono](https://dejavu-fonts.github.io/) or [Source Code Pro](https://github.com/adobe-fonts/source-code-pro).
 
 ## Supported Emacs versions
 
-The config should run on Emacs 25.1 or greater and is designed to degrade smoothly - see the [Travis build](https://travis-ci.org/xuchengpeng/emacs.d).
+The config should run on Emacs 25.3 or greater and is designed to degrade smoothly - see the [Travis build](https://travis-ci.org/xuchengpeng/emacs.d).
