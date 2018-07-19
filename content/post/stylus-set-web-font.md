@@ -1,16 +1,14 @@
----
-title: "Stylus 自定义网页字体"
-date: 2018-05-23 10:27:11
-udpated: 2018-05-23 10:27:11
-comments: true
-categories:
- - Technology
- - Web
-tags:
- - Stylus
- - Stylish
- - CSS
----
++++
+title = "Stylus 自定义网页字体"
+date = 2018-05-23T10:27:11+08:00
+draft = false
+comments = true
+mathjax = false
+categories = [ "Technology", "Web" ]
+tags = [ "Stylus", "Stylish", "CSS" ]
++++
+
+
 
 使用 Stylus 可以直接使用 [userstyles 网站](https://userstyles.org/) 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。
 
@@ -28,3 +26,9 @@ tags:
 其中的数值依次代表阴影的 X 轴偏移、Y 轴偏移、阴影大小，以及字体颜色。
 <!--more-->
 
+网页上的图标显示成框框，可用以下办法解决：
+```css
+*:not([class*="icon"]):not(i) {
+    font-family: "DejaVu Sans Mono", "思源黑体 Regular" !important;
+}
+```
