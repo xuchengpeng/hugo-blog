@@ -504,12 +504,14 @@ a.article-title:hover,
 }
 .article-entry blockquote {
   font-family: 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
-  font-size: 1.4em;
-  margin: 1.4em 20px;
+  font-size: 1em;
+  margin: 1em 20px;
+  border-left: 4px solid #CCC;
+  padding-left: 8px;
 }
 .article-entry blockquote footer {
   font-size: 16px;
-  margin: 1.4em 0;
+  margin: 1em 0;
   font-family: font-sans;
 }
 .article-entry blockquote footer cite:before {
