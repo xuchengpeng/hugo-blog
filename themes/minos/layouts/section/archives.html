@@ -1,0 +1,21 @@
+{{ define "main" }}
+    <section id="main" class="outer">
+        {{ $paginator := .Paginate ((where .Site.Pages "Kind" "page").GroupByDate "2006-01") -}}
+        <section class="archives-wrap">
+            <div class="archive-tag-wrap">
+                <span class="archive-tag">Archives {{ len (where .Site.RegularPages "Section" "==" "post") }} posts</span>
+            </div>
+            <div class="archives">
+                {{- range $paginator.PageGroups }}
+                <div class="archive-tag-wrap">
+                <span class="archive-tag">{{ .Key }}</span>
+                </div>
+                {{- range .Pages }}
+                {{ partial "li.html" . }}
+                {{ end }}
+                {{ end }}
+            </div>
+        </section>
+        {{ partial "pagination.html" . }}
+    </section>
+{{ end }}
