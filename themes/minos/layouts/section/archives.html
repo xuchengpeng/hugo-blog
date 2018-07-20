@@ -1,9 +1,9 @@
 {{ define "main" }}
     <section id="main" class="outer">
-        {{ $paginator := .Paginate ((where .Site.Pages "Kind" "page").GroupByDate "2006-01") -}}
+        {{ $paginator := .Paginate (.Site.RegularPages.GroupByDate "2006-01") 100 }}
         <section class="archives-wrap">
             <div class="archive-tag-wrap">
-                <span class="archive-tag">Archives {{ len (where .Site.RegularPages "Section" "==" "post") }} posts</span>
+                <span class="archive-tag">Archives {{ len .Site.RegularPages }} posts</span>
             </div>
             <div class="archives">
                 {{- range $paginator.PageGroups }}
