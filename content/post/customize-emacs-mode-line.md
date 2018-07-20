@@ -3,7 +3,7 @@ title = "自定义emacs mode-line"
 date = 2018-07-09T09:59:51+08:00
 draft = false
 mathjax = false
-categories = [ "emacs" ]
+categories = [ "Software", "emacs" ]
 tags = [ "mode-line", "diminish" ]
 +++
 
