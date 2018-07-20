@@ -93,7 +93,7 @@ input,
 button {
   margin: 0;
   padding: 0;
-  font: 16px 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
+  font: 16px 'Helvetica Neue', 'Helvetica', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'Microsoft Yahei', sans-serif;
 }
 input::-moz-focus-inner,
 button::-moz-focus-inner {
@@ -107,7 +107,7 @@ body,
 }
 body {
   background: #fff;
-  font: 16px 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
+  font: 16px 'Helvetica Neue', 'Helvetica', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'Microsoft Yahei', sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 .outer {
@@ -503,7 +503,7 @@ a.article-title:hover,
   padding: 10px 0;
 }
 .article-entry blockquote {
-  font-family: 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'Microsoft Yahei', sans-serif;
   font-size: 1em;
   margin: 1em 20px;
   border-left: 4px solid #CCC;
@@ -1077,13 +1077,13 @@ pre .php .xml {
 .fancybox-skin {
   padding: 0 !important;
   border-radius: 0;
-  font-family: 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'Microsoft Yahei', sans-serif;
 }
 .fancybox-skin .fancybox-title .child {
   background: none;
   font-weight: 400;
   font-size: 16px;
-  font-family: 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'PT Serif', 'STZhongsong', '华文中宋', 'Microsoft Yahei', serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'Microsoft Yahei', sans-serif;
   text-shadow: 1px 3px 3px rgba(0,0,0,0.5);
 }
 
