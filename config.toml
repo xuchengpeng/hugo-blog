@@ -4,13 +4,17 @@ title = "xuchengpeng"
 theme = "minos"
 paginate = "10"
 
+pygmentsCodefences = true
+pygmentsUseClasses = true
+pygmentsOptions = "linenos=inline"
+
 [params]
     smartToc = true
     disqusShortname = ""
 
 
 copyright = "&copy; Copyright 2018 xuchengpeng"
-pygmentsCodefences = true
+
 
 [permalinks]
   post = "/:year/:month/:day/:filename/"
