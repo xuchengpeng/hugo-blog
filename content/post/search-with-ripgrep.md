@@ -2,6 +2,9 @@
 title = "Search with ripgrep"
 description = "ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern while respecting your gitignore rules. ripgrep has first class support on Windows, macOS and Linux, with binary downloads available for every release. ripgrep is similar to other popular search tools like The Silver Searcher, ack and grep."
 date = "2018-03-17T17:34:16+08:00"
+draft = false
+comments = true
+mathjax = false
 categories = [ "emacs" ]
 tags = [ "ripgrep" ]
 +++
@@ -60,7 +63,6 @@ And finally, a straight-up comparison between ripgrep and GNU grep on a single l
   :ensure t
   :after (helm)
   :config
-  (setq helm-ag-base-command "rg --ignore-case --line-number --no-heading --vimgrep")
+  (setq helm-ag-base-command "rg --color=always --smart-case --line-number --no-heading")
   )
 ```
-
