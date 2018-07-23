@@ -316,7 +316,8 @@ a.article-title:hover,
   display: none;
   font-size: 16px;
   margin-left: -15px;
-  font-family: FontAwesome;
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
 }
 #main-nav-toggle:before {
   content: "\f0c9";
@@ -385,7 +386,8 @@ a.article-title:hover,
 .search-form-submit {
   float: left;
   padding: 0;
-  font-family: FontAwesome;
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
   border: none;
   background: none;
   cursor: pointer;
