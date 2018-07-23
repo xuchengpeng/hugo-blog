@@ -1099,3 +1099,24 @@ pre .php .xml {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
+#related h3 {
+  text-align: left;
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 1.4em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+#related ul {
+  list-style: disc inside;
+}
+#related li {
+  margin-top: 8px;
+}
+#related li > a {
+  color: inherit;
+}
+#related li > a:hover {
+  color: gray;
+}
