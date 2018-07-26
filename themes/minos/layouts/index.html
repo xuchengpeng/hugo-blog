@@ -10,27 +10,36 @@
                 </header>
                 {{ end }}
                 <div class="article-meta">
-                    <a href="{{ .RelPermalink }}" class="article-date">
-                        <time datetime='{{ .Date.Format "2006-01-02T15:04:05.000-07:00" }}' itemprop="datePublished">{{ .Date.Format "2006-01-02" }}</time>
-                    </a>
+                    <div class="article-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <a href="{{ .RelPermalink }}" >
+                            <time datetime='{{ .Date.Format "2006-01-02T15:04:05.000-07:00" }}' itemprop="datePublished">{{ .Date.Format "2006-01-02" }}</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">{{ .ReadingTime }} minute read</a>
+                    </div>
                     {{ $Site := .Site }}
                     {{ if .Params.categories }}
                     <div class="post-categories">
                         <div class="article-category">
+                            <i class="far fa-folder-open"></i>
                             {{ range $i, $e := .Params.categories }}
                             {{ if gt $i 0 }}
-                            <span>&gt;</span>
+                            <span>&sbquo;</span>
                             {{ end }}
                             <a class="article-category-link" href="{{ $Site.BaseURL }}/categories/{{ $e | urlize }}">{{ $e }}</a>
                             {{ end }}
                         </div>
                     </div>
                     {{ end }}
+                    <!--
                     {{ if .Site.Params.disqusShortname }}
                     <div class="article-comment-link-wrap">
                         <a href="{{ .RelPermalink }}#disqus_thread" class="article-comment-link">Comments</a>
                     </div>
                     {{ end }}
+                    -->
                 </div>
                 <div class="article-entry" itemprop="articleBody">
                     <p>

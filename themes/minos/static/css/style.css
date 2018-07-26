@@ -413,20 +413,31 @@ a.article-title:hover,
 }
 .article-date {
   float: left;
+  color: #939393;
 }
 .article-category {
   float: left;
   margin-left: 8px;
   color: #939393;
 }
+/*
 .article-category:before {
   content: "\2022";
 }
+*/
 .article-category span {
-  margin-left: 8px;
+  margin-left: 0px;
 }
 .article-category-link {
-  margin-left: 8px;
+  margin-left: 2px;
+}
+.article-readingtime-wrap {
+  float: left;
+  margin-left: 4px;
+  color: #939393;
+}
+.article-readingtime-wrap:before {
+  content: "\2022";
 }
 .article-comment-link-wrap {
   float: left;
