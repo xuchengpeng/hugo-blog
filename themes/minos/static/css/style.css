@@ -600,9 +600,11 @@ a.article-title:hover,
   float: left;
   margin-right: 10px;
 }
+/*
 .article-tag-list-link:before {
   content: "#";
 }
+*/
 #article-nav {
   position: relative;
   margin: 20px 0;
