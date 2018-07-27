@@ -30,11 +30,11 @@ For example:
 (setq dotemacs-full-name "user name")           ; User full name
 (setq dotemacs-mail-address "user@email.com")   ; Email address
 (setq dotemacs-package-archives 'emacs-china)   ; Package repo: melpa, emacs-china, tuna or custom
-(setq dotemacs-theme 'dark)                     ; Color theme: default, dark or light
+(setq dotemacs-color-theme 'dotemacs-one)       ; Color theme: default, dark, light or dotemacs-themes
 (setq dotemacs-company-enable-yas t)            ; Enable/disable yasnippet for company: t or nil
 (setq dotemacs-benchmark-enabled t)             ; Enable/disable initialization benchmark: t or nil
 ```
-
+<!--more-->
 If `dotemacs-package-archives` is set to `custom`, you need to set `dotemacs-custom-package-archives`.
 ```el
 (setq dotemacs-package-archives         'custom     ; Package repo: melpa, emacs-china, tuna or custom

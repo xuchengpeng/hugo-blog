@@ -17,7 +17,7 @@ A community-driven Emacs distribution - The best editor is neither Emacs nor Vim
 
 这是一款定制化程度非常高的emacs配置，同时支持emacs和vim按键模式，无缝切换使用。
 
-<!-- more-->
+<!--more-->
 
 ## 设定环境变量
 

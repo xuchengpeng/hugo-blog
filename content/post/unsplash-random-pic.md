@@ -12,7 +12,7 @@ tags:
 
 [Unsplash](https://unsplash.com/) 是一个完全免费的、无版权的高清图片资源网站。「无版权」是指这个网站上的图片由创作者自愿分享出来，完全免费提供给任何人作为任何用途使用。Unsplash 的原话是「do whatever you want」，进一步说明是「你可以免费对图片进行复制、修改、分发，包括用作商业目的，无需经过允许即可使用」。
 
-{% img https://source.unsplash.com/random Unsplash随机图片 %}
+![Unsplash随机图片](https://source.unsplash.com/random)
 
 <!--more-->
 

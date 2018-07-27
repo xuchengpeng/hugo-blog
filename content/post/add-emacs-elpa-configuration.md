@@ -40,7 +40,7 @@ tags:
 | [Org](http://orgmode.org/elpa.html)               | http://mirrors.tuna.tsinghua.edu.cn/elpa/org/          |
 
 *可以从 [d12frosted/elpa-mirror](https://github.com/d12frosted/elpa-mirror) 下载包镜像到本地使用。*
-<!--more -->
+<!--more-->
 ## 包管理
 
 定义如下代码，即可使用 `use-package` 或 `require-package` 来安装和管理包：

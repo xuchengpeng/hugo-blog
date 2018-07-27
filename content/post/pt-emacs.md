@@ -16,7 +16,7 @@ tags:
 
 ![](/images/pt-search-demo.jpg)
 
-<!--more -->
+<!--more-->
 
 ## 特点
 

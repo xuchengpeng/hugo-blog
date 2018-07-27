@@ -12,7 +12,7 @@ tags:
 
 收录Chrome最经典的扩展，如Tampermonkey、uBlock Origin、smartUp Gestures等，款款都是神器。
 
-<!--more -->
+<!--more-->
 
 ## 脚本管理器Tampermonkey
 
