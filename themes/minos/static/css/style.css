@@ -420,11 +420,9 @@ a.article-title:hover,
   margin-left: 8px;
   color: #939393;
 }
-/*
 .article-category:before {
   content: "\2022";
 }
-*/
 .article-category span {
   margin-left: 0px;
 }
@@ -600,11 +598,9 @@ a.article-title:hover,
   float: left;
   margin-right: 10px;
 }
-/*
 .article-tag-list-link:before {
   content: "#";
 }
-*/
 #article-nav {
   position: relative;
   margin: 20px 0;
