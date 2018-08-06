@@ -7,7 +7,7 @@ hasCJKLanguage = true
 
 pygmentsCodefences = true
 pygmentsUseClasses = true
-pygmentsOptions = "linenos=inline"
+# pygmentsOptions = "linenos=inline"
 
 [params]
     smartToc = true
