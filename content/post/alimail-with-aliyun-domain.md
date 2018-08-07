@@ -14,6 +14,7 @@ tags:
 ![](/images/alimail-qiye.jpg)
 
 申请 {% post_link set-up-aliyun-domain-with-github-pages 阿里云域名 %} 后，会赠送阿里云企业邮箱免费版。
+
 * 50个帐号，5G/帐号；
 * 域名注册成功后，自动开通企业邮箱并添加邮箱解析；
 * 每位会员只能开通一个企业邮箱免费版;
