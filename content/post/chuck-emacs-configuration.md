@@ -45,7 +45,7 @@ If `dotemacs-package-archives` is set to `custom`, you need to set `dotemacs-cus
 )
 ```
 
-You and can use [emacs-china](https://elpa.emacs-china.org/) or [tuna](https://mirror.tuna.tsinghua.edu.cn/help/elpa/), or clone it from [d12frosted/elpa-mirror](https://github.com/d12frosted/elpa-mirror) to local disk.
+You and can use [emacs-china](https://elpa.emacs-china.org/) or [tuna](https://mirror.tuna.tsinghua.edu.cn/help/elpa/), or clone it from [elpa-mirror](https://github.com/xuchengpeng/elpa-mirror) or [d12frosted/elpa-mirror](https://github.com/d12frosted/elpa-mirror) to local disk.
 
 ## Personalizing
 
