@@ -424,7 +424,7 @@ a.article-title:hover,
   content: "\2022";
 }
 .article-category span {
-  margin-left: 0px;
+  margin-left: 2px;
 }
 .article-category-link {
   margin-left: 2px;
