@@ -37,185 +37,284 @@ tags = [ "Stylus", "Stylish", "CSS" ]
 ```css
 @namespace url(http://www.w3.org/1999/xhtml);
 
-html,
-[lang=zh-CN] {
-    font-family: "Source Han Sans SC", "Source Han Sans", "HanHei SC", "Microsoft YaHei", sans-serif;
+html
+{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: "Source Han Sans SC","Source Han Sans","HanHei SC",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  quotes: "“" "”";
 }
 
-[lang=zh-TW] {
-    font-family: "Source Han Sans TC", "Source Han Sans", "HanHei TC", "Microsoft JhengHei", sans-serif;
+html:lang(de)
+{
+  quotes: "„" "“";
 }
 
-[lang=zh-HK] {
-    font-family: "Source Han Sans TC", "Source Han Sans", "HanHei TC", "Microsoft JhengHei", sans-serif;
+html:lang(es),html:lang(no)
+{
+  quotes: "«" "»";
 }
 
-[lang=ja-JP] {
-    font-family: "Source Han Sans", "Yu Gothic", sans-serif;
+html:lang(fr)
+{
+  quotes: "« " " »";
 }
 
-[lang=ko-KR] {
-    font-family: "Source Han Sans K", "Source Han Sans", "Malgun Gothic", sans-serif;
+html:lang(zh-CN),html:lang(zh-SG)
+{
+  font-family: "Source Han Sans SC","Source Han Sans","HanHei SC",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
 }
 
-body,
-input,
-textarea,
-keygen,
-select,
-button {
-    font-family: inherit;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+html:lang(zh-TW),html:lang(zh-HK),html:lang(zh-MO)
+{
+  font-family: "Source Han Sans TC","Source Han Sans","HanHei TC",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  quotes: "「" "」";
 }
 
-
-/* 字体替换：西里尔字母 */
-
-@font-face {
-    font-family: "Arial";
-    src: local("Source Han Sans SC");
+html:lang(ja)
+{
+  font-family: "Source Han Sans","Hiragino Kaku Gothic Pro",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  quotes: "「" "」";
 }
 
-@font-face {
-    font-family: "Tahoma";
-    src: local("Source Han Sans SC");
+html:lang(ko)
+{
+  font-family: "Source Han Sans K","Source Han Sans","Apple Gothic",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
 }
 
-@font-face {
-    font-family: "Verdana";
-    src: local("Source Han Sans SC");
+body,input,textarea,keygen,select,button
+{
+  font-family: inherit;
 }
 
-@font-face {
-    font-family: "Helvetica Neue";
-    src: local("Source Han Sans SC");
+body:disabled,input:disabled,textarea:disabled,keygen:disabled,select:disabled,button:disabled
+{
+  cursor: not-allowed;
 }
 
-@font-face {
-    font-family: "Helvetica";
-    src: local("Source Han Sans SC");
+@font-face
+{
+  font-family:"Arial";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "Segoe UI";
-    src: local("Source Han Sans SC");
+@font-face
+{
+  font-family:"Georgia";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "Courier";
-    src: local("Source Code Pro");
+@font-face
+{
+  font-family:"Helvetica";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "Courier New";
-    src: local("Source Code Pro");
+@font-face
+{
+  font-family:"Helvetica Neue";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "Consolas";
-    src: local("Source Code Pro");
+@font-face
+{
+  font-family:"Segoe UI";src:local("Source Han Sans SC");
 }
 
-
-/* 字体替换：中文 (简体) */
-
-@font-face {
-    font-family: "SimSun";
-    src: local("Source Han Sans SC");
+@font-face
+{
+  font-family:"Tahoma";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "SimSun-ExtB";
-    src: local("Source Han Sans SC");
+@font-face
+{
+  font-family:"Times";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "宋体";
-    src: local("Source Han Sans SC");
+@font-face
+{
+  font-family:"Time New Roman";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "NSimSun";
-    src: local("Source Han Sans SC");
+@font-face
+{
+  font-family:"Trebuchet";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "新宋体";
-    src: local("Source Han Sans SC");
+@font-face
+{
+  font-family:"Trebuchet MS";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "SimHei";
-    src: local("Source Han Sans SC");
+@font-face
+{
+  font-family:"Verdana";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "黑体";
-    src: local("Source Han Sans SC");
+@font-face
+{
+  font-family:"Consolas";src:local("Source Code Pro");
 }
 
-@font-face {
-    font-family: "Microsoft YaHei";
-    src: local("Source Han Sans SC");
+@font-face
+{
+  font-family:"Courier";src:local("Source Code Pro");
 }
 
-@font-face {
-    font-family: "微软雅黑";
-    src: local("Source Han Sans SC");
+@font-face
+{
+  font-family:"Courier New";src:local("Source Code Pro");
 }
 
-@font-face {
-    font-family: "STHeiti SC";
-    src: local("PingFang SC");
+@font-face
+{
+  font-family:"SimSun";src:local("Source Han Sans SC");
 }
 
-
-/* 字体替换：中文 (繁體) */
-
-@font-face {
-    font-family: "MingLiU";
-    src: local("Source Han Sans TC");
+@font-face
+{
+  font-family:"SimSun-ExtB";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "MingLiU-ExtB";
-    src: local("Source Han Sans TC");
+@font-face
+{
+  font-family:"宋体";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "MingLiU_HKSCS";
-    src: local("Source Han Sans TC");
+@font-face
+{
+  font-family:"NSimSun";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "MingLiU_HKSCS-ExtB";
-    src: local("Source Han Sans TC");
+@font-face
+{
+  font-family:"新宋体";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "PMingLiU";
-    src: local("Source Han Sans TC");
+@font-face
+{
+  font-family:"SimHei";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "PMingLiU-ExtB";
-    src: local("Source Han Sans TC");
+@font-face
+{
+  font-family:"黑体";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "Microsoft JhengHei";
-    src: local("Source Han Sans TC");
+@font-face
+{
+  font-family:"Microsoft YaHei";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "微軟正黑體";
-    src: local("Source Han Sans TC");
+@font-face
+{
+  font-family:"微软雅黑";src:local("Source Han Sans SC");
 }
 
-@font-face {
-    font-family: "STHeiti TC";
-    src: local("PingFang TC");
+@font-face
+{
+  font-family:"STHeiti SC";src:local("Source Han Sans SC");
+}
+
+@font-face
+{
+  font-family:"PingFang SC";src:local("Source Han Sans SC");
+}
+
+@font-face
+{
+  font-family:"苹方-简";src:local("Source Han Sans SC");
+}
+
+@font-face
+{
+  font-family:"MingLiU";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"MingLiU-ExtB";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"MingLiU_HKSCS";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"MingLiU_HKSCS-ExtB";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"PMingLiU";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"PMingLiU-ExtB";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"Microsoft JhengHei";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"微軟正黑體";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"STHeiti TC";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"PingFang TC";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"蘋方-繁";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"PingFang HK";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"蘋方-港";src:local("Source Han Sans TC");
+}
+
+@font-face
+{
+  font-family:"MS Gothic";src:local("Source Han Sans");
+}
+
+@font-face
+{
+  font-family:"MS PGothic";src:local("Source Han Sans");
+}
+
+@font-face
+{
+  font-family:"MS UI Gothic";src:local("Source Han Sans");
+}
+
+@font-face
+{
+  font-family:"Yu Gothic";src:local("Source Han Sans");
+}
+
+@font-face
+{
+  font-family:"Yu Gothic UI";src:local("Source Han Sans");
+}
+
+@font-face
+{
+  font-family:"Malgun Gothic";src:local("Source Han Sans K");
 }
 ```
