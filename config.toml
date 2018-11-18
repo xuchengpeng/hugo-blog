@@ -7,35 +7,40 @@ hasCJKLanguage = true
 pygmentsCodefences = true
 pygmentsUseClasses = true
 # pygmentsOptions = "linenos=inline"
- [params]
-    smartToc = true
-    disqusShortname = ""
- copyright = "&copy; Copyright 2018 xuchengpeng"
- [permalinks]
+
+[params]
+  smartToc = true
+  disqusShortname = ""
+  copyright = "&copy; Copyright 2018 xuchengpeng"
+
+[permalinks]
   post = "/:year/:month/:day/:filename/"
- [params.author]
-  name = "xuchengpeng"
-  
+
+[params.author]
+  name = "xuchengpeng" 
   github = "xuchengpeng"
   bitbucket = "xuchengpeng"
   email = "xucp@outlook.com"
- # Valine.
+
+# Valine.
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 [Params.valine]
-    enable = true
-    appId = '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz'
-    appKey = 'eQc0CtLv9s4VTdObz6ux8lVW'
-    notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
-    verify = false # Verification code
-    avatar = 'wavatar' 
-    placeholder = 'Leave your comments here...'
-    visitor = true
- [taxonomies]
+  enable = true
+  appId = '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz'
+  appKey = 'eQc0CtLv9s4VTdObz6ux8lVW'
+  notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
+  verify = false # Verification code
+  avatar = 'wavatar' 
+  placeholder = 'Leave your comments here...'
+  visitor = true
+
+[taxonomies]
   category = "categories"
   tag = "tags"
   series = "series"
- [[menu.main]]
+
+[[menu.main]]
   name = "归档"
   weight = 1
   identifier = "archives"
