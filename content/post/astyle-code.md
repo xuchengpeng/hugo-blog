@@ -36,6 +36,32 @@ AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 
 
 <!--more-->
 
+以上配置可以保存在配置文件中，使用方法为`AStyle.exe --options=/path/to/.astylerc test.c`，对应的文件格式如下：
+
+```
+--style=linux
+--indent=spaces=4
+--indent-switches
+--indent-cases
+--indent-labels
+--indent-col1-comments
+--indent-preproc-define
+--indent-preproc-block
+--align-pointer=name
+--align-reference=name
+--pad-oper
+--pad-header
+--attach-namespaces
+--attach-classes
+--attach-extern-c
+--attach-closing-while
+--attach-return-type
+--attach-return-type-decl
+--convert-tabs
+--lineend=linux
+--suffix=none
+```
+
 linux编译astyle：
 
 ```shell
