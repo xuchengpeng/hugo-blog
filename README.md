@@ -1,3 +1,3 @@
 # Hugo博客
 
-[![Build Status](https://travis-ci.org/xuchengpeng/xuchengpeng.github.io.svg?branch=master)](https://travis-ci.org/xuchengpeng/xuchengpeng.github.io)
+[![Build Status](https://img.shields.io/travis/xuchengpeng/xuchengpeng.github.io/hugo?style=for-the-badge)](https://travis-ci.org/xuchengpeng/xuchengpeng.github.io)

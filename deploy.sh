@@ -2,11 +2,10 @@
 set -ev
 export TZ='Asia/Shanghai'
 
-#git clone --branch=master https://${GH_REF} .deploy_git
-#mv .deploy_git/.git/ ./public
+git clone --branch=master https://${GH_REF} .deploy_git
+mv .deploy_git/.git/ ./public
 
 cd ./public
-git init
 git config user.name "xuchengpeng"
 git config user.email "330476629@qq.com"
 git add .
