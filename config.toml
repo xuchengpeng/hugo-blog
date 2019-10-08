@@ -1,6 +1,6 @@
-baseurl = "http://xuchengpeng.com/hugo-blog/"
+baseurl = "http://xuchengpeng.com/"
 languageCode = "en"
-title = "Chuck❤Lucia"
+title = "Chuck&Lucia"
 theme = "minos"
 paginate = "10"
 hasCJKLanguage = true
