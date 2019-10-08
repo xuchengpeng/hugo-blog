@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>传输对象模式 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="传输对象模式" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/04/26/design-pattern-transfer-object-pattern/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">传输对象模式</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/04/26/design-pattern-transfer-object-pattern/" >
+                    <time datetime='2018-04-26T15:47:52.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">2 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>传输对象模式（Transfer Object Pattern）用于从客户端向服务器一次性传递带有多个属性的数据。传输对象也被称为数值对象。传输对象是一个具有 getter/setter 方法的简单的 POJO 类，它是可序列化的，所以它可以通过网络传输。它没有任何的行为。服务器端的业务类通常从数据库读取数据，然后填充 POJO，并把它发送到客户端或按值传递它。对于客户端，传输对象是只读的。客户端可以创建自己的传输对象，并把它传递给服务器，以便一次性更新数据库中的数值。以下是这种设计模式的实体。</p>
+
+<p>业务对象（Business Object） - 为传输对象填充数据的业务服务。
+传输对象（Transfer Object） - 简单的 POJO，只有设置/获取属性的方法。
+客户端（Client） - 客户端可以发送请求或者发送传输对象到业务对象。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建一个作为业务对象的 StudentBO 和作为传输对象的 StudentVO，它们都代表了我们的实体。
+TransferObjectPatternDemo，我们的演示类在这里是作为一个客户端，将使用 StudentBO 和 Student 来演示传输对象设计模式。</p>
+
+<p><img src="/images/design-pattern/transferobject_pattern_uml_diagram.jpg" alt="" /></p>
+
+<h3 id="步骤-1">步骤 1</h3>
+
+<p>创建传输对象。</p>
+
+<p><em>StudentVO.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">StudentVO</span> <span class="p">{</span>
+   <span class="kd">private</span> <span class="nf">String</span> <span class="n">name</span><span class="p">;</span>
+   <span class="kd">private</span> <span class="nf">int</span> <span class="n">rollNo</span><span class="p">;</span>
+
+   <span class="n">StudentVO</span><span class="p">(</span><span class="n">String</span> <span class="nf">name</span><span class="p">,</span> <span class="kt">int</span> <span class="nf">rollNo</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">rollNo</span> <span class="o">=</span> <span class="n">rollNo</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">String</span> <span class="n">getName</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setName</span><span class="p">(</span><span class="n">String</span> <span class="nf">name</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">int</span> <span class="n">getRollNo</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">rollNo</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setRollNo</span><span class="p">(</span><span class="kt">int</span> <span class="nf">rollNo</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">rollNo</span> <span class="o">=</span> <span class="n">rollNo</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-2">步骤 2</h3>
+
+<p>创建业务对象。</p>
+
+<p><em>StudentBO.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">ArrayList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">List</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="nf">class</span> <span class="n">StudentBO</span> <span class="p">{</span>
+
+   <span class="c1">//列表是当作一个数据库
+</span><span class="c1"></span>   <span class="n">List</span><span class="o">&lt;</span><span class="n">StudentVO</span><span class="o">&gt;</span> <span class="nf">students</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">StudentBO</span><span class="p">(){</span>
+      <span class="n">students</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">StudentVO</span><span class="o">&gt;</span><span class="p">();</span>
+      <span class="n">StudentVO</span> <span class="nf">student1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StudentVO</span><span class="p">(</span><span class="s">&#34;Robert&#34;</span><span class="p">,</span><span class="n">0</span><span class="p">);</span>
+      <span class="n">StudentVO</span> <span class="nf">student2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StudentVO</span><span class="p">(</span><span class="s">&#34;John&#34;</span><span class="p">,</span><span class="n">1</span><span class="p">);</span>
+      <span class="n">students</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">student1</span><span class="p">);</span>
+      <span class="n">students</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">student2</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">deleteStudent</span><span class="p">(</span><span class="n">StudentVO</span> <span class="nf">student</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">students</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">());</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Student: Roll No &#34;</span>
+      <span class="o">+</span> <span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()</span> <span class="o">+</span><span class="s">&#34;, deleted from database&#34;</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="c1">//从数据库中检索学生名单
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="nf">List</span><span class="o">&lt;</span><span class="n">StudentVO</span><span class="o">&gt;</span> <span class="nf">getAllStudents</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">students</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">StudentVO</span> <span class="n">getStudent</span><span class="p">(</span><span class="kt">int</span> <span class="nf">rollNo</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">students</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rollNo</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">updateStudent</span><span class="p">(</span><span class="n">StudentVO</span> <span class="nf">student</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">students</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()).</span><span class="na">setName</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Student: Roll No &#34;</span>
+      <span class="o">+</span> <span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()</span> <span class="o">+</span><span class="s">&#34;, updated in the database&#34;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-3">步骤 3</h3>
+
+<p>使用 StudentBO 来演示传输对象设计模式。</p>
+
+<p><em>TransferObjectPatternDemo.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">TransferObjectPatternDemo</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">StudentBO</span> <span class="nf">studentBusinessObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StudentBO</span><span class="p">();</span>
+
+      <span class="c1">//输出所有的学生
+</span><span class="c1"></span>      <span class="k">for</span> <span class="p">(</span><span class="n">StudentVO</span> <span class="nf">student</span> <span class="o">:</span> <span class="n">studentBusinessObject</span><span class="p">.</span><span class="na">getAllStudents</span><span class="p">())</span> <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Student: [RollNo : &#34;</span>
+         <span class="o">+</span><span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()</span><span class="o">+</span><span class="s">&#34;, Name : &#34;</span><span class="o">+</span><span class="n">student</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="o">+</span><span class="s">&#34; ]&#34;</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">//更新学生
+</span><span class="c1"></span>      <span class="n">StudentVO</span> <span class="nf">student</span> <span class="o">=</span><span class="n">studentBusinessObject</span><span class="p">.</span><span class="na">getAllStudents</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>
+      <span class="n">student</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="s">&#34;Michael&#34;</span><span class="p">);</span>
+      <span class="n">studentBusinessObject</span><span class="p">.</span><span class="na">updateStudent</span><span class="p">(</span><span class="n">student</span><span class="p">);</span>
+
+      <span class="c1">//获取学生
+</span><span class="c1"></span>      <span class="n">studentBusinessObject</span><span class="p">.</span><span class="na">getStudent</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Student: [RollNo : &#34;</span>
+      <span class="o">+</span><span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()</span><span class="o">+</span><span class="s">&#34;, Name : &#34;</span><span class="o">+</span><span class="n">student</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="o">+</span><span class="s">&#34; ]&#34;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-4">步骤 4</h3>
+
+<p>验证输出。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nl">Student:</span> <span class="p">[</span><span class="n">RollNo</span> <span class="o">:</span> <span class="n">0</span><span class="p">,</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Robert</span> <span class="p">]</span>
+<span class="nl">Student:</span> <span class="p">[</span><span class="n">RollNo</span> <span class="o">:</span> <span class="n">1</span><span class="p">,</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">John</span> <span class="p">]</span>
+<span class="nl">Student:</span> <span class="n">Roll</span> <span class="nf">No</span> <span class="n">0</span><span class="p">,</span> <span class="n">updated</span> <span class="nf">in</span> <span class="n">the</span> <span class="nf">database</span>
+<span class="nl">Student:</span> <span class="p">[</span><span class="n">RollNo</span> <span class="o">:</span> <span class="n">0</span><span class="p">,</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Michael</span> <span class="p">]</span></code></pre></div>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#实现">实现</a>
+<ul>
+<li><a href="#步骤-1">步骤 1</a></li>
+<li><a href="#步骤-2">步骤 2</a></li>
+<li><a href="#步骤-3">步骤 3</a></li>
+<li><a href="#步骤-4">步骤 4</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/04/26/design-pattern-service-locator-pattern/">服务定位器模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-intercepting-filter-pattern/">拦截过滤器模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-front-controller-pattern/">前端控制器模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-data-access-object-pattern/">数据访问对象模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-composite-entity-pattern/">组合实体模式</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/04/27/ubuntu-18.04-lts-is-out/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">Ubuntu 18.04 LTS is out&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/04/26/design-pattern-service-locator-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;服务定位器模式</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/04/26/design-pattern-transfer-object-pattern/" class="leancloud-visitors" data-flag-title="传输对象模式">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="Chuck&amp;Lucia" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/" />
+    
+
+    <link href="http://xuchengpeng.com/index.xml" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/09/11/vxlan/">VXLAN</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/09/11/vxlan/" >
+                            <time datetime='2018-09-11T14:16:49.000&#43;08:00' itemprop="datePublished">2018-09-11</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">7 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/cloud">Cloud</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>VXLAN(Virtual eXtential LAN)意为虚拟可拓展局域网。随着大数据、云计算技术的兴起以及虚拟化技术的普及，VLAN技术的弊端逐渐显现出来，具体表现为如下3个方面：</p>
+
+<ol>
+<li>虚拟化技术的发展促使大数据、云计算技术公司采用单个物理设备虚拟多台虚拟机的方式来进行组网，随着应用模块的增加，对于支持VLAN数目的要求也在提升，802.1Q标准中的最多支持4094个VLAN的能力已经无法满足当下需求。</li>
+<li>公有云提供商的业务要求将实体网络租借给多个不同的用户，这些用户对于网络的要求有所不同，而不同用户租借的网络有很大的可能会出现IP地址、MAC地址的重叠，传统的VLAN仅仅解决了同一链路层网络广播域隔离的问题，而并没有涉及到网络地址重叠的问题，因此需要一种新的技术来保证在多个租户网络中存在地址重叠的情况下依旧能有效通信的技术。</li>
+<li>虚拟化技术的出现增加了交换机的负担，对于大型的数据中心而言，单台交换机必须支持数十台以上主机的通信连接才足以满足应用需求，而虚拟化技术使得单台主机可以虚拟化出多台虚拟机同时运行，而每台虚拟机都会有其唯一的MAC地址。这样，为了保证集群中所有虚机可以正常通信，交换机必须保存每台虚机的MAC地址，这样就导致了交换机中的MAC表异常庞大，从而影响交换机的转发性能。</li>
+</ol>
+
+<p>基于以上需求，VXLAN技术被提出。</p>
+
+<p>VXLAN技术是网络Overlay技术的一种实现，对于Overlay技术，笔者的理解是：在基于物理网络拓扑的基础上通过一定的技术来构建虚拟的、不同于物理网络拓扑的逻辑网络，而物理网络的拓扑结构对于Overlay终端而言是透明的，终端不会感知到物理网络的存在，而仅仅能感知到逻辑网络结构。对于终端的视角，网络的情况和直接通过物理设备实现逻辑拓扑的效果是相同的。VXLAN技术可以基于三层网络结构来构建二层虚拟网络，通过VLAN技术可以将处于不同网段网络设备整合在同一个逻辑链路层网络中，对于终端用户而言，这些网络设备似乎“真实地”部署在了同一个链路层网络中。</p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/09/11/vxlan/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/vxlan">VXLAN
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/vlan">VLAN
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/vtep">VTEP
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/09/11/openvswitch/">Open vSwitch</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/09/11/openvswitch/" >
+                            <time datetime='2018-09-11T11:09:50.000&#43;08:00' itemprop="datePublished">2018-09-11</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">5 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/cloud">Cloud</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>Open vSwitch 是一个基于Apache 2 license的多层软件交换机。 我们的目标是实现一个支持标准管理接口的，开放转发功能以支持编程扩展和控制的交换机平台。</p>
+
+<p>Open vSwitch 非常适合在VM环境中用作虚拟交换机。 除了将标准控制和可视化接口暴露给虚拟网络层外，它还旨在支持跨越多个物理服务器的分布式系统。 Open vSwitch 支持多种基于Linux的虚拟化技术，包括 Xen/XenServer, KVM, 及 VirtualBox。</p>
+
+<p>大部分代码是平台无关的C编码，可以轻松地移植到其他环境中。 当前版本的 Open vSwitch 支持以下功能：</p>
+
+<ul>
+<li>具有trunk和access口的标准 802.1Q VLAN 功能</li>
+<li>上游交换机上连接或不链接LACP的NIC</li>
+<li>NetFlow, sFlow&reg;, 及镜像，以提高可视化</li>
+<li>QoS 配置，加上策列</li>
+<li>Geneve, GRE, VXLAN, STT, 及 LISP 隧道</li>
+<li>802.1ag 连接故障管理</li>
+<li>OpenFlow 1.0 加大量扩展</li>
+<li>具有C和Python绑定的事物配置数据库</li>
+<li>使用Linux内核模块的高性能转发</li>
+<li>Linux 内核模块支持 Linux 3.10及以上版本。</li>
+</ul>
+
+<p>Open vSwitch 也可以完全在用户空间运行，无需内核模块协助。 这个用户空间实现应该比基于内核的交换机更容易进行移植。 用户空间中的OVS可以访问Linux或DPDK设备。</p>
+
+<blockquote>
+<p>使用用户空间实现，且没有用DPDK做加速处理的OVS被认为是测试性的，具有性能成本。</p>
+</blockquote>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/09/11/openvswitch/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/open-vswitch">Open vSwitch
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/ovs">OVS
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/openflow">OpenFlow
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/09/11/cloud-and-edge-computing/">云计算与边缘计算</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/09/11/cloud-and-edge-computing/" >
+                            <time datetime='2018-09-11T09:26:07.000&#43;08:00' itemprop="datePublished">2018-09-11</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">2 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/cloud">Cloud</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>云计算（cloudcomputing）是基于互联网的相关服务的增加、使用和交付模式，通常涉及通过互联网来提供动态易扩展且经常是虚拟化的资源。</p>
+
+<h3 id="云计算">云计算</h3>
+
+<p>云计算系统由云平台、云存储、云终端、云安全四个基本部分组成。</p>
+
+<p>云平台从用户的角度可分为公有云、私有云、混合云等。</p>
+
+<p>通过从提供服务的层次可分为基础设施即服务（Iaas）、平台即服务（Paas）和软件即服务（Saas）。</p>
+
+<p>将应用部署到云端后，可以不必再关注那些令人头疼的硬件和软件问题，它们会由云服务提供商的专业团队去解决。使用的是共享的硬件，这意味着像使用一个工具一样去利用云服务（就像插上插座，你就能使用电一样简单）。只需要按照你的需要来支付相应的费用，而关于软件的更新，资源的按需扩展都能自动完成。</p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/09/11/cloud-and-edge-computing/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E4%BA%91%E8%AE%A1%E7%AE%97">云计算
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97">边缘计算
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/09/06/emacs-generate-autoloads/">Emacs generate autoloads</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/09/06/emacs-generate-autoloads/" >
+                            <time datetime='2018-09-06T11:25:46.000&#43;08:00' itemprop="datePublished">2018-09-06</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">1 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/software">Software</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/emacs">emacs</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>The autoload facility lets you register the existence of a function or macro, but put off loading the file that defines it. The first call to the function automatically loads the proper library, in order to install the real definition and other associated code, then runs the real definition as if it had been loaded all along. Autoloading can also be triggered by looking up the documentation of the function or macro.</p>
+
+<p>A magic autoload comment (often called an autoload cookie) consists of <code>;;;###autoload</code>, on a line by itself, just before the real definition of the function in its autoloadable source file. The command <code>M-x update-file-autoloads</code> writes a corresponding autoload call into loaddefs.el. (The string that serves as the autoload cookie and the name of the file generated by <code>update-file-autoloads</code> can be changed from the above defaults, see below.) Building Emacs loads loaddefs.el and thus calls autoload. <code>M-x update-directory-autoloads</code> is even more powerful; it updates autoloads for all files in the current directory.</p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/09/06/emacs-generate-autoloads/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/autoload">autoload
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/09/05/emacs-proxy/">Emacs Proxy</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/09/05/emacs-proxy/" >
+                            <time datetime='2018-09-05T12:51:10.000&#43;08:00' itemprop="datePublished">2018-09-05</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">1 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/software">Software</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/emacs">emacs</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">setq</span> <span class="nv">url-proxy-services</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;no_proxy&#34;</span> <span class="o">.</span> <span class="s">&#34;^\\(localhost\\|10.*\\)&#34;</span><span class="p">)</span>
+                           <span class="p">(</span><span class="s">&#34;http&#34;</span> <span class="o">.</span> <span class="s">&#34;proxy.com:80&#34;</span><span class="p">)</span>
+                           <span class="p">(</span><span class="s">&#34;https&#34;</span> <span class="o">.</span> <span class="s">&#34;proxy.com:80&#34;</span><span class="p">)))</span></code></pre></div>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/09/05/emacs-proxy/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/09/05/cmder-console-emulator/">Cmder | Console Emulator</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/09/05/cmder-console-emulator/" >
+                            <time datetime='2018-09-05T09:31:48.000&#43;08:00' itemprop="datePublished">2018-09-05</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">1 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/tools">Tools</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <blockquote>
+<p>Cmder is a software package created out of pure frustration over the absence of nice console emulators on Windows. It is based on amazing software, and spiced up with the Monokai color scheme and a custom prompt layout, looking sexy from the start.</p>
+</blockquote>
+
+<h3 id="增加-cmder-here">增加 Cmder Here</h3>
+
+<ol>
+<li>添加环境变量 <code>CMDER_HOME</code>设定为Cmder安装目录<code>D:\Software\cmder\</code>；</li>
+<li>将<code>%CMDER_HOME%</code>添加到<code>PATH</code>环境变量中；</li>
+<li>在cmd中执行<code>Cmder.exe /REGISTER ALL</code>注册右键菜单；</li>
+<li>修改Cmder初始任务，设定为<code>*cmd /k &quot;&quot;%ConEmuDir%\..\init.bat&quot; &quot; -new_console:d:%CD%</code>。</li>
+</ol>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/09/05/cmder-console-emulator/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/cmder">Cmder
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/conemu">ConEmu
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/08/21/editorconfig/">EditorConfig</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/08/21/editorconfig/" >
+                            <time datetime='2018-08-21T12:37:18.000&#43;08:00' itemprop="datePublished">2018-08-21</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">3 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/tools">Tools</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p><a href="https://editorconfig.org/">EditorConfig</a>可以帮助开发者在不同的编辑器和IDE之间定义和维护一致的代码风格。EditorConfig包含一个用于定义代码格式的文件和一批编辑器插件，这些插件可以让编辑器读取配置文件并依此格式化代码。EditorConfig的配置文件十分易读，并且可以很好的在VCS（Version Control System）下工作。</p>
+
+<h3 id="editorconfig配置文件是什么样子的">EditorConfig配置文件是什么样子的？</h3>
+
+<p>以下是一个用于Python和Java的行尾和缩进风格.editorconfig配置文件。</p>
+<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="c1"># EditorConfig is awesome: https://EditorConfig.org</span>
+
+<span class="c1"># top-most EditorConfig file</span>
+<span class="na">root</span> <span class="o">=</span> <span class="s">true</span>
+
+<span class="c1"># Unix-style newlines with a newline ending every file</span>
+<span class="k">[*]</span>
+<span class="na">end_of_line</span> <span class="o">=</span> <span class="s">lf</span>
+<span class="na">insert_final_newline</span> <span class="o">=</span> <span class="s">true</span>
+
+<span class="c1"># Matches multiple files with brace expansion notation</span>
+<span class="c1"># Set default charset</span>
+<span class="k">[*.{js,py}]</span>
+<span class="na">charset</span> <span class="o">=</span> <span class="s">utf-8</span>
+
+<span class="c1"># 4 space indentation</span>
+<span class="k">[*.py]</span>
+<span class="na">indent_style</span> <span class="o">=</span> <span class="s">space</span>
+<span class="na">indent_size</span> <span class="o">=</span> <span class="s">4</span>
+
+<span class="c1"># Tab indentation (no size specified)</span>
+<span class="k">[Makefile]</span>
+<span class="na">indent_style</span> <span class="o">=</span> <span class="s">tab</span>
+
+<span class="c1"># Indentation override for all JS under lib directory</span>
+<span class="k">[lib/**.js]</span>
+<span class="na">indent_style</span> <span class="o">=</span> <span class="s">space</span>
+<span class="na">indent_size</span> <span class="o">=</span> <span class="s">2</span>
+
+<span class="c1"># Matches the exact files either package.json or .travis.yml</span>
+<span class="k">[{package.json,.travis.yml}]</span>
+<span class="na">indent_style</span> <span class="o">=</span> <span class="s">space</span>
+<span class="na">indent_size</span> <span class="o">=</span> <span class="s">2</span></code></pre></div>
+<p>查看更多使用EditorConfig的<a href="https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig">项目</a>。</p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/08/21/editorconfig/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/editorconfig">EditorConfig
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/08/09/amd-release-threadripper2/">AMD发布第二代Threadripper</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/08/09/amd-release-threadripper2/" >
+                            <time datetime='2018-08-09T09:32:24.000&#43;08:00' itemprop="datePublished">2018-08-09</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">10 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/news">News</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>就在昨天AMD第二代线程撕裂者旗舰Threadripper 2990WX外观正式解禁，AMD官网也揭露了其部分性能，得益于其拥有高达32个核心64个线程，Threadripper 2990WX轻松拿下了消费级市场CPU之王的头衔，此前坐在王座上的i9-7980XE被轻松秒杀，可谓一时之间风光无限。但俗话说的好，现在有多风光，以前就有多折堕（落魄的意思），AMD也不例外。就在2年以前，AMD还是一个被Intel无视的对手，产品性能与Intel有巨大的鸿沟，股价最低时仅为2美元出头，濒临破产。AMD会这么落魄，其中一个很主要的原因是因为当年推出的Bulldozer，推土机处理器微架构。</p>
+
+<p>就在前两天，国外媒体ExtremeTech就总结了至今为止最糟糕的10款CPU，其中推土机（Bulldozer）进入了前三甲的位置，由此可见推土机的失败，是一个比较公认的事实。</p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/08/09/amd-release-threadripper2/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/amd">AMD
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/threadripper">Threadripper
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/ryzen">Ryzen
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/intel">Intel
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/08/06/rsync-elpa-mirror/">rsync elpa mirror</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/08/06/rsync-elpa-mirror/" >
+                            <time datetime='2018-08-06T16:48:15.000&#43;08:00' itemprop="datePublished">2018-08-06</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">3 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/tools">Tools</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p><a href="https://rsync.samba.org/">rsync</a> is an open source utility that provides fast incremental file transfer. rsync is freely available under the GNU General Public License and is currently being maintained by Wayne Davison.</p>
+
+<p>rsync is a file transfer program for Unix systems. rsync uses the &ldquo;rsync algorithm&rdquo; which provides a very fast method for bringing remote files into sync. It does this by sending just the differences in the files across the link, without requiring that both sets of files are present at one of the ends of the link beforehand.
+Some features of rsync include</p>
+
+<ul>
+<li>can update whole directory trees and filesystems</li>
+<li>optionally preserves symbolic links, hard links, file ownership, permissions, devices and times</li>
+<li>requires no special privileges to install</li>
+<li>internal pipelining reduces latency for multiple files</li>
+<li>can use rsh, ssh or direct sockets as the transport</li>
+<li>supports anonymous rsync which is ideal for mirroring</li>
+</ul>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/08/06/rsync-elpa-mirror/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/rsync">rsync
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/07/26/emacs-byte-compile/">Byte Compile Elisp Files</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/07/26/emacs-byte-compile/" >
+                            <time datetime='2018-07-26T12:54:14.000&#43;08:00' itemprop="datePublished">2018-07-26</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">2 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/software">Software</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/emacs">emacs</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>Emacs lisp files can be byte compiled.</p>
+
+<p>Byte compiled elisp file has “.elc” suffix (aka extension). Normal elisp file has “.el” suffix.</p>
+
+<h2 id="advantage-of-byte-compiled-elisp-file">Advantage of Byte Compiled Elisp File</h2>
+
+<p>Byte compiled elisp files will load faster, and also run faster. (by a simple test of a loop, it seems to run about 4 times faster.)</p>
+
+<p>Another advantage is that byte compiling will often tell you errors or warning in your elisp code that you normally wouldn&rsquo;t know.</p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/07/26/emacs-byte-compile/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+
+        
+
+<nav id="page-nav">
+    
+    <a href="/" rel="prev" class="extend prev">&laquo; Prev</a>
+    
+    
+    
+    <a href="/">1</a>
+    
+    
+    
+    <span class="page-number current">2</span>
+    
+    
+    
+    <a href="/page/3/">3</a>
+    
+    
+    
+    <a href="/page/4/">4</a>
+    
+    
+    
+    <a href="/page/5/">5</a>
+    
+    
+    
+    <a href="/page/6/">6</a>
+    
+    
+    
+    <a href="/page/7/">7</a>
+    
+    
+    
+    <a href="/page/8/">8</a>
+    
+    
+    
+    <a href="/page/9/">9</a>
+    
+    
+    
+    <a href="/page/10/">10</a>
+    
+    
+    
+    <a href="/page/11/">11</a>
+    
+    
+    
+    <a href="/page/12/">12</a>
+    
+    
+    
+    <a href="/page/13/">13</a>
+    
+    
+    
+    <a href="/page/14/">14</a>
+    
+    
+
+    
+    <a href="/page/3/" rel="next" class="extend next">Next &raquo;</a>
+    
+</nav>
+
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

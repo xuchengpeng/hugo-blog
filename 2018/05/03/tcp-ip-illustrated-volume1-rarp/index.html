@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TCP/IP 详解(卷一) RARP：逆地址解析协议 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="TCP/IP 详解(卷一) RARP：逆地址解析协议" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/05/03/tcp-ip-illustrated-volume1-rarp/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">TCP/IP 详解(卷一) RARP：逆地址解析协议</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/05/03/tcp-ip-illustrated-volume1-rarp/" >
+                    <time datetime='2018-05-03T09:38:48.000&#43;00:00' itemprop="datePublished">2018-05-03</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">3 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>具有本地磁盘的系统引导时，一般是从磁盘上的配置文件中读取IP地址。但是无盘机，如X终端或无盘工作站，则需要采用其他方法来获得IP地址。</p>
+
+<p>网络上的每个系统都具有唯一的硬件地址，它是由网络接口生产厂家配置的。无盘系统的RARP实现过程是从接口卡上读取唯一的硬件地址，然后发送一份RARP请求（一帧在网络上广播的数据），请求某个主机响应该无盘系统的IP地址（在RARP应答中）。</p>
+
+<h2 id="rarp-的分组格式">RARP 的分组格式</h2>
+
+<p>RARP分组的格式与ARP分组基本一致。它们之间主要的差别是RARP请求或应答的帧类型代码为0x8035，而且RARP请求的操作代码为3，应答操作代码为4。</p>
+
+<p>对应于ARP，RARP请求以广播方式传送，而RARP应答一般是单播(unicast)传送的。</p>
+
+<h2 id="rarp-服务器的设计">RARP 服务器的设计</h2>
+
+<p>虽然RARP在概念上很简单，但是一个RARP服务器的设计与系统相关而且比较复杂。相反，提供一个ARP服务器很简单，通常是TCP/IP在内核中实现的一部分。由于内核知道IP地址和硬件地址，因此当它收到一个询问IP地址的ARP请求时，只需用相应的硬件地址来提供应答就可以了。</p>
+
+<h3 id="作为用户进程的-rarp-服务器">作为用户进程的 RARP 服务器</h3>
+
+<p>RARP服务器的复杂性在于，服务器一般要为多个主机（网络上所有的无盘系统）提供硬件地址到IP地址的映射。该映射包含在一个磁盘文件中（在Unix系统中一般位于/etc/ethers目录中）。由于内核一般不读取和分析磁盘文件，因此RARP服务器的功能就由用户进程来提供，而不是作为内核的TCP/IP实现的一部分。</p>
+
+<p>更为复杂的是，RARP请求是作为一个特殊类型的以太网数据帧来传送的。这说明RARP服务器必须能够发送和接收这种类型的以太网数据帧。由于发送和接收这些数据帧与系统有关，因此RARP服务器的实现是与系统捆绑在一起的。</p>
+
+<h3 id="每个网络有多个-rarp-服务器">每个网络有多个 RARP 服务器</h3>
+
+<p>RARP服务器实现的一个复杂因素是RARP请求是在硬件层上进行广播的，如图5-2所示。这意味着它们不经过路由器进行转发。为了让无盘系统在RARP服务器关机的状态下也能引导，通常在一个网络上（例如一根电缆）要提供多个RARP服务器。</p>
+
+<p>当服务器的数目增加时（以提供冗余备份），网络流量也随之增加，因为每个服务器对每个RARP请求都要发送RARP应答。发送RARP请求的无盘系统一般采用最先收到的RARP应答（对于ARP，我们从来没有遇到这种情况，因为只有一台主机发送ARP应答）。另外，还有一种可能发生的情况是每个RARP服务器同时应答，这样会增加以太网发生冲突的概率。</p>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#rarp-的分组格式">RARP 的分组格式</a></li>
+<li><a href="#rarp-服务器的设计">RARP 服务器的设计</a>
+<ul>
+<li><a href="#作为用户进程的-rarp-服务器">作为用户进程的 RARP 服务器</a></li>
+<li><a href="#每个网络有多个-rarp-服务器">每个网络有多个 RARP 服务器</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/rarp">RARP
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/05/03/tcp-ip-illustrated-volume1-icmp/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">TCP/IP 详解(卷一) ICMP：Internet控制报文协议&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/05/02/tcp-ip-illustrated-volume1-arp/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;TCP/IP 详解(卷一) ARP：地址解析协议</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/05/03/tcp-ip-illustrated-volume1-rarp/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) RARP：逆地址解析协议">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

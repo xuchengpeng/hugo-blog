@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>工厂模式 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="工厂模式" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/03/22/design-pattern-factory-pattern/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">工厂模式</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/03/22/design-pattern-factory-pattern/" >
+                    <time datetime='2018-03-22T10:32:40.000&#43;00:00' itemprop="datePublished">2018-03-22</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">3 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p><strong>意图</strong>：定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类，工厂模式使其创建过程延迟到子类进行。
+<strong>主要解决</strong>：主要解决接口选择的问题。
+<strong>何时使用</strong>：我们明确地计划不同条件下创建不同实例时。
+<strong>如何解决</strong>：让其子类实现工厂接口，返回的也是一个抽象的产品。
+<strong>关键代码</strong>：创建过程在其子类执行。
+<strong>应用实例</strong>： 1、您需要一辆汽车，可以直接从工厂里面提货，而不用去管这辆汽车是怎么做出来的，以及这个汽车里面的具体实现。 2、Hibernate 换数据库只需换方言和驱动就可以。
+<strong>优点</strong>： 1、一个调用者想创建一个对象，只要知道其名称就可以了。 2、扩展性高，如果想增加一个产品，只要扩展一个工厂类就可以。 3、屏蔽产品的具体实现，调用者只关心产品的接口。
+<strong>缺点</strong>：每次增加一个产品时，都需要增加一个具体类和对象实现工厂，使得系统中类的个数成倍增加，在一定程度上增加了系统的复杂度，同时也增加了系统具体类的依赖。这并不是什么好事。
+<strong>使用场景</strong>： 1、日志记录器：记录可能记录到本地硬盘、系统事件、远程服务器等，用户可以选择记录日志到什么地方。 2、数据库访问，当用户不知道最后系统采用哪一类数据库，以及数据库可能有变化时。 3、设计一个连接服务器的框架，需要三个协议，&rdquo;POP3&rdquo;、&rdquo;IMAP&rdquo;、&rdquo;HTTP&rdquo;，可以把这三个作为产品类，共同实现一个接口。
+<strong>注意事项</strong>：作为一种创建类模式，在任何需要生成复杂对象的地方，都可以使用工厂方法模式。有一点需要注意的地方就是复杂对象适合使用工厂模式，而简单对象，特别是只需要通过 new 就可以完成创建的对象，无需使用工厂模式。如果使用工厂模式，就需要引入一个工厂类，会增加系统的复杂度。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建一个 Shape 接口和实现 Shape 接口的实体类。下一步是定义工厂类 ShapeFactory。
+FactoryPatternDemo，我们的演示类使用 ShapeFactory 来获取 Shape 对象。它将向 ShapeFactory 传递信息（CIRCLE / RECTANGLE / SQUARE），以便获取它所需对象的类型。</p>
+
+<p><img src="/images/design-pattern/factory_pattern_uml_diagram.jpg" alt="" /></p>
+
+<h3 id="步骤-1">步骤 1</h3>
+
+<p>创建一个接口。
+<em>Shape.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">Shape</span> <span class="p">{</span>
+   <span class="kt">void</span> <span class="nf">draw</span><span class="p">();</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-2">步骤 2</h3>
+
+<p>创建实现接口的实体类。
+<em>Rectangle.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Rectangle</span> <span class="nf">implements</span> <span class="n">Shape</span> <span class="p">{</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">draw</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Inside Rectangle::draw() method.&#34;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<p><em>Square.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Square</span> <span class="nf">implements</span> <span class="n">Shape</span> <span class="p">{</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">draw</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Inside Square::draw() method.&#34;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<p><em>Circle.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Circle</span> <span class="nf">implements</span> <span class="n">Shape</span> <span class="p">{</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">draw</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Inside Circle::draw() method.&#34;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-3">步骤 3</h3>
+
+<p>创建一个工厂，生成基于给定信息的实体类的对象。
+<em>ShapeFactory.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">ShapeFactory</span> <span class="p">{</span>
+    
+   <span class="c1">//使用 getShape 方法获取形状类型的对象
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="nf">Shape</span> <span class="n">getShape</span><span class="p">(</span><span class="n">String</span> <span class="nf">shapeType</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">shapeType</span> <span class="o">==</span> <span class="kc">null</span><span class="p">){</span>
+         <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+      <span class="p">}</span>        
+      <span class="k">if</span><span class="p">(</span><span class="n">shapeType</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&#34;CIRCLE&#34;</span><span class="p">)){</span>
+         <span class="k">return</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">shapeType</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&#34;RECTANGLE&#34;</span><span class="p">)){</span>
+         <span class="k">return</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">shapeType</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&#34;SQUARE&#34;</span><span class="p">)){</span>
+         <span class="k">return</span> <span class="k">new</span> <span class="n">Square</span><span class="p">();</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-4">步骤 4</h3>
+
+<p>使用该工厂，通过传递类型信息来获取实体类的对象。
+<em>FactoryPatternDemo.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">FactoryPatternDemo</span> <span class="p">{</span>
+
+   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">ShapeFactory</span> <span class="nf">shapeFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ShapeFactory</span><span class="p">();</span>
+
+      <span class="c1">//获取 Circle 的对象，并调用它的 draw 方法
+</span><span class="c1"></span>      <span class="n">Shape</span> <span class="nf">shape1</span> <span class="o">=</span> <span class="n">shapeFactory</span><span class="p">.</span><span class="na">getShape</span><span class="p">(</span><span class="s">&#34;CIRCLE&#34;</span><span class="p">);</span>
+
+      <span class="c1">//调用 Circle 的 draw 方法
+</span><span class="c1"></span>      <span class="n">shape1</span><span class="p">.</span><span class="na">draw</span><span class="p">();</span>
+
+      <span class="c1">//获取 Rectangle 的对象，并调用它的 draw 方法
+</span><span class="c1"></span>      <span class="n">Shape</span> <span class="nf">shape2</span> <span class="o">=</span> <span class="n">shapeFactory</span><span class="p">.</span><span class="na">getShape</span><span class="p">(</span><span class="s">&#34;RECTANGLE&#34;</span><span class="p">);</span>
+
+      <span class="c1">//调用 Rectangle 的 draw 方法
+</span><span class="c1"></span>      <span class="n">shape2</span><span class="p">.</span><span class="na">draw</span><span class="p">();</span>
+
+      <span class="c1">//获取 Square 的对象，并调用它的 draw 方法
+</span><span class="c1"></span>      <span class="n">Shape</span> <span class="nf">shape3</span> <span class="o">=</span> <span class="n">shapeFactory</span><span class="p">.</span><span class="na">getShape</span><span class="p">(</span><span class="s">&#34;SQUARE&#34;</span><span class="p">);</span>
+
+      <span class="c1">//调用 Square 的 draw 方法
+</span><span class="c1"></span>      <span class="n">shape3</span><span class="p">.</span><span class="na">draw</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-5">步骤 5</h3>
+
+<p>验证输出。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Inside</span> <span class="nf">Circle</span><span class="o">::</span><span class="n">draw</span><span class="p">()</span> <span class="n">method</span><span class="p">.</span>
+<span class="nf">Inside</span> <span class="n">Rectangle</span><span class="o">::</span><span class="n">draw</span><span class="p">()</span> <span class="n">method</span><span class="p">.</span>
+<span class="nf">Inside</span> <span class="n">Square</span><span class="o">::</span><span class="n">draw</span><span class="p">()</span> <span class="n">method</span><span class="p">.</span></code></pre></div>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#实现">实现</a>
+<ul>
+<li><a href="#步骤-1">步骤 1</a></li>
+<li><a href="#步骤-2">步骤 2</a></li>
+<li><a href="#步骤-3">步骤 3</a></li>
+<li><a href="#步骤-4">步骤 4</a></li>
+<li><a href="#步骤-5">步骤 5</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">创建型模式
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/03/25/design-pattern-abstract-factory-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">抽象工厂模式&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/03/20/design-pattern-introduction/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;设计模式简介</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/03/22/design-pattern-factory-pattern/" class="leancloud-visitors" data-flag-title="工厂模式">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

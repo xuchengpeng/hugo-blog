@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Emacs: Show Line Numbers // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="Emacs: Show Line Numbers" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/03/30/emacs-show-line-numbers/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Emacs: Show Line Numbers</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/03/30/emacs-show-line-numbers/" >
+                    <time datetime='2018-03-30T09:52:44.000&#43;00:00' itemprop="datePublished">2018-03-30</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">1 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/software">Software</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/emacs">emacs</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>emacs has 2 line numbers mode:</p>
+
+<ul>
+<li><code>Alt + x</code> linum-mode -&gt; old, hack, slow. Emacs 23.</li>
+<li><code>Alt + x</code> global-display-line-numbers-mode -&gt; Emacs 26.</li>
+</ul>
+
+<h2 id="global-display-line-numbers-mode">global-display-line-numbers-mode</h2>
+
+<p>Emacs 26 has a new line number mode.</p>
+
+<ul>
+<li>global-display-line-numbers-mode -&gt; show line numbers in all buffers.</li>
+<li>display-line-numbers-mode -&gt; show line numbers in current buffers.</li>
+</ul>
+
+<p>Put this in your emacs init file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">version&lt;=</span> <span class="s">&#34;26.0.50&#34;</span> <span class="nv">emacs-version</span> <span class="p">)</span>
+  <span class="p">(</span><span class="nv">global-display-line-numbers-mode</span><span class="p">))</span></code></pre></div>
+<p>display-line-numbers-mode is written by Eli Zaretskii.</p>
+
+<h2 id="linum-mode">linum-mode</h2>
+
+<p>Emacs 23 has a line number mode. It shows line numbers in margin.</p>
+
+<ul>
+<li>linum-mode -&gt; toggle line number in current.</li>
+<li>global-linum-mode -&gt; toggle line number in all buffers.</li>
+</ul>
+
+<p>To set it permanetnly, put this in your emacs init file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nv">global-linum-mode</span> <span class="mi">1</span><span class="p">)</span></code></pre></div>
+<h2 id="nlinum-recommended">nlinum (Recommended)</h2>
+
+<p>As linum-mode is slow, you can use nlinum instead of linum-mode.</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nv">version&lt;</span> <span class="nv">emacs-version</span> <span class="s">&#34;26&#34;</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">use-package</span> <span class="nv">nlinum</span>
+      <span class="nb">:ensure</span> <span class="no">t</span>
+      <span class="nb">:config</span>
+      <span class="p">(</span><span class="nv">global-nlinum-mode</span> <span class="mi">1</span><span class="p">))</span>
+  <span class="p">(</span><span class="nv">global-display-line-numbers-mode</span><span class="p">))</span></code></pre></div>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#global-display-line-numbers-mode">global-display-line-numbers-mode</a></li>
+<li><a href="#linum-mode">linum-mode</a></li>
+<li><a href="#nlinum-recommended">nlinum (Recommended)</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/03/28/speed-up-emacs-startup-time/">Speed up emacs startup time</a></li>
+	
+	<li><a href="/2018/03/26/chuck-emacs-configuration/">Chuck&#39;s Emacs Configuration</a></li>
+	
+	<li><a href="/2018/03/08/base16/">base16 - An architecture for building themes</a></li>
+	
+	<li><a href="/2018/03/06/add-emacs-elpa-configuration/">Add Emacs elpa configuration</a></li>
+	
+	<li><a href="/2017/11/29/pt-emacs/">The Platinum Seacher for Emacs</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/03/30/emacs-native-profiler/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">Emacs Native Profiler&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/03/28/speed-up-emacs-startup-time/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;Speed up emacs startup time</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/03/30/emacs-show-line-numbers/" class="leancloud-visitors" data-flag-title="Emacs: Show Line Numbers">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

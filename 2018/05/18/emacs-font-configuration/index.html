@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>emacs 字体配置 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="emacs 字体配置" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/05/18/emacs-font-configuration/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">emacs 字体配置</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/05/18/emacs-font-configuration/" >
+                    <time datetime='2018-05-18T14:02:30.000&#43;00:00' itemprop="datePublished">2018-05-18</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">1 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/software">Software</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/emacs">emacs</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>定义设置中文和英文字体的函数，达到等宽效果：</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">defun</span> <span class="nv">set-font</span><span class="p">()</span>
+  <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+  
+  <span class="c1">;; Setting English Font</span>
+  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">member</span> <span class="s">&#34;DejaVu Sans Mono&#34;</span> <span class="p">(</span><span class="nf">font-family-list</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;default</span> <span class="no">nil</span> <span class="nb">:font</span>
+                        <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;%s:pixelsize=%d&#34;</span> <span class="s">&#34;DejaVu Sans Mono&#34;</span> <span class="mi">14</span><span class="p">))</span>
+    <span class="p">)</span>
+  
+  <span class="c1">;; Setting Chinese font</span>
+  <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">charset</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">kana</span> <span class="nv">han</span> <span class="nv">symbol</span> <span class="nv">cjk-misc</span> <span class="nv">bopomofo</span><span class="p">))</span>
+    <span class="p">(</span><span class="nf">set-fontset-font</span> <span class="p">(</span><span class="nf">frame-parameter</span> <span class="no">nil</span> <span class="ss">&#39;font</span><span class="p">)</span>
+                      <span class="nv">charset</span>
+                      <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;Microsoft Yahei&#34;</span> <span class="nb">:size</span> <span class="mi">16</span><span class="p">))</span>
+    <span class="p">)</span>
+  
+  <span class="c1">;; Fix chinese font width and rescale</span>
+  <span class="p">(</span><span class="nb">setq</span> <span class="nv">face-font-rescale-alist</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;STHeiti&#34;</span> <span class="o">.</span> <span class="mf">1.2</span><span class="p">)</span> <span class="p">(</span><span class="s">&#34;STFangsong&#34;</span> <span class="o">.</span> <span class="mf">1.2</span><span class="p">)</span> <span class="p">(</span><span class="s">&#34;Microsoft Yahei&#34;</span> <span class="o">.</span> <span class="mf">1.2</span><span class="p">)</span> <span class="p">(</span><span class="s">&#34;WenQuanYi Micro Hei Mono&#34;</span> <span class="o">.</span> <span class="mf">1.2</span><span class="p">)))</span>
+  <span class="p">)</span></code></pre></div>
+<p>调用 set-font 函数可使设置生效：</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;after-make-frame-functions</span>
+             <span class="p">(</span><span class="nb">lambda</span> <span class="p">(</span><span class="nv">new-frame</span><span class="p">)</span>
+               <span class="p">(</span><span class="nf">select-frame</span> <span class="nv">new-frame</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">if</span> <span class="nf">window-system</span>
+                   <span class="p">(</span><span class="nv">set-font</span><span class="p">))))</span>
+
+<span class="p">(</span><span class="nb">if</span> <span class="nf">window-system</span>
+    <span class="p">(</span><span class="nv">set-font</span><span class="p">))</span></code></pre></div>
+<p>分别为中文和英文字体定义一个列表，系统中存在这个字体就设定：</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-font-existsp</span> <span class="p">(</span><span class="nv">font</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">null</span> <span class="p">(</span><span class="nf">x-list-fonts</span> <span class="nv">font</span><span class="p">))</span>
+      <span class="no">nil</span>
+    <span class="no">t</span><span class="p">))</span>
+
+<span class="c1">;; or</span>
+<span class="c1">;; (defun dotemacs-font-existsp (font)</span>
+<span class="c1">;;   &#34;Detect if a font exists&#34;</span>
+<span class="c1">;;   (if (find-font (font-spec :family font))</span>
+<span class="c1">;;         t</span>
+<span class="c1">;;       nil))</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-make-font-string</span> <span class="p">(</span><span class="nv">font-name</span> <span class="nv">font-size</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nf">stringp</span> <span class="nv">font-size</span><span class="p">)</span>
+           <span class="p">(</span><span class="nf">equal</span> <span class="s">&#34;:&#34;</span> <span class="p">(</span><span class="nf">string</span> <span class="p">(</span><span class="nf">elt</span> <span class="nv">font-size</span> <span class="mi">0</span><span class="p">))))</span>
+      <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;%s%s&#34;</span> <span class="nv">font-name</span> <span class="nv">font-size</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;%s %s&#34;</span> <span class="nv">font-name</span> <span class="nv">font-size</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-set-font</span> <span class="p">(</span><span class="nv">english-fonts</span>
+                       <span class="nv">english-font-size</span>
+                       <span class="nv">chinese-fonts</span>
+                       <span class="kp">&amp;optional</span> <span class="nv">chinese-font-size</span><span class="p">)</span>
+
+  <span class="s">&#34;english-font-size could be set to \&#34;:pixelsize=18\&#34; or a integer.
+</span><span class="s">   If set/leave chinese-font-size to nil, it will follow english-font-size&#34;</span>
+  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;cl</span><span class="p">)</span> <span class="c1">; for find if</span>
+  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">en-font</span> <span class="p">(</span><span class="nv">dotemacs-make-font-string</span>
+                  <span class="p">(</span><span class="nv">find-if</span> <span class="nf">#&#39;</span><span class="nv">dotemacs-font-existsp</span> <span class="nv">english-fonts</span><span class="p">)</span>
+                  <span class="nv">english-font-size</span><span class="p">))</span>
+        <span class="p">(</span><span class="nv">zh-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="p">(</span><span class="nv">find-if</span> <span class="nf">#&#39;</span><span class="nv">dotemacs-font-existsp</span> <span class="nv">chinese-fonts</span><span class="p">)</span>
+                            <span class="nb">:size</span> <span class="nv">chinese-font-size</span><span class="p">)))</span>
+
+    <span class="c1">;; Set English font</span>
+    <span class="c1">;; (message &#34;Set English Font to %s&#34; en-font)</span>
+    <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;default</span> <span class="no">nil</span> <span class="nb">:font</span> <span class="nv">en-font</span><span class="p">)</span>
+
+    <span class="c1">;; Set Chinese font</span>
+    <span class="c1">;; (message &#34;Set Chinese Font to %s&#34; zh-font)</span>
+    <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">charset</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">kana</span> <span class="nv">han</span> <span class="nv">symbol</span> <span class="nv">cjk-misc</span> <span class="nv">bopomofo</span><span class="p">))</span>
+      <span class="p">(</span><span class="nf">set-fontset-font</span> <span class="p">(</span><span class="nf">frame-parameter</span> <span class="no">nil</span> <span class="ss">&#39;font</span><span class="p">)</span>
+                        <span class="nv">charset</span> <span class="nv">zh-font</span><span class="p">)))</span>
+    
+    <span class="c1">;; Fix chinese font width and rescale</span>
+    <span class="p">(</span><span class="nb">setq</span> <span class="nv">face-font-rescale-alist</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;STHeiti&#34;</span> <span class="o">.</span> <span class="mf">1.2</span><span class="p">)</span> <span class="p">(</span><span class="s">&#34;STFangsong&#34;</span> <span class="o">.</span> <span class="mf">1.2</span><span class="p">)</span> <span class="p">(</span><span class="s">&#34;Microsoft Yahei&#34;</span> <span class="o">.</span> <span class="mf">1.2</span><span class="p">)</span> <span class="p">(</span><span class="s">&#34;WenQuanYi Micro Hei Mono&#34;</span> <span class="o">.</span> <span class="mf">1.2</span><span class="p">))))</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">set-font</span><span class="p">()</span>
+  <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">dotemacs-set-font</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;DejaVu Sans Mono&#34;</span> <span class="s">&#34;Monaco&#34;</span> <span class="s">&#34;Source Code Pro&#34;</span> <span class="s">&#34;Consolas&#34;</span><span class="p">)</span> <span class="s">&#34;:pixelsize=14&#34;</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;Microsoft Yahei&#34;</span> <span class="s">&#34;文泉驿等宽微米黑&#34;</span> <span class="s">&#34;黑体&#34;</span> <span class="s">&#34;新宋体&#34;</span> <span class="s">&#34;宋体&#34;</span><span class="p">)</span> <span class="mi">16</span><span class="p">)</span>
+  <span class="p">)</span></code></pre></div>
+<p>为不同的操作系统设定不同的字体：</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">defun</span> <span class="nv">set-font</span><span class="p">()</span>
+  <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">setq</span> <span class="nv">fonts</span>
+        <span class="p">(</span><span class="nb">cond</span> <span class="p">((</span><span class="nf">eq</span> <span class="nv">system-type</span> <span class="ss">&#39;darwin</span><span class="p">)</span>     <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;Monaco&#34;</span>           <span class="s">&#34;STHeiti&#34;</span><span class="p">))</span>
+              <span class="p">((</span><span class="nf">eq</span> <span class="nv">system-type</span> <span class="ss">&#39;gnu/linux</span><span class="p">)</span>  <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;Menlo&#34;</span>            <span class="s">&#34;WenQuanYi Zen Hei&#34;</span><span class="p">))</span>
+              <span class="p">((</span><span class="nf">eq</span> <span class="nv">system-type</span> <span class="ss">&#39;windows-nt</span><span class="p">)</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;DejaVu Sans Mono&#34;</span> <span class="s">&#34;Microsoft Yahei&#34;</span><span class="p">))))</span>
+  <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;default</span> <span class="no">nil</span> <span class="nb">:font</span>
+                      <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;%s:pixelsize=%d&#34;</span> <span class="p">(</span><span class="nf">car</span> <span class="nv">fonts</span><span class="p">)</span> <span class="mi">14</span><span class="p">))</span>
+  <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">charset</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">kana</span> <span class="nv">han</span> <span class="nv">symbol</span> <span class="nv">cjk-misc</span> <span class="nv">bopomofo</span><span class="p">))</span>
+    <span class="p">(</span><span class="nf">set-fontset-font</span> <span class="p">(</span><span class="nf">frame-parameter</span> <span class="no">nil</span> <span class="ss">&#39;font</span><span class="p">)</span> <span class="nv">charset</span>
+                      <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="p">(</span><span class="nf">car</span> <span class="p">(</span><span class="nf">cdr</span> <span class="nv">fonts</span><span class="p">))</span> <span class="nb">:size</span> <span class="mi">16</span><span class="p">)))</span>
+  <span class="c1">;; Fix chinese font width and rescale</span>
+  <span class="p">(</span><span class="nb">setq</span> <span class="nv">face-font-rescale-alist</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;STHeiti&#34;</span> <span class="o">.</span> <span class="mf">1.2</span><span class="p">)</span> <span class="p">(</span><span class="s">&#34;STFangsong&#34;</span> <span class="o">.</span> <span class="mf">1.2</span><span class="p">)</span> <span class="p">(</span><span class="s">&#34;Microsoft Yahei&#34;</span> <span class="o">.</span> <span class="mf">1.2</span><span class="p">)</span> <span class="p">(</span><span class="s">&#34;WenQuanYi Micro Hei Mono&#34;</span> <span class="o">.</span> <span class="mf">1.2</span><span class="p">)))</span>
+  <span class="p">)</span></code></pre></div>
+        </div>
+
+        
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/04/13/ubuntu-add-delete-ppa/">Ubuntu 增加和删除 PPA 软件源</a></li>
+	
+	<li><a href="/2018/03/30/emacs-native-profiler/">Emacs Native Profiler</a></li>
+	
+	<li><a href="/2018/03/30/emacs-show-line-numbers/">Emacs: Show Line Numbers</a></li>
+	
+	<li><a href="/2018/03/28/speed-up-emacs-startup-time/">Speed up emacs startup time</a></li>
+	
+	<li><a href="/2018/03/26/chuck-emacs-configuration/">Chuck&#39;s Emacs Configuration</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">TCP/IP 详解(卷一) TCP的交互数据流&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;TCP/IP 详解(卷一) TCP连接的建立与终止</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/05/18/emacs-font-configuration/" class="leancloud-visitors" data-flag-title="emacs 字体配置">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

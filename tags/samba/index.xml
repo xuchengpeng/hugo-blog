@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Samba on Chuck&amp;Lucia</title>
+    <link>http://xuchengpeng.com/tags/samba/</link>
+    <description>Recent content in Samba on Chuck&amp;Lucia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 07 Nov 2018 08:59:03 +0800</lastBuildDate>
+    
+	<atom:link href="http://xuchengpeng.com/tags/samba/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu安装Samba</title>
+      <link>http://xuchengpeng.com/2018/11/07/ubuntu-install-samba/</link>
+      <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
+      
+      <guid>http://xuchengpeng.com/2018/11/07/ubuntu-install-samba/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;apt-get install samba&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;修改 /etc/samba/smb.conf 文件：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[share]
+  path = /
+  available = yes
+  valid users = root
+  read only = no
+  browseable = yes
+  public = yes
+  writable = yes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;修改Samba登陆的密码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;smbpasswd -a root&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这里也可以使用非root用户，必须是Linux系统中已存在的用户。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;重启Samba服务：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;/etc/init.d/smbd restart&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

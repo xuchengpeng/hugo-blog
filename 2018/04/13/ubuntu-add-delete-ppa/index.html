@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ubuntu 增加和删除 PPA 软件源 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="Ubuntu 增加和删除 PPA 软件源" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/04/13/ubuntu-add-delete-ppa/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Ubuntu 增加和删除 PPA 软件源</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/04/13/ubuntu-add-delete-ppa/" >
+                    <time datetime='2018-04-13T10:50:50.000&#43;00:00' itemprop="datePublished">2018-04-13</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">1 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/linux">Linux</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>PPA，英文全称为 Personal Package Archives，即个人软件包档案。是 Ubuntu Launchpad 网站提供的一项源服务，允许个人用户上传软件源代码，通过 Launchpad 进行编译并发布为二进制软件包，作为 apt / 新立得（Synaptic）源供其他用户下载和更新。</p>
+
+<p>PPA 的一般形式是： <strong>ppa:user/ppa-name</strong></p>
+
+<p>添加 PPA 源:</p>
+
+<ul>
+<li>添加 PPA 源的命令为： sudo add-apt-repository ppa:user/ppa-name</li>
+<li>添加好记得要更新一下： sudo apt-get update</li>
+</ul>
+
+<p>删除 PPA 源:</p>
+
+<ul>
+<li>删除 PPA 源的命令格式则为：sudo add-apt-repository -r ppa:user/ppa-name</li>
+<li>然后进入 /etc/apt/sources.list.d 目录，将相应 ppa 源的保存文件删除。</li>
+<li>最后同样更新一下：sudo apt-get update</li>
+</ul>
+
+<p>Ubuntu 下安装 emacs25：</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ sudo add-apt-repository ppa:kelleyk/emacs
+<span class="c1"># 或者是 sudo add-apt-repository ppa:ubuntu-elisp/ppa</span>
+$ sudo apt-get update
+$ sudo apt-get install emacs25
+<span class="c1"># 或者是 sudo apt-get install emacs-snapshot</span></code></pre></div>
+        </div>
+
+        
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/03/30/emacs-native-profiler/">Emacs Native Profiler</a></li>
+	
+	<li><a href="/2018/03/30/emacs-show-line-numbers/">Emacs: Show Line Numbers</a></li>
+	
+	<li><a href="/2018/03/28/speed-up-emacs-startup-time/">Speed up emacs startup time</a></li>
+	
+	<li><a href="/2018/03/26/chuck-emacs-configuration/">Chuck&#39;s Emacs Configuration</a></li>
+	
+	<li><a href="/2018/03/08/base16/">base16 - An architecture for building themes</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/ubuntu">Ubuntu
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/ppa">PPA
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/04/18/design-pattern-decorator-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">装饰器模式&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/04/13/setup-shadowsocks-on-linode/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;Linode 上搭建 Shadowsocks</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/04/13/ubuntu-add-delete-ppa/" class="leancloud-visitors" data-flag-title="Ubuntu 增加和删除 PPA 软件源">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

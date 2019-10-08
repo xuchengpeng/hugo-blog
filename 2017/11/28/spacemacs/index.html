@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>spacemacs - Emacs advanced Kit focused on Evil // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="spacemacs - Emacs advanced Kit focused on Evil" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2017/11/28/spacemacs/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">spacemacs - Emacs advanced Kit focused on Evil</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2017/11/28/spacemacs/" >
+                    <time datetime='2017-11-28T11:06:50.000&#43;00:00' itemprop="datePublished">2017-11-28</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">1 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/software">Software</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/images/spacemacs-logo.svg" alt="" /></p>
+
+<p>A community-driven Emacs distribution - The best editor is neither Emacs nor Vim, it is Emacs and Vim!</p>
+
+<p>这是一款定制化程度非常高的emacs配置，同时支持emacs和vim按键模式，无缝切换使用。</p>
+
+<h2 id="设定环境变量">设定环境变量</h2>
+
+<p>如果是在Windows环境下，需要设定HOME环境变量的值，一般为 C:\Users\username。</p>
+
+<h2 id="安装字体">安装字体</h2>
+
+<p>（可选）下载安装 <a href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a> 字体。</p>
+
+<h2 id="下载spacemacs">下载spacemacs</h2>
+
+<ul>
+<li>在~目录下（即HOME）创建文件夹.emacs.d；</li>
+<li>从 <a href="https://github.com/syl20bnr/spacemacs">spacemacs</a> 克隆develop分支的代码到.emacs.d文件夹下；</li>
+
+<li><p>在.emacs.d文件夹下新建init.el文件，加入以下代码；</p>
+<div class="highlight"><pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nv">package-initialize</span><span class="p">)</span>
+
+<span class="p">(</span><span class="k">setq</span> <span class="nv">spacemacs-start-directory</span> <span class="s">&#34;~/.emacs.d/spacemacs/&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">load-file</span> <span class="p">(</span><span class="nv">concat</span> <span class="nv">spacemacs-start-directory</span> <span class="s">&#34;init.el&#34;</span><span class="p">))</span></code></pre></div></li>
+</ul>
+
+<h2 id="启动emacs">启动emacs</h2>
+
+<ul>
+<li>下载安装 <a href="https://www.gnu.org/software/emacs/">emacs</a>；</li>
+<li>根据提示选择适合自己的配置，完成后spacemacs的配置保存在 ~/.spacemacs 中 {% button <a href="https://github.com/xuchengpeng/myspacemacs/raw/master/.spacemacs">https://github.com/xuchengpeng/myspacemacs/raw/master/.spacemacs</a>, 我的配置文件, download fa-lg fa-fw %}；</li>
+<li>如果启动中遇到以下提示：
+{% note info%}
+The directory ~/.emacs.d/server is unsafe
+{% endnote %}
+在server文件夹 “属性-安全-高级-所有者” 中修改所属用户。</li>
+</ul>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#设定环境变量">设定环境变量</a></li>
+<li><a href="#安装字体">安装字体</a></li>
+<li><a href="#下载spacemacs">下载spacemacs</a></li>
+<li><a href="#启动emacs">启动emacs</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/spacemacs">spacemacs
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/vim">vim
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2017/11/29/pt-emacs/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">The Platinum Seacher for Emacs&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2017/11/27/chrome-ext-tampermonkey/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;脚本管理器Tampermonkey</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2017/11/28/spacemacs/" class="leancloud-visitors" data-flag-title="spacemacs - Emacs advanced Kit focused on Evil">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

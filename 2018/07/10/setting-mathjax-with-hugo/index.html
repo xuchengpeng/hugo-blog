@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Setting MathJax with Hugo // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="Setting MathJax with Hugo" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/07/10/setting-mathjax-with-hugo/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    <script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Setting MathJax with Hugo</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/07/10/setting-mathjax-with-hugo/" >
+                    <time datetime='2018-07-10T14:28:41.000&#43;08:00' itemprop="datePublished">2018-07-10</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">3 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/web">Web</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p><a href="https://www.mathjax.org/">MathJax</a> - Beautiful math in all browsers</p>
+
+<blockquote>
+<p>A JavaScript display engine for mathematics that works in all browsers. No more setup for readers. It just works.</p>
+</blockquote>
+
+<h2 id="the-code-of-mathjax-in-hugo-theme">The code of MathJax in Hugo theme</h2>
+
+<p>Create a file named <code>mathjax_support.html</code> in the <code>/layout/partials/</code> folder. Insert the below code into it, for example.</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">async</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/x-mathjax-config&#34;</span><span class="p">&gt;</span>
+<span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
+  <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span><span class="s1">&#39;\\)&#39;</span><span class="p">]],</span>
+    <span class="nx">displayMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$$&#39;</span><span class="p">,</span><span class="s1">&#39;$$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\[&#39;</span><span class="p">,</span><span class="s1">&#39;\]&#39;</span><span class="p">]],</span>
+    <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">processEnvironments</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">skipTags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;noscript&#39;</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">,</span> <span class="s1">&#39;pre&#39;</span><span class="p">,</span><span class="s1">&#39;code&#39;</span><span class="p">],</span>
+    <span class="nx">TeX</span><span class="o">:</span> <span class="p">{</span> <span class="nx">equationNumbers</span><span class="o">:</span> <span class="p">{</span> <span class="nx">autoNumber</span><span class="o">:</span> <span class="s2">&#34;AMS&#34;</span> <span class="p">},</span>
+         <span class="nx">extensions</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;AMSmath.js&#34;</span><span class="p">,</span> <span class="s2">&#34;AMSsymbols.js&#34;</span><span class="p">]</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre></div>
+<p>Then, include <code>mathjax_support.html</code> in <code>footer.html</code> or <code>header.html</code>. In my case. I chose to put it in <code>header.html</code> as follows:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ if .Params.mathjax}}{{ partial &#34;mathjax_support.html&#34; . }}{{ end }}</code></pre></div>
+<p>This code means <code>mathjax_support.html</code> will be include as long as you add <code>mathjax = ture</code> to your front matter.</p>
+
+<h2 id="using-mathjax-in-your-post">Using MathJax in your post</h2>
+
+<p>First, add <code>mathjax = ture</code> to your front matter. It could be like this.</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">+++
+title = &#34;Setting MathJax with Hugo&#34;
+date = 2018-07-10T14:28:41+08:00
+draft = false
+mathjax = true
+toc = true
+categories = [ &#34;Technology&#34;, &#34;Web&#34; ]
+tags = [ &#34;MathJax&#34;, &#34;Hugo&#34; ]
++++</code></pre></div>
+<p>Second, write LaTeX code in your post, put inline math into <code>'$','$'</code>, and display math between <code>'$$','$$'</code>.</p>
+
+<h2 id="inline-math">Inline math</h2>
+
+<p>Here is inline math: <code>$\sqrt{3x-1}+(1+x)^2$</code></p>
+
+<p>The result is: $\sqrt{3x-1}+(1+x)^2$</p>
+
+<h2 id="display-math">Display math</h2>
+
+<p>Here is display math:</p>
+
+<pre><code>$$
+\begin{align}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \newline
+  \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \newline
+  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \newline
+  \nabla \cdot \vec{\mathbf{B}} &amp; = 0
+\end{align}
+$$
+</code></pre>
+
+<p>The result is:
+$$
+\begin{align}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \newline
+  \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \newline
+  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \newline
+  \nabla \cdot \vec{\mathbf{B}} &amp; = 0
+\end{align}
+$$</p>
+
+<h2 id="subscript-issue-with-markdown">Subscript issue with markdown</h2>
+
+<p>After enabling MathJax, any math entered between proper markers (see the MathJax documentation) will be processed and typeset in the web page. One issue that comes up, however, with Markdown is that the underscore character (<code>_</code>) is interpreted by Markdown as a way to wrap text in emph blocks while LaTeX (MathJax) interprets the underscore as a way to create a subscript. This “double speak” of the underscore can result in some unexpected and unwanted behavior.</p>
+
+<p>There are many solutions to the problem, the <a href="https://gohugo.io/content-management/formats/#mathjax-with-hugo">Hugo official document</a> hints a way to make MathJax work. It revolves a series of complex steps to correctly display LaTeX code. And you have to put inline mathematics between <code>'$ TeX Code $'</code>, and put display style mathematics between <code>&lt;div&gt;$$TeX Code$$&lt;/div&gt;</code>. This method treats ‘inline math’ with ‘code’, which may get some trouble in your website style.</p>
+
+<p>I think it’s too complex and tedious, my suggestion is to simply use <code>\_</code> instead of <code>_</code> in your LaTeX code.</p>
+
+<p>Here is a example: <code>$\sum\_{k=1}^n a\_k$</code></p>
+
+<p>The result is $\sum_{k=1}^n a_k$.</p>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#the-code-of-mathjax-in-hugo-theme">The code of MathJax in Hugo theme</a></li>
+<li><a href="#using-mathjax-in-your-post">Using MathJax in your post</a></li>
+<li><a href="#inline-math">Inline math</a></li>
+<li><a href="#display-math">Display math</a></li>
+<li><a href="#subscript-issue-with-markdown">Subscript issue with markdown</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/05/25/mathjax-in-markdown-blog/">Markdown 博客中使用 MathJax 数学公式</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/mathjax">MathJax
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/hugo">Hugo
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/07/20/blog-writing-tools/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">博客写作工具&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/07/09/customize-emacs-mode-line/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;自定义emacs mode-line</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/07/10/setting-mathjax-with-hugo/" class="leancloud-visitors" data-flag-title="Setting MathJax with Hugo">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

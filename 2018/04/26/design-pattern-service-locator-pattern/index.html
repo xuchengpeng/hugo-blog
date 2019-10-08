@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>服务定位器模式 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="服务定位器模式" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/04/26/design-pattern-service-locator-pattern/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">服务定位器模式</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/04/26/design-pattern-service-locator-pattern/" >
+                    <time datetime='2018-04-26T15:40:37.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">2 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>服务定位器模式（Service Locator Pattern）用在我们想使用 JNDI 查询定位各种服务的时候。考虑到为某个服务查找 JNDI 的代价很高，服务定位器模式充分利用了缓存技术。在首次请求某个服务时，服务定位器在 JNDI 中查找服务，并缓存该服务对象。当再次请求相同的服务时，服务定位器会在它的缓存中查找，这样可以在很大程度上提高应用程序的性能。以下是这种设计模式的实体。</p>
+
+<p>服务（Service） - 实际处理请求的服务。对这种服务的引用可以在 JNDI 服务器中查找到。
+Context / 初始的 Context - JNDI Context 带有对要查找的服务的引用。
+服务定位器（Service Locator） - 服务定位器是通过 JNDI 查找和缓存服务来获取服务的单点接触。
+缓存（Cache） - 缓存存储服务的引用，以便复用它们。
+客户端（Client） - Client 是通过 ServiceLocator 调用服务的对象。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建 ServiceLocator、InitialContext、Cache、Service 作为表示实体的各种对象。Service1 和 Service2 表示实体服务。
+ServiceLocatorPatternDemo，我们的演示类在这里是作为一个客户端，将使用 ServiceLocator 来演示服务定位器设计模式。</p>
+
+<p><img src="/images/design-pattern/servicelocator_pattern_uml_diagram.jpg" alt="" /></p>
+
+<h3 id="步骤-1">步骤 1</h3>
+
+<p>创建服务接口 Service。</p>
+
+<p><em>Service.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">Service</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">String</span> <span class="n">getName</span><span class="p">();</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">();</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-2">步骤 2</h3>
+
+<p>创建实体服务。</p>
+
+<p><em>Service1.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Service1</span> <span class="nf">implements</span> <span class="n">Service</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(){</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Executing Service1&#34;</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nf">String</span> <span class="n">getName</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s">&#34;Service1&#34;</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<p><em>Service2.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Service2</span> <span class="nf">implements</span> <span class="n">Service</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(){</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Executing Service2&#34;</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nf">String</span> <span class="n">getName</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s">&#34;Service2&#34;</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-3">步骤 3</h3>
+
+<p>为 JNDI 查询创建 InitialContext。</p>
+
+<p><em>InitialContext.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">InitialContext</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">Object</span> <span class="n">lookup</span><span class="p">(</span><span class="n">String</span> <span class="nf">jndiName</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">jndiName</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&#34;SERVICE1&#34;</span><span class="p">)){</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Looking up and creating a new Service1 object&#34;</span><span class="p">);</span>
+         <span class="k">return</span> <span class="k">new</span> <span class="n">Service1</span><span class="p">();</span>
+      <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">jndiName</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&#34;SERVICE2&#34;</span><span class="p">)){</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Looking up and creating a new Service2 object&#34;</span><span class="p">);</span>
+         <span class="k">return</span> <span class="k">new</span> <span class="n">Service2</span><span class="p">();</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-4">步骤 4</h3>
+
+<p>创建缓存 Cache。</p>
+
+<p><em>Cache.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">ArrayList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">List</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="nf">class</span> <span class="n">Cache</span> <span class="p">{</span>
+
+   <span class="kd">private</span> <span class="nf">List</span><span class="o">&lt;</span><span class="n">Service</span><span class="o">&gt;</span> <span class="nf">services</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">Cache</span><span class="p">(){</span>
+      <span class="n">services</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Service</span><span class="o">&gt;</span><span class="p">();</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">Service</span> <span class="n">getService</span><span class="p">(</span><span class="n">String</span> <span class="nf">serviceName</span><span class="p">){</span>
+      <span class="k">for</span> <span class="p">(</span><span class="n">Service</span> <span class="nf">service</span> <span class="o">:</span> <span class="n">services</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">service</span><span class="p">.</span><span class="na">getName</span><span class="p">().</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="n">serviceName</span><span class="p">)){</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Returning cached  &#34;</span><span class="o">+</span><span class="n">serviceName</span><span class="o">+</span><span class="s">&#34; object&#34;</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">service</span><span class="p">;</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">addService</span><span class="p">(</span><span class="n">Service</span> <span class="nf">newService</span><span class="p">){</span>
+      <span class="kt">boolean</span> <span class="nf">exists</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="n">Service</span> <span class="nf">service</span> <span class="o">:</span> <span class="n">services</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">service</span><span class="p">.</span><span class="na">getName</span><span class="p">().</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="n">newService</span><span class="p">.</span><span class="na">getName</span><span class="p">())){</span>
+            <span class="n">exists</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">exists</span><span class="p">){</span>
+         <span class="n">services</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">newService</span><span class="p">);</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-5">步骤 5</h3>
+
+<p>创建服务定位器。</p>
+
+<p><em>ServiceLocator.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">ServiceLocator</span> <span class="p">{</span>
+   <span class="kd">private</span> <span class="nf">static</span> <span class="n">Cache</span> <span class="nf">cache</span><span class="p">;</span>
+
+   <span class="kd">static</span> <span class="p">{</span>
+      <span class="n">cache</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cache</span><span class="p">();</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">static</span> <span class="n">Service</span> <span class="nf">getService</span><span class="p">(</span><span class="n">String</span> <span class="nf">jndiName</span><span class="p">){</span>
+
+      <span class="n">Service</span> <span class="nf">service</span> <span class="o">=</span> <span class="n">cache</span><span class="p">.</span><span class="na">getService</span><span class="p">(</span><span class="n">jndiName</span><span class="p">);</span>
+
+      <span class="k">if</span><span class="p">(</span><span class="n">service</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">){</span>
+         <span class="k">return</span> <span class="n">service</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="n">InitialContext</span> <span class="nf">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InitialContext</span><span class="p">();</span>
+      <span class="n">Service</span> <span class="nf">service1</span> <span class="o">=</span> <span class="p">(</span><span class="n">Service</span><span class="p">)</span><span class="n">context</span><span class="p">.</span><span class="na">lookup</span><span class="p">(</span><span class="n">jndiName</span><span class="p">);</span>
+      <span class="n">cache</span><span class="p">.</span><span class="na">addService</span><span class="p">(</span><span class="n">service1</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">service1</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-6">步骤 6</h3>
+
+<p>使用 ServiceLocator 来演示服务定位器设计模式。</p>
+
+<p><em>ServiceLocatorPatternDemo.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">ServiceLocatorPatternDemo</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">Service</span> <span class="nf">service</span> <span class="o">=</span> <span class="n">ServiceLocator</span><span class="p">.</span><span class="na">getService</span><span class="p">(</span><span class="s">&#34;Service1&#34;</span><span class="p">);</span>
+      <span class="n">service</span><span class="p">.</span><span class="na">execute</span><span class="p">();</span>
+      <span class="n">service</span> <span class="o">=</span> <span class="n">ServiceLocator</span><span class="p">.</span><span class="na">getService</span><span class="p">(</span><span class="s">&#34;Service2&#34;</span><span class="p">);</span>
+      <span class="n">service</span><span class="p">.</span><span class="na">execute</span><span class="p">();</span>
+      <span class="n">service</span> <span class="o">=</span> <span class="n">ServiceLocator</span><span class="p">.</span><span class="na">getService</span><span class="p">(</span><span class="s">&#34;Service1&#34;</span><span class="p">);</span>
+      <span class="n">service</span><span class="p">.</span><span class="na">execute</span><span class="p">();</span>
+      <span class="n">service</span> <span class="o">=</span> <span class="n">ServiceLocator</span><span class="p">.</span><span class="na">getService</span><span class="p">(</span><span class="s">&#34;Service2&#34;</span><span class="p">);</span>
+      <span class="n">service</span><span class="p">.</span><span class="na">execute</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-7">步骤 7</h3>
+
+<p>验证输出。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Looking</span> <span class="nf">up</span> <span class="n">and</span> <span class="nf">creating</span> <span class="n">a</span> <span class="nf">new</span> <span class="n">Service1</span> <span class="nf">object</span>
+<span class="n">Executing</span> <span class="nf">Service1</span>
+<span class="n">Looking</span> <span class="nf">up</span> <span class="n">and</span> <span class="nf">creating</span> <span class="n">a</span> <span class="nf">new</span> <span class="n">Service2</span> <span class="nf">object</span>
+<span class="n">Executing</span> <span class="nf">Service2</span>
+<span class="n">Returning</span> <span class="nf">cached</span>  <span class="n">Service1</span> <span class="nf">object</span>
+<span class="n">Executing</span> <span class="nf">Service1</span>
+<span class="n">Returning</span> <span class="nf">cached</span>  <span class="n">Service2</span> <span class="nf">object</span>
+<span class="n">Executing</span> <span class="nf">Service2</span></code></pre></div>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#实现">实现</a>
+<ul>
+<li><a href="#步骤-1">步骤 1</a></li>
+<li><a href="#步骤-2">步骤 2</a></li>
+<li><a href="#步骤-3">步骤 3</a></li>
+<li><a href="#步骤-4">步骤 4</a></li>
+<li><a href="#步骤-5">步骤 5</a></li>
+<li><a href="#步骤-6">步骤 6</a></li>
+<li><a href="#步骤-7">步骤 7</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/04/26/design-pattern-intercepting-filter-pattern/">拦截过滤器模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-front-controller-pattern/">前端控制器模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-data-access-object-pattern/">数据访问对象模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-composite-entity-pattern/">组合实体模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-business-delegate-pattern/">业务代表模式</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/04/26/design-pattern-transfer-object-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">传输对象模式&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/04/26/design-pattern-intercepting-filter-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;拦截过滤器模式</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/04/26/design-pattern-service-locator-pattern/" class="leancloud-visitors" data-flag-title="服务定位器模式">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="Chuck&amp;Lucia" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/" />
+    
+
+    <link href="http://xuchengpeng.com/index.xml" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/04/26/design-pattern-front-controller-pattern/">前端控制器模式</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/04/26/design-pattern-front-controller-pattern/" >
+                            <time datetime='2018-04-26T15:26:08.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">2 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>前端控制器模式（Front Controller Pattern）是用来提供一个集中的请求处理机制，所有的请求都将由一个单一的处理程序处理。该处理程序可以做认证/授权/记录日志，或者跟踪请求，然后把请求传给相应的处理程序。以下是这种设计模式的实体。</p>
+
+<p>前端控制器（Front Controller） - 处理应用程序所有类型请求的单个处理程序，应用程序可以是基于 web 的应用程序，也可以是基于桌面的应用程序。
+调度器（Dispatcher） - 前端控制器可能使用一个调度器对象来调度请求到相应的具体处理程序。
+视图（View） - 视图是为请求而创建的对象。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建 FrontController、Dispatcher 分别当作前端控制器和调度器。HomeView 和 StudentView 表示各种为前端控制器接收到的请求而创建的视图。
+FrontControllerPatternDemo，我们的演示类使用 FrontController 来演示前端控制器设计模式。</p>
+
+<p><img src="/images/design-pattern/frontcontroller_pattern_uml_diagram.jpg" alt="" /></p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/04/26/design-pattern-front-controller-pattern/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/04/26/design-pattern-data-access-object-pattern/">数据访问对象模式</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/04/26/design-pattern-data-access-object-pattern/" >
+                            <time datetime='2018-04-26T15:17:56.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">2 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>数据访问对象模式（Data Access Object Pattern）或 DAO 模式用于把低级的数据访问 API 或操作从高级的业务服务中分离出来。以下是数据访问对象模式的参与者。</p>
+
+<p>数据访问对象接口（Data Access Object Interface） - 该接口定义了在一个模型对象上要执行的标准操作。
+数据访问对象实体类（Data Access Object concrete class） - 该类实现了上述的接口。该类负责从数据源获取数据，数据源可以是数据库，也可以是 xml，或者是其他的存储机制。
+模型对象/数值对象（Model Object/Value Object） - 该对象是简单的 POJO，包含了 get/set 方法来存储通过使用 DAO 类检索到的数据。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建一个作为模型对象或数值对象的 Student 对象。StudentDao 是数据访问对象接口。StudentDaoImpl 是实现了数据访问对象接口的实体类。DaoPatternDemo，我们的演示类使用 StudentDao 来演示数据访问对象模式的用法。</p>
+
+<p><img src="/images/design-pattern/dao_pattern_uml_diagram.jpg" alt="" /></p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/04/26/design-pattern-data-access-object-pattern/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/04/26/design-pattern-composite-entity-pattern/">组合实体模式</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/04/26/design-pattern-composite-entity-pattern/" >
+                            <time datetime='2018-04-26T15:09:03.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">2 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>组合实体模式（Composite Entity Pattern）用在 EJB 持久化机制中。一个组合实体是一个 EJB 实体 bean，代表了对象的图解。当更新一个组合实体时，内部依赖对象 beans 会自动更新，因为它们是由 EJB 实体 bean 管理的。以下是组合实体 bean 的参与者。</p>
+
+<p>组合实体（Composite Entity） - 它是主要的实体 bean。它可以是粗粒的，或者可以包含一个粗粒度对象，用于持续生命周期。
+粗粒度对象（Coarse-Grained Object） - 该对象包含依赖对象。它有自己的生命周期，也能管理依赖对象的生命周期。
+依赖对象（Dependent Object） - 依赖对象是一个持续生命周期依赖于粗粒度对象的对象。
+策略（Strategies） - 策略表示如何实现组合实体。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建作为组合实体的 CompositeEntity 对象。CoarseGrainedObject 是一个包含依赖对象的类。
+CompositeEntityPatternDemo，我们的演示类使用 Client 类来演示组合实体模式的用法。</p>
+
+<p><img src="/images/design-pattern/compositeentity_pattern_uml_diagram.jpg" alt="" /></p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/04/26/design-pattern-composite-entity-pattern/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/04/26/design-pattern-business-delegate-pattern/">业务代表模式</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/04/26/design-pattern-business-delegate-pattern/" >
+                            <time datetime='2018-04-26T14:59:24.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">2 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>业务代表模式（Business Delegate Pattern）用于对表示层和业务层解耦。它基本上是用来减少通信或对表示层代码中的业务层代码的远程查询功能。在业务层中我们有以下实体。</p>
+
+<p>客户端（Client） - 表示层代码可以是 JSP、servlet 或 UI java 代码。
+业务代表（Business Delegate） - 一个为客户端实体提供的入口类，它提供了对业务服务方法的访问。
+查询服务（LookUp Service） - 查找服务对象负责获取相关的业务实现，并提供业务对象对业务代表对象的访问。
+业务服务（Business Service） - 业务服务接口。实现了该业务服务的实体类，提供了实际的业务实现逻辑。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建 Client、BusinessDelegate、BusinessService、LookUpService、JMSService 和 EJBService 来表示业务代表模式中的各种实体。
+BusinessDelegatePatternDemo，我们的演示类使用 BusinessDelegate 和 Client 来演示业务代表模式的用法。</p>
+
+<p><img src="/images/design-pattern/business_delegate_pattern_uml_diagram.jpg" alt="" /></p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/04/26/design-pattern-business-delegate-pattern/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/04/26/design-pattern-mvc-pattern/">MVC 模式</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/04/26/design-pattern-mvc-pattern/" >
+                            <time datetime='2018-04-26T14:48:23.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">2 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>MVC 模式代表 Model-View-Controller（模型-视图-控制器） 模式。这种模式用于应用程序的分层开发。</p>
+
+<p>Model（模型） - 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。
+View（视图） - 视图代表模型包含的数据的可视化。
+Controller（控制器） - 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建一个作为模型的 Student 对象。StudentView 是一个把学生详细信息输出到控制台的视图类，StudentController 是负责存储数据到 Student 对象中的控制器类，并相应地更新视图 StudentView。
+MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式的用法。</p>
+
+<p><img src="/images/design-pattern/mvc_pattern_uml_diagram.jpg" alt="" /></p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/04/26/design-pattern-mvc-pattern/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/04/26/design-pattern-visitor-pattern/">访问者模式</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/04/26/design-pattern-visitor-pattern/" >
+                            <time datetime='2018-04-26T10:52:28.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">3 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>在访问者模式（Visitor Pattern）中，我们使用了一个访问者类，它改变了元素类的执行算法。通过这种方式，元素的执行算法可以随着访问者改变而改变。这种类型的设计模式属于行为型模式。根据模式，元素对象已接受访问者对象，这样访问者对象就可以处理元素对象上的操作。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>意图：主要将数据结构与数据操作分离。
+主要解决：稳定的数据结构和易变的操作耦合问题。
+何时使用：需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&rdquo;污染&rdquo;这些对象的类，使用访问者模式将这些封装到类中。
+如何解决：在被访问的类里面加一个对外提供接待访问者的接口。
+关键代码：在数据基础类里面有一个方法接受访问者，将自身引用传入访问者。
+应用实例：您在朋友家做客，您是访问者，朋友接受您的访问，您通过朋友的描述，然后对朋友的描述做出一个判断，这就是访问者模式。
+优点： 1、符合单一职责原则。 2、优秀的扩展性。 3、灵活性。
+缺点： 1、具体元素对访问者公布细节，违反了迪米特原则。 2、具体元素变更比较困难。 3、违反了依赖倒置原则，依赖了具体类，没有依赖抽象。
+使用场景： 1、对象结构中对象对应的类很少改变，但经常需要在此对象结构上定义新的操作。 2、需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&rdquo;污染&rdquo;这些对象的类，也不希望在增加新操作时修改这些类。
+注意事项：访问者可以对功能进行统一，可以做报表、UI、拦截器与过滤器。</p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/04/26/design-pattern-visitor-pattern/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">行为型模式
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/04/25/tcp-ip-illustrated-volume1-internet-protocol/">TCP/IP 详解(卷一) IP：网际协议</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/04/25/tcp-ip-illustrated-volume1-internet-protocol/" >
+                            <time datetime='2018-04-25T09:41:16.000&#43;00:00' itemprop="datePublished">2018-04-25</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">7 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>IP是TCP/IP协议族中最为核心的协议。所有的TCP、UDP、ICMP及IGMP数据都以IP数据报格式传输。IP提供不可靠、无连接的数据报传送服务。
+不可靠（unreliable）的意思是它不能保证IP数据报能成功地到达目的地。IP仅提供最好的传输服务。如果发生某种错误时，如某个路由器暂时用完了缓冲区，IP有一个简单的错误处理算法：丢弃该数据报，然后发送ICMP消息报给信源端。任何要求的可靠性必须由上层来提供（如TCP）。
+无连接（connectionless）这个术语的意思是IP并不维护任何关于后续数据报的状态信息。每个数据报的处理是相互独立的。这也说明，IP数据报可以不按发送顺序接收。如果一信源向相同的信宿发送两个连续的数据报（先是A，然后是B），每个数据报都是独立地进行路由选择，可能选择不同的路线，因此B可能在A到达之前先到达。</p>
+
+<h2 id="ip首部">IP首部</h2>
+
+<p><img src="/images/tcp-ip/ip-format.jpg" alt="" /></p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/04/25/tcp-ip-illustrated-volume1-internet-protocol/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/ip">IP
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/04/25/design-pattern-template-pattern/">模板模式</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/04/25/design-pattern-template-pattern/" >
+                            <time datetime='2018-04-25T09:02:39.000&#43;00:00' itemprop="datePublished">2018-04-25</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">2 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>在模板模式（Template Pattern）中，一个抽象类公开定义了执行它的方法的方式/模板。它的子类可以按需要重写方法实现，但调用将以抽象类中定义的方式进行。这种类型的设计模式属于行为型模式。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>意图：定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。
+主要解决：一些方法通用，却在每一个子类都重新写了这一方法。
+何时使用：有一些通用的方法。
+如何解决：将这些通用算法抽象出来。
+关键代码：在抽象类实现，其他步骤在子类实现。
+应用实例： 1、在造房子的时候，地基、走线、水管都一样，只有在建筑的后期才有加壁橱加栅栏等差异。 2、西游记里面菩萨定好的 81 难，这就是一个顶层的逻辑骨架。 3、spring 中对 Hibernate 的支持，将一些已经定好的方法封装起来，比如开启事务、获取 Session、关闭 Session 等，程序员不重复写那些已经规范好的代码，直接丢一个实体就可以保存。
+优点： 1、封装不变部分，扩展可变部分。 2、提取公共代码，便于维护。 3、行为由父类控制，子类实现。
+缺点：每一个不同的实现都需要一个子类来实现，导致类的个数增加，使得系统更加庞大。
+使用场景： 1、有多个子类共有的方法，且逻辑相同。 2、重要的、复杂的方法，可以考虑作为模板方法。
+注意事项：为防止恶意操作，一般模板方法都加上 final 关键词。</p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/04/25/design-pattern-template-pattern/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">行为型模式
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/04/25/design-pattern-strategy-pattern/">策略模式</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/04/25/design-pattern-strategy-pattern/" >
+                            <time datetime='2018-04-25T08:53:18.000&#43;00:00' itemprop="datePublished">2018-04-25</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">2 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>在策略模式（Strategy Pattern）中，一个类的行为或其算法可以在运行时更改。这种类型的设计模式属于行为型模式。
+在策略模式中，我们创建表示各种策略的对象和一个行为随着策略对象改变而改变的 context 对象。策略对象改变 context 对象的执行算法。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>意图：定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。
+主要解决：在有多种算法相似的情况下，使用 if&hellip;else 所带来的复杂和难以维护。
+何时使用：一个系统有许多许多类，而区分它们的只是他们直接的行为。
+如何解决：将这些算法封装成一个一个的类，任意地替换。
+关键代码：实现同一个接口。
+应用实例： 1、诸葛亮的锦囊妙计，每一个锦囊就是一个策略。 2、旅行的出游方式，选择骑自行车、坐汽车，每一种旅行方式都是一个策略。 3、JAVA AWT 中的 LayoutManager。
+优点： 1、算法可以自由切换。 2、避免使用多重条件判断。 3、扩展性良好。
+缺点： 1、策略类会增多。 2、所有策略类都需要对外暴露。
+使用场景： 1、如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。 2、一个系统需要动态地在几种算法中选择一种。 3、如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。
+注意事项：如果一个系统的策略多于四个，就需要考虑使用混合模式，解决策略类膨胀的问题。</p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/04/25/design-pattern-strategy-pattern/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">行为型模式
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/2018/04/25/design-pattern-null-object-pattern/">空对象模式</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <div class="article-date">
+                        <a href="/2018/04/25/design-pattern-null-object-pattern/" >
+                            <time datetime='2018-04-25T08:43:05.000&#43;00:00' itemprop="datePublished">2018-04-25</time>
+                        </a>
+                    </div>
+                    <div class="article-readingtime-wrap">
+                        <a class="article-readingtime">2 minute read</a>
+                    </div>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>在空对象模式（Null Object Pattern）中，一个空对象取代 NULL 对象实例的检查。Null 对象不是检查空值，而是反应一个不做任何动作的关系。这样的 Null 对象也可以在数据不可用的时候提供默认的行为。
+在空对象模式中，我们创建一个指定各种要执行的操作的抽象类和扩展该类的实体类，还创建一个未对该类做任何实现的空对象类，该空对象类将无缝地使用在需要检查空值的地方。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建一个定义操作（在这里，是客户的名称）的 AbstractCustomer 抽象类，和扩展了 AbstractCustomer 类的实体类。工厂类 CustomerFactory 基于客户传递的名字来返回 RealCustomer 或 NullCustomer 对象。
+NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模式的用法。</p>
+
+<p><img src="/images/design-pattern/null_pattern_uml_diagram.jpg" alt="" /></p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/2018/04/25/design-pattern-null-object-pattern/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">行为型模式
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+
+        
+
+<nav id="page-nav">
+    
+    <a href="/page/6/" rel="prev" class="extend prev">&laquo; Prev</a>
+    
+    
+    
+    <a href="/">1</a>
+    
+    
+    
+    <a href="/page/2/">2</a>
+    
+    
+    
+    <a href="/page/3/">3</a>
+    
+    
+    
+    <a href="/page/4/">4</a>
+    
+    
+    
+    <a href="/page/5/">5</a>
+    
+    
+    
+    <a href="/page/6/">6</a>
+    
+    
+    
+    <span class="page-number current">7</span>
+    
+    
+    
+    <a href="/page/8/">8</a>
+    
+    
+    
+    <a href="/page/9/">9</a>
+    
+    
+    
+    <a href="/page/10/">10</a>
+    
+    
+    
+    <a href="/page/11/">11</a>
+    
+    
+    
+    <a href="/page/12/">12</a>
+    
+    
+    
+    <a href="/page/13/">13</a>
+    
+    
+    
+    <a href="/page/14/">14</a>
+    
+    
+
+    
+    <a href="/page/8/" rel="next" class="extend next">Next &raquo;</a>
+    
+</nav>
+
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

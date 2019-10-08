@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TCP/IP 详解(卷一) SNMP：简单网络管理协议 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="TCP/IP 详解(卷一) SNMP：简单网络管理协议" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/06/14/tcp-ip-illustrated-volume1-snmp/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">TCP/IP 详解(卷一) SNMP：简单网络管理协议</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/06/14/tcp-ip-illustrated-volume1-snmp/" >
+                    <time datetime='2018-06-14T14:24:48.000&#43;00:00' itemprop="datePublished">2018-06-14</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">6 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>随着网络技术的飞速发展，网络的数量也越来越多。而网络中的设备来自各个不同的厂家，如何管理这些设备就变得十分重要。本章的内容就是介绍管理这些设备的标准。</p>
+
+<p>基于TCP/IP的网络管理包含两个部分：网络管理站（也叫管理进程，manager）和被管的网络单元（也叫被管设备）。被管设备种类繁多，例如：路由器、X终端、终端服务器和打印机等。这些被管设备的共同点就是都运行TCP/IP协议。被管设备端和管理相关的软件叫做代理程序(agent)或代理进程。管理站一般都是带有彩色监视器的工作站，可以显示所有被管设备的状态(例如连接是否掉线、各种连接上的流量状况等)。</p>
+
+<p>管理进程和代理进程之间的通信可以有两种方式。一种是管理进程向代理进程发出请求，询问一个具体的参数值（例如：你产生了多少个不可达的ICMP端口？）。另外一种方式是代理进程主动向管理进程报告有某些重要的事件发生（例如：一个连接口掉线了）。当然，管理进程除了可以向代理进程询问某些参数值以外，它还可以按要求改变代理进程的参数值（例如：把默认的IP TTL值改为64）。</p>
+
+<p>基于TCP/IP的网络管理包含3个组成部分：</p>
+
+<ol>
+<li>一个管理信息库MIB（Management Information Base）。管理信息库包含所有代理进程的所有可被查询和修改的参数。RFC 1213 [McCloghrie and Rose 1991]定义了第二版的MIB，叫做MIB-II。</li>
+<li>关于MIB的一套公用的结构和表示符号。叫做管理信息结构SMI（Structure of Management Information）。这个在RFC 1155 [Rose and McCloghrie 1990]中定义。例如：SMI定义计数器是一个非负整数，它的计数范围是0~4294 967 295，当达到最大值时，又从0开始计数。</li>
+<li>管理进程和代理进程之间的通信协议，叫做简单网络管理协议SNMP（Simple Network Management Protocol）。在RFC 1157 [Case et al.1990]中定义。SNMP包括数据报交换的格式等。尽管可以在运输层采用各种各样的协议，但是在SNMP中，用得最多的协议还是UDP。</li>
+</ol>
+
+<h2 id="协议">协议</h2>
+
+<p>关于管理进程和代理进程之间的交互信息，SNMP定义了5种报文：</p>
+
+<ol>
+<li>get-request操作：从代理进程处提取一个或多个参数值。</li>
+<li>get-next-request操作：从代理进程处提取一个或多个参数的下一个参数值。</li>
+<li>set-request操作：设置代理进程的一个或多个参数值。</li>
+<li>get-response操作：返回的一个或多个参数值。这个操作是由代理进程发出的。它是前面3中操作的响应操作。</li>
+<li>trap操作：代理进程主动发出的报文，通知管理进程有某些事情发生。</li>
+</ol>
+
+<p>前面的3个操作是由管理进程向代理进程发出的。后面两个是代理进程发给管理进程的（为简化起见，前面3个操作今后叫做get、get-next和set操作）。</p>
+
+<p>既然这些操作中的前4种操作是简单的请求-应答方式（也就是管理进程发出请求，代理进程应答响应），而且在SNMP中往往使用UDP协议，所以可能发生管理进程和代理进程之间数据报丢失的情况。因此一定要有超时和重传机制。</p>
+
+<p>管理进程发出的前面3种操作采用UDP的161端口。代理进程发出的Trap操作采用UDP的162端口。由于收发采用了不同的端口号，所以一个系统可以同时为管理进程和代理进程。</p>
+
+<p>封装成UDP数据报的5种操作的SNMP报文格式：
+<img src="/images/tcp-ip/snmp-format.jpg" alt="" /></p>
+
+<p>版本字段是0。该字段的值是通过SNMP版本号减去1得到的。显然0代表SNMP v1。</p>
+
+<p>下表显示各种PDU对应的值（PDU即协议数据单元，也就是分组）。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">PDU类型</th>
+<th align="left">名称</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">0</td>
+<td align="left">get-request</td>
+</tr>
+
+<tr>
+<td align="left">1</td>
+<td align="left">get-next-request</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">get-response</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">set-request</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">trap</td>
+</tr>
+</tbody>
+</table>
+
+<p>共同体字段是一个字符串。这是管理进程和代理进程之间的口令，是明文格式。默认的值是public。</p>
+
+<p>对于get、get-next和set操作，请求标识由管理进程设置，然后由代理进程在get response中返回。这个字段的作用是使客户进程（在目前情况下是管理进程）能够将服务器进程（即代理进程）发出的响应和客户进程发出的查询进行匹配。这个字段允许管理进程对一个或多个代理进程发出多个请求，并且从返回的众多应答中进行分类。</p>
+
+<p>差错状态字段是一个整数，它是由代理进程标注的，PDU类型名称指明有差错发生。</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">差错状态</th>
+<th align="left">名称</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="left">noError</td>
+<td align="left">没有错误</td>
+</tr>
+
+<tr>
+<td align="center">1</td>
+<td align="left">tooBig</td>
+<td align="left">代理进程无法把响应放在一个SNMP消息中发出</td>
+</tr>
+
+<tr>
+<td align="center">2</td>
+<td align="left">noSuchName</td>
+<td align="left">操作一个不存在的变量</td>
+</tr>
+
+<tr>
+<td align="center">3</td>
+<td align="left">badValue</td>
+<td align="left">set操作的值或语义有错误</td>
+</tr>
+
+<tr>
+<td align="center">4</td>
+<td align="left">readOnly</td>
+<td align="left">管理进程试图修改一个只读变量</td>
+</tr>
+
+<tr>
+<td align="center">5</td>
+<td align="left">genErr</td>
+<td align="left">其他错误</td>
+</tr>
+</tbody>
+</table>
+
+<p>差错索引字段是一个整数偏移量，指明当有差错发生时，差错发生在哪个参数。它是由代理进程标注的，并且只有在发生noSuchName、readOnly和badValue差错时才进行标注。</p>
+
+<p>在get、get-next和set的请求数据报中，包含变量名称和变量值的一张表。对于get和get-next操作，变量值部分被忽略，也就是不需要填写。</p>
+
+<p>对于trap操作符（PDU类型是4），SNMP报文格式有所变化。</p>
+
+<h2 id="管理信息结构">管理信息结构</h2>
+
+<p>SNMP中，数据类型并不多。</p>
+
+<p>INTEGER，OCTERSTRING，DisplayString，OBJECTIDENTIFIER，NULL，IpAddress，PhysAddress，Counter，Gauge，TimeTicks，SEQUENCE，SEQUENDEOF。</p>
+
+<h2 id="对象标识符">对象标识符</h2>
+
+<p>对象标识是一种数据类型，它指明一种“授权”命名的对象。“授权”的意思就是这些标识不是随便分配的，它是由一些权威机构进行管理和分配的。</p>
+
+<p>对象标识是一个整数序列，以点（“.”）分隔。这些整数构成一个树型结构。对象标识从树的顶部开始，顶部没有标识，以root表示（这和Unix中文件系统的树遍历方向非常类似）。</p>
+
+<p>树上的每个结点同时还有一个文字名。例如标识1.3.6.1.2.1和iso.org.dod.internet.memt.mib对应。这主要是为了人们阅读方便。在实际应用中，也就是说在管理进程和代理进程进行数据报交互时，MIB变量名是以对象标识来标识的，当然都是以1.3.6.1.2.1开头的。</p>
+
+<h2 id="trap">Trap</h2>
+
+<p>代理进程可以主动发送trap到管理进程，以告诉管理进程在代理进程侧有某些管理进程所关心的事件发生。</p>
+
+<p>现在已经定义了6种特定的trap类型，第7种trap类型是由供应商自己定义的特定类型。</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">trap类型</th>
+<th align="left">名称</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="left">coldStart</td>
+<td align="left">代理进程对自己初始化</td>
+</tr>
+
+<tr>
+<td align="center">1</td>
+<td align="left">warmStart</td>
+<td align="left">代理进程对自己重新初始化</td>
+</tr>
+
+<tr>
+<td align="center">2</td>
+<td align="left">linkDown</td>
+<td align="left">一个接口已经从工作状态改变为故障状态</td>
+</tr>
+
+<tr>
+<td align="center">3</td>
+<td align="left">linkUp</td>
+<td align="left">一个接口已经从故障状态改变为工作状态</td>
+</tr>
+
+<tr>
+<td align="center">4</td>
+<td align="left">authenticationFaulure</td>
+<td align="left">从SNMP管理进程收到无效共同体的报文</td>
+</tr>
+
+<tr>
+<td align="center">5</td>
+<td align="left">egpNeighborLoss</td>
+<td align="left">一个EGP邻站已变为故障状态</td>
+</tr>
+
+<tr>
+<td align="center">6</td>
+<td align="left">enterpriseSpecific</td>
+<td align="left">在这个特定的代码字段中查找trap信息</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="asn-1和ber">ASN.1和BER</h2>
+
+<p>在正式的SNMP规范中都是采用ASN.1（Abstract Syntax Notation 1）语法，并且在SNMP报文中比特的编码采用BER（Basic Encoding Rule）。</p>
+
+<p>ASN.1是一种描述数据和数据特征的正式语言。它和数据的存储及编码无关。MIB和SNMP报文中的所有的字段都是用ASN.1描述的。</p>
+
+<p>当有了这样的ASN.1定义，可以有多种编码方法把数据编码为传输的比特流。SNMP使用的编码方法是BER。例如，对于一个简单的整数如64，在BER中需要用3个字节来表示。第一个字节说明类型是一个整数，下个字节说明用了多少个字节来存储该整数（在这里是1），最后一个字节才是该整数的值。</p>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#协议">协议</a></li>
+<li><a href="#管理信息结构">管理信息结构</a></li>
+<li><a href="#对象标识符">对象标识符</a></li>
+<li><a href="#trap">Trap</a></li>
+<li><a href="#asn-1和ber">ASN.1和BER</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/">TCP/IP 详解(卷一) TCP：传输控制协议</a></li>
+	
+	<li><a href="/2018/05/14/tcp-ip-illustrated-volume1-tftp/">TCP/IP 详解(卷一) TFTP：简单文件传送协议</a></li>
+	
+	<li><a href="/2018/05/09/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/">TCP/IP 详解(卷一) UDP：用户数据报协议</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/snmp">SNMP
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/udp">UDP
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/07/09/customize-emacs-mode-line/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">自定义emacs mode-line&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/05/31/maimi-feihua/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;卖米</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/06/14/tcp-ip-illustrated-volume1-snmp/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) SNMP：简单网络管理协议">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

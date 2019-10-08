@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>强大的org-capture // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="强大的org-capture" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/07/20/powerful-org-capture/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">强大的org-capture</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/07/20/powerful-org-capture/" >
+                    <time datetime='2018-07-20T15:00:59.000&#43;08:00' itemprop="datePublished">2018-07-20</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">3 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/software">Software</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/emacs">emacs</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>Capture是Org mode中一个非常重要的功能，它可以：</p>
+
+<ol>
+<li>capture 可以预先设置记录内容的模板和存储入口；</li>
+<li>capture 提供统一的输入入口；</li>
+<li>capture 用完即走，不干扰当前工作流；</li>
+</ol>
+
+<h2 id="capture模板">Capture模板</h2>
+
+<p>默认Capture模板样式如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;t&#34;</span> <span class="s">&#34;Task&#34;</span> <span class="nv">entry</span> <span class="p">(</span><span class="nv">file+headline</span> <span class="s">&#34;&#34;</span> <span class="s">&#34;Tasks&#34;</span><span class="p">)</span> <span class="s">&#34;* TODO %?\n  %u\n  %a&#34;</span><span class="p">)</span></code></pre></div>
+<p>这个模板包含五个部分，分别是：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">模板组成</th>
+<th align="left">对应默认模板中的内容</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">key</td>
+<td align="left">&ldquo;t&rdquo;</td>
+<td align="left">用来选择模板的字符</td>
+</tr>
+
+<tr>
+<td align="left">description</td>
+<td align="left">&ldquo;Task&rdquo;</td>
+<td align="left">展示用的模板的描述</td>
+</tr>
+
+<tr>
+<td align="left">type</td>
+<td align="left">entry</td>
+<td align="left">新增内容的类型</td>
+</tr>
+
+<tr>
+<td align="left">target</td>
+<td align="left">(file+headline &ldquo;&rdquo; &ldquo;Tasks&rdquo;)</td>
+<td align="left">新增内容的存储位置</td>
+</tr>
+
+<tr>
+<td align="left">template</td>
+<td align="left">&ldquo;* TODO %?\n %u\n %a&rdquo;</td>
+<td align="left">新增内容的模板</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="新增内容的类型type">新增内容的类型type</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">entry</td>
+<td align="left">带有 headline 的一个 Org mode 节点，如&rdquo;* headline&rdquo;</td>
+</tr>
+
+<tr>
+<td align="left">item</td>
+<td align="left">一个列表项，如&rdquo;- item&rdquo;</td>
+</tr>
+
+<tr>
+<td align="left">checkitem</td>
+<td align="left">一个 checkbox 列表项，如&rdquo;[ ] item&rdquo;</td>
+</tr>
+
+<tr>
+<td align="left">table-line</td>
+<td align="left">一个表格行</td>
+</tr>
+
+<tr>
+<td align="left">plain</td>
+<td align="left">普通文本</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="新增内容的存储位置target">新增内容的存储位置target</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">type</th>
+<th align="left">description</th>
+<th align="left">example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">file</td>
+<td align="left">文件</td>
+<td align="left">(file &ldquo;path/to/file&rdquo;)</td>
+</tr>
+
+<tr>
+<td align="left">id</td>
+<td align="left">特定 ID 的某个 headline</td>
+<td align="left">(id &ldquo;id of existing Org entry&rdquo;)</td>
+</tr>
+
+<tr>
+<td align="left">file+headline</td>
+<td align="left">文件的某个唯一的 headline</td>
+<td align="left">(file+headline &ldquo;path/to/file&rdquo; &ldquo;node headline&rdquo;)</td>
+</tr>
+
+<tr>
+<td align="left">file+olp</td>
+<td align="left">文件中的 headline 路径</td>
+<td align="left">(file+olp &ldquo;path/to/file&rdquo; &ldquo;Level 1 heading&rdquo; &ldquo;Level 2&rdquo; &hellip;)</td>
+</tr>
+
+<tr>
+<td align="left">file+regexp</td>
+<td align="left">文件中被正则匹配的 headline</td>
+<td align="left">(file+regexp &ldquo;path/to/file&rdquo; &ldquo;regexp to find location&rdquo;)</td>
+</tr>
+
+<tr>
+<td align="left">file+datetree</td>
+<td align="left">文件中当日所在的 datetree</td>
+<td align="left">(file+datetree &ldquo;path/to/file&rdquo;)</td>
+</tr>
+
+<tr>
+<td align="left">file+datetree+prompt</td>
+<td align="left">文件中的 datetree，弹出日期选择</td>
+<td align="left">(file+datetree+prompt &ldquo;path/to/file&rdquo;)</td>
+</tr>
+
+<tr>
+<td align="left">file+weektree</td>
+<td align="left">文件中当日所在的 weektree</td>
+<td align="left">(file+weektree &ldquo;path/to/file&rdquo;)</td>
+</tr>
+
+<tr>
+<td align="left">file+weektree+prompt</td>
+<td align="left">文件中的 weektree，弹出日期选择</td>
+<td align="left">(file+weektree+prompt &ldquo;path/to/file&rdquo;)</td>
+</tr>
+
+<tr>
+<td align="left">file+function</td>
+<td align="left">文件中被函数匹配的位置</td>
+<td align="left">(file+function &ldquo;path/to/file&rdquo; function-finding-location)</td>
+</tr>
+
+<tr>
+<td align="left">clock</td>
+<td align="left">当前正在计时中的任务所在的位置</td>
+<td align="left">(clock)</td>
+</tr>
+
+<tr>
+<td align="left">function</td>
+<td align="left">自定义函数匹配的位置</td>
+<td align="left">(function function-finding-location)</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="新增内容的模板template">新增内容的模板template</h3>
+
+<ul>
+<li>时间和日期相关</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th align="left">标记</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">%&lt;&hellip;&gt;</td>
+<td align="left">自定义格式的 timestamp，如: %&lt;%Y-%m-%d&gt;，会得到 <2018-03-04 日></td>
+</tr>
+
+<tr>
+<td align="left">%t</td>
+<td align="left">当前仅包含日期的 timestamp，如: <2018-03-04 日></td>
+</tr>
+
+<tr>
+<td align="left">%T</td>
+<td align="left">当前包含日期和时间的 timestamp，如: <2018-03-04 日 19:26></td>
+</tr>
+
+<tr>
+<td align="left">%u</td>
+<td align="left">当前包含日期的未激活的 timestamp，如: [2018-03-04 日]</td>
+</tr>
+
+<tr>
+<td align="left">%U</td>
+<td align="left">当前包含日期和时间的未激活的 timestamp，如: [2018-03-04 日 19:26]</td>
+</tr>
+
+<tr>
+<td align="left">%\^t</td>
+<td align="left">类似 %t，但是弹出日历让用户选择日期</td>
+</tr>
+
+<tr>
+<td align="left">%\^T</td>
+<td align="left">类似 %T，但是弹出日历让用户选择日期和时间</td>
+</tr>
+
+<tr>
+<td align="left">%\^u</td>
+<td align="left">类似 %u，但是弹出日历让用户选择日期</td>
+</tr>
+
+<tr>
+<td align="left">%\^U</td>
+<td align="left">类似 %U，但是弹出日历让用户选择日期和时间</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>剪切板相关</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th align="left">标记</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">%c</td>
+<td align="left">当前 kill ring 中的第一条内容</td>
+</tr>
+
+<tr>
+<td align="left">%x</td>
+<td align="left">当前系统剪贴板中的内容</td>
+</tr>
+
+<tr>
+<td align="left">%\^C</td>
+<td align="left">交互式地选择 kill ring 或剪贴板中的内容</td>
+</tr>
+
+<tr>
+<td align="left">%\^L</td>
+<td align="left">类似 %\^C，但是将选中的内容作为链接插入</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>标签相关</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th align="left">标记</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">%\^g</td>
+<td align="left">交互式地输入标签，并用 target 所在文件中的标签进行补全</td>
+</tr>
+
+<tr>
+<td align="left">%\^G</td>
+<td align="left">类似 %\^g，但用所有 org-agenda-files 涉及文件中的标签进行补全</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>文件相关</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th align="left">标记</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">%[file]</td>
+<td align="left">插入文件 /file/ 中的内容</td>
+</tr>
+
+<tr>
+<td align="left">%f</td>
+<td align="left">执行 org-capture 时当前 buffer 对应的文件名</td>
+</tr>
+
+<tr>
+<td align="left">%F</td>
+<td align="left">类似 %f，但输入该文件的绝对路径</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>任务相关</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th align="left">标记</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">%k</td>
+<td align="left">当前在计时的任务的标题</td>
+</tr>
+
+<tr>
+<td align="left">%K</td>
+<td align="left">当前在计时的任务的链接</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>外部链接的信息</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th align="left">link type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">bbdb</td>
+<td align="left"><a href="https://www.emacswiki.org/emacs/CategoryBbdb">BBDB</a> 联系人数据库记录链接</td>
+</tr>
+
+<tr>
+<td align="left">irc</td>
+<td align="left">IRC 会话链接</td>
+</tr>
+
+<tr>
+<td align="left">vm</td>
+<td align="left"><a href="https://www.emacswiki.org/emacs/CategoryViewMail">View Mail</a> 邮件阅读器中的消息、目录链接</td>
+</tr>
+
+<tr>
+<td align="left">wl</td>
+<td align="left"><a href="https://www.emacswiki.org/emacs/WanderLust">Wunder Lust</a> 邮件/新闻阅读器中的消息、目录链接</td>
+</tr>
+
+<tr>
+<td align="left">mh</td>
+<td align="left"><a href="https://www.emacswiki.org/emacs/MH-E">MH-E</a> 邮件用户代理中的消息、目录链接</td>
+</tr>
+
+<tr>
+<td align="left">mew</td>
+<td align="left"><a href="https://www.emacswiki.org/emacs/Mew">MEW</a> 邮件阅读器中的消息链接</td>
+</tr>
+
+<tr>
+<td align="left">rmail</td>
+<td align="left">Emacs 的默认邮件阅读器 <a href="https://www.emacswiki.org/emacs/Rmail">Rmail</a> 中的消息链接</td>
+</tr>
+
+<tr>
+<td align="left">gnus</td>
+<td align="left"><a href="http://www.gnus.org/">GNUS</a> 邮件/新闻阅读器中的群组、消息等资源链接</td>
+</tr>
+
+<tr>
+<td align="left">eww/w3/w3m</td>
+<td align="left">在 eww/w3/w3m 中存储的网页链接</td>
+</tr>
+
+<tr>
+<td align="left">calendar</td>
+<td align="left">日历链接</td>
+</tr>
+
+<tr>
+<td align="left">org-protocol</td>
+<td align="left">遵循 org-protocol 协议的外部应用链接</td>
+</tr>
+</tbody>
+</table>
+
+<p>eww 可用的特殊标记有如下三个：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">标记</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">%:type</td>
+<td align="left">固定值，eww</td>
+</tr>
+
+<tr>
+<td align="left">%:link</td>
+<td align="left">页面的链接</td>
+</tr>
+
+<tr>
+<td align="left">%:description</td>
+<td align="left">页面的标题，如无则为页面的链接</td>
+</tr>
+</tbody>
+</table>
+
+<p>org-protocol 可用的特殊标记有如下六个：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">标记</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">%:type</td>
+<td align="left">链接的类型，如 http/https/ftp 等</td>
+</tr>
+
+<tr>
+<td align="left">%:link</td>
+<td align="left">链接地址，在 org-protocol 里的 url 字段</td>
+</tr>
+
+<tr>
+<td align="left">%:description</td>
+<td align="left">链接的标题，在 org-protocol 里的 title 字段</td>
+</tr>
+
+<tr>
+<td align="left">%:annotation</td>
+<td align="left">靠 url 和 title 完成的 org 格式的链接</td>
+</tr>
+
+<tr>
+<td align="left">%:initial</td>
+<td align="left">链接上选中的文本，在 org-protocol 里的 body 字段</td>
+</tr>
+
+<tr>
+<td align="left">%:query</td>
+<td align="left">org-protocol 上除掉开头和子协议部分的剩下部分</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="capture模板示例">Capture模板示例</h2>
+
+<h3 id="用-org-capture-做任务管理">用 org-capture 做任务管理</h3>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;org-capture-templates</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;t&#34;</span> <span class="s">&#34;Tasks&#34;</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;org-capture-templates</span>
+             <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;tt&#34;</span> <span class="s">&#34;Task&#34;</span> <span class="nv">entry</span>
+               <span class="p">(</span><span class="nv">file+headline</span> <span class="s">&#34;task.org&#34;</span> <span class="s">&#34;Task&#34;</span><span class="p">)</span>
+               <span class="s">&#34;* TODO %^{任务名}\n%u\n%a\n&#34;</span> <span class="nb">:clock-in</span> <span class="no">t</span> <span class="nb">:clock-resume</span> <span class="no">t</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;org-capture-templates</span>
+             <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;tw&#34;</span> <span class="s">&#34;Work Task&#34;</span> <span class="nv">entry</span>
+               <span class="p">(</span><span class="nv">file+headline</span> <span class="s">&#34;work.org&#34;</span> <span class="s">&#34;Work&#34;</span><span class="p">)</span>
+               <span class="s">&#34;* TODO %^{任务名}\n%u\n%a\n&#34;</span> <span class="nb">:clock-in</span> <span class="no">t</span> <span class="nb">:clock-resume</span> <span class="no">t</span><span class="p">))</span></code></pre></div>
+<p>这里需要新建普通任务和工作任务，因此可以创建一个任务分组。</p>
+
+<h3 id="用-org-capture-新建博客文章">用 org-capture 新建博客文章</h3>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">with-eval-after-load</span> <span class="ss">&#39;org-capture</span>
+  <span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-org-hugo-new-subtree-post-capture-template</span> <span class="p">()</span>
+    <span class="s">&#34;Returns </span><span class="ss">`org-capture&#39;</span><span class="s"> template string for new Hugo post.
+</span><span class="s">     See </span><span class="ss">`org-capture-templates&#39;</span><span class="s"> for more information.&#34;</span>
+    <span class="p">(</span><span class="nb">let*</span> <span class="p">((</span><span class="nv">title</span> <span class="p">(</span><span class="nf">read-from-minibuffer</span> <span class="s">&#34;Post Title: &#34;</span><span class="p">))</span> <span class="c1">;Prompt to enter the post title</span>
+           <span class="p">(</span><span class="nv">fname</span> <span class="p">(</span><span class="nv">org-hugo-slug</span> <span class="nv">title</span><span class="p">))</span>
+           <span class="p">(</span><span class="nv">date</span> <span class="p">(</span><span class="nf">format-time-string</span> <span class="p">(</span><span class="nv">org-time-stamp-format</span> <span class="nb">:long</span> <span class="nb">:inactive</span><span class="p">)</span> <span class="p">(</span><span class="nv">org-current-time</span><span class="p">))))</span>
+      <span class="p">(</span><span class="nf">mapconcat</span> <span class="nf">#&#39;identity</span>
+                 <span class="o">`</span><span class="p">(</span>
+                   <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;* TODO &#34;</span> <span class="nv">title</span><span class="p">)</span>
+                   <span class="s">&#34;:PROPERTIES:&#34;</span>
+                   <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;:EXPORT_FILE_NAME: &#34;</span> <span class="nv">fname</span><span class="p">)</span>
+                   <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;:EXPORT_DATE: &#34;</span> <span class="nv">date</span><span class="p">)</span>
+                   <span class="s">&#34;:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :comments true :mathjax false&#34;</span>
+                   <span class="s">&#34;:END:&#34;</span>
+                   <span class="s">&#34;%?\n&#34;</span><span class="p">)</span>          <span class="c1">;Place the cursor here finally</span>
+                 <span class="s">&#34;\n&#34;</span><span class="p">)))</span>
+  
+  <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;org-capture-templates</span>
+               <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;h&#34;</span>                <span class="c1">;`org-capture&#39; binding + h</span>
+                 <span class="s">&#34;Hugo post&#34;</span>
+                 <span class="nv">entry</span>
+                 <span class="c1">;; It is assumed that below file is present in `org-directory&#39;</span>
+                 <span class="c1">;; and that it has a &#34;Hugo Posts&#34; heading. It can even be a</span>
+                 <span class="c1">;; symlink pointing to the actual location of all-posts.org!</span>
+                 <span class="p">(</span><span class="nv">file+olp</span> <span class="s">&#34;hugo-posts.org&#34;</span> <span class="s">&#34;Hugo Posts&#34;</span><span class="p">)</span>
+                 <span class="p">(</span><span class="nb">function</span> <span class="nv">dotemacs-org-hugo-new-subtree-post-capture-template</span><span class="p">)))</span></code></pre></div>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#capture模板">Capture模板</a>
+<ul>
+<li><a href="#新增内容的类型type">新增内容的类型type</a></li>
+<li><a href="#新增内容的存储位置target">新增内容的存储位置target</a></li>
+<li><a href="#新增内容的模板template">新增内容的模板template</a></li>
+</ul></li>
+<li><a href="#capture模板示例">Capture模板示例</a>
+<ul>
+<li><a href="#用-org-capture-做任务管理">用 org-capture 做任务管理</a></li>
+<li><a href="#用-org-capture-新建博客文章">用 org-capture 新建博客文章</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/07/20/blog-writing-tools/">博客写作工具</a></li>
+	
+	<li><a href="/2018/05/18/emacs-font-configuration/">emacs 字体配置</a></li>
+	
+	<li><a href="/2018/04/13/ubuntu-add-delete-ppa/">Ubuntu 增加和删除 PPA 软件源</a></li>
+	
+	<li><a href="/2018/03/30/emacs-native-profiler/">Emacs Native Profiler</a></li>
+	
+	<li><a href="/2018/03/30/emacs-show-line-numbers/">Emacs: Show Line Numbers</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/org-mode">org-mode
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/07/26/emacs-byte-compile/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">Byte Compile Elisp Files&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/07/20/blog-writing-tools/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;博客写作工具</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/07/20/powerful-org-capture/" class="leancloud-visitors" data-flag-title="强大的org-capture">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>base16 - An architecture for building themes // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="base16 - An architecture for building themes" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/03/08/base16/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">base16 - An architecture for building themes</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/03/08/base16/" >
+                    <time datetime='2018-03-08T15:47:16.000&#43;08:00' itemprop="datePublished">2018-03-08</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">2 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/emacs">emacs</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/themes">Themes</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/images/base16.png" alt="" /></p>
+
+<p><a href="http://chriskempson.com/projects/base16">An architecture for building themes</a> based on carefully chosen syntax highlighting using a base of sixteen colours. Base16 provides a set of guidelines detailing how to style syntax and how to code a builder for compiling base16 schemes and templates.</p>
+
+<h2 id="styling-guidelines">Styling Guidelines</h2>
+
+<p>Base16 aims to group similar language constructs with a single color, e.g. float, ints and doubles would belong to the same colour group. The colors chosen for the default theme were chosen to be easily separatable but scheme designer should pick whatever colours they desire e.g. base0B (green by default) could be replaced with red. However, there are general guidelines below that stipulate what base0B should be used to highlight when designing templates for editors.</p>
+
+<p>Since describing syntax highlighting can be tricky, please see <a href="https://github.com/chriskempson/base16-vim/">base16-vim</a> and <a href="https://github.com/chriskempson/base16-textmate/">base16-textmate</a> for reference. Though it should be noted that each editor will have some discrepancies due the fact that editors generally have different syntax highlighting engines.</p>
+
+<p>Colors base00 to base07 are typically variations of a shade and run from darkest to lighest. These colors are used for foreground and background, status bars, line highlighting and such. Colors base08 to base0F are typically individual colors used for types, operators, names and variables. In order to create a dark theme colors base00 to base07 should span from dark to light. For a light theme these colours should span from light to dark.</p>
+
+<ul>
+<li><strong>base00</strong> - Default Background</li>
+<li><strong>base01</strong> - Lighter Background (Used for status bars)</li>
+<li><strong>base02</strong> - Selection Background</li>
+<li><strong>base03</strong> - Comments, Invisibles, Line Highlighting</li>
+<li><strong>base04</strong> - Dark Foreground (Used for status bars)</li>
+<li><strong>base05</strong> - Default Foreground, Caret, Delimiters, Operators</li>
+<li><strong>base06</strong> - Light Foreground (Not often used)</li>
+<li><strong>base07</strong> - Light Background (Not often used)</li>
+<li><strong>base08</strong> - Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted</li>
+<li><strong>base09</strong> - Integers, Boolean, Constants, XML Attributes, Markup Link Url</li>
+<li><strong>base0A</strong> - Classes, Markup Bold, Search Text Background</li>
+<li><strong>base0B</strong> - Strings, Inherited Class, Markup Code, Diff Inserted</li>
+<li><strong>base0C</strong> - Support, Regular Expressions, Escape Characters, Markup Quotes</li>
+<li><strong>base0D</strong> - Functions, Methods, Attribute IDs, Headings</li>
+<li><strong>base0E</strong> - Keywords, Storage, Selector, Markup Italic, Diff Changed</li>
+<li><strong>base0F</strong> - Deprecated, Opening/Closing Embedded Language Tags e.g. &lt;?php ?&gt;</li>
+</ul>
+
+<h2 id="base16-emacs-https-github-com-belak-base16-emacs"><a href="https://github.com/belak/base16-emacs">base16-emacs</a></h2>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">base16-theme</span>
+  <span class="nb">:ensure</span> <span class="no">t</span>
+  <span class="nb">:config</span>
+  <span class="p">(</span><span class="nv">load-theme</span> <span class="ss">&#39;base16-tomorrow-night</span> <span class="no">t</span><span class="p">)</span>
+  <span class="p">)</span></code></pre></div>
+<p>Theme previews can be found <a href="https://belak.github.io/base16-emacs/">here</a>.</p>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#styling-guidelines">Styling Guidelines</a></li>
+<li><a href="#base16-emacs-https-github-com-belak-base16-emacs"><a href="https://github.com/belak/base16-emacs">base16-emacs</a></a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/03/07/tomorrow-theme-color-palettes/">Tomorrow Theme Color Palettes</a></li>
+	
+	<li><a href="/2018/03/06/add-emacs-elpa-configuration/">Add Emacs elpa configuration</a></li>
+	
+	<li><a href="/2017/11/29/pt-emacs/">The Platinum Seacher for Emacs</a></li>
+	
+	<li><a href="/2017/11/28/spacemacs/">spacemacs - Emacs advanced Kit focused on Evil</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/base16">base16
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/03/17/search-with-ripgrep/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">Search with ripgrep&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/03/07/tomorrow-theme-color-palettes/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;Tomorrow Theme Color Palettes</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/03/08/base16/" class="leancloud-visitors" data-flag-title="base16 - An architecture for building themes">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

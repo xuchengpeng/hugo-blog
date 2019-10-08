@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chuck&#39;s Emacs Configuration // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="Chuck&#39;s Emacs Configuration" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/03/26/chuck-emacs-configuration/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Chuck&#39;s Emacs Configuration</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/03/26/chuck-emacs-configuration/" >
+                    <time datetime='2018-03-26T07:33:23.000&#43;08:00' itemprop="datePublished">2018-03-26</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">1 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/software">Software</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/emacs">emacs</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="install">Install</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ git clone https://github.com/xuchengpeng/.emacs.d.git ~/.emacs.d
+$ <span class="nb">cd</span> ~/.emacs.d
+$ cp init.example.el init.el</code></pre></div>
+<h2 id="customization">Customization</h2>
+
+<p>Change the configurations at the beginning of your <code>custom.el</code> or <code>init.el</code>, then restart emacs.</p>
+
+<p>For example:</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-full-name</span> <span class="s">&#34;user name&#34;</span><span class="p">)</span>           <span class="c1">; User full name</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-mail-address</span> <span class="s">&#34;user@email.com&#34;</span><span class="p">)</span>   <span class="c1">; Email address</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-package-archives</span> <span class="ss">&#39;emacs-china</span><span class="p">)</span>   <span class="c1">; Package repo: melpa, emacs-china, tuna or custom</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-theme</span> <span class="ss">&#39;dotemacs-one</span><span class="p">)</span>             <span class="c1">; Color theme: dotemacs-one, dotemacs-one-light...</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-company-enable-yas</span> <span class="no">t</span><span class="p">)</span>            <span class="c1">; Enable/disable yasnippet for company: t or nil</span></code></pre></div>
+<p>If <code>dotemacs-package-archives</code> is set to <code>custom</code>, you need to set <code>package-archives</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-package-archives</span> <span class="ss">&#39;custom</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">package-archives</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;gnu&#34;</span>   <span class="o">.</span> <span class="s">&#34;/home/user/elpa-mirror/gnu/&#34;</span><span class="p">)</span>
+                         <span class="p">(</span><span class="s">&#34;melpa&#34;</span> <span class="o">.</span> <span class="s">&#34;/home/user/elpa-mirror/melpa/&#34;</span><span class="p">)</span>
+                         <span class="p">(</span><span class="s">&#34;org&#34;</span>   <span class="o">.</span> <span class="s">&#34;/home/user/elpa-mirror/org/&#34;</span><span class="p">)))</span></code></pre></div>
+<p>Customize it with melpa, <a href="https://elpa.emacs-china.org/">emacs-china</a> or <a href="https://mirror.tuna.tsinghua.edu.cn/help/elpa/">tuna</a>, or clone it from <a href="https://github.com/xuchengpeng/elpa-mirror">elpa-mirror</a> to local disk.</p>
+
+<h2 id="install-fonts-optional">Install fonts(Optional)</h2>
+
+<p>Install your favorite fonts, or you can find some popular fonts <a href="https://github.com/xuchengpeng/fonts">here</a>.</p>
+
+<p>For example:</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-font</span> <span class="s">&#34;Fira Mono&#34;</span><span class="p">)</span>    <span class="c1">; default font</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-cn-font</span> <span class="s">&#34;STXihei&#34;</span><span class="p">)</span>   <span class="c1">; chinese font</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-font-size</span> <span class="mi">11</span><span class="p">)</span>        <span class="c1">; default font size</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-cn-font-size</span> <span class="mi">16</span><span class="p">)</span>     <span class="c1">; chinese font size</span></code></pre></div>
+<h2 id="supported-emacs-versions">Supported Emacs versions</h2>
+
+<p>The config should run on Emacs 25.2 or greater and is designed to degrade smoothly - see the <a href="https://travis-ci.org/xuchengpeng/.emacs.d">Travis build</a>.</p>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#customization">Customization</a></li>
+<li><a href="#install-fonts-optional">Install fonts(Optional)</a></li>
+<li><a href="#supported-emacs-versions">Supported Emacs versions</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/03/06/add-emacs-elpa-configuration/">Add Emacs elpa configuration</a></li>
+	
+	<li><a href="/2018/03/08/base16/">base16 - An architecture for building themes</a></li>
+	
+	<li><a href="/2017/11/29/pt-emacs/">The Platinum Seacher for Emacs</a></li>
+	
+	<li><a href="/2017/11/28/spacemacs/">spacemacs - Emacs advanced Kit focused on Evil</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/use-package">use-package
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/03/26/design-pattern-singleton-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">单例模式&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/03/25/design-pattern-abstract-factory-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;抽象工厂模式</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/03/26/chuck-emacs-configuration/" class="leancloud-visitors" data-flag-title="Chuck&#39;s Emacs Configuration">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>拦截过滤器模式 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="拦截过滤器模式" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/04/26/design-pattern-intercepting-filter-pattern/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">拦截过滤器模式</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/04/26/design-pattern-intercepting-filter-pattern/" >
+                    <time datetime='2018-04-26T15:33:02.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">2 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>拦截过滤器模式（Intercepting Filter Pattern）用于对应用程序的请求或响应做一些预处理/后处理。定义过滤器，并在把请求传给实际目标应用程序之前应用在请求上。过滤器可以做认证/授权/记录日志，或者跟踪请求，然后把请求传给相应的处理程序。以下是这种设计模式的实体。</p>
+
+<p>过滤器（Filter） - 过滤器在请求处理程序执行请求之前或之后，执行某些任务。
+过滤器链（Filter Chain） - 过滤器链带有多个过滤器，并在 Target 上按照定义的顺序执行这些过滤器。
+Target - Target 对象是请求处理程序。
+过滤管理器（Filter Manager） - 过滤管理器管理过滤器和过滤器链。
+客户端（Client） - Client 是向 Target 对象发送请求的对象。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建 FilterChain、FilterManager、Target、Client 作为表示实体的各种对象。AuthenticationFilter 和 DebugFilter 表示实体过滤器。
+InterceptingFilterDemo，我们的演示类使用 Client 来演示拦截过滤器设计模式。</p>
+
+<p><img src="/images/design-pattern/interceptingfilter_pattern_uml_diagram.jpg" alt="" /></p>
+
+<h3 id="步骤-1">步骤 1</h3>
+
+<p>创建过滤器接口 Filter。</p>
+
+<p><em>Filter.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">Filter</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-2">步骤 2</h3>
+
+<p>创建实体过滤器。</p>
+
+<p><em>AuthenticationFilter.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">AuthenticationFilter</span> <span class="nf">implements</span> <span class="n">Filter</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">){</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Authenticating request: &#34;</span> <span class="o">+</span> <span class="n">request</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<p><em>DebugFilter.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">DebugFilter</span> <span class="nf">implements</span> <span class="n">Filter</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">){</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;request log: &#34;</span> <span class="o">+</span> <span class="n">request</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-3">步骤 3</h3>
+
+<p>创建 Target。</p>
+
+<p><em>Target.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Target</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">){</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Executing request: &#34;</span> <span class="o">+</span> <span class="n">request</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-4">步骤 4</h3>
+
+<p>创建过滤器链。</p>
+
+<p><em>FilterChain.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">ArrayList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">List</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="nf">class</span> <span class="n">FilterChain</span> <span class="p">{</span>
+   <span class="kd">private</span> <span class="nf">List</span><span class="o">&lt;</span><span class="n">Filter</span><span class="o">&gt;</span> <span class="nf">filters</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Filter</span><span class="o">&gt;</span><span class="p">();</span>
+   <span class="kd">private</span> <span class="nf">Target</span> <span class="n">target</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">addFilter</span><span class="p">(</span><span class="n">Filter</span> <span class="nf">filter</span><span class="p">){</span>
+      <span class="n">filters</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">filter</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">){</span>
+      <span class="k">for</span> <span class="p">(</span><span class="n">Filter</span> <span class="nf">filter</span> <span class="o">:</span> <span class="n">filters</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">filter</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="n">target</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setTarget</span><span class="p">(</span><span class="n">Target</span> <span class="nf">target</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">target</span> <span class="o">=</span> <span class="n">target</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-5">步骤 5</h3>
+
+<p>创建过滤管理器。</p>
+
+<p><em>FilterManager.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">FilterManager</span> <span class="p">{</span>
+   <span class="n">FilterChain</span> <span class="nf">filterChain</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">FilterManager</span><span class="p">(</span><span class="n">Target</span> <span class="nf">target</span><span class="p">){</span>
+      <span class="n">filterChain</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FilterChain</span><span class="p">();</span>
+      <span class="n">filterChain</span><span class="p">.</span><span class="na">setTarget</span><span class="p">(</span><span class="n">target</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setFilter</span><span class="p">(</span><span class="n">Filter</span> <span class="nf">filter</span><span class="p">){</span>
+      <span class="n">filterChain</span><span class="p">.</span><span class="na">addFilter</span><span class="p">(</span><span class="n">filter</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">filterRequest</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">){</span>
+      <span class="n">filterChain</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-6">步骤 6</h3>
+
+<p>创建客户端 Client。</p>
+
+<p><em>Client.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Client</span> <span class="p">{</span>
+   <span class="n">FilterManager</span> <span class="nf">filterManager</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setFilterManager</span><span class="p">(</span><span class="n">FilterManager</span> <span class="nf">filterManager</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">filterManager</span> <span class="o">=</span> <span class="n">filterManager</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">sendRequest</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">){</span>
+      <span class="n">filterManager</span><span class="p">.</span><span class="na">filterRequest</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-7">步骤 7</h3>
+
+<p>使用 Client 来演示拦截过滤器设计模式。</p>
+
+<p><em>InterceptingFilterDemo.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">InterceptingFilterDemo</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">FilterManager</span> <span class="nf">filterManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FilterManager</span><span class="p">(</span><span class="k">new</span> <span class="n">Target</span><span class="p">());</span>
+      <span class="n">filterManager</span><span class="p">.</span><span class="na">setFilter</span><span class="p">(</span><span class="k">new</span> <span class="n">AuthenticationFilter</span><span class="p">());</span>
+      <span class="n">filterManager</span><span class="p">.</span><span class="na">setFilter</span><span class="p">(</span><span class="k">new</span> <span class="n">DebugFilter</span><span class="p">());</span>
+
+      <span class="n">Client</span> <span class="nf">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Client</span><span class="p">();</span>
+      <span class="n">client</span><span class="p">.</span><span class="na">setFilterManager</span><span class="p">(</span><span class="n">filterManager</span><span class="p">);</span>
+      <span class="n">client</span><span class="p">.</span><span class="na">sendRequest</span><span class="p">(</span><span class="s">&#34;HOME&#34;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-8">步骤 8</h3>
+
+<p>验证输出。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Authenticating</span> <span class="nf">request</span><span class="o">:</span> <span class="n">HOME</span>
+<span class="nf">request</span> <span class="n">log</span><span class="o">:</span> <span class="n">HOME</span>
+<span class="nf">Executing</span> <span class="n">request</span><span class="o">:</span> <span class="n">HOME</span></code></pre></div>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#实现">实现</a>
+<ul>
+<li><a href="#步骤-1">步骤 1</a></li>
+<li><a href="#步骤-2">步骤 2</a></li>
+<li><a href="#步骤-3">步骤 3</a></li>
+<li><a href="#步骤-4">步骤 4</a></li>
+<li><a href="#步骤-5">步骤 5</a></li>
+<li><a href="#步骤-6">步骤 6</a></li>
+<li><a href="#步骤-7">步骤 7</a></li>
+<li><a href="#步骤-8">步骤 8</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/04/26/design-pattern-front-controller-pattern/">前端控制器模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-data-access-object-pattern/">数据访问对象模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-composite-entity-pattern/">组合实体模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-business-delegate-pattern/">业务代表模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-mvc-pattern/">MVC 模式</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/04/26/design-pattern-service-locator-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">服务定位器模式&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/04/26/design-pattern-front-controller-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;前端控制器模式</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/04/26/design-pattern-intercepting-filter-pattern/" class="leancloud-visitors" data-flag-title="拦截过滤器模式">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

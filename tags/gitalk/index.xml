@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gitalk on Chuck&amp;Lucia</title>
+    <link>http://xuchengpeng.com/tags/gitalk/</link>
+    <description>Recent content in Gitalk on Chuck&amp;Lucia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 04 Dec 2017 09:29:58 +0000</lastBuildDate>
+    
+	<atom:link href="http://xuchengpeng.com/tags/gitalk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>为NexT主题部署Gitalk评论插件</title>
+      <link>http://xuchengpeng.com/2017/12/04/gitalk-for-next/</link>
+      <pubDate>Mon, 04 Dec 2017 09:29:58 +0000</pubDate>
+      
+      <guid>http://xuchengpeng.com/2017/12/04/gitalk-for-next/</guid>
+      <description>在之前的文章中（{% post_link gitalk-comment-extension Gitalk评论插件 %}），已介绍过Gitalk评论插件，GitHub上为NexT添加Gitalk的pull requ</description>
+    </item>
+    
+    <item>
+      <title>Gitalk评论插件</title>
+      <link>http://xuchengpeng.com/2017/11/24/gitalk-comment-extension/</link>
+      <pubDate>Fri, 24 Nov 2017 14:51:01 +0000</pubDate>
+      
+      <guid>http://xuchengpeng.com/2017/11/24/gitalk-comment-extension/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt; 是一个基于 Github Issue 和 Preact 开发的评论插件。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

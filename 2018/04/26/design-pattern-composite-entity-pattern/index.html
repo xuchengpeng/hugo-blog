@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>组合实体模式 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="组合实体模式" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/04/26/design-pattern-composite-entity-pattern/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">组合实体模式</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/04/26/design-pattern-composite-entity-pattern/" >
+                    <time datetime='2018-04-26T15:09:03.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">2 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>组合实体模式（Composite Entity Pattern）用在 EJB 持久化机制中。一个组合实体是一个 EJB 实体 bean，代表了对象的图解。当更新一个组合实体时，内部依赖对象 beans 会自动更新，因为它们是由 EJB 实体 bean 管理的。以下是组合实体 bean 的参与者。</p>
+
+<p>组合实体（Composite Entity） - 它是主要的实体 bean。它可以是粗粒的，或者可以包含一个粗粒度对象，用于持续生命周期。
+粗粒度对象（Coarse-Grained Object） - 该对象包含依赖对象。它有自己的生命周期，也能管理依赖对象的生命周期。
+依赖对象（Dependent Object） - 依赖对象是一个持续生命周期依赖于粗粒度对象的对象。
+策略（Strategies） - 策略表示如何实现组合实体。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建作为组合实体的 CompositeEntity 对象。CoarseGrainedObject 是一个包含依赖对象的类。
+CompositeEntityPatternDemo，我们的演示类使用 Client 类来演示组合实体模式的用法。</p>
+
+<p><img src="/images/design-pattern/compositeentity_pattern_uml_diagram.jpg" alt="" /></p>
+
+<h3 id="步骤-1">步骤 1</h3>
+
+<p>创建依赖对象。
+<em>DependentObject1.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">DependentObject1</span> <span class="p">{</span>
+
+   <span class="kd">private</span> <span class="nf">String</span> <span class="n">data</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setData</span><span class="p">(</span><span class="n">String</span> <span class="nf">data</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">String</span> <span class="n">getData</span><span class="p">(){</span>
+      <span class="k">return</span> <span class="n">data</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<p><em>DependentObject2.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">DependentObject2</span> <span class="p">{</span>
+
+   <span class="kd">private</span> <span class="nf">String</span> <span class="n">data</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setData</span><span class="p">(</span><span class="n">String</span> <span class="nf">data</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">String</span> <span class="n">getData</span><span class="p">(){</span>
+      <span class="k">return</span> <span class="n">data</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-2">步骤 2</h3>
+
+<p>创建粗粒度对象。</p>
+
+<p><em>CoarseGrainedObject.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">CoarseGrainedObject</span> <span class="p">{</span>
+   <span class="n">DependentObject1</span> <span class="nf">do1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DependentObject1</span><span class="p">();</span>
+   <span class="n">DependentObject2</span> <span class="nf">do2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DependentObject2</span><span class="p">();</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setData</span><span class="p">(</span><span class="n">String</span> <span class="nf">data1</span><span class="p">,</span> <span class="n">String</span> <span class="nf">data2</span><span class="p">){</span>
+      <span class="n">do1</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">data1</span><span class="p">);</span>
+      <span class="n">do2</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">data2</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">String</span><span class="p">[]</span> <span class="n">getData</span><span class="p">(){</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="p">[]</span> <span class="p">{</span><span class="n">do1</span><span class="p">.</span><span class="na">getData</span><span class="p">(),</span><span class="n">do2</span><span class="p">.</span><span class="na">getData</span><span class="p">()};</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-3">步骤 3</h3>
+
+<p>创建组合实体。</p>
+
+<p><em>CompositeEntity.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">CompositeEntity</span> <span class="p">{</span>
+   <span class="kd">private</span> <span class="nf">CoarseGrainedObject</span> <span class="n">cgo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CoarseGrainedObject</span><span class="p">();</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setData</span><span class="p">(</span><span class="n">String</span> <span class="nf">data1</span><span class="p">,</span> <span class="n">String</span> <span class="nf">data2</span><span class="p">){</span>
+      <span class="n">cgo</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">String</span><span class="p">[]</span> <span class="n">getData</span><span class="p">(){</span>
+      <span class="k">return</span> <span class="n">cgo</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-4">步骤 4</h3>
+
+<p>创建使用组合实体的客户端类。</p>
+
+<p><em>Client.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Client</span> <span class="p">{</span>
+   <span class="kd">private</span> <span class="nf">CompositeEntity</span> <span class="n">compositeEntity</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CompositeEntity</span><span class="p">();</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">printData</span><span class="p">(){</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">compositeEntity</span><span class="p">.</span><span class="na">getData</span><span class="p">().</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Data: &#34;</span> <span class="o">+</span> <span class="n">compositeEntity</span><span class="p">.</span><span class="na">getData</span><span class="p">()[</span><span class="n">i</span><span class="p">]);</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setData</span><span class="p">(</span><span class="n">String</span> <span class="nf">data1</span><span class="p">,</span> <span class="n">String</span> <span class="nf">data2</span><span class="p">){</span>
+      <span class="n">compositeEntity</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-5">步骤 5</h3>
+
+<p>使用 Client 来演示组合实体设计模式的用法。</p>
+
+<p><em>CompositeEntityPatternDemo.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">CompositeEntityPatternDemo</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+       <span class="n">Client</span> <span class="nf">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Client</span><span class="p">();</span>
+       <span class="n">client</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="s">&#34;Test&#34;</span><span class="p">,</span> <span class="s">&#34;Data&#34;</span><span class="p">);</span>
+       <span class="n">client</span><span class="p">.</span><span class="na">printData</span><span class="p">();</span>
+       <span class="n">client</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="s">&#34;Second Test&#34;</span><span class="p">,</span> <span class="s">&#34;Data1&#34;</span><span class="p">);</span>
+       <span class="n">client</span><span class="p">.</span><span class="na">printData</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-6">步骤 6</h3>
+
+<p>验证输出。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nl">Data:</span> <span class="n">Test</span>
+<span class="nf">Data</span><span class="o">:</span> <span class="n">Data</span>
+<span class="nf">Data</span><span class="o">:</span> <span class="n">Second</span> <span class="nf">Test</span>
+<span class="nl">Data:</span> <span class="n">Data1</span></code></pre></div>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#实现">实现</a>
+<ul>
+<li><a href="#步骤-1">步骤 1</a></li>
+<li><a href="#步骤-2">步骤 2</a></li>
+<li><a href="#步骤-3">步骤 3</a></li>
+<li><a href="#步骤-4">步骤 4</a></li>
+<li><a href="#步骤-5">步骤 5</a></li>
+<li><a href="#步骤-6">步骤 6</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/04/26/design-pattern-business-delegate-pattern/">业务代表模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-mvc-pattern/">MVC 模式</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/04/26/design-pattern-data-access-object-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">数据访问对象模式&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/04/26/design-pattern-business-delegate-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;业务代表模式</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/04/26/design-pattern-composite-entity-pattern/" class="leancloud-visitors" data-flag-title="组合实体模式">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

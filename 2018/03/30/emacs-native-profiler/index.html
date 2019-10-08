@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Emacs Native Profiler // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="Emacs Native Profiler" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/03/30/emacs-native-profiler/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Emacs Native Profiler</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/03/30/emacs-native-profiler/" >
+                    <time datetime='2018-03-30T10:02:45.000&#43;00:00' itemprop="datePublished">2018-03-30</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">2 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/software">Software</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/emacs">emacs</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>If your program is working correctly, but you want to make it run more quickly or efficiently, the first thing to do is profile your code so that you know how it is using resources. If you find that one particular function is responsible for a significant portion of the runtime, you can start looking for ways to optimize that piece.</p>
+
+<p>Emacs has built-in support for this. To begin profiling, type <code>M-x profiler-start</code>. You can choose to profile by processor usage, memory usage, or both. After doing some work, type <code>M-x profiler-report</code> to display a summary buffer for each resource that you chose to profile. The names of the report buffers include the times at which the reports were generated, so you can generate another report later on without erasing previous results. When you have finished profiling, type <code>M-x profiler-stop</code> (there is a small overhead associated with profiling).</p>
+
+<p>The profiler report buffer shows, on each line, a function that was called, followed by how much resource (processor or memory) it used in absolute and percentage times since profiling started. If a given line has a ‘+’ symbol at the left-hand side, you can expand that line by typing <RET>, in order to see the function(s) called by the higher-level function. Use a prefix argument (<C-u RET>) to see the whole call tree below a function. Pressing <RET> again will collapse back to the original state.</p>
+
+<p>Press j or mouse-2 to jump to the definition of a function. Press d to view a function&rsquo;s documentation. You can save a profile to a file using C-x C-w. You can compare two profiles using =.
+The elp library offers an alternative approach. See the file elp.el for instructions.</p>
+
+<p>You can check the speed of individual Emacs Lisp forms using the benchmark library. See the functions benchmark-run and benchmark-run-compiled in benchmark.el.
+To profile Emacs at the level of its C code, you can build it using the &ndash;enable-profiling option of configure. When Emacs exits, it generates a file gmon.out that you can examine using the gprof utility. This feature is mainly useful for debugging Emacs. It actually stops the Lisp-level M-x profiler-&hellip; commands described above from working.</p>
+        </div>
+
+        
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/03/30/emacs-show-line-numbers/">Emacs: Show Line Numbers</a></li>
+	
+	<li><a href="/2018/03/28/speed-up-emacs-startup-time/">Speed up emacs startup time</a></li>
+	
+	<li><a href="/2018/03/26/chuck-emacs-configuration/">Chuck&#39;s Emacs Configuration</a></li>
+	
+	<li><a href="/2018/03/08/base16/">base16 - An architecture for building themes</a></li>
+	
+	<li><a href="/2018/03/06/add-emacs-elpa-configuration/">Add Emacs elpa configuration</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/profiler">profiler
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/04/04/design-pattern-builder-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">建造者模式&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/03/30/emacs-show-line-numbers/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;Emacs: Show Line Numbers</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/03/30/emacs-native-profiler/" class="leancloud-visitors" data-flag-title="Emacs Native Profiler">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

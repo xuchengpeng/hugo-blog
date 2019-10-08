@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>自定义emacs mode-line // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="自定义emacs mode-line" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/07/09/customize-emacs-mode-line/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">自定义emacs mode-line</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/07/09/customize-emacs-mode-line/" >
+                    <time datetime='2018-07-09T09:59:51.000&#43;08:00' itemprop="datePublished">2018-07-09</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">4 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/software">Software</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/emacs">emacs</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="一些常用的mode-line包">一些常用的mode-line包</h3>
+
+<ul>
+<li><a href="https://github.com/milkypostman/powerline">powerline</a></li>
+<li><a href="https://github.com/Malabarba/smart-mode-line">smart-mode-line</a></li>
+<li><a href="https://github.com/TheBB/spaceline">spaceline</a></li>
+<li><a href="https://github.com/dbordak/telephone-line">telephone-line</a></li>
+</ul>
+
+<h3 id="了解mode-line">了解mode-line</h3>
+
+<p>mode-line初始值：</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="s">&#34;%e&#34;</span> <span class="nv">mode-line-front-space</span> <span class="nv">mode-line-mule-info</span> <span class="nv">mode-line-client</span> <span class="nv">mode-line-modified</span> <span class="nv">mode-line-remote</span> <span class="nv">mode-line-frame-identification</span> <span class="nv">mode-line-buffer-identification</span> <span class="s">&#34;   &#34;</span> <span class="nv">mode-line-position</span>
+ <span class="p">(</span><span class="nv">vc-mode</span> <span class="nv">vc-mode</span><span class="p">)</span>
+ <span class="s">&#34;  &#34;</span> <span class="nv">mode-line-modes</span> <span class="nv">mode-line-misc-info</span> <span class="nv">mode-line-end-spaces</span><span class="p">)</span></code></pre></div>
+<h4 id="mode-line变量">mode-line变量</h4>
+
+<ul>
+<li>mode-line-mule-info：显示当前语言环境、编码信息和输入法；</li>
+<li>mode-line-modified：显示当前内容是否被修改，<code>**</code>表示已经被修改，<code>--</code>表示没有被修改，<code>%%</code>表示只读，<code>%*</code>表示只读但是被修改；</li>
+<li>mode-line-frame-identification：用来标识当前窗口；</li>
+<li>mode-line-buffer-identification：用来表示当前buffer；</li>
+<li>mode-line-position：用来表示在buffer中的位置，可显示位置百分比、buffer大小、当前行号和列号；</li>
+<li>mode-line-percent-position：在<code>mode-line-position</code>中被使用；</li>
+<li>vc-mode：显示版本管理信息；</li>
+<li>mode-line-modes：显示当前major和minor modes；</li>
+<li>mode-line-remote：用来显示当前buffer的default-directory是否是远程文件夹；</li>
+<li>mode-line-client：用来表示emacsclient窗口；</li>
+<li>mode-name： 显示当前buffer的major mode；</li>
+<li>mode-line-front-space：显示在mode-line最前面；</li>
+<li>mode-line-end-spaces：显示在mode-line最后面；</li>
+<li>mode-line-misc-info：显示杂项信息；</li>
+<li>minor-mode-alist：包含当前buffer激活的所有minor modes；</li>
+<li>global-mode-string：This variable holds a mode line construct that, by default, appears in the mode line just after the which-func-mode minor mode if set, else after mode-line-modes. The command display-time sets global-mode-string to refer to the variable display-time-string, which holds a string containing the time and load information. The ‘%M’ construct substitutes the value of global-mode-string, but that is obsolete, since the variable is included in the mode line from mode-line-format.</li>
+</ul>
+
+<h4 id="constructs-in-the-mode-line">%-Constructs in the Mode Line</h4>
+
+<ul>
+<li>%b：当前buffer名称；</li>
+<li>%c：当前列号，从最左边0开始计算；</li>
+<li>%C：当前列号，从最左边1开始计算；</li>
+<li>%e：When Emacs is nearly out of memory for Lisp objects, a brief message saying so. Otherwise, this is empty.</li>
+<li>%f：文件名；</li>
+<li>%F：窗口名称；</li>
+<li>%i：当前buffer大小；</li>
+<li>%I：Like ‘%i’, but the size is printed in a more readable way by using ‘k’ for 10^3, ‘M’ for 10^6, ‘G’ for 10^9, etc., to abbreviate.</li>
+<li>%l：当前行号；</li>
+<li>%n：‘Narrow’ when narrowing is in effect; nothing otherwise.</li>
+<li>%o：The degree of travel of the window through (the visible portion of) the buffer, i.e. the size of the text above the top of the window expressed as a percentage of all the text outside the window, or ‘Top’, ‘Bottom’ or ‘All’.</li>
+<li>%p：The percentage of the buffer text above the top of window, or ‘Top’, ‘Bottom’ or ‘All’. Note that the default mode line construct truncates this to three characters.</li>
+<li>%P：The percentage of the buffer text that is above the bottom of the window (which includes the text visible in the window, as well as the text above the top), plus ‘Top’ if the top of the buffer is visible on screen; or ‘Bottom’ or ‘All’.</li>
+<li>%q：The percentages of text above both the top and the bottom of the window, separated by ‘-’, or ‘All’.</li>
+<li>%s：The status of the subprocess belonging to the current buffer, obtained with process-status.</li>
+<li>%z：The mnemonics of keyboard, terminal, and buffer coding systems.</li>
+<li>%Z：Like ‘%z’, but including the end-of-line format.</li>
+<li>%*：‘%’ if the buffer is read only (see buffer-read-only); ‘*’ if the buffer is modified (see buffer-modified-p); ‘-’ otherwise.</li>
+<li>%+：‘*’ if the buffer is modified (see buffer-modified-p); ‘%’ if the buffer is read only (see buffer-read-only); ‘-’ otherwise. This differs from ‘%*’ only for a modified read-only buffer.</li>
+<li>%&amp;：‘*’ if the buffer is modified, and ‘-’ otherwise.</li>
+<li>%[：An indication of the depth of recursive editing levels (not counting minibuffer levels): one ‘[’ for each editing level.</li>
+<li>%]：One ‘]’ for each recursive editing level (not counting minibuffer levels).</li>
+<li>%-：Dashes sufficient to fill the remainder of the mode line.</li>
+<li>%%：The character ‘%’—this is how to include a literal ‘%’ in a string in which %-constructs are allowed.</li>
+<li>%m：mode-name；</li>
+<li>%M：global-mode-string；</li>
+</ul>
+
+<h3 id="自定义mode-line">自定义mode-line</h3>
+
+<p>修改<code>mode-line-format</code>的值：</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-mode-line-fill</span> <span class="p">(</span><span class="nv">face</span> <span class="nv">reserve</span><span class="p">)</span>
+  <span class="s">&#34;Return empty space using FACE and leaving RESERVE space on the right.&#34;</span>
+  <span class="p">(</span><span class="nb">unless</span> <span class="nv">reserve</span>
+    <span class="p">(</span><span class="nb">setq</span> <span class="nv">reserve</span> <span class="mi">20</span><span class="p">))</span>
+  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)</span> <span class="p">(</span><span class="nf">eq</span> <span class="ss">&#39;right</span> <span class="p">(</span><span class="nv">get-scroll-bar-mode</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">setq</span> <span class="nv">reserve</span> <span class="p">(</span><span class="nf">-</span> <span class="nv">reserve</span> <span class="mi">3</span><span class="p">)))</span>
+  <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34; &#34;</span>
+              <span class="ss">&#39;display</span> <span class="o">`</span><span class="p">((</span><span class="nv">space</span> <span class="nb">:align-to</span>
+                                <span class="p">(</span><span class="nf">-</span> <span class="p">(</span><span class="nf">+</span> <span class="nv">right</span> <span class="nv">right-fringe</span> <span class="nv">right-margin</span><span class="p">)</span> <span class="o">,</span><span class="nv">reserve</span><span class="p">)))</span>
+              <span class="ss">&#39;face</span> <span class="nv">face</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-buffer-encoding-abbrev</span> <span class="p">()</span>
+  <span class="s">&#34;The line ending convention used in the buffer.&#34;</span>
+  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">buf-coding</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;%s&#34;</span> <span class="nv">buffer-file-coding-system</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">string-match</span> <span class="s">&#34;\\(dos\\|unix\\|mac\\)&#34;</span> <span class="nv">buf-coding</span><span class="p">)</span>
+        <span class="p">(</span><span class="nv">match-string</span> <span class="mi">1</span> <span class="nv">buf-coding</span><span class="p">)</span>
+      <span class="nv">buf-coding</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nb">setq-default</span> <span class="nv">mode-line-format</span>
+                <span class="p">(</span><span class="nf">list</span>
+                 <span class="s">&#34;%e&#34;</span>
+                 <span class="nv">mode-line-front-space</span>
+                 <span class="c1">;; mode-line-mule-info</span>
+                 <span class="c1">;; mode-line-client</span>
+                 <span class="c1">;; mode-line-modified</span>
+                 <span class="c1">;; mode-line-remote</span>
+                 <span class="c1">;; mode-line-frame-identification</span>
+                 <span class="s">&#34; &#34;</span>
+                 <span class="c1">;; mode-line-buffer-identification</span>
+                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;%b&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-keyword-face</span>
+                                     <span class="ss">&#39;help-echo</span> <span class="p">(</span><span class="nf">buffer-file-name</span><span class="p">)))</span>
+                 
+                 <span class="s">&#34; [&#34;</span> <span class="c1">;; insert vs overwrite mode, input-method in a tooltip</span>
+                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nf">propertize</span> <span class="p">(</span><span class="nb">if</span> <span class="nv">overwrite-mode</span> <span class="s">&#34;Ovr&#34;</span> <span class="s">&#34;Ins&#34;</span><span class="p">)</span>
+                                     <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-preprocessor-face</span>
+                                     <span class="ss">&#39;help-echo</span> <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;Buffer is in &#34;</span>
+                                                        <span class="p">(</span><span class="nb">if</span> <span class="nv">overwrite-mode</span>
+                                                            <span class="s">&#34;overwrite&#34;</span>
+                                                          <span class="s">&#34;insert&#34;</span><span class="p">)</span> <span class="s">&#34; mode&#34;</span><span class="p">)))</span>
+
+                 <span class="c1">;; was this buffer modified since the last save?</span>
+                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">buffer-modified-p</span><span class="p">)</span>
+                           <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;,&#34;</span> <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;Mod&#34;</span>
+                                                   <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-warning-face</span>
+                                                   <span class="ss">&#39;help-echo</span> <span class="s">&#34;Buffer has been modified&#34;</span><span class="p">))))</span>
+
+                 <span class="c1">;; is this buffer read-only?</span>
+                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nb">when</span> <span class="nv">buffer-read-only</span>
+                           <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;,&#34;</span> <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;RO&#34;</span>
+                                                   <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-type-face</span>
+                                                   <span class="ss">&#39;help-echo</span> <span class="s">&#34;Buffer is read-only&#34;</span><span class="p">))))</span>
+                 <span class="s">&#34;] &#34;</span>
+                 
+                 <span class="s">&#34;[&#34;</span>
+                 <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;%p&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-constant-face</span><span class="p">)</span>
+                 <span class="s">&#34;/&#34;</span>
+                 <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;%I&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-constant-face</span><span class="p">)</span>
+                 <span class="s">&#34;] &#34;</span>
+                 
+                 <span class="nv">mode-line-modes</span>
+                 
+                 <span class="s">&#34;   &#34;</span>
+                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="o">`</span><span class="p">(</span><span class="nv">vc-mode</span> <span class="nv">vc-mode</span><span class="p">))</span>
+                 <span class="s">&#34;   &#34;</span>
+                 
+                 <span class="c1">;; (dotemacs-mode-line-fill &#39;mode-line 35)</span>
+                 
+                 <span class="c1">;;mode-line-position</span>
+                 <span class="s">&#34; (&#34;</span>
+                 <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;%l&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-type-face</span><span class="p">)</span>
+                 <span class="s">&#34;,&#34;</span>
+                 <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;%c&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-type-face</span><span class="p">)</span>
+                 <span class="s">&#34;) &#34;</span>
+                 
+                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nv">dotemacs-buffer-encoding-abbrev</span><span class="p">))</span>
+                 <span class="s">&#34;  &#34;</span>
+                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="nv">mode-line-misc-info</span><span class="p">)</span>
+                 
+                 <span class="nv">mode-line-end-spaces</span>
+                 <span class="p">))</span></code></pre></div>
+<h3 id="隐藏mode-line上的minor-mode">隐藏mode-line上的minor mode</h3>
+
+<p>使用<a href="https://github.com/emacsmirror/diminish">diminish</a>：</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;diminish</span><span class="p">)</span>
+<span class="c1">;; Hide jiggle-mode lighter from mode line</span>
+<span class="p">(</span><span class="nv">diminish</span> <span class="ss">&#39;jiggle-mode</span><span class="p">)</span>
+<span class="c1">;; Replace abbrev-mode lighter with &#34;Abv&#34;</span>
+<span class="p">(</span><span class="nv">diminish</span> <span class="ss">&#39;abbrev-mode</span> <span class="s">&#34;Abv&#34;</span><span class="p">)</span></code></pre></div>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#一些常用的mode-line包">一些常用的mode-line包</a></li>
+<li><a href="#了解mode-line">了解mode-line</a>
+<ul>
+<li><a href="#mode-line变量">mode-line变量</a></li>
+<li><a href="#constructs-in-the-mode-line">%-Constructs in the Mode Line</a></li>
+</ul></li>
+<li><a href="#自定义mode-line">自定义mode-line</a></li>
+<li><a href="#隐藏mode-line上的minor-mode">隐藏mode-line上的minor mode</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/mode-line">mode-line
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/diminish">diminish
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/07/10/setting-mathjax-with-hugo/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">Setting MathJax with Hugo&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/06/14/tcp-ip-illustrated-volume1-snmp/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;TCP/IP 详解(卷一) SNMP：简单网络管理协议</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/07/09/customize-emacs-mode-line/" class="leancloud-visitors" data-flag-title="自定义emacs mode-line">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

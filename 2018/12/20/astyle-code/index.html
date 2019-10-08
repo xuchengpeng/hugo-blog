@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>使用AStyle格式化代码 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="使用AStyle格式化代码" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/12/20/astyle-code/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">使用AStyle格式化代码</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/12/20/astyle-code/" >
+                    <time datetime='2018-12-20T18:59:10.000&#43;08:00' itemprop="datePublished">2018-12-20</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">1 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tools">Tools</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>从 <a href="http://astyle.sourceforge.net/">astyle.sourceforge.net</a> 下载安装 astyle。</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 /path/to/code.c</code></pre></div>
+<ul>
+<li>-A8 Linux style</li>
+<li>-s4 4个空格缩进</li>
+<li>-k3 指针*靠近变量</li>
+<li>-W3 引用&amp;靠近变量</li>
+<li>-S switch下的case添加缩进</li>
+<li>-p 在操作符两边添加空格</li>
+<li>-xn 花括号在namespace之后</li>
+<li>-xc 花括号在class之后</li>
+<li>-xk 花括号在extern &ldquo;C&rdquo;之后</li>
+<li>-xV do-while语句中，while在关闭花括号之后</li>
+<li>-xf 函数定义中，返回类型和函数名在同一行</li>
+<li>-xh 函数声明中，返回类型和函数名在同一行</li>
+<li>-H 在if,for,while&hellip;之后添加空格</li>
+<li>-Y 缩进注释</li>
+<li>-w 宏定义换行后缩进</li>
+<li>-xW 嵌套预处理缩进</li>
+<li>-n 不生成备份文件</li>
+<li>-c tab转换为空格</li>
+<li>-z2 linux(LF)换行</li>
+</ul>
+
+<p>以上配置可以保存在配置文件中，使用方法为<code>AStyle.exe --options=/path/to/.astylerc test.c</code>，对应的文件格式如下：</p>
+
+<pre><code>--style=linux
+--indent=spaces=4
+--indent-switches
+--indent-cases
+--indent-labels
+--indent-col1-comments
+--indent-preproc-define
+--indent-preproc-block
+--align-pointer=name
+--align-reference=name
+--pad-oper
+--pad-header
+--attach-namespaces
+--attach-classes
+--attach-extern-c
+--attach-closing-while
+--attach-return-type
+--attach-return-type-decl
+--convert-tabs
+--lineend=linux
+--suffix=none
+</code></pre>
+
+<p>linux编译astyle：</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> astyle/build/gcc
+make
+cp ./bin/astyle /usr/bin</code></pre></div>
+        </div>
+
+        
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2017/11/20/sourceinsight-codereview/">SourceInsight代码检视</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/astyle">astyle
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/sourceinsight">SourceInsight
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/12/22/clangformat-code/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">Clang-Format code&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/12/06/emacs-change-theme-with-time/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;Emacs 根据时间切换主题</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/12/20/astyle-code/" class="leancloud-visitors" data-flag-title="使用AStyle格式化代码">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

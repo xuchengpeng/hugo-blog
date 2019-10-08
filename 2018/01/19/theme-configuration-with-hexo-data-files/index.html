@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>使用 Hexo 数据文件进行主题配置 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="使用 Hexo 数据文件进行主题配置" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/01/19/theme-configuration-with-hexo-data-files/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">使用 Hexo 数据文件进行主题配置</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/01/19/theme-configuration-with-hexo-data-files/" >
+                    <time datetime='2018-01-19T07:41:32.000&#43;00:00' itemprop="datePublished">2018-01-19</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">2 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/hexo">Hexo</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>目前，通过 pull 或下载新的 release 版本来更新 NexT 主题的体验并不平滑。当用户使用 git pull 更新 NexT 主题时经常需要解决冲突问题，而在手动下载 release 版本时也经常需要手动合并配置。</p>
+
+<p>现在来说，NexT 推荐用户存储部分配置在站点的 _config.yml 中，而另一部分在主题的 _config.yml 中。这一方式固然可用，但也有一些缺点：</p>
+
+<ol>
+<li>配置项被分裂为两部分；</li>
+<li>用户难以弄清何处存放配置选项。</li>
+</ol>
+
+<p>为了解决这一问题，NexT 将利用 Hexo 的<a href="https://hexo.io/docs/data-files.html">数据文件</a>特性。因为数据文件是在 Hexo 3 中被引入，所以你需要更新至 Hexo 3.0 以后的版本来使用这一特性。</p>
+
+<p>如果你仍然希望使用 Hexo 2.x，你依旧可以按老的方式进行配置。NexT 仍然兼容 Hexo 2.x（但可能会出现错误）。</p>
+
+<h2 id="hexo-的方式">Hexo 的方式</h2>
+
+<p>使用这种方法，所有的配置保存在 hexo 配置文件中（<code>hexo/_config.yml</code>），并且不需要修改 <code>next/_config.yml</code> 配置文件或者创建其他任何文件。但是你必须在 <code>theme_config</code> 选项中保留双重空格缩进。</p>
+
+<p>如果在新版本中有任何新的配置项，你只需要从 <code>next/_config.yml</code> 拷贝这些配置项，粘贴到 <code>hexo/_config.yml</code> 并且设定他们为你想要的值。</p>
+
+<h3 id="使用方法">使用方法</h3>
+
+<ol>
+<li>检查不存在 <code>hexo/source/_data/next.yml</code> 文件（如果存在就删除）。</li>
+<li>从 <code>next/_config.yml</code> 拷贝需要的 NexT 主题配置项到 <code>hexo/_config.yml</code> 中，然后：
+2.1. 把这些选项向右移动两个空格。
+2.2. 在这些选项的上方加上 <code>theme_config</code> 参数。</li>
+</ol>
+
+<h3 id="相关链接">相关链接</h3>
+
+<ul>
+<li><a href="https://hexo.io/docs/configuration.html">Hexo Configuration</a></li>
+<li><a href="https://github.com/hexojs/hexo/pull/757">Hexo Pull #757</a></li>
+</ul>
+
+<h2 id="next-的方式">NexT 的方式</h2>
+
+<p>使用这种方法，你可以将所有的配置置于同一位置（<code>source/_data/next.yml</code>），并且不需要修改 <code>next/_config.yml</code>。但是这种选项可能无法准确的处理所有的 hexo 外部库及其附加选项（举个例子，<code>hexo-server</code> 模块选项可能只从默认的 hexo 配置中读取）。</p>
+
+<p>如果在新版本中有任何新的配置项，你只需要从 <code>next/_config.yml</code> 拷贝这些配置项，粘贴到 <code>data/next.yml</code> 并且设定他们为你想要的值。</p>
+
+<h3 id="使用方法-1">使用方法</h3>
+
+<ol>
+<li>请确认你的 Hexo 版本为 3.0 或更高。</li>
+<li>在你站点的 <code>hexo/source/_data</code> 目录创建一个 <code>next.yml</code> 文件（如果 <code>_data</code> 目录不存在，请创建之）。
+  在这些步骤之后有两个选择，只需要选择其中一个，然后继续下一步。
+  * 选择1：<code>override: false</code> (default)：
+ i. 检查 NexT 默认配置中的 <code>override</code> 选项，必须设定为 <code>false</code>。在 <code>next.yml</code> 中，无需定义它，或者也必须设定为 <code>false</code>。
+ ii. 复制你站点的 <code>_config.yml</code> 和主题的 <code>_config.yml</code> 中的 <strong>NexT 配置项</strong> 到 <code>hexo/source/_data/next.yml</code> 中。
+  * 选择2：<code>override: true</code>：
+ i. 在 <code>next.yml</code> 中，<code>override</code> 选项必须设定为 <code>true</code>。
+ ii. 复制你主题 <code>_config.yml</code> 中的 <strong>所有配置项</strong> 到 <code>hexo/source/_data/next.yml</code> 中。</li>
+<li>站点配置文件 <code>_config.yml</code> 中需要定义 <code>theme: next</code> 选项。</li>
+<li>使用标准参数来启动服务器，生成或部署（<code>hexo clean &amp;&amp; hexo g -d &amp;&amp; hexo s</code>）。</li>
+</ol>
+
+<h3 id="相关链接-1">相关链接</h3>
+
+<ul>
+<li><a href="https://github.com/iissnan/hexo-theme-next/issues/328">NexT Issue #328</a></li>
+</ul>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#hexo-的方式">Hexo 的方式</a>
+<ul>
+<li><a href="#使用方法">使用方法</a></li>
+<li><a href="#相关链接">相关链接</a></li>
+</ul></li>
+<li><a href="#next-的方式">NexT 的方式</a>
+<ul>
+<li><a href="#使用方法-1">使用方法</a></li>
+<li><a href="#相关链接-1">相关链接</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/01/09/setup-hexo-next-blog/">搭建Hexo NexT主题博客</a></li>
+	
+	<li><a href="/2017/11/24/gitalk-comment-extension/">Gitalk评论插件</a></li>
+	
+	<li><a href="/2017/11/23/hexo-next-blog/">NexT - Elegant Theme for Hexo</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/hexo">Hexo
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/01/27/shuting-to-the-oak-tree/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">致橡树 - 舒婷&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/01/18/alimail-with-aliyun-domain/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;阿里云域名赠送企业邮箱</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/01/19/theme-configuration-with-hexo-data-files/" class="leancloud-visitors" data-flag-title="使用 Hexo 数据文件进行主题配置">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

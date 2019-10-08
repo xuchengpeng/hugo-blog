@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>策略模式 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="策略模式" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/04/25/design-pattern-strategy-pattern/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">策略模式</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/04/25/design-pattern-strategy-pattern/" >
+                    <time datetime='2018-04-25T08:53:18.000&#43;00:00' itemprop="datePublished">2018-04-25</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">2 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>在策略模式（Strategy Pattern）中，一个类的行为或其算法可以在运行时更改。这种类型的设计模式属于行为型模式。
+在策略模式中，我们创建表示各种策略的对象和一个行为随着策略对象改变而改变的 context 对象。策略对象改变 context 对象的执行算法。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>意图：定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。
+主要解决：在有多种算法相似的情况下，使用 if&hellip;else 所带来的复杂和难以维护。
+何时使用：一个系统有许多许多类，而区分它们的只是他们直接的行为。
+如何解决：将这些算法封装成一个一个的类，任意地替换。
+关键代码：实现同一个接口。
+应用实例： 1、诸葛亮的锦囊妙计，每一个锦囊就是一个策略。 2、旅行的出游方式，选择骑自行车、坐汽车，每一种旅行方式都是一个策略。 3、JAVA AWT 中的 LayoutManager。
+优点： 1、算法可以自由切换。 2、避免使用多重条件判断。 3、扩展性良好。
+缺点： 1、策略类会增多。 2、所有策略类都需要对外暴露。
+使用场景： 1、如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。 2、一个系统需要动态地在几种算法中选择一种。 3、如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。
+注意事项：如果一个系统的策略多于四个，就需要考虑使用混合模式，解决策略类膨胀的问题。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建一个定义活动的 Strategy 接口和实现了 Strategy 接口的实体策略类。Context 是一个使用了某种策略的类。
+StrategyPatternDemo，我们的演示类使用 Context 和策略对象来演示 Context 在它所配置或使用的策略改变时的行为变化。</p>
+
+<p><img src="/images/design-pattern/strategy_pattern_uml_diagram.jpg" alt="" /></p>
+
+<h3 id="步骤-1">步骤 1</h3>
+
+<p>创建一个接口。
+<em>Strategy.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">Strategy</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">int</span> <span class="n">doOperation</span><span class="p">(</span><span class="kt">int</span> <span class="nf">num1</span><span class="p">,</span> <span class="kt">int</span> <span class="nf">num2</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-2">步骤 2</h3>
+
+<p>创建实现接口的实体类。
+<em>OperationAdd.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">OperationAdd</span> <span class="nf">implements</span> <span class="n">Strategy</span><span class="p">{</span>
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nf">int</span> <span class="n">doOperation</span><span class="p">(</span><span class="kt">int</span> <span class="nf">num1</span><span class="p">,</span> <span class="kt">int</span> <span class="nf">num2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<p><em>OperationSubstract.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">OperationSubstract</span> <span class="nf">implements</span> <span class="n">Strategy</span><span class="p">{</span>
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nf">int</span> <span class="n">doOperation</span><span class="p">(</span><span class="kt">int</span> <span class="nf">num1</span><span class="p">,</span> <span class="kt">int</span> <span class="nf">num2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">num1</span> <span class="o">-</span> <span class="n">num2</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<p><em>OperationMultiply.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">OperationMultiply</span> <span class="nf">implements</span> <span class="n">Strategy</span><span class="p">{</span>
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nf">int</span> <span class="n">doOperation</span><span class="p">(</span><span class="kt">int</span> <span class="nf">num1</span><span class="p">,</span> <span class="kt">int</span> <span class="nf">num2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-3">步骤 3</h3>
+
+<p>创建 Context 类。
+<em>Context.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Context</span> <span class="p">{</span>
+   <span class="kd">private</span> <span class="nf">Strategy</span> <span class="n">strategy</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">Context</span><span class="p">(</span><span class="n">Strategy</span> <span class="nf">strategy</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">strategy</span> <span class="o">=</span> <span class="n">strategy</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">int</span> <span class="n">executeStrategy</span><span class="p">(</span><span class="kt">int</span> <span class="nf">num1</span><span class="p">,</span> <span class="kt">int</span> <span class="nf">num2</span><span class="p">){</span>
+      <span class="k">return</span> <span class="n">strategy</span><span class="p">.</span><span class="na">doOperation</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-4">步骤 4</h3>
+
+<p>使用 Context 来查看当它改变策略 Strategy 时的行为变化。
+<em>StrategyPatternDemo.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">StrategyPatternDemo</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">Context</span> <span class="nf">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Context</span><span class="p">(</span><span class="k">new</span> <span class="n">OperationAdd</span><span class="p">());</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;10 + 5 = &#34;</span> <span class="o">+</span> <span class="n">context</span><span class="p">.</span><span class="na">executeStrategy</span><span class="p">(</span><span class="n">10</span><span class="p">,</span> <span class="n">5</span><span class="p">));</span>
+
+      <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Context</span><span class="p">(</span><span class="k">new</span> <span class="n">OperationSubstract</span><span class="p">());</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;10 - 5 = &#34;</span> <span class="o">+</span> <span class="n">context</span><span class="p">.</span><span class="na">executeStrategy</span><span class="p">(</span><span class="n">10</span><span class="p">,</span> <span class="n">5</span><span class="p">));</span>
+
+      <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Context</span><span class="p">(</span><span class="k">new</span> <span class="n">OperationMultiply</span><span class="p">());</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;10 * 5 = &#34;</span> <span class="o">+</span> <span class="n">context</span><span class="p">.</span><span class="na">executeStrategy</span><span class="p">(</span><span class="n">10</span><span class="p">,</span> <span class="n">5</span><span class="p">));</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-5">步骤 5</h3>
+
+<p>验证输出。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">10</span> <span class="o">+</span> <span class="n">5</span> <span class="o">=</span> <span class="n">15</span>
+<span class="nf">10</span> <span class="o">-</span> <span class="n">5</span> <span class="o">=</span> <span class="n">5</span>
+<span class="nf">10</span> <span class="o">*</span> <span class="n">5</span> <span class="o">=</span> <span class="n">50</span></code></pre></div>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#实现">实现</a>
+<ul>
+<li><a href="#步骤-1">步骤 1</a></li>
+<li><a href="#步骤-2">步骤 2</a></li>
+<li><a href="#步骤-3">步骤 3</a></li>
+<li><a href="#步骤-4">步骤 4</a></li>
+<li><a href="#步骤-5">步骤 5</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/04/25/design-pattern-null-object-pattern/">空对象模式</a></li>
+	
+	<li><a href="/2018/04/25/design-pattern-state-pattern/">状态模式</a></li>
+	
+	<li><a href="/2018/04/24/design-pattern-observer-pattern/">观察者模式</a></li>
+	
+	<li><a href="/2018/04/24/design-pattern-memento-pattern/">备忘录模式</a></li>
+	
+	<li><a href="/2018/04/24/design-pattern-mediator-pattern/">中介者模式</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">行为型模式
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/04/25/design-pattern-template-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">模板模式&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/04/25/design-pattern-null-object-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;空对象模式</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/04/25/design-pattern-strategy-pattern/" class="leancloud-visitors" data-flag-title="策略模式">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

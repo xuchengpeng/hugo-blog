@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Chuck&amp;Lucia</title>
+    <link>http://xuchengpeng.com/tags/hugo/</link>
+    <description>Recent content in Hugo on Chuck&amp;Lucia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 20 Jul 2018 09:20:28 +0800</lastBuildDate>
+    
+	<atom:link href="http://xuchengpeng.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>博客写作工具</title>
+      <link>http://xuchengpeng.com/2018/07/20/blog-writing-tools/</link>
+      <pubDate>Fri, 20 Jul 2018 09:20:28 +0800</pubDate>
+      
+      <guid>http://xuchengpeng.com/2018/07/20/blog-writing-tools/</guid>
+      <description>&lt;p&gt;基本的工具用途：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;：用来发布博客；&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://orgmode.org/&#34;&gt;orgmode&lt;/a&gt;：写org格式的博文；&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kaushalmodi/ox-hugo&#34;&gt;ox-hugo&lt;/a&gt;：将org博文导出为Markdown格式文件；&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting MathJax with Hugo</title>
+      <link>http://xuchengpeng.com/2018/07/10/setting-mathjax-with-hugo/</link>
+      <pubDate>Tue, 10 Jul 2018 14:28:41 +0800</pubDate>
+      
+      <guid>http://xuchengpeng.com/2018/07/10/setting-mathjax-with-hugo/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; - Beautiful math in all browsers&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;A JavaScript display engine for mathematics that works in all browsers. No more setup for readers. It just works.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

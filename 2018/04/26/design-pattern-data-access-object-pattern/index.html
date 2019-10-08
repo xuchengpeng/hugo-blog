@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>数据访问对象模式 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="数据访问对象模式" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/04/26/design-pattern-data-access-object-pattern/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">数据访问对象模式</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/04/26/design-pattern-data-access-object-pattern/" >
+                    <time datetime='2018-04-26T15:17:56.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">2 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>数据访问对象模式（Data Access Object Pattern）或 DAO 模式用于把低级的数据访问 API 或操作从高级的业务服务中分离出来。以下是数据访问对象模式的参与者。</p>
+
+<p>数据访问对象接口（Data Access Object Interface） - 该接口定义了在一个模型对象上要执行的标准操作。
+数据访问对象实体类（Data Access Object concrete class） - 该类实现了上述的接口。该类负责从数据源获取数据，数据源可以是数据库，也可以是 xml，或者是其他的存储机制。
+模型对象/数值对象（Model Object/Value Object） - 该对象是简单的 POJO，包含了 get/set 方法来存储通过使用 DAO 类检索到的数据。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>我们将创建一个作为模型对象或数值对象的 Student 对象。StudentDao 是数据访问对象接口。StudentDaoImpl 是实现了数据访问对象接口的实体类。DaoPatternDemo，我们的演示类使用 StudentDao 来演示数据访问对象模式的用法。</p>
+
+<p><img src="/images/design-pattern/dao_pattern_uml_diagram.jpg" alt="" /></p>
+
+<h3 id="步骤-1">步骤 1</h3>
+
+<p>创建数值对象。</p>
+
+<p><em>Student.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Student</span> <span class="p">{</span>
+   <span class="kd">private</span> <span class="nf">String</span> <span class="n">name</span><span class="p">;</span>
+   <span class="kd">private</span> <span class="nf">int</span> <span class="n">rollNo</span><span class="p">;</span>
+
+   <span class="n">Student</span><span class="p">(</span><span class="n">String</span> <span class="nf">name</span><span class="p">,</span> <span class="kt">int</span> <span class="nf">rollNo</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">rollNo</span> <span class="o">=</span> <span class="n">rollNo</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">String</span> <span class="n">getName</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setName</span><span class="p">(</span><span class="n">String</span> <span class="nf">name</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">int</span> <span class="n">getRollNo</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">rollNo</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setRollNo</span><span class="p">(</span><span class="kt">int</span> <span class="nf">rollNo</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">rollNo</span> <span class="o">=</span> <span class="n">rollNo</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-2">步骤 2</h3>
+
+<p>创建数据访问对象接口。</p>
+
+<p><em>StudentDao.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">List</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="nf">interface</span> <span class="n">StudentDao</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">List</span><span class="o">&lt;</span><span class="n">Student</span><span class="o">&gt;</span> <span class="nf">getAllStudents</span><span class="p">();</span>
+   <span class="kd">public</span> <span class="nf">Student</span> <span class="n">getStudent</span><span class="p">(</span><span class="kt">int</span> <span class="nf">rollNo</span><span class="p">);</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">updateStudent</span><span class="p">(</span><span class="n">Student</span> <span class="nf">student</span><span class="p">);</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">deleteStudent</span><span class="p">(</span><span class="n">Student</span> <span class="nf">student</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-3">步骤 3</h3>
+
+<p>创建实现了上述接口的实体类。</p>
+
+<p><em>StudentDaoImpl.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">ArrayList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">List</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="nf">class</span> <span class="n">StudentDaoImpl</span> <span class="nf">implements</span> <span class="n">StudentDao</span> <span class="p">{</span>
+
+   <span class="c1">//列表是当作一个数据库
+</span><span class="c1"></span>   <span class="n">List</span><span class="o">&lt;</span><span class="n">Student</span><span class="o">&gt;</span> <span class="nf">students</span><span class="p">;</span>
+
+   <span class="kd">public</span> <span class="nf">StudentDaoImpl</span><span class="p">(){</span>
+      <span class="n">students</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Student</span><span class="o">&gt;</span><span class="p">();</span>
+      <span class="n">Student</span> <span class="nf">student1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Student</span><span class="p">(</span><span class="s">&#34;Robert&#34;</span><span class="p">,</span><span class="n">0</span><span class="p">);</span>
+      <span class="n">Student</span> <span class="nf">student2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Student</span><span class="p">(</span><span class="s">&#34;John&#34;</span><span class="p">,</span><span class="n">1</span><span class="p">);</span>
+      <span class="n">students</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">student1</span><span class="p">);</span>
+      <span class="n">students</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">student2</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">deleteStudent</span><span class="p">(</span><span class="n">Student</span> <span class="nf">student</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">students</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">());</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Student: Roll No &#34;</span> <span class="o">+</span> <span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()</span>
+         <span class="o">+</span><span class="s">&#34;, deleted from database&#34;</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="c1">//从数据库中检索学生名单
+</span><span class="c1"></span>   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nf">List</span><span class="o">&lt;</span><span class="n">Student</span><span class="o">&gt;</span> <span class="nf">getAllStudents</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">students</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nf">Student</span> <span class="n">getStudent</span><span class="p">(</span><span class="kt">int</span> <span class="nf">rollNo</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">students</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rollNo</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="nf">void</span> <span class="n">updateStudent</span><span class="p">(</span><span class="n">Student</span> <span class="nf">student</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">students</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()).</span><span class="na">setName</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Student: Roll No &#34;</span> <span class="o">+</span> <span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()</span>
+         <span class="o">+</span><span class="s">&#34;, updated in the database&#34;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-4">步骤 4</h3>
+
+<p>使用 StudentDao 来演示数据访问对象模式的用法。</p>
+
+<p><em>DaoPatternDemo.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">DaoPatternDemo</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">StudentDao</span> <span class="nf">studentDao</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StudentDaoImpl</span><span class="p">();</span>
+
+      <span class="c1">//输出所有的学生
+</span><span class="c1"></span>      <span class="k">for</span> <span class="p">(</span><span class="n">Student</span> <span class="nf">student</span> <span class="o">:</span> <span class="n">studentDao</span><span class="p">.</span><span class="na">getAllStudents</span><span class="p">())</span> <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Student: [RollNo : &#34;</span>
+            <span class="o">+</span><span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()</span><span class="o">+</span><span class="s">&#34;, Name : &#34;</span><span class="o">+</span><span class="n">student</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="o">+</span><span class="s">&#34; ]&#34;</span><span class="p">);</span>
+      <span class="p">}</span>
+
+
+      <span class="c1">//更新学生
+</span><span class="c1"></span>      <span class="n">Student</span> <span class="nf">student</span> <span class="o">=</span><span class="n">studentDao</span><span class="p">.</span><span class="na">getAllStudents</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>
+      <span class="n">student</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="s">&#34;Michael&#34;</span><span class="p">);</span>
+      <span class="n">studentDao</span><span class="p">.</span><span class="na">updateStudent</span><span class="p">(</span><span class="n">student</span><span class="p">);</span>
+
+      <span class="c1">//获取学生
+</span><span class="c1"></span>      <span class="n">studentDao</span><span class="p">.</span><span class="na">getStudent</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Student: [RollNo : &#34;</span>
+         <span class="o">+</span><span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()</span><span class="o">+</span><span class="s">&#34;, Name : &#34;</span><span class="o">+</span><span class="n">student</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="o">+</span><span class="s">&#34; ]&#34;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="步骤-5">步骤 5</h3>
+
+<p>验证输出。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nl">Student:</span> <span class="p">[</span><span class="n">RollNo</span> <span class="o">:</span> <span class="n">0</span><span class="p">,</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Robert</span> <span class="p">]</span>
+<span class="nl">Student:</span> <span class="p">[</span><span class="n">RollNo</span> <span class="o">:</span> <span class="n">1</span><span class="p">,</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">John</span> <span class="p">]</span>
+<span class="nl">Student:</span> <span class="n">Roll</span> <span class="nf">No</span> <span class="n">0</span><span class="p">,</span> <span class="n">updated</span> <span class="nf">in</span> <span class="n">the</span> <span class="nf">database</span>
+<span class="nl">Student:</span> <span class="p">[</span><span class="n">RollNo</span> <span class="o">:</span> <span class="n">0</span><span class="p">,</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Michael</span> <span class="p">]</span></code></pre></div>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#实现">实现</a>
+<ul>
+<li><a href="#步骤-1">步骤 1</a></li>
+<li><a href="#步骤-2">步骤 2</a></li>
+<li><a href="#步骤-3">步骤 3</a></li>
+<li><a href="#步骤-4">步骤 4</a></li>
+<li><a href="#步骤-5">步骤 5</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/04/26/design-pattern-composite-entity-pattern/">组合实体模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-business-delegate-pattern/">业务代表模式</a></li>
+	
+	<li><a href="/2018/04/26/design-pattern-mvc-pattern/">MVC 模式</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/04/26/design-pattern-front-controller-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">前端控制器模式&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/04/26/design-pattern-composite-entity-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;组合实体模式</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/04/26/design-pattern-data-access-object-pattern/" class="leancloud-visitors" data-flag-title="数据访问对象模式">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

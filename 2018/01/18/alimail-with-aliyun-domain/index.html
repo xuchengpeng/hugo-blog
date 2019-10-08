@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>阿里云域名赠送企业邮箱 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="阿里云域名赠送企业邮箱" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/01/18/alimail-with-aliyun-domain/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">阿里云域名赠送企业邮箱</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/01/18/alimail-with-aliyun-domain/" >
+                    <time datetime='2018-01-18T07:30:32.000&#43;00:00' itemprop="datePublished">2018-01-18</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">1 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/web">Web</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/images/alimail-qiye.jpg" alt="" /></p>
+
+<p>申请 {% post_link set-up-aliyun-domain-with-github-pages 阿里云域名 %} 后，会赠送阿里云企业邮箱免费版。</p>
+
+<ul>
+<li>50个帐号，5G/帐号；</li>
+<li>域名注册成功后，自动开通企业邮箱并添加邮箱解析；</li>
+<li>每位会员只能开通一个企业邮箱免费版;</li>
+<li>仅 .top 域名注册送免费企业邮箱。</li>
+</ul>
+
+<p>开通企业邮箱免费版后一定要尽快使其生效，否则七天内会被收回。</p>
+
+<h2 id="域名绑定">域名绑定</h2>
+
+<p>进入 <a href="https://alimail.console.aliyun.com">阿里云邮箱控制台</a> 即可看到拥有的企业邮箱免费版。
+在更换域名选项卡中，选择你申请的域名并提交。</p>
+
+<h2 id="设置解析">设置解析</h2>
+
+<p>一般情况下，域名注册后会自动添加邮箱解析，解析状态会显示 {% label success@解析已生效 %}；
+如果邮箱解析失败，可以尝试一键添加解析，也可以手动添加如下配置：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">记录类型</th>
+<th align="left">主机记录</th>
+<th align="left">解析线路</th>
+<th align="left">记录值</th>
+<th align="left">MX优先级</th>
+<th align="left">TTL值</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">TXT</td>
+<td align="left">@</td>
+<td align="left">默认</td>
+<td align="left">v=spf1 include:spf.mxhichina.com -all</td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+
+<tr>
+<td align="left">CNAME</td>
+<td align="left">mail</td>
+<td align="left">默认</td>
+<td align="left">mail.mxhichina.com</td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+
+<tr>
+<td align="left">CNAME</td>
+<td align="left">imap</td>
+<td align="left">默认</td>
+<td align="left">imap.mxhichina.com</td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+
+<tr>
+<td align="left">CNAME</td>
+<td align="left">smtp</td>
+<td align="left">默认</td>
+<td align="left">smtp.mxhichina.com</td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+
+<tr>
+<td align="left">CNAME</td>
+<td align="left">pop3</td>
+<td align="left">默认</td>
+<td align="left">pop3.mxhichina.com</td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+
+<tr>
+<td align="left">MX</td>
+<td align="left">@</td>
+<td align="left">默认</td>
+<td align="left">mxw.mxhichina.com</td>
+<td align="left">10</td>
+<td align="left">600</td>
+</tr>
+
+<tr>
+<td align="left">MX</td>
+<td align="left">@</td>
+<td align="left">默认</td>
+<td align="left">mxn.mxhichina.com</td>
+<td align="left">5</td>
+<td align="left">600</td>
+</tr>
+</tbody>
+</table>
+
+<p>添加完成后刷新域名解析即可看到解析状态中显示 {% label success@解析已生效 %}。</p>
+
+<h2 id="设置密码和安全问题">设置密码和安全问题</h2>
+
+<p>在 {% label info@重置密码 %} 和 {% label info@重置安全问题 %} 选项卡中设置管理员帐号的密码和安全问题。</p>
+
+<h2 id="分配帐号">分配帐号</h2>
+
+<p>使用管理员帐号登陆 <a href="https://qiye.aliyun.com">邮箱访问地址</a> 为用户分配帐号。</p>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#域名绑定">域名绑定</a></li>
+<li><a href="#设置解析">设置解析</a></li>
+<li><a href="#设置密码和安全问题">设置密码和安全问题</a></li>
+<li><a href="#分配帐号">分配帐号</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/01/16/set-up-aliyun-domain-with-github-pages/">GitHub Pages 绑定阿里云域名</a></li>
+	
+	<li><a href="/2017/12/24/163-mail-dead/">163邮箱已死</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/aliyun">Aliyun
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/e-mail">E-mail
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/01/19/theme-configuration-with-hexo-data-files/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">使用 Hexo 数据文件进行主题配置&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/01/16/set-up-aliyun-domain-with-github-pages/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;GitHub Pages 绑定阿里云域名</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/01/18/alimail-with-aliyun-domain/" class="leancloud-visitors" data-flag-title="阿里云域名赠送企业邮箱">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>

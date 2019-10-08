@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>博客写作工具 // Chuck&amp;Lucia</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="博客写作工具" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="http://xuchengpeng.com/2018/07/20/blog-writing-tools/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.1/css/all.css">
+    
+    
+
+    <meta name="generator" content="Hugo 0.59.0-DEV" />
+</head>
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/archives/">归档</a>
+                
+                <a class="main-nav-link" href="/categories/">分类</a>
+                
+                <a class="main-nav-link" href="/tags/">标签</a>
+                
+                <a class="main-nav-link" href="/guestbook/">留言</a>
+                
+                <a class="main-nav-link" href="/about/">关于</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">博客写作工具</h1>
+        </header>
+        
+        <div class="article-meta">
+            <div class="article-date">
+                <a href="/2018/07/20/blog-writing-tools/" >
+                    <time datetime='2018-07-20T09:20:28.000&#43;08:00' itemprop="datePublished">2018-07-20</time>
+                </a>
+            </div>
+            <div class="article-readingtime-wrap">
+                <a class="article-readingtime">2 minute read</a>
+            </div>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tools">Tools</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>基本的工具用途：</p>
+
+<ul>
+<li><a href="https://gohugo.io/">Hugo</a>：用来发布博客；</li>
+<li><a href="https://orgmode.org/">orgmode</a>：写org格式的博文；</li>
+<li><a href="https://github.com/kaushalmodi/ox-hugo">ox-hugo</a>：将org博文导出为Markdown格式文件；</li>
+</ul>
+
+<h2 id="使用org-capture创建博文">使用org-capture创建博文</h2>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">with-eval-after-load</span> <span class="ss">&#39;org-capture</span>
+  <span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-org-hugo-new-subtree-post-capture-template</span> <span class="p">()</span>
+    <span class="s">&#34;Returns </span><span class="ss">`org-capture&#39;</span><span class="s"> template string for new Hugo post.
+</span><span class="s">     See </span><span class="ss">`org-capture-templates&#39;</span><span class="s"> for more information.&#34;</span>
+    <span class="p">(</span><span class="nb">let*</span> <span class="p">((</span><span class="nv">title</span> <span class="p">(</span><span class="nf">read-from-minibuffer</span> <span class="s">&#34;Post Title: &#34;</span><span class="p">))</span> <span class="c1">;Prompt to enter the post title</span>
+           <span class="p">(</span><span class="nv">fname</span> <span class="p">(</span><span class="nv">org-hugo-slug</span> <span class="nv">title</span><span class="p">))</span>
+           <span class="p">(</span><span class="nv">date</span> <span class="p">(</span><span class="nf">format-time-string</span> <span class="p">(</span><span class="nv">org-time-stamp-format</span> <span class="nb">:long</span> <span class="nb">:inactive</span><span class="p">)</span> <span class="p">(</span><span class="nv">org-current-time</span><span class="p">))))</span>
+      <span class="p">(</span><span class="nf">mapconcat</span> <span class="nf">#&#39;identity</span>
+                 <span class="o">`</span><span class="p">(</span>
+                   <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;* TODO &#34;</span> <span class="nv">title</span><span class="p">)</span>
+                   <span class="s">&#34;:PROPERTIES:&#34;</span>
+                   <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;:EXPORT_FILE_NAME: &#34;</span> <span class="nv">fname</span><span class="p">)</span>
+                   <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;:EXPORT_DATE: &#34;</span> <span class="nv">date</span><span class="p">)</span>
+                   <span class="s">&#34;:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :comments true :mathjax false&#34;</span>
+                   <span class="s">&#34;:END:&#34;</span>
+                   <span class="s">&#34;%?\n&#34;</span><span class="p">)</span>          <span class="c1">;Place the cursor here finally</span>
+                 <span class="s">&#34;\n&#34;</span><span class="p">)))</span>
+  
+  <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;org-capture-templates</span>
+               <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;h&#34;</span>                <span class="c1">;`org-capture&#39; binding + h</span>
+                 <span class="s">&#34;Hugo post&#34;</span>
+                 <span class="nv">entry</span>
+                 <span class="c1">;; It is assumed that below file is present in `org-directory&#39;</span>
+                 <span class="c1">;; and that it has a &#34;Hugo Posts&#34; heading. It can even be a</span>
+                 <span class="c1">;; symlink pointing to the actual location of all-posts.org!</span>
+                 <span class="p">(</span><span class="nv">file+olp</span> <span class="s">&#34;hugo-posts.org&#34;</span> <span class="s">&#34;Hugo Posts&#34;</span><span class="p">)</span>
+                 <span class="p">(</span><span class="nb">function</span> <span class="nv">dotemacs-org-hugo-new-subtree-post-capture-template</span><span class="p">))))</span>
+<span class="p">)</span></code></pre></div>
+<p>使用org-capture前先在<code>org-directory</code>目录创建<code>hugo-posts.org</code>文件，并且其中已包含一级标题<code>* Hugo Posts</code>，新创建的博文将在这个标题下。</p>
+
+<h2 id="使用ox-hugo导出博文">使用ox-hugo导出博文</h2>
+
+<h3 id="导出前设置">导出前设置</h3>
+
+<p>在<code>hugo-posts.org</code>文件头部增加以下内容：</p>
+<div class="highlight"><pre class="chroma"><code class="language-org" data-lang="org"><span class="cs">#+HUGO_BASE_DIR</span><span class="c">: e:/GitHub/xuchengpeng.github.io/</span>
+<span class="cs">#+HUGO_SECTION</span><span class="c">: post</span>
+<span class="cs">#+TITLE</span><span class="c">:</span>
+<span class="cs">#+DATE</span><span class="c">:</span>
+<span class="cs">#+HUGO_AUTO_SET_LASTMOD</span><span class="c">: t</span>
+<span class="cs">#+HUGO_CATEGORIES</span><span class="c">: hugo test</span>
+<span class="cs">#+HUGO_TAGS</span><span class="c">: hugo</span>
+<span class="cs">#+HUGO_DRAFT</span><span class="c">: false</span></code></pre></div>
+<p><code>HUGO_BASE_DIR</code>和<code>HUGO_SECTION</code>根据实际情况而定，<code>HUGO_CATEGORIES</code>和<code>HUGO_TAGS</code>可为当前要导出的博文设定分类和标签。</p>
+
+<h3 id="导出方法">导出方法</h3>
+
+<p><code>C-c C-e H H</code> 导出单个子树到Markdown文件，一般一个子树就是一篇文章；</p>
+
+<p><code>C-c C-e H A</code> 导出所有子树到Markdown文件，会为每篇文章都导出一个Markdown文件。</p>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#使用org-capture创建博文">使用org-capture创建博文</a></li>
+<li><a href="#使用ox-hugo导出博文">使用ox-hugo导出博文</a>
+<ul>
+<li><a href="#导出前设置">导出前设置</a></li>
+<li><a href="#导出方法">导出方法</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+        
+
+
+<section id="related">
+  <h3>See Also</h3>
+  <ul>
+	
+	<li><a href="/2018/07/10/setting-mathjax-with-hugo/">Setting MathJax with Hugo</a></li>
+	
+	<li><a href="/2018/05/18/emacs-font-configuration/">emacs 字体配置</a></li>
+	
+	<li><a href="/2018/04/13/ubuntu-add-delete-ppa/">Ubuntu 增加和删除 PPA 软件源</a></li>
+	
+	<li><a href="/2018/03/30/emacs-native-profiler/">Emacs Native Profiler</a></li>
+	
+	<li><a href="/2018/03/30/emacs-show-line-numbers/">Emacs: Show Line Numbers</a></li>
+	
+  </ul>
+</section>
+
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/hugo">Hugo
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/orgmode">orgmode
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/ox-hugo">ox-hugo
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <nav id="article-nav">
+    
+    <a href="/2018/07/20/powerful-org-capture/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">强大的org-capture&nbsp;<span>&gt;</span></div>
+    </a>
+    
+    
+    <a href="/2018/07/10/setting-mathjax-with-hugo/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;Setting MathJax with Hugo</div>
+    </a>
+    
+</nav>
+</article>
+
+        
+        
+  <div class="article-comments">
+  
+  <span id="/2018/07/20/blog-writing-tools/" class="leancloud-visitors" data-flag-title="博客写作工具">
+    <span class="post-meta-item-text">文章阅读量 </span>
+    <span class="leancloud-visitors-count">0</span>
+  </span>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz',
+        appKey: 'eQc0CtLv9s4VTdObz6ux8lVW',
+        notify:  false , 
+        verify:  false , 
+        avatar:'wavatar', 
+        placeholder: 'Leave your comments here...',
+        visitor:  true 
+    });
+  </script>
+  </div>
+    </section>
+
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+                <i class="fas fa-rss"></i>
+            </a>&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+    
+	<script type="text/javascript" size="90" alpha='0.6' zIndex="-1" src="http://xuchengpeng.com//js/ribbon.min.js"></script>
+	
+	
+</footer>
+
+</div>
+</body>
+</html>
