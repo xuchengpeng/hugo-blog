@@ -1,18 +1,15 @@
 language: go
 sudo: required
 
-go: "1.13"
+go: 1.x
 
 addons:
   apt:
     update: true
 
 install:
-  - mkdir $HOME/src
-  - cd $HOME/src
-  - git clone https://github.com/gohugoio/hugo.git
-  - cd hugo
-  - go install --tags extended
+  - chmod ./install_hugo.sh
+  - ./install_hugo.sh
 
 script:
   - hugo
