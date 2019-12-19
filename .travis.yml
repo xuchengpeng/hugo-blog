@@ -8,7 +8,7 @@ addons:
     update: true
 
 install:
-  - chmod ./install_hugo.sh
+  - chmod +x ./install_hugo.sh
   - ./install_hugo.sh
 
 script:
