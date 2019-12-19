@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,18 +97,24 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">defvar</span> <span class="nv">company-mode/enable-yas</span> <span class="no">t</span>
-  <span class="s">&#34;Enable yasnippet for all backends.&#34;</span><span class="p">)</span>
+  <span class="s">&#34;</span><span class="s">Enable yasnippet for all backends.</span><span class="s">&#34;</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nb">defun</span> <span class="nv">company-mode/backend-with-yas</span> <span class="p">(</span><span class="nv">backend</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">not</span> <span class="nv">company-mode/enable-yas</span><span class="p">)</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nf">listp</span> <span class="nv">backend</span><span class="p">)</span> <span class="p">(</span><span class="nf">member</span> <span class="ss">&#39;company-yasnippet</span> <span class="nv">backend</span><span class="p">)))</span>
+  <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">not</span> <span class="nv">company-mode/enable-yas</span><span class="p">)</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nf">listp</span> <span class="nv">backend</span><span class="p">)</span> <span class="p">(</span><span class="nf">member</span> <span class="ss">&#39;company-yasnippet</span> <span class="nv">backend</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
       <span class="nv">backend</span>
-    <span class="p">(</span><span class="nf">append</span> <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">consp</span> <span class="nv">backend</span><span class="p">)</span> <span class="nv">backend</span> <span class="p">(</span><span class="nf">list</span> <span class="nv">backend</span><span class="p">))</span>
-            <span class="o">&#39;</span><span class="p">(</span><span class="nb">:with</span> <span class="nv">company-yasnippet</span><span class="p">))))</span>
+    <span class="p">(</span><span class="nf">append</span> <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">consp</span> <span class="nv">backend</span><span class="p">)</span> <span class="nv">backend</span> <span class="p">(</span><span class="nf">list</span> <span class="nv">backend</span><span class="p">)</span><span class="p">)</span>
+            <span class="o">&#39;</span><span class="p">(</span><span class="nb">:with</span> <span class="nv">company-yasnippet</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
 
-<span class="p">(</span><span class="nb">setq</span> <span class="nv">company-backends</span> <span class="p">(</span><span class="nf">mapcar</span> <span class="nf">#&#39;</span><span class="nv">company-mode/backend-with-yas</span> <span class="nv">company-backends</span><span class="p">))</span></code></pre></div>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">company-backends</span> <span class="p">(</span><span class="nf">mapcar</span> <span class="nf">#&#39;</span><span class="nv">company-mode/backend-with-yas</span> <span class="nv">company-backends</span><span class="p">)</span><span class="p">)</span>
+</code></pre></div>
         </div>
 
         
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents"></nav>
+        </div>
         
         
 

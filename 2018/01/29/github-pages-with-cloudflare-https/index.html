@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -96,38 +96,28 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p><img src="/images/https&amp;http.jpg" alt="" /></p>
-
+            <p><img src="/images/https&amp;http.jpg" alt=""></p>
 <blockquote>
 <p>Google宣布了，从2017年1月份正式发布的Chrome 56开始，Google将把某些包含敏感内容的https页面标记为“不安全”。</p>
 </blockquote>
-
 <p>GitHub Pages 本身是 https 的站点，但是 {% post_link set-up-aliyun-domain-with-github-pages 绑定个人域名 %} 了以后，站点便是 http 的。</p>
-
-<h2 id="https-和-http-的区别">https 和 http 的区别</h2>
-
+<h2 id="https--http-">https 和 http 的区别</h2>
 <ol>
 <li>https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。</li>
 <li>http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。</li>
 <li>http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</li>
 <li>http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</li>
 </ol>
-
-<h2 id="https-的优点">https 的优点</h2>
-
+<h2 id="https-">https 的优点</h2>
 <p>尽管HTTPS并非绝对安全，掌握根证书的机构、掌握加密算法的组织同样可以进行中间人形式的攻击，但HTTPS仍是现行架构下最安全的解决方案，主要有以下几个好处：</p>
-
 <ol>
 <li>使用HTTPS协议可认证用户和服务器，确保数据发送到正确的客户机和服务器；</li>
 <li>HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比http协议安全，可防止数据在传输过程中不被窃取、改变，确保数据的完整性。</li>
 <li>HTTPS是现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了中间人攻击的成本。</li>
 <li>谷歌曾在2014年8月份调整搜索引擎算法，并称“比起同等HTTP网站，采用HTTPS加密的网站在搜索结果中的排名将会更高”。</li>
 </ol>
-
-<h2 id="https-的缺点">https 的缺点</h2>
-
+<h2 id="https--1">https 的缺点</h2>
 <p>虽然说HTTPS有很大的优势，但其相对来说，还是存在不足之处的：</p>
-
 <ol>
 <li>HTTPS协议握手阶段比较费时，会使页面的加载时间延长近50%，增加10%到20%的耗电；</li>
 <li>HTTPS连接缓存不如HTTP高效，会增加数据开销和功耗，甚至已有的安全措施也会因此而受到影响；</li>
@@ -135,17 +125,12 @@
 <li>SSL证书通常需要绑定IP，不能在同一IP上绑定多个域名，IPv4资源不可能支撑这个消耗。</li>
 <li>HTTPS协议的加密范围也比较有限，在黑客攻击、拒绝服务攻击、服务器劫持等方面几乎起不到什么作用。最关键的，SSL证书的信用链体系并不安全，特别是在某些国家可以控制CA根证书的情况下，中间人攻击一样可行。</li>
 </ol>
-
-<h2 id="为什么使用-cloudflare-提供的免费ssl">为什么使用 Cloudflare 提供的免费SSL</h2>
-
+<h2 id="-cloudflare-ssl">为什么使用 Cloudflare 提供的免费SSL</h2>
 <p>收费的SSL服务总是比免费的更加周到，一般收费的SSL都会提供端到端的加密。但是价格不菲，对于个人博客来说，使用免费的就可以了。Cloudflare还提供免费的CDN和缓存技术，让浏览者有更好的体验。</p>
-
-<h2 id="使用-cloudflare-管理站点">使用 Cloudflare 管理站点</h2>
-
+<h2 id="-cloudflare-">使用 Cloudflare 管理站点</h2>
 <p>1、注册 <a href="https://www.cloudflare.com/">Cloudflare</a> 账号并登陆。
 2、添加你的站点，填入域名，比如我的是 <code>xuchengpeng.com</code>，点击 <strong>Begin Scan</strong>。
 3、Cloudflare 会花大约60秒的时间扫描 DNS 记录，确保有以下几条：</p>
-
 <table>
 <thead>
 <tr>
@@ -156,7 +141,6 @@
 <th align="left">TTL值</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">CNAME</td>
@@ -165,7 +149,6 @@
 <td align="left">xuchengpeng.github.io</td>
 <td align="left">600</td>
 </tr>
-
 <tr>
 <td align="left">A</td>
 <td align="left">@</td>
@@ -173,7 +156,6 @@
 <td align="left">192.30.252.153</td>
 <td align="left">600</td>
 </tr>
-
 <tr>
 <td align="left">A</td>
 <td align="left">@</td>
@@ -183,14 +165,12 @@
 </tr>
 </tbody>
 </table>
-
 <p>4、继续点击 <strong>Continue</strong>，到域名注册商网站把 DNS 修改为 Cloudflare 提供的 DNS 服务器地址。
-   如我的是：<code>aiden.ns.cloudflare.com</code> 和 <code>kate.ns.cloudflare.com</code>。
+如我的是：<code>aiden.ns.cloudflare.com</code> 和 <code>kate.ns.cloudflare.com</code>。
 5、选择 <strong>Free Website</strong>，直至建站完成。
 6、点击 <strong>Crypto</strong> 菜单，设置为 <strong>Flexible</strong>。
 打开 <strong>Always use HTTPS</strong> 和 <strong>Automatic HTTPS Rewrites</strong> 选项。
 7、点击 <strong>Page Rules</strong> 菜单，增加两条规则：</p>
-
 <table>
 <thead>
 <tr>
@@ -198,20 +178,17 @@
 <th align="left">规则</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="left"><a href="http://xuchengpeng.com/*">http://xuchengpeng.com/*</a></td>
+<td align="left"><a href="http://xuchengpeng.com/">http://xuchengpeng.com/</a>*</td>
 <td align="left">Always Use HTTPS</td>
 </tr>
-
 <tr>
 <td align="left"><a href="http://xuchengpeng.com/">http://xuchengpeng.com/</a></td>
 <td align="left">Forwarding URL:(Status Code: 301 - Permanent Redirect, Url: <a href="https://xuchengpeng.com/">https://xuchengpeng.com/</a>)</td>
 </tr>
 </tbody>
 </table>
-
 <p>8、等待一段时间，设置生效，访问你的网站即可看到效果。</p>
         </div>
 
@@ -220,16 +197,13 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#https-和-http-的区别">https 和 http 的区别</a></li>
-<li><a href="#https-的优点">https 的优点</a></li>
-<li><a href="#https-的缺点">https 的缺点</a></li>
-<li><a href="#为什么使用-cloudflare-提供的免费ssl">为什么使用 Cloudflare 提供的免费SSL</a></li>
-<li><a href="#使用-cloudflare-管理站点">使用 Cloudflare 管理站点</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#https--http-">https 和 http 的区别</a></li>
+    <li><a href="#https-">https 的优点</a></li>
+    <li><a href="#https--1">https 的缺点</a></li>
+    <li><a href="#-cloudflare-ssl">为什么使用 Cloudflare 提供的免费SSL</a></li>
+    <li><a href="#-cloudflare-">使用 Cloudflare 管理站点</a></li>
+  </ul>
 </nav>
         </div>
         

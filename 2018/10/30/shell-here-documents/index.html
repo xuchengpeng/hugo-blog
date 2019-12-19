@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,24 +97,19 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>Here Documents 是 Shell 中的一种特殊的重定向方式，用来将输入重定向到一个交互式 Shell 脚本或程序。</p>
-
 <p>它的基本的形式如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">command</span> <span class="s">&lt;&lt; delimiter
 </span><span class="s">    document
-</span><span class="s">delimiter</span></code></pre></div>
-<p>它的作用是将两个 delimiter 之间的内容(document) 作为输入传递给 command。</p>
-
+</span><span class="s">delimiter</span>
+</code></pre></div><p>它的作用是将两个 delimiter 之间的内容(document) 作为输入传递给 command。</p>
 <blockquote>
 <p>注意：</p>
-
 <ul>
 <li>结尾的delimiter 一定要顶格写，前面不能有任何字符，后面也不能有任何字符，包括空格和 tab 缩进。</li>
 <li>开始的delimiter前后的空格会被忽略掉。</li>
 </ul>
 </blockquote>
-
-<h3 id="实例">实例</h3>
-
+<h3 id="heading">实例</h3>
 <p>在命令行中通过 wc -l 命令计算行数：</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ wc -l <span class="s">&lt;&lt; EOF
 </span><span class="s">    欢迎来到
@@ -122,8 +117,8 @@
 </span><span class="s">    www.runoob.com
 </span><span class="s">EOF</span>
 <span class="m">3</span>          <span class="c1"># 输出结果为 3 行</span>
-$</code></pre></div>
-<p>我们也可以将 Here Documents 用在脚本中，例如：</p>
+$
+</code></pre></div><p>我们也可以将 Here Documents 用在脚本中，例如：</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/bash
 </span><span class="cp"></span><span class="c1"># author:菜鸟教程</span>
 <span class="c1"># url:www.runoob.com</span>
@@ -132,11 +127,12 @@ cat <span class="s">&lt;&lt; EOF
 </span><span class="s">欢迎来到
 </span><span class="s">菜鸟教程
 </span><span class="s">www.runoob.com
-</span><span class="s">EOF</span></code></pre></div>
-<p>执行以上脚本，输出结果：</p>
+</span><span class="s">EOF</span>
+</code></pre></div><p>执行以上脚本，输出结果：</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">欢迎来到
 菜鸟教程
-www.runoob.com</code></pre></div>
+www.runoob.com
+</code></pre></div>
         </div>
 
         
@@ -144,15 +140,13 @@ www.runoob.com</code></pre></div>
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#实例">实例</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">实例</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

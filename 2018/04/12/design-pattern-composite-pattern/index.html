@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -99,10 +99,8 @@
             <p>组合模式（Composite Pattern），又叫部分整体模式，是用于把一组相似的对象当作一个单一的对象。组合模式依据树形结构来组合对象，用来表示部分以及整体层次。这种类型的设计模式属于结构型模式，它创建了对象组的树形结构。
 这种模式创建了一个包含自己对象组的类。该类提供了修改相同对象组的方式。
 我们通过下面的实例来演示组合模式的用法。实例演示了一个组织中员工的层次结构。</p>
-
-<h2 id="介绍">介绍</h2>
-
-<p>意图：将对象组合成树形结构以表示&rdquo;部分-整体&rdquo;的层次结构。组合模式使得用户对单个对象和组合对象的使用具有一致性。
+<h2 id="heading">介绍</h2>
+<p>意图：将对象组合成树形结构以表示&quot;部分-整体&quot;的层次结构。组合模式使得用户对单个对象和组合对象的使用具有一致性。
 主要解决：它在我们树型结构的问题中，模糊了简单元素和复杂元素的概念，客户程序可以向处理简单元素一样来处理复杂元素，从而使得客户程序与复杂元素的内部结构解耦。
 何时使用： 1、您想表示对象的部分-整体层次结构（树形结构）。 2、您希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。
 如何解决：树枝和叶子实现统一接口，树枝内部组合该接口。
@@ -112,99 +110,93 @@
 缺点：在使用组合模式时，其叶子和树枝的声明都是实现类，而不是接口，违反了依赖倒置原则。
 使用场景：部分、整体场景，如树形菜单，文件、文件夹的管理。
 注意事项：定义时为具体类。</p>
-
-<h2 id="实现">实现</h2>
-
+<h2 id="heading-1">实现</h2>
 <p>我们有一个类 Employee，该类被当作组合模型类。CompositePatternDemo，我们的演示类使用 Employee 类来添加部门层次结构，并打印所有员工。</p>
-
-<p><img src="/images/design-pattern/composite_pattern_uml_diagram.jpg" alt="" /></p>
-
-<h3 id="步骤-1">步骤 1</h3>
-
+<p><img src="/images/design-pattern/composite_pattern_uml_diagram.jpg" alt=""></p>
+<h3 id="-1">步骤 1</h3>
 <p>创建 Employee 类，该类带有 Employee 对象的列表。
 <em>Employee.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">ArrayList</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">List</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">Employee</span> <span class="p">{</span>
-   <span class="kd">private</span> <span class="nf">String</span> <span class="n">name</span><span class="p">;</span>
-   <span class="kd">private</span> <span class="nf">String</span> <span class="n">dept</span><span class="p">;</span>
-   <span class="kd">private</span> <span class="nf">int</span> <span class="n">salary</span><span class="p">;</span>
-   <span class="kd">private</span> <span class="nf">List</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span> <span class="nf">subordinates</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Employee</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+   <span class="kd">private</span> <span class="n">String</span> <span class="n">dept</span><span class="o">;</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">salary</span><span class="o">;</span>
+   <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span> <span class="n">subordinates</span><span class="o">;</span>
 
    <span class="c1">//构造函数
-</span><span class="c1"></span>   <span class="kd">public</span> <span class="nf">Employee</span><span class="p">(</span><span class="n">String</span> <span class="nf">name</span><span class="p">,</span><span class="n">String</span> <span class="nf">dept</span><span class="p">,</span> <span class="kt">int</span> <span class="nf">sal</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">dept</span> <span class="o">=</span> <span class="n">dept</span><span class="p">;</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">salary</span> <span class="o">=</span> <span class="n">sal</span><span class="p">;</span>
-      <span class="n">subordinates</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span><span class="p">();</span>
-   <span class="p">}</span>
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="nf">Employee</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span><span class="n">String</span> <span class="n">dept</span><span class="o">,</span> <span class="kt">int</span> <span class="n">sal</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">dept</span> <span class="o">=</span> <span class="n">dept</span><span class="o">;</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">salary</span> <span class="o">=</span> <span class="n">sal</span><span class="o">;</span>
+      <span class="n">subordinates</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">add</span><span class="p">(</span><span class="n">Employee</span> <span class="nf">e</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">subordinates</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">Employee</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">subordinates</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">e</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">remove</span><span class="p">(</span><span class="n">Employee</span> <span class="nf">e</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">subordinates</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">remove</span><span class="o">(</span><span class="n">Employee</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">subordinates</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">e</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">List</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span> <span class="nf">getSubordinates</span><span class="p">(){</span>
-     <span class="k">return</span> <span class="n">subordinates</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span> <span class="nf">getSubordinates</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+     <span class="k">return</span> <span class="n">subordinates</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">toString</span><span class="p">(){</span>
-      <span class="k">return</span> <span class="p">(</span><span class="s">&#34;Employee :[ Name : &#34;</span><span class="o">+</span> <span class="n">name</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">return</span> <span class="o">(</span><span class="s">&#34;Employee :[ Name : &#34;</span><span class="o">+</span> <span class="n">name</span>
       <span class="o">+</span><span class="s">&#34;, dept : &#34;</span><span class="o">+</span> <span class="n">dept</span> <span class="o">+</span> <span class="s">&#34;, salary :&#34;</span>
-      <span class="o">+</span> <span class="n">salary</span><span class="o">+</span><span class="s">&#34; ]&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-2">步骤 2</h3>
-
+      <span class="o">+</span> <span class="n">salary</span><span class="o">+</span><span class="s">&#34; ]&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-2">步骤 2</h3>
 <p>使用 Employee 类来创建和打印员工的层次结构。
 <em>CompositePatternDemo.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">CompositePatternDemo</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">Employee</span> <span class="nf">CEO</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="p">(</span><span class="s">&#34;John&#34;</span><span class="p">,</span><span class="s">&#34;CEO&#34;</span><span class="p">,</span> <span class="n">30000</span><span class="p">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CompositePatternDemo</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">Employee</span> <span class="n">CEO</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="s">&#34;John&#34;</span><span class="o">,</span><span class="s">&#34;CEO&#34;</span><span class="o">,</span> <span class="n">30000</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">Employee</span> <span class="nf">headSales</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="p">(</span><span class="s">&#34;Robert&#34;</span><span class="p">,</span><span class="s">&#34;Head Sales&#34;</span><span class="p">,</span> <span class="n">20000</span><span class="p">);</span>
+      <span class="n">Employee</span> <span class="n">headSales</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="s">&#34;Robert&#34;</span><span class="o">,</span><span class="s">&#34;Head Sales&#34;</span><span class="o">,</span> <span class="n">20000</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">Employee</span> <span class="nf">headMarketing</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="p">(</span><span class="s">&#34;Michel&#34;</span><span class="p">,</span><span class="s">&#34;Head Marketing&#34;</span><span class="p">,</span> <span class="n">20000</span><span class="p">);</span>
+      <span class="n">Employee</span> <span class="n">headMarketing</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="s">&#34;Michel&#34;</span><span class="o">,</span><span class="s">&#34;Head Marketing&#34;</span><span class="o">,</span> <span class="n">20000</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">Employee</span> <span class="nf">clerk1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="p">(</span><span class="s">&#34;Laura&#34;</span><span class="p">,</span><span class="s">&#34;Marketing&#34;</span><span class="p">,</span> <span class="n">10000</span><span class="p">);</span>
-      <span class="n">Employee</span> <span class="nf">clerk2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="p">(</span><span class="s">&#34;Bob&#34;</span><span class="p">,</span><span class="s">&#34;Marketing&#34;</span><span class="p">,</span> <span class="n">10000</span><span class="p">);</span>
+      <span class="n">Employee</span> <span class="n">clerk1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="s">&#34;Laura&#34;</span><span class="o">,</span><span class="s">&#34;Marketing&#34;</span><span class="o">,</span> <span class="n">10000</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">Employee</span> <span class="n">clerk2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="s">&#34;Bob&#34;</span><span class="o">,</span><span class="s">&#34;Marketing&#34;</span><span class="o">,</span> <span class="n">10000</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">Employee</span> <span class="nf">salesExecutive1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="p">(</span><span class="s">&#34;Richard&#34;</span><span class="p">,</span><span class="s">&#34;Sales&#34;</span><span class="p">,</span> <span class="n">10000</span><span class="p">);</span>
-      <span class="n">Employee</span> <span class="nf">salesExecutive2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="p">(</span><span class="s">&#34;Rob&#34;</span><span class="p">,</span><span class="s">&#34;Sales&#34;</span><span class="p">,</span> <span class="n">10000</span><span class="p">);</span>
+      <span class="n">Employee</span> <span class="n">salesExecutive1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="s">&#34;Richard&#34;</span><span class="o">,</span><span class="s">&#34;Sales&#34;</span><span class="o">,</span> <span class="n">10000</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">Employee</span> <span class="n">salesExecutive2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="s">&#34;Rob&#34;</span><span class="o">,</span><span class="s">&#34;Sales&#34;</span><span class="o">,</span> <span class="n">10000</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">CEO</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">headSales</span><span class="p">);</span>
-      <span class="n">CEO</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">headMarketing</span><span class="p">);</span>
+      <span class="n">CEO</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">headSales</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">CEO</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">headMarketing</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">headSales</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">salesExecutive1</span><span class="p">);</span>
-      <span class="n">headSales</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">salesExecutive2</span><span class="p">);</span>
+      <span class="n">headSales</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">salesExecutive1</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">headSales</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">salesExecutive2</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">headMarketing</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">clerk1</span><span class="p">);</span>
-      <span class="n">headMarketing</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">clerk2</span><span class="p">);</span>
+      <span class="n">headMarketing</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">clerk1</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">headMarketing</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">clerk2</span><span class="o">)</span><span class="o">;</span>
 
       <span class="c1">//打印该组织的所有员工
-</span><span class="c1"></span>      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">CEO</span><span class="p">);</span>
-      <span class="k">for</span> <span class="p">(</span><span class="n">Employee</span> <span class="nf">headEmployee</span> <span class="o">:</span> <span class="n">CEO</span><span class="p">.</span><span class="na">getSubordinates</span><span class="p">())</span> <span class="p">{</span>
-         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">headEmployee</span><span class="p">);</span>
-         <span class="k">for</span> <span class="p">(</span><span class="n">Employee</span> <span class="nf">employee</span> <span class="o">:</span> <span class="n">headEmployee</span><span class="p">.</span><span class="na">getSubordinates</span><span class="p">())</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">employee</span><span class="p">);</span>
-         <span class="p">}</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-3">步骤 3</h3>
-
+</span><span class="c1"></span>      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">CEO</span><span class="o">)</span><span class="o">;</span>
+      <span class="k">for</span> <span class="o">(</span><span class="n">Employee</span> <span class="n">headEmployee</span> <span class="o">:</span> <span class="n">CEO</span><span class="o">.</span><span class="na">getSubordinates</span><span class="o">(</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
+         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">headEmployee</span><span class="o">)</span><span class="o">;</span>
+         <span class="k">for</span> <span class="o">(</span><span class="n">Employee</span> <span class="n">employee</span> <span class="o">:</span> <span class="n">headEmployee</span><span class="o">.</span><span class="na">getSubordinates</span><span class="o">(</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">employee</span><span class="o">)</span><span class="o">;</span>
+         <span class="o">}</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-3">步骤 3</h3>
 <p>验证输出。</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Employee</span> <span class="o">:</span><span class="p">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">John</span><span class="p">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">CEO</span><span class="p">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">30000</span> <span class="p">]</span>
-<span class="n">Employee</span> <span class="o">:</span><span class="p">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Robert</span><span class="p">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">Head</span> <span class="nf">Sales</span><span class="p">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">20000</span> <span class="p">]</span>
-<span class="n">Employee</span> <span class="o">:</span><span class="p">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Richard</span><span class="p">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">Sales</span><span class="p">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">10000</span> <span class="p">]</span>
-<span class="n">Employee</span> <span class="o">:</span><span class="p">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Rob</span><span class="p">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">Sales</span><span class="p">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">10000</span> <span class="p">]</span>
-<span class="n">Employee</span> <span class="o">:</span><span class="p">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Michel</span><span class="p">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">Head</span> <span class="nf">Marketing</span><span class="p">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">20000</span> <span class="p">]</span>
-<span class="n">Employee</span> <span class="o">:</span><span class="p">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Laura</span><span class="p">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">Marketing</span><span class="p">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">10000</span> <span class="p">]</span>
-<span class="n">Employee</span> <span class="o">:</span><span class="p">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Bob</span><span class="p">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">Marketing</span><span class="p">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">10000</span> <span class="p">]</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Employee</span> <span class="o">:</span><span class="o">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">John</span><span class="o">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">CEO</span><span class="o">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">30000</span> <span class="o">]</span>
+<span class="n">Employee</span> <span class="o">:</span><span class="o">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Robert</span><span class="o">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">Head</span> <span class="n">Sales</span><span class="o">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">20000</span> <span class="o">]</span>
+<span class="n">Employee</span> <span class="o">:</span><span class="o">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Richard</span><span class="o">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">Sales</span><span class="o">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">10000</span> <span class="o">]</span>
+<span class="n">Employee</span> <span class="o">:</span><span class="o">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Rob</span><span class="o">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">Sales</span><span class="o">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">10000</span> <span class="o">]</span>
+<span class="n">Employee</span> <span class="o">:</span><span class="o">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Michel</span><span class="o">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">Head</span> <span class="n">Marketing</span><span class="o">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">20000</span> <span class="o">]</span>
+<span class="n">Employee</span> <span class="o">:</span><span class="o">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Laura</span><span class="o">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">Marketing</span><span class="o">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">10000</span> <span class="o">]</span>
+<span class="n">Employee</span> <span class="o">:</span><span class="o">[</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Bob</span><span class="o">,</span> <span class="n">dept</span> <span class="o">:</span> <span class="n">Marketing</span><span class="o">,</span> <span class="n">salary</span> <span class="o">:</span><span class="n">10000</span> <span class="o">]</span>
+</code></pre></div>
         </div>
 
         
@@ -212,18 +204,16 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#实现">实现</a>
-<ul>
-<li><a href="#步骤-1">步骤 1</a></li>
-<li><a href="#步骤-2">步骤 2</a></li>
-<li><a href="#步骤-3">步骤 3</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">介绍</a></li>
+    <li><a href="#heading-1">实现</a>
+      <ul>
+        <li><a href="#-1">步骤 1</a></li>
+        <li><a href="#-2">步骤 2</a></li>
+        <li><a href="#-3">步骤 3</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

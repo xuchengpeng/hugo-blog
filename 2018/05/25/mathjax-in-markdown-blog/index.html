@@ -44,7 +44,7 @@ MathJax.Hub.Config({
 });
 </script>
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -112,35 +112,28 @@ MathJax.Hub.Config({
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p><a href="https://www.mathjax.org/">MathJax</a> - Beautiful math in all browsers</p>
-
 <blockquote>
 <p>A JavaScript display engine for mathematics that works in all browsers. No more setup for readers. It just works.</p>
 </blockquote>
-
-<h2 id="mathjax-使用">MathJax 使用</h2>
-
+<h2 id="mathjax-">MathJax 使用</h2>
 <p>网页中增加配置：</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/x-mathjax-config&#34;</span><span class="p">&gt;</span>
-    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/x-mathjax-config&#34;</span><span class="p"></span><span class="p">&gt;</span>
+    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">(</span><span class="p">{</span>
       <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span><span class="s1">&#39;\\)&#39;</span><span class="p">]],</span>
+        <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[</span><span class="p">[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">]</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span><span class="s1">&#39;\\)&#39;</span><span class="p">]</span><span class="p">]</span><span class="p">,</span>
         <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span>
       <span class="p">}</span>
-    <span class="p">});</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;https://cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#39;</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre></div>
-<p>接下来就可以在Markdown中使用LaTeX代码来编写公式了。注意要用 <code>$</code>（行内代码）或 <code>$$</code>(代码块）来把数学代码和正常文字区分开。</p>
-
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;https://cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#39;</span> <span class="na">async</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div><p>接下来就可以在Markdown中使用LaTeX代码来编写公式了。注意要用 <code>$</code>（行内代码）或 <code>$$</code>(代码块）来把数学代码和正常文字区分开。</p>
 <p>如，<code>$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$</code>效果为$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$。</p>
-
 <p>但要注意，Markdown 文件会把两个 <code>_</code> 符号当作下划线或斜体， <em>比如 这样</em> ，因此当公式的代码中需要输入 <code>_</code> 符号时，应该在前面加 <code>\</code> 进行转义，如：</p>
-<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="sb">$$</span><span class="nb"> evidence</span><span class="nv">\_</span><span class="nb">{i}</span><span class="o">=</span><span class="nv">\sum\_</span><span class="nb">{j}W</span><span class="nv">\_</span><span class="nb">{ij}x</span><span class="nv">\_</span><span class="nb">{j}</span><span class="o">+</span><span class="nb">b</span><span class="nv">\_</span><span class="nb">{i} </span><span class="s">$$</span></code></pre></div>
-<p>效果为：
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="sb">$$</span><span class="nb"> evidence</span><span class="nv">\_</span><span class="nb">{</span><span class="nb">i</span><span class="nb">}</span><span class="o">=</span><span class="nv">\sum</span><span class="nv">\_</span><span class="nb">{</span><span class="nb">j</span><span class="nb">}</span><span class="nb">W</span><span class="nv">\_</span><span class="nb">{</span><span class="nb">ij</span><span class="nb">}</span><span class="nb">x</span><span class="nv">\_</span><span class="nb">{</span><span class="nb">j</span><span class="nb">}</span><span class="o">+</span><span class="nb">b</span><span class="nv">\_</span><span class="nb">{</span><span class="nb">i</span><span class="nb">}</span><span class="nb"> </span><span class="s">$$</span>
+</code></pre></div><p>效果为：
 $$ evidence_{i}=\sum_{j}W_{ij}x_{j}+b_{i} $$</p>
-
-<h2 id="latex-数学公式">LaTeX 数学公式</h2>
-
+<h2 id="latex-">LaTeX 数学公式</h2>
 <ol>
 <li><a href="https://webdemo.myscript.com/views/math.html">识别并转换数学公式的网站</a></li>
 <li><a href="http://www.forkosh.com/mathtextutorial.html">LaTeX Tutorial</a></li>
@@ -153,13 +146,10 @@ $$ evidence_{i}=\sum_{j}W_{ij}x_{j}+b_{i} $$</p>
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#mathjax-使用">MathJax 使用</a></li>
-<li><a href="#latex-数学公式">LaTeX 数学公式</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#mathjax-">MathJax 使用</a></li>
+    <li><a href="#latex-">LaTeX 数学公式</a></li>
+  </ul>
 </nav>
         </div>
         

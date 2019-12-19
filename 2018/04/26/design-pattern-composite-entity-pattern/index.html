@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,121 +97,107 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>组合实体模式（Composite Entity Pattern）用在 EJB 持久化机制中。一个组合实体是一个 EJB 实体 bean，代表了对象的图解。当更新一个组合实体时，内部依赖对象 beans 会自动更新，因为它们是由 EJB 实体 bean 管理的。以下是组合实体 bean 的参与者。</p>
-
 <p>组合实体（Composite Entity） - 它是主要的实体 bean。它可以是粗粒的，或者可以包含一个粗粒度对象，用于持续生命周期。
 粗粒度对象（Coarse-Grained Object） - 该对象包含依赖对象。它有自己的生命周期，也能管理依赖对象的生命周期。
 依赖对象（Dependent Object） - 依赖对象是一个持续生命周期依赖于粗粒度对象的对象。
 策略（Strategies） - 策略表示如何实现组合实体。</p>
-
-<h2 id="实现">实现</h2>
-
+<h2 id="heading">实现</h2>
 <p>我们将创建作为组合实体的 CompositeEntity 对象。CoarseGrainedObject 是一个包含依赖对象的类。
 CompositeEntityPatternDemo，我们的演示类使用 Client 类来演示组合实体模式的用法。</p>
-
-<p><img src="/images/design-pattern/compositeentity_pattern_uml_diagram.jpg" alt="" /></p>
-
-<h3 id="步骤-1">步骤 1</h3>
-
+<p><img src="/images/design-pattern/compositeentity_pattern_uml_diagram.jpg" alt=""></p>
+<h3 id="-1">步骤 1</h3>
 <p>创建依赖对象。
 <em>DependentObject1.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">DependentObject1</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DependentObject1</span> <span class="o">{</span>
 
-   <span class="kd">private</span> <span class="nf">String</span> <span class="n">data</span><span class="p">;</span>
+   <span class="kd">private</span> <span class="n">String</span> <span class="n">data</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setData</span><span class="p">(</span><span class="n">String</span> <span class="nf">data</span><span class="p">){</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setData</span><span class="o">(</span><span class="n">String</span> <span class="n">data</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">getData</span><span class="p">(){</span>
-      <span class="k">return</span> <span class="n">data</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>DependentObject2.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">DependentObject2</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">getData</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">return</span> <span class="n">data</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>DependentObject2.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DependentObject2</span> <span class="o">{</span>
 
-   <span class="kd">private</span> <span class="nf">String</span> <span class="n">data</span><span class="p">;</span>
+   <span class="kd">private</span> <span class="n">String</span> <span class="n">data</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setData</span><span class="p">(</span><span class="n">String</span> <span class="nf">data</span><span class="p">){</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setData</span><span class="o">(</span><span class="n">String</span> <span class="n">data</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">getData</span><span class="p">(){</span>
-      <span class="k">return</span> <span class="n">data</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-2">步骤 2</h3>
-
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">getData</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">return</span> <span class="n">data</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-2">步骤 2</h3>
 <p>创建粗粒度对象。</p>
-
 <p><em>CoarseGrainedObject.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">CoarseGrainedObject</span> <span class="p">{</span>
-   <span class="n">DependentObject1</span> <span class="nf">do1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DependentObject1</span><span class="p">();</span>
-   <span class="n">DependentObject2</span> <span class="nf">do2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DependentObject2</span><span class="p">();</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CoarseGrainedObject</span> <span class="o">{</span>
+   <span class="n">DependentObject1</span> <span class="n">do1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DependentObject1</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="n">DependentObject2</span> <span class="n">do2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DependentObject2</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setData</span><span class="p">(</span><span class="n">String</span> <span class="nf">data1</span><span class="p">,</span> <span class="n">String</span> <span class="nf">data2</span><span class="p">){</span>
-      <span class="n">do1</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">data1</span><span class="p">);</span>
-      <span class="n">do2</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">data2</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setData</span><span class="o">(</span><span class="n">String</span> <span class="n">data1</span><span class="o">,</span> <span class="n">String</span> <span class="n">data2</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">do1</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="n">data1</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">do2</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="n">data2</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">String</span><span class="p">[]</span> <span class="n">getData</span><span class="p">(){</span>
-      <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="p">[]</span> <span class="p">{</span><span class="n">do1</span><span class="p">.</span><span class="na">getData</span><span class="p">(),</span><span class="n">do2</span><span class="p">.</span><span class="na">getData</span><span class="p">()};</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-3">步骤 3</h3>
-
+   <span class="kd">public</span> <span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="nf">getData</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="o">{</span><span class="n">do1</span><span class="o">.</span><span class="na">getData</span><span class="o">(</span><span class="o">)</span><span class="o">,</span><span class="n">do2</span><span class="o">.</span><span class="na">getData</span><span class="o">(</span><span class="o">)</span><span class="o">}</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-3">步骤 3</h3>
 <p>创建组合实体。</p>
-
 <p><em>CompositeEntity.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">CompositeEntity</span> <span class="p">{</span>
-   <span class="kd">private</span> <span class="nf">CoarseGrainedObject</span> <span class="n">cgo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CoarseGrainedObject</span><span class="p">();</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CompositeEntity</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">CoarseGrainedObject</span> <span class="n">cgo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CoarseGrainedObject</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setData</span><span class="p">(</span><span class="n">String</span> <span class="nf">data1</span><span class="p">,</span> <span class="n">String</span> <span class="nf">data2</span><span class="p">){</span>
-      <span class="n">cgo</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setData</span><span class="o">(</span><span class="n">String</span> <span class="n">data1</span><span class="o">,</span> <span class="n">String</span> <span class="n">data2</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">cgo</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="n">data1</span><span class="o">,</span> <span class="n">data2</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">String</span><span class="p">[]</span> <span class="n">getData</span><span class="p">(){</span>
-      <span class="k">return</span> <span class="n">cgo</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-4">步骤 4</h3>
-
+   <span class="kd">public</span> <span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="nf">getData</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">return</span> <span class="n">cgo</span><span class="o">.</span><span class="na">getData</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-4">步骤 4</h3>
 <p>创建使用组合实体的客户端类。</p>
-
 <p><em>Client.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Client</span> <span class="p">{</span>
-   <span class="kd">private</span> <span class="nf">CompositeEntity</span> <span class="n">compositeEntity</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CompositeEntity</span><span class="p">();</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Client</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">CompositeEntity</span> <span class="n">compositeEntity</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CompositeEntity</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">printData</span><span class="p">(){</span>
-      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">compositeEntity</span><span class="p">.</span><span class="na">getData</span><span class="p">().</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Data: &#34;</span> <span class="o">+</span> <span class="n">compositeEntity</span><span class="p">.</span><span class="na">getData</span><span class="p">()[</span><span class="n">i</span><span class="p">]);</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printData</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">compositeEntity</span><span class="o">.</span><span class="na">getData</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">+</span><span class="o">+</span><span class="o">)</span> <span class="o">{</span>
+         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Data: &#34;</span> <span class="o">+</span> <span class="n">compositeEntity</span><span class="o">.</span><span class="na">getData</span><span class="o">(</span><span class="o">)</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="o">)</span><span class="o">;</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setData</span><span class="p">(</span><span class="n">String</span> <span class="nf">data1</span><span class="p">,</span> <span class="n">String</span> <span class="nf">data2</span><span class="p">){</span>
-      <span class="n">compositeEntity</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-5">步骤 5</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setData</span><span class="o">(</span><span class="n">String</span> <span class="n">data1</span><span class="o">,</span> <span class="n">String</span> <span class="n">data2</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">compositeEntity</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="n">data1</span><span class="o">,</span> <span class="n">data2</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-5">步骤 5</h3>
 <p>使用 Client 来演示组合实体设计模式的用法。</p>
-
 <p><em>CompositeEntityPatternDemo.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">CompositeEntityPatternDemo</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
-       <span class="n">Client</span> <span class="nf">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Client</span><span class="p">();</span>
-       <span class="n">client</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="s">&#34;Test&#34;</span><span class="p">,</span> <span class="s">&#34;Data&#34;</span><span class="p">);</span>
-       <span class="n">client</span><span class="p">.</span><span class="na">printData</span><span class="p">();</span>
-       <span class="n">client</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="s">&#34;Second Test&#34;</span><span class="p">,</span> <span class="s">&#34;Data1&#34;</span><span class="p">);</span>
-       <span class="n">client</span><span class="p">.</span><span class="na">printData</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-6">步骤 6</h3>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CompositeEntityPatternDemo</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Client</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+       <span class="n">client</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="s">&#34;Test&#34;</span><span class="o">,</span> <span class="s">&#34;Data&#34;</span><span class="o">)</span><span class="o">;</span>
+       <span class="n">client</span><span class="o">.</span><span class="na">printData</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+       <span class="n">client</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="s">&#34;Second Test&#34;</span><span class="o">,</span> <span class="s">&#34;Data1&#34;</span><span class="o">)</span><span class="o">;</span>
+       <span class="n">client</span><span class="o">.</span><span class="na">printData</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-6">步骤 6</h3>
 <p>验证输出。</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nl">Data:</span> <span class="n">Test</span>
-<span class="nf">Data</span><span class="o">:</span> <span class="n">Data</span>
-<span class="nf">Data</span><span class="o">:</span> <span class="n">Second</span> <span class="nf">Test</span>
-<span class="nl">Data:</span> <span class="n">Data1</span></code></pre></div>
+<span class="nl">Data:</span> <span class="n">Data</span>
+<span class="nl">Data:</span> <span class="n">Second</span> <span class="n">Test</span>
+<span class="nl">Data:</span> <span class="n">Data1</span>
+</code></pre></div>
         </div>
 
         
@@ -219,20 +205,18 @@ CompositeEntityPatternDemo，我们的演示类使用 Client 类来演示组合�
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#实现">实现</a>
-<ul>
-<li><a href="#步骤-1">步骤 1</a></li>
-<li><a href="#步骤-2">步骤 2</a></li>
-<li><a href="#步骤-3">步骤 3</a></li>
-<li><a href="#步骤-4">步骤 4</a></li>
-<li><a href="#步骤-5">步骤 5</a></li>
-<li><a href="#步骤-6">步骤 6</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">实现</a>
+      <ul>
+        <li><a href="#-1">步骤 1</a></li>
+        <li><a href="#-2">步骤 2</a></li>
+        <li><a href="#-3">步骤 3</a></li>
+        <li><a href="#-4">步骤 4</a></li>
+        <li><a href="#-5">步骤 5</a></li>
+        <li><a href="#-6">步骤 6</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

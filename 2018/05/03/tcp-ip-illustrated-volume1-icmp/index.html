@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,16 +97,11 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>ICMP经常被认为是IP层的一个组成部分。它传递差错报文以及其他需要注意的信息。ICMP报文通常被IP层或更高层协议（TCP或UDP）使用。一些ICMP报文把差错报文返回给用户进程。</p>
-
 <p>ICMP报文是在IP数据报内部被传输的，格式为：20个字节的IP首部加上后面的ICMP报文。</p>
-
 <p>ICMP 报文格式中，类型字段可以有15个不同的值，以描述特定类型的ICMP报文。某些ICMP报文还使用代码字段的值来进一步描述不同的条件。
 检验和字段覆盖整个ICMP报文。使用的算法与IP首部检验和算法相同。ICMP的检验和是必需的。</p>
-
-<p><img src="/images/tcp-ip/icmp-format.jpg" alt="" /></p>
-
-<h2 id="icmp-报文的类型">ICMP 报文的类型</h2>
-
+<p><img src="/images/tcp-ip/icmp-format.jpg" alt=""></p>
+<h2 id="icmp-">ICMP 报文的类型</h2>
 <table>
 <thead>
 <tr>
@@ -117,7 +112,6 @@
 <th align="center">差错</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center">0</td>
@@ -126,7 +120,6 @@
 <td align="center">*</td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center">3</td>
 <td align="center"></td>
@@ -134,7 +127,6 @@
 <td align="center"></td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">0</td>
@@ -142,7 +134,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">1</td>
@@ -150,7 +141,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">2</td>
@@ -158,7 +148,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">3</td>
@@ -166,7 +155,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">4</td>
@@ -174,7 +162,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">5</td>
@@ -182,7 +169,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">6</td>
@@ -190,7 +176,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">7</td>
@@ -198,7 +183,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">8</td>
@@ -206,7 +190,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">9</td>
@@ -214,7 +197,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">10</td>
@@ -222,7 +204,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">11</td>
@@ -230,7 +211,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">12</td>
@@ -238,7 +218,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">13</td>
@@ -246,7 +225,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">14</td>
@@ -254,7 +232,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">15</td>
@@ -262,7 +239,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center">4</td>
 <td align="center">0</td>
@@ -270,7 +246,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center">5</td>
 <td align="center"></td>
@@ -278,7 +253,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">0</td>
@@ -286,7 +260,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">1</td>
@@ -294,7 +267,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">2</td>
@@ -302,7 +274,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">3</td>
@@ -310,7 +281,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center">8  </td>
 <td align="center">0  </td>
@@ -318,7 +288,6 @@
 <td align="center">*  </td>
 <td align="center">   </td>
 </tr>
-
 <tr>
 <td align="center">9</td>
 <td align="center">0</td>
@@ -326,7 +295,6 @@
 <td align="center">*</td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center">10</td>
 <td align="center">0</td>
@@ -334,7 +302,6 @@
 <td align="center">*</td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center">11</td>
 <td align="center"></td>
@@ -342,7 +309,6 @@
 <td align="center"></td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">0</td>
@@ -350,7 +316,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">1</td>
@@ -358,7 +323,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center">12</td>
 <td align="center"></td>
@@ -366,7 +330,6 @@
 <td align="center"></td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">0</td>
@@ -374,7 +337,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">1</td>
@@ -382,7 +344,6 @@
 <td align="center"></td>
 <td align="center">*</td>
 </tr>
-
 <tr>
 <td align="center">13</td>
 <td align="center">0</td>
@@ -390,7 +351,6 @@
 <td align="center">*</td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center">14</td>
 <td align="center">0</td>
@@ -398,7 +358,6 @@
 <td align="center">*</td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center">15</td>
 <td align="center">0</td>
@@ -406,7 +365,6 @@
 <td align="center">*</td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center">16</td>
 <td align="center">0</td>
@@ -414,7 +372,6 @@
 <td align="center">*</td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center">17</td>
 <td align="center">0</td>
@@ -422,7 +379,6 @@
 <td align="center">*</td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center">18</td>
 <td align="center">0</td>
@@ -432,47 +388,31 @@
 </tr>
 </tbody>
 </table>
-
 <p>不同类型由报文中的类型字段和代码字段来共同决定。</p>
-
 <p>最后两列表明ICMP报文是一份查询报文还是一份差错报文。因为对ICMP差错报文有时需要作特殊处理，因此我们需要对它们进行区分。例如，在对ICMP差错报文进行响应时，永远不会生成另一份ICMP差错报文（如果没有这个限制规则，可能会遇到一个差错产生另一个差错的情况，而差错再产生差错，这样会无休止地循环下去）。</p>
-
 <p>当发送一份ICMP差错报文时，报文始终包含IP的首部和产生ICMP差错报文的IP数据报的前8个字节。这样，接收ICMP差错报文的模块就会把它与某个特定的协议（根据IP数据报首部中的协议字段来判断）和用户进程（根据包含在IP数据报前8个字节中的TCP或UDP报文首部中的TCP或UDP端口号来判断）联系起来。</p>
-
-<p>下面各种情况都不会导致产生ICMP差错报文：
-1. ICMP差错报文（但是，ICMP查询报文可能会产生ICMP差错报文）。
-2. 目的地址是广播地址或多播地址（D类地址）的IP数据报。
-3. 作为链路层广播的数据报。
-4. 不是IP分片的第一片。
-5. 源地址不是单个主机的数据报。这就是说，源地址不能为零地址、环回地址、广播地址或多播地址。</p>
-
+<p>下面各种情况都不会导致产生ICMP差错报文：</p>
+<ol>
+<li>ICMP差错报文（但是，ICMP查询报文可能会产生ICMP差错报文）。</li>
+<li>目的地址是广播地址或多播地址（D类地址）的IP数据报。</li>
+<li>作为链路层广播的数据报。</li>
+<li>不是IP分片的第一片。</li>
+<li>源地址不是单个主机的数据报。这就是说，源地址不能为零地址、环回地址、广播地址或多播地址。</li>
+</ol>
 <p>这些规则是为了防止过去允许ICMP差错报文对广播分组响应所带来的广播风暴。</p>
-
-<h2 id="icmp-地址掩码请求与应答">ICMP 地址掩码请求与应答</h2>
-
+<h2 id="icmp--1">ICMP 地址掩码请求与应答</h2>
 <p>ICMP地址掩码请求用于无盘系统在引导过程中获取自己的子网掩码。系统广播它的ICMP请求报文（这一过程与无盘系统在引导过程中用RARP获取IP地址是类似的）。无盘系统获取子网掩码的另一个方法是BOOTP协议。ICMP地址掩码请求和应答报文的格式如下：
-<img src="/images/tcp-ip/icmp-addrmask-format.jpg" alt="" /></p>
-
+<img src="/images/tcp-ip/icmp-addrmask-format.jpg" alt=""></p>
 <p>ICMP报文中的标识符和序列号字段由发送端任意选择设定，这些值在应答中将被返回。这样，发送端就可以把应答与请求进行匹配。</p>
-
-<h2 id="icmp-时间戳请求与应答">ICMP 时间戳请求与应答</h2>
-
+<h2 id="icmp--2">ICMP 时间戳请求与应答</h2>
 <p>ICMP时间戳请求允许系统向另一个系统查询当前的时间。返回的建议值是自午夜开始计算的毫秒数，协调的统一时间（Coordinated Universal Time,UTC）（早期的参考手册认为UTC是格林尼治时间）。这种ICMP报文的好处是它提供了毫秒级的分辨率，而利用其他方法从别的主机获取的时间（如某些Unix系统提供的rdate命令）只能提供秒级的分辨率。由于返回的时间是从午夜开始计算的，因此调用者必须通过其他方法获知当时的日期，这是它的一个缺陷。</p>
-
-<p><img src="/images/tcp-ip/icmp-timestamp-format.jpg" alt="" /></p>
-
+<p><img src="/images/tcp-ip/icmp-timestamp-format.jpg" alt=""></p>
 <p>请求端填写发起时间戳，然后发送报文。应答系统收到请求报文时填写接收时间戳，在发送应答时填写发送时间戳。但是，实际上，大多数的实现把后面两个字段都设成相同的值（提供三个字段的原因是可以让发送方分别计算发送请求的时间和发送应答的时间）。</p>
-
-<h2 id="icmp-不可达差错">ICMP 不可达差错</h2>
-
+<h2 id="icmp--3">ICMP 不可达差错</h2>
 <p>ICMP的一个规则是，ICMP差错报文必须包括生成该差错报文的数据报IP首部（包含任何选项），还必须至少包括跟在该IP首部后面的前8个字节。</p>
-
 <p>导致差错的数据报中的IP首部要被送回的原因是因为IP首部中包含了协议字段，使得ICMP可以知道如何解释后面的8个字节。事实上，UDP首部中的内容是源端口号和目的端口号，如果我们来查看TCP首部,可以发现源端口和目的端口被包含在TCP首部的前8个字节中。</p>
-
-<p><img src="/images/tcp-ip/icmp-unreachable-msg.jpg" alt="" /></p>
-
-<h2 id="icmp-报文的-4-4bsd-处理">ICMP 报文的 4.4BSD 处理</h2>
-
+<p><img src="/images/tcp-ip/icmp-unreachable-msg.jpg" alt=""></p>
+<h2 id="icmp--44bsd-">ICMP 报文的 4.4BSD 处理</h2>
 <table>
 <thead>
 <tr>
@@ -482,7 +422,6 @@
 <th align="left">处理方法</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center">0</td>
@@ -490,266 +429,228 @@
 <td align="left">回显应答(Ping应答)</td>
 <td align="left">用户进程</td>
 </tr>
-
 <tr>
 <td align="center">3</td>
 <td align="center"></td>
 <td align="left">目的不可达：</td>
 <td align="left"></td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">0</td>
 <td align="left">网络不可达</td>
 <td align="left">&ldquo;无路由到达主机&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">1</td>
 <td align="left">主机不可达</td>
 <td align="left">&ldquo;无路由到达主机&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">2</td>
 <td align="left">协议不可达</td>
 <td align="left">&ldquo;连接被拒绝&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">3</td>
 <td align="left">端口不可达</td>
 <td align="left">&ldquo;连接被拒绝&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">4</td>
 <td align="left">需要进行分片但设置了不分片比特</td>
 <td align="left">&ldquo;报文太长&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">5</td>
 <td align="left">源站选路失败</td>
 <td align="left">&ldquo;无路由到达主机&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">6</td>
 <td align="left">目的网络不认识</td>
 <td align="left">&ldquo;无路由到达主机&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">7</td>
 <td align="left">目的主机不认识</td>
 <td align="left">&ldquo;无路由到达主机&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">8</td>
 <td align="left">源主机被隔离(作废不用)</td>
 <td align="left">&ldquo;无路由到达主机&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">9</td>
 <td align="left">目的网络被强制禁止</td>
 <td align="left">&ldquo;无路由到达主机&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">10</td>
 <td align="left">目的主机被强制禁止</td>
 <td align="left">&ldquo;无路由到达主机&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">11</td>
 <td align="left">由于服务类型TOS，网络不可达</td>
 <td align="left">&ldquo;无路由到达主机&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">12</td>
 <td align="left">由于服务类型TOS，主机不可达</td>
 <td align="left">&ldquo;无路由到达主机&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">13</td>
 <td align="left">由于过滤，通信被强制禁止</td>
 <td align="left">(忽略)</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">14</td>
 <td align="left">主机越权</td>
 <td align="left">(忽略)</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">15</td>
 <td align="left">优先权中止生效</td>
 <td align="left">(忽略)</td>
 </tr>
-
 <tr>
 <td align="center">4</td>
 <td align="center">0</td>
 <td align="left">源端被关闭(quench)</td>
 <td align="left">TCP由内核处理，UDP则忽略</td>
 </tr>
-
 <tr>
 <td align="center">5</td>
 <td align="center"></td>
 <td align="left">重定向：</td>
 <td align="left"></td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">0</td>
 <td align="left">对网络重定向</td>
 <td align="left">内核更新路由表</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">1</td>
 <td align="left">对主机重定向</td>
 <td align="left">内核更新路由表</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">2</td>
 <td align="left">对服务类型和网络重定向</td>
 <td align="left">内核更新路由表</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">3</td>
 <td align="left">对服务类型和主机重定向</td>
 <td align="left">内核更新路由表</td>
 </tr>
-
 <tr>
 <td align="center">8  </td>
 <td align="center">0  </td>
 <td align="left">请求回显(Ping请求)            </td>
 <td align="left">                       </td>
 </tr>
-
 <tr>
 <td align="center">9</td>
 <td align="center">0</td>
 <td align="left">路由器通告</td>
 <td align="left">用户进程</td>
 </tr>
-
 <tr>
 <td align="center">10</td>
 <td align="center">0</td>
 <td align="left">路由器请求</td>
 <td align="left">用户进程</td>
 </tr>
-
 <tr>
 <td align="center">11</td>
 <td align="center"></td>
 <td align="left">超时：</td>
 <td align="left"></td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">0</td>
 <td align="left">传输期间生存时间为0(Traceroute)</td>
 <td align="left">用户进程</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">1</td>
 <td align="left">在数据报组装期间生存时间为 0</td>
 <td align="left">用户进程</td>
 </tr>
-
 <tr>
 <td align="center">12</td>
 <td align="center"></td>
 <td align="left">参数问题：</td>
 <td align="left"></td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">0</td>
 <td align="left">坏的IP首部(包括各种差错)</td>
 <td align="left">&ldquo;协议不可用&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center"></td>
 <td align="center">1</td>
 <td align="left">缺少必需的选项</td>
 <td align="left">&ldquo;协议不可用&rdquo;</td>
 </tr>
-
 <tr>
 <td align="center">13</td>
 <td align="center">0</td>
 <td align="left">时间戳请求</td>
 <td align="left">内核产生应答</td>
 </tr>
-
 <tr>
 <td align="center">14</td>
 <td align="center">0</td>
 <td align="left">时间戳应答</td>
 <td align="left">用户进程</td>
 </tr>
-
 <tr>
 <td align="center">15</td>
 <td align="center">0</td>
 <td align="left">信息请求(作废不用)</td>
 <td align="left">(忽略)</td>
 </tr>
-
 <tr>
 <td align="center">16</td>
 <td align="center">0</td>
 <td align="left">信息应答(作废不用)</td>
 <td align="left">用户进程</td>
 </tr>
-
 <tr>
 <td align="center">17</td>
 <td align="center">0</td>
 <td align="left">地址掩码请求</td>
 <td align="left">内核产生应答</td>
 </tr>
-
 <tr>
 <td align="center">18</td>
 <td align="center">0</td>
@@ -758,7 +659,6 @@
 </tr>
 </tbody>
 </table>
-
 <p>如果最后一列标明是“内核”，那么ICMP就由内核来处理。如果最后一列指明是“用户进程”，那么报文就被传送到所有在内核中登记的用户进程，以读取收到的ICMP报文。如果不存在任何这样的用户进程，那么报文就悄悄地被丢弃（这些用户进程还会收到所有其他类型的ICMP报文的拷贝，虽然它们应该由内核来处理，当然用户进程只有在内核处理以后才能收到这些报文）。有一些报文完全被忽略。最后，如果最后一列标明的是引号内的一串字符，那么它就是对应的Unix差错。</p>
         </div>
 
@@ -767,16 +667,13 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#icmp-报文的类型">ICMP 报文的类型</a></li>
-<li><a href="#icmp-地址掩码请求与应答">ICMP 地址掩码请求与应答</a></li>
-<li><a href="#icmp-时间戳请求与应答">ICMP 时间戳请求与应答</a></li>
-<li><a href="#icmp-不可达差错">ICMP 不可达差错</a></li>
-<li><a href="#icmp-报文的-4-4bsd-处理">ICMP 报文的 4.4BSD 处理</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#icmp-">ICMP 报文的类型</a></li>
+    <li><a href="#icmp--1">ICMP 地址掩码请求与应答</a></li>
+    <li><a href="#icmp--2">ICMP 时间戳请求与应答</a></li>
+    <li><a href="#icmp--3">ICMP 不可达差错</a></li>
+    <li><a href="#icmp--44bsd-">ICMP 报文的 4.4BSD 处理</a></li>
+  </ul>
 </nav>
         </div>
         

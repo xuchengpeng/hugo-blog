@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -96,18 +96,12 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p><img src="/images/base16.png" alt="" /></p>
-
+            <p><img src="/images/base16.png" alt=""></p>
 <p><a href="http://chriskempson.com/projects/base16">An architecture for building themes</a> based on carefully chosen syntax highlighting using a base of sixteen colours. Base16 provides a set of guidelines detailing how to style syntax and how to code a builder for compiling base16 schemes and templates.</p>
-
 <h2 id="styling-guidelines">Styling Guidelines</h2>
-
 <p>Base16 aims to group similar language constructs with a single color, e.g. float, ints and doubles would belong to the same colour group. The colors chosen for the default theme were chosen to be easily separatable but scheme designer should pick whatever colours they desire e.g. base0B (green by default) could be replaced with red. However, there are general guidelines below that stipulate what base0B should be used to highlight when designing templates for editors.</p>
-
 <p>Since describing syntax highlighting can be tricky, please see <a href="https://github.com/chriskempson/base16-vim/">base16-vim</a> and <a href="https://github.com/chriskempson/base16-textmate/">base16-textmate</a> for reference. Though it should be noted that each editor will have some discrepancies due the fact that editors generally have different syntax highlighting engines.</p>
-
 <p>Colors base00 to base07 are typically variations of a shade and run from darkest to lighest. These colors are used for foreground and background, status bars, line highlighting and such. Colors base08 to base0F are typically individual colors used for types, operators, names and variables. In order to create a dark theme colors base00 to base07 should span from dark to light. For a light theme these colours should span from light to dark.</p>
-
 <ul>
 <li><strong>base00</strong> - Default Background</li>
 <li><strong>base01</strong> - Lighter Background (Used for status bars)</li>
@@ -124,16 +118,15 @@
 <li><strong>base0C</strong> - Support, Regular Expressions, Escape Characters, Markup Quotes</li>
 <li><strong>base0D</strong> - Functions, Methods, Attribute IDs, Headings</li>
 <li><strong>base0E</strong> - Keywords, Storage, Selector, Markup Italic, Diff Changed</li>
-<li><strong>base0F</strong> - Deprecated, Opening/Closing Embedded Language Tags e.g. &lt;?php ?&gt;</li>
+<li><strong>base0F</strong> - Deprecated, Opening/Closing Embedded Language Tags e.g. <!-- raw HTML omitted --></li>
 </ul>
-
-<h2 id="base16-emacs-https-github-com-belak-base16-emacs"><a href="https://github.com/belak/base16-emacs">base16-emacs</a></h2>
+<h2 id="base16-emacshttpsgithubcombelakbase16-emacs"><a href="https://github.com/belak/base16-emacs">base16-emacs</a></h2>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">base16-theme</span>
   <span class="nb">:ensure</span> <span class="no">t</span>
   <span class="nb">:config</span>
   <span class="p">(</span><span class="nv">load-theme</span> <span class="ss">&#39;base16-tomorrow-night</span> <span class="no">t</span><span class="p">)</span>
-  <span class="p">)</span></code></pre></div>
-<p>Theme previews can be found <a href="https://belak.github.io/base16-emacs/">here</a>.</p>
+  <span class="p">)</span>
+</code></pre></div><p>Theme previews can be found <a href="https://belak.github.io/base16-emacs/">here</a>.</p>
         </div>
 
         
@@ -141,13 +134,10 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#styling-guidelines">Styling Guidelines</a></li>
-<li><a href="#base16-emacs-https-github-com-belak-base16-emacs"><a href="https://github.com/belak/base16-emacs">base16-emacs</a></a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#styling-guidelines">Styling Guidelines</a></li>
+    <li><a href="#base16-emacshttpsgithubcombelakbase16-emacs">base16-emacs</a></li>
+  </ul>
 </nav>
         </div>
         

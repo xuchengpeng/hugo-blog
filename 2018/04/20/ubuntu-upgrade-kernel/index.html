@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -96,34 +96,31 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="查看当前内核版本">查看当前内核版本</h3>
+            <h3 id="heading">查看当前内核版本</h3>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ uname -r
-<span class="m">4</span>.4.0-53-generic</code></pre></div>
-<h3 id="下载内核">下载内核</h3>
-
+4.4.0-53-generic
+</code></pre></div><h3 id="heading-1">下载内核</h3>
 <p>下载最新 Ubuntu 编译好的内核地址： <a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/">http://kernel.ubuntu.com/~kernel-ppa/mainline/</a>
 选取当前最新的内核 4.16.3 版本进行下载：</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ mkdir <span class="m">4</span>.16.3 <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="m">4</span>.16.3
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ mkdir 4.16.3 <span class="o">&amp;&amp;</span> <span class="nb">cd</span> 4.16.3
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603_4.16.3-041603.201804190730_all.deb
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
-$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-image-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb</code></pre></div>
-<h3 id="安装内核">安装内核</h3>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ dpkg -i *.deb</code></pre></div>
-<h3 id="卸载旧内核">卸载旧内核</h3>
+$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-image-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
+</code></pre></div><h3 id="heading-2">安装内核</h3>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ dpkg -i *.deb
+</code></pre></div><h3 id="heading-3">卸载旧内核</h3>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 查看目前安装的内核</span>
 $ dpkg -l <span class="p">|</span> grep linux
-ii  linux-image-4.4.0-53-generic       <span class="m">4</span>.4.0-53.74                        amd64        Linux kernel image <span class="k">for</span> version <span class="m">4</span>.4.0 on <span class="m">64</span> bit x86 SMP
-ii  linux-image-4.16.3-041603-generic  <span class="m">4</span>.16.3-041603.201804190730         amd64        Linux kernel image <span class="k">for</span> version <span class="m">4</span>.16.3 on <span class="m">64</span> bit x86 SMP
+ii  linux-image-4.4.0-53-generic       4.4.0-53.74                        amd64        Linux kernel image <span class="k">for</span> version 4.4.0 on <span class="m">64</span> bit x86 SMP
+ii  linux-image-4.16.3-041603-generic  4.16.3-041603.201804190730         amd64        Linux kernel image <span class="k">for</span> version 4.16.3 on <span class="m">64</span> bit x86 SMP
 <span class="c1">## 卸载旧内核</span>
-$ apt-get purge linux-image-4.4.0-53-generic linux-headers-4.4.0-53</code></pre></div>
-<p>如果查询的结果中还有显示已卸载的内核，可以使用<code>dpkg -P linux-image-4.4.0-53-generic</code>命令将其删除。</p>
-
-<h3 id="更新启动引导">更新启动引导</h3>
+$ apt-get purge linux-image-4.4.0-53-generic linux-headers-4.4.0-53
+</code></pre></div><p>如果查询的结果中还有显示已卸载的内核，可以使用<code>dpkg -P linux-image-4.4.0-53-generic</code>命令将其删除。</p>
+<h3 id="heading-4">更新启动引导</h3>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ update-grub
 <span class="c1"># 重启后再查看内核版本验证 uname -a</span>
-$ reboot</code></pre></div>
-<h3 id="linode">Linode</h3>
-
+$ reboot
+</code></pre></div><h3 id="linode">Linode</h3>
 <p>在 Linode 提供的服务器上面，需要将 Boot Setting 下 Kernel 设定为 <strong>GRUB 2</strong>。</p>
         </div>
 
@@ -132,20 +129,18 @@ $ reboot</code></pre></div>
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#查看当前内核版本">查看当前内核版本</a></li>
-<li><a href="#下载内核">下载内核</a></li>
-<li><a href="#安装内核">安装内核</a></li>
-<li><a href="#卸载旧内核">卸载旧内核</a></li>
-<li><a href="#更新启动引导">更新启动引导</a></li>
-<li><a href="#linode">Linode</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">查看当前内核版本</a></li>
+        <li><a href="#heading-1">下载内核</a></li>
+        <li><a href="#heading-2">安装内核</a></li>
+        <li><a href="#heading-3">卸载旧内核</a></li>
+        <li><a href="#heading-4">更新启动引导</a></li>
+        <li><a href="#linode">Linode</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -92,117 +92,66 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>由于Markdown语法本身不包含复杂表格的插入，但是可以使用html语法来实现，一般的Markdown编辑器都是支持html语法的。</p>
-
 <p>复杂表格与简单表格最大的差异有两点：水平单元格的合并和纵向单元格的合并，通过html语法实现这两个操作本质就是：删除多余的空白单元格，然后使用某些单元格的colspan和rowspan属性进行扩展填充。</p>
-
 <ul>
 <li>水平单元格的合并：基于colspan属性，即使一个单元格占多列的空间。</li>
 <li>纵向单元格的合并：基于rowspan属性，即使一个单元格占多行的空间。</li>
 </ul>
-
 <p>可以从Word或者Excel中复制表格，通过网站 <a href="http://pressbin.com/tools/excel_to_html_table/index.html">No-Cruft Excel to HTML Table Converter</a> 转换获得html代码。</p>
-
-<h2 id="合并行">合并行</h2>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>列一<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>列一<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-   <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p">&gt;</span>合并行<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p">&gt;</span>合并行<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span></code></pre></div>
-<p>显示效果：</p>
-
-<table>
-    <tr>
-        <td>列一</td>
-        <td>列一</td>
-   </tr>
-    <tr>
-        <td colspan="2">合并行</td>
-    </tr>
-    <tr>
-        <td colspan="2">合并行</td>
-    </tr>
-</table>
-
-<h2 id="合并列">合并列</h2>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>列一<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>列二<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-   <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">rowspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p">&gt;</span>合并列<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span> <span class="p">&gt;</span>行二列二<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span> <span class="p">&gt;</span>行三列二<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span></code></pre></div>
-<p>显示效果：</p>
-
-<table>
-    <tr>
-        <td>列一</td>
-        <td>列二</td>
-   </tr>
-    <tr>
-        <td rowspan="2">合并列</td>
-        <td >行二列二</td>
-    </tr>
-    <tr>
-        <td >行三列二</td>
-    </tr>
-</table>
-
-<h2 id="合并行列">合并行列</h2>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>列一<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>列二<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-   <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p">&gt;</span>合并行<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-   <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>列一<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>列二<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-   <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">rowspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p">&gt;</span>合并列<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span> <span class="p">&gt;</span>行二列二<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">td</span> <span class="p">&gt;</span>行三列二<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span></code></pre></div>
-<p>显示效果：</p>
-
-<table>
-    <tr>
-        <td>列一</td>
-        <td>列二</td>
-   </tr>
-   <tr>
-        <td colspan="2">合并行</td>
-   </tr>
-   <tr>
-        <td>列一</td>
-        <td>列二</td>
-   </tr>
-    <tr>
-        <td rowspan="2">合并列</td>
-        <td >行二列二</td>
-    </tr>
-    <tr>
-        <td >行三列二</td>
-    </tr>
-</table>
+<h2 id="heading">合并行</h2>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">table</span><span class="p"></span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>列一<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>列一<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p"></span><span class="p">&gt;</span>合并行<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p"></span><span class="p">&gt;</span>合并行<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div><p>显示效果：</p>
+<!-- raw HTML omitted -->
+<h2 id="heading-1">合并列</h2>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">table</span><span class="p"></span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>列一<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>列二<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">rowspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p"></span><span class="p">&gt;</span>合并列<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="p"></span><span class="p">&gt;</span>行二列二<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="p"></span><span class="p">&gt;</span>行三列二<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div><p>显示效果：</p>
+<!-- raw HTML omitted -->
+<h2 id="heading-2">合并行列</h2>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">table</span><span class="p"></span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>列一<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>列二<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p"></span><span class="p">&gt;</span>合并行<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>列一<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>列二<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">rowspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p"></span><span class="p">&gt;</span>合并列<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="p"></span><span class="p">&gt;</span>行二列二<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="p"></span><span class="p">&gt;</span>行三列二<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div><p>显示效果：</p>
+<!-- raw HTML omitted -->
         </div>
 
         
@@ -210,14 +159,11 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#合并行">合并行</a></li>
-<li><a href="#合并列">合并列</a></li>
-<li><a href="#合并行列">合并行列</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">合并行</a></li>
+    <li><a href="#heading-1">合并列</a></li>
+    <li><a href="#heading-2">合并行列</a></li>
+  </ul>
 </nav>
         </div>
         

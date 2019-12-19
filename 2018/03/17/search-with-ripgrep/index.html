@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -92,27 +92,20 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p><a href="https://github.com/BurntSushi/ripgrep">ripgrep</a> is a line-oriented search tool that recursively searches your current directory for a regex pattern while respecting your gitignore rules. ripgrep has first class support on Windows, macOS and Linux, with binary downloads available for every release. ripgrep is similar to other popular search tools like The Silver Searcher, ack and grep.</p>
-
 <h2 id="is-it-really-faster-than-everything-else">Is it really faster than everything else?</h2>
-
 <p>Generally, yes. A large number of benchmarks with detailed analysis for each is
 <a href="http://blog.burntsushi.net/ripgrep/">available on my blog</a>.</p>
-
 <p>Summarizing, ripgrep is fast because:</p>
-
 <ul>
 <li>It is built on top of
-<a href="https://github.com/rust-lang-nursery/regex">Rust&rsquo;s regex engine</a> uses finite automata, SIMD and aggressive literal optimizations to make searching very fast.</li>
-<li>Rust&rsquo;s regex library maintains performance with full Unicode support by building UTF-8 decoding directly into its deterministic finite automaton engine.</li>
+<a href="https://github.com/rust-lang-nursery/regex">Rust's regex engine</a> uses finite automata, SIMD and aggressive literal optimizations to make searching very fast.</li>
+<li>Rust's regex library maintains performance with full Unicode support by building UTF-8 decoding directly into its deterministic finite automaton engine.</li>
 <li>It supports searching with either memory maps or by searching incrementally with an intermediate buffer. The former is better for single files and the latter is better for large directories. ripgrep chooses the best searching strategy for you automatically.</li>
 <li>Applies your ignore patterns in <code>.gitignore</code> files using a <a href="https://doc.rust-lang.org/regex/regex/struct.RegexSet.html"><code>RegexSet</code></a>. That means a single file path can be matched against multiple glob patterns simultaneously.</li>
 <li>It uses a lock-free parallel recursive directory iterator, courtesy of <a href="https://docs.rs/crossbeam"><code>crossbeam</code></a> and <a href="https://docs.rs/ignore"><code>ignore</code></a>.</li>
 </ul>
-
 <h2 id="benchmark">Benchmark</h2>
-
 <p>This example searches the entire Linux kernel source tree (after running make defconfig &amp;&amp; make -j8) for [A-Z]+_SUSPEND, where all matches must be words. Timings were collected on a system with an Intel i7-6900K 3.2 GHz, and ripgrep was compiled with SIMD enabled.</p>
-
 <table>
 <thead>
 <tr>
@@ -122,7 +115,6 @@
 <th>Time</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><a href="https://github.com/BurntSushi/ripgrep">ripgrep</a> (Unicode)</td>
@@ -130,42 +122,36 @@
 <td>450</td>
 <td><strong>0.106s</strong></td>
 </tr>
-
 <tr>
 <td><a href="https://www.kernel.org/pub/software/scm/git/docs/git-grep.html">git grep</a></td>
 <td><code>LC_ALL=C git grep -E -n -w '[A-Z]+_SUSPEND'</code></td>
 <td>450</td>
 <td>0.553s</td>
 </tr>
-
 <tr>
 <td><a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher</a></td>
 <td><code>ag -w '[A-Z]+_SUSPEND'</code></td>
 <td>450</td>
 <td>0.589s</td>
 </tr>
-
 <tr>
 <td><a href="https://www.kernel.org/pub/software/scm/git/docs/git-grep.html">git grep (Unicode)</a></td>
 <td><code>LC_ALL=en_US.UTF-8 git grep -E -n -w '[A-Z]+_SUSPEND'</code></td>
 <td>450</td>
 <td>2.266s</td>
 </tr>
-
 <tr>
 <td><a href="https://github.com/svent/sift">sift</a></td>
 <td><code>sift --git -n -w '[A-Z]+_SUSPEND'</code></td>
 <td>450</td>
 <td>3.505s</td>
 </tr>
-
 <tr>
 <td><a href="https://github.com/petdance/ack2">ack</a></td>
 <td><code>ack -w '[A-Z]+_SUSPEND'</code></td>
 <td>1878</td>
 <td>6.823s</td>
 </tr>
-
 <tr>
 <td><a href="https://github.com/monochromegane/the_platinum_searcher">The Platinum Searcher</a></td>
 <td><code>pt -w -e '[A-Z]+_SUSPEND'</code></td>
@@ -174,9 +160,7 @@
 </tr>
 </tbody>
 </table>
-
-<p>Here&rsquo;s another benchmark that disregards gitignore files and searches with a whitelist instead. The corpus is the same as in the previous benchmark, and the flags passed to each command ensure that they are doing equivalent work:</p>
-
+<p>Here's another benchmark that disregards gitignore files and searches with a whitelist instead. The corpus is the same as in the previous benchmark, and the flags passed to each command ensure that they are doing equivalent work:</p>
 <table>
 <thead>
 <tr>
@@ -186,7 +170,6 @@
 <th>Time</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>ripgrep</td>
@@ -194,14 +177,12 @@
 <td>404</td>
 <td><strong>0.079s</strong></td>
 </tr>
-
 <tr>
 <td><a href="https://github.com/gvansickle/ucg">ucg</a></td>
 <td><code>ucg --type=cc -w '[A-Z]+_SUSPEND'</code></td>
 <td>390</td>
 <td>0.163s</td>
 </tr>
-
 <tr>
 <td><a href="https://www.gnu.org/software/grep/">GNU grep</a></td>
 <td><code>egrep -R -n --include='*.c' --include='*.h' -w '[A-Z]+_SUSPEND'</code></td>
@@ -210,9 +191,7 @@
 </tr>
 </tbody>
 </table>
-
 <p>And finally, a straight-up comparison between ripgrep and GNU grep on a single large file (~9.3GB, <a href="http://opus.lingfil.uu.se/OpenSubtitles2016/mono/OpenSubtitles2016.raw.en.gz">OpenSubtitles2016.raw.en.gz</a>):</p>
-
 <table>
 <thead>
 <tr>
@@ -222,7 +201,6 @@
 <th>Time</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>ripgrep</td>
@@ -230,7 +208,6 @@
 <td>5268</td>
 <td><strong>2.108s</strong></td>
 </tr>
-
 <tr>
 <td><a href="https://www.gnu.org/software/grep/">GNU grep</a></td>
 <td><code>LC_ALL=C egrep -w 'Sherlock [A-Z]\w+'</code></td>
@@ -239,14 +216,14 @@
 </tr>
 </tbody>
 </table>
-
 <h2 id="helm-ag-with-rg">helm-ag with rg</h2>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">helm-ag</span>
   <span class="nb">:ensure</span> <span class="no">t</span>
   <span class="nb">:after</span> <span class="p">(</span><span class="nv">helm</span><span class="p">)</span>
   <span class="nb">:config</span>
-  <span class="p">(</span><span class="nb">setq</span> <span class="nv">helm-ag-base-command</span> <span class="s">&#34;rg --color=always --smart-case --line-number --no-heading&#34;</span><span class="p">)</span>
-  <span class="p">)</span></code></pre></div>
+  <span class="p">(</span><span class="nb">setq</span> <span class="nv">helm-ag-base-command</span> <span class="s">&#34;</span><span class="s">rg --color=always --smart-case --line-number --no-heading</span><span class="s">&#34;</span><span class="p">)</span>
+  <span class="p">)</span>
+</code></pre></div>
         </div>
 
         
@@ -254,14 +231,11 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#is-it-really-faster-than-everything-else">Is it really faster than everything else?</a></li>
-<li><a href="#benchmark">Benchmark</a></li>
-<li><a href="#helm-ag-with-rg">helm-ag with rg</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#is-it-really-faster-than-everything-else">Is it really faster than everything else?</a></li>
+    <li><a href="#benchmark">Benchmark</a></li>
+    <li><a href="#helm-ag-with-rg">helm-ag with rg</a></li>
+  </ul>
 </nav>
         </div>
         

@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -98,222 +98,209 @@
         <div class="article-entry" itemprop="articleBody">
             <p>建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
 一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。</p>
-
-<h2 id="介绍">介绍</h2>
-
+<h2 id="heading">介绍</h2>
 <p>意图：将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。
-主要解决：主要解决在软件系统中，有时候面临着&rdquo;一个复杂对象&rdquo;的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。
+主要解决：主要解决在软件系统中，有时候面临着&quot;一个复杂对象&quot;的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。
 何时使用：一些基本部件不会变，而其组合经常变化的时候。
 如何解决：将变与不变分离开。
 关键代码：建造者：创建和提供实例，导演：管理建造出来的实例的依赖关系。
-应用实例： 1、去肯德基，汉堡、可乐、薯条、炸鸡翅等是不变的，而其组合是经常变化的，生成出所谓的&rdquo;套餐&rdquo;。 2、JAVA 中的 StringBuilder。
+应用实例： 1、去肯德基，汉堡、可乐、薯条、炸鸡翅等是不变的，而其组合是经常变化的，生成出所谓的&quot;套餐&rdquo;。 2、JAVA 中的 StringBuilder。
 优点： 1、建造者独立，易扩展。 2、便于控制细节风险。
 缺点： 1、产品必须有共同点，范围有限制。 2、如内部变化复杂，会有很多的建造类。
 使用场景： 1、需要生成的对象具有复杂的内部结构。 2、需要生成的对象内部属性本身相互依赖。
 注意事项：与工厂模式的区别是：建造者模式更加关注与零件装配的顺序。</p>
-
-<h2 id="实现">实现</h2>
-
+<h2 id="heading-1">实现</h2>
 <p>我们假设一个快餐店的商业案例，其中，一个典型的套餐可以是一个汉堡（Burger）和一杯冷饮（Cold drink）。汉堡（Burger）可以是素食汉堡（Veg Burger）或鸡肉汉堡（Chicken Burger），它们是包在纸盒中。冷饮（Cold drink）可以是可口可乐（coke）或百事可乐（pepsi），它们是装在瓶子中。
 我们将创建一个表示食物条目（比如汉堡和冷饮）的 Item 接口和实现 Item 接口的实体类，以及一个表示食物包装的 Packing 接口和实现 Packing 接口的实体类，汉堡是包在纸盒中，冷饮是装在瓶子中。
 然后我们创建一个 Meal 类，带有 Item 的 ArrayList 和一个通过结合 Item 来创建不同类型的 Meal 对象的 MealBuilder。BuilderPatternDemo，我们的演示类使用 MealBuilder 来创建一个 Meal。</p>
-
-<p><img src="/images/design-pattern/builder_pattern_uml_diagram.jpg" alt="" /></p>
-
-<h3 id="步骤-1">步骤 1</h3>
-
+<p><img src="/images/design-pattern/builder_pattern_uml_diagram.jpg" alt=""></p>
+<h3 id="-1">步骤 1</h3>
 <p>创建一个表示食物条目和食物包装的接口。
 <em>Item.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">Item</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">name</span><span class="p">();</span>
-   <span class="kd">public</span> <span class="nf">Packing</span> <span class="n">packing</span><span class="p">();</span>
-   <span class="kd">public</span> <span class="nf">float</span> <span class="n">price</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
-<p><em>Packing.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">Packing</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">pack</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-2">步骤 2</h3>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Item</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">name</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="kd">public</span> <span class="n">Packing</span> <span class="nf">packing</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="kd">public</span> <span class="kt">float</span> <span class="nf">price</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><p><em>Packing.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Packing</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">pack</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-2">步骤 2</h3>
 <p>创建实现 Packing 接口的实体类。
 <em>Wrapper.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Wrapper</span> <span class="nf">implements</span> <span class="n">Packing</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Wrapper</span> <span class="kd">implements</span> <span class="n">Packing</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">pack</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="s">&#34;Wrapper&#34;</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>Bottle.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Bottle</span> <span class="nf">implements</span> <span class="n">Packing</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">pack</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">&#34;Wrapper&#34;</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>Bottle.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bottle</span> <span class="kd">implements</span> <span class="n">Packing</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">pack</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="s">&#34;Bottle&#34;</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-3">步骤 3</h3>
-
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">pack</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">&#34;Bottle&#34;</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-3">步骤 3</h3>
 <p>创建实现 Item 接口的抽象类，该类提供了默认的功能。
 <em>Burger.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">abstract</span> <span class="kd">class</span> <span class="nf">Burger</span> <span class="kd">implements</span> <span class="nf">Item</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Burger</span> <span class="kd">implements</span> <span class="n">Item</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">Packing</span> <span class="n">packing</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">new</span> <span class="n">Wrapper</span><span class="p">();</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="n">Packing</span> <span class="nf">packing</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="n">Wrapper</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">abstract</span> <span class="kt">float</span> <span class="nf">price</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
-<p><em>ColdDrink.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">abstract</span> <span class="kd">class</span> <span class="nf">ColdDrink</span> <span class="kd">implements</span> <span class="nf">Item</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">float</span> <span class="nf">price</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><p><em>ColdDrink.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">ColdDrink</span> <span class="kd">implements</span> <span class="n">Item</span> <span class="o">{</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="nf">Packing</span> <span class="n">packing</span><span class="p">()</span> <span class="p">{</span>
-       <span class="k">return</span> <span class="k">new</span> <span class="n">Bottle</span><span class="p">();</span>
-    <span class="p">}</span>
+    <span class="kd">public</span> <span class="n">Packing</span> <span class="nf">packing</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+       <span class="k">return</span> <span class="k">new</span> <span class="n">Bottle</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="nf">abstract</span> <span class="kt">float</span> <span class="nf">price</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-4">步骤 4</h3>
-
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">float</span> <span class="nf">price</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-4">步骤 4</h3>
 <p>创建扩展了 Burger 和 ColdDrink 的实体类。
 <em>VegBurger.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">VegBurger</span> <span class="nf">extends</span> <span class="n">Burger</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">VegBurger</span> <span class="kd">extends</span> <span class="n">Burger</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">float</span> <span class="n">price</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">25</span><span class="p">.</span><span class="na">0f</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">float</span> <span class="nf">price</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">25</span><span class="o">.</span><span class="na">0f</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">name</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="s">&#34;Veg Burger&#34;</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>ChickenBurger.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">ChickenBurger</span> <span class="nf">extends</span> <span class="n">Burger</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">name</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">&#34;Veg Burger&#34;</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>ChickenBurger.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ChickenBurger</span> <span class="kd">extends</span> <span class="n">Burger</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">float</span> <span class="n">price</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">50</span><span class="p">.</span><span class="na">5f</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">float</span> <span class="nf">price</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">50</span><span class="o">.</span><span class="na">5f</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">name</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="s">&#34;Chicken Burger&#34;</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>Coke.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Coke</span> <span class="nf">extends</span> <span class="n">ColdDrink</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">name</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">&#34;Chicken Burger&#34;</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>Coke.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Coke</span> <span class="kd">extends</span> <span class="n">ColdDrink</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">float</span> <span class="n">price</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">30</span><span class="p">.</span><span class="na">0f</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">float</span> <span class="nf">price</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">30</span><span class="o">.</span><span class="na">0f</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">name</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="s">&#34;Coke&#34;</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>Pepsi.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Pepsi</span> <span class="nf">extends</span> <span class="n">ColdDrink</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">name</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">&#34;Coke&#34;</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>Pepsi.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pepsi</span> <span class="kd">extends</span> <span class="n">ColdDrink</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">float</span> <span class="n">price</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">35</span><span class="p">.</span><span class="na">0f</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">float</span> <span class="nf">price</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">35</span><span class="o">.</span><span class="na">0f</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">name</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="s">&#34;Pepsi&#34;</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-5">步骤 5</h3>
-
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">name</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">&#34;Pepsi&#34;</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-5">步骤 5</h3>
 <p>创建一个 Meal 类，带有上面定义的 Item 对象。
 <em>Meal.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">ArrayList</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">List</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">Meal</span> <span class="p">{</span>
-   <span class="kd">private</span> <span class="nf">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="nf">items</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Meal</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">items</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">addItem</span><span class="p">(</span><span class="n">Item</span> <span class="nf">item</span><span class="p">){</span>
-      <span class="n">items</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="n">Item</span> <span class="n">item</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">items</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">float</span> <span class="n">getCost</span><span class="p">(){</span>
-      <span class="kt">float</span> <span class="nf">cost</span> <span class="o">=</span> <span class="n">0</span><span class="p">.</span><span class="na">0f</span><span class="p">;</span>
-      <span class="k">for</span> <span class="p">(</span><span class="n">Item</span> <span class="nf">item</span> <span class="o">:</span> <span class="n">items</span><span class="p">)</span> <span class="p">{</span>
-         <span class="n">cost</span> <span class="o">+=</span> <span class="n">item</span><span class="p">.</span><span class="na">price</span><span class="p">();</span>
-      <span class="p">}</span>
-      <span class="k">return</span> <span class="n">cost</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getCost</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="kt">float</span> <span class="n">cost</span> <span class="o">=</span> <span class="n">0</span><span class="o">.</span><span class="na">0f</span><span class="o">;</span>
+      <span class="k">for</span> <span class="o">(</span><span class="n">Item</span> <span class="n">item</span> <span class="o">:</span> <span class="n">items</span><span class="o">)</span> <span class="o">{</span>
+         <span class="n">cost</span> <span class="o">+</span><span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="na">price</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="k">return</span> <span class="n">cost</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">showItems</span><span class="p">(){</span>
-      <span class="k">for</span> <span class="p">(</span><span class="n">Item</span> <span class="nf">item</span> <span class="o">:</span> <span class="n">items</span><span class="p">)</span> <span class="p">{</span>
-         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&#34;Item : &#34;</span><span class="o">+</span><span class="n">item</span><span class="p">.</span><span class="na">name</span><span class="p">());</span>
-         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&#34;, Packing : &#34;</span><span class="o">+</span><span class="n">item</span><span class="p">.</span><span class="na">packing</span><span class="p">().</span><span class="na">pack</span><span class="p">());</span>
-         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;, Price : &#34;</span><span class="o">+</span><span class="n">item</span><span class="p">.</span><span class="na">price</span><span class="p">());</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-6">步骤 6</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showItems</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">for</span> <span class="o">(</span><span class="n">Item</span> <span class="n">item</span> <span class="o">:</span> <span class="n">items</span><span class="o">)</span> <span class="o">{</span>
+         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&#34;Item : &#34;</span><span class="o">+</span><span class="n">item</span><span class="o">.</span><span class="na">name</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&#34;, Packing : &#34;</span><span class="o">+</span><span class="n">item</span><span class="o">.</span><span class="na">packing</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">pack</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;, Price : &#34;</span><span class="o">+</span><span class="n">item</span><span class="o">.</span><span class="na">price</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-6">步骤 6</h3>
 <p>创建一个 MealBuilder 类，实际的 builder 类负责创建 Meal 对象。
 <em>MealBuilder.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">MealBuilder</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MealBuilder</span> <span class="o">{</span>
 
-   <span class="kd">public</span> <span class="nf">Meal</span> <span class="n">prepareVegMeal</span> <span class="p">(){</span>
-      <span class="n">Meal</span> <span class="nf">meal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Meal</span><span class="p">();</span>
-      <span class="n">meal</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="k">new</span> <span class="n">VegBurger</span><span class="p">());</span>
-      <span class="n">meal</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="k">new</span> <span class="n">Coke</span><span class="p">());</span>
-      <span class="k">return</span> <span class="n">meal</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="n">Meal</span> <span class="nf">prepareVegMeal</span> <span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">Meal</span> <span class="n">meal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Meal</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">meal</span><span class="o">.</span><span class="na">addItem</span><span class="o">(</span><span class="k">new</span> <span class="n">VegBurger</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">meal</span><span class="o">.</span><span class="na">addItem</span><span class="o">(</span><span class="k">new</span> <span class="n">Coke</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+      <span class="k">return</span> <span class="n">meal</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">Meal</span> <span class="n">prepareNonVegMeal</span> <span class="p">(){</span>
-      <span class="n">Meal</span> <span class="nf">meal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Meal</span><span class="p">();</span>
-      <span class="n">meal</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="k">new</span> <span class="n">ChickenBurger</span><span class="p">());</span>
-      <span class="n">meal</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="k">new</span> <span class="n">Pepsi</span><span class="p">());</span>
-      <span class="k">return</span> <span class="n">meal</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-7">步骤 7</h3>
-
+   <span class="kd">public</span> <span class="n">Meal</span> <span class="nf">prepareNonVegMeal</span> <span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">Meal</span> <span class="n">meal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Meal</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">meal</span><span class="o">.</span><span class="na">addItem</span><span class="o">(</span><span class="k">new</span> <span class="n">ChickenBurger</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">meal</span><span class="o">.</span><span class="na">addItem</span><span class="o">(</span><span class="k">new</span> <span class="n">Pepsi</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+      <span class="k">return</span> <span class="n">meal</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-7">步骤 7</h3>
 <p>BuiderPatternDemo 使用 MealBuider 来演示建造者模式（Builder Pattern）。
 <em>BuilderPatternDemo.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">BuilderPatternDemo</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">MealBuilder</span> <span class="nf">mealBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MealBuilder</span><span class="p">();</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BuilderPatternDemo</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">MealBuilder</span> <span class="n">mealBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MealBuilder</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">Meal</span> <span class="nf">vegMeal</span> <span class="o">=</span> <span class="n">mealBuilder</span><span class="p">.</span><span class="na">prepareVegMeal</span><span class="p">();</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Veg Meal&#34;</span><span class="p">);</span>
-      <span class="n">vegMeal</span><span class="p">.</span><span class="na">showItems</span><span class="p">();</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Total Cost: &#34;</span> <span class="o">+</span><span class="n">vegMeal</span><span class="p">.</span><span class="na">getCost</span><span class="p">());</span>
+      <span class="n">Meal</span> <span class="n">vegMeal</span> <span class="o">=</span> <span class="n">mealBuilder</span><span class="o">.</span><span class="na">prepareVegMeal</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Veg Meal&#34;</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">vegMeal</span><span class="o">.</span><span class="na">showItems</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Total Cost: &#34;</span> <span class="o">+</span><span class="n">vegMeal</span><span class="o">.</span><span class="na">getCost</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">Meal</span> <span class="nf">nonVegMeal</span> <span class="o">=</span> <span class="n">mealBuilder</span><span class="p">.</span><span class="na">prepareNonVegMeal</span><span class="p">();</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;\n\nNon-Veg Meal&#34;</span><span class="p">);</span>
-      <span class="n">nonVegMeal</span><span class="p">.</span><span class="na">showItems</span><span class="p">();</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Total Cost: &#34;</span> <span class="o">+</span><span class="n">nonVegMeal</span><span class="p">.</span><span class="na">getCost</span><span class="p">());</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-8">步骤 8</h3>
-
+      <span class="n">Meal</span> <span class="n">nonVegMeal</span> <span class="o">=</span> <span class="n">mealBuilder</span><span class="o">.</span><span class="na">prepareNonVegMeal</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;\n\nNon-Veg Meal&#34;</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">nonVegMeal</span><span class="o">.</span><span class="na">showItems</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Total Cost: &#34;</span> <span class="o">+</span><span class="n">nonVegMeal</span><span class="o">.</span><span class="na">getCost</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-8">步骤 8</h3>
 <p>验证输出。</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Veg</span> <span class="nf">Meal</span>
-<span class="n">Item</span> <span class="o">:</span> <span class="n">Veg</span> <span class="nf">Burger</span><span class="p">,</span> <span class="n">Packing</span> <span class="o">:</span> <span class="n">Wrapper</span><span class="p">,</span> <span class="n">Price</span> <span class="o">:</span> <span class="n">25</span><span class="p">.</span><span class="na">0</span>
-<span class="nf">Item</span> <span class="o">:</span> <span class="n">Coke</span><span class="p">,</span> <span class="n">Packing</span> <span class="o">:</span> <span class="n">Bottle</span><span class="p">,</span> <span class="n">Price</span> <span class="o">:</span> <span class="n">30</span><span class="p">.</span><span class="na">0</span>
-<span class="nf">Total</span> <span class="n">Cost</span><span class="o">:</span> <span class="n">55</span><span class="p">.</span><span class="na">0</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Veg</span> <span class="n">Meal</span>
+<span class="n">Item</span> <span class="o">:</span> <span class="n">Veg</span> <span class="n">Burger</span><span class="o">,</span> <span class="n">Packing</span> <span class="o">:</span> <span class="n">Wrapper</span><span class="o">,</span> <span class="n">Price</span> <span class="o">:</span> <span class="n">25</span><span class="o">.</span><span class="na">0</span>
+<span class="n">Item</span> <span class="o">:</span> <span class="n">Coke</span><span class="o">,</span> <span class="n">Packing</span> <span class="o">:</span> <span class="n">Bottle</span><span class="o">,</span> <span class="n">Price</span> <span class="o">:</span> <span class="n">30</span><span class="o">.</span><span class="na">0</span>
+<span class="n">Total</span> <span class="n">Cost</span><span class="o">:</span> <span class="n">55</span><span class="o">.</span><span class="na">0</span>
 
 
-<span class="nf">Non</span><span class="o">-</span><span class="n">Veg</span> <span class="nf">Meal</span>
-<span class="n">Item</span> <span class="o">:</span> <span class="n">Chicken</span> <span class="nf">Burger</span><span class="p">,</span> <span class="n">Packing</span> <span class="o">:</span> <span class="n">Wrapper</span><span class="p">,</span> <span class="n">Price</span> <span class="o">:</span> <span class="n">50</span><span class="p">.</span><span class="na">5</span>
-<span class="nf">Item</span> <span class="o">:</span> <span class="n">Pepsi</span><span class="p">,</span> <span class="n">Packing</span> <span class="o">:</span> <span class="n">Bottle</span><span class="p">,</span> <span class="n">Price</span> <span class="o">:</span> <span class="n">35</span><span class="p">.</span><span class="na">0</span>
-<span class="nf">Total</span> <span class="n">Cost</span><span class="o">:</span> <span class="n">85</span><span class="p">.</span><span class="na">5</span></code></pre></div>
+<span class="n">Non</span><span class="o">-</span><span class="n">Veg</span> <span class="n">Meal</span>
+<span class="n">Item</span> <span class="o">:</span> <span class="n">Chicken</span> <span class="n">Burger</span><span class="o">,</span> <span class="n">Packing</span> <span class="o">:</span> <span class="n">Wrapper</span><span class="o">,</span> <span class="n">Price</span> <span class="o">:</span> <span class="n">50</span><span class="o">.</span><span class="na">5</span>
+<span class="n">Item</span> <span class="o">:</span> <span class="n">Pepsi</span><span class="o">,</span> <span class="n">Packing</span> <span class="o">:</span> <span class="n">Bottle</span><span class="o">,</span> <span class="n">Price</span> <span class="o">:</span> <span class="n">35</span><span class="o">.</span><span class="na">0</span>
+<span class="n">Total</span> <span class="n">Cost</span><span class="o">:</span> <span class="n">85</span><span class="o">.</span><span class="na">5</span>
+</code></pre></div>
         </div>
 
         
@@ -321,23 +308,21 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#实现">实现</a>
-<ul>
-<li><a href="#步骤-1">步骤 1</a></li>
-<li><a href="#步骤-2">步骤 2</a></li>
-<li><a href="#步骤-3">步骤 3</a></li>
-<li><a href="#步骤-4">步骤 4</a></li>
-<li><a href="#步骤-5">步骤 5</a></li>
-<li><a href="#步骤-6">步骤 6</a></li>
-<li><a href="#步骤-7">步骤 7</a></li>
-<li><a href="#步骤-8">步骤 8</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">介绍</a></li>
+    <li><a href="#heading-1">实现</a>
+      <ul>
+        <li><a href="#-1">步骤 1</a></li>
+        <li><a href="#-2">步骤 2</a></li>
+        <li><a href="#-3">步骤 3</a></li>
+        <li><a href="#-4">步骤 4</a></li>
+        <li><a href="#-5">步骤 5</a></li>
+        <li><a href="#-6">步骤 6</a></li>
+        <li><a href="#-7">步骤 7</a></li>
+        <li><a href="#-8">步骤 8</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -92,10 +92,8 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p><a href="https://rsync.samba.org/">rsync</a> is an open source utility that provides fast incremental file transfer. rsync is freely available under the GNU General Public License and is currently being maintained by Wayne Davison.</p>
-
 <p>rsync is a file transfer program for Unix systems. rsync uses the &ldquo;rsync algorithm&rdquo; which provides a very fast method for bringing remote files into sync. It does this by sending just the differences in the files across the link, without requiring that both sets of files are present at one of the ends of the link beforehand.
 Some features of rsync include</p>
-
 <ul>
 <li>can update whole directory trees and filesystems</li>
 <li>optionally preserves symbolic links, hard links, file ownership, permissions, devices and times</li>
@@ -104,7 +102,6 @@ Some features of rsync include</p>
 <li>can use rsh, ssh or direct sockets as the transport</li>
 <li>supports anonymous rsync which is ideal for mirroring</li>
 </ul>
-
 <h3 id="rsync-command">rsync command</h3>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">rsync <span class="o">[</span>OPTION<span class="o">]</span>... SRC <span class="o">[</span>SRC<span class="o">]</span>... DEST
 rsync <span class="o">[</span>OPTION<span class="o">]</span>... SRC <span class="o">[</span>SRC<span class="o">]</span>... <span class="o">[</span>USER@<span class="o">]</span>HOST:DEST
@@ -112,329 +109,266 @@ rsync <span class="o">[</span>OPTION<span class="o">]</span>... SRC <span class=
 rsync <span class="o">[</span>OPTION<span class="o">]</span>... SRC <span class="o">[</span>SRC<span class="o">]</span>... rsync://<span class="o">[</span>USER@<span class="o">]</span>HOST<span class="o">[</span>:PORT<span class="o">]</span>/DEST
 rsync <span class="o">[</span>OPTION<span class="o">]</span>... <span class="o">[</span>USER@<span class="o">]</span>HOST:SRC <span class="o">[</span>DEST<span class="o">]</span>
 rsync <span class="o">[</span>OPTION<span class="o">]</span>... <span class="o">[</span>USER@<span class="o">]</span>HOST::SRC <span class="o">[</span>DEST<span class="o">]</span>
-rsync <span class="o">[</span>OPTION<span class="o">]</span>... rsync://<span class="o">[</span>USER@<span class="o">]</span>HOST<span class="o">[</span>:PORT<span class="o">]</span>/SRC <span class="o">[</span>DEST<span class="o">]</span></code></pre></div>
-<table>
+rsync <span class="o">[</span>OPTION<span class="o">]</span>... rsync://<span class="o">[</span>USER@<span class="o">]</span>HOST<span class="o">[</span>:PORT<span class="o">]</span>/SRC <span class="o">[</span>DEST<span class="o">]</span>
+</code></pre></div><table>
 <thead>
 <tr>
 <th align="left">Options</th>
 <th align="left">Summary</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">-v, --verbose</td>
 <td align="left">详细模式输出</td>
 </tr>
-
 <tr>
 <td align="left">-q, --quiet</td>
 <td align="left">精简输出模式</td>
 </tr>
-
 <tr>
 <td align="left">-c, --checksum</td>
 <td align="left">打开校验开关，强制对文件传输进行校验</td>
 </tr>
-
 <tr>
 <td align="left">-a, --archive</td>
 <td align="left">归档模式，表示以递归方式传输文件，并保持所有文件属性，等于-rlptgoD</td>
 </tr>
-
 <tr>
 <td align="left">-r, --recursive</td>
 <td align="left">对子目录以递归模式处理</td>
 </tr>
-
 <tr>
 <td align="left">-R, --relative</td>
 <td align="left">使用相对路径信息</td>
 </tr>
-
 <tr>
 <td align="left">-b, --backup</td>
 <td align="left">创建备份，也就是对于目的已经存在有同样的文件名时，将老的文件重新命名为~filename。可以使用--suffix选项来指定不同的备份文件前缀。</td>
 </tr>
-
 <tr>
 <td align="left">--backup-dir</td>
 <td align="left">将备份文件(如~filename)存放在在目录下。</td>
 </tr>
-
 <tr>
 <td align="left">-suffix=SUFFIX</td>
 <td align="left">定义备份文件前缀</td>
 </tr>
-
 <tr>
 <td align="left">-u, --update</td>
 <td align="left">仅仅进行更新，也就是跳过所有已经存在于DST，并且文件时间晚于要备份的文件。(不覆盖更新的文件)</td>
 </tr>
-
 <tr>
 <td align="left">-l, --links</td>
 <td align="left">保留软链结</td>
 </tr>
-
 <tr>
 <td align="left">-L, --copy-links</td>
 <td align="left">想对待常规文件一样处理软链结</td>
 </tr>
-
 <tr>
 <td align="left">--copy-unsafe-links</td>
 <td align="left">仅仅拷贝指向SRC路径目录树以外的链结</td>
 </tr>
-
 <tr>
 <td align="left">--safe-links</td>
 <td align="left">忽略指向SRC路径目录树以外的链结</td>
 </tr>
-
 <tr>
 <td align="left">-H, --hard-links</td>
 <td align="left">保留硬链结</td>
 </tr>
-
 <tr>
 <td align="left">-p, --perms</td>
 <td align="left">保持文件权限</td>
 </tr>
-
 <tr>
 <td align="left">-o, --owner</td>
 <td align="left">保持文件属主信息</td>
 </tr>
-
 <tr>
 <td align="left">-g, --group</td>
 <td align="left">保持文件属组信息</td>
 </tr>
-
 <tr>
 <td align="left">-D, --devices</td>
 <td align="left">保持设备文件信息</td>
 </tr>
-
 <tr>
 <td align="left">-t, --times</td>
 <td align="left">保持文件时间信息</td>
 </tr>
-
 <tr>
 <td align="left">-S, --sparse</td>
 <td align="left">对稀疏文件进行特殊处理以节省DST的空间</td>
 </tr>
-
 <tr>
 <td align="left">-n, --dry-run</td>
 <td align="left">现实哪些文件将被传输</td>
 </tr>
-
 <tr>
 <td align="left">-W, --whole-file</td>
 <td align="left">拷贝文件，不进行增量检测</td>
 </tr>
-
 <tr>
 <td align="left">-x, --one-file-system</td>
 <td align="left">不要跨越文件系统边界</td>
 </tr>
-
 <tr>
 <td align="left">-B, --block-size=SIZE</td>
 <td align="left">检验算法使用的块尺寸，默认是700字节</td>
 </tr>
-
 <tr>
 <td align="left">-e, --rsh=COMMAND</td>
 <td align="left">指定使用rsh、ssh方式进行数据同步</td>
 </tr>
-
 <tr>
 <td align="left">--rsync-path=PATH</td>
 <td align="left">指定远程服务器上的rsync命令所在路径信息</td>
 </tr>
-
 <tr>
 <td align="left">-C, --cvs-exclude</td>
 <td align="left">使用和CVS一样的方法自动忽略文件，用来排除那些不希望传输的文件</td>
 </tr>
-
 <tr>
 <td align="left">--existing</td>
 <td align="left">仅仅更新那些已经存在于DST的文件，而不备份那些新创建的文件</td>
 </tr>
-
 <tr>
 <td align="left">--delete</td>
 <td align="left">删除那些DST中SRC没有的文件</td>
 </tr>
-
 <tr>
 <td align="left">--delete-excluded</td>
 <td align="left">同样删除接收端那些被该选项指定排除的文件</td>
 </tr>
-
 <tr>
 <td align="left">--delete-after</td>
 <td align="left">传输结束以后再删除</td>
 </tr>
-
 <tr>
 <td align="left">--ignore-errors</td>
 <td align="left">及时出现IO错误也进行删除</td>
 </tr>
-
 <tr>
 <td align="left">--max-delete=NUM</td>
 <td align="left">最多删除NUM个文件</td>
 </tr>
-
 <tr>
 <td align="left">--partial</td>
 <td align="left">保留那些因故没有完全传输的文件，以是加快随后的再次传输</td>
 </tr>
-
 <tr>
 <td align="left">--force</td>
 <td align="left">强制删除目录，即使不为空</td>
 </tr>
-
 <tr>
 <td align="left">--numeric-ids</td>
 <td align="left">不将数字的用户和组ID匹配为用户名和组名</td>
 </tr>
-
 <tr>
 <td align="left">--timeout=TIME IP</td>
 <td align="left">超时时间，单位为秒</td>
 </tr>
-
 <tr>
 <td align="left">-I, --ignore-times</td>
 <td align="left">不跳过那些有同样的时间和长度的文件</td>
 </tr>
-
 <tr>
 <td align="left">--size-only</td>
 <td align="left">当决定是否要备份文件时，仅仅察看文件大小而不考虑文件时间</td>
 </tr>
-
 <tr>
 <td align="left">--modify-window=NUM</td>
 <td align="left">决定文件是否时间相同时使用的时间戳窗口，默认为0</td>
 </tr>
-
 <tr>
 <td align="left">-T --temp-dir=DIR</td>
 <td align="left">在DIR中创建临时文件</td>
 </tr>
-
 <tr>
 <td align="left">--compare-dest=DIR</td>
 <td align="left">同样比较DIR中的文件来决定是否需要备份</td>
 </tr>
-
 <tr>
 <td align="left">-P</td>
 <td align="left">等同于 --partial</td>
 </tr>
-
 <tr>
 <td align="left">--progress</td>
 <td align="left">显示备份过程</td>
 </tr>
-
 <tr>
 <td align="left">-z, --compress</td>
 <td align="left">对备份的文件在传输时进行压缩处理</td>
 </tr>
-
 <tr>
 <td align="left">--exclude=PATTERN</td>
 <td align="left">指定排除不需要传输的文件模式</td>
 </tr>
-
 <tr>
 <td align="left">--include=PATTERN</td>
 <td align="left">指定不排除而需要传输的文件模式</td>
 </tr>
-
 <tr>
 <td align="left">--exclude-from=FILE</td>
 <td align="left">排除FILE中指定模式的文件</td>
 </tr>
-
 <tr>
 <td align="left">--include-from=FILE</td>
 <td align="left">不排除FILE指定模式匹配的文件</td>
 </tr>
-
 <tr>
 <td align="left">--version</td>
 <td align="left">打印版本信息</td>
 </tr>
-
 <tr>
 <td align="left">--address</td>
 <td align="left">绑定到特定的地址</td>
 </tr>
-
 <tr>
 <td align="left">--config=FILE</td>
 <td align="left">指定其他的配置文件，不使用默认的rsyncd.conf文件</td>
 </tr>
-
 <tr>
 <td align="left">--port=PORT</td>
 <td align="left">指定其他的rsync服务端口</td>
 </tr>
-
 <tr>
 <td align="left">--blocking-io</td>
 <td align="left">对远程shell使用阻塞IO</td>
 </tr>
-
 <tr>
 <td align="left">-stats</td>
 <td align="left">给出某些文件的传输状态</td>
 </tr>
-
 <tr>
 <td align="left">--progress</td>
 <td align="left">在传输时现实传输过程</td>
 </tr>
-
 <tr>
 <td align="left">--log-format=formAT</td>
 <td align="left">指定日志文件格式</td>
 </tr>
-
 <tr>
 <td align="left">--password-file=FILE</td>
 <td align="left">从FILE中得到密码</td>
 </tr>
-
 <tr>
 <td align="left">--bwlimit=KBPS</td>
 <td align="left">限制I/O带宽，KBytes per second</td>
 </tr>
-
 <tr>
 <td align="left">-h, --help</td>
 <td align="left">显示帮助信息</td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="rsync-elpa-mirror">rsync elpa mirror</h3>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">rsync -avz --delete --progress rsync://elpa.gnu.org/elpa/ ./rsync/gnu
 rsync -avz --delete --progress rsync://melpa.org/packages/ ./rsync/melpa
-rsync -avz --delete --progress rsync://melpa.org/packages-stable/ ./rsync/melpa-stable</code></pre></div>
-<h3 id="clone-elpa-archive">Clone ELPA archive</h3>
-
+rsync -avz --delete --progress rsync://melpa.org/packages-stable/ ./rsync/melpa-stable
+</code></pre></div><h3 id="clone-elpa-archive">Clone ELPA archive</h3>
 <p>Use <a href="https://github.com/dochang/elpa-clone">elpa-clone</a> to clone elpa archive.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/bash
 </span><span class="cp"></span><span class="nb">set</span> -ev
@@ -447,8 +381,8 @@ rm -rf <span class="nv">$elpa_clone_path</span>
 git clone --depth <span class="m">1</span> https://github.com/dochang/elpa-clone.git <span class="nv">$elpa_clone_path</span>
 
 <span class="k">function</span> clone <span class="o">{</span>
-  <span class="nb">echo</span> <span class="s2">&#34;Updating mirror for </span><span class="nv">$2</span><span class="s2"> (</span><span class="nv">$1</span><span class="s2">)&#34;</span>
-  emacs -l <span class="s2">&#34;</span><span class="nv">$elpa_clone_path</span><span class="s2">/elpa-clone.el&#34;</span> -nw --batch --eval<span class="o">=</span><span class="s2">&#34;(elpa-clone \&#34;</span><span class="nv">$1</span><span class="s2">\&#34; \&#34;</span><span class="nv">$SCRIPTPATH</span><span class="s2">/</span><span class="nv">$2</span><span class="s2">\&#34;)&#34;</span>
+  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">Updating mirror for </span><span class="nv">$2</span><span class="s2"> (</span><span class="nv">$1</span><span class="s2">)</span><span class="s2">&#34;</span>
+  emacs -l <span class="s2">&#34;</span><span class="nv">$elpa_clone_path</span><span class="s2">/elpa-clone.el</span><span class="s2">&#34;</span> -nw --batch --eval<span class="o">=</span><span class="s2">&#34;</span><span class="s2">(elpa-clone \&#34;</span><span class="nv">$1</span><span class="s2">\&#34; \&#34;</span><span class="nv">$SCRIPTPATH</span><span class="s2">/</span><span class="nv">$2</span><span class="s2">\&#34;)</span><span class="s2">&#34;</span>
 <span class="o">}</span>
 
 mkdir rsync
@@ -456,7 +390,8 @@ mkdir rsync
 clone <span class="s2">&#34;rsync://elpa.gnu.org/elpa/&#34;</span> <span class="s2">&#34;./rsync/gnu&#34;</span>
 clone <span class="s2">&#34;rsync://melpa.org/packages/&#34;</span> <span class="s2">&#34;./rsync/melpa&#34;</span>
 clone <span class="s2">&#34;rsync://melpa.org/packages-stable/&#34;</span> <span class="s2">&#34;./rsync/melpa-stable&#34;</span>
-clone <span class="s2">&#34;http://orgmode.org/elpa/&#34;</span> <span class="s2">&#34;./rsync/org&#34;</span></code></pre></div>
+clone <span class="s2">&#34;http://orgmode.org/elpa/&#34;</span> <span class="s2">&#34;./rsync/org&#34;</span>
+</code></pre></div>
         </div>
 
         
@@ -464,17 +399,15 @@ clone <span class="s2">&#34;http://orgmode.org/elpa/&#34;</span> <span class="s2
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#rsync-command">rsync command</a></li>
-<li><a href="#rsync-elpa-mirror">rsync elpa mirror</a></li>
-<li><a href="#clone-elpa-archive">Clone ELPA archive</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#rsync-command">rsync command</a></li>
+        <li><a href="#rsync-elpa-mirror">rsync elpa mirror</a></li>
+        <li><a href="#clone-elpa-archive">Clone ELPA archive</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -96,39 +96,31 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p><img src="/images/gulp.jpg" alt="" /></p>
-
+            <p><img src="/images/gulp.jpg" alt=""></p>
 <p>使用 <code>hexo generate</code> 命令后在 public 文件夹下面生成 html、css、js 等源文件，里面含有大量的空白，而且博客中还有大量的图片占据了很大的空间。</p>
-
 <blockquote>
 <p>Automate and enhance your workflow.
 gulp is a toolkit for automating painful or time-consuming tasks in your development workflow, so you can stop messing around and build something.</p>
 </blockquote>
-
 <p><a href="https://gulpjs.com/">gulp</a> 用自动化构建工具增强你的工作流程！</p>
-
 <p>我们可以通过一些 gulp 插件实现对html、css、js、image等静态资源的高效压缩，通过压缩这些静态资源，可以减少请求的数据量从而达到优化博客访问速度的目的。</p>
-
-<h2 id="安装-gulp-及插件">安装 gulp 及插件</h2>
-
+<h2 id="-gulp-">安装 gulp 及插件</h2>
 <ul>
 <li>基本：<a href="https://www.npmjs.com/package/gulp">gulp</a></li>
 <li>CSS 压缩：<a href="https://www.npmjs.com/package/gulp-clean-css">gulp-clean-css</a></li>
 <li>JS 压缩：<a href="https://www.npmjs.com/package/gulp-uglify">gulp-uglify</a></li>
 <li>HTML 压缩：<a href="https://www.npmjs.com/package/gulp-htmlmin">gulp-htmlmin</a>，<a href="https://www.npmjs.com/package/gulp-htmlclean">gulp-htmlclean</a></li>
-
-<li><p>图片压缩：<a href="https://www.npmjs.com/package/gulp-imagemin">gulp-imagemin</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ npm install gulp-clean-css gulp-uglify gulp-htmlmin gulp-imagemin gulp-htmlclean gulp --save-dev</code></pre></div></li>
+<li>图片压缩：<a href="https://www.npmjs.com/package/gulp-imagemin">gulp-imagemin</a></li>
 </ul>
-
-<p>如果使用 {% post_link autodeploy-hexo-blog-with-travisci Travis CI 自动部署 hexo 博客 %}，<code>package.json</code>文件可如下定义：</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ npm install gulp-clean-css gulp-uglify gulp-htmlmin gulp-imagemin gulp-htmlclean gulp --save-dev
+</code></pre></div><p>如果使用 {% post_link autodeploy-hexo-blog-with-travisci Travis CI 自动部署 hexo 博客 %}，<code>package.json</code>文件可如下定义：</p>
 <div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;hexo-site&#34;</span><span class="p">,</span>
   <span class="nt">&#34;version&#34;</span><span class="p">:</span> <span class="s2">&#34;0.0.0&#34;</span><span class="p">,</span>
   <span class="nt">&#34;private&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nt">&#34;hexo&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;version&#34;</span><span class="p">:</span> <span class="s2">&#34;3.5.0&#34;</span>
-  <span class="p">},</span>
+  <span class="p">}</span><span class="p">,</span>
   <span class="nt">&#34;dependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;hexo&#34;</span><span class="p">:</span> <span class="s2">&#34;^3.5.0&#34;</span><span class="p">,</span>
     <span class="nt">&#34;hexo-deployer-git&#34;</span><span class="p">:</span> <span class="s2">&#34;^0.3.1&#34;</span><span class="p">,</span>
@@ -143,7 +135,7 @@ gulp is a toolkit for automating painful or time-consuming tasks in your develop
     <span class="nt">&#34;hexo-renderer-stylus&#34;</span><span class="p">:</span> <span class="s2">&#34;^0.3.3&#34;</span><span class="p">,</span>
     <span class="nt">&#34;hexo-server&#34;</span><span class="p">:</span> <span class="s2">&#34;^0.3.1&#34;</span><span class="p">,</span>
     <span class="nt">&#34;hexo-symbols-count-time&#34;</span><span class="p">:</span> <span class="s2">&#34;^0.3.2&#34;</span>
-  <span class="p">},</span>
+  <span class="p">}</span><span class="p">,</span>
   <span class="nt">&#34;devDependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;gulp&#34;</span><span class="p">:</span> <span class="s2">&#34;^3.9.1&#34;</span><span class="p">,</span>
     <span class="nt">&#34;gulp-clean-css&#34;</span><span class="p">:</span> <span class="s2">&#34;^3.9.2&#34;</span><span class="p">,</span>
@@ -152,70 +144,67 @@ gulp is a toolkit for automating painful or time-consuming tasks in your develop
     <span class="nt">&#34;gulp-imagemin&#34;</span><span class="p">:</span> <span class="s2">&#34;^4.1.0&#34;</span><span class="p">,</span>
     <span class="nt">&#34;gulp-uglify&#34;</span><span class="p">:</span> <span class="s2">&#34;^3.0.0&#34;</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h2 id="编写-gulpfile-js">编写 gulpfile.js</h2>
-
+<span class="p">}</span>
+</code></pre></div><h2 id="-gulpfilejs">编写 gulpfile.js</h2>
 <p>在 hexo 博客根目录创建 <code>gulpfile.js</code> 文件，可根据自身需求修改相关参数，内容如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">minifycss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-clean-css&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">uglify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-uglify&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">htmlmin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-htmlmin&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">htmlclean</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-htmlclean&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">imagemin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-imagemin&#39;</span><span class="p">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">minifycss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-clean-css&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">uglify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-uglify&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">htmlmin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-htmlmin&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">htmlclean</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-htmlclean&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">imagemin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-imagemin&#39;</span><span class="p">)</span><span class="p">;</span>
 
 <span class="c1">// 压缩html
-</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;minify-html&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;minify-html&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./public/**/*.html&#39;</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">htmlclean</span><span class="p">())</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">htmlmin</span><span class="p">({</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">htmlclean</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">htmlmin</span><span class="p">(</span><span class="p">{</span>
             <span class="nx">removeComments</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="nx">minifyJS</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="nx">minifyCSS</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="nx">minifyURLs</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="p">}))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public&#39;</span><span class="p">))</span>
-<span class="p">});</span>
+        <span class="p">}</span><span class="p">)</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
 
 <span class="c1">// 压缩css
-</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;minify-css&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;minify-css&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./public/**/*.css&#39;</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">minifycss</span><span class="p">({</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">minifycss</span><span class="p">(</span><span class="p">{</span>
             <span class="nx">compatibility</span><span class="o">:</span> <span class="s1">&#39;ie8&#39;</span><span class="p">,</span>
             <span class="nx">rebase</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="p">}))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public&#39;</span><span class="p">));</span>
-<span class="p">});</span>
+        <span class="p">}</span><span class="p">)</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public&#39;</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
 
 <span class="c1">// 压缩js
-</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;minify-js&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;minify-js&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./public/js/**/*.js&#39;</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uglify</span><span class="p">())</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public&#39;</span><span class="p">));</span>
-<span class="p">});</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uglify</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public&#39;</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
 
 <span class="c1">// 压缩图片
-</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;minify-images&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;minify-images&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./public/images/**/*.*&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">imagemin</span><span class="p">(</span>
-        <span class="p">[</span><span class="nx">imagemin</span><span class="p">.</span><span class="nx">gifsicle</span><span class="p">({</span><span class="s1">&#39;optimizationLevel&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">}),</span> 
-        <span class="nx">imagemin</span><span class="p">.</span><span class="nx">jpegtran</span><span class="p">({</span><span class="s1">&#39;progressive&#39;</span><span class="o">:</span> <span class="kc">true</span><span class="p">}),</span> 
-        <span class="nx">imagemin</span><span class="p">.</span><span class="nx">optipng</span><span class="p">({</span><span class="s1">&#39;optimizationLevel&#39;</span><span class="o">:</span> <span class="mi">7</span><span class="p">}),</span> 
-        <span class="nx">imagemin</span><span class="p">.</span><span class="nx">svgo</span><span class="p">()],</span>
-        <span class="p">{</span><span class="s1">&#39;verbose&#39;</span><span class="o">:</span> <span class="kc">true</span><span class="p">}))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public/images&#39;</span><span class="p">))</span>
-<span class="p">});</span>
+        <span class="p">[</span><span class="nx">imagemin</span><span class="p">.</span><span class="nx">gifsicle</span><span class="p">(</span><span class="p">{</span><span class="s1">&#39;optimizationLevel&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">}</span><span class="p">)</span><span class="p">,</span> 
+        <span class="nx">imagemin</span><span class="p">.</span><span class="nx">jpegtran</span><span class="p">(</span><span class="p">{</span><span class="s1">&#39;progressive&#39;</span><span class="o">:</span> <span class="kc">true</span><span class="p">}</span><span class="p">)</span><span class="p">,</span> 
+        <span class="nx">imagemin</span><span class="p">.</span><span class="nx">optipng</span><span class="p">(</span><span class="p">{</span><span class="s1">&#39;optimizationLevel&#39;</span><span class="o">:</span> <span class="mi">7</span><span class="p">}</span><span class="p">)</span><span class="p">,</span> 
+        <span class="nx">imagemin</span><span class="p">.</span><span class="nx">svgo</span><span class="p">(</span><span class="p">)</span><span class="p">]</span><span class="p">,</span>
+        <span class="p">{</span><span class="s1">&#39;verbose&#39;</span><span class="o">:</span> <span class="kc">true</span><span class="p">}</span><span class="p">)</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public/images&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
 
 <span class="c1">// 默认任务
 </span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="p">[</span>
     <span class="s1">&#39;minify-html&#39;</span><span class="p">,</span><span class="s1">&#39;minify-css&#39;</span><span class="p">,</span><span class="s1">&#39;minify-js&#39;</span><span class="p">,</span><span class="s1">&#39;minify-images&#39;</span>
-<span class="p">]);</span>
-</code></pre></div>
-<h2 id="压缩生成的博客文件">压缩生成的博客文件</h2>
+<span class="p">]</span><span class="p">)</span><span class="p">;</span>
+</code></pre></div><h2 id="heading">压缩生成的博客文件</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ hexo clean
 $ hexo generate
-$ gulp</code></pre></div>
-<p>压缩完成后，执行 <code>hexo deploy</code> 部署即可。</p>
-
+$ gulp
+</code></pre></div><p>压缩完成后，执行 <code>hexo deploy</code> 部署即可。</p>
 <p>如果使用 {% post_link autodeploy-hexo-blog-with-travisci Travis CI 自动部署 hexo 博客 %}，<code>.travis.yml</code>文件可如下定义：</p>
 <div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml">language<span class="p">:</span><span class="w"> </span>node_js<span class="w">  </span><span class="c">#设置语言</span><span class="w">
 </span><span class="w">
@@ -252,7 +241,8 @@ $ gulp</code></pre></div>
 </span><span class="w">
 </span><span class="w"></span>env<span class="p">:</span><span class="w">
 </span><span class="w"> </span>global<span class="p">:</span><span class="w">
-</span><span class="w">   </span>-<span class="w"> </span>GH_REF<span class="p">:</span><span class="w"> </span>github.com/xuchengpeng/xuchengpeng.github.io.git<span class="w"> </span><span class="c"># GitHub博客仓库的地址</span></code></pre></div>
+</span><span class="w">   </span>-<span class="w"> </span>GH_REF<span class="p">:</span><span class="w"> </span>github.com/xuchengpeng/xuchengpeng.github.io.git<span class="w"> </span><span class="c"># GitHub博客仓库的地址</span><span class="w">
+</span></code></pre></div>
         </div>
 
         
@@ -260,14 +250,11 @@ $ gulp</code></pre></div>
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#安装-gulp-及插件">安装 gulp 及插件</a></li>
-<li><a href="#编写-gulpfile-js">编写 gulpfile.js</a></li>
-<li><a href="#压缩生成的博客文件">压缩生成的博客文件</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#-gulp-">安装 gulp 及插件</a></li>
+    <li><a href="#-gulpfilejs">编写 gulpfile.js</a></li>
+    <li><a href="#heading">压缩生成的博客文件</a></li>
+  </ul>
 </nav>
         </div>
         

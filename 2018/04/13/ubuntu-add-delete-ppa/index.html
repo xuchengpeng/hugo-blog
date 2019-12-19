@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,33 +97,33 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>PPA，英文全称为 Personal Package Archives，即个人软件包档案。是 Ubuntu Launchpad 网站提供的一项源服务，允许个人用户上传软件源代码，通过 Launchpad 进行编译并发布为二进制软件包，作为 apt / 新立得（Synaptic）源供其他用户下载和更新。</p>
-
 <p>PPA 的一般形式是： <strong>ppa:user/ppa-name</strong></p>
-
 <p>添加 PPA 源:</p>
-
 <ul>
 <li>添加 PPA 源的命令为： sudo add-apt-repository ppa:user/ppa-name</li>
 <li>添加好记得要更新一下： sudo apt-get update</li>
 </ul>
-
 <p>删除 PPA 源:</p>
-
 <ul>
 <li>删除 PPA 源的命令格式则为：sudo add-apt-repository -r ppa:user/ppa-name</li>
 <li>然后进入 /etc/apt/sources.list.d 目录，将相应 ppa 源的保存文件删除。</li>
 <li>最后同样更新一下：sudo apt-get update</li>
 </ul>
-
 <p>Ubuntu 下安装 emacs25：</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ sudo add-apt-repository ppa:kelleyk/emacs
 <span class="c1"># 或者是 sudo add-apt-repository ppa:ubuntu-elisp/ppa</span>
 $ sudo apt-get update
 $ sudo apt-get install emacs25
-<span class="c1"># 或者是 sudo apt-get install emacs-snapshot</span></code></pre></div>
+<span class="c1"># 或者是 sudo apt-get install emacs-snapshot</span>
+</code></pre></div>
         </div>
 
         
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents"></nav>
+        </div>
         
         
 

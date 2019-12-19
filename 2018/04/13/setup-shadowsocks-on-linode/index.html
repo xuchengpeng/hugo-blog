@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -96,100 +96,68 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="vps-选择">VPS 选择</h2>
-
-<h3 id="linode-https-www-linode-com-r-0a89daeb73aede849b760c66127f1bb8960c73dc"><a href="https://www.linode.com/?r=0a89daeb73aede849b760c66127f1bb8960c73dc">Linode</a></h3>
-
+            <h2 id="vps-">VPS 选择</h2>
+<h3 id="linodehttpswwwlinodecomr0a89daeb73aede849b760c66127f1bb8960c73dc"><a href="https://www.linode.com/?r=0a89daeb73aede849b760c66127f1bb8960c73dc">Linode</a></h3>
 <p>老大哥Linode近年最大的变化是，倍感digitalocean和vultr的压力了。Linode近期最大的福利是，全面由原来的Xen架构改用最流行的KVM架构服务器，套餐内存全部翻倍！</p>
-
 <p>例如，过去每月$10只能买1G内存套餐，现在你可购买Linode 2G套餐，目前最低$5可以买1G内存套餐，这也是最低套餐配置了，绝对具有性价比。</p>
-
 <p>Linode也允许用户按月付费，仍然采用信用卡付款的方式。新增了Paypal付款方式，目前处于测试阶段。需要提醒中国用户，Paypal仍然会要求你绑定一张双币信用卡（支持国内发行的visa信用卡），所以你应当尽快申请一张属于自己的信用卡。</p>
-
 <p>Linode日本机房长期缺货，无法购买。美国西海岸Fremont机房位于加州，是中国大陆用户最应当购买的机房位置。</p>
-
-<h3 id="vultr-www-vultr-com"><a href="www.vultr.com">Vultr</a></h3>
-
+<h3 id="vultrwwwvultrcom"><a href="www.vultr.com">Vultr</a></h3>
 <p>Vultr这两年的增长速度惊人，中国站长把原来digitalocean的服务器搬到了vultr，原因是vultr日本机房速度很快、同样的1G内存套餐，每月只要$8，具有超高性价比。</p>
-
 <p>日本机房速度一直很快，没有绕行美国。今年9月初，杭州开会期间，Vultr日本机房线路突然变得非常慢，ping丢包严重，但是此事件仅持续了一周左右时间，又恢复正常，怀疑是中国电信国际出口线路调整导致的。在该期间，用户可把vps搬家到Vultr美国SFO机房，速度仍然很棒。</p>
-
-<h3 id="digitalocean-www-digitalocean-com"><a href="www.digitalocean.com">digitalocean</a></h3>
-
+<h3 id="digitaloceanwwwdigitaloceancom"><a href="www.digitalocean.com">digitalocean</a></h3>
 <p>digitalocean新增SFO 2号机房，是对中国用户来说相当不错的选择。印度机房虽然距离中国近，但线路并未优化，速度不如美国西海岸机房。</p>
-
 <p>价格方便，$10每月享受1G内存、2TB月流量、单核CPU、KVM架构，在当前竞争激烈的VPS市场，表现中庸。</p>
-
 <p>digitalocean最大的变化是，过去三年间，中国买家疯狂涌入，导致线路表现不佳。大批用户搭建出国梯子，导致digitalocean机房很多IP被封。</p>
-
 <p>不明就里的新用户兴奋地创建一个新账号，结果竟然ping不通服务器，无法连接ssh，其实是因为自动分配的IP被墙的原因。目前，digitalocean线路稳定，原因之一是竞争对手vultr把很多中国用户吸引了过去。</p>
-
-<h2 id="注册-申请服务器">注册/申请服务器</h2>
-
-<h3 id="注册账号">注册账号</h3>
-
+<h2 id="heading">注册/申请服务器</h2>
+<h3 id="heading-1">注册账号</h3>
 <p>登陆 <a href="https://www.linode.com/?r=0a89daeb73aede849b760c66127f1bb8960c73dc">Linode</a> 注册账号，需要绑定一张信用卡，注册时填写邀请码(<strong>0a89daeb73aede849b760c66127f1bb8960c73dc</strong>)可获得奖励。</p>
-
-<h3 id="申请服务器">申请服务器</h3>
-
+<h3 id="heading-2">申请服务器</h3>
 <ul>
 <li>Add a Linode 创建服务器</li>
 <li>Select an instance type 因为这里只做流量转发，所以选最小的类型:1024</li>
 <li>Location 服务器位置选 <strong>Fremont, CA</strong></li>
 <li>点击 Add This Linode</li>
 </ul>
-
-<h3 id="配置操作系统镜像">配置操作系统镜像</h3>
-
+<h3 id="heading-3">配置操作系统镜像</h3>
 <ul>
 <li>进入 Linodes 界面，点击 <strong>Deploy an Image</strong>。</li>
 <li>操作系统镜像选择 <strong>Ubuntu 16.04 LTS</strong>，输入 root 用户密码，其他保持默认。</li>
 <li>Boot 启动服务器。</li>
 </ul>
-
-<h3 id="更新系统">更新系统</h3>
+<h3 id="heading-4">更新系统</h3>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 更新源</span>
 $ apt-get update
 <span class="c1"># 更新已安装的包</span>
 $ apt-get upgrade
 <span class="c1"># 升级系统</span>
-$ apt-get dist-upgrade</code></pre></div>
-<p>更新完成后 reboot 重新启动系统。</p>
-
-<h3 id="开启-bbr">开启 bbr</h3>
-
+$ apt-get dist-upgrade
+</code></pre></div><p>更新完成后 reboot 重新启动系统。</p>
+<h3 id="-bbr">开启 bbr</h3>
 <p>BBR是Google开源的TCP拥堵控制算法，与2016年9月开源。BBR的目的是要尽量跑满带宽, 并且尽量不要有排队的情况。
 linux 内核4.9版本以上已集成了bbr算法支持，使用 <strong>uname -r</strong>查看内核版本。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ uname -r
-<span class="m">4</span>.15.12-x86_64-linode105</code></pre></div>
-<p>执行以下命令修改系统配置并保存：</p>
+4.15.12-x86_64-linode105
+</code></pre></div><p>执行以下命令修改系统配置并保存：</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">echo</span> <span class="s2">&#34;net.ipv4.tcp_congestion_control=bbr&#34;</span> &gt;&gt; /etc/sysctl.conf
-$ sysctl -p</code></pre></div>
-<p>检查系统配置：</p>
+$ sysctl -p
+</code></pre></div><p>检查系统配置：</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ sysctl net.ipv4.tcp_available_congestion_control
 net.ipv4.tcp_available_congestion_control <span class="o">=</span> reno bbr bic cubic westwood htcp
 $ sysctl net.ipv4.tcp_congestion_control
-net.ipv4.tcp_congestion_control <span class="o">=</span> bbr</code></pre></div>
-<blockquote>
+net.ipv4.tcp_congestion_control <span class="o">=</span> bbr
+</code></pre></div><blockquote>
 <p>Linux 4.13内核版本及以上，不再需要配置 <code>net.core.default_qdisc=fq</code>。</p>
 </blockquote>
-
-<h3 id="优化">优化</h3>
-
+<h3 id="heading-5">优化</h3>
 <h4 id="step-1">Step 1</h4>
-
 <p>修改 <code>/etc/security/limits.conf</code> 文件，加入以下两行：</p>
-
 <pre><code>* soft nofile 51200
 * hard nofile 51200
-</code></pre>
-
-<p>执行 <strong>ulimit -n 51200</strong> 命令。</p>
-
+</code></pre><p>执行 <strong>ulimit -n 51200</strong> 命令。</p>
 <h4 id="step-2">Step 2</h4>
-
 <p>修改 <code>/etc/sysctl.conf</code> 文件，增加以下配置：</p>
-
 <pre><code>fs.file-max = 51200
 
 net.core.rmem_max = 67108864
@@ -211,13 +179,9 @@ net.ipv4.tcp_rmem = 4096 87380 67108864
 net.ipv4.tcp_wmem = 4096 65536 67108864
 net.ipv4.tcp_mtu_probing = 1
 net.ipv4.tcp_congestion_control = bbr
-</code></pre>
-
-<p>执行 <strong>sysctl -p</strong> 生效。</p>
-
-<h2 id="搭建-shadowsocks">搭建 Shadowsocks</h2>
-
-<h3 id="libsodium-安装">libsodium 安装</h3>
+</code></pre><p>执行 <strong>sysctl -p</strong> 生效。</p>
+<h2 id="-shadowsocks">搭建 Shadowsocks</h2>
+<h3 id="libsodium-">libsodium 安装</h3>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ apt-get install build-essential
 $ wget -N --no-check-certificate https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz
 $ tar zxvf libsodium-1.0.16.tar.gz
@@ -225,22 +189,19 @@ $ <span class="nb">pushd</span> libsodium-1.0.16
 $ ./configure --prefix<span class="o">=</span>/usr <span class="o">&amp;&amp;</span> make
 $ make install
 $ <span class="nb">popd</span>
-$ ldconfig</code></pre></div>
-<h3 id="shadowsocks-python">Shadowsocks-python</h3>
-
-<h4 id="安装-shadowsocks-python">安装 Shadowsocks-python</h4>
+$ ldconfig
+</code></pre></div><h3 id="shadowsocks-python">Shadowsocks-python</h3>
+<h4 id="-shadowsocks-python">安装 Shadowsocks-python</h4>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ apt-get update
 $ apt-get install python-pip
-$ pip install shadowsocks</code></pre></div>
-<p>或者是通过源码安装最新版 Shadowsocks-python</p>
+$ pip install shadowsocks
+</code></pre></div><p>或者是通过源码安装最新版 Shadowsocks-python</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ apt-get update
 $ apt-get install python-pip
 $ apt-get install git
-$ pip install git+https://github.com/shadowsocks/shadowsocks.git@master</code></pre></div>
-<h4 id="配置-shadowsocks">配置 Shadowsocks</h4>
-
+$ pip install git+https://github.com/shadowsocks/shadowsocks.git@master
+</code></pre></div><h4 id="-shadowsocks-1">配置 Shadowsocks</h4>
 <p>修改 /etc/shadowsocks-python/config.json 文件，填入以下内容：</p>
-
 <pre><code>{
     &quot;server&quot;:&quot;xxx.xxx.xxx.xxx&quot;,
     &quot;server_port&quot;:8388,
@@ -251,10 +212,7 @@ $ pip install git+https://github.com/shadowsocks/shadowsocks.git@master</code></
     &quot;method&quot;:&quot;aes-256-gcm&quot;,
     &quot;fast_open&quot;: false
 }
-</code></pre>
-
-<p>多用户配置：</p>
-
+</code></pre><p>多用户配置：</p>
 <pre><code>{
     &quot;server&quot;: &quot;xxx.xxx.xxx.xxx&quot;,
     &quot;port_password&quot;: {
@@ -266,33 +224,29 @@ $ pip install git+https://github.com/shadowsocks/shadowsocks.git@master</code></
     &quot;timeout&quot;: 300,
     &quot;method&quot;: &quot;aes-256-gcm&quot;
 }
-</code></pre>
-
-<h4 id="开启服务">开启服务</h4>
+</code></pre><h4 id="heading-6">开启服务</h4>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 启动服务</span>
 $ ssserver -c /etc/shadowsocks-python/config.json -d start
 <span class="c1"># 关闭服务</span>
-$ ssserver -c /etc/shadowsocks-python/config.json -d stop</code></pre></div>
-<h3 id="shadowsocks-libev">Shadowsocks-libev</h3>
-
-<h4 id="安装-mbedtls">安装 mbedtls</h4>
+$ ssserver -c /etc/shadowsocks-python/config.json -d stop
+</code></pre></div><h3 id="shadowsocks-libev">Shadowsocks-libev</h3>
+<h4 id="-mbedtls">安装 mbedtls</h4>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ wget https://tls.mbed.org/download/mbedtls-2.8.0-gpl.tgz
 $ tar xvf mbedtls-2.8.0-gpl.tgz
 $ <span class="nb">pushd</span> mbedtls-2.8.0
 $ make <span class="nv">SHARED</span><span class="o">=</span><span class="m">1</span> <span class="nv">CFLAGS</span><span class="o">=</span>-fPIC
 $ sudo make <span class="nv">DESTDIR</span><span class="o">=</span>/usr install
 $ <span class="nb">popd</span>
-$ sudo ldconfig</code></pre></div>
-<h4 id="安装-shadowsocks-libev">安装 Shadowsocks-libev</h4>
-
+$ sudo ldconfig
+</code></pre></div><h4 id="-shadowsocks-libev">安装 Shadowsocks-libev</h4>
 <p>Ubuntu 14.04 and 16.04:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ sudo add-apt-repository ppa:max-c-lv/shadowsocks-libev -y
 $ sudo apt-get update
-$ sudo apt-get install shadowsocks-libev</code></pre></div>
-<p>Ubuntu 16.10 or higher:</p>
+$ sudo apt-get install shadowsocks-libev
+</code></pre></div><p>Ubuntu 16.10 or higher:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ sudo apt-get update
-$ sudo apt-get install shadowsocks-libev</code></pre></div>
-<h4 id="开启服务-1">开启服务</h4>
+$ sudo apt-get install shadowsocks-libev
+</code></pre></div><h4 id="heading-7">开启服务</h4>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 启动</span>
 $ /etc/init.d/shadowsocks-libev start
 <span class="c1"># 停止</span>
@@ -300,19 +254,19 @@ $ /etc/init.d/shadowsocks-libev stop
 <span class="c1"># 重启</span>
 $ /etc/init.d/shadowsocks-libev restart
 <span class="c1"># 查看状态</span>
-$ /etc/init.d/shadowsocks-libev status</code></pre></div>
-<h3 id="shadowsocks-go">Shadowsocks-go</h3>
-
-<h4 id="安装-shadowsocks-go">安装 Shadowsocks-go</h4>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ apt-get install golang</code></pre></div>
-<p>编辑 <code>~/.bashrc</code>，加入以下内容:</p>
+$ /etc/init.d/shadowsocks-libev status
+</code></pre></div><h3 id="shadowsocks-go">Shadowsocks-go</h3>
+<h4 id="-shadowsocks-go">安装 Shadowsocks-go</h4>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ apt-get install golang
+</code></pre></div><p>编辑 <code>~/.bashrc</code>，加入以下内容:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">export</span> <span class="nv">GOPATH</span><span class="o">=</span>/usr/gopath
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$GOPATH</span>/bin</code></pre></div>
-<p>执行 <code>source ~/.bashrc</code>使设置生效。然后再执行以下命令安装 Shadowsocks-go：</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server</code></pre></div>
-<h4 id="启动服务">启动服务</h4>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$GOPATH</span>/bin
+</code></pre></div><p>执行 <code>source ~/.bashrc</code>使设置生效。然后再执行以下命令安装 Shadowsocks-go：</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server
+</code></pre></div><h4 id="heading-8">启动服务</h4>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 后台启动</span>
-$ shadowsocks-server -c /etc/shadowsocks-go/config.json &gt; /usr/gopath/log/log <span class="p">&amp;</span></code></pre></div>
+$ shadowsocks-server -c /etc/shadowsocks-go/config.json &gt; /usr/gopath/log/log <span class="p">&amp;</span>
+</code></pre></div>
         </div>
 
         
@@ -320,51 +274,33 @@ $ shadowsocks-server -c /etc/shadowsocks-go/config.json &gt; /usr/gopath/log/log
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vps-选择">VPS 选择</a>
-<ul>
-<li><a href="#linode-https-www-linode-com-r-0a89daeb73aede849b760c66127f1bb8960c73dc"><a href="https://www.linode.com/?r=0a89daeb73aede849b760c66127f1bb8960c73dc">Linode</a></a></li>
-<li><a href="#vultr-www-vultr-com"><a href="www.vultr.com">Vultr</a></a></li>
-<li><a href="#digitalocean-www-digitalocean-com"><a href="www.digitalocean.com">digitalocean</a></a></li>
-</ul></li>
-<li><a href="#注册-申请服务器">注册/申请服务器</a>
-<ul>
-<li><a href="#注册账号">注册账号</a></li>
-<li><a href="#申请服务器">申请服务器</a></li>
-<li><a href="#配置操作系统镜像">配置操作系统镜像</a></li>
-<li><a href="#更新系统">更新系统</a></li>
-<li><a href="#开启-bbr">开启 bbr</a></li>
-<li><a href="#优化">优化</a>
-<ul>
-<li><a href="#step-1">Step 1</a></li>
-<li><a href="#step-2">Step 2</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#搭建-shadowsocks">搭建 Shadowsocks</a>
-<ul>
-<li><a href="#libsodium-安装">libsodium 安装</a></li>
-<li><a href="#shadowsocks-python">Shadowsocks-python</a>
-<ul>
-<li><a href="#安装-shadowsocks-python">安装 Shadowsocks-python</a></li>
-<li><a href="#配置-shadowsocks">配置 Shadowsocks</a></li>
-<li><a href="#开启服务">开启服务</a></li>
-</ul></li>
-<li><a href="#shadowsocks-libev">Shadowsocks-libev</a>
-<ul>
-<li><a href="#安装-mbedtls">安装 mbedtls</a></li>
-<li><a href="#安装-shadowsocks-libev">安装 Shadowsocks-libev</a></li>
-<li><a href="#开启服务-1">开启服务</a></li>
-</ul></li>
-<li><a href="#shadowsocks-go">Shadowsocks-go</a>
-<ul>
-<li><a href="#安装-shadowsocks-go">安装 Shadowsocks-go</a></li>
-<li><a href="#启动服务">启动服务</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vps-">VPS 选择</a>
+      <ul>
+        <li><a href="#linodehttpswwwlinodecomr0a89daeb73aede849b760c66127f1bb8960c73dc">Linode</a></li>
+        <li><a href="#vultrwwwvultrcom">Vultr</a></li>
+        <li><a href="#digitaloceanwwwdigitaloceancom">digitalocean</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading">注册/申请服务器</a>
+      <ul>
+        <li><a href="#heading-1">注册账号</a></li>
+        <li><a href="#heading-2">申请服务器</a></li>
+        <li><a href="#heading-3">配置操作系统镜像</a></li>
+        <li><a href="#heading-4">更新系统</a></li>
+        <li><a href="#-bbr">开启 bbr</a></li>
+        <li><a href="#heading-5">优化</a></li>
+      </ul>
+    </li>
+    <li><a href="#-shadowsocks">搭建 Shadowsocks</a>
+      <ul>
+        <li><a href="#libsodium-">libsodium 安装</a></li>
+        <li><a href="#shadowsocks-python">Shadowsocks-python</a></li>
+        <li><a href="#shadowsocks-libev">Shadowsocks-libev</a></li>
+        <li><a href="#shadowsocks-go">Shadowsocks-go</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

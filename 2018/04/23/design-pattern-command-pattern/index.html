@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,12 +97,10 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>命令模式（Command Pattern）是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。</p>
-
-<h2 id="介绍">介绍</h2>
-
+<h2 id="heading">介绍</h2>
 <p>意图：将一个请求封装成一个对象，从而使您可以用不同的请求对客户进行参数化。
 主要解决：在软件系统中，行为请求者与行为实现者通常是一种紧耦合的关系，但某些场合，比如需要对行为进行记录、撤销或重做、事务等处理时，这种无法抵御变化的紧耦合的设计就不太合适。
-何时使用：在某些场合，比如要对行为进行&rdquo;记录、撤销/重做、事务&rdquo;等处理，这种无法抵御变化的紧耦合是不合适的。在这种情况下，如何将&rdquo;行为请求者&rdquo;与&rdquo;行为实现者&rdquo;解耦？将一组行为抽象为对象，可以实现二者之间的松耦合。
+何时使用：在某些场合，比如要对行为进行&quot;记录、撤销/重做、事务&quot;等处理，这种无法抵御变化的紧耦合是不合适的。在这种情况下，如何将&quot;行为请求者&quot;与&quot;行为实现者&quot;解耦？将一组行为抽象为对象，可以实现二者之间的松耦合。
 如何解决：通过调用者调用接受者执行命令，顺序：调用者→接受者→命令。
 关键代码：定义三个角色：1、received 真正的命令执行对象 2、Command 3、invoker 使用命令对象的入口
 应用实例：struts 1 中的 action 核心控制器 ActionServlet 只有一个，相当于 Invoker，而模型层的类会随着不同的应用有不同的模型类，相当于具体的 Command。
@@ -110,110 +108,101 @@
 缺点：使用命令模式可能会导致某些系统有过多的具体命令类。
 使用场景：认为是命令的地方都可以使用命令模式，比如： 1、GUI 中每一个按钮都是一条命令。 2、模拟 CMD。
 注意事项：系统需要支持命令的撤销(Undo)操作和恢复(Redo)操作，也可以考虑使用命令模式，见命令模式的扩展。</p>
-
-<h2 id="实现">实现</h2>
-
+<h2 id="heading-1">实现</h2>
 <p>我们首先创建作为命令的接口 Order，然后创建作为请求的 Stock 类。实体命令类 BuyStock 和 SellStock，实现了 Order 接口，将执行实际的命令处理。创建作为调用对象的类 Broker，它接受订单并能下订单。
 Broker 对象使用命令模式，基于命令的类型确定哪个对象执行哪个命令。CommandPatternDemo，我们的演示类使用 Broker 类来演示命令模式。</p>
-
-<p><img src="/images/design-pattern/command_pattern_uml_diagram.jpg" alt="" /></p>
-
-<h3 id="步骤-1">步骤 1</h3>
-
+<p><img src="/images/design-pattern/command_pattern_uml_diagram.jpg" alt=""></p>
+<h3 id="-1">步骤 1</h3>
 <p>创建一个命令接口。
 <em>Order.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">Order</span> <span class="p">{</span>
-   <span class="kt">void</span> <span class="nf">execute</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-2">步骤 2</h3>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Order</span> <span class="o">{</span>
+   <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-2">步骤 2</h3>
 <p>创建一个请求类。
 <em>Stock.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Stock</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Stock</span> <span class="o">{</span>
 
-   <span class="kd">private</span> <span class="nf">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;ABC&#34;</span><span class="p">;</span>
-   <span class="kd">private</span> <span class="nf">int</span> <span class="n">quantity</span> <span class="o">=</span> <span class="n">10</span><span class="p">;</span>
+   <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;ABC&#34;</span><span class="o">;</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">quantity</span> <span class="o">=</span> <span class="n">10</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">buy</span><span class="p">(){</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Stock [ Name: &#34;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s">&#34;,
-</span><span class="s">         Quantity: &#34;</span> <span class="o">+</span> <span class="n">quantity</span> <span class="o">+</span><span class="s">&#34; ] bought&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">sell</span><span class="p">(){</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Stock [ Name: &#34;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s">&#34;,
-</span><span class="s">         Quantity: &#34;</span> <span class="o">+</span> <span class="n">quantity</span> <span class="o">+</span><span class="s">&#34; ] sold&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-3">步骤 3</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">buy</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Stock [ Name: &#34;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s">&#34;,
+</span><span class="s">         Quantity: &#34;</span> <span class="o">+</span> <span class="n">quantity</span> <span class="o">+</span><span class="s">&#34; ] bought&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sell</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Stock [ Name: &#34;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s">&#34;,
+</span><span class="s">         Quantity: &#34;</span> <span class="o">+</span> <span class="n">quantity</span> <span class="o">+</span><span class="s">&#34; ] sold&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-3">步骤 3</h3>
 <p>创建实现了 Order 接口的实体类。
 <em>BuyStock.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">BuyStock</span> <span class="nf">implements</span> <span class="n">Order</span> <span class="p">{</span>
-   <span class="kd">private</span> <span class="nf">Stock</span> <span class="n">abcStock</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BuyStock</span> <span class="kd">implements</span> <span class="n">Order</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">Stock</span> <span class="n">abcStock</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">BuyStock</span><span class="p">(</span><span class="n">Stock</span> <span class="nf">abcStock</span><span class="p">){</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">abcStock</span> <span class="o">=</span> <span class="n">abcStock</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="nf">BuyStock</span><span class="o">(</span><span class="n">Stock</span> <span class="n">abcStock</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">abcStock</span> <span class="o">=</span> <span class="n">abcStock</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">abcStock</span><span class="p">.</span><span class="na">buy</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>SellStock.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">SellStock</span> <span class="nf">implements</span> <span class="n">Order</span> <span class="p">{</span>
-   <span class="kd">private</span> <span class="nf">Stock</span> <span class="n">abcStock</span><span class="p">;</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">abcStock</span><span class="o">.</span><span class="na">buy</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>SellStock.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SellStock</span> <span class="kd">implements</span> <span class="n">Order</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">Stock</span> <span class="n">abcStock</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">SellStock</span><span class="p">(</span><span class="n">Stock</span> <span class="nf">abcStock</span><span class="p">){</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">abcStock</span> <span class="o">=</span> <span class="n">abcStock</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="nf">SellStock</span><span class="o">(</span><span class="n">Stock</span> <span class="n">abcStock</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">abcStock</span> <span class="o">=</span> <span class="n">abcStock</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">abcStock</span><span class="p">.</span><span class="na">sell</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-4">步骤 4</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">abcStock</span><span class="o">.</span><span class="na">sell</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-4">步骤 4</h3>
 <p>创建命令调用类。
 <em>Broker.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">ArrayList</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">List</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">class</span> <span class="n">Broker</span> <span class="p">{</span>
-   <span class="kd">private</span> <span class="nf">List</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span> <span class="nf">orderList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span><span class="p">();</span>
+   <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Broker</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span> <span class="n">orderList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">takeOrder</span><span class="p">(</span><span class="n">Order</span> <span class="nf">order</span><span class="p">){</span>
-      <span class="n">orderList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">order</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">takeOrder</span><span class="o">(</span><span class="n">Order</span> <span class="n">order</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">orderList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">order</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">placeOrders</span><span class="p">(){</span>
-      <span class="k">for</span> <span class="p">(</span><span class="n">Order</span> <span class="nf">order</span> <span class="o">:</span> <span class="n">orderList</span><span class="p">)</span> <span class="p">{</span>
-         <span class="n">order</span><span class="p">.</span><span class="na">execute</span><span class="p">();</span>
-      <span class="p">}</span>
-      <span class="n">orderList</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-5">步骤 5</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">placeOrders</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">for</span> <span class="o">(</span><span class="n">Order</span> <span class="n">order</span> <span class="o">:</span> <span class="n">orderList</span><span class="o">)</span> <span class="o">{</span>
+         <span class="n">order</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="n">orderList</span><span class="o">.</span><span class="na">clear</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-5">步骤 5</h3>
 <p>使用 Broker 类来接受并执行命令。
 <em>CommandPatternDemo.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">CommandPatternDemo</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">Stock</span> <span class="nf">abcStock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stock</span><span class="p">();</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CommandPatternDemo</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">Stock</span> <span class="n">abcStock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stock</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">BuyStock</span> <span class="nf">buyStockOrder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BuyStock</span><span class="p">(</span><span class="n">abcStock</span><span class="p">);</span>
-      <span class="n">SellStock</span> <span class="nf">sellStockOrder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SellStock</span><span class="p">(</span><span class="n">abcStock</span><span class="p">);</span>
+      <span class="n">BuyStock</span> <span class="n">buyStockOrder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BuyStock</span><span class="o">(</span><span class="n">abcStock</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">SellStock</span> <span class="n">sellStockOrder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SellStock</span><span class="o">(</span><span class="n">abcStock</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">Broker</span> <span class="nf">broker</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Broker</span><span class="p">();</span>
-      <span class="n">broker</span><span class="p">.</span><span class="na">takeOrder</span><span class="p">(</span><span class="n">buyStockOrder</span><span class="p">);</span>
-      <span class="n">broker</span><span class="p">.</span><span class="na">takeOrder</span><span class="p">(</span><span class="n">sellStockOrder</span><span class="p">);</span>
+      <span class="n">Broker</span> <span class="n">broker</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Broker</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">broker</span><span class="o">.</span><span class="na">takeOrder</span><span class="o">(</span><span class="n">buyStockOrder</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">broker</span><span class="o">.</span><span class="na">takeOrder</span><span class="o">(</span><span class="n">sellStockOrder</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">broker</span><span class="p">.</span><span class="na">placeOrders</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-6">步骤 6</h3>
-
+      <span class="n">broker</span><span class="o">.</span><span class="na">placeOrders</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-6">步骤 6</h3>
 <p>验证输出。</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Stock</span> <span class="p">[</span> <span class="n">Name</span><span class="o">:</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">Quantity</span><span class="o">:</span> <span class="n">10</span> <span class="p">]</span> <span class="n">bought</span>
-<span class="nf">Stock</span> <span class="p">[</span> <span class="n">Name</span><span class="o">:</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">Quantity</span><span class="o">:</span> <span class="n">10</span> <span class="p">]</span> <span class="n">sold</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Stock</span> <span class="o">[</span> <span class="n">Name</span><span class="o">:</span> <span class="n">ABC</span><span class="o">,</span> <span class="n">Quantity</span><span class="o">:</span> <span class="n">10</span> <span class="o">]</span> <span class="n">bought</span>
+<span class="n">Stock</span> <span class="o">[</span> <span class="n">Name</span><span class="o">:</span> <span class="n">ABC</span><span class="o">,</span> <span class="n">Quantity</span><span class="o">:</span> <span class="n">10</span> <span class="o">]</span> <span class="n">sold</span>
+</code></pre></div>
         </div>
 
         
@@ -221,21 +210,19 @@ Broker 对象使用命令模式，基于命令的类型确定哪个对象执行�
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#实现">实现</a>
-<ul>
-<li><a href="#步骤-1">步骤 1</a></li>
-<li><a href="#步骤-2">步骤 2</a></li>
-<li><a href="#步骤-3">步骤 3</a></li>
-<li><a href="#步骤-4">步骤 4</a></li>
-<li><a href="#步骤-5">步骤 5</a></li>
-<li><a href="#步骤-6">步骤 6</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">介绍</a></li>
+    <li><a href="#heading-1">实现</a>
+      <ul>
+        <li><a href="#-1">步骤 1</a></li>
+        <li><a href="#-2">步骤 2</a></li>
+        <li><a href="#-3">步骤 3</a></li>
+        <li><a href="#-4">步骤 4</a></li>
+        <li><a href="#-5">步骤 5</a></li>
+        <li><a href="#-6">步骤 6</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

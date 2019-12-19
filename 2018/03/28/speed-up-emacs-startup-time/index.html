@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -106,68 +106,52 @@
       <span class="nv">gc-cons-percentage</span> <span class="mf">0.6</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;after-init-hook</span>
-          <span class="p">(</span><span class="nb">lambda</span> <span class="p">()</span>
+          <span class="p">(</span><span class="nb">lambda</span> <span class="p">(</span><span class="p">)</span>
             <span class="p">(</span><span class="nb">setq</span> <span class="nv">file-name-handler-alist</span> <span class="nv">file-name-handler-alist-old</span>
                   <span class="nv">gc-cons-threshold</span> <span class="mi">16777216</span>
-                  <span class="nv">gc-cons-percentage</span> <span class="mf">0.1</span><span class="p">)))</span>
+                  <span class="nv">gc-cons-percentage</span> <span class="mf">0.1</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
 
-<span class="o">...</span><span class="nv">your</span> <span class="nv">code</span> <span class="nv">here...</span>
+<span class="o">.</span><span class="o">.</span><span class="o">.</span><span class="nv">your</span> <span class="nv">code</span> <span class="nv">here...</span>
 
-<span class="p">(</span><span class="nb">provide</span> <span class="ss">&#39;init</span><span class="p">)</span></code></pre></div>
-<h2 id="use-package-延迟加载的只言片语">use-package 延迟加载的只言片语</h2>
-
-<dl>
-<dt>Emacs lisp 有一项 auto-load 的技术，类似延迟加载，合理运用延迟，让笔者的 Emacs 启动加载时间减少一半，因为笔者用 use-package 了这个插件,而 use-package 又集 成了延迟加载的功能，所以笔者就直接拿自己的代码举例了</dt>
-</dl>
-
+<span class="p">(</span><span class="nb">provide</span> <span class="ss">&#39;init</span><span class="p">)</span>
+</code></pre></div><h2 id="use-package-">use-package 延迟加载的只言片语</h2>
+<p>Emacs lisp 有一项 auto-load 的技术，类似延迟加载，合理运用延迟，让笔者的 Emacs 启动加载时间减少一半，因为笔者用 use-package 了这个插件,而 use-package 又集 成了延迟加载的功能，所以笔者就直接拿自己的代码举例了</p>
 <p>:after</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="c1">;;; Export to twitter bootstrap</span>
 <span class="p">(</span><span class="nb">use-package</span> <span class="nv">ox-twbs</span>
   <span class="nb">:after</span> <span class="nv">org</span>
   <span class="nb">:ensure</span> <span class="nv">ox-twbs</span>
-  <span class="p">)</span></code></pre></div>
-<dl>
-<dt>:after 关键字的作用基本跟 with-eval-after-load 的作用是相同的，所以笔者所 有类似的org-mode 插件包都会在org-mode 加载以后才会加载</dt>
-</dl>
-
+  <span class="p">)</span>
+</code></pre></div><p>:after 关键字的作用基本跟 with-eval-after-load 的作用是相同的，所以笔者所 有类似的org-mode 插件包都会在org-mode 加载以后才会加载</p>
 <p>:commands</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">avy</span>
   <span class="nb">:commands</span> <span class="p">(</span><span class="nv">avy-goto-char</span> <span class="nv">avy-goto-line</span><span class="p">)</span>
-  <span class="nb">:ensure</span> <span class="no">t</span><span class="p">)</span></code></pre></div>
-<p>这里就直接贴上 use-package文档的说明了</p>
-
+  <span class="nb">:ensure</span> <span class="no">t</span><span class="p">)</span>
+</code></pre></div><p>这里就直接贴上 use-package文档的说明了</p>
 <blockquote>
 <p>When you use the :commands keyword, it creates autoloads for those commands and defers loading of the module until they are used</p>
 </blockquote>
-
-<dl>
-<dt>也就是 :commands 关键字就创建了后面所接的命令的 autoloads 机制了</dt>
-</dl>
-
+<p>也就是 :commands 关键字就创建了后面所接的命令的 autoloads 机制了</p>
 <p>:bind :mode</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">hi-lock</span>
-  <span class="nb">:bind</span> <span class="p">((</span><span class="s">&#34;M-o l&#34;</span> <span class="o">.</span> <span class="nv">highlight-lines-matching-regexp</span><span class="p">)</span>
-	 <span class="p">(</span><span class="s">&#34;M-o r&#34;</span> <span class="o">.</span> <span class="nv">highlight-regexp</span><span class="p">)</span>
-	 <span class="p">(</span><span class="s">&#34;M-o w&#34;</span> <span class="o">.</span> <span class="nv">highlight-phrase</span><span class="p">)))</span>
+  <span class="nb">:bind</span> <span class="p">(</span><span class="p">(</span><span class="s">&#34;</span><span class="s">M-o l</span><span class="s">&#34;</span> <span class="o">.</span> <span class="nv">highlight-lines-matching-regexp</span><span class="p">)</span>
+	 <span class="p">(</span><span class="s">&#34;</span><span class="s">M-o r</span><span class="s">&#34;</span> <span class="o">.</span> <span class="nv">highlight-regexp</span><span class="p">)</span>
+	 <span class="p">(</span><span class="s">&#34;</span><span class="s">M-o w</span><span class="s">&#34;</span> <span class="o">.</span> <span class="nv">highlight-phrase</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nb">use-package</span> <span class="nv">vue-mode</span>
   <span class="nb">:ensure</span> <span class="no">t</span>
-  <span class="nb">:mode</span> <span class="p">(</span><span class="s">&#34;\\.vue\\&#39;&#34;</span> <span class="o">.</span> <span class="nv">vue-mode</span><span class="p">)</span>
+  <span class="nb">:mode</span> <span class="p">(</span><span class="s">&#34;</span><span class="s">\\</span><span class="s">.vue</span><span class="s">\\</span><span class="s">&#39;</span><span class="s">&#34;</span> <span class="o">.</span> <span class="nv">vue-mode</span><span class="p">)</span>
   <span class="nb">:config</span> <span class="p">(</span><span class="nb">progn</span>
 	    <span class="p">(</span><span class="nb">setq</span> <span class="nv">mmm-submode-decoration-level</span> <span class="mi">0</span><span class="p">)</span>
-	    <span class="p">))</span></code></pre></div>
-<p>附上文档说明</p>
-
+	    <span class="p">)</span><span class="p">)</span>
+</code></pre></div><p>附上文档说明</p>
 <blockquote>
-<p>In almost all cases you don&rsquo;t need to manually specify :defer t. This is implied whenever :bind or :mode or :interpreter is used</p>
+<p>In almost all cases you don't need to manually specify :defer t. This is implied whenever :bind or :mode or :interpreter is used</p>
 </blockquote>
-
 <p>也就是说，当你使用了 :bind 或者 :mode 关键字的时候，不用明确指定 :defer 也可以实现延迟加载机制。当然你也可以，直接使用 :defer 关键字来指定延迟加载 不过前提是，你要明确它加载的时机</p>
-
 <blockquote>
-<p>Typically, you only need to specify :defer if you know for a fact that some other package will do something to cause your package to load at the appropriate time, and thus you would like to defer loading even though use-package isn&rsquo;t creating any autoloads for you.</p>
+<p>Typically, you only need to specify :defer if you know for a fact that some other package will do something to cause your package to load at the appropriate time, and thus you would like to defer loading even though use-package isn't creating any autoloads for you.</p>
 </blockquote>
-
 <p>贴上笔者自己的代码，可以更加清晰</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">anaconda-mode</span>
   <span class="nb">:defer</span> <span class="no">t</span>
@@ -175,8 +159,8 @@
   <span class="nb">:init</span><span class="p">(</span><span class="nb">progn</span>
 	 <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;python-mode-hook</span> <span class="ss">&#39;anaconda-mode</span><span class="p">)</span>
 	 <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;python-mode-hook</span> <span class="ss">&#39;anaconda-eldoc-mode</span><span class="p">)</span>
-	 <span class="p">)</span></code></pre></div>
-<p>这样 anaconda-mode 就会在 python-mode 加载以后被加载</p>
+	 <span class="p">)</span>
+</code></pre></div><p>这样 anaconda-mode 就会在 python-mode 加载以后被加载</p>
         </div>
 
         
@@ -184,12 +168,9 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#use-package-延迟加载的只言片语">use-package 延迟加载的只言片语</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#use-package-">use-package 延迟加载的只言片语</a></li>
+  </ul>
 </nav>
         </div>
         

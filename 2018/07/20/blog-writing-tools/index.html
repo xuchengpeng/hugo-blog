@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -92,63 +92,55 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>基本的工具用途：</p>
-
 <ul>
 <li><a href="https://gohugo.io/">Hugo</a>：用来发布博客；</li>
 <li><a href="https://orgmode.org/">orgmode</a>：写org格式的博文；</li>
 <li><a href="https://github.com/kaushalmodi/ox-hugo">ox-hugo</a>：将org博文导出为Markdown格式文件；</li>
 </ul>
-
-<h2 id="使用org-capture创建博文">使用org-capture创建博文</h2>
+<h2 id="org-capture">使用org-capture创建博文</h2>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">with-eval-after-load</span> <span class="ss">&#39;org-capture</span>
-  <span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-org-hugo-new-subtree-post-capture-template</span> <span class="p">()</span>
-    <span class="s">&#34;Returns </span><span class="ss">`org-capture&#39;</span><span class="s"> template string for new Hugo post.
-</span><span class="s">     See </span><span class="ss">`org-capture-templates&#39;</span><span class="s"> for more information.&#34;</span>
-    <span class="p">(</span><span class="nb">let*</span> <span class="p">((</span><span class="nv">title</span> <span class="p">(</span><span class="nf">read-from-minibuffer</span> <span class="s">&#34;Post Title: &#34;</span><span class="p">))</span> <span class="c1">;Prompt to enter the post title</span>
-           <span class="p">(</span><span class="nv">fname</span> <span class="p">(</span><span class="nv">org-hugo-slug</span> <span class="nv">title</span><span class="p">))</span>
-           <span class="p">(</span><span class="nv">date</span> <span class="p">(</span><span class="nf">format-time-string</span> <span class="p">(</span><span class="nv">org-time-stamp-format</span> <span class="nb">:long</span> <span class="nb">:inactive</span><span class="p">)</span> <span class="p">(</span><span class="nv">org-current-time</span><span class="p">))))</span>
-      <span class="p">(</span><span class="nf">mapconcat</span> <span class="nf">#&#39;identity</span>
+  <span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-org-hugo-new-subtree-post-capture-template</span> <span class="p">(</span><span class="p">)</span>
+    <span class="s">&#34;</span><span class="s">Returns </span><span class="ss">`org-capture&#39;</span><span class="s"> template string for new Hugo post.
+</span><span class="s">     See </span><span class="ss">`org-capture-templates&#39;</span><span class="s"> for more information.</span><span class="s">&#34;</span>
+    <span class="p">(</span><span class="nb">let*</span> <span class="p">(</span><span class="p">(</span><span class="nv">title</span> <span class="p">(</span><span class="nf">read-from-minibuffer</span> <span class="s">&#34;</span><span class="s">Post Title: </span><span class="s">&#34;</span><span class="p">)</span><span class="p">)</span> <span class="c1">;Prompt to enter the post title</span>
+           <span class="p">(</span><span class="nv">fname</span> <span class="p">(</span><span class="nv">org-hugo-slug</span> <span class="nv">title</span><span class="p">)</span><span class="p">)</span>
+           <span class="p">(</span><span class="nv">date</span> <span class="p">(</span><span class="nf">format-time-string</span> <span class="p">(</span><span class="nv">org-time-stamp-format</span> <span class="nb">:long</span> <span class="nb">:inactive</span><span class="p">)</span> <span class="p">(</span><span class="nv">org-current-time</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">mapconcat</span> <span class="nf">#&#39;</span><span class="nf">identity</span>
                  <span class="o">`</span><span class="p">(</span>
-                   <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;* TODO &#34;</span> <span class="nv">title</span><span class="p">)</span>
-                   <span class="s">&#34;:PROPERTIES:&#34;</span>
-                   <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;:EXPORT_FILE_NAME: &#34;</span> <span class="nv">fname</span><span class="p">)</span>
-                   <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;:EXPORT_DATE: &#34;</span> <span class="nv">date</span><span class="p">)</span>
-                   <span class="s">&#34;:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :comments true :mathjax false&#34;</span>
-                   <span class="s">&#34;:END:&#34;</span>
-                   <span class="s">&#34;%?\n&#34;</span><span class="p">)</span>          <span class="c1">;Place the cursor here finally</span>
-                 <span class="s">&#34;\n&#34;</span><span class="p">)))</span>
+                   <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;</span><span class="s">* TODO </span><span class="s">&#34;</span> <span class="nv">title</span><span class="p">)</span>
+                   <span class="s">&#34;</span><span class="s">:PROPERTIES:</span><span class="s">&#34;</span>
+                   <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;</span><span class="s">:EXPORT_FILE_NAME: </span><span class="s">&#34;</span> <span class="nv">fname</span><span class="p">)</span>
+                   <span class="o">,</span><span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;</span><span class="s">:EXPORT_DATE: </span><span class="s">&#34;</span> <span class="nv">date</span><span class="p">)</span>
+                   <span class="s">&#34;</span><span class="s">:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :comments true :mathjax false</span><span class="s">&#34;</span>
+                   <span class="s">&#34;</span><span class="s">:END:</span><span class="s">&#34;</span>
+                   <span class="s">&#34;</span><span class="s">%?</span><span class="s">\n</span><span class="s">&#34;</span><span class="p">)</span>          <span class="c1">;Place the cursor here finally</span>
+                 <span class="s">&#34;</span><span class="s">\n</span><span class="s">&#34;</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
   
   <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;org-capture-templates</span>
-               <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;h&#34;</span>                <span class="c1">;`org-capture&#39; binding + h</span>
-                 <span class="s">&#34;Hugo post&#34;</span>
+               <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;</span><span class="s">h</span><span class="s">&#34;</span>                <span class="c1">;`org-capture&#39; binding + h</span>
+                 <span class="s">&#34;</span><span class="s">Hugo post</span><span class="s">&#34;</span>
                  <span class="nv">entry</span>
-                 <span class="c1">;; It is assumed that below file is present in `org-directory&#39;</span>
-                 <span class="c1">;; and that it has a &#34;Hugo Posts&#34; heading. It can even be a</span>
-                 <span class="c1">;; symlink pointing to the actual location of all-posts.org!</span>
-                 <span class="p">(</span><span class="nv">file+olp</span> <span class="s">&#34;hugo-posts.org&#34;</span> <span class="s">&#34;Hugo Posts&#34;</span><span class="p">)</span>
-                 <span class="p">(</span><span class="nb">function</span> <span class="nv">dotemacs-org-hugo-new-subtree-post-capture-template</span><span class="p">))))</span>
-<span class="p">)</span></code></pre></div>
-<p>使用org-capture前先在<code>org-directory</code>目录创建<code>hugo-posts.org</code>文件，并且其中已包含一级标题<code>* Hugo Posts</code>，新创建的博文将在这个标题下。</p>
-
-<h2 id="使用ox-hugo导出博文">使用ox-hugo导出博文</h2>
-
-<h3 id="导出前设置">导出前设置</h3>
-
+                 <span class="c1">;; It is assumed that below file is present in `org-directory&#39;</span>
+                 <span class="c1">;; and that it has a &#34;Hugo Posts&#34; heading. It can even be a</span>
+                 <span class="c1">;; symlink pointing to the actual location of all-posts.org!</span>
+                 <span class="p">(</span><span class="nv">file+olp</span> <span class="s">&#34;</span><span class="s">hugo-posts.org</span><span class="s">&#34;</span> <span class="s">&#34;</span><span class="s">Hugo Posts</span><span class="s">&#34;</span><span class="p">)</span>
+                 <span class="p">(</span><span class="nb">function</span> <span class="nv">dotemacs-org-hugo-new-subtree-post-capture-template</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div><p>使用org-capture前先在<code>org-directory</code>目录创建<code>hugo-posts.org</code>文件，并且其中已包含一级标题<code>* Hugo Posts</code>，新创建的博文将在这个标题下。</p>
+<h2 id="ox-hugo">使用ox-hugo导出博文</h2>
+<h3 id="heading">导出前设置</h3>
 <p>在<code>hugo-posts.org</code>文件头部增加以下内容：</p>
-<div class="highlight"><pre class="chroma"><code class="language-org" data-lang="org"><span class="cs">#+HUGO_BASE_DIR</span><span class="c">: e:/GitHub/xuchengpeng.github.io/</span>
-<span class="cs">#+HUGO_SECTION</span><span class="c">: post</span>
-<span class="cs">#+TITLE</span><span class="c">:</span>
-<span class="cs">#+DATE</span><span class="c">:</span>
-<span class="cs">#+HUGO_AUTO_SET_LASTMOD</span><span class="c">: t</span>
-<span class="cs">#+HUGO_CATEGORIES</span><span class="c">: hugo test</span>
-<span class="cs">#+HUGO_TAGS</span><span class="c">: hugo</span>
-<span class="cs">#+HUGO_DRAFT</span><span class="c">: false</span></code></pre></div>
-<p><code>HUGO_BASE_DIR</code>和<code>HUGO_SECTION</code>根据实际情况而定，<code>HUGO_CATEGORIES</code>和<code>HUGO_TAGS</code>可为当前要导出的博文设定分类和标签。</p>
-
-<h3 id="导出方法">导出方法</h3>
-
+<div class="highlight"><pre class="chroma"><code class="language-org" data-lang="org"><span class="cs">#+HUGO_BASE_DIR</span><span class="c">: e:/GitHub/xuchengpeng.github.io/</span>
+<span class="cs">#+HUGO_SECTION</span><span class="c">: post</span>
+<span class="cs">#+TITLE</span><span class="c">:</span>
+<span class="cs">#+DATE</span><span class="c">:</span>
+<span class="cs">#+HUGO_AUTO_SET_LASTMOD</span><span class="c">: t</span>
+<span class="cs">#+HUGO_CATEGORIES</span><span class="c">: hugo test</span>
+<span class="cs">#+HUGO_TAGS</span><span class="c">: hugo</span>
+<span class="cs">#+HUGO_DRAFT</span><span class="c">: false</span>
+</code></pre></div><p><code>HUGO_BASE_DIR</code>和<code>HUGO_SECTION</code>根据实际情况而定，<code>HUGO_CATEGORIES</code>和<code>HUGO_TAGS</code>可为当前要导出的博文设定分类和标签。</p>
+<h3 id="heading-1">导出方法</h3>
 <p><code>C-c C-e H H</code> 导出单个子树到Markdown文件，一般一个子树就是一篇文章；</p>
-
 <p><code>C-c C-e H A</code> 导出所有子树到Markdown文件，会为每篇文章都导出一个Markdown文件。</p>
         </div>
 
@@ -157,17 +149,15 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#使用org-capture创建博文">使用org-capture创建博文</a></li>
-<li><a href="#使用ox-hugo导出博文">使用ox-hugo导出博文</a>
-<ul>
-<li><a href="#导出前设置">导出前设置</a></li>
-<li><a href="#导出方法">导出方法</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#org-capture">使用org-capture创建博文</a></li>
+    <li><a href="#ox-hugo">使用ox-hugo导出博文</a>
+      <ul>
+        <li><a href="#heading">导出前设置</a></li>
+        <li><a href="#heading-1">导出方法</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

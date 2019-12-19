@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,78 +97,66 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>变量名只能包含数字、字母和下划线，因为某些包含其他字符的变量有特殊含义，这样的变量被称为特殊变量。</p>
-
 <p>例如，$ 表示当前Shell进程的ID，即pid，看下面的代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># echo $$</span>
-<span class="m">38977</span></code></pre></div>
-<table>
+38977
+</code></pre></div><table>
 <thead>
 <tr>
 <th align="left">变量</th>
 <th align="left">含义</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">$0</td>
 <td align="left">当前脚本的文件名</td>
 </tr>
-
 <tr>
 <td align="left">$n</td>
 <td align="left">传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。</td>
 </tr>
-
 <tr>
 <td align="left">$#</td>
 <td align="left">传递给脚本或函数的参数个数</td>
 </tr>
-
 <tr>
 <td align="left">$*</td>
 <td align="left">传递给脚本或函数的所有参数</td>
 </tr>
-
 <tr>
 <td align="left">$@</td>
 <td align="left">传递给脚本或函数的所有参数。被双引号(&rdquo; &ldquo;)包含时，与 $* 稍有不同</td>
 </tr>
-
 <tr>
 <td align="left">$?</td>
 <td align="left">上个命令的退出状态，或函数的返回值</td>
 </tr>
-
 <tr>
 <td align="left">$$</td>
 <td align="left">当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID</td>
 </tr>
 </tbody>
 </table>
-
 <p>例如：</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/bin/bash
-</span><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;File Name: </span><span class="nv">$0</span><span class="s2">&#34;</span>
-<span class="nb">echo</span> <span class="s2">&#34;First Parameter : </span><span class="nv">$1</span><span class="s2">&#34;</span>
-<span class="nb">echo</span> <span class="s2">&#34;First Parameter : </span><span class="nv">$2</span><span class="s2">&#34;</span>
-<span class="nb">echo</span> <span class="s2">&#34;Quoted Values: </span><span class="nv">$@</span><span class="s2">&#34;</span>
-<span class="nb">echo</span> <span class="s2">&#34;Quoted Values: </span><span class="nv">$*</span><span class="s2">&#34;</span>
-<span class="nb">echo</span> <span class="s2">&#34;Total Number of Parameters : </span><span class="nv">$#</span><span class="s2">&#34;</span></code></pre></div>
-<p>运行结果：</p>
+</span><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">File Name: </span><span class="nv">$0</span><span class="s2">&#34;</span>
+<span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">First Parameter : </span><span class="nv">$1</span><span class="s2">&#34;</span>
+<span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">First Parameter : </span><span class="nv">$2</span><span class="s2">&#34;</span>
+<span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">Quoted Values: </span><span class="nv">$@</span><span class="s2">&#34;</span>
+<span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">Quoted Values: </span><span class="nv">$*</span><span class="s2">&#34;</span>
+<span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">Total Number of Parameters : </span><span class="nv">$#</span><span class="s2">&#34;</span>
+</code></pre></div><p>运行结果：</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># ./test.sh Zara Ali</span>
 File Name : ./test.sh
 First Parameter : Zara
 Second Parameter : Ali
 Quoted Values: Zara Ali
 Quoted Values: Zara Ali
-Total Number of Parameters : <span class="m">2</span></code></pre></div>
-<h3 id="和-的区别">$@ 和 $* 的区别</h3>
-
-<p>$* 和 $@ 都表示传递给函数或脚本的所有参数，不被双引号(&rdquo; &ldquo;)包含时，都以&rdquo;$1&rdquo; &ldquo;$2&rdquo; … &ldquo;$n&rdquo; 的形式输出所有参数。</p>
-
-<p>但是当它们被双引号(&rdquo; &ldquo;)包含时，&rdquo;$*&rdquo; 会将所有的参数作为一个整体，以&rdquo;$1 $2 … $n&rdquo;的形式输出所有参数；&rdquo;$@&rdquo; 会将各个参数分开，以&rdquo;$1&rdquo; &ldquo;$2&rdquo; … &ldquo;$n&rdquo; 的形式输出所有参数。</p>
-
+Total Number of Parameters : 2
+</code></pre></div><h3 id="---">$@ 和 $* 的区别</h3>
+<p>$* 和 $@ 都表示传递给函数或脚本的所有参数，不被双引号(&rdquo; &ldquo;)包含时，都以&quot;$1&rdquo; &ldquo;$2&rdquo; … &ldquo;$n&rdquo; 的形式输出所有参数。</p>
+<p>但是当它们被双引号(&rdquo; &ldquo;)包含时，&ldquo;$*&rdquo; 会将所有的参数作为一个整体，以&quot;$1 $2 … $n&quot;的形式输出所有参数；&ldquo;$@&rdquo; 会将各个参数分开，以&quot;$1&rdquo; &ldquo;$2&rdquo; … &ldquo;$n&rdquo; 的形式输出所有参数。</p>
 <p>下面的例子可以清楚的看到 $* 和 $@ 的区别：</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/bin/bash
 </span><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;\$*=&#34;</span> <span class="nv">$*</span>
@@ -194,8 +182,8 @@ Total Number of Parameters : <span class="m">2</span></code></pre></div>
 <span class="k">for</span> var in <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
 <span class="k">do</span>
     <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$var</span><span class="s2">&#34;</span>
-<span class="k">done</span></code></pre></div>
-<p>执行 ./test.sh &ldquo;a&rdquo; &ldquo;b&rdquo; &ldquo;c&rdquo; &ldquo;d&rdquo;，看到下面的结果：</p>
+<span class="k">done</span>
+</code></pre></div><p>执行 ./test.sh &ldquo;a&rdquo; &ldquo;b&rdquo; &ldquo;c&rdquo; &ldquo;d&rdquo;，看到下面的结果：</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$*</span><span class="o">=</span>  a b c d
 <span class="s2">&#34;</span><span class="nv">$*</span><span class="s2">&#34;</span><span class="o">=</span> a b c d
 <span class="nv">$@</span><span class="o">=</span>  a b c d
@@ -216,15 +204,11 @@ print each param from <span class="s2">&#34;</span><span class="nv">$@</span><sp
 a
 b
 c
-d</code></pre></div>
-<h3 id="退出状态">退出状态</h3>
-
+d
+</code></pre></div><h3 id="heading">退出状态</h3>
 <p>$? 可以获取上一个命令的退出状态。所谓退出状态，就是上一个命令执行后的返回结果。</p>
-
 <p>退出状态是一个数字，一般情况下，大部分命令执行成功会返回 0，失败返回 1。</p>
-
 <p>不过，也有一些命令返回其他值，表示不同类型的错误。</p>
-
 <p>下面例子中，命令成功执行：</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$./test.sh Zara Ali
 File Name : ./test.sh
@@ -232,11 +216,11 @@ First Parameter : Zara
 Second Parameter : Ali
 Quoted Values: Zara Ali
 Quoted Values: Zara Ali
-Total Number of Parameters : <span class="m">2</span>
+Total Number of Parameters : 2
 <span class="nv">$echo</span> <span class="nv">$?</span>
-<span class="m">0</span>
-$</code></pre></div>
-<p>$? 也可以表示函数的返回值。</p>
+0
+$
+</code></pre></div><p>$? 也可以表示函数的返回值。</p>
         </div>
 
         
@@ -244,16 +228,14 @@ $</code></pre></div>
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#和-的区别">$@ 和 $* 的区别</a></li>
-<li><a href="#退出状态">退出状态</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#---">$@ 和 $* 的区别</a></li>
+        <li><a href="#heading">退出状态</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

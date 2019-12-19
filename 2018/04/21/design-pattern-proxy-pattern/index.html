@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -98,9 +98,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p>在代理模式（Proxy Pattern）中，一个类代表另一个类的功能。这种类型的设计模式属于结构型模式。
 在代理模式中，我们创建具有现有对象的对象，以便向外界提供功能接口。</p>
-
-<h2 id="介绍">介绍</h2>
-
+<h2 id="heading">介绍</h2>
 <p>意图：为其他对象提供一种代理以控制对这个对象的访问。
 主要解决：在直接访问对象时带来的问题，比如说：要访问的对象在远程的机器上。在面向对象系统中，有些对象由于某些原因（比如对象创建开销很大，或者某些操作需要安全控制，或者需要进程外的访问），直接访问会给使用者或者系统结构带来很多麻烦，我们可以在访问此对象时加上一个对此对象的访问层。
 何时使用：想在访问一个类时做一些控制。
@@ -111,84 +109,77 @@
 缺点： 1、由于在客户端和真实主题之间增加了代理对象，因此有些类型的代理模式可能会造成请求的处理速度变慢。 2、实现代理模式需要额外的工作，有些代理模式的实现非常复杂。
 使用场景：按职责来划分，通常有以下使用场景： 1、远程代理。 2、虚拟代理。 3、Copy-on-Write 代理。 4、保护（Protect or Access）代理。 5、Cache代理。 6、防火墙（Firewall）代理。 7、同步化（Synchronization）代理。 8、智能引用（Smart Reference）代理。
 注意事项： 1、和适配器模式的区别：适配器模式主要改变所考虑对象的接口，而代理模式不能改变所代理类的接口。 2、和装饰器模式的区别：装饰器模式为了增强功能，而代理模式是为了加以控制。</p>
-
-<h2 id="实现">实现</h2>
-
+<h2 id="heading-1">实现</h2>
 <p>我们将创建一个 Image 接口和实现了 Image 接口的实体类。ProxyImage 是一个代理类，减少 RealImage 对象加载的内存占用。
 ProxyPatternDemo，我们的演示类使用 ProxyImage 来获取要加载的 Image 对象，并按照需求进行显示。</p>
-
-<p><img src="/images/design-pattern/proxy_pattern_uml_diagram.jpg" alt="" /></p>
-
-<h3 id="步骤-1">步骤 1</h3>
-
+<p><img src="/images/design-pattern/proxy_pattern_uml_diagram.jpg" alt=""></p>
+<h3 id="-1">步骤 1</h3>
 <p>创建一个接口。
 <em>Image.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">Image</span> <span class="p">{</span>
-   <span class="kt">void</span> <span class="nf">display</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-2">步骤 2</h3>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Image</span> <span class="o">{</span>
+   <span class="kt">void</span> <span class="nf">display</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-2">步骤 2</h3>
 <p>创建实现接口的实体类。
 <em>RealImage.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">RealImage</span> <span class="nf">implements</span> <span class="n">Image</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RealImage</span> <span class="kd">implements</span> <span class="n">Image</span> <span class="o">{</span>
 
-   <span class="kd">private</span> <span class="nf">String</span> <span class="n">fileName</span><span class="p">;</span>
+   <span class="kd">private</span> <span class="n">String</span> <span class="n">fileName</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">RealImage</span><span class="p">(</span><span class="n">String</span> <span class="nf">fileName</span><span class="p">){</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">fileName</span> <span class="o">=</span> <span class="n">fileName</span><span class="p">;</span>
-      <span class="n">loadFromDisk</span><span class="p">(</span><span class="n">fileName</span><span class="p">);</span>
-   <span class="p">}</span>
-
-   <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">display</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Displaying &#34;</span> <span class="o">+</span> <span class="n">fileName</span><span class="p">);</span>
-   <span class="p">}</span>
-
-   <span class="kd">private</span> <span class="nf">void</span> <span class="n">loadFromDisk</span><span class="p">(</span><span class="n">String</span> <span class="nf">fileName</span><span class="p">){</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Loading &#34;</span> <span class="o">+</span> <span class="n">fileName</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>ProxyImage.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">ProxyImage</span> <span class="nf">implements</span> <span class="n">Image</span><span class="p">{</span>
-
-   <span class="kd">private</span> <span class="nf">RealImage</span> <span class="n">realImage</span><span class="p">;</span>
-   <span class="kd">private</span> <span class="nf">String</span> <span class="n">fileName</span><span class="p">;</span>
-
-   <span class="kd">public</span> <span class="nf">ProxyImage</span><span class="p">(</span><span class="n">String</span> <span class="nf">fileName</span><span class="p">){</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">fileName</span> <span class="o">=</span> <span class="n">fileName</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="nf">RealImage</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">fileName</span> <span class="o">=</span> <span class="n">fileName</span><span class="o">;</span>
+      <span class="n">loadFromDisk</span><span class="o">(</span><span class="n">fileName</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">display</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">if</span><span class="p">(</span><span class="n">realImage</span> <span class="o">==</span> <span class="kc">null</span><span class="p">){</span>
-         <span class="n">realImage</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RealImage</span><span class="p">(</span><span class="n">fileName</span><span class="p">);</span>
-      <span class="p">}</span>
-      <span class="n">realImage</span><span class="p">.</span><span class="na">display</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-3">步骤 3</h3>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Displaying &#34;</span> <span class="o">+</span> <span class="n">fileName</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
+   <span class="kd">private</span> <span class="kt">void</span> <span class="nf">loadFromDisk</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Loading &#34;</span> <span class="o">+</span> <span class="n">fileName</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>ProxyImage.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProxyImage</span> <span class="kd">implements</span> <span class="n">Image</span><span class="o">{</span>
+
+   <span class="kd">private</span> <span class="n">RealImage</span> <span class="n">realImage</span><span class="o">;</span>
+   <span class="kd">private</span> <span class="n">String</span> <span class="n">fileName</span><span class="o">;</span>
+
+   <span class="kd">public</span> <span class="nf">ProxyImage</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">fileName</span> <span class="o">=</span> <span class="n">fileName</span><span class="o">;</span>
+   <span class="o">}</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">realImage</span> <span class="o">=</span><span class="o">=</span> <span class="kc">null</span><span class="o">)</span><span class="o">{</span>
+         <span class="n">realImage</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RealImage</span><span class="o">(</span><span class="n">fileName</span><span class="o">)</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="n">realImage</span><span class="o">.</span><span class="na">display</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-3">步骤 3</h3>
 <p>当被请求时，使用 ProxyImage 来获取 RealImage 类的对象。
 <em>ProxyPatternDemo.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">ProxyPatternDemo</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProxyPatternDemo</span> <span class="o">{</span>
 
-   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">Image</span> <span class="nf">image</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProxyImage</span><span class="p">(</span><span class="s">&#34;test_10mb.jpg&#34;</span><span class="p">);</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">Image</span> <span class="n">image</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProxyImage</span><span class="o">(</span><span class="s">&#34;test_10mb.jpg&#34;</span><span class="o">)</span><span class="o">;</span>
 
       <span class="c1">//图像将从磁盘加载
-</span><span class="c1"></span>      <span class="n">image</span><span class="p">.</span><span class="na">display</span><span class="p">();</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">);</span>
+</span><span class="c1"></span>      <span class="n">image</span><span class="o">.</span><span class="na">display</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">)</span><span class="o">;</span>
       <span class="c1">//图像将无法从磁盘加载
-</span><span class="c1"></span>      <span class="n">image</span><span class="p">.</span><span class="na">display</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-4">步骤 4</h3>
-
+</span><span class="c1"></span>      <span class="n">image</span><span class="o">.</span><span class="na">display</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-4">步骤 4</h3>
 <p>验证输出。</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Loading</span> <span class="nf">test_10mb</span><span class="p">.</span><span class="na">jpg</span>
-<span class="n">Displaying</span> <span class="nf">test_10mb</span><span class="p">.</span><span class="na">jpg</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Loading</span> <span class="n">test_10mb</span><span class="o">.</span><span class="na">jpg</span>
+<span class="n">Displaying</span> <span class="n">test_10mb</span><span class="o">.</span><span class="na">jpg</span>
 
-<span class="n">Displaying</span> <span class="nf">test_10mb</span><span class="p">.</span><span class="na">jpg</span></code></pre></div>
+<span class="n">Displaying</span> <span class="n">test_10mb</span><span class="o">.</span><span class="na">jpg</span>
+</code></pre></div>
         </div>
 
         
@@ -196,19 +187,17 @@ ProxyPatternDemo，我们的演示类使用 ProxyImage 来获取要加载的 Ima
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#实现">实现</a>
-<ul>
-<li><a href="#步骤-1">步骤 1</a></li>
-<li><a href="#步骤-2">步骤 2</a></li>
-<li><a href="#步骤-3">步骤 3</a></li>
-<li><a href="#步骤-4">步骤 4</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">介绍</a></li>
+    <li><a href="#heading-1">实现</a>
+      <ul>
+        <li><a href="#-1">步骤 1</a></li>
+        <li><a href="#-2">步骤 2</a></li>
+        <li><a href="#-3">步骤 3</a></li>
+        <li><a href="#-4">步骤 4</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

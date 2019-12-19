@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,76 +97,58 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <h2 id="load">load</h2>
-
 <p>load → is the general function for loading a file.</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nf">load</span> <span class="nv">FILE</span> <span class="kp">&amp;optional</span> <span class="nv">NOERROR</span> <span class="nv">NOMESSAGE</span> <span class="nv">NOSUFFIX</span> <span class="nv">MUST-SUFFIX</span><span class="p">)</span></code></pre></div>
-<p>举个例子，如果你的代码是 <code>(load &quot;x&quot;)</code>，emacs 将从 load-path 中尝试加载 x.elc、x.el、x 文件。</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nf">load</span> <span class="nv">FILE</span> <span class="kp">&amp;optional</span> <span class="nv">NOERROR</span> <span class="nv">NOMESSAGE</span> <span class="nv">NOSUFFIX</span> <span class="nv">MUST-SUFFIX</span><span class="p">)</span>
+</code></pre></div><p>举个例子，如果你的代码是 <code>(load &quot;x&quot;)</code>，emacs 将从 load-path 中尝试加载 x.elc、x.el、x 文件。</p>
 <h2 id="load-file">load-file</h2>
-
 <p>load-file → load one specific file. The file name argument should contain file name extension, such as .el .elc</p>
-
 <p><code>(load-file file_name)</code> just calls <code>(load (expand-file-name file_name) nil nil t)</code></p>
-
 <p>Use load-file when you have a specific full path of a file in mind.</p>
-
 <p>举个例子：</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="nv">load-file</span> <span class="s">&#34;~/.emacs.d/lisp/init-example.el&#34;</span></code></pre></div>
-<p>这是最为原始的方式，填写的路径必须是绝对路径，这个路径也不会加入到emacs中load-path里。它也不会优先寻找编译过.elc文件（显然编译过文件的会更快些）。这种方式已经被抛弃，仅作为历史提一下。</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="nv">load-file</span> <span class="s">&#34;</span><span class="s">~/.emacs.d/lisp/init-example.el</span><span class="s">&#34;</span>
+</code></pre></div><p>这是最为原始的方式，填写的路径必须是绝对路径，这个路径也不会加入到emacs中load-path里。它也不会优先寻找编译过.elc文件（显然编译过文件的会更快些）。这种方式已经被抛弃，仅作为历史提一下。</p>
 <h2 id="require">require</h2>
-
 <p>require → Load a package if it has not already been loaded.</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">require</span> <span class="nv">FEATURE</span> <span class="kp">&amp;optional</span> <span class="nv">FILENAME</span> <span class="nv">NOERROR</span><span class="p">)</span></code></pre></div>
-<p>require checks if the symbol FEATURE is in variable features. If not, then it calls load to load it.</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">require</span> <span class="nv">FEATURE</span> <span class="kp">&amp;optional</span> <span class="nv">FILENAME</span> <span class="nv">NOERROR</span><span class="p">)</span>
+</code></pre></div><p>require checks if the symbol FEATURE is in variable features. If not, then it calls load to load it.</p>
 <p>File name is guessed from the feature name FEATURE, or specified in the optional argument.</p>
-
-<p>require is best used in elisp libraries or scripts, similar to other language&rsquo;s “require” or “import”.</p>
-
+<p>require is best used in elisp libraries or scripts, similar to other language's “require” or “import”.</p>
 <p>举个例子：
 <em>init-example.el</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="o">...</span> <span class="nv">your</span> <span class="nv">code</span> <span class="nv">here</span> <span class="o">...</span>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="o">.</span><span class="o">.</span><span class="o">.</span> <span class="nv">your</span> <span class="nv">code</span> <span class="nv">here</span> <span class="o">.</span><span class="o">.</span><span class="o">.</span>
 
-<span class="p">(</span><span class="nb">provide</span> <span class="ss">&#39;init-example</span><span class="p">)</span></code></pre></div>
-<p><em>init.el</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="o">...</span> <span class="nv">your</span> <span class="nv">code</span> <span class="nv">here</span> <span class="o">...</span>
-<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;init-example</span><span class="p">)</span></code></pre></div>
-<h2 id="autoload">autoload</h2>
-
+<span class="p">(</span><span class="nb">provide</span> <span class="ss">&#39;init-example</span><span class="p">)</span>
+</code></pre></div><p><em>init.el</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="o">.</span><span class="o">.</span><span class="o">.</span> <span class="nv">your</span> <span class="nv">code</span> <span class="nv">here</span> <span class="o">.</span><span class="o">.</span><span class="o">.</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;init-example</span><span class="p">)</span>
+</code></pre></div><h2 id="autoload">autoload</h2>
 <p>autoload → Load a file only when a function is called.</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nf">autoload</span> <span class="nv">FUNCTION</span> <span class="nv">FILE</span> <span class="kp">&amp;optional</span> <span class="nv">DOCSTRING</span> <span class="nv">INTERACTIVE</span> <span class="nv">TYPE</span><span class="p">)</span></code></pre></div>
-<p>autoload associates a function name with a file path. When the function is called, load the file, and execute the function.</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nf">autoload</span> <span class="nv">FUNCTION</span> <span class="nv">FILE</span> <span class="kp">&amp;optional</span> <span class="nv">DOCSTRING</span> <span class="nv">INTERACTIVE</span> <span class="nv">TYPE</span><span class="p">)</span>
+</code></pre></div><p>autoload associates a function name with a file path. When the function is called, load the file, and execute the function.</p>
 <p>If you are writing a major mode, have your package installation go by autoload if possible. It saves startup time.</p>
-
 <p>举个例子：</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nf">autoload</span> <span class="ss">&#39;python-mode</span> <span class="s">&#34;python-mode&#34;</span> <span class="s">&#34;Python Mode.&#34;</span> <span class="no">t</span><span class="p">)</span></code></pre></div>
-<h2 id="with-eval-after-load">with-eval-after-load</h2>
-
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nf">autoload</span> <span class="ss">&#39;python-mode</span> <span class="s">&#34;</span><span class="s">python-mode</span><span class="s">&#34;</span> <span class="s">&#34;</span><span class="s">Python Mode.</span><span class="s">&#34;</span> <span class="no">t</span><span class="p">)</span>
+</code></pre></div><h2 id="with-eval-after-load">with-eval-after-load</h2>
 <p>If you want code to be executed when a particular library is loaded, use the macro <code>with-eval-after-load</code>.</p>
-
 <p><code>with-eval-after-load</code> is like the old <code>eval-after-load</code>, but better behaved.</p>
-
 <p>eval-after-load is considered ill-behaved because it is a function, not a macro, and thus requires the code inside it to be quoted, which means that it cannot be byte-compiled. It also accepts only one form, so if you have more than one, you need to use progn. For example:</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nv">eval-after-load</span> <span class="s">&#34;foo&#34;</span>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nv">eval-after-load</span> <span class="s">&#34;</span><span class="s">foo</span><span class="s">&#34;</span>
   <span class="o">&#39;</span><span class="p">(</span><span class="nb">progn</span>
      <span class="p">(</span><span class="nb">setq</span> <span class="nv">foo</span> <span class="mi">42</span><span class="p">)</span>
-     <span class="p">(</span><span class="nb">setq</span> <span class="nv">bar</span> <span class="mi">17</span><span class="p">)))</span></code></pre></div>
-<p>The equivalent version with with-eval-after-load would be:</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">with-eval-after-load</span> <span class="s">&#34;foo&#34;</span>
+     <span class="p">(</span><span class="nb">setq</span> <span class="nv">bar</span> <span class="mi">17</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+</code></pre></div><p>The equivalent version with with-eval-after-load would be:</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">with-eval-after-load</span> <span class="s">&#34;</span><span class="s">foo</span><span class="s">&#34;</span>
   <span class="p">(</span><span class="nb">setq</span> <span class="nv">foo</span> <span class="mi">42</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">setq</span> <span class="nv">bar</span> <span class="mi">17</span><span class="p">))</span></code></pre></div>
-<p>Define a macro <code>after-load</code> which is compatible with both <code>with-eval-after-load</code> and <code>eval-after-load</code>.</p>
+  <span class="p">(</span><span class="nb">setq</span> <span class="nv">bar</span> <span class="mi">17</span><span class="p">)</span><span class="p">)</span>
+</code></pre></div><p>Define a macro <code>after-load</code> which is compatible with both <code>with-eval-after-load</code> and <code>eval-after-load</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">fboundp</span> <span class="ss">&#39;with-eval-after-load</span><span class="p">)</span>
     <span class="p">(</span><span class="nb">defalias</span> <span class="ss">&#39;after-load</span> <span class="ss">&#39;with-eval-after-load</span><span class="p">)</span>
   <span class="p">(</span><span class="nb">defmacro</span> <span class="nv">after-load</span> <span class="p">(</span><span class="nv">feature</span> <span class="kp">&amp;rest</span> <span class="nv">body</span><span class="p">)</span>
-    <span class="s">&#34;After FEATURE is loaded, evaluate BODY.&#34;</span>
-    <span class="p">(</span><span class="nb">declare</span> <span class="p">(</span><span class="nv">indent</span> <span class="nb">defun</span><span class="p">))</span>
+    <span class="s">&#34;</span><span class="s">After FEATURE is loaded, evaluate BODY.</span><span class="s">&#34;</span>
+    <span class="p">(</span><span class="nb">declare</span> <span class="p">(</span><span class="nv">indent</span> <span class="nb">defun</span><span class="p">)</span><span class="p">)</span>
     <span class="o">`</span><span class="p">(</span><span class="nv">eval-after-load</span> <span class="o">,</span><span class="nv">feature</span>
-       <span class="o">&#39;</span><span class="p">(</span><span class="nb">progn</span> <span class="o">,@</span><span class="nv">body</span><span class="p">))))</span></code></pre></div>
-<h2 id="use-package-https-github-com-jwiegley-use-package"><a href="https://github.com/jwiegley/use-package">use-package</a></h2>
-
+       <span class="o">&#39;</span><span class="p">(</span><span class="nb">progn</span> <span class="o">,@</span><span class="nv">body</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+</code></pre></div><h2 id="use-packagehttpsgithubcomjwiegleyuse-package"><a href="https://github.com/jwiegley/use-package">use-package</a></h2>
 <p>The <code>use-package</code> macro allows you to isolate package configuration in your .emacs file in a way that is both performance-oriented and, well, tidy. For more information, visit <a href="https://jwiegley.github.io/use-package">https://jwiegley.github.io/use-package</a> .</p>
         </div>
 
@@ -175,17 +157,14 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#load">load</a></li>
-<li><a href="#load-file">load-file</a></li>
-<li><a href="#require">require</a></li>
-<li><a href="#autoload">autoload</a></li>
-<li><a href="#with-eval-after-load">with-eval-after-load</a></li>
-<li><a href="#use-package-https-github-com-jwiegley-use-package"><a href="https://github.com/jwiegley/use-package">use-package</a></a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#load">load</a></li>
+    <li><a href="#load-file">load-file</a></li>
+    <li><a href="#require">require</a></li>
+    <li><a href="#autoload">autoload</a></li>
+    <li><a href="#with-eval-after-load">with-eval-after-load</a></li>
+    <li><a href="#use-packagehttpsgithubcomjwiegleyuse-package">use-package</a></li>
+  </ul>
 </nav>
         </div>
         

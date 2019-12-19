@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -96,30 +96,21 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="tcp-ip-的分层">TCP/IP 的分层</h2>
-
+            <h2 id="tcpip-">TCP/IP 的分层</h2>
 <p>TCP/IP 通常被认为是一个四层协议系统：</p>
-
 <ol>
 <li>链路层：也称作数据链路层或网络接口层，通常包括操作系统中的设备驱动程序和计算机中对应的网络接口卡。</li>
 <li>网络层：处理分组在网络中的活动，例如分组的选路。在 TCP/IP 协议族中，网络层协议包括 <strong>IP协议</strong>、<strong>ICMP协议</strong>以及 <strong>IGMP协议</strong>。</li>
 <li>运输层：主要为两台主机上的应用程序提供端到端的通信。<strong>TCP协议</strong> 和 <strong>UDP协议</strong>。</li>
 <li>应用层：负责处理特定的应用程序细节。</li>
 </ol>
-
-<p><img src="/images/tcp-ip/tcp-ip-layers.jpg" alt="" /></p>
-
-<h2 id="封装">封装</h2>
-
+<p><img src="/images/tcp-ip/tcp-ip-layers.jpg" alt=""></p>
+<h2 id="heading">封装</h2>
 <p>当应用程序用 TCP 传送数据时，数据被送入协议栈中，然后逐个通过每一层直到被当作一串比特流送入网络。其中每一层对收到的数据都要增加一些首部信息（有时还要增加尾部信息）。</p>
-
-<p><img src="/images/tcp-ip/tcp-ip-multiplexing.jpg" alt="" /></p>
-
-<h2 id="分用">分用</h2>
-
+<p><img src="/images/tcp-ip/tcp-ip-multiplexing.jpg" alt=""></p>
+<h2 id="heading-1">分用</h2>
 <p>当目的主机收到一个以太网数据帧时，数据就开始从协议栈中由底向上升，同时去掉各层协议加上的报文首部。每层协议盒都要去检查报文首部中的协议标识，以确定接收数据的上层协议。</p>
-
-<p><img src="/images/tcp-ip/tcp-ip-demultiplexing.jpg" alt="" /></p>
+<p><img src="/images/tcp-ip/tcp-ip-demultiplexing.jpg" alt=""></p>
         </div>
 
         
@@ -127,14 +118,11 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#tcp-ip-的分层">TCP/IP 的分层</a></li>
-<li><a href="#封装">封装</a></li>
-<li><a href="#分用">分用</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#tcpip-">TCP/IP 的分层</a></li>
+    <li><a href="#heading">封装</a></li>
+    <li><a href="#heading-1">分用</a></li>
+  </ul>
 </nav>
         </div>
         

@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -96,13 +96,9 @@
                     <p>
                         
                     <p>zd423: <a href="http://www.zdfans.com/">http://www.zdfans.com/</a></p>
-
 <p>烈火: <a href="http://hrtsea.com/">http://hrtsea.com/</a></p>
-
 <p>NoCmd: <a href="https://www.nocmd.com/">https://www.nocmd.com/</a></p>
-
 <p>果核剥壳: <a href="https://www.ghboke.com/">https://www.ghboke.com/</a></p>
-
 <p>殁漂遥: <a href="https://www.laomo.me/">https://www.laomo.me/</a></p>
                     </p>
                     <p class="article-more-link">
@@ -153,9 +149,7 @@
                     <p>
                         
                     <p>域名系统（DNS）是一种用于TCP/IP应用程序的分布式数据库，它提供主机名字和IP地址之间的转换及有关电子邮件的选路信息。这里提到的分布式是指在Internet上的单个站点不能拥有所有的信息。每个站点（如大学中的系、校园、公司或公司中的部门）保留它自己的信息数据库，并运行一个服务器程序供Internet上的其他系统（客户程序）查询。DNS提供了允许服务器和客户程序相互通信的协议。</p>
-
 <p>从应用的角度上看，对DNS的访问是通过一个地址解析器（resolver）来完成的。在Unix主机中，该解析器主要是通过两个库函数gethostbyname和gethostbyaddr来访问的，它们在编译应用程序时与应用程序连接在一起。前者接收主机名字返回IP地址，而后者接收IP地址来寻找主机名字。解析器通过一个或多个名字服务器来完成这种相互转换。</p>
-
 <p>解析器并不像TCP/IP协议那样是操作系统的内核。在一个应用程序请求TCP打开一个连接或使用UDP发送一个数据报之前。心须将一个主机名转换为一个IP地址。操作系统内核中的TCP/IP协议族对于DNS一点都不知道。</p>
                     </p>
                     <p class="article-more-link">
@@ -217,22 +211,16 @@
                     <p>
                         
                     <h2 id="load">load</h2>
-
 <p>load → is the general function for loading a file.</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nf">load</span> <span class="nv">FILE</span> <span class="kp">&amp;optional</span> <span class="nv">NOERROR</span> <span class="nv">NOMESSAGE</span> <span class="nv">NOSUFFIX</span> <span class="nv">MUST-SUFFIX</span><span class="p">)</span></code></pre></div>
-<p>举个例子，如果你的代码是 <code>(load &quot;x&quot;)</code>，emacs 将从 load-path 中尝试加载 x.elc、x.el、x 文件。</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nf">load</span> <span class="nv">FILE</span> <span class="kp">&amp;optional</span> <span class="nv">NOERROR</span> <span class="nv">NOMESSAGE</span> <span class="nv">NOSUFFIX</span> <span class="nv">MUST-SUFFIX</span><span class="p">)</span>
+</code></pre></div><p>举个例子，如果你的代码是 <code>(load &quot;x&quot;)</code>，emacs 将从 load-path 中尝试加载 x.elc、x.el、x 文件。</p>
 <h2 id="load-file">load-file</h2>
-
 <p>load-file → load one specific file. The file name argument should contain file name extension, such as .el .elc</p>
-
 <p><code>(load-file file_name)</code> just calls <code>(load (expand-file-name file_name) nil nil t)</code></p>
-
 <p>Use load-file when you have a specific full path of a file in mind.</p>
-
 <p>举个例子：</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="nv">load-file</span> <span class="s">&#34;~/.emacs.d/lisp/init-example.el&#34;</span></code></pre></div>
-<p>这是最为原始的方式，填写的路径必须是绝对路径，这个路径也不会加入到emacs中load-path里。它也不会优先寻找编译过.elc文件（显然编译过文件的会更快些）。这种方式已经被抛弃，仅作为历史提一下。</p>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="nv">load-file</span> <span class="s">&#34;</span><span class="s">~/.emacs.d/lisp/init-example.el</span><span class="s">&#34;</span>
+</code></pre></div><p>这是最为原始的方式，填写的路径必须是绝对路径，这个路径也不会加入到emacs中load-path里。它也不会优先寻找编译过.elc文件（显然编译过文件的会更快些）。这种方式已经被抛弃，仅作为历史提一下。</p>
                     </p>
                     <p class="article-more-link">
                         <a href="/2018/05/11/emacs-load-packages/">Read More</a>
@@ -308,17 +296,11 @@
                     <p>
                         
                     <p>用于支持主机和路由器进行多播的Internet组管理协议（IGMP）。它让一个物理网络上的所有系统知道主机当前所在的多播组。多播路由器需要这些信息以便知道多播数据报应该向哪些接口转发。</p>
-
 <p>正如ICMP一样，IGMP也被当作IP层的一部分。IGMP报文通过IP数据报进行传输。不像我们已经见到的其他协议，IGMP有固定的报文长度，没有可选数据。IP首部(20字节) + IGMP报文(8字节)。</p>
-
 <p>IGMP报文通过IP首部中协议字段值为2来指明。</p>
-
-<h2 id="igmp报文">IGMP报文</h2>
-
-<p><img src="/images/tcp-ip/igmp-format.jpg" alt="" /></p>
-
+<h2 id="igmp">IGMP报文</h2>
+<p><img src="/images/tcp-ip/igmp-format.jpg" alt=""></p>
 <p>这是版本为1的IGMP。IGMP类型为1说明是由多播路由器发出的查询报文，为2说明是主机发出的报告报文。检验和的计算和ICMP协议相同。</p>
-
 <p>组地址为D类IP地址。在查询报文中组地址设置为0，在报告报文中组地址为要参加的组地址。</p>
                     </p>
                     <p class="article-more-link">
@@ -385,9 +367,7 @@
                     <p>
                         
                     <p>广播和多播仅应用于UDP，它们对需将报文同时传往多个接收者的应用来说十分重要。TCP是一个面向连接的协议，它意味着分别运行于两主机（由IP地址确定）内的两进程（由端口号确定）间存在一条连接。</p>
-
 <p>考虑包含多个主机的共享信道网络如以太网。每个以太网帧包含源主机和目的主机的以太网地址（48bit）。通常每个以太网帧仅发往单个目的主机，目的地址指明单个接收接口，因而称为单播(unicast)。在这种方式下，任意两个主机的通信不会干扰网内其他主机（可能引起争夺共享信道的情况除外）。</p>
-
 <p>然而，有时一个主机要向网上的所有其他主机发送帧，这就是广播(broadcast)。通过ARP和RARP可以看到这一过程。多播(multicast)处于单播和广播之间：帧仅传送给属于多播组的多个主机。</p>
                     </p>
                     <p class="article-more-link">
@@ -461,14 +441,15 @@
                     <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">shell-pop</span>
   <span class="nb">:ensure</span> <span class="no">t</span>
   <span class="nb">:defer</span> <span class="no">t</span>
-  <span class="nb">:bind</span> <span class="p">(</span><span class="s">&#34;C-c t&#34;</span> <span class="o">.</span> <span class="nv">shell-pop</span><span class="p">)</span>
+  <span class="nb">:bind</span> <span class="p">(</span><span class="s">&#34;</span><span class="s">C-c t</span><span class="s">&#34;</span> <span class="o">.</span> <span class="nv">shell-pop</span><span class="p">)</span>
   <span class="nb">:config</span>
   <span class="p">(</span><span class="nv">custom-set-variables</span>
-   <span class="o">&#39;</span><span class="p">(</span><span class="nv">shell-pop-shell-type</span> <span class="p">(</span><span class="nb">quote</span> <span class="p">(</span><span class="s">&#34;eshell&#34;</span> <span class="s">&#34;*eshell*&#34;</span> <span class="p">(</span><span class="nb">lambda</span> <span class="no">nil</span> <span class="p">(</span><span class="nv">eshell</span><span class="p">)))))</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">shell-pop-shell-type</span> <span class="p">(</span><span class="nb">quote</span> <span class="p">(</span><span class="s">&#34;</span><span class="s">eshell</span><span class="s">&#34;</span> <span class="s">&#34;</span><span class="s">*eshell*</span><span class="s">&#34;</span> <span class="p">(</span><span class="nb">lambda</span> <span class="no">nil</span> <span class="p">(</span><span class="nv">eshell</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
    <span class="o">&#39;</span><span class="p">(</span><span class="nv">shell-pop-window-size</span> <span class="mi">30</span><span class="p">)</span>
    <span class="o">&#39;</span><span class="p">(</span><span class="nv">shell-pop-full-span</span> <span class="no">t</span><span class="p">)</span>
-   <span class="o">&#39;</span><span class="p">(</span><span class="nv">shell-pop-window-position</span> <span class="s">&#34;bottom&#34;</span><span class="p">))</span>
-  <span class="p">)</span></code></pre></div>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">shell-pop-window-position</span> <span class="s">&#34;</span><span class="s">bottom</span><span class="s">&#34;</span><span class="p">)</span><span class="p">)</span>
+  <span class="p">)</span>
+</code></pre></div>
                     </p>
                     <p class="article-more-link">
                         <a href="/2018/05/09/shell-pop-with-eshell/">Read More</a>
@@ -534,11 +515,8 @@
                     <p>
                         
                     <p>UDP是一个简单的面向数据报的运输层协议：进程的每个输出操作都正好产生一个UDP数据报，并组装成一份待发送的IP数据报。这与面向流字符的协议不同，如TCP，应用程序产生的全体数据与真正发送的单个IP数据报可能没有什么联系。</p>
-
 <p>UDP数据报封装成一份IP数据报的格式：IP首部(20字节) - UDP首部(8字节) - UDP数据。</p>
-
 <p>UDP不提供可靠性：它把应用程序传给IP层的数据发送出去，但是并不保证它们能到达目的地。由于缺乏可靠性，我们似乎觉得要避免使用UDP而使用一种可靠协议如TCP。</p>
-
 <p>应用程序必须关心IP数据报的长度。如果它超过网络的MTU，那么就要对IP数据报进行分片。如果需要，源端到目的端之间的每个网络都要进行分片，并不只是发送端主机连接第一个网络才这样做。</p>
                     </p>
                     <p class="article-more-link">
@@ -615,15 +593,10 @@
                     <p>
                         
                     <p>静态选路：在配置接口时，以默认方式生成路由表项（对于直接连接的接口），并通过route命令增加表项（通常从系统自引导程序文件），或是通过ICMP重定向生成表项（通常是在默认方式出错的情况下）。</p>
-
 <p>在网络很小，且与其他网络只有单个连接点且没有多余路由时（若主路由失败，可以使用备用路由），采用这种方法是可行的。如果上述三种情况不能全部满足，通常使用动态选路。</p>
-
-<h2 id="动态选路">动态选路</h2>
-
+<h2 id="heading">动态选路</h2>
 <p>当相邻路由器之间进行通信，以告知对方每个路由器当前所连接的网络，这时就出现了动态选路。路由器之间必须采用选路协议进行通信，这样的选路协议有很多种。路由器上有一个进程称为路由守护程序（routing daemon），它运行选路协议，并与其相邻的一些路由器进行通信。路由守护程序根据它从相邻路由器接收到的信息，更新内核中的路由表。</p>
-
 <p>动态选路并不改变内核在IP层的选路方式。这种选路方式称为选路机制（routing mechanism）。内核搜索路由表，查找主机路由、网络路由以及默认路由的方式并没有改变。仅仅是放置到路由表中的信息改变了—当路由随时间变化时，路由是由路由守护程序动态地增加或删除，而不是来自于自引导程序文件中的route命令。</p>
-
 <p>路由守护程序将选路策略（routing policy）加入到系统中，选择路由并加入到内核的路由表中。如果守护程序发现前往同一信宿存在多条路由，那么它（以某种方法）将选择最佳路由并加入内核路由表中。如果路由守护程序发现一条链路已经断开（可能是路由器崩溃或电话线路不好），它可以删除受影响的路由或增加另一条路由以绕过该问题。</p>
                     </p>
                     <p class="article-more-link">
@@ -700,8 +673,7 @@
                     <p>
                         
                     <p>选路是IP最重要的功能之一。需要进行选路的数据报可以由本地主机产生，也可以由其他主机产生。在后一种情况下，主机必须配置成一个路由器，否则通过网络接口接收到的数据报，如果目的地址不是本机就要被丢弃（例如，悄无声息地被丢弃）。</p>
-
-<p><img src="/images/tcp-ip/ip-layer-process.jpg" alt="" /></p>
+<p><img src="/images/tcp-ip/ip-layer-process.jpg" alt=""></p>
                     </p>
                     <p class="article-more-link">
                         <a href="/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/">Read More</a>
@@ -762,16 +734,12 @@
                     <p>
                         
                     <p>由Van Jacobson编写的Traceroute程序是一个能更深入探索TCP/IP协议的方便可用的工具。尽管不能保证从源端发往目的端的两份连续的IP数据报具有相同的路由，但是大多数情况下是这样的。Traceroute程序可以让我们看到IP数据报从一台主机传到另一台主机所经过的路由。Traceroute程序还可以让我们使用IP源路由选项。</p>
-
-<h2 id="traceroute程序的操作">Traceroute程序的操作</h2>
-
+<h2 id="traceroute">Traceroute程序的操作</h2>
 <p>为什么不使用IP记录路由选项(RR)这个选项而另外开发一个新的应用程序？有三个方面的原因。
 首先，原先并不是所有的路由器都支持记录路由选项，因此该选项在某些路径上不能使用（Traceroute程序不需要中间路由器具备任何特殊的或可选的功能）。
 其次，记录路由一般是单向的选项。发送端设置了该选项，那么接收端不得不从收到的IP首部中提取出所有的信息，然后全部返回给发送端。在7.3节中，我们看到大多数Ping服务器的实现（内核中的ICMP回显应答功能）把接收到的RR清单返回，但是这样使得记录下来的IP地址翻了一番（一来一回）。这样做会受到一些限制，这一点我们在下一段讨论（Traceroute程序只需要目的端运行一个UDP模块—其他不需要任何特殊的服务器应用程序）。
 最后一个原因也是最主要的原因是，IP首部中留给选项的空间有限，不能存放当前大多数的路径。在IP首部选项字段中最多只能存放9个IP地址。在原先的ARPANET中这是足够的，但是对现在来说是远远不够的。</p>
-
 <p>Traceroute程序使用ICMP报文和IP首部中的TTL字段（生存周期）。TTL字段是由发送端初始设置一个8bit字段。推荐的初始值由分配数字RFC指定，当前值为64。较老版本的系统经常初始化为15或32。我们从第7章中的一些ping程序例子中可以看出，发送ICMP回显应答时经常把TTL设为最大值255。</p>
-
 <p>每个处理数据报的路由器都需要把TTL的值减1或减去数据报在路由器中停留的秒数。由于大多数的路由器转发数据报的时延都小于1秒钟，因此TTL最终成为一个跳站的计数器，所经过的每个路由器都将其值减1。</p>
                     </p>
                     <p class="article-more-link">

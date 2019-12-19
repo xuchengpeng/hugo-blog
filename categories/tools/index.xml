@@ -17,11 +17,11 @@
       <pubDate>Sat, 22 Dec 2018 14:39:11 +0800</pubDate>
       
       <guid>http://xuchengpeng.com/2018/12/22/clangformat-code/</guid>
-      <description>&lt;p&gt;Download clang-format from &lt;a href=&#34;http://llvm.org&#34;&gt;http://llvm.org&lt;/a&gt;.&lt;/p&gt;
-
+      <description>&lt;p&gt;Download clang-format from [&lt;a href=&#34;http://llvm.org%5D(http://llvm.org)&#34;&gt;http://llvm.org](http://llvm.org)&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;LLVM -i test.c
-clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-config &amp;gt; google.clang-format&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-config &amp;gt; google.clang-format
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -31,8 +31,8 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
       
       <guid>http://xuchengpeng.com/2018/12/20/astyle-code/</guid>
       <description>&lt;p&gt;从 &lt;a href=&#34;http://astyle.sourceforge.net/&#34;&gt;astyle.sourceforge.net&lt;/a&gt; 下载安装 astyle。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 /path/to/code.c&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 /path/to/code.c
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;-A8 Linux style&lt;/li&gt;
 &lt;li&gt;-s4 4个空格缩进&lt;/li&gt;
 &lt;li&gt;-k3 指针*靠近变量&lt;/li&gt;
@@ -41,7 +41,7 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
 &lt;li&gt;-p 在操作符两边添加空格&lt;/li&gt;
 &lt;li&gt;-xn 花括号在namespace之后&lt;/li&gt;
 &lt;li&gt;-xc 花括号在class之后&lt;/li&gt;
-&lt;li&gt;-xk 花括号在extern &amp;ldquo;C&amp;rdquo;之后&lt;/li&gt;
+&lt;li&gt;-xk 花括号在extern &amp;ldquo;C&amp;quot;之后&lt;/li&gt;
 &lt;li&gt;-xV do-while语句中，while在关闭花括号之后&lt;/li&gt;
 &lt;li&gt;-xf 函数定义中，返回类型和函数名在同一行&lt;/li&gt;
 &lt;li&gt;-xh 函数声明中，返回类型和函数名在同一行&lt;/li&gt;
@@ -64,9 +64,7 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
       <description>&lt;blockquote&gt;
 &lt;p&gt;Cmder is a software package created out of pure frustration over the absence of nice console emulators on Windows. It is based on amazing software, and spiced up with the Monokai color scheme and a custom prompt layout, looking sexy from the start.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;h3 id=&#34;增加-cmder-here&#34;&gt;增加 Cmder Here&lt;/h3&gt;
-
+&lt;h3 id=&#34;-cmder-here&#34;&gt;增加 Cmder Here&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;添加环境变量 &lt;code&gt;CMDER_HOME&lt;/code&gt;设定为Cmder安装目录&lt;code&gt;D:\Software\cmder\&lt;/code&gt;；&lt;/li&gt;
 &lt;li&gt;将&lt;code&gt;%CMDER_HOME%&lt;/code&gt;添加到&lt;code&gt;PATH&lt;/code&gt;环境变量中；&lt;/li&gt;
@@ -82,9 +80,7 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
       
       <guid>http://xuchengpeng.com/2018/08/21/editorconfig/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://editorconfig.org/&#34;&gt;EditorConfig&lt;/a&gt;可以帮助开发者在不同的编辑器和IDE之间定义和维护一致的代码风格。EditorConfig包含一个用于定义代码格式的文件和一批编辑器插件，这些插件可以让编辑器读取配置文件并依此格式化代码。EditorConfig的配置文件十分易读，并且可以很好的在VCS（Version Control System）下工作。&lt;/p&gt;
-
-&lt;h3 id=&#34;editorconfig配置文件是什么样子的&#34;&gt;EditorConfig配置文件是什么样子的？&lt;/h3&gt;
-
+&lt;h3 id=&#34;editorconfig&#34;&gt;EditorConfig配置文件是什么样子的？&lt;/h3&gt;
 &lt;p&gt;以下是一个用于Python和Java的行尾和缩进风格.editorconfig配置文件。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# EditorConfig is awesome: https://EditorConfig.org&lt;/span&gt;
 
@@ -118,8 +114,8 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
 &lt;span class=&#34;c1&#34;&gt;# Matches the exact files either package.json or .travis.yml&lt;/span&gt;
 &lt;span class=&#34;k&#34;&gt;[{package.json,.travis.yml}]&lt;/span&gt;
 &lt;span class=&#34;na&#34;&gt;indent_style&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;space&lt;/span&gt;
-&lt;span class=&#34;na&#34;&gt;indent_size&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;查看更多使用EditorConfig的&lt;a href=&#34;https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig&#34;&gt;项目&lt;/a&gt;。&lt;/p&gt;</description>
+&lt;span class=&#34;na&#34;&gt;indent_size&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看更多使用EditorConfig的&lt;a href=&#34;https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig&#34;&gt;项目&lt;/a&gt;。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -129,10 +125,8 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
       
       <guid>http://xuchengpeng.com/2018/08/06/rsync-elpa-mirror/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rsync.samba.org/&#34;&gt;rsync&lt;/a&gt; is an open source utility that provides fast incremental file transfer. rsync is freely available under the GNU General Public License and is currently being maintained by Wayne Davison.&lt;/p&gt;
-
 &lt;p&gt;rsync is a file transfer program for Unix systems. rsync uses the &amp;ldquo;rsync algorithm&amp;rdquo; which provides a very fast method for bringing remote files into sync. It does this by sending just the differences in the files across the link, without requiring that both sets of files are present at one of the ends of the link beforehand.
 Some features of rsync include&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;can update whole directory trees and filesystems&lt;/li&gt;
 &lt;li&gt;optionally preserves symbolic links, hard links, file ownership, permissions, devices and times&lt;/li&gt;
@@ -150,7 +144,6 @@ Some features of rsync include&lt;/p&gt;
       
       <guid>http://xuchengpeng.com/2018/07/20/blog-writing-tools/</guid>
       <description>&lt;p&gt;基本的工具用途：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;：用来发布博客；&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://orgmode.org/&#34;&gt;orgmode&lt;/a&gt;：写org格式的博文；&lt;/li&gt;

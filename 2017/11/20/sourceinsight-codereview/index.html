@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -92,19 +92,13 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>这是一个SourceInsight使用的本地代码检视工具，利用Macro实现。</p>
-
-<h2 id="创建codereview-em文件">创建CodeReview.em文件</h2>
-
+<h2 id="codereviewem">创建CodeReview.em文件</h2>
 <p>将代码保存为CodeReview.em文件。</p>
-
-<h2 id="添加到base工程">添加到base工程</h2>
-
+<h2 id="base">添加到base工程</h2>
 <p>将CodeReview.em文件复制到base工程目录下。</p>
-
-<h2 id="设置快捷键">设置快捷键</h2>
-
+<h2 id="heading">设置快捷键</h2>
 <p>在SourceInsight中设置“Review_Add_Comment”、“Review_Restore_Link”和“Review_Summary”等相关宏的快捷键即可使用。</p>
-<div class="highlight"><pre class="chroma"><code class="language-em" data-lang="em">/**
+<pre><code class="language-em" data-lang="em">/**
  * 
  * Code Review Tool
  * 
@@ -114,7 +108,7 @@
  *
  *   2003.1.22 Javey 
  * 1) Changed severity level according to the review form
- * 2) Excluded the category of &#34;suggestion&#34; when counting 
+ * 2) Excluded the category of &quot;suggestion&quot; when counting 
  *  total defects by category to comply with the review form
  *   2003.5.14 Javey 
  *1) Forced reviewers to fill category and defect type.
@@ -124,7 +118,7 @@
 
 macro GetReviewToolVersion()
 {
-    return &#34;2.0.2&#34;
+    return &quot;2.0.2&quot;
 }
 
 macro GetReviewDate()
@@ -134,7 +128,7 @@ macro GetReviewDate()
     szMonth=SysTime.month
     szDay=SysTime.day
 
-    return &#34;@szYear@-@szMonth@-@szDay@&#34;
+    return &quot;@szYear@-@szMonth@-@szDay@&quot;
 }
 
 macro Review_Restore_Link()
@@ -142,13 +136,13 @@ macro Review_Restore_Link()
     hbuf = GetCurrentBuf()
 
     //sProjRoot = GetProjDir(GetCurrentProj())
-    sProjRoot = Cat(sProjRoot, &#34;\\&#34;)
+    sProjRoot = Cat(sProjRoot, &quot;\\&quot;)
 
     line = 0
     while(True)
     {
-        sel = SearchInBuf(hbuf, &#34;FileName : &#34;, line, 0, 1, 0, 0)
-        if(sel == &#34;&#34;) break
+        sel = SearchInBuf(hbuf, &quot;FileName : &quot;, line, 0, 1, 0, 0)
+        if(sel == &quot;&quot;) break
 
         line = sel.lnFirst
         col = sel.ichLim
@@ -202,33 +196,33 @@ macro Review_Add_Comment()
     }
 
 
-    sFileName   = cat( &#34;FileName : &#34;, curFileName )
-    sLineNumber = cat( &#34;Line     : &#34;, curLineNumber + 1 )
+    sFileName   = cat( &quot;FileName : &quot;, curFileName )
+    sLineNumber = cat( &quot;Line     : &quot;, curLineNumber + 1 )
 
     /* get the severity of the current comment */
-    promote = &#34;Severity : M,m(Major严重); G,g(General一般); S,s(Suggestion提示)&#34;
+    promote = &quot;Severity : M,m(Major严重); G,g(General一般); S,s(Suggestion提示)&quot;
     sTemp = ask(promote);
     sTemp = toupper(sTemp[0]);
-    while( sTemp != &#34;M&#34; &amp;&amp; sTemp != &#34;G&#34; &amp;&amp; sTemp != &#34;S&#34; )
+    while( sTemp != &quot;M&quot; &amp;&amp; sTemp != &quot;G&quot; &amp;&amp; sTemp != &quot;S&quot; )
     {
-        sTemp = ask(cat(&#34;Please input again! &#34;, promote));
+        sTemp = ask(cat(&quot;Please input again! &quot;, promote));
         sTemp = toupper(sTemp[0]);
     }
 
-    if( sTemp == &#34;M&#34; ) sTemp = &#34;Major&#34;;
-        else if ( sTemp == &#34;G&#34; ) sTemp = &#34;General&#34;;
-        else if ( sTemp == &#34;S&#34; ) sTemp = &#34;Suggestion&#34;;
+    if( sTemp == &quot;M&quot; ) sTemp = &quot;Major&quot;;
+        else if ( sTemp == &quot;G&quot; ) sTemp = &quot;General&quot;;
+        else if ( sTemp == &quot;S&quot; ) sTemp = &quot;Suggestion&quot;;
 
-    sSeverity = cat( &#34;Severity : &#34;, sTemp );
+    sSeverity = cat( &quot;Severity : &quot;, sTemp );
 
 
-    promote = &#34;Category : 1.编程规范(代码级); 2.非编码规范(代码级); 3.业务功能; 4.软件结构&#34;
+    promote = &quot;Category : 1.编程规范(代码级); 2.非编码规范(代码级); 3.业务功能; 4.软件结构&quot;
     sTemp = ask(promote);
 
     
     ChoseNumber = AsciiFromChar(sTemp);
-    MinNumber = AsciiFromChar(&#34;1&#34;);
-    MaxNumber = AsciiFromChar(&#34;4&#34;);
+    MinNumber = AsciiFromChar(&quot;1&quot;);
+    MaxNumber = AsciiFromChar(&quot;4&quot;);
 
     while ((ChoseNumber &lt; MinNumber) || (ChoseNumber &gt; MaxNumber))
     {
@@ -237,34 +231,34 @@ macro Review_Add_Comment()
         ChoseNumber = AsciiFromChar(sTemp);
     }
   
-    if( sTemp == &#34;1&#34; ) 
+    if( sTemp == &quot;1&quot; ) 
     {
-        sCategory = cat( &#34;Category : &#34;, &#34;编程规范&#34;);
+        sCategory = cat( &quot;Category : &quot;, &quot;编程规范&quot;);
     }
-    else if ( sTemp == &#34;2&#34; )
+    else if ( sTemp == &quot;2&quot; )
     {
-        sCategory = cat( &#34;Category : &#34;, &#34;非编码规范&#34;);
+        sCategory = cat( &quot;Category : &quot;, &quot;非编码规范&quot;);
     }
-    else if ( sTemp == &#34;3&#34; )
+    else if ( sTemp == &quot;3&quot; )
     {
-        sCategory = cat( &#34;Category : &#34;, &#34;业务功能&#34;);
+        sCategory = cat( &quot;Category : &quot;, &quot;业务功能&quot;);
     }
-    else if ( sTemp == &#34;4&#34; )
+    else if ( sTemp == &quot;4&quot; )
     {
-        sCategory = cat( &#34;Category : &#34;, &#34;软件结构&#34;);
+        sCategory = cat( &quot;Category : &quot;, &quot;软件结构&quot;);
     }
 
     
-    if (sTemp == &#34;1&#34;) // 编程规范
+    if (sTemp == &quot;1&quot;) // 编程规范
     {
      
-        promote = &#34;1.排版/命名 2.注释/可读性 3.常量左值/魔鬼数字 4.断言调试/打印&#34;
+        promote = &quot;1.排版/命名 2.注释/可读性 3.常量左值/魔鬼数字 4.断言调试/打印&quot;
   
         sTemp = ask(promote);
         sTemp = toupper(sTemp[0]);
         ChoseNumber = AsciiFromChar(sTemp);
-        MinNumber = AsciiFromChar(&#34;1&#34;);
-        MaxNumber = AsciiFromChar(&#34;4&#34;);
+        MinNumber = AsciiFromChar(&quot;1&quot;);
+        MaxNumber = AsciiFromChar(&quot;4&quot;);
 
         while ((ChoseNumber &lt; MinNumber) || (ChoseNumber &gt; MaxNumber))
         {
@@ -274,23 +268,23 @@ macro Review_Add_Comment()
         }
         EndMsg();
 
-        if( sTemp == &#34;1&#34; ) sTemp = &#34;排版/标识符命名&#34;;
-            else if ( sTemp == &#34;2&#34; ) sTemp = &#34;注释/可读性&#34;;
-            else if ( sTemp == &#34;3&#34; ) sTemp = &#34;常量左值/魔鬼数字&#34;;
-            else if ( sTemp == &#34;4&#34; ) sTemp = &#34;断言调试/打印&#34;;
+        if( sTemp == &quot;1&quot; ) sTemp = &quot;排版/标识符命名&quot;;
+            else if ( sTemp == &quot;2&quot; ) sTemp = &quot;注释/可读性&quot;;
+            else if ( sTemp == &quot;3&quot; ) sTemp = &quot;常量左值/魔鬼数字&quot;;
+            else if ( sTemp == &quot;4&quot; ) sTemp = &quot;断言调试/打印&quot;;
 
-        sType = cat( &#34;Type     : &#34;, sTemp );
+        sType = cat( &quot;Type     : &quot;, sTemp );
     }
-    else if (sTemp == &#34;2&#34;) // 非编码规范
+    else if (sTemp == &quot;2&quot;) // 非编码规范
     {
      
-        promote = &#34;1.参数/返回值/优先级 2.变量初始化和赋值 3.资源申请释放 4.中断/效率/移植性 5.循环/if/switch 6.结构/宏/枚举 7.函数逻辑 8.其他&#34;;
+        promote = &quot;1.参数/返回值/优先级 2.变量初始化和赋值 3.资源申请释放 4.中断/效率/移植性 5.循环/if/switch 6.结构/宏/枚举 7.函数逻辑 8.其他&quot;;
         
         sTemp = ask(promote);
         sTemp = toupper(sTemp[0]);
         ChoseNumber = AsciiFromChar(sTemp);
-        MinNumber = AsciiFromChar(&#34;1&#34;);
-        MaxNumber = AsciiFromChar(&#34;8&#34;);
+        MinNumber = AsciiFromChar(&quot;1&quot;);
+        MaxNumber = AsciiFromChar(&quot;8&quot;);
 
         
 
@@ -302,26 +296,26 @@ macro Review_Add_Comment()
         }
         EndMsg();
 
-        if( sTemp == &#34;1&#34; ) sTemp = &#34;函数参数/返回值检查/操作符优先级&#34;;
-            else if ( sTemp == &#34;2&#34; ) sTemp = &#34;变量/指针/数组/字符串初始化和赋值&#34;;
-            else if ( sTemp == &#34;3&#34; ) sTemp = &#34;资源申请和释放&#34;;
-            else if ( sTemp == &#34;4&#34; ) sTemp = &#34;中断/效率/可移植性&#34;;
-            else if ( sTemp == &#34;5&#34; ) sTemp = &#34;循环/if/switch程序块&#34;;
-            else if ( sTemp == &#34;6&#34; ) sTemp = &#34;结构/宏/枚举定义和使用&#34;;
-            else if ( sTemp == &#34;7&#34; ) sTemp = &#34;函数逻辑控制&#34;;
-            else if ( sTemp == &#34;8&#34; ) sTemp = &#34;其他&#34;;
+        if( sTemp == &quot;1&quot; ) sTemp = &quot;函数参数/返回值检查/操作符优先级&quot;;
+            else if ( sTemp == &quot;2&quot; ) sTemp = &quot;变量/指针/数组/字符串初始化和赋值&quot;;
+            else if ( sTemp == &quot;3&quot; ) sTemp = &quot;资源申请和释放&quot;;
+            else if ( sTemp == &quot;4&quot; ) sTemp = &quot;中断/效率/可移植性&quot;;
+            else if ( sTemp == &quot;5&quot; ) sTemp = &quot;循环/if/switch程序块&quot;;
+            else if ( sTemp == &quot;6&quot; ) sTemp = &quot;结构/宏/枚举定义和使用&quot;;
+            else if ( sTemp == &quot;7&quot; ) sTemp = &quot;函数逻辑控制&quot;;
+            else if ( sTemp == &quot;8&quot; ) sTemp = &quot;其他&quot;;
 
-            sType = cat( &#34;Type     : &#34;, sTemp );
+            sType = cat( &quot;Type     : &quot;, sTemp );
     }
-    else if ( sTemp == &#34;3&#34; ) // 业务功能
+    else if ( sTemp == &quot;3&quot; ) // 业务功能
     {
-        promote = &#34;1.功能需求遗漏 2.功能需求没有正确实现&#34;
+        promote = &quot;1.功能需求遗漏 2.功能需求没有正确实现&quot;
         
         sTemp = ask(promote);
         sTemp = toupper(sTemp[0]);
         ChoseNumber = AsciiFromChar(sTemp);
-        MinNumber = AsciiFromChar(&#34;1&#34;);
-        MaxNumber = AsciiFromChar(&#34;2&#34;);
+        MinNumber = AsciiFromChar(&quot;1&quot;);
+        MaxNumber = AsciiFromChar(&quot;2&quot;);
 
         while ((ChoseNumber &lt; MinNumber) || (ChoseNumber &gt; MaxNumber))
         {
@@ -331,21 +325,21 @@ macro Review_Add_Comment()
         }
         EndMsg();
 
-        if( sTemp == &#34;1&#34; ) sTemp = &#34;功能需求遗漏&#34;;
-        else if ( sTemp == &#34;2&#34; ) sTemp = &#34;功能需求没有正确实现&#34;;
+        if( sTemp == &quot;1&quot; ) sTemp = &quot;功能需求遗漏&quot;;
+        else if ( sTemp == &quot;2&quot; ) sTemp = &quot;功能需求没有正确实现&quot;;
 
 
-        sType = cat( &#34;Type     : &#34;, sTemp );    
+        sType = cat( &quot;Type     : &quot;, sTemp );    
     }
-    else if ( sTemp == &#34;4&#34; ) // 软件结构
+    else if ( sTemp == &quot;4&quot; ) // 软件结构
     {
-        promote = &#34;1.函数功能不单一 2.函数复杂度高 3.数据依赖多(全局，局部变量，参数) 4.全局变量访问不合理 5.冗余重复代码 6.其他&#34;
+        promote = &quot;1.函数功能不单一 2.函数复杂度高 3.数据依赖多(全局，局部变量，参数) 4.全局变量访问不合理 5.冗余重复代码 6.其他&quot;
         
         sTemp = ask(promote);
         sTemp = toupper(sTemp[0]);
         ChoseNumber = AsciiFromChar(sTemp);
-        MinNumber = AsciiFromChar(&#34;1&#34;);
-        MaxNumber = AsciiFromChar(&#34;6&#34;);
+        MinNumber = AsciiFromChar(&quot;1&quot;);
+        MaxNumber = AsciiFromChar(&quot;6&quot;);
 
         while ((ChoseNumber &lt; MinNumber) || (ChoseNumber &gt; MaxNumber))
         {
@@ -355,26 +349,26 @@ macro Review_Add_Comment()
         }
         EndMsg();
 
-        if( sTemp == &#34;1&#34; ) sTemp = &#34;函数功能不单一&#34;;
-        else if ( sTemp == &#34;2&#34; ) sTemp = &#34;函数复杂度高&#34;;
-        else if ( sTemp == &#34;3&#34; ) sTemp = &#34;数据依赖多(全局，局部变量，参数)&#34;;
-        else if ( sTemp == &#34;4&#34; ) sTemp = &#34;全局变量访问不合理&#34;;
-        else if ( sTemp == &#34;5&#34; ) sTemp = &#34;冗余重复代码&#34;; 
-        else if ( sTemp == &#34;6&#34; ) sTemp = &#34;其他&#34;;         
-        sType = cat( &#34;Type     : &#34;, sTemp );    
+        if( sTemp == &quot;1&quot; ) sTemp = &quot;函数功能不单一&quot;;
+        else if ( sTemp == &quot;2&quot; ) sTemp = &quot;函数复杂度高&quot;;
+        else if ( sTemp == &quot;3&quot; ) sTemp = &quot;数据依赖多(全局，局部变量，参数)&quot;;
+        else if ( sTemp == &quot;4&quot; ) sTemp = &quot;全局变量访问不合理&quot;;
+        else if ( sTemp == &quot;5&quot; ) sTemp = &quot;冗余重复代码&quot;; 
+        else if ( sTemp == &quot;6&quot; ) sTemp = &quot;其他&quot;;         
+        sType = cat( &quot;Type     : &quot;, sTemp );    
     }    
     
 
     /* get the comment */
-    promote = &#34;Input your comment:&#34;
+    promote = &quot;Input your comment:&quot;
     sTemp = ask(promote);
-    sComments = cat( &#34;Comments : &#34;, sTemp );
+    sComments = cat( &quot;Comments : &quot;, sTemp );
 
     /* get the licence user name for the reviewer name */
     progRecord = GetProgramEnvironmentInfo()
     sMyName = progRecord.UserName
     szReviewDate = GetReviewDate()
-    szReviewFileName = &#34;ReviewComment_@sMyName@_@szReviewDate@.txt&#34;
+    szReviewFileName = &quot;ReviewComment_@sMyName@_@szReviewDate@.txt&quot;
     
     /* get the ReviewComment buffer handle */
     bNewCreated = false; // used for the review comment is firstly created
@@ -392,22 +386,22 @@ macro Review_Add_Comment()
             bNewCreated = true
 
             /*----------------------------------------------------------------*/
-            /* Get the owner&#39;s name from the environment variable: MYNAME.    */
-            /* If the variable doesn&#39;t exist, then the owner field is skipped.*/
+            /* Get the owner's name from the environment variable: MYNAME.    */
+            /* If the variable doesn't exist, then the owner field is skipped.*/
             /*----------------------------------------------------------------*/
 
-            AppendBufLine(hout, &#34;[Review Info] &#34;)
-            AppendBufLine(hout, cat(&#34;ReviewTool Version    : &#34;, GetReviewToolVersion()))
-            AppendBufLine(hout, cat(&#34;Reviewer Name         : &#34;, sMyName))
+            AppendBufLine(hout, &quot;[Review Info] &quot;)
+            AppendBufLine(hout, cat(&quot;ReviewTool Version    : &quot;, GetReviewToolVersion()))
+            AppendBufLine(hout, cat(&quot;Reviewer Name         : &quot;, sMyName))
             sDate = GetSysTime(1)
-            AppendBufLine(hout, cat(&#34;Review   Date         : &#34;, sDate.date))
+            AppendBufLine(hout, cat(&quot;Review   Date         : &quot;, sDate.date))
 		    /* Size summary */
-		    AppendBufLine(hout, &#34;Review size(KLOC)     : &#34;)              
+		    AppendBufLine(hout, &quot;Review size(KLOC)     : &quot;)              
 		    /* Effort summary */
-		    AppendBufLine(hout, &#34;Review effort(P*Hours): &#34;)
-		    AppendBufLine(hout, &#34;Rework effort(P*Hours): &#34;)    	    
-            AppendBufLine(hout, &#34;-------------------------------------------------------------------------&#34;)
-            AppendBufLine(hout, &#34;&#34;)
+		    AppendBufLine(hout, &quot;Review effort(P*Hours): &quot;)
+		    AppendBufLine(hout, &quot;Rework effort(P*Hours): &quot;)    	    
+            AppendBufLine(hout, &quot;-------------------------------------------------------------------------&quot;)
+            AppendBufLine(hout, &quot;&quot;)
 
         }
     } // end of get ReviewComment buffer handle
@@ -415,17 +409,17 @@ macro Review_Add_Comment()
     delSummary(hout)
     AppendBufLine(hout, sFileName)
     AppendBufLine(hout, sLineNumber)
-    AppendBufLine(hout, cat(&#34;Reviewer : &#34;, sMyName))
-    AppendBufLine(hout, cat(&#34;Symbol   : &#34;, curFunc) )
+    AppendBufLine(hout, cat(&quot;Reviewer : &quot;, sMyName))
+    AppendBufLine(hout, cat(&quot;Symbol   : &quot;, curFunc) )
     AppendBufLine(hout, sSeverity)
-    AppendBufLine(hout, &#34;Status   : Open&#34;)
+    AppendBufLine(hout, &quot;Status   : Open&quot;)
     AppendBufLine(hout, sComments)
-    AppendBufLine(hout, &#34;Resolve  : &#34;)
+    AppendBufLine(hout, &quot;Resolve  : &quot;)
     AppendBufLine(hout, sCategory)
     AppendBufLine(hout, sType)
-    AppendBufLine(hout, &#34;Author   : &#34;)
-    AppendBufLine(hout, &#34;Phase    : &#34;)
-    AppendBufLine(hout, &#34;&#34;)
+    AppendBufLine(hout, &quot;Author   : &quot;)
+    AppendBufLine(hout, &quot;Phase    : &quot;)
+    AppendBufLine(hout, &quot;&quot;)
 
     lnSource = GetBufLineCount(hout) - 12
     SetSourceLink(hout, lnSource, curFileName, curLineNumber)
@@ -444,13 +438,13 @@ macro Review_Summary()
 macro updateSummary(hbuf)
 {
     rvSum0 = getReviewSummary(hbuf)
-    rvSum = &#34;major=\&#34;0\&#34;;general=\&#34;0\&#34;;suggestion=\&#34;0\&#34;;open=\&#34;0\&#34;;closed=\&#34;0\&#34;;rejected=\&#34;0\&#34;;duplicate=\&#34;0\&#34;;discuss=\&#34;0\&#34;;SysReq=\&#34;0\&#34;;SDes=\&#34;0\&#34;;SRS=\&#34;0\&#34;;HLD=\&#34;0\&#34;;LLD=\&#34;0\&#34;;TP=\&#34;0\&#34;;Code=\&#34;0\&#34;;Docs=\&#34;0\&#34;;Others=\&#34;0\&#34;&#34;
+    rvSum = &quot;major=\&quot;0\&quot;;general=\&quot;0\&quot;;suggestion=\&quot;0\&quot;;open=\&quot;0\&quot;;closed=\&quot;0\&quot;;rejected=\&quot;0\&quot;;duplicate=\&quot;0\&quot;;discuss=\&quot;0\&quot;;SysReq=\&quot;0\&quot;;SDes=\&quot;0\&quot;;SRS=\&quot;0\&quot;;HLD=\&quot;0\&quot;;LLD=\&quot;0\&quot;;TP=\&quot;0\&quot;;Code=\&quot;0\&quot;;Docs=\&quot;0\&quot;;Others=\&quot;0\&quot;&quot;
 
     /* summary the severity */
     ln = 0
     while (True)
     {
-        sel = SearchInBuf(hbuf, &#34;^Severity\\s+:\\s+&#34;, ln, 0, 1, 1, 0)
+        sel = SearchInBuf(hbuf, &quot;^Severity\\s+:\\s+&quot;, ln, 0, 1, 1, 0)
         if (sel == null) break
 
         ln = sel.lnFirst
@@ -459,11 +453,11 @@ macro updateSummary(hbuf)
         sTemp = strmid(s, col, col+1)
         sTemp = toupper(sTemp);
 
-        if (sTemp == &#34;M&#34; &amp;&amp; validDefect(hbuf, ln)) 
+        if (sTemp == &quot;M&quot; &amp;&amp; validDefect(hbuf, ln)) 
             rvSum.major = rvSum.major + 1
-        else if (sTemp == &#34;G&#34; &amp;&amp; validDefect(hbuf, ln))
+        else if (sTemp == &quot;G&quot; &amp;&amp; validDefect(hbuf, ln))
             rvSum.general = rvSum.general + 1
-        else if (sTemp == &#34;S&#34; &amp;&amp; validDefect(hbuf, ln))
+        else if (sTemp == &quot;S&quot; &amp;&amp; validDefect(hbuf, ln))
             rvSum.suggestion = rvSum.suggestion + 1
 
         ln = ln + 1
@@ -473,7 +467,7 @@ macro updateSummary(hbuf)
     ln = 0
     while (True)
     {
-        sel = SearchInBuf(hbuf, &#34;^Status\\s+:\\s+&#34;, ln, 0, 1, 1, 0)
+        sel = SearchInBuf(hbuf, &quot;^Status\\s+:\\s+&quot;, ln, 0, 1, 1, 0)
         if (sel == null) break
 
         ln = sel.lnFirst
@@ -482,16 +476,16 @@ macro updateSummary(hbuf)
         sTemp = strmid(s, col, col+1)
         sTemp = toupper(sTemp);
 
-        if (sTemp == &#34;O&#34;) rvSum.open = rvSum.open + 1
-        else if (sTemp == &#34;C&#34;)  rvSum.closed = rvSum.closed + 1
-        else if (sTemp == &#34;R&#34;)  rvSum.rejected = rvSum.rejected + 1
-        else if (sTemp == &#34;D&#34;)
+        if (sTemp == &quot;O&quot;) rvSum.open = rvSum.open + 1
+        else if (sTemp == &quot;C&quot;)  rvSum.closed = rvSum.closed + 1
+        else if (sTemp == &quot;R&quot;)  rvSum.rejected = rvSum.rejected + 1
+        else if (sTemp == &quot;D&quot;)
         {
             sTemp = strmid(s, col+1, col+2)
             sTemp = toupper(sTemp);
             
-            if (sTemp == &#34;U&#34;)  rvSum.duplicate = rvSum.duplicate + 1
-               else if (sTemp == &#34;I&#34;)  rvSum.discuss = rvSum.discuss + 1                    
+            if (sTemp == &quot;U&quot;)  rvSum.duplicate = rvSum.duplicate + 1
+               else if (sTemp == &quot;I&quot;)  rvSum.discuss = rvSum.discuss + 1                    
         }
         
         ln = ln + 1
@@ -503,7 +497,7 @@ macro updateSummary(hbuf)
     {
         norej = norejected(hbuf, ln);
         notsug = notsuggestion(hbuf, ln)
-        sel = SearchInBuf(hbuf, &#34;^Category\\s+:\\s+&#34;, ln, 0, 1, 1, 0)
+        sel = SearchInBuf(hbuf, &quot;^Category\\s+:\\s+&quot;, ln, 0, 1, 1, 0)
         if (sel == null) break
 
         ln = sel.lnFirst
@@ -511,21 +505,21 @@ macro updateSummary(hbuf)
         s = GetBufLine(hbuf, ln)
         if ( col+2 &gt; strlen(s)) 
         {
-            msg(&#34;Please write categories!&#34;)
+            msg(&quot;Please write categories!&quot;)
             return
         }
         sTemp = strmid(s, col, col+2)
             sTemp = toupper(sTEmp);
 
-        if (sTemp == &#34;SY&#34; &amp;&amp; norej &amp;&amp; notsug) rvSum.SysReq = rvSum.SysReq + 1
-            else if (sTemp == &#34;SD&#34; &amp;&amp; norej &amp;&amp; notsug)  rvSum.SDes = rvSum.SDes + 1
-            else if (sTemp == &#34;SR&#34; &amp;&amp; norej &amp;&amp; notsug)  rvSum.SRS = rvSum.SRS + 1
-            else if (sTemp == &#34;HL&#34; &amp;&amp; norej &amp;&amp; notsug)  rvSum.HLD = rvSum.HLD + 1
-            else if (sTemp == &#34;LL&#34; &amp;&amp; norej &amp;&amp; notsug)  rvSum.LLD = rvSum.LLD + 1
-            else if (sTemp == &#34;TP&#34; &amp;&amp; norej &amp;&amp; notsug)  rvSum.TP = rvSum.TP + 1
-            else if (sTemp == &#34;CO&#34; &amp;&amp; norej &amp;&amp; notsug)  rvSum.Code = rvSum.Code + 1
-            else if (sTemp == &#34;DO&#34; &amp;&amp; norej &amp;&amp; notsug)  rvSum.Docs = rvSum.Docs + 1
-            else if (sTemp == &#34;OT&#34; &amp;&amp; norej &amp;&amp; notsug)  rvSum.Others = rvSum.Others + 1
+        if (sTemp == &quot;SY&quot; &amp;&amp; norej &amp;&amp; notsug) rvSum.SysReq = rvSum.SysReq + 1
+            else if (sTemp == &quot;SD&quot; &amp;&amp; norej &amp;&amp; notsug)  rvSum.SDes = rvSum.SDes + 1
+            else if (sTemp == &quot;SR&quot; &amp;&amp; norej &amp;&amp; notsug)  rvSum.SRS = rvSum.SRS + 1
+            else if (sTemp == &quot;HL&quot; &amp;&amp; norej &amp;&amp; notsug)  rvSum.HLD = rvSum.HLD + 1
+            else if (sTemp == &quot;LL&quot; &amp;&amp; norej &amp;&amp; notsug)  rvSum.LLD = rvSum.LLD + 1
+            else if (sTemp == &quot;TP&quot; &amp;&amp; norej &amp;&amp; notsug)  rvSum.TP = rvSum.TP + 1
+            else if (sTemp == &quot;CO&quot; &amp;&amp; norej &amp;&amp; notsug)  rvSum.Code = rvSum.Code + 1
+            else if (sTemp == &quot;DO&quot; &amp;&amp; norej &amp;&amp; notsug)  rvSum.Docs = rvSum.Docs + 1
+            else if (sTemp == &quot;OT&quot; &amp;&amp; norej &amp;&amp; notsug)  rvSum.Others = rvSum.Others + 1
 
             ln = ln + 1
     }*/
@@ -549,93 +543,93 @@ macro updateSummary(hbuf)
 
 macro getReviewSummary(hbuf)
 {
-    sel = SearchInBuf(hbuf, &#34;^Summary$&#34;, 0, 0, 1, 1, 0)
-    rvSum = &#34;major=\&#34;0\&#34;;general=\&#34;0\&#34;;suggestion=\&#34;0\&#34;;open=\&#34;0\&#34;;closed=\&#34;0\&#34;;rejected=\&#34;0\&#34;;duplicate=\&#34;0\&#34;;discuss=\&#34;0\&#34;;revieweffort=\&#34;0\&#34;;reworkeffort=\&#34;0\&#34;;reviewsize=\&#34;0\&#34;&#34;
+    sel = SearchInBuf(hbuf, &quot;^Summary$&quot;, 0, 0, 1, 1, 0)
+    rvSum = &quot;major=\&quot;0\&quot;;general=\&quot;0\&quot;;suggestion=\&quot;0\&quot;;open=\&quot;0\&quot;;closed=\&quot;0\&quot;;rejected=\&quot;0\&quot;;duplicate=\&quot;0\&quot;;discuss=\&quot;0\&quot;;revieweffort=\&quot;0\&quot;;reworkeffort=\&quot;0\&quot;;reviewsize=\&quot;0\&quot;&quot;
 
     if (sel == null)
         return rvSum
 
     /* get severity summary */
     ln = sel.lnFirst + 2
-    sel = SearchInBuf(hbuf, &#34;^Major\\s+:\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^Major\\s+:\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.major = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^General\\s+:\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^General\\s+:\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.general = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^Suggestion\\s+:\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^Suggestion\\s+:\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.suggestion = strmid(sLine, col, strlen(sLine))
 
     /* get status summary */
-    sel = SearchInBuf(hbuf, &#34;^Open\\s+:\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^Open\\s+:\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.open = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^Closed\\s+:\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^Closed\\s+:\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.closed = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^Duplicated\\s+:\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^Duplicated\\s+:\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.duplicate = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^Discuss\\s+:\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^Discuss\\s+:\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.discuss = strmid(sLine, col, strlen(sLine))
   
 
     /* get categories summary */
-    /*sel = SearchInBuf(hbuf, &#34;^SysReq\\s+=\\s+&#34;, ln, 0, 1, 1, 0)
+    /*sel = SearchInBuf(hbuf, &quot;^SysReq\\s+=\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.SysReq = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^SDes\\s+=\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^SDes\\s+=\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.SDes = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^SRS\\s+=\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^SRS\\s+=\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.SRS = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^HLD\\s+=\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^HLD\\s+=\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.HLD = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^LLD\\s+=\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^LLD\\s+=\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.LLD = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^TP\\s+=\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^TP\\s+=\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.TP = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^Code\\s+=\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^Code\\s+=\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.Code = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^Docs\\s+=\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^Docs\\s+=\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.Docs = strmid(sLine, col, strlen(sLine))
 
-    sel = SearchInBuf(hbuf, &#34;^Others\\s+=\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^Others\\s+=\\s+&quot;, ln, 0, 1, 1, 0)
     col = sel.ichLim
     sLine = GetBufLine(hbuf, sel.lnFirst)
     rvSum.Others = strmid(sLine, col, strlen(sLine))*/
@@ -645,32 +639,32 @@ macro getReviewSummary(hbuf)
 
 macro setReviewSummary(hbuf, rvSum)
 {
-    AppendBufLine(hbuf, &#34;Summary&#34;)
-    AppendBufLine(hbuf, &#34;-------------------------------------------------------------------------&#34;)
+    AppendBufLine(hbuf, &quot;Summary&quot;)
+    AppendBufLine(hbuf, &quot;-------------------------------------------------------------------------&quot;)
 
     /* Defects sumary */
-    AppendBufLine(hbuf, &#34;[Defects Summary]&#34;)
-    s = Cat(&#34;Total defects : &#34;, rvSum.major + rvSum.general + rvSum.suggestion)
+    AppendBufLine(hbuf, &quot;[Defects Summary]&quot;)
+    s = Cat(&quot;Total defects : &quot;, rvSum.major + rvSum.general + rvSum.suggestion)
     AppendBufLine(hbuf, s)
-    s = Cat(&#34;Major         : &#34;, rvSum.major)
+    s = Cat(&quot;Major         : &quot;, rvSum.major)
     AppendBufLine(hbuf, s)
-    s = Cat(&#34;General       : &#34;, rvSum.general)
+    s = Cat(&quot;General       : &quot;, rvSum.general)
     AppendBufLine(hbuf, s)
-    s = Cat(&#34;Suggestion    : &#34;, rvSum.suggestion)
+    s = Cat(&quot;Suggestion    : &quot;, rvSum.suggestion)
     AppendBufLine(hbuf, s)
 
     /* Status sumary */
-    AppendBufLine(hbuf, &#34;&#34;)
-    AppendBufLine(hbuf, &#34;[Status Summary]&#34;)
-    s = Cat(&#34;Open          : &#34;, rvSum.open)
+    AppendBufLine(hbuf, &quot;&quot;)
+    AppendBufLine(hbuf, &quot;[Status Summary]&quot;)
+    s = Cat(&quot;Open          : &quot;, rvSum.open)
     AppendBufLine(hbuf, s)
-    s = Cat(&#34;Closed        : &#34;, rvSum.closed)
+    s = Cat(&quot;Closed        : &quot;, rvSum.closed)
     AppendBufLine(hbuf, s)
-    s = Cat(&#34;Rejected      : &#34;, rvSum.rejected)
+    s = Cat(&quot;Rejected      : &quot;, rvSum.rejected)
     AppendBufLine(hbuf, s)
-    s = Cat(&#34;Duplicated    : &#34;, rvSum.duplicate)
+    s = Cat(&quot;Duplicated    : &quot;, rvSum.duplicate)
     AppendBufLine(hbuf, s)
-    s = Cat(&#34;Discuss       : &#34;, rvSum.discuss)
+    s = Cat(&quot;Discuss       : &quot;, rvSum.discuss)
     AppendBufLine(hbuf, s) 
 
 
@@ -678,7 +672,7 @@ macro setReviewSummary(hbuf, rvSum)
 
 macro delSummary(hbuf)
 {
-    sel = SearchInBuf(hbuf, &#34;^Summary$&#34;, 0, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^Summary$&quot;, 0, 0, 1, 1, 0)
 
     if (sel == null)
         return 
@@ -697,7 +691,7 @@ macro delSummary(hbuf)
 
 macro validDefect(hbuf, ln)
 {
-    sel = SearchInBuf(hbuf, &#34;^Status\\s+:\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^Status\\s+:\\s+&quot;, ln, 0, 1, 1, 0)
     if (sel == null) return True;
 
     ln = sel.lnFirst
@@ -707,13 +701,13 @@ macro validDefect(hbuf, ln)
     sTemp = strmid(s, col, col+1)
     sTemp = toupper(sTemp);
 
-    if (sTemp == &#34;R&#34;) return  False;
-    else if (sTemp == &#34;D&#34;)
+    if (sTemp == &quot;R&quot;) return  False;
+    else if (sTemp == &quot;D&quot;)
     {
          sTemp = strmid(s, col+1, col+2)
          sTemp = toupper(sTemp);
 
-         if (sTemp == &#34;U&#34;) return  False;    
+         if (sTemp == &quot;U&quot;) return  False;    
     }
 
    
@@ -722,7 +716,7 @@ macro validDefect(hbuf, ln)
 
 macro notsuggestion(hbuf, ln)
 {
-    sel = SearchInBuf(hbuf, &#34;^Severity\\s+:\\s+&#34;, ln, 0, 1, 1, 0)
+    sel = SearchInBuf(hbuf, &quot;^Severity\\s+:\\s+&quot;, ln, 0, 1, 1, 0)
     if (sel == null) return True;
 
     ln = sel.lnFirst
@@ -731,10 +725,11 @@ macro notsuggestion(hbuf, ln)
     sTemp = strmid(s, col, col+1)
     sTemp = toupper(sTEmp);
 
-    if (sTemp == &#34;S&#34;) return  False;
+    if (sTemp == &quot;S&quot;) return  False;
 
     return True;
-}</code></pre></div>
+}
+</code></pre>
         </div>
 
         
@@ -742,14 +737,11 @@ macro notsuggestion(hbuf, ln)
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#创建codereview-em文件">创建CodeReview.em文件</a></li>
-<li><a href="#添加到base工程">添加到base工程</a></li>
-<li><a href="#设置快捷键">设置快捷键</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#codereviewem">创建CodeReview.em文件</a></li>
+    <li><a href="#base">添加到base工程</a></li>
+    <li><a href="#heading">设置快捷键</a></li>
+  </ul>
 </nav>
         </div>
         

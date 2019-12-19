@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -92,8 +92,8 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>从 <a href="http://astyle.sourceforge.net/">astyle.sourceforge.net</a> 下载安装 astyle。</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 /path/to/code.c</code></pre></div>
-<ul>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 /path/to/code.c
+</code></pre></div><ul>
 <li>-A8 Linux style</li>
 <li>-s4 4个空格缩进</li>
 <li>-k3 指针*靠近变量</li>
@@ -102,7 +102,7 @@
 <li>-p 在操作符两边添加空格</li>
 <li>-xn 花括号在namespace之后</li>
 <li>-xc 花括号在class之后</li>
-<li>-xk 花括号在extern &ldquo;C&rdquo;之后</li>
+<li>-xk 花括号在extern &ldquo;C&quot;之后</li>
 <li>-xV do-while语句中，while在关闭花括号之后</li>
 <li>-xf 函数定义中，返回类型和函数名在同一行</li>
 <li>-xh 函数声明中，返回类型和函数名在同一行</li>
@@ -114,9 +114,7 @@
 <li>-c tab转换为空格</li>
 <li>-z2 linux(LF)换行</li>
 </ul>
-
 <p>以上配置可以保存在配置文件中，使用方法为<code>AStyle.exe --options=/path/to/.astylerc test.c</code>，对应的文件格式如下：</p>
-
 <pre><code>--style=linux
 --indent=spaces=4
 --indent-switches
@@ -138,15 +136,19 @@
 --convert-tabs
 --lineend=linux
 --suffix=none
-</code></pre>
-
-<p>linux编译astyle：</p>
+</code></pre><p>linux编译astyle：</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> astyle/build/gcc
 make
-cp ./bin/astyle /usr/bin</code></pre></div>
+cp ./bin/astyle /usr/bin
+</code></pre></div>
         </div>
 
         
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents"></nav>
+        </div>
         
         
 

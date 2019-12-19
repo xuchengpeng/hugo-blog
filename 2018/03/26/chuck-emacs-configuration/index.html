@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -99,35 +99,29 @@
             <h2 id="install">Install</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ git clone https://github.com/xuchengpeng/.emacs.d.git ~/.emacs.d
 $ <span class="nb">cd</span> ~/.emacs.d
-$ cp init.example.el init.el</code></pre></div>
-<h2 id="customization">Customization</h2>
-
+$ cp init.example.el init.el
+</code></pre></div><h2 id="customization">Customization</h2>
 <p>Change the configurations at the beginning of your <code>custom.el</code> or <code>init.el</code>, then restart emacs.</p>
-
 <p>For example:</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-full-name</span> <span class="s">&#34;user name&#34;</span><span class="p">)</span>           <span class="c1">; User full name</span>
-<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-mail-address</span> <span class="s">&#34;user@email.com&#34;</span><span class="p">)</span>   <span class="c1">; Email address</span>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-full-name</span> <span class="s">&#34;</span><span class="s">user name</span><span class="s">&#34;</span><span class="p">)</span>           <span class="c1">; User full name</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-mail-address</span> <span class="s">&#34;</span><span class="s">user@email.com</span><span class="s">&#34;</span><span class="p">)</span>   <span class="c1">; Email address</span>
 <span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-package-archives</span> <span class="ss">&#39;emacs-china</span><span class="p">)</span>   <span class="c1">; Package repo: melpa, emacs-china, tuna or custom</span>
 <span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-theme</span> <span class="ss">&#39;dotemacs-one</span><span class="p">)</span>             <span class="c1">; Color theme: dotemacs-one, dotemacs-one-light...</span>
-<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-company-enable-yas</span> <span class="no">t</span><span class="p">)</span>            <span class="c1">; Enable/disable yasnippet for company: t or nil</span></code></pre></div>
-<p>If <code>dotemacs-package-archives</code> is set to <code>custom</code>, you need to set <code>package-archives</code>.</p>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-company-enable-yas</span> <span class="no">t</span><span class="p">)</span>            <span class="c1">; Enable/disable yasnippet for company: t or nil</span>
+</code></pre></div><p>If <code>dotemacs-package-archives</code> is set to <code>custom</code>, you need to set <code>package-archives</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-package-archives</span> <span class="ss">&#39;custom</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">setq</span> <span class="nv">package-archives</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;gnu&#34;</span>   <span class="o">.</span> <span class="s">&#34;/home/user/elpa-mirror/gnu/&#34;</span><span class="p">)</span>
-                         <span class="p">(</span><span class="s">&#34;melpa&#34;</span> <span class="o">.</span> <span class="s">&#34;/home/user/elpa-mirror/melpa/&#34;</span><span class="p">)</span>
-                         <span class="p">(</span><span class="s">&#34;org&#34;</span>   <span class="o">.</span> <span class="s">&#34;/home/user/elpa-mirror/org/&#34;</span><span class="p">)))</span></code></pre></div>
-<p>Customize it with melpa, <a href="https://elpa.emacs-china.org/">emacs-china</a> or <a href="https://mirror.tuna.tsinghua.edu.cn/help/elpa/">tuna</a>, or clone it from <a href="https://github.com/xuchengpeng/elpa-mirror">elpa-mirror</a> to local disk.</p>
-
-<h2 id="install-fonts-optional">Install fonts(Optional)</h2>
-
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">package-archives</span> <span class="o">&#39;</span><span class="p">(</span><span class="p">(</span><span class="s">&#34;</span><span class="s">gnu</span><span class="s">&#34;</span>   <span class="o">.</span> <span class="s">&#34;</span><span class="s">/home/user/elpa-mirror/gnu/</span><span class="s">&#34;</span><span class="p">)</span>
+                         <span class="p">(</span><span class="s">&#34;</span><span class="s">melpa</span><span class="s">&#34;</span> <span class="o">.</span> <span class="s">&#34;</span><span class="s">/home/user/elpa-mirror/melpa/</span><span class="s">&#34;</span><span class="p">)</span>
+                         <span class="p">(</span><span class="s">&#34;</span><span class="s">org</span><span class="s">&#34;</span>   <span class="o">.</span> <span class="s">&#34;</span><span class="s">/home/user/elpa-mirror/org/</span><span class="s">&#34;</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+</code></pre></div><p>Customize it with melpa, <a href="https://elpa.emacs-china.org/">emacs-china</a> or <a href="https://mirror.tuna.tsinghua.edu.cn/help/elpa/">tuna</a>, or clone it from <a href="https://github.com/xuchengpeng/elpa-mirror">elpa-mirror</a> to local disk.</p>
+<h2 id="install-fontsoptional">Install fonts(Optional)</h2>
 <p>Install your favorite fonts, or you can find some popular fonts <a href="https://github.com/xuchengpeng/fonts">here</a>.</p>
-
 <p>For example:</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-font</span> <span class="s">&#34;Fira Mono&#34;</span><span class="p">)</span>    <span class="c1">; default font</span>
-<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-cn-font</span> <span class="s">&#34;STXihei&#34;</span><span class="p">)</span>   <span class="c1">; chinese font</span>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-font</span> <span class="s">&#34;</span><span class="s">Fira Mono</span><span class="s">&#34;</span><span class="p">)</span>    <span class="c1">; default font</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-cn-font</span> <span class="s">&#34;</span><span class="s">STXihei</span><span class="s">&#34;</span><span class="p">)</span>   <span class="c1">; chinese font</span>
 <span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-font-size</span> <span class="mi">11</span><span class="p">)</span>        <span class="c1">; default font size</span>
-<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-cn-font-size</span> <span class="mi">16</span><span class="p">)</span>     <span class="c1">; chinese font size</span></code></pre></div>
-<h2 id="supported-emacs-versions">Supported Emacs versions</h2>
-
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">dotemacs-cn-font-size</span> <span class="mi">16</span><span class="p">)</span>     <span class="c1">; chinese font size</span>
+</code></pre></div><h2 id="supported-emacs-versions">Supported Emacs versions</h2>
 <p>The config should run on Emacs 25.2 or greater and is designed to degrade smoothly - see the <a href="https://travis-ci.org/xuchengpeng/.emacs.d">Travis build</a>.</p>
         </div>
 
@@ -136,15 +130,12 @@ $ cp init.example.el init.el</code></pre></div>
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#install">Install</a></li>
-<li><a href="#customization">Customization</a></li>
-<li><a href="#install-fonts-optional">Install fonts(Optional)</a></li>
-<li><a href="#supported-emacs-versions">Supported Emacs versions</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#install">Install</a></li>
+    <li><a href="#customization">Customization</a></li>
+    <li><a href="#install-fontsoptional">Install fonts(Optional)</a></li>
+    <li><a href="#supported-emacs-versions">Supported Emacs versions</a></li>
+  </ul>
 </nav>
         </div>
         

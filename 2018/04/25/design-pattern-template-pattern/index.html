@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,9 +97,7 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>在模板模式（Template Pattern）中，一个抽象类公开定义了执行它的方法的方式/模板。它的子类可以按需要重写方法实现，但调用将以抽象类中定义的方式进行。这种类型的设计模式属于行为型模式。</p>
-
-<h2 id="介绍">介绍</h2>
-
+<h2 id="heading">介绍</h2>
 <p>意图：定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。
 主要解决：一些方法通用，却在每一个子类都重新写了这一方法。
 何时使用：有一些通用的方法。
@@ -110,99 +108,92 @@
 缺点：每一个不同的实现都需要一个子类来实现，导致类的个数增加，使得系统更加庞大。
 使用场景： 1、有多个子类共有的方法，且逻辑相同。 2、重要的、复杂的方法，可以考虑作为模板方法。
 注意事项：为防止恶意操作，一般模板方法都加上 final 关键词。</p>
-
-<h2 id="实现">实现</h2>
-
+<h2 id="heading-1">实现</h2>
 <p>我们将创建一个定义操作的 Game 抽象类，其中，模板方法设置为 final，这样它就不会被重写。Cricket 和 Football 是扩展了 Game 的实体类，它们重写了抽象类的方法。
 TemplatePatternDemo，我们的演示类使用 Game 来演示模板模式的用法。</p>
-
-<p><img src="/images/design-pattern/template_pattern_uml_diagram.jpg" alt="" /></p>
-
-<h3 id="步骤-1">步骤 1</h3>
-
+<p><img src="/images/design-pattern/template_pattern_uml_diagram.jpg" alt=""></p>
+<h3 id="-1">步骤 1</h3>
 <p>创建一个抽象类，它的模板方法被设置为 final。
 <em>Game.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">abstract</span> <span class="kd">class</span> <span class="nf">Game</span> <span class="p">{</span>
-   <span class="kd">abstract</span> <span class="nf">void</span> <span class="n">initialize</span><span class="p">();</span>
-   <span class="kd">abstract</span> <span class="nf">void</span> <span class="n">startPlay</span><span class="p">();</span>
-   <span class="kd">abstract</span> <span class="nf">void</span> <span class="n">endPlay</span><span class="p">();</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Game</span> <span class="o">{</span>
+   <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">startPlay</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">endPlay</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
    <span class="c1">//模板
-</span><span class="c1"></span>   <span class="kd">public</span> <span class="nf">final</span> <span class="kt">void</span> <span class="nf">play</span><span class="p">(){</span>
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="kd">final</span> <span class="kt">void</span> <span class="nf">play</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
 
       <span class="c1">//初始化游戏
-</span><span class="c1"></span>      <span class="n">initialize</span><span class="p">();</span>
+</span><span class="c1"></span>      <span class="n">initialize</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
       <span class="c1">//开始游戏
-</span><span class="c1"></span>      <span class="n">startPlay</span><span class="p">();</span>
+</span><span class="c1"></span>      <span class="n">startPlay</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
       <span class="c1">//结束游戏
-</span><span class="c1"></span>      <span class="n">endPlay</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-2">步骤 2</h3>
-
+</span><span class="c1"></span>      <span class="n">endPlay</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-2">步骤 2</h3>
 <p>创建扩展了上述类的实体类。
 <em>Cricket.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Cricket</span> <span class="nf">extends</span> <span class="n">Game</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cricket</span> <span class="kd">extends</span> <span class="n">Game</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kt">void</span> <span class="nf">endPlay</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Cricket Game Finished!&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kt">void</span> <span class="nf">endPlay</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Cricket Game Finished!&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Cricket Game Initialized! Start playing.&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kt">void</span> <span class="nf">initialize</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Cricket Game Initialized! Start playing.&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kt">void</span> <span class="nf">startPlay</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Cricket Game Started. Enjoy the game!&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>Football.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Football</span> <span class="nf">extends</span> <span class="n">Game</span> <span class="p">{</span>
+   <span class="kt">void</span> <span class="nf">startPlay</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Cricket Game Started. Enjoy the game!&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>Football.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Football</span> <span class="kd">extends</span> <span class="n">Game</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kt">void</span> <span class="nf">endPlay</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Football Game Finished!&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kt">void</span> <span class="nf">endPlay</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Football Game Finished!&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Football Game Initialized! Start playing.&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kt">void</span> <span class="nf">initialize</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Football Game Initialized! Start playing.&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kt">void</span> <span class="nf">startPlay</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Football Game Started. Enjoy the game!&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-3">步骤 3</h3>
-
+   <span class="kt">void</span> <span class="nf">startPlay</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Football Game Started. Enjoy the game!&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-3">步骤 3</h3>
 <p>使用 Game 的模板方法 play() 来演示游戏的定义方式。
 <em>TemplatePatternDemo.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">TemplatePatternDemo</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TemplatePatternDemo</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
-      <span class="n">Game</span> <span class="nf">game</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cricket</span><span class="p">();</span>
-      <span class="n">game</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-      <span class="n">game</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Football</span><span class="p">();</span>
-      <span class="n">game</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-4">步骤 4</h3>
-
+      <span class="n">Game</span> <span class="n">game</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cricket</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">game</span><span class="o">.</span><span class="na">play</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">game</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Football</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">game</span><span class="o">.</span><span class="na">play</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-4">步骤 4</h3>
 <p>验证输出。</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Cricket</span> <span class="nf">Game</span> <span class="n">Initialized</span><span class="o">!</span> <span class="n">Start</span> <span class="nf">playing</span><span class="p">.</span>
-<span class="n">Cricket</span> <span class="nf">Game</span> <span class="n">Started</span><span class="p">.</span> <span class="nf">Enjoy</span> <span class="n">the</span> <span class="nf">game</span><span class="o">!</span>
-<span class="n">Cricket</span> <span class="nf">Game</span> <span class="n">Finished</span><span class="o">!</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Cricket</span> <span class="n">Game</span> <span class="n">Initialized</span><span class="o">!</span> <span class="n">Start</span> <span class="n">playing</span><span class="o">.</span>
+<span class="n">Cricket</span> <span class="n">Game</span> <span class="n">Started</span><span class="o">.</span> <span class="n">Enjoy</span> <span class="n">the</span> <span class="n">game</span><span class="o">!</span>
+<span class="n">Cricket</span> <span class="n">Game</span> <span class="n">Finished</span><span class="o">!</span>
 
-<span class="n">Football</span> <span class="nf">Game</span> <span class="n">Initialized</span><span class="o">!</span> <span class="n">Start</span> <span class="nf">playing</span><span class="p">.</span>
-<span class="n">Football</span> <span class="nf">Game</span> <span class="n">Started</span><span class="p">.</span> <span class="nf">Enjoy</span> <span class="n">the</span> <span class="nf">game</span><span class="o">!</span>
-<span class="n">Football</span> <span class="nf">Game</span> <span class="n">Finished</span><span class="o">!</span></code></pre></div>
+<span class="n">Football</span> <span class="n">Game</span> <span class="n">Initialized</span><span class="o">!</span> <span class="n">Start</span> <span class="n">playing</span><span class="o">.</span>
+<span class="n">Football</span> <span class="n">Game</span> <span class="n">Started</span><span class="o">.</span> <span class="n">Enjoy</span> <span class="n">the</span> <span class="n">game</span><span class="o">!</span>
+<span class="n">Football</span> <span class="n">Game</span> <span class="n">Finished</span><span class="o">!</span>
+</code></pre></div>
         </div>
 
         
@@ -210,19 +201,17 @@ TemplatePatternDemo，我们的演示类使用 Game 来演示模板模式的用�
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#实现">实现</a>
-<ul>
-<li><a href="#步骤-1">步骤 1</a></li>
-<li><a href="#步骤-2">步骤 2</a></li>
-<li><a href="#步骤-3">步骤 3</a></li>
-<li><a href="#步骤-4">步骤 4</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">介绍</a></li>
+    <li><a href="#heading-1">实现</a>
+      <ul>
+        <li><a href="#-1">步骤 1</a></li>
+        <li><a href="#-2">步骤 2</a></li>
+        <li><a href="#-3">步骤 3</a></li>
+        <li><a href="#-4">步骤 4</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

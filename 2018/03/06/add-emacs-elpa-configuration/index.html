@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,9 +97,7 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <h2 id="elpa-mirror">ELPA mirror</h2>
-
-<h3 id="emacs-china镜像">Emacs China镜像</h3>
-
+<h3 id="emacs-china">Emacs China镜像</h3>
 <table>
 <thead>
 <tr>
@@ -107,49 +105,39 @@
 <th>镜像地址</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><a href="http://elpa.gnu.org/">GNU ELPA</a></td>
 <td><a href="http://elpa.emacs-china.org/gnu/">http://elpa.emacs-china.org/gnu/</a></td>
 </tr>
-
 <tr>
 <td><a href="https://melpa.org/">MELPA</a></td>
 <td><a href="http://elpa.emacs-china.org/melpa/">http://elpa.emacs-china.org/melpa/</a></td>
 </tr>
-
 <tr>
 <td><a href="http://stable.melpa.org/#/">MELPA Stable</a></td>
 <td><a href="http://elpa.emacs-china.org/melpa-stable/">http://elpa.emacs-china.org/melpa-stable/</a></td>
 </tr>
-
 <tr>
 <td><a href="Https://marmalade-repo.org/">Marmalade</a></td>
 <td><a href="http://elpa.emacs-china.org/marmalade/">http://elpa.emacs-china.org/marmalade/</a></td>
 </tr>
-
 <tr>
 <td><a href="http://orgmode.org/elpa.html">Org</a></td>
 <td><a href="http://elpa.emacs-china.org/org/">http://elpa.emacs-china.org/org/</a></td>
 </tr>
-
 <tr>
 <td><a href="https://www.emacswiki.org/emacs/Sunrise_Commander">Sunrise Commander ELPA</a></td>
 <td><a href="http://elpa.emacs-china.org/sunrise-commander/">http://elpa.emacs-china.org/sunrise-commander/</a></td>
 </tr>
-
 <tr>
 <td><a href="http://user42.tuxfamily.org/elpa/index.html">user42 ELPA</a></td>
 <td><a href="http://elpa.emacs-china.org/user42/">http://elpa.emacs-china.org/user42/</a></td>
 </tr>
 </tbody>
 </table>
-
 <p>如果需要 HTTPS，请将镜像地址中的 <code>http</code> 改成 <code>https</code> 。</p>
-
-<h3 id="清华镜像">清华镜像</h3>
-
+<h3 id="heading">清华镜像</h3>
 <table>
 <thead>
 <tr>
@@ -157,95 +145,86 @@
 <th>镜像地址</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><a href="http://elpa.gnu.org/">GNU ELPA</a></td>
 <td><a href="http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/">http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/</a></td>
 </tr>
-
 <tr>
 <td><a href="https://melpa.org/">MELPA</a></td>
 <td><a href="http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/">http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/</a></td>
 </tr>
-
 <tr>
 <td><a href="http://stable.melpa.org/#/">MELPA Stable</a></td>
 <td><a href="http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/">http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/</a></td>
 </tr>
-
 <tr>
 <td><a href="https://marmalade-repo.org/">Marmalade</a></td>
 <td><a href="http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/">http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/</a></td>
 </tr>
-
 <tr>
 <td><a href="http://orgmode.org/elpa.html">Org</a></td>
 <td><a href="http://mirrors.tuna.tsinghua.edu.cn/elpa/org/">http://mirrors.tuna.tsinghua.edu.cn/elpa/org/</a></td>
 </tr>
 </tbody>
 </table>
-
 <p><em>可以从 <a href="https://github.com/d12frosted/elpa-mirror">d12frosted/elpa-mirror</a> 下载包镜像到本地使用。</em></p>
-
-<h2 id="包管理">包管理</h2>
-
+<h2 id="heading-1">包管理</h2>
 <p>定义如下代码，即可使用 <code>use-package</code> 或 <code>require-package</code> 来安装和管理包：</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">defun</span> <span class="nv">require-package</span> <span class="p">(</span><span class="nv">package</span> <span class="kp">&amp;optional</span> <span class="nv">min-version</span> <span class="nv">no-refresh</span><span class="p">)</span>
-  <span class="s">&#34;Install given PACKAGE, optionally requiring MIN-VERSION.
+  <span class="s">&#34;</span><span class="s">Install given PACKAGE, optionally requiring MIN-VERSION.
 </span><span class="s">If NO-REFRESH is non-nil, the available package lists will not be
-</span><span class="s">re-downloaded in order to locate PACKAGE.&#34;</span>
+</span><span class="s">re-downloaded in order to locate PACKAGE.</span><span class="s">&#34;</span>
   <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nv">package-installed-p</span> <span class="nv">package</span> <span class="nv">min-version</span><span class="p">)</span>
       <span class="no">t</span>
     <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nf">assoc</span> <span class="nv">package</span> <span class="nv">package-archive-contents</span><span class="p">)</span> <span class="nv">no-refresh</span><span class="p">)</span>
         <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">boundp</span> <span class="ss">&#39;package-selected-packages</span><span class="p">)</span>
             <span class="c1">;; Record this as a package the user installed explicitly</span>
             <span class="p">(</span><span class="nv">package-install</span> <span class="nv">package</span> <span class="no">nil</span><span class="p">)</span>
-          <span class="p">(</span><span class="nv">package-install</span> <span class="nv">package</span><span class="p">))</span>
+          <span class="p">(</span><span class="nv">package-install</span> <span class="nv">package</span><span class="p">)</span><span class="p">)</span>
       <span class="p">(</span><span class="nb">progn</span>
         <span class="p">(</span><span class="nv">package-refresh-contents</span><span class="p">)</span>
-        <span class="p">(</span><span class="nv">require-package</span> <span class="nv">package</span> <span class="nv">min-version</span> <span class="no">t</span><span class="p">)))))</span>
+        <span class="p">(</span><span class="nv">require-package</span> <span class="nv">package</span> <span class="nv">min-version</span> <span class="no">t</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
 
 
 <span class="p">(</span><span class="nb">defun</span> <span class="nv">maybe-require-package</span> <span class="p">(</span><span class="nv">package</span> <span class="kp">&amp;optional</span> <span class="nv">min-version</span> <span class="nv">no-refresh</span><span class="p">)</span>
-  <span class="s">&#34;Try to install PACKAGE, and return non-nil if successful.
+  <span class="s">&#34;</span><span class="s">Try to install PACKAGE, and return non-nil if successful.
 </span><span class="s">In the event of failure, return nil and print a warning message.
 </span><span class="s">Optionally require MIN-VERSION.  If NO-REFRESH is non-nil, the
 </span><span class="s">available package lists will not be re-downloaded in order to
-</span><span class="s">locate PACKAGE.&#34;</span>
+</span><span class="s">locate PACKAGE.</span><span class="s">&#34;</span>
   <span class="p">(</span><span class="nb">condition-case</span> <span class="nv">err</span>
       <span class="p">(</span><span class="nv">require-package</span> <span class="nv">package</span> <span class="nv">min-version</span> <span class="nv">no-refresh</span><span class="p">)</span>
     <span class="p">(</span><span class="ne">error</span>
-     <span class="p">(</span><span class="nf">message</span> <span class="s">&#34;Couldn&#39;t install optional package </span><span class="ss">`%s&#39;</span><span class="s">: %S&#34;</span> <span class="nv">package</span> <span class="nv">err</span><span class="p">)</span>
-     <span class="no">nil</span><span class="p">)))</span>
+     <span class="p">(</span><span class="nf">message</span> <span class="s">&#34;</span><span class="s">Couldn&#39;t install optional package </span><span class="ss">`%s&#39;</span><span class="s">: %S</span><span class="s">&#34;</span> <span class="nv">package</span> <span class="nv">err</span><span class="p">)</span>
+     <span class="no">nil</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nb">setq</span> <span class="nv">package-archives</span>
-      <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;melpa&#34;</span> <span class="o">.</span> <span class="s">&#34;E:/GitHub/elpa-mirror/melpa&#34;</span><span class="p">)</span>
-        <span class="p">(</span><span class="s">&#34;org&#34;</span>   <span class="o">.</span> <span class="s">&#34;E:/GitHub/elpa-mirror/org&#34;</span><span class="p">)</span>
-        <span class="p">(</span><span class="s">&#34;gnu&#34;</span>   <span class="o">.</span> <span class="s">&#34;E:/GitHub/elpa-mirror/gnu&#34;</span><span class="p">)</span>
+      <span class="o">&#39;</span><span class="p">(</span><span class="p">(</span><span class="s">&#34;</span><span class="s">melpa</span><span class="s">&#34;</span> <span class="o">.</span> <span class="s">&#34;</span><span class="s">E:/GitHub/elpa-mirror/melpa</span><span class="s">&#34;</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;</span><span class="s">org</span><span class="s">&#34;</span>   <span class="o">.</span> <span class="s">&#34;</span><span class="s">E:/GitHub/elpa-mirror/org</span><span class="s">&#34;</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;</span><span class="s">gnu</span><span class="s">&#34;</span>   <span class="o">.</span> <span class="s">&#34;</span><span class="s">E:/GitHub/elpa-mirror/gnu</span><span class="s">&#34;</span><span class="p">)</span>
        <span class="p">)</span>
 <span class="p">)</span>
 
 <span class="c1">;; update the package metadata is the local cache is missing</span>
 <span class="p">(</span><span class="nb">unless</span> <span class="nv">package-archive-contents</span>
-  <span class="p">(</span><span class="nv">package-refresh-contents</span><span class="p">))</span>
+  <span class="p">(</span><span class="nv">package-refresh-contents</span><span class="p">)</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nv">package-installed-p</span> <span class="ss">&#39;use-package</span><span class="p">)</span>
   <span class="p">(</span><span class="nv">package-refresh-contents</span><span class="p">)</span>
-  <span class="p">(</span><span class="nv">package-install</span> <span class="ss">&#39;use-package</span><span class="p">))</span>
+  <span class="p">(</span><span class="nv">package-install</span> <span class="ss">&#39;use-package</span><span class="p">)</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nb">eval-when-compile</span>
-  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;use-package</span><span class="p">))</span></code></pre></div>
-<p><em>请注意修改 package-archives 中的 ELPA 源。</em></p>
-
-<h2 id="使用示例">使用示例</h2>
-
+  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;use-package</span><span class="p">)</span><span class="p">)</span>
+</code></pre></div><p><em>请注意修改 package-archives 中的 ELPA 源。</em></p>
+<h2 id="heading-2">使用示例</h2>
 <h3 id="use-package">use-package</h3>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">helm</span>
   <span class="nb">:ensure</span> <span class="no">t</span>
-  <span class="p">)</span></code></pre></div>
-<h3 id="require-package">require-package</h3>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nv">require-package</span> <span class="ss">&#39;helm</span><span class="p">)</span></code></pre></div>
+  <span class="p">)</span>
+</code></pre></div><h3 id="require-package">require-package</h3>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nv">require-package</span> <span class="ss">&#39;helm</span><span class="p">)</span>
+</code></pre></div>
         </div>
 
         
@@ -253,22 +232,21 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#elpa-mirror">ELPA mirror</a>
-<ul>
-<li><a href="#emacs-china镜像">Emacs China镜像</a></li>
-<li><a href="#清华镜像">清华镜像</a></li>
-</ul></li>
-<li><a href="#包管理">包管理</a></li>
-<li><a href="#使用示例">使用示例</a>
-<ul>
-<li><a href="#use-package">use-package</a></li>
-<li><a href="#require-package">require-package</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#elpa-mirror">ELPA mirror</a>
+      <ul>
+        <li><a href="#emacs-china">Emacs China镜像</a></li>
+        <li><a href="#heading">清华镜像</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading-1">包管理</a></li>
+    <li><a href="#heading-2">使用示例</a>
+      <ul>
+        <li><a href="#use-package">use-package</a></li>
+        <li><a href="#require-package">require-package</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

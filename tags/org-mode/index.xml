@@ -18,17 +18,15 @@
       
       <guid>http://xuchengpeng.com/2018/07/20/powerful-org-capture/</guid>
       <description>&lt;p&gt;Capture是Org mode中一个非常重要的功能，它可以：&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;capture 可以预先设置记录内容的模板和存储入口；&lt;/li&gt;
 &lt;li&gt;capture 提供统一的输入入口；&lt;/li&gt;
 &lt;li&gt;capture 用完即走，不干扰当前工作流；&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;h2 id=&#34;capture模板&#34;&gt;Capture模板&lt;/h2&gt;
-
+&lt;h2 id=&#34;capture&#34;&gt;Capture模板&lt;/h2&gt;
 &lt;p&gt;默认Capture模板样式如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;t&amp;#34;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Task&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;entry&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;file+headline&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Tasks&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;* TODO %?\n  %u\n  %a&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Task&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;entry&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;file+headline&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Tasks&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;* TODO %?&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;  %u&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;  %a&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
   </channel>

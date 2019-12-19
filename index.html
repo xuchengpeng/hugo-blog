@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -95,11 +95,11 @@
                 <div class="article-entry" itemprop="articleBody">
                     <p>
                         
-                    <p>Download clang-format from <a href="http://llvm.org">http://llvm.org</a>.</p>
-
+                    <p>Download clang-format from [<a href="http://llvm.org%5D(http://llvm.org)">http://llvm.org](http://llvm.org)</a>.</p>
 <p>Examples:</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">clang-format -style<span class="o">=</span>LLVM -i test.c
-clang-format -style<span class="o">=</span>Google -dump-config &gt; google.clang-format</code></pre></div>
+clang-format -style<span class="o">=</span>Google -dump-config &gt; google.clang-format
+</code></pre></div>
                     </p>
                     <p class="article-more-link">
                         <a href="/2018/12/22/clangformat-code/">Read More</a>
@@ -165,8 +165,8 @@ clang-format -style<span class="o">=</span>Google -dump-config &gt; google.clang
                     <p>
                         
                     <p>从 <a href="http://astyle.sourceforge.net/">astyle.sourceforge.net</a> 下载安装 astyle。</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 /path/to/code.c</code></pre></div>
-<ul>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 /path/to/code.c
+</code></pre></div><ul>
 <li>-A8 Linux style</li>
 <li>-s4 4个空格缩进</li>
 <li>-k3 指针*靠近变量</li>
@@ -175,7 +175,7 @@ clang-format -style<span class="o">=</span>Google -dump-config &gt; google.clang
 <li>-p 在操作符两边添加空格</li>
 <li>-xn 花括号在namespace之后</li>
 <li>-xc 花括号在class之后</li>
-<li>-xk 花括号在extern &ldquo;C&rdquo;之后</li>
+<li>-xk 花括号在extern &ldquo;C&quot;之后</li>
 <li>-xV do-while语句中，while在关闭花括号之后</li>
 <li>-xf 函数定义中，返回类型和函数名在同一行</li>
 <li>-xh 函数声明中，返回类型和函数名在同一行</li>
@@ -254,17 +254,17 @@ clang-format -style<span class="o">=</span>Google -dump-config &gt; google.clang
                     <p>根据时间，自动切换亮色和暗色主题。</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">setq</span> <span class="nv">day-theme</span> <span class="ss">&#39;light-blue</span><span class="p">)</span>
 <span class="p">(</span><span class="nb">setq</span> <span class="nv">dark-theme</span> <span class="ss">&#39;misterioso</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">defun</span> <span class="nv">synchronize-theme</span> <span class="p">()</span>
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">synchronize-theme</span> <span class="p">(</span><span class="p">)</span>
     <span class="p">(</span><span class="nb">setq</span> <span class="nv">hour</span>
         <span class="p">(</span><span class="nf">string-to-number</span>
-            <span class="p">(</span><span class="nf">substring</span> <span class="p">(</span><span class="nf">current-time-string</span><span class="p">)</span> <span class="mi">11</span> <span class="mi">13</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">member</span> <span class="nv">hour</span> <span class="p">(</span><span class="nv">number-sequence</span> <span class="mi">6</span> <span class="mi">18</span><span class="p">))</span>
+            <span class="p">(</span><span class="nf">substring</span> <span class="p">(</span><span class="nf">current-time-string</span><span class="p">)</span> <span class="mi">11</span> <span class="mi">13</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">member</span> <span class="nv">hour</span> <span class="p">(</span><span class="nv">number-sequence</span> <span class="mi">6</span> <span class="mi">18</span><span class="p">)</span><span class="p">)</span>
         <span class="p">(</span><span class="nb">setq</span> <span class="nv">now</span> <span class="nv">day-theme</span><span class="p">)</span>
-        <span class="p">(</span><span class="nb">setq</span> <span class="nv">now</span> <span class="nv">dark-theme</span><span class="p">))</span>
+        <span class="p">(</span><span class="nb">setq</span> <span class="nv">now</span> <span class="nv">dark-theme</span><span class="p">)</span><span class="p">)</span>
     <span class="p">(</span><span class="nv">load-theme</span> <span class="nv">now</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="p">(</span><span class="nv">run-with-timer</span> <span class="mi">0</span> <span class="mi">3600</span> <span class="ss">&#39;synchronize-theme</span><span class="p">)</span></code></pre></div>
-<p>自动切换主题的包：<a href="https://github.com/guidoschmidt/circadian.el">circadian.el</a></p>
+<span class="p">(</span><span class="nv">run-with-timer</span> <span class="mi">0</span> <span class="mi">3600</span> <span class="ss">&#39;synchronize-theme</span><span class="p">)</span>
+</code></pre></div><p>自动切换主题的包：<a href="https://github.com/guidoschmidt/circadian.el">circadian.el</a></p>
                     </p>
                     <p class="article-more-link">
                         <a href="/2018/12/06/emacs-change-theme-with-time/">Read More</a>
@@ -324,9 +324,8 @@ clang-format -style<span class="o">=</span>Google -dump-config &gt; google.clang
                 <div class="article-entry" itemprop="articleBody">
                     <p>
                         
-                    <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">apt-get install samba</code></pre></div>
-<p>修改 /etc/samba/smb.conf 文件：</p>
-
+                    <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">apt-get install samba
+</code></pre></div><p>修改 /etc/samba/smb.conf 文件：</p>
 <pre><code>[share]
   path = /
   available = yes
@@ -335,16 +334,14 @@ clang-format -style<span class="o">=</span>Google -dump-config &gt; google.clang
   browseable = yes
   public = yes
   writable = yes
-</code></pre>
-
-<p>修改Samba登陆的密码：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">smbpasswd -a root</code></pre></div>
-<blockquote>
+</code></pre><p>修改Samba登陆的密码：</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">smbpasswd -a root
+</code></pre></div><blockquote>
 <p>这里也可以使用非root用户，必须是Linux系统中已存在的用户。</p>
 </blockquote>
-
 <p>重启Samba服务：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">/etc/init.d/smbd restart</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">/etc/init.d/smbd restart
+</code></pre></div>
                     </p>
                     <p class="article-more-link">
                         <a href="/2018/11/07/ubuntu-install-samba/">Read More</a>
@@ -415,16 +412,13 @@ clang-format -style<span class="o">=</span>Google -dump-config &gt; google.clang
                     <p>
                         
                     <p>Here Documents 是 Shell 中的一种特殊的重定向方式，用来将输入重定向到一个交互式 Shell 脚本或程序。</p>
-
 <p>它的基本的形式如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">command</span> <span class="s">&lt;&lt; delimiter
 </span><span class="s">    document
-</span><span class="s">delimiter</span></code></pre></div>
-<p>它的作用是将两个 delimiter 之间的内容(document) 作为输入传递给 command。</p>
-
+</span><span class="s">delimiter</span>
+</code></pre></div><p>它的作用是将两个 delimiter 之间的内容(document) 作为输入传递给 command。</p>
 <blockquote>
 <p>注意：</p>
-
 <ul>
 <li>结尾的delimiter 一定要顶格写，前面不能有任何字符，后面也不能有任何字符，包括空格和 tab 缩进。</li>
 <li>开始的delimiter前后的空格会被忽略掉。</li>
@@ -490,27 +484,20 @@ clang-format -style<span class="o">=</span>Google -dump-config &gt; google.clang
                     <p>
                         
                     <p>除非您以前使用过正则表达式，否则您可能不熟悉一些术语。但是，毫无疑问，您已经使用过不涉及脚本的某些正则表达式概念。</p>
-
 <p>例如，您很可能使用 ? 和 * 通配符来查找硬盘上的文件。? 通配符匹配文件名中的 0 个或 1 个字符，而 * 通配符匹配零个或多个字符。像 <code>data(\w)?\.dat</code> 这样的模式将查找下列文件：</p>
-
 <pre><code>data.dat
 data1.dat
 data2.dat
 datax.dat
 dataN.dat
-</code></pre>
-
-<p>使用 * 字符代替 ? 字符扩大了找到的文件的数量。<code>data.*\.dat</code> 匹配下列所有文件：</p>
-
+</code></pre><p>使用 * 字符代替 ? 字符扩大了找到的文件的数量。<code>data.*\.dat</code> 匹配下列所有文件：</p>
 <pre><code>data.dat
 data1.dat
 data2.dat
 data12.dat
 datax.dat
 dataXYZ.dat
-</code></pre>
-
-<p>尽管这种搜索方法很有用，但它还是有限的。通过理解 * 通配符的工作原理，引入了正则表达式所依赖的概念，但正则表达式功能更强大，而且更加灵活。</p>
+</code></pre><p>尽管这种搜索方法很有用，但它还是有限的。通过理解 * 通配符的工作原理，引入了正则表达式所依赖的概念，但正则表达式功能更强大，而且更加灵活。</p>
                     </p>
                     <p class="article-more-link">
                         <a href="/2018/09/27/regular-expressions/">Read More</a>
@@ -585,20 +572,19 @@ dataXYZ.dat
     <span class="nx">Name</span> <span class="kt">string</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">base</span> <span class="o">*</span><span class="nx">Base</span><span class="p">)</span> <span class="nf">Foo</span><span class="p">()</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-<span class="kd">func</span> <span class="p">(</span><span class="nx">base</span> <span class="o">*</span><span class="nx">Base</span><span class="p">)</span> <span class="nf">Bar</span><span class="p">()</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">base</span> <span class="o">*</span><span class="nx">Base</span><span class="p">)</span> <span class="nf">Foo</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">base</span> <span class="o">*</span><span class="nx">Base</span><span class="p">)</span> <span class="nf">Bar</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 
 <span class="kd">type</span> <span class="nx">Foo</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">Base</span>
     <span class="o">...</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">foo</span> <span class="o">*</span><span class="nx">Foo</span><span class="p">)</span> <span class="nf">Bar</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">foo</span><span class="p">.</span><span class="nx">Base</span><span class="p">.</span><span class="nf">Bar</span><span class="p">()</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">foo</span> <span class="o">*</span><span class="nx">Foo</span><span class="p">)</span> <span class="nf">Bar</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">foo</span><span class="p">.</span><span class="nx">Base</span><span class="p">.</span><span class="nf">Bar</span><span class="p">(</span><span class="p">)</span>
     <span class="o">...</span>
-<span class="p">}</span></code></pre></div>
-<p>以上代码定义了一个Base类（实现了Foo()和Bar()两个成员方法），然后定义了一个Foo类，该类从Base类“继承”并改写了Bar()方法（该方法实现时先调用了基类的Bar()方法）。</p>
-
+<span class="p">}</span>
+</code></pre></div><p>以上代码定义了一个Base类（实现了Foo()和Bar()两个成员方法），然后定义了一个Foo类，该类从Base类“继承”并改写了Bar()方法（该方法实现时先调用了基类的Bar()方法）。</p>
 <p>在“派生类”Foo没有改写“基类”Base的成员方法时，相应的方法就被“继承”，例如在上面的例子中，调用foo.Foo()和调用foo.Base.Foo()效果一致。</p>
                     </p>
                     <p class="article-more-link">
@@ -660,49 +646,41 @@ dataXYZ.dat
                     <p>
                         
                     <p>变量名只能包含数字、字母和下划线，因为某些包含其他字符的变量有特殊含义，这样的变量被称为特殊变量。</p>
-
 <p>例如，$ 表示当前Shell进程的ID，即pid，看下面的代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># echo $$</span>
-<span class="m">38977</span></code></pre></div>
-<table>
+38977
+</code></pre></div><table>
 <thead>
 <tr>
 <th align="left">变量</th>
 <th align="left">含义</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">$0</td>
 <td align="left">当前脚本的文件名</td>
 </tr>
-
 <tr>
 <td align="left">$n</td>
 <td align="left">传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。</td>
 </tr>
-
 <tr>
 <td align="left">$#</td>
 <td align="left">传递给脚本或函数的参数个数</td>
 </tr>
-
 <tr>
 <td align="left">$*</td>
 <td align="left">传递给脚本或函数的所有参数</td>
 </tr>
-
 <tr>
 <td align="left">$@</td>
 <td align="left">传递给脚本或函数的所有参数。被双引号(&rdquo; &ldquo;)包含时，与 $* 稍有不同</td>
 </tr>
-
 <tr>
 <td align="left">$?</td>
 <td align="left">上个命令的退出状态，或函数的返回值</td>
 </tr>
-
 <tr>
 <td align="left">$$</td>
 <td align="left">当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID</td>
@@ -780,7 +758,8 @@ sudo apt-get build-dep emacs24
 <span class="nb">cd</span> emacs-26.1
 ./configure --prefix<span class="o">=</span>/usr/local/
 sudo make -j4
-sudo make install</code></pre></div>
+sudo make install
+</code></pre></div>
                     </p>
                     <p class="article-more-link">
                         <a href="/2018/09/19/build-emacs-on-linux/">Read More</a>
@@ -851,7 +830,6 @@ sudo make install</code></pre></div>
                     <p>
                         
                     <p>KVM 全称是 基于内核的虚拟机（Kernel-based Virtual Machine），它是Linux 的一个内核模块，该内核模块使得 Linux 变成了一个 Hypervisor：</p>
-
 <ul>
 <li>它由 Quramnet 开发，该公司于 2008年被 Red Hat 收购。</li>
 <li>它支持 x86 (32 and 64 位), s390, Powerpc 等 CPU。</li>

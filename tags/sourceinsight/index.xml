@@ -17,11 +17,11 @@
       <pubDate>Sat, 22 Dec 2018 14:39:11 +0800</pubDate>
       
       <guid>http://xuchengpeng.com/2018/12/22/clangformat-code/</guid>
-      <description>&lt;p&gt;Download clang-format from &lt;a href=&#34;http://llvm.org&#34;&gt;http://llvm.org&lt;/a&gt;.&lt;/p&gt;
-
+      <description>&lt;p&gt;Download clang-format from [&lt;a href=&#34;http://llvm.org%5D(http://llvm.org)&#34;&gt;http://llvm.org](http://llvm.org)&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;LLVM -i test.c
-clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-config &amp;gt; google.clang-format&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-config &amp;gt; google.clang-format
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -31,8 +31,8 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
       
       <guid>http://xuchengpeng.com/2018/12/20/astyle-code/</guid>
       <description>&lt;p&gt;从 &lt;a href=&#34;http://astyle.sourceforge.net/&#34;&gt;astyle.sourceforge.net&lt;/a&gt; 下载安装 astyle。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 /path/to/code.c&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 /path/to/code.c
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;-A8 Linux style&lt;/li&gt;
 &lt;li&gt;-s4 4个空格缩进&lt;/li&gt;
 &lt;li&gt;-k3 指针*靠近变量&lt;/li&gt;
@@ -41,7 +41,7 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
 &lt;li&gt;-p 在操作符两边添加空格&lt;/li&gt;
 &lt;li&gt;-xn 花括号在namespace之后&lt;/li&gt;
 &lt;li&gt;-xc 花括号在class之后&lt;/li&gt;
-&lt;li&gt;-xk 花括号在extern &amp;ldquo;C&amp;rdquo;之后&lt;/li&gt;
+&lt;li&gt;-xk 花括号在extern &amp;ldquo;C&amp;quot;之后&lt;/li&gt;
 &lt;li&gt;-xV do-while语句中，while在关闭花括号之后&lt;/li&gt;
 &lt;li&gt;-xf 函数定义中，返回类型和函数名在同一行&lt;/li&gt;
 &lt;li&gt;-xh 函数声明中，返回类型和函数名在同一行&lt;/li&gt;

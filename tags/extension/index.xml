@@ -27,9 +27,7 @@
       
       <guid>http://xuchengpeng.com/2017/11/27/chrome-ext-tampermonkey/</guid>
       <description>&lt;p&gt;不装扩展（Extensions）的 Chrome 只能发挥它 40% 的能力。&lt;/p&gt;
-
 &lt;p&gt;各类实用的 Chrome 扩展是不少人选择 Chrome 浏览器的重要原因，经过多年发展，Chrome 的扩展种类已经非常丰富，除了那些「即装即用」的小工具之外，也有很多被誉为「神器」的强大扩展程序。&lt;/p&gt;
-
 &lt;p&gt;少数派此前介绍过的 Stylish 就算一款「神器」，通过安装各类 CSS 模板，它几乎可以美化一切网页。而另一款不得不提的「神器」就是今天要介绍的 Tampermonkey，也被戏称为「油猴」。&lt;/p&gt;</description>
     </item>
     

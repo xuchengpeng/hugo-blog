@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -99,124 +99,113 @@
             <p>装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。
 这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
 我们通过下面的实例来演示装饰器模式的用法。其中，我们将把一个形状装饰上不同的颜色，同时又不改变形状类。</p>
-
-<h2 id="介绍">介绍</h2>
-
+<h2 id="heading">介绍</h2>
 <p>意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。
 主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。
 何时使用：在不想增加很多子类的情况下扩展类。
 如何解决：将具体功能职责划分，同时继承装饰者模式。
 关键代码： 1、Component 类充当抽象角色，不应该具体实现。 2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。
-应用实例： 1、孙悟空有 72 变，当他变成&rdquo;庙宇&rdquo;后，他的根本还是一只猴子，但是他又有了庙宇的功能。 2、不论一幅画有没有画框都可以挂在墙上，但是通常都是有画框的，并且实际上是画框被挂在墙上。在挂在墙上之前，画可以被蒙上玻璃，装到框子里；这时画、玻璃和画框形成了一个物体。
+应用实例： 1、孙悟空有 72 变，当他变成&quot;庙宇&quot;后，他的根本还是一只猴子，但是他又有了庙宇的功能。 2、不论一幅画有没有画框都可以挂在墙上，但是通常都是有画框的，并且实际上是画框被挂在墙上。在挂在墙上之前，画可以被蒙上玻璃，装到框子里；这时画、玻璃和画框形成了一个物体。
 优点：装饰类和被装饰类可以独立发展，不会相互耦合，装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能。
 缺点：多层装饰比较复杂。
 使用场景： 1、扩展一个类的功能。 2、动态增加功能，动态撤销。
 注意事项：可代替继承。</p>
-
-<h2 id="实现">实现</h2>
-
+<h2 id="heading-1">实现</h2>
 <p>我们将创建一个 Shape 接口和实现了 Shape 接口的实体类。然后我们创建一个实现了 Shape 接口的抽象装饰类 ShapeDecorator，并把 Shape 对象作为它的实例变量。
 RedShapeDecorator 是实现了 ShapeDecorator 的实体类。
 DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shape 对象。</p>
-
-<p><img src="/images/design-pattern/decorator_pattern_uml_diagram.jpg" alt="" /></p>
-
-<h3 id="步骤-1">步骤 1</h3>
-
+<p><img src="/images/design-pattern/decorator_pattern_uml_diagram.jpg" alt=""></p>
+<h3 id="-1">步骤 1</h3>
 <p>创建一个接口。
 <em>Shape.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">Shape</span> <span class="p">{</span>
-   <span class="kt">void</span> <span class="nf">draw</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-2">步骤 2</h3>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Shape</span> <span class="o">{</span>
+   <span class="kt">void</span> <span class="nf">draw</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-2">步骤 2</h3>
 <p>创建实现接口的实体类。
 <em>Rectangle.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Rectangle</span> <span class="nf">implements</span> <span class="n">Shape</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">draw</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Shape: Rectangle&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>Circle.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Circle</span> <span class="nf">implements</span> <span class="n">Shape</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">draw</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Shape: Rectangle&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>Circle.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">draw</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Shape: Circle&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-3">步骤 3</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">draw</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Shape: Circle&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-3">步骤 3</h3>
 <p>创建实现了 Shape 接口的抽象装饰类。
 <em>ShapeDecorator.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">abstract</span> <span class="kd">class</span> <span class="nf">ShapeDecorator</span> <span class="kd">implements</span> <span class="nf">Shape</span> <span class="p">{</span>
-   <span class="kd">protected</span> <span class="nf">Shape</span> <span class="n">decoratedShape</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">ShapeDecorator</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="o">{</span>
+   <span class="kd">protected</span> <span class="n">Shape</span> <span class="n">decoratedShape</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">ShapeDecorator</span><span class="p">(</span><span class="n">Shape</span> <span class="nf">decoratedShape</span><span class="p">){</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">decoratedShape</span> <span class="o">=</span> <span class="n">decoratedShape</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="nf">ShapeDecorator</span><span class="o">(</span><span class="n">Shape</span> <span class="n">decoratedShape</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">decoratedShape</span> <span class="o">=</span> <span class="n">decoratedShape</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">draw</span><span class="p">(){</span>
-      <span class="n">decoratedShape</span><span class="p">.</span><span class="na">draw</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-4">步骤 4</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">draw</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">decoratedShape</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-4">步骤 4</h3>
 <p>创建扩展了 ShapeDecorator 类的实体装饰类。
 <em>RedShapeDecorator.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">RedShapeDecorator</span> <span class="nf">extends</span> <span class="n">ShapeDecorator</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RedShapeDecorator</span> <span class="kd">extends</span> <span class="n">ShapeDecorator</span> <span class="o">{</span>
 
-   <span class="kd">public</span> <span class="nf">RedShapeDecorator</span><span class="p">(</span><span class="n">Shape</span> <span class="nf">decoratedShape</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">super</span><span class="p">(</span><span class="n">decoratedShape</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="nf">RedShapeDecorator</span><span class="o">(</span><span class="n">Shape</span> <span class="n">decoratedShape</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kd">super</span><span class="o">(</span><span class="n">decoratedShape</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">draw</span><span class="p">()</span> <span class="p">{</span>
-      <span class="n">decoratedShape</span><span class="p">.</span><span class="na">draw</span><span class="p">();</span>
-      <span class="n">setRedBorder</span><span class="p">(</span><span class="n">decoratedShape</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">draw</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">decoratedShape</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">setRedBorder</span><span class="o">(</span><span class="n">decoratedShape</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">private</span> <span class="nf">void</span> <span class="n">setRedBorder</span><span class="p">(</span><span class="n">Shape</span> <span class="nf">decoratedShape</span><span class="p">){</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Border Color: Red&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-5">步骤 5</h3>
-
+   <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setRedBorder</span><span class="o">(</span><span class="n">Shape</span> <span class="n">decoratedShape</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Border Color: Red&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-5">步骤 5</h3>
 <p>使用 RedShapeDecorator 来装饰 Shape 对象。
 <em>DecoratorPatternDemo.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">DecoratorPatternDemo</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DecoratorPatternDemo</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
-      <span class="n">Shape</span> <span class="nf">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">();</span>
+      <span class="n">Shape</span> <span class="n">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">Shape</span> <span class="nf">redCircle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RedShapeDecorator</span><span class="p">(</span><span class="k">new</span> <span class="n">Circle</span><span class="p">());</span>
+      <span class="n">Shape</span> <span class="n">redCircle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RedShapeDecorator</span><span class="o">(</span><span class="k">new</span> <span class="n">Circle</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">Shape</span> <span class="nf">redRectangle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RedShapeDecorator</span><span class="p">(</span><span class="k">new</span> <span class="n">Rectangle</span><span class="p">());</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Circle with normal border&#34;</span><span class="p">);</span>
-      <span class="n">circle</span><span class="p">.</span><span class="na">draw</span><span class="p">();</span>
+      <span class="n">Shape</span> <span class="n">redRectangle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RedShapeDecorator</span><span class="o">(</span><span class="k">new</span> <span class="n">Rectangle</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Circle with normal border&#34;</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">circle</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;\nCircle of red border&#34;</span><span class="p">);</span>
-      <span class="n">redCircle</span><span class="p">.</span><span class="na">draw</span><span class="p">();</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;\nCircle of red border&#34;</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">redCircle</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;\nRectangle of red border&#34;</span><span class="p">);</span>
-      <span class="n">redRectangle</span><span class="p">.</span><span class="na">draw</span><span class="p">();</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-6">步骤 6</h3>
-
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;\nRectangle of red border&#34;</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">redRectangle</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-6">步骤 6</h3>
 <p>验证输出。</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Circle</span> <span class="nf">with</span> <span class="n">normal</span> <span class="nf">border</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Circle</span> <span class="n">with</span> <span class="n">normal</span> <span class="n">border</span>
 <span class="nl">Shape:</span> <span class="n">Circle</span>
 
-<span class="nf">Circle</span> <span class="n">of</span> <span class="nf">red</span> <span class="n">border</span>
-<span class="nf">Shape</span><span class="o">:</span> <span class="n">Circle</span>
-<span class="nf">Border</span> <span class="n">Color</span><span class="o">:</span> <span class="n">Red</span>
+<span class="n">Circle</span> <span class="n">of</span> <span class="n">red</span> <span class="n">border</span>
+<span class="nl">Shape:</span> <span class="n">Circle</span>
+<span class="n">Border</span> <span class="n">Color</span><span class="o">:</span> <span class="n">Red</span>
 
-<span class="nf">Rectangle</span> <span class="n">of</span> <span class="nf">red</span> <span class="n">border</span>
-<span class="nf">Shape</span><span class="o">:</span> <span class="n">Rectangle</span>
-<span class="nf">Border</span> <span class="n">Color</span><span class="o">:</span> <span class="n">Red</span></code></pre></div>
+<span class="n">Rectangle</span> <span class="n">of</span> <span class="n">red</span> <span class="n">border</span>
+<span class="nl">Shape:</span> <span class="n">Rectangle</span>
+<span class="n">Border</span> <span class="n">Color</span><span class="o">:</span> <span class="n">Red</span>
+</code></pre></div>
         </div>
 
         
@@ -224,21 +213,19 @@ DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shap
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#实现">实现</a>
-<ul>
-<li><a href="#步骤-1">步骤 1</a></li>
-<li><a href="#步骤-2">步骤 2</a></li>
-<li><a href="#步骤-3">步骤 3</a></li>
-<li><a href="#步骤-4">步骤 4</a></li>
-<li><a href="#步骤-5">步骤 5</a></li>
-<li><a href="#步骤-6">步骤 6</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">介绍</a></li>
+    <li><a href="#heading-1">实现</a>
+      <ul>
+        <li><a href="#-1">步骤 1</a></li>
+        <li><a href="#-2">步骤 2</a></li>
+        <li><a href="#-3">步骤 3</a></li>
+        <li><a href="#-4">步骤 4</a></li>
+        <li><a href="#-5">步骤 5</a></li>
+        <li><a href="#-6">步骤 6</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,122 +97,111 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>传输对象模式（Transfer Object Pattern）用于从客户端向服务器一次性传递带有多个属性的数据。传输对象也被称为数值对象。传输对象是一个具有 getter/setter 方法的简单的 POJO 类，它是可序列化的，所以它可以通过网络传输。它没有任何的行为。服务器端的业务类通常从数据库读取数据，然后填充 POJO，并把它发送到客户端或按值传递它。对于客户端，传输对象是只读的。客户端可以创建自己的传输对象，并把它传递给服务器，以便一次性更新数据库中的数值。以下是这种设计模式的实体。</p>
-
 <p>业务对象（Business Object） - 为传输对象填充数据的业务服务。
 传输对象（Transfer Object） - 简单的 POJO，只有设置/获取属性的方法。
 客户端（Client） - 客户端可以发送请求或者发送传输对象到业务对象。</p>
-
-<h2 id="实现">实现</h2>
-
+<h2 id="heading">实现</h2>
 <p>我们将创建一个作为业务对象的 StudentBO 和作为传输对象的 StudentVO，它们都代表了我们的实体。
 TransferObjectPatternDemo，我们的演示类在这里是作为一个客户端，将使用 StudentBO 和 Student 来演示传输对象设计模式。</p>
-
-<p><img src="/images/design-pattern/transferobject_pattern_uml_diagram.jpg" alt="" /></p>
-
-<h3 id="步骤-1">步骤 1</h3>
-
+<p><img src="/images/design-pattern/transferobject_pattern_uml_diagram.jpg" alt=""></p>
+<h3 id="-1">步骤 1</h3>
 <p>创建传输对象。</p>
-
 <p><em>StudentVO.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">StudentVO</span> <span class="p">{</span>
-   <span class="kd">private</span> <span class="nf">String</span> <span class="n">name</span><span class="p">;</span>
-   <span class="kd">private</span> <span class="nf">int</span> <span class="n">rollNo</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StudentVO</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+   <span class="kd">private</span> <span class="kt">int</span> <span class="n">rollNo</span><span class="o">;</span>
 
-   <span class="n">StudentVO</span><span class="p">(</span><span class="n">String</span> <span class="nf">name</span><span class="p">,</span> <span class="kt">int</span> <span class="nf">rollNo</span><span class="p">){</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">rollNo</span> <span class="o">=</span> <span class="n">rollNo</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="n">StudentVO</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">rollNo</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">rollNo</span> <span class="o">=</span> <span class="n">rollNo</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">getName</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setName</span><span class="p">(</span><span class="n">String</span> <span class="nf">name</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">int</span> <span class="n">getRollNo</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">rollNo</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getRollNo</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">rollNo</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setRollNo</span><span class="p">(</span><span class="kt">int</span> <span class="nf">rollNo</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">rollNo</span> <span class="o">=</span> <span class="n">rollNo</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-2">步骤 2</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRollNo</span><span class="o">(</span><span class="kt">int</span> <span class="n">rollNo</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">rollNo</span> <span class="o">=</span> <span class="n">rollNo</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-2">步骤 2</h3>
 <p>创建业务对象。</p>
-
 <p><em>StudentBO.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">ArrayList</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">List</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">StudentBO</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">StudentBO</span> <span class="o">{</span>
 
    <span class="c1">//列表是当作一个数据库
-</span><span class="c1"></span>   <span class="n">List</span><span class="o">&lt;</span><span class="n">StudentVO</span><span class="o">&gt;</span> <span class="nf">students</span><span class="p">;</span>
+</span><span class="c1"></span>   <span class="n">List</span><span class="o">&lt;</span><span class="n">StudentVO</span><span class="o">&gt;</span> <span class="n">students</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">StudentBO</span><span class="p">(){</span>
-      <span class="n">students</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">StudentVO</span><span class="o">&gt;</span><span class="p">();</span>
-      <span class="n">StudentVO</span> <span class="nf">student1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StudentVO</span><span class="p">(</span><span class="s">&#34;Robert&#34;</span><span class="p">,</span><span class="n">0</span><span class="p">);</span>
-      <span class="n">StudentVO</span> <span class="nf">student2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StudentVO</span><span class="p">(</span><span class="s">&#34;John&#34;</span><span class="p">,</span><span class="n">1</span><span class="p">);</span>
-      <span class="n">students</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">student1</span><span class="p">);</span>
-      <span class="n">students</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">student2</span><span class="p">);</span>
-   <span class="p">}</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">deleteStudent</span><span class="p">(</span><span class="n">StudentVO</span> <span class="nf">student</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">students</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">());</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Student: Roll No &#34;</span>
-      <span class="o">+</span> <span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()</span> <span class="o">+</span><span class="s">&#34;, deleted from database&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="nf">StudentBO</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">students</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">StudentVO</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">StudentVO</span> <span class="n">student1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StudentVO</span><span class="o">(</span><span class="s">&#34;Robert&#34;</span><span class="o">,</span><span class="n">0</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">StudentVO</span> <span class="n">student2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StudentVO</span><span class="o">(</span><span class="s">&#34;John&#34;</span><span class="o">,</span><span class="n">1</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">students</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">student1</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">students</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">student2</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deleteStudent</span><span class="o">(</span><span class="n">StudentVO</span> <span class="n">student</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">students</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">student</span><span class="o">.</span><span class="na">getRollNo</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Student: Roll No &#34;</span>
+      <span class="o">+</span> <span class="n">student</span><span class="o">.</span><span class="na">getRollNo</span><span class="o">(</span><span class="o">)</span> <span class="o">+</span><span class="s">&#34;, deleted from database&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="c1">//从数据库中检索学生名单
-</span><span class="c1"></span>   <span class="kd">public</span> <span class="nf">List</span><span class="o">&lt;</span><span class="n">StudentVO</span><span class="o">&gt;</span> <span class="nf">getAllStudents</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">students</span><span class="p">;</span>
-   <span class="p">}</span>
+</span><span class="c1"></span>   <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">StudentVO</span><span class="o">&gt;</span> <span class="nf">getAllStudents</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">students</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">StudentVO</span> <span class="n">getStudent</span><span class="p">(</span><span class="kt">int</span> <span class="nf">rollNo</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">students</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rollNo</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="n">StudentVO</span> <span class="nf">getStudent</span><span class="o">(</span><span class="kt">int</span> <span class="n">rollNo</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">students</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">rollNo</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">updateStudent</span><span class="p">(</span><span class="n">StudentVO</span> <span class="nf">student</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">students</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()).</span><span class="na">setName</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Student: Roll No &#34;</span>
-      <span class="o">+</span> <span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()</span> <span class="o">+</span><span class="s">&#34;, updated in the database&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-3">步骤 3</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">updateStudent</span><span class="o">(</span><span class="n">StudentVO</span> <span class="n">student</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">students</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">student</span><span class="o">.</span><span class="na">getRollNo</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="n">student</span><span class="o">.</span><span class="na">getName</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Student: Roll No &#34;</span>
+      <span class="o">+</span> <span class="n">student</span><span class="o">.</span><span class="na">getRollNo</span><span class="o">(</span><span class="o">)</span> <span class="o">+</span><span class="s">&#34;, updated in the database&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-3">步骤 3</h3>
 <p>使用 StudentBO 来演示传输对象设计模式。</p>
-
 <p><em>TransferObjectPatternDemo.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">TransferObjectPatternDemo</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">StudentBO</span> <span class="nf">studentBusinessObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StudentBO</span><span class="p">();</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TransferObjectPatternDemo</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">StudentBO</span> <span class="n">studentBusinessObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StudentBO</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
       <span class="c1">//输出所有的学生
-</span><span class="c1"></span>      <span class="k">for</span> <span class="p">(</span><span class="n">StudentVO</span> <span class="nf">student</span> <span class="o">:</span> <span class="n">studentBusinessObject</span><span class="p">.</span><span class="na">getAllStudents</span><span class="p">())</span> <span class="p">{</span>
-         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Student: [RollNo : &#34;</span>
-         <span class="o">+</span><span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()</span><span class="o">+</span><span class="s">&#34;, Name : &#34;</span><span class="o">+</span><span class="n">student</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="o">+</span><span class="s">&#34; ]&#34;</span><span class="p">);</span>
-      <span class="p">}</span>
+</span><span class="c1"></span>      <span class="k">for</span> <span class="o">(</span><span class="n">StudentVO</span> <span class="n">student</span> <span class="o">:</span> <span class="n">studentBusinessObject</span><span class="o">.</span><span class="na">getAllStudents</span><span class="o">(</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
+         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Student: [RollNo : &#34;</span>
+         <span class="o">+</span><span class="n">student</span><span class="o">.</span><span class="na">getRollNo</span><span class="o">(</span><span class="o">)</span><span class="o">+</span><span class="s">&#34;, Name : &#34;</span><span class="o">+</span><span class="n">student</span><span class="o">.</span><span class="na">getName</span><span class="o">(</span><span class="o">)</span><span class="o">+</span><span class="s">&#34; ]&#34;</span><span class="o">)</span><span class="o">;</span>
+      <span class="o">}</span>
 
       <span class="c1">//更新学生
-</span><span class="c1"></span>      <span class="n">StudentVO</span> <span class="nf">student</span> <span class="o">=</span><span class="n">studentBusinessObject</span><span class="p">.</span><span class="na">getAllStudents</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>
-      <span class="n">student</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="s">&#34;Michael&#34;</span><span class="p">);</span>
-      <span class="n">studentBusinessObject</span><span class="p">.</span><span class="na">updateStudent</span><span class="p">(</span><span class="n">student</span><span class="p">);</span>
+</span><span class="c1"></span>      <span class="n">StudentVO</span> <span class="n">student</span> <span class="o">=</span><span class="n">studentBusinessObject</span><span class="o">.</span><span class="na">getAllStudents</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">student</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;Michael&#34;</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">studentBusinessObject</span><span class="o">.</span><span class="na">updateStudent</span><span class="o">(</span><span class="n">student</span><span class="o">)</span><span class="o">;</span>
 
       <span class="c1">//获取学生
-</span><span class="c1"></span>      <span class="n">studentBusinessObject</span><span class="p">.</span><span class="na">getStudent</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Student: [RollNo : &#34;</span>
-      <span class="o">+</span><span class="n">student</span><span class="p">.</span><span class="na">getRollNo</span><span class="p">()</span><span class="o">+</span><span class="s">&#34;, Name : &#34;</span><span class="o">+</span><span class="n">student</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="o">+</span><span class="s">&#34; ]&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-4">步骤 4</h3>
-
+</span><span class="c1"></span>      <span class="n">studentBusinessObject</span><span class="o">.</span><span class="na">getStudent</span><span class="o">(</span><span class="n">0</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Student: [RollNo : &#34;</span>
+      <span class="o">+</span><span class="n">student</span><span class="o">.</span><span class="na">getRollNo</span><span class="o">(</span><span class="o">)</span><span class="o">+</span><span class="s">&#34;, Name : &#34;</span><span class="o">+</span><span class="n">student</span><span class="o">.</span><span class="na">getName</span><span class="o">(</span><span class="o">)</span><span class="o">+</span><span class="s">&#34; ]&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-4">步骤 4</h3>
 <p>验证输出。</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nl">Student:</span> <span class="p">[</span><span class="n">RollNo</span> <span class="o">:</span> <span class="n">0</span><span class="p">,</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Robert</span> <span class="p">]</span>
-<span class="nl">Student:</span> <span class="p">[</span><span class="n">RollNo</span> <span class="o">:</span> <span class="n">1</span><span class="p">,</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">John</span> <span class="p">]</span>
-<span class="nl">Student:</span> <span class="n">Roll</span> <span class="nf">No</span> <span class="n">0</span><span class="p">,</span> <span class="n">updated</span> <span class="nf">in</span> <span class="n">the</span> <span class="nf">database</span>
-<span class="nl">Student:</span> <span class="p">[</span><span class="n">RollNo</span> <span class="o">:</span> <span class="n">0</span><span class="p">,</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Michael</span> <span class="p">]</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nl">Student:</span> <span class="o">[</span><span class="n">RollNo</span> <span class="o">:</span> <span class="n">0</span><span class="o">,</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Robert</span> <span class="o">]</span>
+<span class="nl">Student:</span> <span class="o">[</span><span class="n">RollNo</span> <span class="o">:</span> <span class="n">1</span><span class="o">,</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">John</span> <span class="o">]</span>
+<span class="nl">Student:</span> <span class="n">Roll</span> <span class="n">No</span> <span class="n">0</span><span class="o">,</span> <span class="n">updated</span> <span class="n">in</span> <span class="n">the</span> <span class="n">database</span>
+<span class="nl">Student:</span> <span class="o">[</span><span class="n">RollNo</span> <span class="o">:</span> <span class="n">0</span><span class="o">,</span> <span class="n">Name</span> <span class="o">:</span> <span class="n">Michael</span> <span class="o">]</span>
+</code></pre></div>
         </div>
 
         
@@ -220,18 +209,16 @@ TransferObjectPatternDemo，我们的演示类在这里是作为一个客户端�
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#实现">实现</a>
-<ul>
-<li><a href="#步骤-1">步骤 1</a></li>
-<li><a href="#步骤-2">步骤 2</a></li>
-<li><a href="#步骤-3">步骤 3</a></li>
-<li><a href="#步骤-4">步骤 4</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">实现</a>
+      <ul>
+        <li><a href="#-1">步骤 1</a></li>
+        <li><a href="#-2">步骤 2</a></li>
+        <li><a href="#-3">步骤 3</a></li>
+        <li><a href="#-4">步骤 4</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

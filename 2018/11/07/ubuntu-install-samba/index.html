@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -96,9 +96,8 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">apt-get install samba</code></pre></div>
-<p>修改 /etc/samba/smb.conf 文件：</p>
-
+            <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">apt-get install samba
+</code></pre></div><p>修改 /etc/samba/smb.conf 文件：</p>
 <pre><code>[share]
   path = /
   available = yes
@@ -107,19 +106,22 @@
   browseable = yes
   public = yes
   writable = yes
-</code></pre>
-
-<p>修改Samba登陆的密码：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">smbpasswd -a root</code></pre></div>
-<blockquote>
+</code></pre><p>修改Samba登陆的密码：</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">smbpasswd -a root
+</code></pre></div><blockquote>
 <p>这里也可以使用非root用户，必须是Linux系统中已存在的用户。</p>
 </blockquote>
-
 <p>重启Samba服务：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">/etc/init.d/smbd restart</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">/etc/init.d/smbd restart
+</code></pre></div>
         </div>
 
         
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents"></nav>
+        </div>
         
         
 

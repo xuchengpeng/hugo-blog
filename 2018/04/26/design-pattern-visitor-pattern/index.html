@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,132 +97,121 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>在访问者模式（Visitor Pattern）中，我们使用了一个访问者类，它改变了元素类的执行算法。通过这种方式，元素的执行算法可以随着访问者改变而改变。这种类型的设计模式属于行为型模式。根据模式，元素对象已接受访问者对象，这样访问者对象就可以处理元素对象上的操作。</p>
-
-<h2 id="介绍">介绍</h2>
-
+<h2 id="heading">介绍</h2>
 <p>意图：主要将数据结构与数据操作分离。
 主要解决：稳定的数据结构和易变的操作耦合问题。
-何时使用：需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&rdquo;污染&rdquo;这些对象的类，使用访问者模式将这些封装到类中。
+何时使用：需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&quot;污染&quot;这些对象的类，使用访问者模式将这些封装到类中。
 如何解决：在被访问的类里面加一个对外提供接待访问者的接口。
 关键代码：在数据基础类里面有一个方法接受访问者，将自身引用传入访问者。
 应用实例：您在朋友家做客，您是访问者，朋友接受您的访问，您通过朋友的描述，然后对朋友的描述做出一个判断，这就是访问者模式。
 优点： 1、符合单一职责原则。 2、优秀的扩展性。 3、灵活性。
 缺点： 1、具体元素对访问者公布细节，违反了迪米特原则。 2、具体元素变更比较困难。 3、违反了依赖倒置原则，依赖了具体类，没有依赖抽象。
-使用场景： 1、对象结构中对象对应的类很少改变，但经常需要在此对象结构上定义新的操作。 2、需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&rdquo;污染&rdquo;这些对象的类，也不希望在增加新操作时修改这些类。
+使用场景： 1、对象结构中对象对应的类很少改变，但经常需要在此对象结构上定义新的操作。 2、需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&quot;污染&quot;这些对象的类，也不希望在增加新操作时修改这些类。
 注意事项：访问者可以对功能进行统一，可以做报表、UI、拦截器与过滤器。</p>
-
-<h2 id="实现">实现</h2>
-
+<h2 id="heading-1">实现</h2>
 <p>我们将创建一个定义接受操作的 ComputerPart 接口。Keyboard、Mouse、Monitor 和 Computer 是实现了 ComputerPart 接口的实体类。我们将定义另一个接口 ComputerPartVisitor，它定义了访问者类的操作。Computer 使用实体访问者来执行相应的动作。
 VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类来演示访问者模式的用法。</p>
-
-<p><img src="/images/design-pattern/visitor_pattern_uml_diagram.jpg" alt="" /></p>
-
-<h3 id="步骤-1">步骤 1</h3>
-
+<p><img src="/images/design-pattern/visitor_pattern_uml_diagram.jpg" alt=""></p>
+<h3 id="-1">步骤 1</h3>
 <p>定义一个表示元素的接口。
 <em>ComputerPart.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">ComputerPart</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">accept</span><span class="p">(</span><span class="n">ComputerPartVisitor</span> <span class="nf">computerPartVisitor</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-2">步骤 2</h3>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ComputerPart</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="n">ComputerPartVisitor</span> <span class="n">computerPartVisitor</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-2">步骤 2</h3>
 <p>创建扩展了上述类的实体类。
 <em>Keyboard.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Keyboard</span>  <span class="nf">implements</span> <span class="n">ComputerPart</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Keyboard</span>  <span class="kd">implements</span> <span class="n">ComputerPart</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">accept</span><span class="p">(</span><span class="n">ComputerPartVisitor</span> <span class="nf">computerPartVisitor</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">computerPartVisitor</span><span class="p">.</span><span class="na">visit</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>Monitor.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Monitor</span>  <span class="nf">implements</span> <span class="n">ComputerPart</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="n">ComputerPartVisitor</span> <span class="n">computerPartVisitor</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">computerPartVisitor</span><span class="o">.</span><span class="na">visit</span><span class="o">(</span><span class="k">this</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>Monitor.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Monitor</span>  <span class="kd">implements</span> <span class="n">ComputerPart</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">accept</span><span class="p">(</span><span class="n">ComputerPartVisitor</span> <span class="nf">computerPartVisitor</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">computerPartVisitor</span><span class="p">.</span><span class="na">visit</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>Mouse.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Mouse</span>  <span class="nf">implements</span> <span class="n">ComputerPart</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="n">ComputerPartVisitor</span> <span class="n">computerPartVisitor</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">computerPartVisitor</span><span class="o">.</span><span class="na">visit</span><span class="o">(</span><span class="k">this</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>Mouse.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Mouse</span>  <span class="kd">implements</span> <span class="n">ComputerPart</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">accept</span><span class="p">(</span><span class="n">ComputerPartVisitor</span> <span class="nf">computerPartVisitor</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">computerPartVisitor</span><span class="p">.</span><span class="na">visit</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>Computer.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Computer</span> <span class="nf">implements</span> <span class="n">ComputerPart</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="n">ComputerPartVisitor</span> <span class="n">computerPartVisitor</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">computerPartVisitor</span><span class="o">.</span><span class="na">visit</span><span class="o">(</span><span class="k">this</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>Computer.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Computer</span> <span class="kd">implements</span> <span class="n">ComputerPart</span> <span class="o">{</span>
 
-   <span class="n">ComputerPart</span><span class="p">[]</span> <span class="nf">parts</span><span class="p">;</span>
+   <span class="n">ComputerPart</span><span class="o">[</span><span class="o">]</span> <span class="n">parts</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">Computer</span><span class="p">(){</span>
-      <span class="n">parts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ComputerPart</span><span class="p">[]</span> <span class="p">{</span><span class="k">new</span> <span class="n">Mouse</span><span class="p">(),</span> <span class="k">new</span> <span class="n">Keyboard</span><span class="p">(),</span> <span class="k">new</span> <span class="n">Monitor</span><span class="p">()};</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="nf">Computer</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">parts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ComputerPart</span><span class="o">[</span><span class="o">]</span> <span class="o">{</span><span class="k">new</span> <span class="n">Mouse</span><span class="o">(</span><span class="o">)</span><span class="o">,</span> <span class="k">new</span> <span class="n">Keyboard</span><span class="o">(</span><span class="o">)</span><span class="o">,</span> <span class="k">new</span> <span class="n">Monitor</span><span class="o">(</span><span class="o">)</span><span class="o">}</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">accept</span><span class="p">(</span><span class="n">ComputerPartVisitor</span> <span class="nf">computerPartVisitor</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">parts</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-         <span class="n">parts</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="na">accept</span><span class="p">(</span><span class="n">computerPartVisitor</span><span class="p">);</span>
-      <span class="p">}</span>
-      <span class="n">computerPartVisitor</span><span class="p">.</span><span class="na">visit</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-3">步骤 3</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="n">ComputerPartVisitor</span> <span class="n">computerPartVisitor</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">parts</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">+</span><span class="o">+</span><span class="o">)</span> <span class="o">{</span>
+         <span class="n">parts</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="n">computerPartVisitor</span><span class="o">)</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="n">computerPartVisitor</span><span class="o">.</span><span class="na">visit</span><span class="o">(</span><span class="k">this</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-3">步骤 3</h3>
 <p>定义一个表示访问者的接口。
 <em>ComputerPartVisitor.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">ComputerPartVisitor</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="nf">void</span> <span class="n">visit</span><span class="p">(</span><span class="n">Computer</span> <span class="nf">computer</span><span class="p">);</span>
-    <span class="kd">public</span> <span class="nf">void</span> <span class="n">visit</span><span class="p">(</span><span class="n">Mouse</span> <span class="nf">mouse</span><span class="p">);</span>
-    <span class="kd">public</span> <span class="nf">void</span> <span class="n">visit</span><span class="p">(</span><span class="n">Keyboard</span> <span class="nf">keyboard</span><span class="p">);</span>
-    <span class="kd">public</span> <span class="nf">void</span> <span class="n">visit</span><span class="p">(</span><span class="n">Monitor</span> <span class="nf">monitor</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-4">步骤 4</h3>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ComputerPartVisitor</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">visit</span><span class="o">(</span><span class="n">Computer</span> <span class="n">computer</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">visit</span><span class="o">(</span><span class="n">Mouse</span> <span class="n">mouse</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">visit</span><span class="o">(</span><span class="n">Keyboard</span> <span class="n">keyboard</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">visit</span><span class="o">(</span><span class="n">Monitor</span> <span class="n">monitor</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-4">步骤 4</h3>
 <p>创建实现了上述类的实体访问者。
 <em>ComputerPartDisplayVisitor.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">ComputerPartDisplayVisitor</span> <span class="nf">implements</span> <span class="n">ComputerPartVisitor</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ComputerPartDisplayVisitor</span> <span class="kd">implements</span> <span class="n">ComputerPartVisitor</span> <span class="o">{</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">visit</span><span class="p">(</span><span class="n">Computer</span> <span class="nf">computer</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Displaying Computer.&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">visit</span><span class="o">(</span><span class="n">Computer</span> <span class="n">computer</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Displaying Computer.&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">visit</span><span class="p">(</span><span class="n">Mouse</span> <span class="nf">mouse</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Displaying Mouse.&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">visit</span><span class="o">(</span><span class="n">Mouse</span> <span class="n">mouse</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Displaying Mouse.&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">visit</span><span class="p">(</span><span class="n">Keyboard</span> <span class="nf">keyboard</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Displaying Keyboard.&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">visit</span><span class="o">(</span><span class="n">Keyboard</span> <span class="n">keyboard</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Displaying Keyboard.&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">visit</span><span class="p">(</span><span class="n">Monitor</span> <span class="nf">monitor</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Displaying Monitor.&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-5">步骤 5</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">visit</span><span class="o">(</span><span class="n">Monitor</span> <span class="n">monitor</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Displaying Monitor.&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-5">步骤 5</h3>
 <p>使用 ComputerPartDisplayVisitor 来显示 Computer 的组成部分。
 <em>VisitorPatternDemo.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">VisitorPatternDemo</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">VisitorPatternDemo</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
-      <span class="n">ComputerPart</span> <span class="nf">computer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Computer</span><span class="p">();</span>
-      <span class="n">computer</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="k">new</span> <span class="n">ComputerPartDisplayVisitor</span><span class="p">());</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-6">步骤 6</h3>
-
+      <span class="n">ComputerPart</span> <span class="n">computer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Computer</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">computer</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="k">new</span> <span class="n">ComputerPartDisplayVisitor</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-6">步骤 6</h3>
 <p>验证输出。</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Displaying</span> <span class="nf">Mouse</span><span class="p">.</span>
-<span class="n">Displaying</span> <span class="nf">Keyboard</span><span class="p">.</span>
-<span class="n">Displaying</span> <span class="nf">Monitor</span><span class="p">.</span>
-<span class="n">Displaying</span> <span class="nf">Computer</span><span class="p">.</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Displaying</span> <span class="n">Mouse</span><span class="o">.</span>
+<span class="n">Displaying</span> <span class="n">Keyboard</span><span class="o">.</span>
+<span class="n">Displaying</span> <span class="n">Monitor</span><span class="o">.</span>
+<span class="n">Displaying</span> <span class="n">Computer</span><span class="o">.</span>
+</code></pre></div>
         </div>
 
         
@@ -230,21 +219,19 @@ VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#实现">实现</a>
-<ul>
-<li><a href="#步骤-1">步骤 1</a></li>
-<li><a href="#步骤-2">步骤 2</a></li>
-<li><a href="#步骤-3">步骤 3</a></li>
-<li><a href="#步骤-4">步骤 4</a></li>
-<li><a href="#步骤-5">步骤 5</a></li>
-<li><a href="#步骤-6">步骤 6</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">介绍</a></li>
+    <li><a href="#heading-1">实现</a>
+      <ul>
+        <li><a href="#-1">步骤 1</a></li>
+        <li><a href="#-2">步骤 2</a></li>
+        <li><a href="#-3">步骤 3</a></li>
+        <li><a href="#-4">步骤 4</a></li>
+        <li><a href="#-5">步骤 5</a></li>
+        <li><a href="#-6">步骤 6</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

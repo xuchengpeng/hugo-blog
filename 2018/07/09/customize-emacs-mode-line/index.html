@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -96,23 +96,19 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="一些常用的mode-line包">一些常用的mode-line包</h3>
-
+            <h3 id="mode-line">一些常用的mode-line包</h3>
 <ul>
 <li><a href="https://github.com/milkypostman/powerline">powerline</a></li>
 <li><a href="https://github.com/Malabarba/smart-mode-line">smart-mode-line</a></li>
 <li><a href="https://github.com/TheBB/spaceline">spaceline</a></li>
 <li><a href="https://github.com/dbordak/telephone-line">telephone-line</a></li>
 </ul>
-
-<h3 id="了解mode-line">了解mode-line</h3>
-
+<h3 id="mode-line-1">了解mode-line</h3>
 <p>mode-line初始值：</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="s">&#34;%e&#34;</span> <span class="nv">mode-line-front-space</span> <span class="nv">mode-line-mule-info</span> <span class="nv">mode-line-client</span> <span class="nv">mode-line-modified</span> <span class="nv">mode-line-remote</span> <span class="nv">mode-line-frame-identification</span> <span class="nv">mode-line-buffer-identification</span> <span class="s">&#34;   &#34;</span> <span class="nv">mode-line-position</span>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="s">&#34;</span><span class="s">%e</span><span class="s">&#34;</span> <span class="nv">mode-line-front-space</span> <span class="nv">mode-line-mule-info</span> <span class="nv">mode-line-client</span> <span class="nv">mode-line-modified</span> <span class="nv">mode-line-remote</span> <span class="nv">mode-line-frame-identification</span> <span class="nv">mode-line-buffer-identification</span> <span class="s">&#34;</span><span class="s">   </span><span class="s">&#34;</span> <span class="nv">mode-line-position</span>
  <span class="p">(</span><span class="nv">vc-mode</span> <span class="nv">vc-mode</span><span class="p">)</span>
- <span class="s">&#34;  &#34;</span> <span class="nv">mode-line-modes</span> <span class="nv">mode-line-misc-info</span> <span class="nv">mode-line-end-spaces</span><span class="p">)</span></code></pre></div>
-<h4 id="mode-line变量">mode-line变量</h4>
-
+ <span class="s">&#34;</span><span class="s">  </span><span class="s">&#34;</span> <span class="nv">mode-line-modes</span> <span class="nv">mode-line-misc-info</span> <span class="nv">mode-line-end-spaces</span><span class="p">)</span>
+</code></pre></div><h4 id="mode-line-2">mode-line变量</h4>
 <ul>
 <li>mode-line-mule-info：显示当前语言环境、编码信息和输入法；</li>
 <li>mode-line-modified：显示当前内容是否被修改，<code>**</code>表示已经被修改，<code>--</code>表示没有被修改，<code>%%</code>表示只读，<code>%*</code>表示只读但是被修改；</li>
@@ -131,9 +127,7 @@
 <li>minor-mode-alist：包含当前buffer激活的所有minor modes；</li>
 <li>global-mode-string：This variable holds a mode line construct that, by default, appears in the mode line just after the which-func-mode minor mode if set, else after mode-line-modes. The command display-time sets global-mode-string to refer to the variable display-time-string, which holds a string containing the time and load information. The ‘%M’ construct substitutes the value of global-mode-string, but that is obsolete, since the variable is included in the mode line from mode-line-format.</li>
 </ul>
-
-<h4 id="constructs-in-the-mode-line">%-Constructs in the Mode Line</h4>
-
+<h4 id="-constructs-in-the-mode-line">%-Constructs in the Mode Line</h4>
 <ul>
 <li>%b：当前buffer名称；</li>
 <li>%c：当前列号，从最左边0开始计算；</li>
@@ -162,98 +156,96 @@
 <li>%m：mode-name；</li>
 <li>%M：global-mode-string；</li>
 </ul>
-
-<h3 id="自定义mode-line">自定义mode-line</h3>
-
+<h3 id="mode-line-3">自定义mode-line</h3>
 <p>修改<code>mode-line-format</code>的值：</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-mode-line-fill</span> <span class="p">(</span><span class="nv">face</span> <span class="nv">reserve</span><span class="p">)</span>
-  <span class="s">&#34;Return empty space using FACE and leaving RESERVE space on the right.&#34;</span>
+  <span class="s">&#34;</span><span class="s">Return empty space using FACE and leaving RESERVE space on the right.</span><span class="s">&#34;</span>
   <span class="p">(</span><span class="nb">unless</span> <span class="nv">reserve</span>
-    <span class="p">(</span><span class="nb">setq</span> <span class="nv">reserve</span> <span class="mi">20</span><span class="p">))</span>
-  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)</span> <span class="p">(</span><span class="nf">eq</span> <span class="ss">&#39;right</span> <span class="p">(</span><span class="nv">get-scroll-bar-mode</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nb">setq</span> <span class="nv">reserve</span> <span class="p">(</span><span class="nf">-</span> <span class="nv">reserve</span> <span class="mi">3</span><span class="p">)))</span>
-  <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34; &#34;</span>
-              <span class="ss">&#39;display</span> <span class="o">`</span><span class="p">((</span><span class="nv">space</span> <span class="nb">:align-to</span>
-                                <span class="p">(</span><span class="nf">-</span> <span class="p">(</span><span class="nf">+</span> <span class="nv">right</span> <span class="nv">right-fringe</span> <span class="nv">right-margin</span><span class="p">)</span> <span class="o">,</span><span class="nv">reserve</span><span class="p">)))</span>
-              <span class="ss">&#39;face</span> <span class="nv">face</span><span class="p">))</span>
+    <span class="p">(</span><span class="nb">setq</span> <span class="nv">reserve</span> <span class="mi">20</span><span class="p">)</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)</span> <span class="p">(</span><span class="nf">eq</span> <span class="ss">&#39;right</span> <span class="p">(</span><span class="nv">get-scroll-bar-mode</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">setq</span> <span class="nv">reserve</span> <span class="p">(</span><span class="nf">-</span> <span class="nv">reserve</span> <span class="mi">3</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;</span><span class="s"> </span><span class="s">&#34;</span>
+              <span class="ss">&#39;display</span> <span class="o">`</span><span class="p">(</span><span class="p">(</span><span class="nv">space</span> <span class="nb">:align-to</span>
+                                <span class="p">(</span><span class="nf">-</span> <span class="p">(</span><span class="nf">+</span> <span class="nv">right</span> <span class="nv">right-fringe</span> <span class="nv">right-margin</span><span class="p">)</span> <span class="o">,</span><span class="nv">reserve</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+              <span class="ss">&#39;face</span> <span class="nv">face</span><span class="p">)</span><span class="p">)</span>
 
-<span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-buffer-encoding-abbrev</span> <span class="p">()</span>
-  <span class="s">&#34;The line ending convention used in the buffer.&#34;</span>
-  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">buf-coding</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;%s&#34;</span> <span class="nv">buffer-file-coding-system</span><span class="p">)))</span>
-    <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">string-match</span> <span class="s">&#34;\\(dos\\|unix\\|mac\\)&#34;</span> <span class="nv">buf-coding</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-buffer-encoding-abbrev</span> <span class="p">(</span><span class="p">)</span>
+  <span class="s">&#34;</span><span class="s">The line ending convention used in the buffer.</span><span class="s">&#34;</span>
+  <span class="p">(</span><span class="nb">let</span> <span class="p">(</span><span class="p">(</span><span class="nv">buf-coding</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;</span><span class="s">%s</span><span class="s">&#34;</span> <span class="nv">buffer-file-coding-system</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">string-match</span> <span class="s">&#34;</span><span class="s">\\</span><span class="s">(dos</span><span class="s">\\</span><span class="s">|unix</span><span class="s">\\</span><span class="s">|mac</span><span class="s">\\</span><span class="s">)</span><span class="s">&#34;</span> <span class="nv">buf-coding</span><span class="p">)</span>
         <span class="p">(</span><span class="nv">match-string</span> <span class="mi">1</span> <span class="nv">buf-coding</span><span class="p">)</span>
-      <span class="nv">buf-coding</span><span class="p">)))</span>
+      <span class="nv">buf-coding</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nb">setq-default</span> <span class="nv">mode-line-format</span>
                 <span class="p">(</span><span class="nf">list</span>
-                 <span class="s">&#34;%e&#34;</span>
+                 <span class="s">&#34;</span><span class="s">%e</span><span class="s">&#34;</span>
                  <span class="nv">mode-line-front-space</span>
-                 <span class="c1">;; mode-line-mule-info</span>
-                 <span class="c1">;; mode-line-client</span>
-                 <span class="c1">;; mode-line-modified</span>
-                 <span class="c1">;; mode-line-remote</span>
-                 <span class="c1">;; mode-line-frame-identification</span>
-                 <span class="s">&#34; &#34;</span>
-                 <span class="c1">;; mode-line-buffer-identification</span>
-                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;%b&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-keyword-face</span>
-                                     <span class="ss">&#39;help-echo</span> <span class="p">(</span><span class="nf">buffer-file-name</span><span class="p">)))</span>
+                 <span class="c1">;; mode-line-mule-info</span>
+                 <span class="c1">;; mode-line-client</span>
+                 <span class="c1">;; mode-line-modified</span>
+                 <span class="c1">;; mode-line-remote</span>
+                 <span class="c1">;; mode-line-frame-identification</span>
+                 <span class="s">&#34;</span><span class="s"> </span><span class="s">&#34;</span>
+                 <span class="c1">;; mode-line-buffer-identification</span>
+                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;</span><span class="s">%b</span><span class="s">&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-keyword-face</span>
+                                     <span class="ss">&#39;help-echo</span> <span class="p">(</span><span class="nf">buffer-file-name</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
                  
-                 <span class="s">&#34; [&#34;</span> <span class="c1">;; insert vs overwrite mode, input-method in a tooltip</span>
-                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nf">propertize</span> <span class="p">(</span><span class="nb">if</span> <span class="nv">overwrite-mode</span> <span class="s">&#34;Ovr&#34;</span> <span class="s">&#34;Ins&#34;</span><span class="p">)</span>
+                 <span class="s">&#34;</span><span class="s"> [</span><span class="s">&#34;</span> <span class="c1">;; insert vs overwrite mode, input-method in a tooltip</span>
+                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nf">propertize</span> <span class="p">(</span><span class="nb">if</span> <span class="nv">overwrite-mode</span> <span class="s">&#34;</span><span class="s">Ovr</span><span class="s">&#34;</span> <span class="s">&#34;</span><span class="s">Ins</span><span class="s">&#34;</span><span class="p">)</span>
                                      <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-preprocessor-face</span>
-                                     <span class="ss">&#39;help-echo</span> <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;Buffer is in &#34;</span>
+                                     <span class="ss">&#39;help-echo</span> <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;</span><span class="s">Buffer is in </span><span class="s">&#34;</span>
                                                         <span class="p">(</span><span class="nb">if</span> <span class="nv">overwrite-mode</span>
-                                                            <span class="s">&#34;overwrite&#34;</span>
-                                                          <span class="s">&#34;insert&#34;</span><span class="p">)</span> <span class="s">&#34; mode&#34;</span><span class="p">)))</span>
+                                                            <span class="s">&#34;</span><span class="s">overwrite</span><span class="s">&#34;</span>
+                                                          <span class="s">&#34;</span><span class="s">insert</span><span class="s">&#34;</span><span class="p">)</span> <span class="s">&#34;</span><span class="s"> mode</span><span class="s">&#34;</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
 
-                 <span class="c1">;; was this buffer modified since the last save?</span>
+                 <span class="c1">;; was this buffer modified since the last save?</span>
                  <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">buffer-modified-p</span><span class="p">)</span>
-                           <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;,&#34;</span> <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;Mod&#34;</span>
+                           <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;</span><span class="s">,</span><span class="s">&#34;</span> <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;</span><span class="s">Mod</span><span class="s">&#34;</span>
                                                    <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-warning-face</span>
-                                                   <span class="ss">&#39;help-echo</span> <span class="s">&#34;Buffer has been modified&#34;</span><span class="p">))))</span>
+                                                   <span class="ss">&#39;help-echo</span> <span class="s">&#34;</span><span class="s">Buffer has been modified</span><span class="s">&#34;</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
 
-                 <span class="c1">;; is this buffer read-only?</span>
+                 <span class="c1">;; is this buffer read-only?</span>
                  <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nb">when</span> <span class="nv">buffer-read-only</span>
-                           <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;,&#34;</span> <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;RO&#34;</span>
+                           <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;</span><span class="s">,</span><span class="s">&#34;</span> <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;</span><span class="s">RO</span><span class="s">&#34;</span>
                                                    <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-type-face</span>
-                                                   <span class="ss">&#39;help-echo</span> <span class="s">&#34;Buffer is read-only&#34;</span><span class="p">))))</span>
-                 <span class="s">&#34;] &#34;</span>
+                                                   <span class="ss">&#39;help-echo</span> <span class="s">&#34;</span><span class="s">Buffer is read-only</span><span class="s">&#34;</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+                 <span class="s">&#34;</span><span class="s">] </span><span class="s">&#34;</span>
                  
-                 <span class="s">&#34;[&#34;</span>
-                 <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;%p&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-constant-face</span><span class="p">)</span>
-                 <span class="s">&#34;/&#34;</span>
-                 <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;%I&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-constant-face</span><span class="p">)</span>
-                 <span class="s">&#34;] &#34;</span>
+                 <span class="s">&#34;</span><span class="s">[</span><span class="s">&#34;</span>
+                 <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;</span><span class="s">%p</span><span class="s">&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-constant-face</span><span class="p">)</span>
+                 <span class="s">&#34;</span><span class="s">/</span><span class="s">&#34;</span>
+                 <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;</span><span class="s">%I</span><span class="s">&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-constant-face</span><span class="p">)</span>
+                 <span class="s">&#34;</span><span class="s">] </span><span class="s">&#34;</span>
                  
                  <span class="nv">mode-line-modes</span>
                  
-                 <span class="s">&#34;   &#34;</span>
-                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="o">`</span><span class="p">(</span><span class="nv">vc-mode</span> <span class="nv">vc-mode</span><span class="p">))</span>
-                 <span class="s">&#34;   &#34;</span>
+                 <span class="s">&#34;</span><span class="s">   </span><span class="s">&#34;</span>
+                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="o">`</span><span class="p">(</span><span class="nv">vc-mode</span> <span class="nv">vc-mode</span><span class="p">)</span><span class="p">)</span>
+                 <span class="s">&#34;</span><span class="s">   </span><span class="s">&#34;</span>
                  
-                 <span class="c1">;; (dotemacs-mode-line-fill &#39;mode-line 35)</span>
+                 <span class="c1">;; (dotemacs-mode-line-fill &#39;mode-line 35)</span>
                  
-                 <span class="c1">;;mode-line-position</span>
-                 <span class="s">&#34; (&#34;</span>
-                 <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;%l&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-type-face</span><span class="p">)</span>
-                 <span class="s">&#34;,&#34;</span>
-                 <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;%c&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-type-face</span><span class="p">)</span>
-                 <span class="s">&#34;) &#34;</span>
+                 <span class="c1">;;mode-line-position</span>
+                 <span class="s">&#34;</span><span class="s"> (</span><span class="s">&#34;</span>
+                 <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;</span><span class="s">%l</span><span class="s">&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-type-face</span><span class="p">)</span>
+                 <span class="s">&#34;</span><span class="s">,</span><span class="s">&#34;</span>
+                 <span class="p">(</span><span class="nf">propertize</span> <span class="s">&#34;</span><span class="s">%c</span><span class="s">&#34;</span> <span class="ss">&#39;face</span> <span class="ss">&#39;font-lock-type-face</span><span class="p">)</span>
+                 <span class="s">&#34;</span><span class="s">) </span><span class="s">&#34;</span>
                  
-                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nv">dotemacs-buffer-encoding-abbrev</span><span class="p">))</span>
-                 <span class="s">&#34;  &#34;</span>
+                 <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="p">(</span><span class="nv">dotemacs-buffer-encoding-abbrev</span><span class="p">)</span><span class="p">)</span>
+                 <span class="s">&#34;</span><span class="s">  </span><span class="s">&#34;</span>
                  <span class="o">&#39;</span><span class="p">(</span><span class="nb">:eval</span> <span class="nv">mode-line-misc-info</span><span class="p">)</span>
                  
                  <span class="nv">mode-line-end-spaces</span>
-                 <span class="p">))</span></code></pre></div>
-<h3 id="隐藏mode-line上的minor-mode">隐藏mode-line上的minor mode</h3>
-
+                 <span class="p">)</span><span class="p">)</span>
+</code></pre></div><h3 id="mode-lineminor-mode">隐藏mode-line上的minor mode</h3>
 <p>使用<a href="https://github.com/emacsmirror/diminish">diminish</a>：</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;diminish</span><span class="p">)</span>
-<span class="c1">;; Hide jiggle-mode lighter from mode line</span>
+<span class="c1">;; Hide jiggle-mode lighter from mode line</span>
 <span class="p">(</span><span class="nv">diminish</span> <span class="ss">&#39;jiggle-mode</span><span class="p">)</span>
-<span class="c1">;; Replace abbrev-mode lighter with &#34;Abv&#34;</span>
-<span class="p">(</span><span class="nv">diminish</span> <span class="ss">&#39;abbrev-mode</span> <span class="s">&#34;Abv&#34;</span><span class="p">)</span></code></pre></div>
+<span class="c1">;; Replace abbrev-mode lighter with &#34;Abv&#34;</span>
+<span class="p">(</span><span class="nv">diminish</span> <span class="ss">&#39;abbrev-mode</span> <span class="s">&#34;</span><span class="s">Abv</span><span class="s">&#34;</span><span class="p">)</span>
+</code></pre></div>
         </div>
 
         
@@ -261,22 +253,16 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#一些常用的mode-line包">一些常用的mode-line包</a></li>
-<li><a href="#了解mode-line">了解mode-line</a>
-<ul>
-<li><a href="#mode-line变量">mode-line变量</a></li>
-<li><a href="#constructs-in-the-mode-line">%-Constructs in the Mode Line</a></li>
-</ul></li>
-<li><a href="#自定义mode-line">自定义mode-line</a></li>
-<li><a href="#隐藏mode-line上的minor-mode">隐藏mode-line上的minor mode</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#mode-line">一些常用的mode-line包</a></li>
+        <li><a href="#mode-line-1">了解mode-line</a></li>
+        <li><a href="#mode-line-3">自定义mode-line</a></li>
+        <li><a href="#mode-lineminor-mode">隐藏mode-line上的minor mode</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

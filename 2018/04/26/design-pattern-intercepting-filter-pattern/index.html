@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,139 +97,120 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>拦截过滤器模式（Intercepting Filter Pattern）用于对应用程序的请求或响应做一些预处理/后处理。定义过滤器，并在把请求传给实际目标应用程序之前应用在请求上。过滤器可以做认证/授权/记录日志，或者跟踪请求，然后把请求传给相应的处理程序。以下是这种设计模式的实体。</p>
-
 <p>过滤器（Filter） - 过滤器在请求处理程序执行请求之前或之后，执行某些任务。
 过滤器链（Filter Chain） - 过滤器链带有多个过滤器，并在 Target 上按照定义的顺序执行这些过滤器。
 Target - Target 对象是请求处理程序。
 过滤管理器（Filter Manager） - 过滤管理器管理过滤器和过滤器链。
 客户端（Client） - Client 是向 Target 对象发送请求的对象。</p>
-
-<h2 id="实现">实现</h2>
-
+<h2 id="heading">实现</h2>
 <p>我们将创建 FilterChain、FilterManager、Target、Client 作为表示实体的各种对象。AuthenticationFilter 和 DebugFilter 表示实体过滤器。
 InterceptingFilterDemo，我们的演示类使用 Client 来演示拦截过滤器设计模式。</p>
-
-<p><img src="/images/design-pattern/interceptingfilter_pattern_uml_diagram.jpg" alt="" /></p>
-
-<h3 id="步骤-1">步骤 1</h3>
-
+<p><img src="/images/design-pattern/interceptingfilter_pattern_uml_diagram.jpg" alt=""></p>
+<h3 id="-1">步骤 1</h3>
 <p>创建过滤器接口 Filter。</p>
-
 <p><em>Filter.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">Filter</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-2">步骤 2</h3>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Filter</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="n">String</span> <span class="n">request</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-2">步骤 2</h3>
 <p>创建实体过滤器。</p>
-
 <p><em>AuthenticationFilter.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">AuthenticationFilter</span> <span class="nf">implements</span> <span class="n">Filter</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">){</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Authenticating request: &#34;</span> <span class="o">+</span> <span class="n">request</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p><em>DebugFilter.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">DebugFilter</span> <span class="nf">implements</span> <span class="n">Filter</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">){</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;request log: &#34;</span> <span class="o">+</span> <span class="n">request</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-3">步骤 3</h3>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AuthenticationFilter</span> <span class="kd">implements</span> <span class="n">Filter</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="n">String</span> <span class="n">request</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Authenticating request: &#34;</span> <span class="o">+</span> <span class="n">request</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p><em>DebugFilter.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DebugFilter</span> <span class="kd">implements</span> <span class="n">Filter</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="n">String</span> <span class="n">request</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;request log: &#34;</span> <span class="o">+</span> <span class="n">request</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-3">步骤 3</h3>
 <p>创建 Target。</p>
-
 <p><em>Target.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Target</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">){</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Executing request: &#34;</span> <span class="o">+</span> <span class="n">request</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-4">步骤 4</h3>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Target</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="n">String</span> <span class="n">request</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Executing request: &#34;</span> <span class="o">+</span> <span class="n">request</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-4">步骤 4</h3>
 <p>创建过滤器链。</p>
-
 <p><em>FilterChain.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">ArrayList</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nf">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">List</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">FilterChain</span> <span class="p">{</span>
-   <span class="kd">private</span> <span class="nf">List</span><span class="o">&lt;</span><span class="n">Filter</span><span class="o">&gt;</span> <span class="nf">filters</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Filter</span><span class="o">&gt;</span><span class="p">();</span>
-   <span class="kd">private</span> <span class="nf">Target</span> <span class="n">target</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FilterChain</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Filter</span><span class="o">&gt;</span> <span class="n">filters</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Filter</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="kd">private</span> <span class="n">Target</span> <span class="n">target</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">addFilter</span><span class="p">(</span><span class="n">Filter</span> <span class="nf">filter</span><span class="p">){</span>
-      <span class="n">filters</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">filter</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addFilter</span><span class="o">(</span><span class="n">Filter</span> <span class="n">filter</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">filters</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">filter</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">execute</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">){</span>
-      <span class="k">for</span> <span class="p">(</span><span class="n">Filter</span> <span class="nf">filter</span> <span class="o">:</span> <span class="n">filters</span><span class="p">)</span> <span class="p">{</span>
-         <span class="n">filter</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-      <span class="p">}</span>
-      <span class="n">target</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="n">String</span> <span class="n">request</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">for</span> <span class="o">(</span><span class="n">Filter</span> <span class="n">filter</span> <span class="o">:</span> <span class="n">filters</span><span class="o">)</span> <span class="o">{</span>
+         <span class="n">filter</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">request</span><span class="o">)</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="n">target</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">request</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setTarget</span><span class="p">(</span><span class="n">Target</span> <span class="nf">target</span><span class="p">){</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">target</span> <span class="o">=</span> <span class="n">target</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-5">步骤 5</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTarget</span><span class="o">(</span><span class="n">Target</span> <span class="n">target</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-5">步骤 5</h3>
 <p>创建过滤管理器。</p>
-
 <p><em>FilterManager.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">FilterManager</span> <span class="p">{</span>
-   <span class="n">FilterChain</span> <span class="nf">filterChain</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FilterManager</span> <span class="o">{</span>
+   <span class="n">FilterChain</span> <span class="n">filterChain</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">FilterManager</span><span class="p">(</span><span class="n">Target</span> <span class="nf">target</span><span class="p">){</span>
-      <span class="n">filterChain</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FilterChain</span><span class="p">();</span>
-      <span class="n">filterChain</span><span class="p">.</span><span class="na">setTarget</span><span class="p">(</span><span class="n">target</span><span class="p">);</span>
-   <span class="p">}</span>
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setFilter</span><span class="p">(</span><span class="n">Filter</span> <span class="nf">filter</span><span class="p">){</span>
-      <span class="n">filterChain</span><span class="p">.</span><span class="na">addFilter</span><span class="p">(</span><span class="n">filter</span><span class="p">);</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="nf">FilterManager</span><span class="o">(</span><span class="n">Target</span> <span class="n">target</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">filterChain</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FilterChain</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">filterChain</span><span class="o">.</span><span class="na">setTarget</span><span class="o">(</span><span class="n">target</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setFilter</span><span class="o">(</span><span class="n">Filter</span> <span class="n">filter</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">filterChain</span><span class="o">.</span><span class="na">addFilter</span><span class="o">(</span><span class="n">filter</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">filterRequest</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">){</span>
-      <span class="n">filterChain</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-6">步骤 6</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">filterRequest</span><span class="o">(</span><span class="n">String</span> <span class="n">request</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">filterChain</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">request</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-6">步骤 6</h3>
 <p>创建客户端 Client。</p>
-
 <p><em>Client.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">Client</span> <span class="p">{</span>
-   <span class="n">FilterManager</span> <span class="nf">filterManager</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Client</span> <span class="o">{</span>
+   <span class="n">FilterManager</span> <span class="n">filterManager</span><span class="o">;</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">setFilterManager</span><span class="p">(</span><span class="n">FilterManager</span> <span class="nf">filterManager</span><span class="p">){</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">filterManager</span> <span class="o">=</span> <span class="n">filterManager</span><span class="p">;</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setFilterManager</span><span class="o">(</span><span class="n">FilterManager</span> <span class="n">filterManager</span><span class="o">)</span><span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">filterManager</span> <span class="o">=</span> <span class="n">filterManager</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">public</span> <span class="nf">void</span> <span class="n">sendRequest</span><span class="p">(</span><span class="n">String</span> <span class="nf">request</span><span class="p">){</span>
-      <span class="n">filterManager</span><span class="p">.</span><span class="na">filterRequest</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-7">步骤 7</h3>
-
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendRequest</span><span class="o">(</span><span class="n">String</span> <span class="n">request</span><span class="o">)</span><span class="o">{</span>
+      <span class="n">filterManager</span><span class="o">.</span><span class="na">filterRequest</span><span class="o">(</span><span class="n">request</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-7">步骤 7</h3>
 <p>使用 Client 来演示拦截过滤器设计模式。</p>
-
 <p><em>InterceptingFilterDemo.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">InterceptingFilterDemo</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">FilterManager</span> <span class="nf">filterManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FilterManager</span><span class="p">(</span><span class="k">new</span> <span class="n">Target</span><span class="p">());</span>
-      <span class="n">filterManager</span><span class="p">.</span><span class="na">setFilter</span><span class="p">(</span><span class="k">new</span> <span class="n">AuthenticationFilter</span><span class="p">());</span>
-      <span class="n">filterManager</span><span class="p">.</span><span class="na">setFilter</span><span class="p">(</span><span class="k">new</span> <span class="n">DebugFilter</span><span class="p">());</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">InterceptingFilterDemo</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">FilterManager</span> <span class="n">filterManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FilterManager</span><span class="o">(</span><span class="k">new</span> <span class="n">Target</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">filterManager</span><span class="o">.</span><span class="na">setFilter</span><span class="o">(</span><span class="k">new</span> <span class="n">AuthenticationFilter</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">filterManager</span><span class="o">.</span><span class="na">setFilter</span><span class="o">(</span><span class="k">new</span> <span class="n">DebugFilter</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="n">Client</span> <span class="nf">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Client</span><span class="p">();</span>
-      <span class="n">client</span><span class="p">.</span><span class="na">setFilterManager</span><span class="p">(</span><span class="n">filterManager</span><span class="p">);</span>
-      <span class="n">client</span><span class="p">.</span><span class="na">sendRequest</span><span class="p">(</span><span class="s">&#34;HOME&#34;</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-8">步骤 8</h3>
-
+      <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Client</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">client</span><span class="o">.</span><span class="na">setFilterManager</span><span class="o">(</span><span class="n">filterManager</span><span class="o">)</span><span class="o">;</span>
+      <span class="n">client</span><span class="o">.</span><span class="na">sendRequest</span><span class="o">(</span><span class="s">&#34;HOME&#34;</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-8">步骤 8</h3>
 <p>验证输出。</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Authenticating</span> <span class="nf">request</span><span class="o">:</span> <span class="n">HOME</span>
-<span class="nf">request</span> <span class="n">log</span><span class="o">:</span> <span class="n">HOME</span>
-<span class="nf">Executing</span> <span class="n">request</span><span class="o">:</span> <span class="n">HOME</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Authenticating</span> <span class="n">request</span><span class="o">:</span> <span class="n">HOME</span>
+<span class="n">request</span> <span class="n">log</span><span class="o">:</span> <span class="n">HOME</span>
+<span class="n">Executing</span> <span class="n">request</span><span class="o">:</span> <span class="n">HOME</span>
+</code></pre></div>
         </div>
 
         
@@ -237,22 +218,20 @@ InterceptingFilterDemo，我们的演示类使用 Client 来演示拦截过滤�
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#实现">实现</a>
-<ul>
-<li><a href="#步骤-1">步骤 1</a></li>
-<li><a href="#步骤-2">步骤 2</a></li>
-<li><a href="#步骤-3">步骤 3</a></li>
-<li><a href="#步骤-4">步骤 4</a></li>
-<li><a href="#步骤-5">步骤 5</a></li>
-<li><a href="#步骤-6">步骤 6</a></li>
-<li><a href="#步骤-7">步骤 7</a></li>
-<li><a href="#步骤-8">步骤 8</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">实现</a>
+      <ul>
+        <li><a href="#-1">步骤 1</a></li>
+        <li><a href="#-2">步骤 2</a></li>
+        <li><a href="#-3">步骤 3</a></li>
+        <li><a href="#-4">步骤 4</a></li>
+        <li><a href="#-5">步骤 5</a></li>
+        <li><a href="#-6">步骤 6</a></li>
+        <li><a href="#-7">步骤 7</a></li>
+        <li><a href="#-8">步骤 8</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

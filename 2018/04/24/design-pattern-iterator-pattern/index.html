@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -98,9 +98,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p>迭代器模式（Iterator Pattern）是 Java 和 .Net 编程环境中非常常用的设计模式。这种模式用于顺序访问集合对象的元素，不需要知道集合对象的底层表示。
 迭代器模式属于行为型模式。</p>
-
-<h2 id="介绍">介绍</h2>
-
+<h2 id="heading">介绍</h2>
 <p>意图：提供一种方法顺序访问一个聚合对象中各个元素, 而又无须暴露该对象的内部表示。
 主要解决：不同的方式来遍历整个整合对象。
 何时使用：遍历一个聚合对象。
@@ -111,81 +109,74 @@
 缺点：由于迭代器模式将存储数据和遍历数据的职责分离，增加新的聚合类需要对应增加新的迭代器类，类的个数成对增加，这在一定程度上增加了系统的复杂性。
 使用场景： 1、访问一个聚合对象的内容而无须暴露它的内部表示。 2、需要为聚合对象提供多种遍历方式。 3、为遍历不同的聚合结构提供一个统一的接口。
 注意事项：迭代器模式就是分离了集合对象的遍历行为，抽象出一个迭代器类来负责，这样既可以做到不暴露集合的内部结构，又可让外部代码透明地访问集合内部的数据。</p>
-
-<h2 id="实现">实现</h2>
-
+<h2 id="heading-1">实现</h2>
 <p>我们将创建一个叙述导航方法的 Iterator 接口和一个返回迭代器的 Container 接口。实现了 Container 接口的实体类将负责实现 Iterator 接口。
 IteratorPatternDemo，我们的演示类使用实体类 NamesRepository 来打印 NamesRepository 中存储为集合的 Names。</p>
-
-<p><img src="/images/design-pattern/iterator_pattern_uml_diagram.jpg" alt="" /></p>
-
-<h3 id="步骤-1">步骤 1</h3>
-
+<p><img src="/images/design-pattern/iterator_pattern_uml_diagram.jpg" alt=""></p>
+<h3 id="-1">步骤 1</h3>
 <p>创建接口。
 <em>Iterator.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">Iterator</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">boolean</span> <span class="n">hasNext</span><span class="p">();</span>
-   <span class="kd">public</span> <span class="nf">Object</span> <span class="n">next</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
-<p><em>Container.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">interface</span> <span class="n">Container</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">Iterator</span> <span class="n">getIterator</span><span class="p">();</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-2">步骤 2</h3>
-
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Iterator</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="kd">public</span> <span class="n">Object</span> <span class="nf">next</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><p><em>Container.java</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Container</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="n">Iterator</span> <span class="nf">getIterator</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-2">步骤 2</h3>
 <p>创建实现了 Container 接口的实体类。该类有实现了 Iterator 接口的内部类 NameIterator。
 <em>NameRepository.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">NameRepository</span> <span class="nf">implements</span> <span class="n">Container</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="nf">String</span> <span class="n">names</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;Robert&#34;</span> <span class="p">,</span> <span class="s">&#34;John&#34;</span> <span class="p">,</span><span class="s">&#34;Julie&#34;</span> <span class="p">,</span> <span class="s">&#34;Lora&#34;</span><span class="p">};</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NameRepository</span> <span class="kd">implements</span> <span class="n">Container</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="n">names</span><span class="o">[</span><span class="o">]</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;Robert&#34;</span> <span class="o">,</span> <span class="s">&#34;John&#34;</span> <span class="o">,</span><span class="s">&#34;Julie&#34;</span> <span class="o">,</span> <span class="s">&#34;Lora&#34;</span><span class="o">}</span><span class="o">;</span>
 
    <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="nf">Iterator</span> <span class="n">getIterator</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">new</span> <span class="n">NameIterator</span><span class="p">();</span>
-   <span class="p">}</span>
+   <span class="kd">public</span> <span class="n">Iterator</span> <span class="nf">getIterator</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="n">NameIterator</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   <span class="o">}</span>
 
-   <span class="kd">private</span> <span class="nf">class</span> <span class="n">NameIterator</span> <span class="nf">implements</span> <span class="n">Iterator</span> <span class="p">{</span>
+   <span class="kd">private</span> <span class="kd">class</span> <span class="nc">NameIterator</span> <span class="kd">implements</span> <span class="n">Iterator</span> <span class="o">{</span>
 
-      <span class="kt">int</span> <span class="nf">index</span><span class="p">;</span>
-
-      <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="nf">boolean</span> <span class="n">hasNext</span><span class="p">()</span> <span class="p">{</span>
-         <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="n">names</span><span class="p">.</span><span class="na">length</span><span class="p">){</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-         <span class="p">}</span>
-         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-      <span class="p">}</span>
+      <span class="kt">int</span> <span class="n">index</span><span class="o">;</span>
 
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="nf">Object</span> <span class="n">next</span><span class="p">()</span> <span class="p">{</span>
-         <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">hasNext</span><span class="p">()){</span>
-            <span class="k">return</span> <span class="n">names</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">];</span>
-         <span class="p">}</span>
-         <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-3">步骤 3</h3>
+      <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span><span class="o">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="n">names</span><span class="o">.</span><span class="na">length</span><span class="o">)</span><span class="o">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+         <span class="o">}</span>
+         <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+      <span class="o">}</span>
 
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="n">Object</span> <span class="nf">next</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">hasNext</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">{</span>
+            <span class="k">return</span> <span class="n">names</span><span class="o">[</span><span class="n">index</span><span class="o">+</span><span class="o">+</span><span class="o">]</span><span class="o">;</span>
+         <span class="o">}</span>
+         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-3">步骤 3</h3>
 <p>使用 NameRepository 来获取迭代器，并打印名字。
 <em>IteratorPatternDemo.java</em></p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">IteratorPatternDemo</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IteratorPatternDemo</span> <span class="o">{</span>
 
-   <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">NameRepository</span> <span class="nf">namesRepository</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NameRepository</span><span class="p">();</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">NameRepository</span> <span class="n">namesRepository</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NameRepository</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
-      <span class="k">for</span><span class="p">(</span><span class="n">Iterator</span> <span class="nf">iter</span> <span class="o">=</span> <span class="n">namesRepository</span><span class="p">.</span><span class="na">getIterator</span><span class="p">();</span> <span class="n">iter</span><span class="p">.</span><span class="na">hasNext</span><span class="p">();){</span>
-         <span class="n">String</span> <span class="nf">name</span> <span class="o">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">iter</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
-         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Name : &#34;</span> <span class="o">+</span> <span class="n">name</span><span class="p">);</span>
-      <span class="p">}</span>
-   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="步骤-4">步骤 4</h3>
-
+      <span class="k">for</span><span class="o">(</span><span class="n">Iterator</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">namesRepository</span><span class="o">.</span><span class="na">getIterator</span><span class="o">(</span><span class="o">)</span><span class="o">;</span> <span class="n">iter</span><span class="o">.</span><span class="na">hasNext</span><span class="o">(</span><span class="o">)</span><span class="o">;</span><span class="o">)</span><span class="o">{</span>
+         <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span><span class="n">iter</span><span class="o">.</span><span class="na">next</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Name : &#34;</span> <span class="o">+</span> <span class="n">name</span><span class="o">)</span><span class="o">;</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="-4">步骤 4</h3>
 <p>验证输出。</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Name</span> <span class="o">:</span> <span class="n">Robert</span>
-<span class="nf">Name</span> <span class="o">:</span> <span class="n">John</span>
-<span class="nf">Name</span> <span class="o">:</span> <span class="n">Julie</span>
-<span class="nf">Name</span> <span class="o">:</span> <span class="n">Lora</span></code></pre></div>
+<span class="n">Name</span> <span class="o">:</span> <span class="n">John</span>
+<span class="n">Name</span> <span class="o">:</span> <span class="n">Julie</span>
+<span class="n">Name</span> <span class="o">:</span> <span class="n">Lora</span>
+</code></pre></div>
         </div>
 
         
@@ -193,19 +184,17 @@ IteratorPatternDemo，我们的演示类使用实体类 NamesRepository 来打�
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#实现">实现</a>
-<ul>
-<li><a href="#步骤-1">步骤 1</a></li>
-<li><a href="#步骤-2">步骤 2</a></li>
-<li><a href="#步骤-3">步骤 3</a></li>
-<li><a href="#步骤-4">步骤 4</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">介绍</a></li>
+    <li><a href="#heading-1">实现</a>
+      <ul>
+        <li><a href="#-1">步骤 1</a></li>
+        <li><a href="#-2">步骤 2</a></li>
+        <li><a href="#-3">步骤 3</a></li>
+        <li><a href="#-4">步骤 4</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
         

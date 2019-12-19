@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -92,35 +92,28 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p><a href="https://github.com/imsun/gitment">Gitment</a> 是作者实现的一款基于 GitHub Issues 的评论系统。支持在前端直接引入，不需要任何后端代码。可以在页面进行登录、查看、评论、点赞等操作，同时有完整的 Markdown / GFM 和代码高亮支持。尤为适合各种基于 GitHub Pages 的静态博客或项目页面。</p>
-
-<h2 id="注册-oauth-application">注册 OAuth Application</h2>
-
+<h2 id="-oauth-application">注册 OAuth Application</h2>
 <p><a href="https://github.com/settings/applications/new">点击此处</a> 来注册一个新的 OAuth Application。其他内容可以随意填写，但要确保填入正确的 callback URL（一般是博客评论页面对应的域名，例如 <a href="https://xxxxxx.github.io">https://xxxxxx.github.io</a> ）。</p>
-
 <p>你会得到一个 client ID 和一个 client secret，这个将被用于之后的用户登录。</p>
-
-<h2 id="引入-gitment">引入 Gitment</h2>
-
+<h2 id="-gitment">引入 Gitment</h2>
 <p>将下面的代码添加到你的页面：</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://imsun.github.io/gitment/style/default.css&#34;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://imsun.github.io/gitment/dist/gitment.browser.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="kd">var</span> <span class="nx">gitment</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Gitment</span><span class="p">({</span>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://imsun.github.io/gitment/style/default.css&#34;</span><span class="p"></span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://imsun.github.io/gitment/dist/gitment.browser.js&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p"></span><span class="p">&gt;</span>
+<span class="kd">var</span> <span class="nx">gitment</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Gitment</span><span class="p">(</span><span class="p">{</span>
   <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;页面 ID&#39;</span><span class="p">,</span> <span class="c1">// 可选。默认为 location.href
 </span><span class="c1"></span>  <span class="nx">owner</span><span class="o">:</span> <span class="s1">&#39;你的 GitHub ID&#39;</span><span class="p">,</span>
   <span class="nx">repo</span><span class="o">:</span> <span class="s1">&#39;存储评论的 repo，可以自己新建一个，也可以直接使用博客的 repo&#39;</span><span class="p">,</span>
   <span class="nx">oauth</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">client_id</span><span class="o">:</span> <span class="s1">&#39;你的 client ID&#39;</span><span class="p">,</span>
     <span class="nx">client_secret</span><span class="o">:</span> <span class="s1">&#39;你的 client secret&#39;</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">})</span>
+  <span class="p">}</span><span class="p">,</span>
+<span class="p">}</span><span class="p">)</span>
 <span class="nx">gitment</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">)</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre></div>
-<p>注意，上述代码引用的 Gitment 将会随着开发变动。如果你希望始终使用最新的界面与特性即可引入上述代码。</p>
-
-<h2 id="初始化评论">初始化评论</h2>
-
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div><p>注意，上述代码引用的 Gitment 将会随着开发变动。如果你希望始终使用最新的界面与特性即可引入上述代码。</p>
+<h2 id="heading">初始化评论</h2>
 <p>在博客页面最下面，登陆 GitHub 的帐号，点击初始化按钮，之后其他用户即可在该页面发表评论。</p>
         </div>
 
@@ -129,14 +122,11 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#注册-oauth-application">注册 OAuth Application</a></li>
-<li><a href="#引入-gitment">引入 Gitment</a></li>
-<li><a href="#初始化评论">初始化评论</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#-oauth-application">注册 OAuth Application</a></li>
+    <li><a href="#-gitment">引入 Gitment</a></li>
+    <li><a href="#heading">初始化评论</a></li>
+  </ul>
 </nav>
         </div>
         

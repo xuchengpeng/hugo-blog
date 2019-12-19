@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.59.0-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -97,46 +97,37 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>emacs has 2 line numbers mode:</p>
-
 <ul>
 <li><code>Alt + x</code> linum-mode -&gt; old, hack, slow. Emacs 23.</li>
 <li><code>Alt + x</code> global-display-line-numbers-mode -&gt; Emacs 26.</li>
 </ul>
-
 <h2 id="global-display-line-numbers-mode">global-display-line-numbers-mode</h2>
-
 <p>Emacs 26 has a new line number mode.</p>
-
 <ul>
 <li>global-display-line-numbers-mode -&gt; show line numbers in all buffers.</li>
 <li>display-line-numbers-mode -&gt; show line numbers in current buffers.</li>
 </ul>
-
 <p>Put this in your emacs init file:</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">version&lt;=</span> <span class="s">&#34;26.0.50&#34;</span> <span class="nv">emacs-version</span> <span class="p">)</span>
-  <span class="p">(</span><span class="nv">global-display-line-numbers-mode</span><span class="p">))</span></code></pre></div>
-<p>display-line-numbers-mode is written by Eli Zaretskii.</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">version&lt;=</span> <span class="s">&#34;</span><span class="s">26.0.50</span><span class="s">&#34;</span> <span class="nv">emacs-version</span> <span class="p">)</span>
+  <span class="p">(</span><span class="nv">global-display-line-numbers-mode</span><span class="p">)</span><span class="p">)</span>
+</code></pre></div><p>display-line-numbers-mode is written by Eli Zaretskii.</p>
 <h2 id="linum-mode">linum-mode</h2>
-
 <p>Emacs 23 has a line number mode. It shows line numbers in margin.</p>
-
 <ul>
 <li>linum-mode -&gt; toggle line number in current.</li>
 <li>global-linum-mode -&gt; toggle line number in all buffers.</li>
 </ul>
-
 <p>To set it permanetnly, put this in your emacs init file:</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nv">global-linum-mode</span> <span class="mi">1</span><span class="p">)</span></code></pre></div>
-<h2 id="nlinum-recommended">nlinum (Recommended)</h2>
-
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nv">global-linum-mode</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div><h2 id="nlinum-recommended">nlinum (Recommended)</h2>
 <p>As linum-mode is slow, you can use nlinum instead of linum-mode.</p>
-<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nv">version&lt;</span> <span class="nv">emacs-version</span> <span class="s">&#34;26&#34;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nv">version&lt;</span> <span class="nv">emacs-version</span> <span class="s">&#34;</span><span class="s">26</span><span class="s">&#34;</span><span class="p">)</span>
     <span class="p">(</span><span class="nb">use-package</span> <span class="nv">nlinum</span>
       <span class="nb">:ensure</span> <span class="no">t</span>
       <span class="nb">:config</span>
-      <span class="p">(</span><span class="nv">global-nlinum-mode</span> <span class="mi">1</span><span class="p">))</span>
-  <span class="p">(</span><span class="nv">global-display-line-numbers-mode</span><span class="p">))</span></code></pre></div>
+      <span class="p">(</span><span class="nv">global-nlinum-mode</span> <span class="mi">1</span><span class="p">)</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">global-display-line-numbers-mode</span><span class="p">)</span><span class="p">)</span>
+</code></pre></div>
         </div>
 
         
@@ -144,14 +135,11 @@
         <div class="article-toc" >
             <h3>Contents</h3>
             <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#global-display-line-numbers-mode">global-display-line-numbers-mode</a></li>
-<li><a href="#linum-mode">linum-mode</a></li>
-<li><a href="#nlinum-recommended">nlinum (Recommended)</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#global-display-line-numbers-mode">global-display-line-numbers-mode</a></li>
+    <li><a href="#linum-mode">linum-mode</a></li>
+    <li><a href="#nlinum-recommended">nlinum (Recommended)</a></li>
+  </ul>
 </nav>
         </div>
         
