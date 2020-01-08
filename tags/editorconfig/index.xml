@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>EditorConfig on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/hugo-blog/tags/editorconfig/</link>
+    <link>https://xuchengpeng.com/hugo-blog/tags/editorconfig/</link>
     <description>Recent content in EditorConfig on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 21 Aug 2018 12:37:18 +0800</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/editorconfig/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xuchengpeng.com/hugo-blog/tags/editorconfig/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>EditorConfig</title>
-      <link>http://xuchengpeng.com/hugo-blog/2018/08/21/editorconfig/</link>
+      <link>https://xuchengpeng.com/hugo-blog/2018/08/21/editorconfig/</link>
       <pubDate>Tue, 21 Aug 2018 12:37:18 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/hugo-blog/2018/08/21/editorconfig/</guid>
+      <guid>https://xuchengpeng.com/hugo-blog/2018/08/21/editorconfig/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://editorconfig.org/&#34;&gt;EditorConfig&lt;/a&gt;可以帮助开发者在不同的编辑器和IDE之间定义和维护一致的代码风格。EditorConfig包含一个用于定义代码格式的文件和一批编辑器插件，这些插件可以让编辑器读取配置文件并依此格式化代码。EditorConfig的配置文件十分易读，并且可以很好的在VCS（Version Control System）下工作。&lt;/p&gt;
 &lt;h3 id=&#34;editorconfig配置文件是什么样子的&#34;&gt;EditorConfig配置文件是什么样子的？&lt;/h3&gt;
 &lt;p&gt;以下是一个用于Python和Java的行尾和缩进风格.editorconfig配置文件。&lt;/p&gt;

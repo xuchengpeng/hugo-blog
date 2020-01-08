@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>eshell on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/hugo-blog/tags/eshell/</link>
+    <link>https://xuchengpeng.com/hugo-blog/tags/eshell/</link>
     <description>Recent content in eshell on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 09 May 2018 19:40:40 +0000</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/eshell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xuchengpeng.com/hugo-blog/tags/eshell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Add shell-pop with eshell</title>
-      <link>http://xuchengpeng.com/hugo-blog/2018/05/09/shell-pop-with-eshell/</link>
+      <link>https://xuchengpeng.com/hugo-blog/2018/05/09/shell-pop-with-eshell/</link>
       <pubDate>Wed, 09 May 2018 19:40:40 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/hugo-blog/2018/05/09/shell-pop-with-eshell/</guid>
+      <guid>https://xuchengpeng.com/hugo-blog/2018/05/09/shell-pop-with-eshell/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;use-package&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;shell-pop&lt;/span&gt;
   &lt;span class=&#34;nb&#34;&gt;:ensure&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;t&lt;/span&gt;
   &lt;span class=&#34;nb&#34;&gt;:defer&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;t&lt;/span&gt;

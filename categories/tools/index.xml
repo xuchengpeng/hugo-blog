@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/hugo-blog/categories/tools/</link>
+    <link>https://xuchengpeng.com/hugo-blog/categories/tools/</link>
     <description>Recent content in Tools on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 22 Dec 2018 14:39:11 +0800</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/hugo-blog/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xuchengpeng.com/hugo-blog/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Clang-Format code</title>
-      <link>http://xuchengpeng.com/hugo-blog/2018/12/22/clangformat-code/</link>
+      <link>https://xuchengpeng.com/hugo-blog/2018/12/22/clangformat-code/</link>
       <pubDate>Sat, 22 Dec 2018 14:39:11 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/hugo-blog/2018/12/22/clangformat-code/</guid>
+      <guid>https://xuchengpeng.com/hugo-blog/2018/12/22/clangformat-code/</guid>
       <description>&lt;p&gt;Download clang-format from &lt;a href=&#34;http://llvm.org&#34;&gt;http://llvm.org&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;LLVM -i test.c
@@ -26,10 +26,10 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
     
     <item>
       <title>使用AStyle格式化代码</title>
-      <link>http://xuchengpeng.com/hugo-blog/2018/12/20/astyle-code/</link>
+      <link>https://xuchengpeng.com/hugo-blog/2018/12/20/astyle-code/</link>
       <pubDate>Thu, 20 Dec 2018 18:59:10 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/hugo-blog/2018/12/20/astyle-code/</guid>
+      <guid>https://xuchengpeng.com/hugo-blog/2018/12/20/astyle-code/</guid>
       <description>&lt;p&gt;从 &lt;a href=&#34;http://astyle.sourceforge.net/&#34;&gt;astyle.sourceforge.net&lt;/a&gt; 下载安装 astyle。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 /path/to/code.c
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
@@ -57,10 +57,10 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
     
     <item>
       <title>Cmder | Console Emulator</title>
-      <link>http://xuchengpeng.com/hugo-blog/2018/09/05/cmder-console-emulator/</link>
+      <link>https://xuchengpeng.com/hugo-blog/2018/09/05/cmder-console-emulator/</link>
       <pubDate>Wed, 05 Sep 2018 09:31:48 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/hugo-blog/2018/09/05/cmder-console-emulator/</guid>
+      <guid>https://xuchengpeng.com/hugo-blog/2018/09/05/cmder-console-emulator/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Cmder is a software package created out of pure frustration over the absence of nice console emulators on Windows. It is based on amazing software, and spiced up with the Monokai color scheme and a custom prompt layout, looking sexy from the start.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -75,10 +75,10 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
     
     <item>
       <title>EditorConfig</title>
-      <link>http://xuchengpeng.com/hugo-blog/2018/08/21/editorconfig/</link>
+      <link>https://xuchengpeng.com/hugo-blog/2018/08/21/editorconfig/</link>
       <pubDate>Tue, 21 Aug 2018 12:37:18 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/hugo-blog/2018/08/21/editorconfig/</guid>
+      <guid>https://xuchengpeng.com/hugo-blog/2018/08/21/editorconfig/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://editorconfig.org/&#34;&gt;EditorConfig&lt;/a&gt;可以帮助开发者在不同的编辑器和IDE之间定义和维护一致的代码风格。EditorConfig包含一个用于定义代码格式的文件和一批编辑器插件，这些插件可以让编辑器读取配置文件并依此格式化代码。EditorConfig的配置文件十分易读，并且可以很好的在VCS（Version Control System）下工作。&lt;/p&gt;
 &lt;h3 id=&#34;editorconfig配置文件是什么样子的&#34;&gt;EditorConfig配置文件是什么样子的？&lt;/h3&gt;
 &lt;p&gt;以下是一个用于Python和Java的行尾和缩进风格.editorconfig配置文件。&lt;/p&gt;
@@ -120,10 +120,10 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
     
     <item>
       <title>rsync elpa mirror</title>
-      <link>http://xuchengpeng.com/hugo-blog/2018/08/06/rsync-elpa-mirror/</link>
+      <link>https://xuchengpeng.com/hugo-blog/2018/08/06/rsync-elpa-mirror/</link>
       <pubDate>Mon, 06 Aug 2018 16:48:15 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/hugo-blog/2018/08/06/rsync-elpa-mirror/</guid>
+      <guid>https://xuchengpeng.com/hugo-blog/2018/08/06/rsync-elpa-mirror/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rsync.samba.org/&#34;&gt;rsync&lt;/a&gt; is an open source utility that provides fast incremental file transfer. rsync is freely available under the GNU General Public License and is currently being maintained by Wayne Davison.&lt;/p&gt;
 &lt;p&gt;rsync is a file transfer program for Unix systems. rsync uses the &amp;ldquo;rsync algorithm&amp;rdquo; which provides a very fast method for bringing remote files into sync. It does this by sending just the differences in the files across the link, without requiring that both sets of files are present at one of the ends of the link beforehand.
 Some features of rsync include&lt;/p&gt;
@@ -139,10 +139,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>博客写作工具</title>
-      <link>http://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/</link>
+      <link>https://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/</link>
       <pubDate>Fri, 20 Jul 2018 09:20:28 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/</guid>
+      <guid>https://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/</guid>
       <description>&lt;p&gt;基本的工具用途：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;：用来发布博客；&lt;/li&gt;
@@ -153,10 +153,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>163邮箱已死</title>
-      <link>http://xuchengpeng.com/hugo-blog/2017/12/24/163-mail-dead/</link>
+      <link>https://xuchengpeng.com/hugo-blog/2017/12/24/163-mail-dead/</link>
       <pubDate>Sun, 24 Dec 2017 09:11:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/hugo-blog/2017/12/24/163-mail-dead/</guid>
+      <guid>https://xuchengpeng.com/hugo-blog/2017/12/24/163-mail-dead/</guid>
       <description>国内qq邮箱和163邮箱一直是主力使用邮箱。 目前qq邮箱使用授权码仍然可以使用，163邮箱虽然之前推出了授权码功能，但目前已无法使用 Spark 进行第</description>
     </item>
     

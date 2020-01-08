@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ox-hugo on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/hugo-blog/tags/ox-hugo/</link>
+    <link>https://xuchengpeng.com/hugo-blog/tags/ox-hugo/</link>
     <description>Recent content in ox-hugo on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 20 Jul 2018 09:20:28 +0800</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/ox-hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xuchengpeng.com/hugo-blog/tags/ox-hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>博客写作工具</title>
-      <link>http://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/</link>
+      <link>https://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/</link>
       <pubDate>Fri, 20 Jul 2018 09:20:28 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/</guid>
+      <guid>https://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/</guid>
       <description>&lt;p&gt;基本的工具用途：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;：用来发布博客；&lt;/li&gt;

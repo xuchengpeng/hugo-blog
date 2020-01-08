@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>QEMU on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/hugo-blog/tags/qemu/</link>
+    <link>https://xuchengpeng.com/hugo-blog/tags/qemu/</link>
     <description>Recent content in QEMU on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 11 Sep 2018 20:15:48 +0800</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/qemu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xuchengpeng.com/hugo-blog/tags/qemu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>KVM</title>
-      <link>http://xuchengpeng.com/hugo-blog/2018/09/11/kvm/</link>
+      <link>https://xuchengpeng.com/hugo-blog/2018/09/11/kvm/</link>
       <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/hugo-blog/2018/09/11/kvm/</guid>
+      <guid>https://xuchengpeng.com/hugo-blog/2018/09/11/kvm/</guid>
       <description>&lt;p&gt;KVM 全称是 基于内核的虚拟机（Kernel-based Virtual Machine），它是Linux 的一个内核模块，该内核模块使得 Linux 变成了一个 Hypervisor：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;它由 Quramnet 开发，该公司于 2008年被 Red Hat 收购。&lt;/li&gt;
