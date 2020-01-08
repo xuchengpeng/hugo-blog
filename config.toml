@@ -1,4 +1,4 @@
-baseurl = "http://xuchengpeng.com/hugo-blog/"
+baseurl = "https://xuchengpeng.com/hugo-blog/"
 languageCode = "en"
 title = "Chuck&Lucia"
 theme = "minos"
