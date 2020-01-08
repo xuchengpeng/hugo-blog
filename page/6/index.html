@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/" />
     
 
-    <link href="http://xuchengpeng.com/index.xml" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
+    <link href="http://xuchengpeng.com/hugo-blog/index.xml" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -67,12 +67,12 @@
                 
                 
                 <header class="article-header">
-                    <h1 itemprop="name"><a class="article-title" href="/2018/05/04/tcp-ip-illustrated-volume1-ping/">TCP/IP 详解(卷一) Ping程序</a></h1>
+                    <h1 itemprop="name"><a class="article-title" href="/hugo-blog/2018/05/04/tcp-ip-illustrated-volume1-ping/">TCP/IP 详解(卷一) Ping程序</a></h1>
                 </header>
                 
                 <div class="article-meta">
                     <div class="article-date">
-                        <a href="/2018/05/04/tcp-ip-illustrated-volume1-ping/" >
+                        <a href="/hugo-blog/2018/05/04/tcp-ip-illustrated-volume1-ping/" >
                             <time datetime='2018-05-04T08:41:08.000&#43;00:00' itemprop="datePublished">2018-05-04</time>
                         </a>
                     </div>
@@ -85,12 +85,12 @@
                         <div class="article-category">
                             
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                             
                             
                             <span>&gt;</span>
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                             
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                     <p>
                         
                     <p>“ping”这个名字源于声纳定位操作。Ping程序由Mike Muuss编写，目的是为了测试另一台主机是否可达。该程序发送一份ICMP回显请求报文给主机，并等待返回ICMP回显应答。</p>
-<h2 id="ping">Ping程序</h2>
+<h2 id="ping程序">Ping程序</h2>
 <p>我们称发送回显请求的ping程序为客户，而称被ping的主机为服务器。大多数的TCP/IP实现都在内核中直接支持Ping服务器—这种服务器不是一个用户进程（两种ICMP查询服务，地址掩码和时间戳请求，也都是直接在内核中进行处理的）。
 ICMP回显请求和回显应答报文如下：
 <img src="/images/tcp-ip/icmp-echo-format.jpg" alt=""></p>
@@ -111,7 +111,7 @@ ICMP回显请求和回显应答报文如下：
 <p>旧版本的ping程序曾经以这种模式运行，即每秒发送一个回显请求，并打印出返回的每个回显应答。但是，新版本的实现需要加上-s选项才能以这种模式运行。默认情况下，新版本的ping程序只发送一个回显请求。如果收到回显应答，则输出“host is alive”；否则，在20秒内没有收到应答就输出“no answer（没有回答）”。</p>
                     </p>
                     <p class="article-more-link">
-                        <a href="/2018/05/04/tcp-ip-illustrated-volume1-ping/">Read More</a>
+                        <a href="/hugo-blog/2018/05/04/tcp-ip-illustrated-volume1-ping/">Read More</a>
                     </p>
                 </div>
 
@@ -120,7 +120,7 @@ ICMP回显请求和回显应答报文如下：
                     <ul class="article-tag-list">
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/ping">Ping
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/ping">Ping
                             </a>
                         </li>
                         
@@ -135,12 +135,12 @@ ICMP回显请求和回显应答报文如下：
                 
                 
                 <header class="article-header">
-                    <h1 itemprop="name"><a class="article-title" href="/2018/05/03/tcp-ip-illustrated-volume1-icmp/">TCP/IP 详解(卷一) ICMP：Internet控制报文协议</a></h1>
+                    <h1 itemprop="name"><a class="article-title" href="/hugo-blog/2018/05/03/tcp-ip-illustrated-volume1-icmp/">TCP/IP 详解(卷一) ICMP：Internet控制报文协议</a></h1>
                 </header>
                 
                 <div class="article-meta">
                     <div class="article-date">
-                        <a href="/2018/05/03/tcp-ip-illustrated-volume1-icmp/" >
+                        <a href="/hugo-blog/2018/05/03/tcp-ip-illustrated-volume1-icmp/" >
                             <time datetime='2018-05-03T10:40:15.000&#43;00:00' itemprop="datePublished">2018-05-03</time>
                         </a>
                     </div>
@@ -153,12 +153,12 @@ ICMP回显请求和回显应答报文如下：
                         <div class="article-category">
                             
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                             
                             
                             <span>&gt;</span>
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                             
                         </div>
                     </div>
@@ -175,7 +175,7 @@ ICMP回显请求和回显应答报文如下：
 <p><img src="/images/tcp-ip/icmp-format.jpg" alt=""></p>
                     </p>
                     <p class="article-more-link">
-                        <a href="/2018/05/03/tcp-ip-illustrated-volume1-icmp/">Read More</a>
+                        <a href="/hugo-blog/2018/05/03/tcp-ip-illustrated-volume1-icmp/">Read More</a>
                     </p>
                 </div>
 
@@ -184,7 +184,7 @@ ICMP回显请求和回显应答报文如下：
                     <ul class="article-tag-list">
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/icmp">ICMP
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/icmp">ICMP
                             </a>
                         </li>
                         
@@ -199,12 +199,12 @@ ICMP回显请求和回显应答报文如下：
                 
                 
                 <header class="article-header">
-                    <h1 itemprop="name"><a class="article-title" href="/2018/05/03/tcp-ip-illustrated-volume1-rarp/">TCP/IP 详解(卷一) RARP：逆地址解析协议</a></h1>
+                    <h1 itemprop="name"><a class="article-title" href="/hugo-blog/2018/05/03/tcp-ip-illustrated-volume1-rarp/">TCP/IP 详解(卷一) RARP：逆地址解析协议</a></h1>
                 </header>
                 
                 <div class="article-meta">
                     <div class="article-date">
-                        <a href="/2018/05/03/tcp-ip-illustrated-volume1-rarp/" >
+                        <a href="/hugo-blog/2018/05/03/tcp-ip-illustrated-volume1-rarp/" >
                             <time datetime='2018-05-03T09:38:48.000&#43;00:00' itemprop="datePublished">2018-05-03</time>
                         </a>
                     </div>
@@ -217,12 +217,12 @@ ICMP回显请求和回显应答报文如下：
                         <div class="article-category">
                             
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                             
                             
                             <span>&gt;</span>
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                             
                         </div>
                     </div>
@@ -234,12 +234,12 @@ ICMP回显请求和回显应答报文如下：
                         
                     <p>具有本地磁盘的系统引导时，一般是从磁盘上的配置文件中读取IP地址。但是无盘机，如X终端或无盘工作站，则需要采用其他方法来获得IP地址。</p>
 <p>网络上的每个系统都具有唯一的硬件地址，它是由网络接口生产厂家配置的。无盘系统的RARP实现过程是从接口卡上读取唯一的硬件地址，然后发送一份RARP请求（一帧在网络上广播的数据），请求某个主机响应该无盘系统的IP地址（在RARP应答中）。</p>
-<h2 id="rarp-">RARP 的分组格式</h2>
+<h2 id="rarp-的分组格式">RARP 的分组格式</h2>
 <p>RARP分组的格式与ARP分组基本一致。它们之间主要的差别是RARP请求或应答的帧类型代码为0x8035，而且RARP请求的操作代码为3，应答操作代码为4。</p>
 <p>对应于ARP，RARP请求以广播方式传送，而RARP应答一般是单播(unicast)传送的。</p>
                     </p>
                     <p class="article-more-link">
-                        <a href="/2018/05/03/tcp-ip-illustrated-volume1-rarp/">Read More</a>
+                        <a href="/hugo-blog/2018/05/03/tcp-ip-illustrated-volume1-rarp/">Read More</a>
                     </p>
                 </div>
 
@@ -248,7 +248,7 @@ ICMP回显请求和回显应答报文如下：
                     <ul class="article-tag-list">
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/rarp">RARP
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/rarp">RARP
                             </a>
                         </li>
                         
@@ -263,12 +263,12 @@ ICMP回显请求和回显应答报文如下：
                 
                 
                 <header class="article-header">
-                    <h1 itemprop="name"><a class="article-title" href="/2018/05/02/tcp-ip-illustrated-volume1-arp/">TCP/IP 详解(卷一) ARP：地址解析协议</a></h1>
+                    <h1 itemprop="name"><a class="article-title" href="/hugo-blog/2018/05/02/tcp-ip-illustrated-volume1-arp/">TCP/IP 详解(卷一) ARP：地址解析协议</a></h1>
                 </header>
                 
                 <div class="article-meta">
                     <div class="article-date">
-                        <a href="/2018/05/02/tcp-ip-illustrated-volume1-arp/" >
+                        <a href="/hugo-blog/2018/05/02/tcp-ip-illustrated-volume1-arp/" >
                             <time datetime='2018-05-02T14:40:12.000&#43;00:00' itemprop="datePublished">2018-05-02</time>
                         </a>
                     </div>
@@ -281,12 +281,12 @@ ICMP回显请求和回显应答报文如下：
                         <div class="article-category">
                             
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                             
                             
                             <span>&gt;</span>
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                             
                         </div>
                     </div>
@@ -300,12 +300,12 @@ ICMP回显请求和回显应答报文如下：
 <p>当一台主机把以太网数据帧发送到位于同一局域网上的另一台主机时，是根据48 bit的以太网地址来确定目的接口的。设备驱动程序从不检查IP数据报中的目的IP地址。</p>
 <p>地址解析为这两种不同的地址形式提供映射：32 bit的IP地址和数据链路层使用的任何类型的地址。</p>
 <p>ARP为IP地址到对应的硬件地址之间提供动态映射。</p>
-<h2 id="arp-">ARP 高速缓存</h2>
+<h2 id="arp-高速缓存">ARP 高速缓存</h2>
 <p>ARP高效运行的关键是由于每个主机上都有一个ARP高速缓存。这个高速缓存存放了最近Internet地址到硬件地址之间的映射记录。高速缓存中每一项的生存时间一般为20分钟，起始时间从被创建时开始算起。
 使用 <code>arp -a</code> 命令来检查 ARP 高速缓存。</p>
                     </p>
                     <p class="article-more-link">
-                        <a href="/2018/05/02/tcp-ip-illustrated-volume1-arp/">Read More</a>
+                        <a href="/hugo-blog/2018/05/02/tcp-ip-illustrated-volume1-arp/">Read More</a>
                     </p>
                 </div>
 
@@ -314,7 +314,7 @@ ICMP回显请求和回显应答报文如下：
                     <ul class="article-tag-list">
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/arp">ARP
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/arp">ARP
                             </a>
                         </li>
                         
@@ -329,12 +329,12 @@ ICMP回显请求和回显应答报文如下：
                 
                 
                 <header class="article-header">
-                    <h1 itemprop="name"><a class="article-title" href="/2018/05/02/windows10-version-1803-is-out/">Windows 10 Version 1803 is out</a></h1>
+                    <h1 itemprop="name"><a class="article-title" href="/hugo-blog/2018/05/02/windows10-version-1803-is-out/">Windows 10 Version 1803 is out</a></h1>
                 </header>
                 
                 <div class="article-meta">
                     <div class="article-date">
-                        <a href="/2018/05/02/windows10-version-1803-is-out/" >
+                        <a href="/hugo-blog/2018/05/02/windows10-version-1803-is-out/" >
                             <time datetime='2018-05-02T11:27:31.000&#43;00:00' itemprop="datePublished">2018-05-02</time>
                         </a>
                     </div>
@@ -347,7 +347,7 @@ ICMP回显请求和回显应答报文如下：
                         <div class="article-category">
                             
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/news">News</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/news">News</a>
                             
                         </div>
                     </div>
@@ -357,7 +357,7 @@ ICMP回显请求和回显应答报文如下：
                 <div class="article-entry" itemprop="articleBody">
                     <p>
                         
-                    <h2 id="heading">简体中文零售版</h2>
+                    <h2 id="简体中文零售版">简体中文零售版</h2>
 <p><strong>家庭版、专业版、教育版、家庭单语言版、专业工作站版、专业教育版</strong></p>
 <p>架构: x64
 文件: cn_windows_10_consumer_editions_version_1803_updated_march_2018_x64_dvd_12063766.iso
@@ -375,7 +375,7 @@ SHA-1: D5E89FB54169F5A2E610C75813CE833A4CB9A4E4
 ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86_dvd_12063452.iso|3480692736|0EC3C40EF13D772798209981F18B6A5D|/</p>
                     </p>
                     <p class="article-more-link">
-                        <a href="/2018/05/02/windows10-version-1803-is-out/">Read More</a>
+                        <a href="/hugo-blog/2018/05/02/windows10-version-1803-is-out/">Read More</a>
                     </p>
                 </div>
 
@@ -384,7 +384,7 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
                     <ul class="article-tag-list">
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/windows">Windows
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/windows">Windows
                             </a>
                         </li>
                         
@@ -399,12 +399,12 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
                 
                 
                 <header class="article-header">
-                    <h1 itemprop="name"><a class="article-title" href="/2018/04/27/emacs-add-yasnippet-to-company-backends/">Emacs add yasnippet to company backends</a></h1>
+                    <h1 itemprop="name"><a class="article-title" href="/hugo-blog/2018/04/27/emacs-add-yasnippet-to-company-backends/">Emacs add yasnippet to company backends</a></h1>
                 </header>
                 
                 <div class="article-meta">
                     <div class="article-date">
-                        <a href="/2018/04/27/emacs-add-yasnippet-to-company-backends/" >
+                        <a href="/hugo-blog/2018/04/27/emacs-add-yasnippet-to-company-backends/" >
                             <time datetime='2018-04-27T10:10:07.000&#43;00:00' itemprop="datePublished">2018-04-27</time>
                         </a>
                     </div>
@@ -417,12 +417,12 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
                         <div class="article-category">
                             
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/software">Software</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/software">Software</a>
                             
                             
                             <span>&gt;</span>
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/emacs">emacs</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/emacs">emacs</a>
                             
                         </div>
                     </div>
@@ -445,7 +445,7 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
 </code></pre></div>
                     </p>
                     <p class="article-more-link">
-                        <a href="/2018/04/27/emacs-add-yasnippet-to-company-backends/">Read More</a>
+                        <a href="/hugo-blog/2018/04/27/emacs-add-yasnippet-to-company-backends/">Read More</a>
                     </p>
                 </div>
 
@@ -454,12 +454,12 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
                     <ul class="article-tag-list">
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/yasnippet">yasnippet
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/yasnippet">yasnippet
                             </a>
                         </li>
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/company">company
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/company">company
                             </a>
                         </li>
                         
@@ -474,12 +474,12 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
                 
                 
                 <header class="article-header">
-                    <h1 itemprop="name"><a class="article-title" href="/2018/04/27/ubuntu-18.04-lts-is-out/">Ubuntu 18.04 LTS is out</a></h1>
+                    <h1 itemprop="name"><a class="article-title" href="/hugo-blog/2018/04/27/ubuntu-18.04-lts-is-out/">Ubuntu 18.04 LTS is out</a></h1>
                 </header>
                 
                 <div class="article-meta">
                     <div class="article-date">
-                        <a href="/2018/04/27/ubuntu-18.04-lts-is-out/" >
+                        <a href="/hugo-blog/2018/04/27/ubuntu-18.04-lts-is-out/" >
                             <time datetime='2018-04-27T09:36:13.000&#43;00:00' itemprop="datePublished">2018-04-27</time>
                         </a>
                     </div>
@@ -492,7 +492,7 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
                         <div class="article-category">
                             
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/news">News</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/news">News</a>
                             
                         </div>
                     </div>
@@ -502,7 +502,7 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
                 <div class="article-entry" itemprop="articleBody">
                     <p>
                         
-                    <h2 id="whats-new-in-1804-lts">What’s new in 18.04 LTS</h2>
+                    <h2 id="whats-new-in-1804-lts-">What’s new in 18.04 LTS</h2>
 <ul>
 <li>Supported by Canonical until 2023</li>
 <li>Runs on all major architectures – x86, x86-64, ARM v7, ARM64, POWER8 and IBM s390x (LinuxONE)</li>
@@ -519,7 +519,7 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
 </ul>
                     </p>
                     <p class="article-more-link">
-                        <a href="/2018/04/27/ubuntu-18.04-lts-is-out/">Read More</a>
+                        <a href="/hugo-blog/2018/04/27/ubuntu-18.04-lts-is-out/">Read More</a>
                     </p>
                 </div>
 
@@ -528,7 +528,7 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
                     <ul class="article-tag-list">
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/ubuntu">Ubuntu
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/ubuntu">Ubuntu
                             </a>
                         </li>
                         
@@ -543,12 +543,12 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
                 
                 
                 <header class="article-header">
-                    <h1 itemprop="name"><a class="article-title" href="/2018/04/26/design-pattern-transfer-object-pattern/">传输对象模式</a></h1>
+                    <h1 itemprop="name"><a class="article-title" href="/hugo-blog/2018/04/26/design-pattern-transfer-object-pattern/">传输对象模式</a></h1>
                 </header>
                 
                 <div class="article-meta">
                     <div class="article-date">
-                        <a href="/2018/04/26/design-pattern-transfer-object-pattern/" >
+                        <a href="/hugo-blog/2018/04/26/design-pattern-transfer-object-pattern/" >
                             <time datetime='2018-04-26T15:47:52.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
                         </a>
                     </div>
@@ -561,12 +561,12 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
                         <div class="article-category">
                             
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                             
                             
                             <span>&gt;</span>
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/design-pattern">Design Pattern</a>
                             
                         </div>
                     </div>
@@ -580,13 +580,13 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
 <p>业务对象（Business Object） - 为传输对象填充数据的业务服务。
 传输对象（Transfer Object） - 简单的 POJO，只有设置/获取属性的方法。
 客户端（Client） - 客户端可以发送请求或者发送传输对象到业务对象。</p>
-<h2 id="heading">实现</h2>
+<h2 id="实现">实现</h2>
 <p>我们将创建一个作为业务对象的 StudentBO 和作为传输对象的 StudentVO，它们都代表了我们的实体。
 TransferObjectPatternDemo，我们的演示类在这里是作为一个客户端，将使用 StudentBO 和 Student 来演示传输对象设计模式。</p>
 <p><img src="/images/design-pattern/transferobject_pattern_uml_diagram.jpg" alt=""></p>
                     </p>
                     <p class="article-more-link">
-                        <a href="/2018/04/26/design-pattern-transfer-object-pattern/">Read More</a>
+                        <a href="/hugo-blog/2018/04/26/design-pattern-transfer-object-pattern/">Read More</a>
                     </p>
                 </div>
 
@@ -595,7 +595,7 @@ TransferObjectPatternDemo，我们的演示类在这里是作为一个客户端�
                     <ul class="article-tag-list">
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
                             </a>
                         </li>
                         
@@ -610,12 +610,12 @@ TransferObjectPatternDemo，我们的演示类在这里是作为一个客户端�
                 
                 
                 <header class="article-header">
-                    <h1 itemprop="name"><a class="article-title" href="/2018/04/26/design-pattern-service-locator-pattern/">服务定位器模式</a></h1>
+                    <h1 itemprop="name"><a class="article-title" href="/hugo-blog/2018/04/26/design-pattern-service-locator-pattern/">服务定位器模式</a></h1>
                 </header>
                 
                 <div class="article-meta">
                     <div class="article-date">
-                        <a href="/2018/04/26/design-pattern-service-locator-pattern/" >
+                        <a href="/hugo-blog/2018/04/26/design-pattern-service-locator-pattern/" >
                             <time datetime='2018-04-26T15:40:37.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
                         </a>
                     </div>
@@ -628,12 +628,12 @@ TransferObjectPatternDemo，我们的演示类在这里是作为一个客户端�
                         <div class="article-category">
                             
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                             
                             
                             <span>&gt;</span>
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/design-pattern">Design Pattern</a>
                             
                         </div>
                     </div>
@@ -649,13 +649,13 @@ Context / 初始的 Context - JNDI Context 带有对要查找的服务的引用�
 服务定位器（Service Locator） - 服务定位器是通过 JNDI 查找和缓存服务来获取服务的单点接触。
 缓存（Cache） - 缓存存储服务的引用，以便复用它们。
 客户端（Client） - Client 是通过 ServiceLocator 调用服务的对象。</p>
-<h2 id="heading">实现</h2>
+<h2 id="实现">实现</h2>
 <p>我们将创建 ServiceLocator、InitialContext、Cache、Service 作为表示实体的各种对象。Service1 和 Service2 表示实体服务。
 ServiceLocatorPatternDemo，我们的演示类在这里是作为一个客户端，将使用 ServiceLocator 来演示服务定位器设计模式。</p>
 <p><img src="/images/design-pattern/servicelocator_pattern_uml_diagram.jpg" alt=""></p>
                     </p>
                     <p class="article-more-link">
-                        <a href="/2018/04/26/design-pattern-service-locator-pattern/">Read More</a>
+                        <a href="/hugo-blog/2018/04/26/design-pattern-service-locator-pattern/">Read More</a>
                     </p>
                 </div>
 
@@ -664,7 +664,7 @@ ServiceLocatorPatternDemo，我们的演示类在这里是作为一个客户端�
                     <ul class="article-tag-list">
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
                             </a>
                         </li>
                         
@@ -679,12 +679,12 @@ ServiceLocatorPatternDemo，我们的演示类在这里是作为一个客户端�
                 
                 
                 <header class="article-header">
-                    <h1 itemprop="name"><a class="article-title" href="/2018/04/26/design-pattern-intercepting-filter-pattern/">拦截过滤器模式</a></h1>
+                    <h1 itemprop="name"><a class="article-title" href="/hugo-blog/2018/04/26/design-pattern-intercepting-filter-pattern/">拦截过滤器模式</a></h1>
                 </header>
                 
                 <div class="article-meta">
                     <div class="article-date">
-                        <a href="/2018/04/26/design-pattern-intercepting-filter-pattern/" >
+                        <a href="/hugo-blog/2018/04/26/design-pattern-intercepting-filter-pattern/" >
                             <time datetime='2018-04-26T15:33:02.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
                         </a>
                     </div>
@@ -697,12 +697,12 @@ ServiceLocatorPatternDemo，我们的演示类在这里是作为一个客户端�
                         <div class="article-category">
                             
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                             
                             
                             <span>&gt;</span>
                             
-                            <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                            <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/design-pattern">Design Pattern</a>
                             
                         </div>
                     </div>
@@ -718,13 +718,13 @@ ServiceLocatorPatternDemo，我们的演示类在这里是作为一个客户端�
 Target - Target 对象是请求处理程序。
 过滤管理器（Filter Manager） - 过滤管理器管理过滤器和过滤器链。
 客户端（Client） - Client 是向 Target 对象发送请求的对象。</p>
-<h2 id="heading">实现</h2>
+<h2 id="实现">实现</h2>
 <p>我们将创建 FilterChain、FilterManager、Target、Client 作为表示实体的各种对象。AuthenticationFilter 和 DebugFilter 表示实体过滤器。
 InterceptingFilterDemo，我们的演示类使用 Client 来演示拦截过滤器设计模式。</p>
 <p><img src="/images/design-pattern/interceptingfilter_pattern_uml_diagram.jpg" alt=""></p>
                     </p>
                     <p class="article-more-link">
-                        <a href="/2018/04/26/design-pattern-intercepting-filter-pattern/">Read More</a>
+                        <a href="/hugo-blog/2018/04/26/design-pattern-intercepting-filter-pattern/">Read More</a>
                     </p>
                 </div>
 
@@ -733,7 +733,7 @@ InterceptingFilterDemo，我们的演示类使用 Client 来演示拦截过滤�
                     <ul class="article-tag-list">
                         
                         <li class="article-tag-list-item">
-                            <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                            <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
                             </a>
                         </li>
                         
@@ -748,27 +748,27 @@ InterceptingFilterDemo，我们的演示类使用 Client 来演示拦截过滤�
 
 <nav id="page-nav">
     
-    <a href="/page/5/" rel="prev" class="extend prev">&laquo; Prev</a>
+    <a href="/hugo-blog/page/5/" rel="prev" class="extend prev">&laquo; Prev</a>
     
     
     
-    <a href="/">1</a>
+    <a href="/hugo-blog/">1</a>
     
     
     
-    <a href="/page/2/">2</a>
+    <a href="/hugo-blog/page/2/">2</a>
     
     
     
-    <a href="/page/3/">3</a>
+    <a href="/hugo-blog/page/3/">3</a>
     
     
     
-    <a href="/page/4/">4</a>
+    <a href="/hugo-blog/page/4/">4</a>
     
     
     
-    <a href="/page/5/">5</a>
+    <a href="/hugo-blog/page/5/">5</a>
     
     
     
@@ -776,40 +776,40 @@ InterceptingFilterDemo，我们的演示类使用 Client 来演示拦截过滤�
     
     
     
-    <a href="/page/7/">7</a>
+    <a href="/hugo-blog/page/7/">7</a>
     
     
     
-    <a href="/page/8/">8</a>
+    <a href="/hugo-blog/page/8/">8</a>
     
     
     
-    <a href="/page/9/">9</a>
+    <a href="/hugo-blog/page/9/">9</a>
     
     
     
-    <a href="/page/10/">10</a>
+    <a href="/hugo-blog/page/10/">10</a>
     
     
     
-    <a href="/page/11/">11</a>
+    <a href="/hugo-blog/page/11/">11</a>
     
     
     
-    <a href="/page/12/">12</a>
+    <a href="/hugo-blog/page/12/">12</a>
     
     
     
-    <a href="/page/13/">13</a>
+    <a href="/hugo-blog/page/13/">13</a>
     
     
     
-    <a href="/page/14/">14</a>
+    <a href="/hugo-blog/page/14/">14</a>
     
     
 
     
-    <a href="/page/7/" rel="next" class="extend next">Next &raquo;</a>
+    <a href="/hugo-blog/page/7/" rel="next" class="extend next">Next &raquo;</a>
     
 </nav>
 
@@ -818,8 +818,8 @@ InterceptingFilterDemo，我们的演示类使用 Client 来演示拦截过滤�
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

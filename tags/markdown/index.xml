@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Markdown on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/tags/markdown/</link>
+    <link>http://xuchengpeng.com/hugo-blog/tags/markdown/</link>
     <description>Recent content in Markdown on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 25 May 2018 16:28:02 +0000</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Markdown 博客中使用 MathJax 数学公式</title>
-      <link>http://xuchengpeng.com/2018/05/25/mathjax-in-markdown-blog/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/25/mathjax-in-markdown-blog/</link>
       <pubDate>Fri, 25 May 2018 16:28:02 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/25/mathjax-in-markdown-blog/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/25/mathjax-in-markdown-blog/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; - Beautiful math in all browsers&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;A JavaScript display engine for mathematics that works in all browsers. No more setup for readers. It just works.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;mathjax-&#34;&gt;MathJax 使用&lt;/h2&gt;
+&lt;h2 id=&#34;mathjax-使用&#34;&gt;MathJax 使用&lt;/h2&gt;
 &lt;p&gt;网页中增加配置：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;text/x-mathjax-config&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&#34;nx&#34;&gt;MathJax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Hub&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -38,10 +38,10 @@
     
     <item>
       <title>Markdown 复杂表格</title>
-      <link>http://xuchengpeng.com/2018/05/14/markdown-complex-table/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/14/markdown-complex-table/</link>
       <pubDate>Mon, 14 May 2018 19:46:01 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/14/markdown-complex-table/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/14/markdown-complex-table/</guid>
       <description>&lt;p&gt;由于Markdown语法本身不包含复杂表格的插入，但是可以使用html语法来实现，一般的Markdown编辑器都是支持html语法的。&lt;/p&gt;
 &lt;p&gt;复杂表格与简单表格最大的差异有两点：水平单元格的合并和纵向单元格的合并，通过html语法实现这两个操作本质就是：删除多余的空白单元格，然后使用某些单元格的colspan和rowspan属性进行扩展填充。&lt;/p&gt;
 &lt;ul&gt;

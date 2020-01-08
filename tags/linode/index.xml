@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linode on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/tags/linode/</link>
+    <link>http://xuchengpeng.com/hugo-blog/tags/linode/</link>
     <description>Recent content in Linode on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 20 Apr 2018 15:34:34 +0000</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/tags/linode/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/linode/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ubuntu 升级内核</title>
-      <link>http://xuchengpeng.com/2018/04/20/ubuntu-upgrade-kernel/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/20/ubuntu-upgrade-kernel/</link>
       <pubDate>Fri, 20 Apr 2018 15:34:34 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/20/ubuntu-upgrade-kernel/</guid>
-      <description>&lt;h3 id=&#34;heading&#34;&gt;查看当前内核版本&lt;/h3&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/20/ubuntu-upgrade-kernel/</guid>
+      <description>&lt;h3 id=&#34;查看当前内核版本&#34;&gt;查看当前内核版本&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ uname -r
 4.4.0-53-generic
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading-1&#34;&gt;下载内核&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;下载内核&#34;&gt;下载内核&lt;/h3&gt;
 &lt;p&gt;下载最新 Ubuntu 编译好的内核地址： &lt;a href=&#34;http://kernel.ubuntu.com/~kernel-ppa/mainline/&#34;&gt;http://kernel.ubuntu.com/~kernel-ppa/mainline/&lt;/a&gt;
 选取当前最新的内核 4.16.3 版本进行下载：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ mkdir 4.16.3 &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; 4.16.3
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603_4.16.3-041603.201804190730_all.deb
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-image-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading-2&#34;&gt;安装内核&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;安装内核&#34;&gt;安装内核&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ dpkg -i *.deb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading-3&#34;&gt;卸载旧内核&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;卸载旧内核&#34;&gt;卸载旧内核&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看目前安装的内核&lt;/span&gt;
 $ dpkg -l &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep linux
 ii  linux-image-4.4.0-53-generic       4.4.0-53.74                        amd64        Linux kernel image &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; version 4.4.0 on &lt;span class=&#34;m&#34;&gt;64&lt;/span&gt; bit x86 SMP
@@ -37,7 +37,7 @@ ii  linux-image-4.16.3-041603-generic  4.16.3-041603.201804190730         amd64 
 &lt;span class=&#34;c1&#34;&gt;## 卸载旧内核&lt;/span&gt;
 $ apt-get purge linux-image-4.4.0-53-generic linux-headers-4.4.0-53
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果查询的结果中还有显示已卸载的内核，可以使用&lt;code&gt;dpkg -P linux-image-4.4.0-53-generic&lt;/code&gt;命令将其删除。&lt;/p&gt;
-&lt;h3 id=&#34;heading-4&#34;&gt;更新启动引导&lt;/h3&gt;
+&lt;h3 id=&#34;更新启动引导&#34;&gt;更新启动引导&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ update-grub
 &lt;span class=&#34;c1&#34;&gt;# 重启后再查看内核版本验证 uname -a&lt;/span&gt;
 $ reboot
@@ -46,11 +46,11 @@ $ reboot
     
     <item>
       <title>Linode 上搭建 Shadowsocks</title>
-      <link>http://xuchengpeng.com/2018/04/13/setup-shadowsocks-on-linode/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/13/setup-shadowsocks-on-linode/</link>
       <pubDate>Fri, 13 Apr 2018 09:08:00 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/13/setup-shadowsocks-on-linode/</guid>
-      <description>&lt;h2 id=&#34;vps-&#34;&gt;VPS 选择&lt;/h2&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/13/setup-shadowsocks-on-linode/</guid>
+      <description>&lt;h2 id=&#34;vps-选择&#34;&gt;VPS 选择&lt;/h2&gt;
 &lt;h3 id=&#34;linodehttpswwwlinodecomr0a89daeb73aede849b760c66127f1bb8960c73dc&#34;&gt;&lt;a href=&#34;https://www.linode.com/?r=0a89daeb73aede849b760c66127f1bb8960c73dc&#34;&gt;Linode&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;老大哥Linode近年最大的变化是，倍感digitalocean和vultr的压力了。Linode近期最大的福利是，全面由原来的Xen架构改用最流行的KVM架构服务器，套餐内存全部翻倍！&lt;/p&gt;
 &lt;p&gt;例如，过去每月$10只能买1G内存套餐，现在你可购买Linode 2G套餐，目前最低$5可以买1G内存套餐，这也是最低套餐配置了，绝对具有性价比。&lt;/p&gt;

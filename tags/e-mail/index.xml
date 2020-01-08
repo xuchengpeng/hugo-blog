@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>E-mail on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/tags/e-mail/</link>
+    <link>http://xuchengpeng.com/hugo-blog/tags/e-mail/</link>
     <description>Recent content in E-mail on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 18 Jan 2018 07:30:32 +0000</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/tags/e-mail/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/e-mail/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>阿里云域名赠送企业邮箱</title>
-      <link>http://xuchengpeng.com/2018/01/18/alimail-with-aliyun-domain/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/01/18/alimail-with-aliyun-domain/</link>
       <pubDate>Thu, 18 Jan 2018 07:30:32 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/01/18/alimail-with-aliyun-domain/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/alimail-qiye.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/01/18/alimail-with-aliyun-domain/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/alimail-qiye.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;申请 {% post_link set-up-aliyun-domain-with-github-pages 阿里云域名 %} 后，会赠送阿里云企业邮箱免费版。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;50个帐号，5G/帐号；&lt;/li&gt;
@@ -30,10 +30,10 @@
     
     <item>
       <title>163邮箱已死</title>
-      <link>http://xuchengpeng.com/2017/12/24/163-mail-dead/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/12/24/163-mail-dead/</link>
       <pubDate>Sun, 24 Dec 2017 09:11:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/12/24/163-mail-dead/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/12/24/163-mail-dead/</guid>
       <description>国内qq邮箱和163邮箱一直是主力使用邮箱。 目前qq邮箱使用授权码仍然可以使用，163邮箱虽然之前推出了授权码功能，但目前已无法使用 Spark 进行第</description>
     </item>
     

@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/04/26/design-pattern-mvc-pattern/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-mvc-pattern/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/04/26/design-pattern-mvc-pattern/" >
+                <a href="/hugo-blog/2018/04/26/design-pattern-mvc-pattern/" >
                     <time datetime='2018-04-26T14:48:23.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/design-pattern">Design Pattern</a>
                     
                 </div>
             </div>
@@ -100,11 +100,11 @@
 <p>Model（模型） - 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。
 View（视图） - 视图代表模型包含的数据的可视化。
 Controller（控制器） - 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。</p>
-<h2 id="heading">实现</h2>
+<h2 id="实现">实现</h2>
 <p>我们将创建一个作为模型的 Student 对象。StudentView 是一个把学生详细信息输出到控制台的视图类，StudentController 是负责存储数据到 Student 对象中的控制器类，并相应地更新视图 StudentView。
 MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式的用法。</p>
 <p><img src="/images/design-pattern/mvc_pattern_uml_diagram.jpg" alt=""></p>
-<h3 id="-1">步骤 1</h3>
+<h3 id="步骤-1">步骤 1</h3>
 <p>创建模型。
 <em>Student.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span> <span class="o">{</span>
@@ -123,7 +123,7 @@ MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式
       <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-2">步骤 2</h3>
+</code></pre></div><h3 id="步骤-2">步骤 2</h3>
 <p>创建视图。
 8StudentView.java*</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StudentView</span> <span class="o">{</span>
@@ -133,7 +133,7 @@ MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Roll No: &#34;</span> <span class="o">+</span> <span class="n">studentRollNo</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-3">步骤 3</h3>
+</code></pre></div><h3 id="步骤-3">步骤 3</h3>
 <p>创建控制器。
 <em>StudentController.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StudentController</span> <span class="o">{</span>
@@ -165,7 +165,7 @@ MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式
       <span class="n">view</span><span class="o">.</span><span class="na">printStudentDetails</span><span class="o">(</span><span class="n">model</span><span class="o">.</span><span class="na">getName</span><span class="o">(</span><span class="o">)</span><span class="o">,</span> <span class="n">model</span><span class="o">.</span><span class="na">getRollNo</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-4">步骤 4</h3>
+</code></pre></div><h3 id="步骤-4">步骤 4</h3>
 <p>使用 StudentController 方法来演示 MVC 设计模式的用法。
 <em>MVCPatternDemo.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MVCPatternDemo</span> <span class="o">{</span>
@@ -194,7 +194,7 @@ MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式
       <span class="k">return</span> <span class="n">student</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-5">步骤 5</h3>
+</code></pre></div><h3 id="步骤-5">步骤 5</h3>
 <p>验证输出。</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nl">Student:</span>
 <span class="nl">Name:</span> <span class="n">Robert</span>
@@ -211,13 +211,13 @@ MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">实现</a>
+    <li><a href="#实现">实现</a>
       <ul>
-        <li><a href="#-1">步骤 1</a></li>
-        <li><a href="#-2">步骤 2</a></li>
-        <li><a href="#-3">步骤 3</a></li>
-        <li><a href="#-4">步骤 4</a></li>
-        <li><a href="#-5">步骤 5</a></li>
+        <li><a href="#步骤-1">步骤 1</a></li>
+        <li><a href="#步骤-2">步骤 2</a></li>
+        <li><a href="#步骤-3">步骤 3</a></li>
+        <li><a href="#步骤-4">步骤 4</a></li>
+        <li><a href="#步骤-5">步骤 5</a></li>
       </ul>
     </li>
   </ul>
@@ -238,7 +238,7 @@ MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/j2ee%E6%A8%A1%E5%BC%8F">J2EE模式
                     </a>
                 </li>
                 
@@ -248,12 +248,12 @@ MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/04/26/design-pattern-business-delegate-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/26/design-pattern-business-delegate-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">业务代表模式&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/04/26/design-pattern-visitor-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/26/design-pattern-visitor-pattern/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;访问者模式</div>
     </a>
     
@@ -264,7 +264,7 @@ MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式
         
   <div class="article-comments">
   
-  <span id="/2018/04/26/design-pattern-mvc-pattern/" class="leancloud-visitors" data-flag-title="MVC 模式">
+  <span id="/hugo-blog/2018/04/26/design-pattern-mvc-pattern/" class="leancloud-visitors" data-flag-title="MVC 模式">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -289,8 +289,8 @@ MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

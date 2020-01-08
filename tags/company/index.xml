@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>company on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/tags/company/</link>
+    <link>http://xuchengpeng.com/hugo-blog/tags/company/</link>
     <description>Recent content in company on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 27 Apr 2018 10:10:07 +0000</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/tags/company/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/company/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Emacs add yasnippet to company backends</title>
-      <link>http://xuchengpeng.com/2018/04/27/emacs-add-yasnippet-to-company-backends/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/27/emacs-add-yasnippet-to-company-backends/</link>
       <pubDate>Fri, 27 Apr 2018 10:10:07 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/27/emacs-add-yasnippet-to-company-backends/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/27/emacs-add-yasnippet-to-company-backends/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;defvar&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;company-mode/enable-yas&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;t&lt;/span&gt;
   &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Enable yasnippet for all backends.&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 

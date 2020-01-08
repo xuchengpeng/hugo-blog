@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/04/18/design-pattern-decorator-pattern/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/04/18/design-pattern-decorator-pattern/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/04/18/design-pattern-decorator-pattern/" >
+                <a href="/hugo-blog/2018/04/18/design-pattern-decorator-pattern/" >
                     <time datetime='2018-04-18T09:01:25.000&#43;00:00' itemprop="datePublished">2018-04-18</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/design-pattern">Design Pattern</a>
                     
                 </div>
             </div>
@@ -99,7 +99,7 @@
             <p>装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。
 这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
 我们通过下面的实例来演示装饰器模式的用法。其中，我们将把一个形状装饰上不同的颜色，同时又不改变形状类。</p>
-<h2 id="heading">介绍</h2>
+<h2 id="介绍">介绍</h2>
 <p>意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。
 主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。
 何时使用：在不想增加很多子类的情况下扩展类。
@@ -110,18 +110,18 @@
 缺点：多层装饰比较复杂。
 使用场景： 1、扩展一个类的功能。 2、动态增加功能，动态撤销。
 注意事项：可代替继承。</p>
-<h2 id="heading-1">实现</h2>
+<h2 id="实现">实现</h2>
 <p>我们将创建一个 Shape 接口和实现了 Shape 接口的实体类。然后我们创建一个实现了 Shape 接口的抽象装饰类 ShapeDecorator，并把 Shape 对象作为它的实例变量。
 RedShapeDecorator 是实现了 ShapeDecorator 的实体类。
 DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shape 对象。</p>
 <p><img src="/images/design-pattern/decorator_pattern_uml_diagram.jpg" alt=""></p>
-<h3 id="-1">步骤 1</h3>
+<h3 id="步骤-1">步骤 1</h3>
 <p>创建一个接口。
 <em>Shape.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Shape</span> <span class="o">{</span>
    <span class="kt">void</span> <span class="nf">draw</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-2">步骤 2</h3>
+</code></pre></div><h3 id="步骤-2">步骤 2</h3>
 <p>创建实现接口的实体类。
 <em>Rectangle.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="o">{</span>
@@ -139,7 +139,7 @@ DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shap
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Shape: Circle&#34;</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-3">步骤 3</h3>
+</code></pre></div><h3 id="步骤-3">步骤 3</h3>
 <p>创建实现了 Shape 接口的抽象装饰类。
 <em>ShapeDecorator.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">ShapeDecorator</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="o">{</span>
@@ -153,7 +153,7 @@ DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shap
       <span class="n">decoratedShape</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-4">步骤 4</h3>
+</code></pre></div><h3 id="步骤-4">步骤 4</h3>
 <p>创建扩展了 ShapeDecorator 类的实体装饰类。
 <em>RedShapeDecorator.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RedShapeDecorator</span> <span class="kd">extends</span> <span class="n">ShapeDecorator</span> <span class="o">{</span>
@@ -172,7 +172,7 @@ DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shap
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Border Color: Red&#34;</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-5">步骤 5</h3>
+</code></pre></div><h3 id="步骤-5">步骤 5</h3>
 <p>使用 RedShapeDecorator 来装饰 Shape 对象。
 <em>DecoratorPatternDemo.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DecoratorPatternDemo</span> <span class="o">{</span>
@@ -193,7 +193,7 @@ DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shap
       <span class="n">redRectangle</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-6">步骤 6</h3>
+</code></pre></div><h3 id="步骤-6">步骤 6</h3>
 <p>验证输出。</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Circle</span> <span class="n">with</span> <span class="n">normal</span> <span class="n">border</span>
 <span class="nl">Shape:</span> <span class="n">Circle</span>
@@ -214,15 +214,15 @@ DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shap
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">介绍</a></li>
-    <li><a href="#heading-1">实现</a>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#实现">实现</a>
       <ul>
-        <li><a href="#-1">步骤 1</a></li>
-        <li><a href="#-2">步骤 2</a></li>
-        <li><a href="#-3">步骤 3</a></li>
-        <li><a href="#-4">步骤 4</a></li>
-        <li><a href="#-5">步骤 5</a></li>
-        <li><a href="#-6">步骤 6</a></li>
+        <li><a href="#步骤-1">步骤 1</a></li>
+        <li><a href="#步骤-2">步骤 2</a></li>
+        <li><a href="#步骤-3">步骤 3</a></li>
+        <li><a href="#步骤-4">步骤 4</a></li>
+        <li><a href="#步骤-5">步骤 5</a></li>
+        <li><a href="#步骤-6">步骤 6</a></li>
       </ul>
     </li>
   </ul>
@@ -240,13 +240,13 @@ DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shap
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/04/12/design-pattern-composite-pattern/">组合模式</a></li>
+	<li><a href="/hugo-blog/2018/04/12/design-pattern-composite-pattern/">组合模式</a></li>
 	
-	<li><a href="/2018/04/12/design-pattern-filter-pattern/">过滤器模式</a></li>
+	<li><a href="/hugo-blog/2018/04/12/design-pattern-filter-pattern/">过滤器模式</a></li>
 	
-	<li><a href="/2018/04/10/design-pattern-bridge-pattern/">桥接模式</a></li>
+	<li><a href="/hugo-blog/2018/04/10/design-pattern-bridge-pattern/">桥接模式</a></li>
 	
-	<li><a href="/2018/04/09/design-pattern-adapter-pattern/">适配器模式</a></li>
+	<li><a href="/hugo-blog/2018/04/09/design-pattern-adapter-pattern/">适配器模式</a></li>
 	
   </ul>
 </section>
@@ -258,7 +258,7 @@ DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shap
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F">结构型模式
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F">结构型模式
                     </a>
                 </li>
                 
@@ -268,12 +268,12 @@ DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shap
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/04/19/design-pattern-facade-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/19/design-pattern-facade-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">外观模式&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/04/13/ubuntu-add-delete-ppa/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/13/ubuntu-add-delete-ppa/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;Ubuntu 增加和删除 PPA 软件源</div>
     </a>
     
@@ -284,7 +284,7 @@ DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shap
         
   <div class="article-comments">
   
-  <span id="/2018/04/18/design-pattern-decorator-pattern/" class="leancloud-visitors" data-flag-title="装饰器模式">
+  <span id="/hugo-blog/2018/04/18/design-pattern-decorator-pattern/" class="leancloud-visitors" data-flag-title="装饰器模式">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -309,8 +309,8 @@ DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shap
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>emacs on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/tags/emacs/</link>
+    <link>http://xuchengpeng.com/hugo-blog/tags/emacs/</link>
     <description>Recent content in emacs on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 06 Dec 2018 09:07:28 +0800</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Emacs 根据时间切换主题</title>
-      <link>http://xuchengpeng.com/2018/12/06/emacs-change-theme-with-time/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/12/06/emacs-change-theme-with-time/</link>
       <pubDate>Thu, 06 Dec 2018 09:07:28 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/12/06/emacs-change-theme-with-time/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/12/06/emacs-change-theme-with-time/</guid>
       <description>&lt;p&gt;根据时间，自动切换亮色和暗色主题。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;day-theme&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;light-blue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dark-theme&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;misterioso&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -35,10 +35,10 @@
     
     <item>
       <title>Build Emacs on Linux</title>
-      <link>http://xuchengpeng.com/2018/09/19/build-emacs-on-linux/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/19/build-emacs-on-linux/</link>
       <pubDate>Wed, 19 Sep 2018 17:12:20 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/19/build-emacs-on-linux/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/19/build-emacs-on-linux/</guid>
       <description>&lt;p&gt;Build Emacs 26.1 on Ubuntu:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get update
 sudo apt-get install build-essential
@@ -52,10 +52,10 @@ sudo make install
     
     <item>
       <title>Emacs Proxy</title>
-      <link>http://xuchengpeng.com/2018/09/05/emacs-proxy/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/05/emacs-proxy/</link>
       <pubDate>Wed, 05 Sep 2018 12:51:10 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/05/emacs-proxy/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/05/emacs-proxy/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;url-proxy-services&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;no_proxy&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;(localhost&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;|10.*&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
                            &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;proxy.com:80&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
                            &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;proxy.com:80&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -65,10 +65,10 @@ sudo make install
     
     <item>
       <title>rsync elpa mirror</title>
-      <link>http://xuchengpeng.com/2018/08/06/rsync-elpa-mirror/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/08/06/rsync-elpa-mirror/</link>
       <pubDate>Mon, 06 Aug 2018 16:48:15 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/08/06/rsync-elpa-mirror/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/08/06/rsync-elpa-mirror/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rsync.samba.org/&#34;&gt;rsync&lt;/a&gt; is an open source utility that provides fast incremental file transfer. rsync is freely available under the GNU General Public License and is currently being maintained by Wayne Davison.&lt;/p&gt;
 &lt;p&gt;rsync is a file transfer program for Unix systems. rsync uses the &amp;ldquo;rsync algorithm&amp;rdquo; which provides a very fast method for bringing remote files into sync. It does this by sending just the differences in the files across the link, without requiring that both sets of files are present at one of the ends of the link beforehand.
 Some features of rsync include&lt;/p&gt;
@@ -84,10 +84,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Byte Compile Elisp Files</title>
-      <link>http://xuchengpeng.com/2018/07/26/emacs-byte-compile/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/07/26/emacs-byte-compile/</link>
       <pubDate>Thu, 26 Jul 2018 12:54:14 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/07/26/emacs-byte-compile/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/07/26/emacs-byte-compile/</guid>
       <description>&lt;p&gt;Emacs lisp files can be byte compiled.&lt;/p&gt;
 &lt;p&gt;Byte compiled elisp file has “.elc” suffix (aka extension). Normal elisp file has “.el” suffix.&lt;/p&gt;
 &lt;h2 id=&#34;advantage-of-byte-compiled-elisp-file&#34;&gt;Advantage of Byte Compiled Elisp File&lt;/h2&gt;
@@ -97,17 +97,17 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>强大的org-capture</title>
-      <link>http://xuchengpeng.com/2018/07/20/powerful-org-capture/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/07/20/powerful-org-capture/</link>
       <pubDate>Fri, 20 Jul 2018 15:00:59 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/07/20/powerful-org-capture/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/07/20/powerful-org-capture/</guid>
       <description>&lt;p&gt;Capture是Org mode中一个非常重要的功能，它可以：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;capture 可以预先设置记录内容的模板和存储入口；&lt;/li&gt;
 &lt;li&gt;capture 提供统一的输入入口；&lt;/li&gt;
 &lt;li&gt;capture 用完即走，不干扰当前工作流；&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;capture&#34;&gt;Capture模板&lt;/h2&gt;
+&lt;h2 id=&#34;capture模板&#34;&gt;Capture模板&lt;/h2&gt;
 &lt;p&gt;默认Capture模板样式如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Task&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;entry&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;file+headline&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Tasks&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;* TODO %?&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;  %u&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;  %a&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
@@ -115,10 +115,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>博客写作工具</title>
-      <link>http://xuchengpeng.com/2018/07/20/blog-writing-tools/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/</link>
       <pubDate>Fri, 20 Jul 2018 09:20:28 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/07/20/blog-writing-tools/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/</guid>
       <description>&lt;p&gt;基本的工具用途：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;：用来发布博客；&lt;/li&gt;
@@ -129,10 +129,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>emacs 字体配置</title>
-      <link>http://xuchengpeng.com/2018/05/18/emacs-font-configuration/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/18/emacs-font-configuration/</link>
       <pubDate>Fri, 18 May 2018 14:02:30 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/18/emacs-font-configuration/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/18/emacs-font-configuration/</guid>
       <description>&lt;p&gt;定义设置中文和英文字体的函数，达到等宽效果：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;defun&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;set-font&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
   &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;interactive&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -167,10 +167,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Ubuntu 增加和删除 PPA 软件源</title>
-      <link>http://xuchengpeng.com/2018/04/13/ubuntu-add-delete-ppa/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/13/ubuntu-add-delete-ppa/</link>
       <pubDate>Fri, 13 Apr 2018 10:50:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/13/ubuntu-add-delete-ppa/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/13/ubuntu-add-delete-ppa/</guid>
       <description>&lt;p&gt;PPA，英文全称为 Personal Package Archives，即个人软件包档案。是 Ubuntu Launchpad 网站提供的一项源服务，允许个人用户上传软件源代码，通过 Launchpad 进行编译并发布为二进制软件包，作为 apt / 新立得（Synaptic）源供其他用户下载和更新。&lt;/p&gt;
 &lt;p&gt;PPA 的一般形式是： &lt;strong&gt;ppa:user/ppa-name&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;添加 PPA 源:&lt;/p&gt;
@@ -188,10 +188,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Emacs Native Profiler</title>
-      <link>http://xuchengpeng.com/2018/03/30/emacs-native-profiler/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/30/emacs-native-profiler/</link>
       <pubDate>Fri, 30 Mar 2018 10:02:45 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/30/emacs-native-profiler/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/30/emacs-native-profiler/</guid>
       <description>&lt;p&gt;If your program is working correctly, but you want to make it run more quickly or efficiently, the first thing to do is profile your code so that you know how it is using resources. If you find that one particular function is responsible for a significant portion of the runtime, you can start looking for ways to optimize that piece.&lt;/p&gt;
 &lt;p&gt;Emacs has built-in support for this. To begin profiling, type &lt;code&gt;M-x profiler-start&lt;/code&gt;. You can choose to profile by processor usage, memory usage, or both. After doing some work, type &lt;code&gt;M-x profiler-report&lt;/code&gt; to display a summary buffer for each resource that you chose to profile. The names of the report buffers include the times at which the reports were generated, so you can generate another report later on without erasing previous results. When you have finished profiling, type &lt;code&gt;M-x profiler-stop&lt;/code&gt; (there is a small overhead associated with profiling).&lt;/p&gt;
 &lt;p&gt;The profiler report buffer shows, on each line, a function that was called, followed by how much resource (processor or memory) it used in absolute and percentage times since profiling started. If a given line has a ‘+’ symbol at the left-hand side, you can expand that line by typing &lt;!-- raw HTML omitted --&gt;, in order to see the function(s) called by the higher-level function. Use a prefix argument (&lt;!-- raw HTML omitted --&gt;) to see the whole call tree below a function. Pressing &lt;!-- raw HTML omitted --&gt; again will collapse back to the original state.&lt;/p&gt;</description>
@@ -199,10 +199,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Emacs: Show Line Numbers</title>
-      <link>http://xuchengpeng.com/2018/03/30/emacs-show-line-numbers/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/30/emacs-show-line-numbers/</link>
       <pubDate>Fri, 30 Mar 2018 09:52:44 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/30/emacs-show-line-numbers/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/30/emacs-show-line-numbers/</guid>
       <description>&lt;p&gt;emacs has 2 line numbers mode:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Alt + x&lt;/code&gt; linum-mode -&amp;gt; old, hack, slow. Emacs 23.&lt;/li&gt;
@@ -222,10 +222,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Speed up emacs startup time</title>
-      <link>http://xuchengpeng.com/2018/03/28/speed-up-emacs-startup-time/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/28/speed-up-emacs-startup-time/</link>
       <pubDate>Wed, 28 Mar 2018 09:11:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/28/speed-up-emacs-startup-time/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/28/speed-up-emacs-startup-time/</guid>
       <description>&lt;p&gt;&lt;em&gt;init.el&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;package-enable-at-startup&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 
@@ -249,10 +249,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Chuck&#39;s Emacs Configuration</title>
-      <link>http://xuchengpeng.com/2018/03/26/chuck-emacs-configuration/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/26/chuck-emacs-configuration/</link>
       <pubDate>Mon, 26 Mar 2018 07:33:23 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/26/chuck-emacs-configuration/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/26/chuck-emacs-configuration/</guid>
       <description>&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ git clone https://github.com/xuchengpeng/.emacs.d.git ~/.emacs.d
 $ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/.emacs.d
@@ -270,22 +270,22 @@ $ cp init.example.el init.el
     
     <item>
       <title>base16 - An architecture for building themes</title>
-      <link>http://xuchengpeng.com/2018/03/08/base16/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/08/base16/</link>
       <pubDate>Thu, 08 Mar 2018 15:47:16 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/08/base16/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/base16.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/08/base16/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/base16.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://chriskempson.com/projects/base16&#34;&gt;An architecture for building themes&lt;/a&gt; based on carefully chosen syntax highlighting using a base of sixteen colours. Base16 provides a set of guidelines detailing how to style syntax and how to code a builder for compiling base16 schemes and templates.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Add Emacs elpa configuration</title>
-      <link>http://xuchengpeng.com/2018/03/06/add-emacs-elpa-configuration/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/06/add-emacs-elpa-configuration/</link>
       <pubDate>Tue, 06 Mar 2018 18:56:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/06/add-emacs-elpa-configuration/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/06/add-emacs-elpa-configuration/</guid>
       <description>&lt;h2 id=&#34;elpa-mirror&#34;&gt;ELPA mirror&lt;/h2&gt;
-&lt;h3 id=&#34;emacs-china&#34;&gt;Emacs China镜像&lt;/h3&gt;
+&lt;h3 id=&#34;emacs-china镜像&#34;&gt;Emacs China镜像&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -325,7 +325,7 @@ $ cp init.example.el init.el
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;如果需要 HTTPS，请将镜像地址中的 &lt;code&gt;http&lt;/code&gt; 改成 &lt;code&gt;https&lt;/code&gt; 。&lt;/p&gt;
-&lt;h3 id=&#34;heading&#34;&gt;清华镜像&lt;/h3&gt;
+&lt;h3 id=&#34;清华镜像&#34;&gt;清华镜像&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -361,21 +361,21 @@ $ cp init.example.el init.el
     
     <item>
       <title>The Platinum Seacher for Emacs</title>
-      <link>http://xuchengpeng.com/2017/11/29/pt-emacs/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/11/29/pt-emacs/</link>
       <pubDate>Wed, 29 Nov 2017 09:50:49 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/11/29/pt-emacs/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/11/29/pt-emacs/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/monochromegane/the_platinum_searcher&#34;&gt;pt&lt;/a&gt; is a code search tool similar to ack and the_silver_searcher(ag). It supports multi platforms and multi encodings.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/pt-search-demo.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/pt-search-demo.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>spacemacs - Emacs advanced Kit focused on Evil</title>
-      <link>http://xuchengpeng.com/2017/11/28/spacemacs/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/11/28/spacemacs/</link>
       <pubDate>Tue, 28 Nov 2017 11:06:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/11/28/spacemacs/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/spacemacs-logo.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2017/11/28/spacemacs/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/spacemacs-logo.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;A community-driven Emacs distribution - The best editor is neither Emacs nor Vim, it is Emacs and Vim!&lt;/p&gt;
 &lt;p&gt;这是一款定制化程度非常高的emacs配置，同时支持emacs和vim按键模式，无缝切换使用。&lt;/p&gt;</description>
     </item>

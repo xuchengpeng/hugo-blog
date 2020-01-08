@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>留言 on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/guestbook/</link>
+    <link>http://xuchengpeng.com/hugo-blog/guestbook/</link>
     <description>Recent content in 留言 on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="http://xuchengpeng.com/guestbook/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/guestbook/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

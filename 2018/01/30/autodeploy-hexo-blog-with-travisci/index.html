@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/01/30/autodeploy-hexo-blog-with-travisci/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/01/30/autodeploy-hexo-blog-with-travisci/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/01/30/autodeploy-hexo-blog-with-travisci/" >
+                <a href="/hugo-blog/2018/01/30/autodeploy-hexo-blog-with-travisci/" >
                     <time datetime='2018-01-30T09:30:40.000&#43;00:00' itemprop="datePublished">2018-01-30</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/technology">Technology</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/automation">Automation</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/automation">Automation</a>
                     
                 </div>
             </div>
@@ -105,9 +105,9 @@
 <blockquote>
 <p>Travis CI是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。这个软件的代码同时也是开源的，可以在GitHub上下载到，尽管开发者当前并不推荐在闭源项目中单独使用它。</p>
 </blockquote>
-<h2 id="heading">工作原理</h2>
+<h2 id="工作原理">工作原理</h2>
 <p>当我们每次进行push等动作时，Travis CI 会自动检测我们的提交，然后根据配置文件，搭建虚拟主机来运行测试，构建等指令。在这里，就是运行 <code>hexo deploy --generate</code> 等命令来自动生成、部署静态网页。</p>
-<h2 id="hexo-">Hexo 搭建</h2>
+<h2 id="hexo-搭建">Hexo 搭建</h2>
 <p>在 GitHub 上新建 <code>xuchengpeng.github.io</code> 工程，其中 <code>master</code> 分支用来部署博客静态文件，<code>hexo</code> 分支用来存储源码。</p>
 <p>hexo 分支只需要提交以下文件即可：</p>
 <pre><code>.
@@ -118,14 +118,14 @@
 ├── .travis.yml
 ├── _config.yml
 └── package.json
-</code></pre><h2 id="-travis-ci">配置 Travis CI</h2>
+</code></pre><h2 id="配置-travis-ci">配置 Travis CI</h2>
 <p>使用 GitHub 帐号登陆 Travis CI，会自动关联 GitHub 上面的仓库，开启 <code>xuchengpeng/xuchengpeng.github.io</code> 仓库。</p>
 <p>进入设置选项，勾选 <code>Build only if .travis.yml is preset</code>，<code>Build pushed branches</code> 和 <code>Build pushed pull requests</code>。</p>
-<h2 id="-access-tokens">配置 Access Tokens</h2>
+<h2 id="配置-access-tokens">配置 Access Tokens</h2>
 <p>登陆 <a href="https://github.com/">GitHub</a>，在 <code>Settings / Developer settings / Person access tokens</code> 下，点击 <strong>Generate new token</strong> 新建一个 <strong>TRAVIS_TOKEN</strong> 并且复制生成的值字符串，后面需要使用，权限只需要勾选 <code>repo</code> 即可。</p>
 <p>在 Travis CI 博客项目设置下配置 <code>Environment Variables</code>，<code>Name</code> 填写 <code>TRAVIS_TOKEN</code>，<code>Value</code> 填写刚才保存的 GitHub 生成的值字符串，不要勾选 <code>Display value in build log</code> 选项，点击 <strong>Add</strong> 按钮增加配置。</p>
 <p>此时，Travis CI 就已经获取了 GitHub 仓库的操作权限。</p>
-<h2 id="-travisyml">配置 .travis.yml</h2>
+<h2 id="配置-travisyml">配置 .travis.yml</h2>
 <div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml">language<span class="p">:</span><span class="w"> </span>node_js<span class="w">  </span><span class="c">#设置语言</span><span class="w">
 </span><span class="w">
 </span><span class="w"></span>node_js<span class="p">:</span><span class="w"> </span>stable<span class="w">  </span><span class="c">#设置相应的版本</span><span class="w">
@@ -161,10 +161,10 @@
 </span><span class="w"></span>env<span class="p">:</span><span class="w">
 </span><span class="w"> </span>global<span class="p">:</span><span class="w">
 </span><span class="w">   </span>-<span class="w"> </span>GH_REF<span class="p">:</span><span class="w"> </span>github.com/xuchengpeng/xuchengpeng.github.io.git<span class="w"> </span><span class="c"># GitHub博客仓库的地址</span><span class="w">
-</span></code></pre></div><h2 id="heading-1">自动部署</h2>
+</span></code></pre></div><h2 id="自动部署">自动部署</h2>
 <p>当 <code>.travis.yml</code> 配置文件修改完成后，将其提交到 GitHub 仓库的 <code>hexo</code> 分支下，在 Travis CI 博客项目下就可以看到自动构建开始执行，在 <code>Job log</code> 可以看到构建和部署的整个过程。</p>
 <p>以后只要有新的修改提交到 <code>hexo</code> 分支，Travis CI 都会按照上述过程自动构建和部署，打开博客主页即可看到部署的效果。</p>
-<h2 id="travis-ci-">Travis CI 构建状态</h2>
+<h2 id="travis-ci-构建状态">Travis CI 构建状态</h2>
 <p>在 GitHub 博客仓库 <code>README.md</code> 文件下增加以下代码，即可看到 Travis CI 构建状态。</p>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">[<span class="nt">![Build Status</span>](<span class="na">https://travis-ci.org/xuchengpeng/xuchengpeng.github.io.svg?branch=hexo</span>)](https://travis-ci.org/xuchengpeng/xuchengpeng.github.io)
 </code></pre></div>
@@ -176,13 +176,13 @@
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">工作原理</a></li>
-    <li><a href="#hexo-">Hexo 搭建</a></li>
-    <li><a href="#-travis-ci">配置 Travis CI</a></li>
-    <li><a href="#-access-tokens">配置 Access Tokens</a></li>
-    <li><a href="#-travisyml">配置 .travis.yml</a></li>
-    <li><a href="#heading-1">自动部署</a></li>
-    <li><a href="#travis-ci-">Travis CI 构建状态</a></li>
+    <li><a href="#工作原理">工作原理</a></li>
+    <li><a href="#hexo-搭建">Hexo 搭建</a></li>
+    <li><a href="#配置-travis-ci">配置 Travis CI</a></li>
+    <li><a href="#配置-access-tokens">配置 Access Tokens</a></li>
+    <li><a href="#配置-travisyml">配置 .travis.yml</a></li>
+    <li><a href="#自动部署">自动部署</a></li>
+    <li><a href="#travis-ci-构建状态">Travis CI 构建状态</a></li>
   </ul>
 </nav>
         </div>
@@ -198,13 +198,13 @@
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/01/19/theme-configuration-with-hexo-data-files/">使用 Hexo 数据文件进行主题配置</a></li>
+	<li><a href="/hugo-blog/2018/01/19/theme-configuration-with-hexo-data-files/">使用 Hexo 数据文件进行主题配置</a></li>
 	
-	<li><a href="/2018/01/09/setup-hexo-next-blog/">搭建Hexo NexT主题博客</a></li>
+	<li><a href="/hugo-blog/2018/01/09/setup-hexo-next-blog/">搭建Hexo NexT主题博客</a></li>
 	
-	<li><a href="/2017/11/24/gitalk-comment-extension/">Gitalk评论插件</a></li>
+	<li><a href="/hugo-blog/2017/11/24/gitalk-comment-extension/">Gitalk评论插件</a></li>
 	
-	<li><a href="/2017/11/23/hexo-next-blog/">NexT - Elegant Theme for Hexo</a></li>
+	<li><a href="/hugo-blog/2017/11/23/hexo-next-blog/">NexT - Elegant Theme for Hexo</a></li>
 	
   </ul>
 </section>
@@ -216,12 +216,12 @@
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/travis-ci">Travis CI
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/travis-ci">Travis CI
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/hexo">Hexo
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/hexo">Hexo
                     </a>
                 </li>
                 
@@ -231,12 +231,12 @@
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/01/31/caoxueqin-haoliaoge/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/01/31/caoxueqin-haoliaoge/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">好了歌 - 曹雪芹&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/01/29/github-pages-with-cloudflare-https/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/01/29/github-pages-with-cloudflare-https/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;通过 Cloudflare 给绑定个人域名的GitHub Pages博客加持https</div>
     </a>
     
@@ -247,7 +247,7 @@
         
   <div class="article-comments">
   
-  <span id="/2018/01/30/autodeploy-hexo-blog-with-travisci/" class="leancloud-visitors" data-flag-title="使用 Travis CI 自动部署 Hexo 博客">
+  <span id="/hugo-blog/2018/01/30/autodeploy-hexo-blog-with-travisci/" class="leancloud-visitors" data-flag-title="使用 Travis CI 自动部署 Hexo 博客">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -272,8 +272,8 @@
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

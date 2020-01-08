@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Go on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/categories/go/</link>
+    <link>http://xuchengpeng.com/hugo-blog/categories/go/</link>
     <description>Recent content in Go on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 26 Sep 2018 16:47:46 +0800</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/categories/go/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/categories/go/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go语言匿名结构</title>
-      <link>http://xuchengpeng.com/2018/09/26/go-anonymous-struct/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/26/go-anonymous-struct/</link>
       <pubDate>Wed, 26 Sep 2018 16:47:46 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/26/go-anonymous-struct/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/26/go-anonymous-struct/</guid>
       <description>&lt;p&gt;Go语言也提供了继承，但是采用了组合的文法，所以我们将其称为匿名组合：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Base&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
     &lt;span class=&#34;nx&#34;&gt;Name&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;

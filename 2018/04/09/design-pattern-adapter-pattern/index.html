@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/04/09/design-pattern-adapter-pattern/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/04/09/design-pattern-adapter-pattern/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/04/09/design-pattern-adapter-pattern/" >
+                <a href="/hugo-blog/2018/04/09/design-pattern-adapter-pattern/" >
                     <time datetime='2018-04-09T16:11:00.000&#43;00:00' itemprop="datePublished">2018-04-09</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/design-pattern">Design Pattern</a>
                     
                 </div>
             </div>
@@ -99,7 +99,7 @@
             <p>适配器模式（Adapter Pattern）是作为两个不兼容的接口之间的桥梁。这种类型的设计模式属于结构型模式，它结合了两个独立接口的功能。
 这种模式涉及到一个单一的类，该类负责加入独立的或不兼容的接口功能。举个真实的例子，读卡器是作为内存卡和笔记本之间的适配器。您将内存卡插入读卡器，再将读卡器插入笔记本，这样就可以通过笔记本来读取内存卡。
 我们通过下面的实例来演示适配器模式的使用。其中，音频播放器设备只能播放 mp3 文件，通过使用一个更高级的音频播放器来播放 vlc 和 mp4 文件。</p>
-<h2 id="heading">介绍</h2>
+<h2 id="介绍">介绍</h2>
 <p>意图：将一个类的接口转换成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。
 主要解决：主要解决在软件系统中，常常要将一些&quot;现存的对象&quot;放到新的环境中，而新环境要求的接口是现对象不能满足的。
 何时使用： 1、系统需要使用现有的类，而此类的接口不符合系统的需要。 2、想要建立一个可以重复使用的类，用于与一些彼此之间没有太大关联的一些类，包括一些可能在将来引进的类一起工作，这些源类不一定有一致的接口。 3、通过接口转换，将一个类插入另一个类系中。（比如老虎和飞禽，现在多了一个飞虎，在不增加实体的需求下，增加一个适配器，在里面包容一个虎对象，实现飞的接口。）
@@ -110,13 +110,13 @@
 缺点： 1、过多地使用适配器，会让系统非常零乱，不易整体进行把握。比如，明明看到调用的是 A 接口，其实内部被适配成了 B 接口的实现，一个系统如果太多出现这种情况，无异于一场灾难。因此如果不是很有必要，可以不使用适配器，而是直接对系统进行重构。 2.由于 JAVA 至多继承一个类，所以至多只能适配一个适配者类，而且目标类必须是抽象类。
 使用场景：有动机地修改一个正常运行的系统的接口，这时应该考虑使用适配器模式。
 注意事项：适配器不是在详细设计时添加的，而是解决正在服役的项目的问题。</p>
-<h2 id="heading-1">实现</h2>
+<h2 id="实现">实现</h2>
 <p>我们有一个 MediaPlayer 接口和一个实现了 MediaPlayer 接口的实体类 AudioPlayer。默认情况下，AudioPlayer 可以播放 mp3 格式的音频文件。
 我们还有另一个接口 AdvancedMediaPlayer 和实现了 AdvancedMediaPlayer 接口的实体类。该类可以播放 vlc 和 mp4 格式的文件。
 我们想要让 AudioPlayer 播放其他格式的音频文件。为了实现这个功能，我们需要创建一个实现了 MediaPlayer 接口的适配器类 MediaAdapter，并使用 AdvancedMediaPlayer 对象来播放所需的格式。
 AudioPlayer 使用适配器类 MediaAdapter 传递所需的音频类型，不需要知道能播放所需格式音频的实际类。AdapterPatternDemo，我们的演示类使用 AudioPlayer 类来播放各种格式。</p>
 <p><img src="/images/design-pattern/adapter_pattern_uml_diagram.jpg" alt=""></p>
-<h3 id="-1">步骤 1</h3>
+<h3 id="步骤-1">步骤 1</h3>
 <p>为媒体播放器和更高级的媒体播放器创建接口。
 <em>MediaPlayer.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">MediaPlayer</span> <span class="o">{</span>
@@ -127,7 +127,7 @@ AudioPlayer 使用适配器类 MediaAdapter 传递所需的音频类型，不需
    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">playVlc</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">)</span><span class="o">;</span>
    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">playMp4</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">)</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-2">步骤 2</h3>
+</code></pre></div><h3 id="步骤-2">步骤 2</h3>
 <p>创建实现了 AdvancedMediaPlayer 接口的实体类。
 <em>VlcPlayer.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">VlcPlayer</span> <span class="kd">implements</span> <span class="n">AdvancedMediaPlayer</span><span class="o">{</span>
@@ -154,7 +154,7 @@ AudioPlayer 使用适配器类 MediaAdapter 传递所需的音频类型，不需
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Playing mp4 file. Name: &#34;</span><span class="o">+</span> <span class="n">fileName</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-3">步骤 3</h3>
+</code></pre></div><h3 id="步骤-3">步骤 3</h3>
 <p>创建实现了 MediaPlayer 接口的适配器类。
 <em>MediaAdapter.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MediaAdapter</span> <span class="kd">implements</span> <span class="n">MediaPlayer</span> <span class="o">{</span>
@@ -178,7 +178,7 @@ AudioPlayer 使用适配器类 MediaAdapter 传递所需的音频类型，不需
       <span class="o">}</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-4">步骤 4</h3>
+</code></pre></div><h3 id="步骤-4">步骤 4</h3>
 <p>创建实现了 MediaPlayer 接口的实体类。
 <em>AudioPlayer.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AudioPlayer</span> <span class="kd">implements</span> <span class="n">MediaPlayer</span> <span class="o">{</span>
@@ -203,7 +203,7 @@ AudioPlayer 使用适配器类 MediaAdapter 传递所需的音频类型，不需
       <span class="o">}</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-5">步骤 5</h3>
+</code></pre></div><h3 id="步骤-5">步骤 5</h3>
 <p>使用 AudioPlayer 来播放不同类型的音频格式。
 <em>AdapterPatternDemo.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdapterPatternDemo</span> <span class="o">{</span>
@@ -216,7 +216,7 @@ AudioPlayer 使用适配器类 MediaAdapter 传递所需的音频类型，不需
       <span class="n">audioPlayer</span><span class="o">.</span><span class="na">play</span><span class="o">(</span><span class="s">&#34;avi&#34;</span><span class="o">,</span> <span class="s">&#34;mind me.avi&#34;</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-6">步骤 6</h3>
+</code></pre></div><h3 id="步骤-6">步骤 6</h3>
 <p>验证输出。</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Playing</span> <span class="n">mp3</span> <span class="n">file</span><span class="o">.</span> <span class="n">Name</span><span class="o">:</span> <span class="n">beyond</span> <span class="n">the</span> <span class="n">horizon</span><span class="o">.</span><span class="na">mp3</span>
 <span class="n">Playing</span> <span class="n">mp4</span> <span class="n">file</span><span class="o">.</span> <span class="n">Name</span><span class="o">:</span> <span class="n">alone</span><span class="o">.</span><span class="na">mp4</span>
@@ -231,15 +231,15 @@ AudioPlayer 使用适配器类 MediaAdapter 传递所需的音频类型，不需
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">介绍</a></li>
-    <li><a href="#heading-1">实现</a>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#实现">实现</a>
       <ul>
-        <li><a href="#-1">步骤 1</a></li>
-        <li><a href="#-2">步骤 2</a></li>
-        <li><a href="#-3">步骤 3</a></li>
-        <li><a href="#-4">步骤 4</a></li>
-        <li><a href="#-5">步骤 5</a></li>
-        <li><a href="#-6">步骤 6</a></li>
+        <li><a href="#步骤-1">步骤 1</a></li>
+        <li><a href="#步骤-2">步骤 2</a></li>
+        <li><a href="#步骤-3">步骤 3</a></li>
+        <li><a href="#步骤-4">步骤 4</a></li>
+        <li><a href="#步骤-5">步骤 5</a></li>
+        <li><a href="#步骤-6">步骤 6</a></li>
       </ul>
     </li>
   </ul>
@@ -260,7 +260,7 @@ AudioPlayer 使用适配器类 MediaAdapter 传递所需的音频类型，不需
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F">结构型模式
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F">结构型模式
                     </a>
                 </li>
                 
@@ -270,12 +270,12 @@ AudioPlayer 使用适配器类 MediaAdapter 传递所需的音频类型，不需
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/04/10/design-pattern-bridge-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/10/design-pattern-bridge-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">桥接模式&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/04/08/design-pattern-prototype-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/08/design-pattern-prototype-pattern/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;原型模式</div>
     </a>
     
@@ -286,7 +286,7 @@ AudioPlayer 使用适配器类 MediaAdapter 传递所需的音频类型，不需
         
   <div class="article-comments">
   
-  <span id="/2018/04/09/design-pattern-adapter-pattern/" class="leancloud-visitors" data-flag-title="适配器模式">
+  <span id="/hugo-blog/2018/04/09/design-pattern-adapter-pattern/" class="leancloud-visitors" data-flag-title="适配器模式">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -311,8 +311,8 @@ AudioPlayer 使用适配器类 MediaAdapter 传递所需的音频类型，不需
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

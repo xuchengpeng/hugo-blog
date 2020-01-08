@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2017/12/04/gitalk-for-next/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2017/12/04/gitalk-for-next/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2017/12/04/gitalk-for-next/" >
+                <a href="/hugo-blog/2017/12/04/gitalk-for-next/" >
                     <time datetime='2017-12-04T09:29:58.000&#43;00:00' itemprop="datePublished">2017-12-04</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/technology">Technology</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/hexo">Hexo</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/hexo">Hexo</a>
                     
                 </div>
             </div>
@@ -97,10 +97,10 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>在之前的文章中（{% post_link gitalk-comment-extension Gitalk评论插件 %}），已介绍过Gitalk评论插件，GitHub上为NexT添加Gitalk的pull request一直没有合入，自己手动本地部署吧。</p>
-<h2 id="gitalk">为什么选择Gitalk</h2>
+<h2 id="为什么选择gitalk">为什么选择Gitalk</h2>
 <p>由于国内网络大环境的原因，Disqus 等优秀的评论系统都需要梯子才能使用，多说已经停运，NexT 已支持的 Gitment 目前存在一些问题，作者好像也已经很久没有维护了，故选择现在还在活跃的 Gitalk。</p>
 <!-- raw HTML omitted -->
-<h2 id="heading">新增插件代码</h2>
+<h2 id="新增插件代码">新增插件代码</h2>
 <p>新建 layout/_third-party/comments/gitalk.swig 文件，添加以下代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">gitalk</span><span class="p">.</span><span class="nx">enable</span> <span class="o">%</span><span class="p">}</span>
   <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="nx">page</span><span class="p">.</span><span class="nx">comments</span> <span class="o">%</span><span class="p">}</span>
@@ -122,16 +122,16 @@
     <span class="o">&lt;</span><span class="err">/</span><span class="err">s</span><span class="err">c</span><span class="err">r</span><span class="err">i</span><span class="err">p</span><span class="err">t</span><span class="err">&gt;</span>
   <span class="p">{</span><span class="o">%</span> <span class="nx">endif</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">{</span><span class="o">%</span> <span class="nx">endif</span> <span class="o">%</span><span class="p">}</span>
-</code></pre></div><h2 id="next">添加插件到NexT主题中</h2>
+</code></pre></div><h2 id="添加插件到next主题中">添加插件到NexT主题中</h2>
 <p>修改 layout/_third-party/comments/index.swig 文件，添加以下代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span><span class="o">%</span> <span class="nx">include</span> <span class="s1">&#39;gitalk.swig&#39;</span> <span class="o">%</span><span class="p">}</span>
-</code></pre></div><h2 id="heading-1">根据添加启用插件</h2>
+</code></pre></div><h2 id="根据添加启用插件">根据添加启用插件</h2>
 <p>修改 layout/_partials/comments.swig 文件，添加以下代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span><span class="o">%</span> <span class="nx">elseif</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">gitalk</span><span class="p">.</span><span class="nx">enable</span> <span class="o">%</span><span class="p">}</span>
     <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;comments&#34;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;comments&#34;</span><span class="o">&gt;</span>
       <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;gitalk-container&#34;</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
     <span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
-</code></pre></div><h2 id="gitalk-1">在主题中增加Gitalk配置</h2>
+</code></pre></div><h2 id="在主题中增加gitalk配置">在主题中增加Gitalk配置</h2>
 <p>修改 _config.yml 文件，增加以下代码：</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="err">#</span> <span class="nx">Gitalk</span>
 <span class="err">#</span> <span class="nx">more</span> <span class="nx">info</span> <span class="nx">please</span> <span class="nx">open</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/gitalk/gitalk
@@ -154,11 +154,11 @@
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#gitalk">为什么选择Gitalk</a></li>
-    <li><a href="#heading">新增插件代码</a></li>
-    <li><a href="#next">添加插件到NexT主题中</a></li>
-    <li><a href="#heading-1">根据添加启用插件</a></li>
-    <li><a href="#gitalk-1">在主题中增加Gitalk配置</a></li>
+    <li><a href="#为什么选择gitalk">为什么选择Gitalk</a></li>
+    <li><a href="#新增插件代码">新增插件代码</a></li>
+    <li><a href="#添加插件到next主题中">添加插件到NexT主题中</a></li>
+    <li><a href="#根据添加启用插件">根据添加启用插件</a></li>
+    <li><a href="#在主题中增加gitalk配置">在主题中增加Gitalk配置</a></li>
   </ul>
 </nav>
         </div>
@@ -174,11 +174,11 @@
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2017/11/24/gitalk-comment-extension/">Gitalk评论插件</a></li>
+	<li><a href="/hugo-blog/2017/11/24/gitalk-comment-extension/">Gitalk评论插件</a></li>
 	
-	<li><a href="/2017/11/23/hexo-next-blog/">NexT - Elegant Theme for Hexo</a></li>
+	<li><a href="/hugo-blog/2017/11/23/hexo-next-blog/">NexT - Elegant Theme for Hexo</a></li>
 	
-	<li><a href="/2017/11/22/gitment-comment-system/">Gitment评论系统</a></li>
+	<li><a href="/hugo-blog/2017/11/22/gitment-comment-system/">Gitment评论系统</a></li>
 	
   </ul>
 </section>
@@ -190,17 +190,17 @@
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/gitalk">Gitalk
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/gitalk">Gitalk
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/gitment">Gitment
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/gitment">Gitment
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/next">NexT
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/next">NexT
                     </a>
                 </li>
                 
@@ -210,12 +210,12 @@
     </div>
     <nav id="article-nav">
     
-    <a href="/2017/12/06/network-cable-crystal-head/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2017/12/06/network-cable-crystal-head/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">网线水晶头接法&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2017/11/29/pt-emacs/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2017/11/29/pt-emacs/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;The Platinum Seacher for Emacs</div>
     </a>
     
@@ -226,7 +226,7 @@
         
   <div class="article-comments">
   
-  <span id="/2017/12/04/gitalk-for-next/" class="leancloud-visitors" data-flag-title="为NexT主题部署Gitalk评论插件">
+  <span id="/hugo-blog/2017/12/04/gitalk-for-next/" class="leancloud-visitors" data-flag-title="为NexT主题部署Gitalk评论插件">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -251,8 +251,8 @@
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

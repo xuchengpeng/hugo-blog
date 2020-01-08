@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/categories/linux/</link>
+    <link>http://xuchengpeng.com/hugo-blog/categories/linux/</link>
     <description>Recent content in Linux on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 07 Nov 2018 08:59:03 +0800</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ubuntu安装Samba</title>
-      <link>http://xuchengpeng.com/2018/11/07/ubuntu-install-samba/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/11/07/ubuntu-install-samba/</link>
       <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/11/07/ubuntu-install-samba/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/11/07/ubuntu-install-samba/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;apt-get install samba
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改 /etc/samba/smb.conf 文件：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;[share]
@@ -39,10 +39,10 @@
     
     <item>
       <title>Shell - Here Documents</title>
-      <link>http://xuchengpeng.com/2018/10/30/shell-here-documents/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/10/30/shell-here-documents/</link>
       <pubDate>Tue, 30 Oct 2018 14:19:55 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/10/30/shell-here-documents/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/10/30/shell-here-documents/</guid>
       <description>&lt;p&gt;Here Documents 是 Shell 中的一种特殊的重定向方式，用来将输入重定向到一个交互式 Shell 脚本或程序。&lt;/p&gt;
 &lt;p&gt;它的基本的形式如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; delimiter
@@ -60,10 +60,10 @@
     
     <item>
       <title>Linux系统Shell特殊变量</title>
-      <link>http://xuchengpeng.com/2018/09/20/linux-shell-special-variables/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/20/linux-shell-special-variables/</link>
       <pubDate>Thu, 20 Sep 2018 13:55:54 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/20/linux-shell-special-variables/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/20/linux-shell-special-variables/</guid>
       <description>&lt;p&gt;变量名只能包含数字、字母和下划线，因为某些包含其他字符的变量有特殊含义，这样的变量被称为特殊变量。&lt;/p&gt;
 &lt;p&gt;例如，$ 表示当前Shell进程的ID，即pid，看下面的代码：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# echo $$&lt;/span&gt;
@@ -110,23 +110,23 @@
     
     <item>
       <title>Ubuntu 升级内核</title>
-      <link>http://xuchengpeng.com/2018/04/20/ubuntu-upgrade-kernel/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/20/ubuntu-upgrade-kernel/</link>
       <pubDate>Fri, 20 Apr 2018 15:34:34 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/20/ubuntu-upgrade-kernel/</guid>
-      <description>&lt;h3 id=&#34;heading&#34;&gt;查看当前内核版本&lt;/h3&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/20/ubuntu-upgrade-kernel/</guid>
+      <description>&lt;h3 id=&#34;查看当前内核版本&#34;&gt;查看当前内核版本&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ uname -r
 4.4.0-53-generic
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading-1&#34;&gt;下载内核&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;下载内核&#34;&gt;下载内核&lt;/h3&gt;
 &lt;p&gt;下载最新 Ubuntu 编译好的内核地址： &lt;a href=&#34;http://kernel.ubuntu.com/~kernel-ppa/mainline/&#34;&gt;http://kernel.ubuntu.com/~kernel-ppa/mainline/&lt;/a&gt;
 选取当前最新的内核 4.16.3 版本进行下载：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ mkdir 4.16.3 &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; 4.16.3
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603_4.16.3-041603.201804190730_all.deb
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-image-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading-2&#34;&gt;安装内核&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;安装内核&#34;&gt;安装内核&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ dpkg -i *.deb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading-3&#34;&gt;卸载旧内核&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;卸载旧内核&#34;&gt;卸载旧内核&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看目前安装的内核&lt;/span&gt;
 $ dpkg -l &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep linux
 ii  linux-image-4.4.0-53-generic       4.4.0-53.74                        amd64        Linux kernel image &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; version 4.4.0 on &lt;span class=&#34;m&#34;&gt;64&lt;/span&gt; bit x86 SMP
@@ -134,7 +134,7 @@ ii  linux-image-4.16.3-041603-generic  4.16.3-041603.201804190730         amd64 
 &lt;span class=&#34;c1&#34;&gt;## 卸载旧内核&lt;/span&gt;
 $ apt-get purge linux-image-4.4.0-53-generic linux-headers-4.4.0-53
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果查询的结果中还有显示已卸载的内核，可以使用&lt;code&gt;dpkg -P linux-image-4.4.0-53-generic&lt;/code&gt;命令将其删除。&lt;/p&gt;
-&lt;h3 id=&#34;heading-4&#34;&gt;更新启动引导&lt;/h3&gt;
+&lt;h3 id=&#34;更新启动引导&#34;&gt;更新启动引导&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ update-grub
 &lt;span class=&#34;c1&#34;&gt;# 重启后再查看内核版本验证 uname -a&lt;/span&gt;
 $ reboot
@@ -143,10 +143,10 @@ $ reboot
     
     <item>
       <title>Ubuntu 增加和删除 PPA 软件源</title>
-      <link>http://xuchengpeng.com/2018/04/13/ubuntu-add-delete-ppa/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/13/ubuntu-add-delete-ppa/</link>
       <pubDate>Fri, 13 Apr 2018 10:50:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/13/ubuntu-add-delete-ppa/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/13/ubuntu-add-delete-ppa/</guid>
       <description>&lt;p&gt;PPA，英文全称为 Personal Package Archives，即个人软件包档案。是 Ubuntu Launchpad 网站提供的一项源服务，允许个人用户上传软件源代码，通过 Launchpad 进行编译并发布为二进制软件包，作为 apt / 新立得（Synaptic）源供其他用户下载和更新。&lt;/p&gt;
 &lt;p&gt;PPA 的一般形式是： &lt;strong&gt;ppa:user/ppa-name&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;添加 PPA 源:&lt;/p&gt;

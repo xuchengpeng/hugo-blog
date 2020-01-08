@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Novel on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/categories/novel/</link>
+    <link>http://xuchengpeng.com/hugo-blog/categories/novel/</link>
     <description>Recent content in Novel on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 31 May 2018 08:59:11 +0000</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/categories/novel/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/categories/novel/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>卖米</title>
-      <link>http://xuchengpeng.com/2018/05/31/maimi-feihua/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/31/maimi-feihua/</link>
       <pubDate>Thu, 31 May 2018 08:59:11 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/31/maimi-feihua/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/31/maimi-feihua/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;作者：飞花&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -35,10 +35,10 @@
     
     <item>
       <title>呼兰河传 - 萧红</title>
-      <link>http://xuchengpeng.com/2018/01/31/xiaohong-hulanhezhuan/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/01/31/xiaohong-hulanhezhuan/</link>
       <pubDate>Wed, 31 Jan 2018 15:00:35 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/01/31/xiaohong-hulanhezhuan/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/01/31/xiaohong-hulanhezhuan/</guid>
       <description>在一九四零年十二月──那正是萧红逝世的前年，那是她的健康还不怎样成问题的时候，她写成了她的最后著作──小说《呼兰河传》。 然而即使在那时，萧红</description>
     </item>
     

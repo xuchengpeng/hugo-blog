@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/07/20/blog-writing-tools/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/07/20/blog-writing-tools/" >
+                <a href="/hugo-blog/2018/07/20/blog-writing-tools/" >
                     <time datetime='2018-07-20T09:20:28.000&#43;08:00' itemprop="datePublished">2018-07-20</time>
                 </a>
             </div>
@@ -83,7 +83,7 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tools">Tools</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tools">Tools</a>
                     
                 </div>
             </div>
@@ -97,7 +97,7 @@
 <li><a href="https://orgmode.org/">orgmode</a>：写org格式的博文；</li>
 <li><a href="https://github.com/kaushalmodi/ox-hugo">ox-hugo</a>：将org博文导出为Markdown格式文件；</li>
 </ul>
-<h2 id="org-capture">使用org-capture创建博文</h2>
+<h2 id="使用org-capture创建博文">使用org-capture创建博文</h2>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">with-eval-after-load</span> <span class="ss">&#39;org-capture</span>
   <span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-org-hugo-new-subtree-post-capture-template</span> <span class="p">(</span><span class="p">)</span>
     <span class="s">&#34;</span><span class="s">Returns </span><span class="ss">`org-capture&#39;</span><span class="s"> template string for new Hugo post.
@@ -127,8 +127,8 @@
                  <span class="p">(</span><span class="nb">function</span> <span class="nv">dotemacs-org-hugo-new-subtree-post-capture-template</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div><p>使用org-capture前先在<code>org-directory</code>目录创建<code>hugo-posts.org</code>文件，并且其中已包含一级标题<code>* Hugo Posts</code>，新创建的博文将在这个标题下。</p>
-<h2 id="ox-hugo">使用ox-hugo导出博文</h2>
-<h3 id="heading">导出前设置</h3>
+<h2 id="使用ox-hugo导出博文">使用ox-hugo导出博文</h2>
+<h3 id="导出前设置">导出前设置</h3>
 <p>在<code>hugo-posts.org</code>文件头部增加以下内容：</p>
 <div class="highlight"><pre class="chroma"><code class="language-org" data-lang="org"><span class="cs">#+HUGO_BASE_DIR</span><span class="c">: e:/GitHub/xuchengpeng.github.io/</span>
 <span class="cs">#+HUGO_SECTION</span><span class="c">: post</span>
@@ -139,7 +139,7 @@
 <span class="cs">#+HUGO_TAGS</span><span class="c">: hugo</span>
 <span class="cs">#+HUGO_DRAFT</span><span class="c">: false</span>
 </code></pre></div><p><code>HUGO_BASE_DIR</code>和<code>HUGO_SECTION</code>根据实际情况而定，<code>HUGO_CATEGORIES</code>和<code>HUGO_TAGS</code>可为当前要导出的博文设定分类和标签。</p>
-<h3 id="heading-1">导出方法</h3>
+<h3 id="导出方法">导出方法</h3>
 <p><code>C-c C-e H H</code> 导出单个子树到Markdown文件，一般一个子树就是一篇文章；</p>
 <p><code>C-c C-e H A</code> 导出所有子树到Markdown文件，会为每篇文章都导出一个Markdown文件。</p>
         </div>
@@ -150,11 +150,11 @@
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#org-capture">使用org-capture创建博文</a></li>
-    <li><a href="#ox-hugo">使用ox-hugo导出博文</a>
+    <li><a href="#使用org-capture创建博文">使用org-capture创建博文</a></li>
+    <li><a href="#使用ox-hugo导出博文">使用ox-hugo导出博文</a>
       <ul>
-        <li><a href="#heading">导出前设置</a></li>
-        <li><a href="#heading-1">导出方法</a></li>
+        <li><a href="#导出前设置">导出前设置</a></li>
+        <li><a href="#导出方法">导出方法</a></li>
       </ul>
     </li>
   </ul>
@@ -172,15 +172,15 @@
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/07/10/setting-mathjax-with-hugo/">Setting MathJax with Hugo</a></li>
+	<li><a href="/hugo-blog/2018/07/10/setting-mathjax-with-hugo/">Setting MathJax with Hugo</a></li>
 	
-	<li><a href="/2018/05/18/emacs-font-configuration/">emacs 字体配置</a></li>
+	<li><a href="/hugo-blog/2018/05/18/emacs-font-configuration/">emacs 字体配置</a></li>
 	
-	<li><a href="/2018/04/13/ubuntu-add-delete-ppa/">Ubuntu 增加和删除 PPA 软件源</a></li>
+	<li><a href="/hugo-blog/2018/04/13/ubuntu-add-delete-ppa/">Ubuntu 增加和删除 PPA 软件源</a></li>
 	
-	<li><a href="/2018/03/30/emacs-native-profiler/">Emacs Native Profiler</a></li>
+	<li><a href="/hugo-blog/2018/03/30/emacs-native-profiler/">Emacs Native Profiler</a></li>
 	
-	<li><a href="/2018/03/30/emacs-show-line-numbers/">Emacs: Show Line Numbers</a></li>
+	<li><a href="/hugo-blog/2018/03/30/emacs-show-line-numbers/">Emacs: Show Line Numbers</a></li>
 	
   </ul>
 </section>
@@ -192,22 +192,22 @@
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/emacs">emacs
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/emacs">emacs
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/hugo">Hugo
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/hugo">Hugo
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/orgmode">orgmode
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/orgmode">orgmode
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/ox-hugo">ox-hugo
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/ox-hugo">ox-hugo
                     </a>
                 </li>
                 
@@ -217,12 +217,12 @@
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/07/20/powerful-org-capture/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/07/20/powerful-org-capture/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">强大的org-capture&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/07/10/setting-mathjax-with-hugo/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/07/10/setting-mathjax-with-hugo/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;Setting MathJax with Hugo</div>
     </a>
     
@@ -233,7 +233,7 @@
         
   <div class="article-comments">
   
-  <span id="/2018/07/20/blog-writing-tools/" class="leancloud-visitors" data-flag-title="博客写作工具">
+  <span id="/hugo-blog/2018/07/20/blog-writing-tools/" class="leancloud-visitors" data-flag-title="博客写作工具">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -258,8 +258,8 @@
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

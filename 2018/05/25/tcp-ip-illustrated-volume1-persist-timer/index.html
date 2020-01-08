@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/" >
+                <a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/" >
                     <time datetime='2018-05-25T14:31:57.000&#43;00:00' itemprop="datePublished">2018-05-25</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                     
                 </div>
             </div>
@@ -99,7 +99,7 @@
             <p>TCP通过让接收方指明希望从发送方接收的数据字节数（即窗口大小）来进行流量控制。如果窗口大小为0会发生什么情况呢？这将有效地阻止发送方传送数据，直到窗口变为非0为止。</p>
 <p>TCP必须能够处理打开此窗口的ACK丢失的情况。ACK的传输并不可靠，也就是说，TCP不对ACK报文段进行确认，TCP只确认那些包含有数据的ACK报文段。</p>
 <p>如果一个确认丢失了，则双方就有可能因为等待对方而使连接终止：接收方等待接收数据（因为它已经向发送方通告了一个非0的窗口），而发送方在等待允许它继续发送数据的窗口更新。为防止这种死锁情况的发生，发送方使用一个坚持定时器(persist timer)来周期性地向接收方查询，以便发现窗口是否已增大。这些从发送方发出的报文段称为窗口探查(window probe)。</p>
-<h2 id="heading">糊涂窗口综合症</h2>
+<h2 id="糊涂窗口综合症">糊涂窗口综合症</h2>
 <p>基于窗口的流量控制方案，如TCP所使用的，会导致一种被称为“糊涂窗口综合症SWS (Silly Window Syndrome）”的状况。如果发生这种情况，则少量的数据将通过连接进行交换，而不是满长度的报文段[Clark 1982]。</p>
 <p>该现象可发生在两端中的任何一端：接收方可以通告一个小的窗口（而不是一直等到有大的窗口时才通告），而发送方也可以发送少量的数据（而不是等待其他的数据以便发送一个大的报文段）。可以在任何一端采取措施避免出现糊涂窗口综合症的现象。</p>
 <ol>
@@ -117,7 +117,7 @@
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">糊涂窗口综合症</a></li>
+    <li><a href="#糊涂窗口综合症">糊涂窗口综合症</a></li>
   </ul>
 </nav>
         </div>
@@ -133,15 +133,15 @@
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/">TCP/IP 详解(卷一) TCP的超时与重传</a></li>
+	<li><a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/">TCP/IP 详解(卷一) TCP的超时与重传</a></li>
 	
-	<li><a href="/2018/05/21/tcp-ip-illustrated-volume1-bulk-data-flow/">TCP/IP 详解(卷一) TCP的成块数据流</a></li>
+	<li><a href="/hugo-blog/2018/05/21/tcp-ip-illustrated-volume1-bulk-data-flow/">TCP/IP 详解(卷一) TCP的成块数据流</a></li>
 	
-	<li><a href="/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/">TCP/IP 详解(卷一) TCP的交互数据流</a></li>
+	<li><a href="/hugo-blog/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/">TCP/IP 详解(卷一) TCP的交互数据流</a></li>
 	
-	<li><a href="/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/">TCP/IP 详解(卷一) TCP连接的建立与终止</a></li>
+	<li><a href="/hugo-blog/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/">TCP/IP 详解(卷一) TCP连接的建立与终止</a></li>
 	
-	<li><a href="/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/">TCP/IP 详解(卷一) TCP：传输控制协议</a></li>
+	<li><a href="/hugo-blog/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/">TCP/IP 详解(卷一) TCP：传输控制协议</a></li>
 	
   </ul>
 </section>
@@ -153,7 +153,7 @@
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/tcp">TCP
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/tcp">TCP
                     </a>
                 </li>
                 
@@ -163,12 +163,12 @@
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">TCP/IP 详解(卷一) TCP的保活定时器&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;TCP/IP 详解(卷一) TCP的超时与重传</div>
     </a>
     
@@ -179,7 +179,7 @@
         
   <div class="article-comments">
   
-  <span id="/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) TCP的坚持定时器">
+  <span id="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) TCP的坚持定时器">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -204,8 +204,8 @@
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

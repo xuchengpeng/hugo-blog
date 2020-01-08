@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>require-package on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/tags/require-package/</link>
+    <link>http://xuchengpeng.com/hugo-blog/tags/require-package/</link>
     <description>Recent content in require-package on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 06 Mar 2018 18:56:50 +0000</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/tags/require-package/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/require-package/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Add Emacs elpa configuration</title>
-      <link>http://xuchengpeng.com/2018/03/06/add-emacs-elpa-configuration/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/06/add-emacs-elpa-configuration/</link>
       <pubDate>Tue, 06 Mar 2018 18:56:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/06/add-emacs-elpa-configuration/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/06/add-emacs-elpa-configuration/</guid>
       <description>&lt;h2 id=&#34;elpa-mirror&#34;&gt;ELPA mirror&lt;/h2&gt;
-&lt;h3 id=&#34;emacs-china&#34;&gt;Emacs China镜像&lt;/h3&gt;
+&lt;h3 id=&#34;emacs-china镜像&#34;&gt;Emacs China镜像&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -58,7 +58,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;如果需要 HTTPS，请将镜像地址中的 &lt;code&gt;http&lt;/code&gt; 改成 &lt;code&gt;https&lt;/code&gt; 。&lt;/p&gt;
-&lt;h3 id=&#34;heading&#34;&gt;清华镜像&lt;/h3&gt;
+&lt;h3 id=&#34;清华镜像&#34;&gt;清华镜像&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;

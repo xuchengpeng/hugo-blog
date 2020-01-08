@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/" >
+                <a href="/hugo-blog/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/" >
                     <time datetime='2018-05-07T10:29:57.000&#43;00:00' itemprop="datePublished">2018-05-07</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                     
                 </div>
             </div>
@@ -98,7 +98,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p>选路是IP最重要的功能之一。需要进行选路的数据报可以由本地主机产生，也可以由其他主机产生。在后一种情况下，主机必须配置成一个路由器，否则通过网络接口接收到的数据报，如果目的地址不是本机就要被丢弃（例如，悄无声息地被丢弃）。</p>
 <p><img src="/images/tcp-ip/ip-layer-process.jpg" alt=""></p>
-<h2 id="heading">选路的原理</h2>
+<h2 id="选路的原理">选路的原理</h2>
 <p>IP搜素路由表的步骤：</p>
 <ol>
 <li>搜索匹配的主机地址；</li>
@@ -107,7 +107,7 @@
 </ol>
 <p>匹配主机地址步骤始终发生在匹配网络地址步骤之前。</p>
 <p>IP层进行的选路实际上是一种选路机制，它搜索路由表并决定向哪个网络接口发送分组。这区别于选路策略，它只是一组决定把哪些路由放入路由表的规则。IP执行选路机制，而路由守护程序则一般提供选路策略。</p>
-<h3 id="heading-1">简单路由表</h3>
+<h3 id="简单路由表">简单路由表</h3>
 <div class="highlight"><pre class="chroma"><code class="language-s" data-lang="s"><span class="n">svr4</span> % <span class="n">netstat</span> <span class="o">-</span><span class="n">rn</span>
 <span class="n">Routing</span> <span class="n">tables</span>
 <span class="n">Destination</span>    <span class="n">Gateway</span>        <span class="n">Flags</span>  <span class="n">Refcnt</span>  <span class="n">Use</span>    <span class="n">Interface</span>
@@ -154,7 +154,7 @@ ftp 127.0.0.1
 在后两种情况下，由于指定了环回接口的名字或IP地址，第一次搜索就找到匹配的主机地址，因此报文直接被送给环回驱动程序，然后由驱动程序把报文放入IP输出队列中。
 上述四种情况报文都要被送给环回驱动程序，但是采用的两种路由决策是不相同的。</li>
 </ol>
-<h3 id="heading-2">初始化路由表</h3>
+<h3 id="初始化路由表">初始化路由表</h3>
 <p>我们从来没有说过这些路由表是如何被创建的。每当初始化一个接口时（通常是用ifconfig命令设置接口地址），就为接口自动创建一个直接路由。对于点对点链路和环回接口来说，路由是到达主机（例如，设置H标志）。对于广播接口来说，如以太网，路由是到达网络。</p>
 <p>到达主机或网络的路由如果不是直接相连的，那么就必须加入路由表。一个常用的方法是在系统引导时显式地在初始化文件中运行route命令。在主机svr4上，我们运行下面两个命令来添加路由表中的表项：
 route add default sun 1
@@ -165,7 +165,7 @@ route add slip bsdi 1
 </blockquote>
 <p>一些系统允许在某个文件中指定默认的路由器，如/etc/defaultrouter。于是在每次重新启动系统时都要在路由表中加入该默认项。
 初始化路由表的其他方法是运行路由守护程序或者用较新的路由器发现协议。</p>
-<h3 id="heading-3">较复杂的路由表</h3>
+<h3 id="较复杂的路由表">较复杂的路由表</h3>
 <p>在我们的子网上，主机sun是所有主机的默认路由器，因为它有拨号SLIP链路连接到Internet上。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sun % netstat -rn
 Routing tables
@@ -183,10 +183,10 @@ sl0: <span class="nv">flags</span><span class="o">=</span>1051&lt;UP,POINTOPOINT
 </code></pre></div><p>可以发现路由表中的目的地址就是点对点链路的另一端(即路由器netb),网关地址为外出接口的本地IP地址(140.252.1.29)(前面已经说过,netstat为直接路由打印出来的网关地址就是本地接口所用的IP地址)。</p>
 <p>默认的路由表项是一个到达网络的间接路由(设置了G标志，但没有设置H标志)，这正是我们所希望的。网关地址是路由器的地址(140.252.1.183，SLIP链路的另一端),而不是SLIP链路的本地IP地址(140.252.1.29)。其原因还是因为是间接路由，不是直接路由。</p>
 <p>还应该指出的是，netstat输出的第3和第4行(接口名为sl0)由SLIP软件在启动时创建，并在关闭时删除。</p>
-<h3 id="heading-4">没有到达目的地的路由</h3>
+<h3 id="没有到达目的地的路由">没有到达目的地的路由</h3>
 <p>我们所有的例子都假定对路由表的搜索能找到匹配的表项，即使匹配的是默认项。如果路由表中没有默认项，而又没有找到匹配项，这时会发生什么情况呢？</p>
 <p>结果取决于该IP数据报是由主机产生的还是被转发的（例如，我们就充当一个路由器）。如果数据报是由本地主机产生的，那么就给发送该数据报的应用程序返回一个差错，或者是“主机不可达差错”或者是“网络不可达差错”。如果是被转发的数据报，那么就给原始发送端发送一份ICMP主机不可达的差错报文。</p>
-<h2 id="icmp-">ICMP 主机与网络不可达差错</h2>
+<h2 id="icmp-主机与网络不可达差错">ICMP 主机与网络不可达差错</h2>
 <p>当路由器收到一份IP数据报但又不能转发时，就要发送一份ICMP“主机不可达”差错报文。可以很容易发现，在我们的网络上把接在路由器sun上的拨号SLIP链路断开，然后试图通过该SLIP链路发送分组给任何指定sun为默认路由器的主机。</p>
 <p>我们在上一节通过在路由器sun上运行netstat命令可以看到，当接通SLIP链路启动时就要在路由表中增加一项使用SLIP链路的表项，而当断开SLIP链路时则删除该表项。这说明当SLIP链路断开时，sun的路由表中就没有默认项了。但是我们不想改变网络上其他主机的路由表，即同时删除它们的默认路由。相反，对于sun不能转发的分组，我们对它产生的ICMP主机不可达差错报文进行计数。</p>
 <p>在主机svr4上运行ping程序就可以看到这一点，它在拨号SLIP链路的另一端（拨号链路已被断开）：</p>
@@ -207,11 +207,11 @@ ICMP Host Unreachable from gateway enss142.UT.westnet.net <span class="o">(</spa
  <span class="k">for</span> icmp from sun <span class="o">(</span>140.252.1.29<span class="o">)</span> to 192.82.148.1
 </code></pre></div><p>在发现该IP地址是无效的之前，该分组已通过了6个路由器。只有当它到达NSFNET骨干网的边界时才检测到差错。这说明，6个路由器之所以能转发分组是因为路由表中有默认项。只有当分组到达NSFNET骨干网时，路由器才能知道每个连接到Internet上的每个网络的信息。这说明许多路由器只能在局部范围内工作。</p>
 <p>参考文献[Ford, Rekhter, and Braun 1993]定义了顶层选路域（top-level routing domain），由它来维护大多数Internet网站的路由信息，而不使用默认路由。他们指出，在Internet上存在5个这样的顶层选路域：NSFNET主干网、商业互联网交换（Commercial Internet Exchange: CIX）、NASA科学互联网（NASA Science Internet: NSI）、SprintLink以及欧洲IP主干网（EBONE）。</p>
-<h2 id="heading-5">转发或不转发</h2>
+<h2 id="转发或不转发">转发或不转发</h2>
 <p>一般都假定主机不转发IP数据报，除非对它们进行特殊配置而作为路由器使用。如何进行这样的配置呢？</p>
 <p>大多数伯克利派生出来的系统都有一个内核变量ipforwarding，或其他类似的名字（参见附录E）。一些系统（如BSD/386和SVR4）只有在该变量值不为0的情况下才转发数据报。SunOS 4.1.x允许该变量可以有三个不同的值：-1表示始终不转发并且始终不改变它的值；0表示默认条件下不转发，但是当打开两个或更多个接口时就把该值设为1；1表示始终转发。Solaris 2.x把这三个值改为0（始终不转发）、1（始终转发）和2（在打开两个或更多个接口时才转发）。</p>
 <p>较早版本的4.2BSD主机在默认条件下可以转发数据报，这给没有进行正确配置的系统带来了许多问题。这就是内核选项为什么要设成默认的“始终不转发”的原因，除非系统管理员进行特殊设置。</p>
-<h2 id="icmp--1">ICMP 重定向差错</h2>
+<h2 id="icmp-重定向差错">ICMP 重定向差错</h2>
 <p><img src="/images/tcp-ip/icmp-redirect-example.jpg" alt=""></p>
 <p>当IP数据报应该被发送到另一个路由器时，收到数据报的路由器就要发送ICMP重定向差错报文给IP数据报的发送端。这在概念上是很简单的，正如图所示的那样。只有当主机可以选择路由器发送分组的情况下，我们才可能看到ICMP重定向报文。</p>
 <ol>
@@ -266,7 +266,7 @@ ICMP Host Unreachable from gateway enss142.UT.westnet.net <span class="o">(</spa
 <li>被修改的路由必须是一个间接路由。</li>
 </ol>
 <p>关于重定向最后要指出的是，路由器应该发送的只是对主机的重定向(代码1或3)，而不是对网络的重定向。子网的存在使得难于准确指明何时应发送对网络的重定向而不是对主机的重定向。只当路由器发送了错误的类型时，一些主机才把收到的对网络的重定向当作对主机的重定向来处理。</p>
-<h2 id="icmp--2">ICMP 路由器发现报文</h2>
+<h2 id="icmp-路由器发现报文">ICMP 路由器发现报文</h2>
 <p>前面已提到过一种初始化路由表的方法，即在配置文件中指定静态路由。这种方法经常用来设置默认路由。另一种新的方法是利用ICMP路由器通告和请求报文。</p>
 <p>一般认为，主机在引导以后要广播或多播传送一份路由器请求报文。一台或更多台路由器响应一份路由器通告报文。另外，路由器定期地广播或多播传送它们的路由器通告报文，允许每个正在监听的主机相应地更新它们的路由表。</p>
 <p>ICMP 路由器请求报文格式：
@@ -274,18 +274,18 @@ ICMP Host Unreachable from gateway enss142.UT.westnet.net <span class="o">(</spa
 <p>ICMP 路由器通告报文格式：
 <img src="/images/tcp-ip/icmp-router-advertisement-format.jpg" alt=""></p>
 <p>接下来是一对或多对IP地址和优先级。IP地址必须是发送路由器的某个地址。优先级是一个有符号的32 bit整数，指出该IP地址作为默认路由器地址的优先等级，这是与子网上的其他路由器相比较而言的。值越大说明优先级越高。优先级为0x80000000说明对应的地址不能作为默认路由器地址使用，尽管它也包含中通告报文中。优先级的默认值一般为0。</p>
-<h3 id="heading-6">路由器操作</h3>
+<h3 id="路由器操作">路由器操作</h3>
 <p>当路由器启动时，它定期在所有广播或多播传送接口上发送通告报文。准确地说，这些通告报文不是定期发送的，而是随机传送的，以减小与子网上其他路由器发生冲突的概率。一般每两次通告间隔450秒和600秒。一份给定的通告报文默认生命周期是30分钟。</p>
 <p>使用生命周期域的另一个时机是当路由器上的某个接口被关闭时。在这种情况下，路由器可以在该接口上发送最后一份通告报文，并把生命周期值设为0。</p>
 <p>除了定期发送主动提供的通告报文以外，路由器还要监听来自主机的请求报文，并发送路由器通告报文以响应这些请求报文。</p>
 <p>如果子网上有多台路由器，由系统管理员为每个路由器设置优先等级。例如，主默认路由器就要比备份路由器具有更高的优先级。</p>
-<h3 id="heading-7">主机操作</h3>
+<h3 id="主机操作">主机操作</h3>
 <p>主机在引导期间一般发送三份路由器请求报文，每三秒钟发送一次。一旦接收到一个有效的通告报文，就停止发送请求报文。</p>
 <p>主机也监听来自相邻路由器的通告报文。这些通告报文可以改变主机的默认路由器。另外，如果没有接收到来自当前默认路由器的通告报文，那么默认路由器会超时。</p>
 <p>只要有一般的默认路由器，该路由器就会每隔10分钟发送通告报文，报文的生命周期是30分钟。这说明主机的默认表项是不会超时的，即使错过一份或两份通告报文。</p>
-<h3 id="heading-8">实现</h3>
+<h3 id="实现">实现</h3>
 <p>路由器发现报文一般由用户进程（守护程序）创建和处理。守护程序必须把它配置成一台路由器或主机来使用。</p>
-<h2 id="heading-9">小结</h2>
+<h2 id="小结">小结</h2>
 <p>IP路由操作对于运行TCP/IP的系统来说是最基本的，不管是主机还是路由器。路由表项的内容很简单，包括：5bit标志、目的IP地址（主机、网络或默认）、下一站路由器的IP地址（间接路由）或者本地接口的IP地址（直接路由）及指向本地接口的指针。主机表项比网络表项具有更高的优先级，而网络表项比默认项具有更高的优先级。</p>
 <p>系统产生的或转发的每份IP数据报都要搜索路由表，它可以被路由守护程序或ICMP重定向报文修改。系统在默认情况下不转发数据报，除非进行特殊的配置。用route命令可以进入静态路由，可以利用新ICMP路由器发现报文来初始化默认表项，并进行动态修改。主机在启动时只有一个简单的路由表，它可以被来自默认路由器的ICMP重定向报文动态修改。</p>
         </div>
@@ -296,25 +296,25 @@ ICMP Host Unreachable from gateway enss142.UT.westnet.net <span class="o">(</spa
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">选路的原理</a>
+    <li><a href="#选路的原理">选路的原理</a>
       <ul>
-        <li><a href="#heading-1">简单路由表</a></li>
-        <li><a href="#heading-2">初始化路由表</a></li>
-        <li><a href="#heading-3">较复杂的路由表</a></li>
-        <li><a href="#heading-4">没有到达目的地的路由</a></li>
+        <li><a href="#简单路由表">简单路由表</a></li>
+        <li><a href="#初始化路由表">初始化路由表</a></li>
+        <li><a href="#较复杂的路由表">较复杂的路由表</a></li>
+        <li><a href="#没有到达目的地的路由">没有到达目的地的路由</a></li>
       </ul>
     </li>
-    <li><a href="#icmp-">ICMP 主机与网络不可达差错</a></li>
-    <li><a href="#heading-5">转发或不转发</a></li>
-    <li><a href="#icmp--1">ICMP 重定向差错</a></li>
-    <li><a href="#icmp--2">ICMP 路由器发现报文</a>
+    <li><a href="#icmp-主机与网络不可达差错">ICMP 主机与网络不可达差错</a></li>
+    <li><a href="#转发或不转发">转发或不转发</a></li>
+    <li><a href="#icmp-重定向差错">ICMP 重定向差错</a></li>
+    <li><a href="#icmp-路由器发现报文">ICMP 路由器发现报文</a>
       <ul>
-        <li><a href="#heading-6">路由器操作</a></li>
-        <li><a href="#heading-7">主机操作</a></li>
-        <li><a href="#heading-8">实现</a></li>
+        <li><a href="#路由器操作">路由器操作</a></li>
+        <li><a href="#主机操作">主机操作</a></li>
+        <li><a href="#实现">实现</a></li>
       </ul>
     </li>
-    <li><a href="#heading-9">小结</a></li>
+    <li><a href="#小结">小结</a></li>
   </ul>
 </nav>
         </div>
@@ -333,7 +333,7 @@ ICMP Host Unreachable from gateway enss142.UT.westnet.net <span class="o">(</spa
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/ip%E9%80%89%E8%B7%AF">IP选路
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/ip%E9%80%89%E8%B7%AF">IP选路
                     </a>
                 </li>
                 
@@ -343,12 +343,12 @@ ICMP Host Unreachable from gateway enss142.UT.westnet.net <span class="o">(</spa
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/05/08/tcp-ip-illustrated-volume1-dynamic-routing-protocols/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/08/tcp-ip-illustrated-volume1-dynamic-routing-protocols/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">TCP/IP 详解(卷一) 动态选路协议&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/05/04/tcp-ip-illustrated-volume1-traceroute/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/04/tcp-ip-illustrated-volume1-traceroute/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;TCP/IP 详解(卷一) Traceroute程序</div>
     </a>
     
@@ -359,7 +359,7 @@ ICMP Host Unreachable from gateway enss142.UT.westnet.net <span class="o">(</spa
         
   <div class="article-comments">
   
-  <span id="/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) IP选路">
+  <span id="/hugo-blog/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) IP选路">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -384,8 +384,8 @@ ICMP Host Unreachable from gateway enss142.UT.westnet.net <span class="o">(</spa
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

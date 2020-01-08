@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/07/09/customize-emacs-mode-line/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/07/09/customize-emacs-mode-line/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/07/09/customize-emacs-mode-line/" >
+                <a href="/hugo-blog/2018/07/09/customize-emacs-mode-line/" >
                     <time datetime='2018-07-09T09:59:51.000&#43;08:00' itemprop="datePublished">2018-07-09</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/software">Software</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/software">Software</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/emacs">emacs</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/emacs">emacs</a>
                     
                 </div>
             </div>
@@ -96,19 +96,19 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="mode-line">一些常用的mode-line包</h3>
+            <h3 id="一些常用的mode-line包">一些常用的mode-line包</h3>
 <ul>
 <li><a href="https://github.com/milkypostman/powerline">powerline</a></li>
 <li><a href="https://github.com/Malabarba/smart-mode-line">smart-mode-line</a></li>
 <li><a href="https://github.com/TheBB/spaceline">spaceline</a></li>
 <li><a href="https://github.com/dbordak/telephone-line">telephone-line</a></li>
 </ul>
-<h3 id="mode-line-1">了解mode-line</h3>
+<h3 id="了解mode-line">了解mode-line</h3>
 <p>mode-line初始值：</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="s">&#34;</span><span class="s">%e</span><span class="s">&#34;</span> <span class="nv">mode-line-front-space</span> <span class="nv">mode-line-mule-info</span> <span class="nv">mode-line-client</span> <span class="nv">mode-line-modified</span> <span class="nv">mode-line-remote</span> <span class="nv">mode-line-frame-identification</span> <span class="nv">mode-line-buffer-identification</span> <span class="s">&#34;</span><span class="s">   </span><span class="s">&#34;</span> <span class="nv">mode-line-position</span>
  <span class="p">(</span><span class="nv">vc-mode</span> <span class="nv">vc-mode</span><span class="p">)</span>
  <span class="s">&#34;</span><span class="s">  </span><span class="s">&#34;</span> <span class="nv">mode-line-modes</span> <span class="nv">mode-line-misc-info</span> <span class="nv">mode-line-end-spaces</span><span class="p">)</span>
-</code></pre></div><h4 id="mode-line-2">mode-line变量</h4>
+</code></pre></div><h4 id="mode-line变量">mode-line变量</h4>
 <ul>
 <li>mode-line-mule-info：显示当前语言环境、编码信息和输入法；</li>
 <li>mode-line-modified：显示当前内容是否被修改，<code>**</code>表示已经被修改，<code>--</code>表示没有被修改，<code>%%</code>表示只读，<code>%*</code>表示只读但是被修改；</li>
@@ -156,7 +156,7 @@
 <li>%m：mode-name；</li>
 <li>%M：global-mode-string；</li>
 </ul>
-<h3 id="mode-line-3">自定义mode-line</h3>
+<h3 id="自定义mode-line">自定义mode-line</h3>
 <p>修改<code>mode-line-format</code>的值：</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">defun</span> <span class="nv">dotemacs-mode-line-fill</span> <span class="p">(</span><span class="nv">face</span> <span class="nv">reserve</span><span class="p">)</span>
   <span class="s">&#34;</span><span class="s">Return empty space using FACE and leaving RESERVE space on the right.</span><span class="s">&#34;</span>
@@ -238,7 +238,7 @@
                  
                  <span class="nv">mode-line-end-spaces</span>
                  <span class="p">)</span><span class="p">)</span>
-</code></pre></div><h3 id="mode-lineminor-mode">隐藏mode-line上的minor mode</h3>
+</code></pre></div><h3 id="隐藏mode-line上的minor-mode">隐藏mode-line上的minor mode</h3>
 <p>使用<a href="https://github.com/emacsmirror/diminish">diminish</a>：</p>
 <div class="highlight"><pre class="chroma"><code class="language-el" data-lang="el"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;diminish</span><span class="p">)</span>
 <span class="c1">;; Hide jiggle-mode lighter from mode line</span>
@@ -256,10 +256,10 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#mode-line">一些常用的mode-line包</a></li>
-        <li><a href="#mode-line-1">了解mode-line</a></li>
-        <li><a href="#mode-line-3">自定义mode-line</a></li>
-        <li><a href="#mode-lineminor-mode">隐藏mode-line上的minor mode</a></li>
+        <li><a href="#一些常用的mode-line包">一些常用的mode-line包</a></li>
+        <li><a href="#了解mode-line">了解mode-line</a></li>
+        <li><a href="#自定义mode-line">自定义mode-line</a></li>
+        <li><a href="#隐藏mode-line上的minor-mode">隐藏mode-line上的minor mode</a></li>
       </ul>
     </li>
   </ul>
@@ -280,12 +280,12 @@
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/mode-line">mode-line
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/mode-line">mode-line
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/diminish">diminish
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/diminish">diminish
                     </a>
                 </li>
                 
@@ -295,12 +295,12 @@
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/07/10/setting-mathjax-with-hugo/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/07/10/setting-mathjax-with-hugo/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">Setting MathJax with Hugo&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/06/14/tcp-ip-illustrated-volume1-snmp/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/06/14/tcp-ip-illustrated-volume1-snmp/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;TCP/IP 详解(卷一) SNMP：简单网络管理协议</div>
     </a>
     
@@ -311,7 +311,7 @@
         
   <div class="article-comments">
   
-  <span id="/2018/07/09/customize-emacs-mode-line/" class="leancloud-visitors" data-flag-title="自定义emacs mode-line">
+  <span id="/hugo-blog/2018/07/09/customize-emacs-mode-line/" class="leancloud-visitors" data-flag-title="自定义emacs mode-line">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -336,8 +336,8 @@
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

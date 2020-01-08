@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/05/10/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/05/10/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/05/10/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/" >
+                <a href="/hugo-blog/2018/05/10/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/" >
                     <time datetime='2018-05-10T09:20:39.000&#43;00:00' itemprop="datePublished">2018-05-10</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                     
                 </div>
             </div>
@@ -108,8 +108,8 @@
 <p>每次UDP收到由IP传送来的数据报，就根据目的端口号，有时还有源端口号进行数据报过滤。如果当前没有进程使用该目的端口号，就丢弃该数据报并产生一个ICMP不可达报文（TCP根据它的端口号作相似的过滤）。如果UDP数据报存在检验和错，将被丢弃。</p>
 <p>使用广播的问题在于它增加了对广播数据不感兴趣主机的处理负荷。拿一个使用UDP广播应用作为例子。如果网内有50个主机，但仅有20个参与该应用，每次这20个主机中的一个发送UDP广播数据时，其余30个主机不得不处理这些广播数据报。一直到UDP层，收到的UDP广播数据报才会被丢弃。这30个主机丢弃UDP广播数据报是因为这些主机没有使用这个目的端口。</p>
 <p>多播的出现减少了对应用不感兴趣主机的处理负荷。使用多播，主机可加入一个或多个多播组。这样，网卡将获悉该主机属于哪个多播组，然后仅接收主机所在多播组的那些多播帧。</p>
-<h2 id="heading">广播</h2>
-<h3 id="heading-1">受限的广播</h3>
+<h2 id="广播">广播</h2>
+<h3 id="受限的广播">受限的广播</h3>
 <p>受限的广播地址是255.255.255.255。该地址用于主机配置过程中IP数据报的目的地址，此时，主机可能还不知道它所在网络的网络掩码，甚至连它的IP地址也不知道。</p>
 <p>在任何情况下，路由器都不转发目的地址为受限的广播地址的数据报，这样的数据报仅出现在本地网络中。</p>
 <p>一个未解的问题是：如果一个主机是多接口的，当一个进程向本网广播地址发送数据报时，为实现广播，是否应该将数据报发送到每个相连的接口上？如果不是这样，想对主机所有接口广播的应用必须确定主机中支持广播的所有接口，然后向每个接口发送一个数据报复制。</p>
@@ -117,21 +117,21 @@
 <blockquote>
 <p>Host Requirements RFC没有进一步涉及多接口主机是否应当向其所有的接口发送受限的广播。</p>
 </blockquote>
-<h3 id="heading-2">指向网络的广播</h3>
+<h3 id="指向网络的广播">指向网络的广播</h3>
 <p>指向网络的广播地址是主机号为全1的地址。A类网络广播地址为netid.255.255.255，其中netid为A类网络的网络号。</p>
 <p>一个路由器必须转发指向网络的广播，但它也必须有一个不进行转发的选择。</p>
-<h3 id="heading-3">指向子网的广播</h3>
+<h3 id="指向子网的广播">指向子网的广播</h3>
 <p>指向子网的广播地址为主机号为全1且有特定子网号的地址。作为子网直接广播地址的IP地址需要了解子网的掩码。例如，如果路由器收到发往128.1.2.255的数据报，当B类网络128.1的子网掩码为255.255.255.0时，该地址就是指向子网的广播地址；但如果该子网的掩码为255.255.254.0，该地址就不是指向子网的广播地址。</p>
-<h3 id="heading-4">指向所有子网的广播</h3>
+<h3 id="指向所有子网的广播">指向所有子网的广播</h3>
 <p>指向所有子网的广播也需要了解目的网络的子网掩码，以便与指向网络的广播地址区分开。指向所有子网的广播地址的子网号及主机号为全1。例如，如果目的子网掩码为255.255.255.0，那么IP地址128.1.255.255是一个指向所有子网的广播地址。然而，如果网络没有划分子网，这就是一个指向网络的广播。</p>
 <p>当前的看法[Almquist 1993]是这种广播是陈旧过时的，更好的方式是使用多播而不是对所有子网的广播。</p>
-<h2 id="heading-5">多播</h2>
+<h2 id="多播">多播</h2>
 <p>IP多播提供两类服务：</p>
 <ol>
 <li>向多个目的地址传送数据。有许多向多个接收者传送信息的应用：例如交互式会议系统和向多个接收者分发邮件或新闻。如果不采用多播，目前这些应用大多采用TCP来完成（向每个目的地址传送一个单独的数据复制）。然而，即使使用多播，某些应用可能继续采用TCP来保证它的可靠性。</li>
 <li>客户对服务器的请求。例如，无盘工作站需要确定启动引导服务器。目前，这项服务是通过广播来提供的(如BOOTP)，但是使用多播可降低不提供这项服务主机的负担。</li>
 </ol>
-<h3 id="heading-6">多播组地址</h3>
+<h3 id="多播组地址">多播组地址</h3>
 <p>D类IP地址的格式：
 <img src="/images/tcp-ip/class-d-ip-format.jpg" alt=""></p>
 <p>不像其他三类IP地址（A、B和C），分配的28 bit均用作多播组号而不再表示其他。</p>
@@ -139,7 +139,7 @@
 <p>能够接收发往一个特定多播组地址数据的主机集合称为主机组(host group)。一个主机组可跨越多个网络。主机组中成员可随时加入或离开主机组。主机组中对主机的数量没有限制，同时不属于某一主机组的主机可以向该组发送信息。</p>
 <p>一些多播组地址被IANA确定为知名地址。它们也被当作永久主机组，这和TCP及UDP中的熟知端口相似。同样，这些知名多播地址在RFC最新分配数字中列出。注意这些多播地址所代表的组是永久组，而它们的组成员却不是永久的。</p>
 <p>例如，224.0.0.1代表“该子网内的所有系统组”，224.0.0.2代表“该子网内的所有路由器组”。多播地址224.0.1.1用作网络时间协议NTP，224.0.0.9用作RIP-2，224.0.1.2用作SGI公司的dogfight应用。</p>
-<h3 id="heading-7">多播组地址到以太网地址的转换</h3>
+<h3 id="多播组地址到以太网地址的转换">多播组地址到以太网地址的转换</h3>
 <p>IANA拥有一个以太网地址块，即高位24 bit为00:00:5e（十六进制表示），这意味着该地址块所拥有的地址范围从00:00:5e:00:00:00到00:00:5e:ff:ff:ff。IANA将其中的一半分配为多播地址。为了指明一个多播地址，任何一个以太网地址的首字节必须是01，这意味着与IP多播相对应的以太网地址范围从01:00:5e:00:00:00到01:00:5e:7f:ff:ff。</p>
 <p>这种地址分配将使以太网多播地址中的23bit与IP多播组号对应起来，通过将多播组号中的低位23bit映射到以太网地址中的低位23bit实现，这个过程如下所示：
 <img src="/images/tcp-ip/mapping-class-d-ip-into-eth-multicast-addr.jpg" alt=""></p>
@@ -147,9 +147,9 @@
 <p>既然地址映射是不唯一的，那么设备驱动程序或IP层就必须对数据报进行过滤。因为网卡可能接收到主机不想接收的多播数据帧。另外，如果网卡不提供足够的多播数据帧过滤功能，设备驱动程序就必须接收所有多播数据帧，然后对它们进行过滤。</p>
 <p>单个物理网络的多播是简单的。多播进程将目的IP地址指明为多播地址，设备驱动程序将它转换为相应的以太网地址，然后把数据发送出去。这些接收进程必须通知它们的IP层，它们想接收的发往给定多播地址的数据报，并且设备驱动程序必须能够接收这些多播帧。这个过程就是“加入一个多播组”（使用“接收进程”复数形式的原因在于对一确定的多播信息，在同一主机或多个主机上存在多个接收者，这也是为什么要首先使用多播的原因）。当一个主机收到多播数据报时，它必须向属于那个多播组的每个进程均传送一个复制。这和单个进程收到单播UDP数据报的UDP不同。使用多播，一个主机上可能存在多个属于同一多播组的进程。</p>
 <p>当把多播扩展到单个物理网络以外需要通过路由器转发多播数据时，复杂性就增加了。需要有一个协议让多播路由器了解确定网络中属于确定多播组的任何一个主机。这个协议就是Internet组管理协议（IGMP）。</p>
-<h3 id="fddi">FDDI和令牌环网络中的多播</h3>
+<h3 id="fddi和令牌环网络中的多播">FDDI和令牌环网络中的多播</h3>
 <p>FDDI网络使用相同的D类IP地址到48 bit FDDI地址的映射过程[Katz 1990]。令牌环网络通常使用不同的地址映射方法，这是因为大多数令牌控制中的限制。</p>
-<h2 id="heading-8">小结</h2>
+<h2 id="小结">小结</h2>
 <p>广播是将数据报发送到网络中的所有主机（通常是本地相连的网络），而多播是将数据报发送到网络的一个主机组。这两个概念的基本点在于当收到送往上一个协议栈的数据帧时采用不同类型的过滤。每个协议层均可以因为不同的理由丢弃数据报。</p>
 <p>目前有四种类型的广播地址：受限的广播、指向网络的广播、指向子网的广播和指向所有子网的广播。最常用的是指向子网的广播。受限的广播通常只在系统初始启动时才会用到。</p>
 <p>试图通过路由器进行广播而发生的问题，常常是因为路由器不了解目的网络的子网掩码。结果与多种因素有关：广播地址类型、配置参数等等。</p>
@@ -162,22 +162,22 @@
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">广播</a>
+    <li><a href="#广播">广播</a>
       <ul>
-        <li><a href="#heading-1">受限的广播</a></li>
-        <li><a href="#heading-2">指向网络的广播</a></li>
-        <li><a href="#heading-3">指向子网的广播</a></li>
-        <li><a href="#heading-4">指向所有子网的广播</a></li>
+        <li><a href="#受限的广播">受限的广播</a></li>
+        <li><a href="#指向网络的广播">指向网络的广播</a></li>
+        <li><a href="#指向子网的广播">指向子网的广播</a></li>
+        <li><a href="#指向所有子网的广播">指向所有子网的广播</a></li>
       </ul>
     </li>
-    <li><a href="#heading-5">多播</a>
+    <li><a href="#多播">多播</a>
       <ul>
-        <li><a href="#heading-6">多播组地址</a></li>
-        <li><a href="#heading-7">多播组地址到以太网地址的转换</a></li>
-        <li><a href="#fddi">FDDI和令牌环网络中的多播</a></li>
+        <li><a href="#多播组地址">多播组地址</a></li>
+        <li><a href="#多播组地址到以太网地址的转换">多播组地址到以太网地址的转换</a></li>
+        <li><a href="#fddi和令牌环网络中的多播">FDDI和令牌环网络中的多播</a></li>
       </ul>
     </li>
-    <li><a href="#heading-8">小结</a></li>
+    <li><a href="#小结">小结</a></li>
   </ul>
 </nav>
         </div>
@@ -196,17 +196,17 @@
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/broadcast">broadcast
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/broadcast">broadcast
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/multicast">multicast
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/multicast">multicast
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/igmp">IGMP
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/igmp">IGMP
                     </a>
                 </li>
                 
@@ -216,12 +216,12 @@
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/05/10/tcp-ip-illustrated-volume1-igmp/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/10/tcp-ip-illustrated-volume1-igmp/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">TCP/IP 详解(卷一) IGMP：Internet组管理协议&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/05/09/shell-pop-with-eshell/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/09/shell-pop-with-eshell/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;Add shell-pop with eshell</div>
     </a>
     
@@ -232,7 +232,7 @@
         
   <div class="article-comments">
   
-  <span id="/2018/05/10/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) 广播和多播">
+  <span id="/hugo-blog/2018/05/10/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) 广播和多播">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -257,8 +257,8 @@
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

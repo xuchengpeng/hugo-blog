@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/post/</link>
+    <link>http://xuchengpeng.com/hugo-blog/post/</link>
     <description>Recent content in Posts on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 22 Dec 2018 14:39:11 +0800</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Clang-Format code</title>
-      <link>http://xuchengpeng.com/2018/12/22/clangformat-code/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/12/22/clangformat-code/</link>
       <pubDate>Sat, 22 Dec 2018 14:39:11 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/12/22/clangformat-code/</guid>
-      <description>&lt;p&gt;Download clang-format from [&lt;a href=&#34;http://llvm.org%5D(http://llvm.org)&#34;&gt;http://llvm.org](http://llvm.org)&lt;/a&gt;.&lt;/p&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/12/22/clangformat-code/</guid>
+      <description>&lt;p&gt;Download clang-format from &lt;a href=&#34;http://llvm.org&#34;&gt;http://llvm.org&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;LLVM -i test.c
 clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-config &amp;gt; google.clang-format
@@ -26,10 +26,10 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
     
     <item>
       <title>使用AStyle格式化代码</title>
-      <link>http://xuchengpeng.com/2018/12/20/astyle-code/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/12/20/astyle-code/</link>
       <pubDate>Thu, 20 Dec 2018 18:59:10 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/12/20/astyle-code/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/12/20/astyle-code/</guid>
       <description>&lt;p&gt;从 &lt;a href=&#34;http://astyle.sourceforge.net/&#34;&gt;astyle.sourceforge.net&lt;/a&gt; 下载安装 astyle。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 /path/to/code.c
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
@@ -57,10 +57,10 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
     
     <item>
       <title>Emacs 根据时间切换主题</title>
-      <link>http://xuchengpeng.com/2018/12/06/emacs-change-theme-with-time/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/12/06/emacs-change-theme-with-time/</link>
       <pubDate>Thu, 06 Dec 2018 09:07:28 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/12/06/emacs-change-theme-with-time/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/12/06/emacs-change-theme-with-time/</guid>
       <description>&lt;p&gt;根据时间，自动切换亮色和暗色主题。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;day-theme&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;light-blue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dark-theme&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;misterioso&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -79,10 +79,10 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
     
     <item>
       <title>Ubuntu安装Samba</title>
-      <link>http://xuchengpeng.com/2018/11/07/ubuntu-install-samba/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/11/07/ubuntu-install-samba/</link>
       <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/11/07/ubuntu-install-samba/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/11/07/ubuntu-install-samba/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;apt-get install samba
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改 /etc/samba/smb.conf 文件：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;[share]
@@ -105,10 +105,10 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
     
     <item>
       <title>Shell - Here Documents</title>
-      <link>http://xuchengpeng.com/2018/10/30/shell-here-documents/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/10/30/shell-here-documents/</link>
       <pubDate>Tue, 30 Oct 2018 14:19:55 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/10/30/shell-here-documents/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/10/30/shell-here-documents/</guid>
       <description>&lt;p&gt;Here Documents 是 Shell 中的一种特殊的重定向方式，用来将输入重定向到一个交互式 Shell 脚本或程序。&lt;/p&gt;
 &lt;p&gt;它的基本的形式如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; delimiter
@@ -126,10 +126,10 @@ clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-conf
     
     <item>
       <title>正则表达式</title>
-      <link>http://xuchengpeng.com/2018/09/27/regular-expressions/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/27/regular-expressions/</link>
       <pubDate>Thu, 27 Sep 2018 09:20:09 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/27/regular-expressions/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/27/regular-expressions/</guid>
       <description>&lt;p&gt;除非您以前使用过正则表达式，否则您可能不熟悉一些术语。但是，毫无疑问，您已经使用过不涉及脚本的某些正则表达式概念。&lt;/p&gt;
 &lt;p&gt;例如，您很可能使用 ? 和 * 通配符来查找硬盘上的文件。? 通配符匹配文件名中的 0 个或 1 个字符，而 * 通配符匹配零个或多个字符。像 &lt;code&gt;data(\w)?\.dat&lt;/code&gt; 这样的模式将查找下列文件：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;data.dat
@@ -149,10 +149,10 @@ dataXYZ.dat
     
     <item>
       <title>Go语言匿名结构</title>
-      <link>http://xuchengpeng.com/2018/09/26/go-anonymous-struct/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/26/go-anonymous-struct/</link>
       <pubDate>Wed, 26 Sep 2018 16:47:46 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/26/go-anonymous-struct/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/26/go-anonymous-struct/</guid>
       <description>&lt;p&gt;Go语言也提供了继承，但是采用了组合的文法，所以我们将其称为匿名组合：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Base&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
     &lt;span class=&#34;nx&#34;&gt;Name&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;
@@ -176,10 +176,10 @@ dataXYZ.dat
     
     <item>
       <title>Linux系统Shell特殊变量</title>
-      <link>http://xuchengpeng.com/2018/09/20/linux-shell-special-variables/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/20/linux-shell-special-variables/</link>
       <pubDate>Thu, 20 Sep 2018 13:55:54 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/20/linux-shell-special-variables/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/20/linux-shell-special-variables/</guid>
       <description>&lt;p&gt;变量名只能包含数字、字母和下划线，因为某些包含其他字符的变量有特殊含义，这样的变量被称为特殊变量。&lt;/p&gt;
 &lt;p&gt;例如，$ 表示当前Shell进程的ID，即pid，看下面的代码：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# echo $$&lt;/span&gt;
@@ -226,10 +226,10 @@ dataXYZ.dat
     
     <item>
       <title>Build Emacs on Linux</title>
-      <link>http://xuchengpeng.com/2018/09/19/build-emacs-on-linux/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/19/build-emacs-on-linux/</link>
       <pubDate>Wed, 19 Sep 2018 17:12:20 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/19/build-emacs-on-linux/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/19/build-emacs-on-linux/</guid>
       <description>&lt;p&gt;Build Emacs 26.1 on Ubuntu:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get update
 sudo apt-get install build-essential
@@ -243,10 +243,10 @@ sudo make install
     
     <item>
       <title>KVM</title>
-      <link>http://xuchengpeng.com/2018/09/11/kvm/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/11/kvm/</link>
       <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/11/kvm/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/11/kvm/</guid>
       <description>&lt;p&gt;KVM 全称是 基于内核的虚拟机（Kernel-based Virtual Machine），它是Linux 的一个内核模块，该内核模块使得 Linux 变成了一个 Hypervisor：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;它由 Quramnet 开发，该公司于 2008年被 Red Hat 收购。&lt;/li&gt;
@@ -259,10 +259,10 @@ sudo make install
     
     <item>
       <title>VXLAN</title>
-      <link>http://xuchengpeng.com/2018/09/11/vxlan/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/11/vxlan/</link>
       <pubDate>Tue, 11 Sep 2018 14:16:49 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/11/vxlan/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/11/vxlan/</guid>
       <description>&lt;p&gt;VXLAN(Virtual eXtential LAN)意为虚拟可拓展局域网。随着大数据、云计算技术的兴起以及虚拟化技术的普及，VLAN技术的弊端逐渐显现出来，具体表现为如下3个方面：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;虚拟化技术的发展促使大数据、云计算技术公司采用单个物理设备虚拟多台虚拟机的方式来进行组网，随着应用模块的增加，对于支持VLAN数目的要求也在提升，802.1Q标准中的最多支持4094个VLAN的能力已经无法满足当下需求。&lt;/li&gt;
@@ -275,10 +275,10 @@ sudo make install
     
     <item>
       <title>Open vSwitch</title>
-      <link>http://xuchengpeng.com/2018/09/11/openvswitch/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/11/openvswitch/</link>
       <pubDate>Tue, 11 Sep 2018 11:09:50 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/11/openvswitch/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/11/openvswitch/</guid>
       <description>&lt;p&gt;Open vSwitch 是一个基于Apache 2 license的多层软件交换机。 我们的目标是实现一个支持标准管理接口的，开放转发功能以支持编程扩展和控制的交换机平台。&lt;/p&gt;
 &lt;p&gt;Open vSwitch 非常适合在VM环境中用作虚拟交换机。 除了将标准控制和可视化接口暴露给虚拟网络层外，它还旨在支持跨越多个物理服务器的分布式系统。 Open vSwitch 支持多种基于Linux的虚拟化技术，包括 Xen/XenServer, KVM, 及 VirtualBox。&lt;/p&gt;
 &lt;p&gt;大部分代码是平台无关的C编码，可以轻松地移植到其他环境中。 当前版本的 Open vSwitch 支持以下功能：&lt;/p&gt;
@@ -302,12 +302,12 @@ sudo make install
     
     <item>
       <title>云计算与边缘计算</title>
-      <link>http://xuchengpeng.com/2018/09/11/cloud-and-edge-computing/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/11/cloud-and-edge-computing/</link>
       <pubDate>Tue, 11 Sep 2018 09:26:07 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/11/cloud-and-edge-computing/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/11/cloud-and-edge-computing/</guid>
       <description>&lt;p&gt;云计算（cloudcomputing）是基于互联网的相关服务的增加、使用和交付模式，通常涉及通过互联网来提供动态易扩展且经常是虚拟化的资源。&lt;/p&gt;
-&lt;h3 id=&#34;heading&#34;&gt;云计算&lt;/h3&gt;
+&lt;h3 id=&#34;云计算&#34;&gt;云计算&lt;/h3&gt;
 &lt;p&gt;云计算系统由云平台、云存储、云终端、云安全四个基本部分组成。&lt;/p&gt;
 &lt;p&gt;云平台从用户的角度可分为公有云、私有云、混合云等。&lt;/p&gt;
 &lt;p&gt;通过从提供服务的层次可分为基础设施即服务（Iaas）、平台即服务（Paas）和软件即服务（Saas）。&lt;/p&gt;
@@ -316,20 +316,20 @@ sudo make install
     
     <item>
       <title>Emacs generate autoloads</title>
-      <link>http://xuchengpeng.com/2018/09/06/emacs-generate-autoloads/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/06/emacs-generate-autoloads/</link>
       <pubDate>Thu, 06 Sep 2018 11:25:46 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/06/emacs-generate-autoloads/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/06/emacs-generate-autoloads/</guid>
       <description>&lt;p&gt;The autoload facility lets you register the existence of a function or macro, but put off loading the file that defines it. The first call to the function automatically loads the proper library, in order to install the real definition and other associated code, then runs the real definition as if it had been loaded all along. Autoloading can also be triggered by looking up the documentation of the function or macro.&lt;/p&gt;
 &lt;p&gt;A magic autoload comment (often called an autoload cookie) consists of &lt;code&gt;;;;###autoload&lt;/code&gt;, on a line by itself, just before the real definition of the function in its autoloadable source file. The command &lt;code&gt;M-x update-file-autoloads&lt;/code&gt; writes a corresponding autoload call into loaddefs.el. (The string that serves as the autoload cookie and the name of the file generated by &lt;code&gt;update-file-autoloads&lt;/code&gt; can be changed from the above defaults, see below.) Building Emacs loads loaddefs.el and thus calls autoload. &lt;code&gt;M-x update-directory-autoloads&lt;/code&gt; is even more powerful; it updates autoloads for all files in the current directory.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Emacs Proxy</title>
-      <link>http://xuchengpeng.com/2018/09/05/emacs-proxy/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/05/emacs-proxy/</link>
       <pubDate>Wed, 05 Sep 2018 12:51:10 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/05/emacs-proxy/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/05/emacs-proxy/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;url-proxy-services&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;no_proxy&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;(localhost&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;|10.*&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
                            &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;proxy.com:80&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
                            &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;proxy.com:80&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -339,14 +339,14 @@ sudo make install
     
     <item>
       <title>Cmder | Console Emulator</title>
-      <link>http://xuchengpeng.com/2018/09/05/cmder-console-emulator/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/05/cmder-console-emulator/</link>
       <pubDate>Wed, 05 Sep 2018 09:31:48 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/05/cmder-console-emulator/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/05/cmder-console-emulator/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Cmder is a software package created out of pure frustration over the absence of nice console emulators on Windows. It is based on amazing software, and spiced up with the Monokai color scheme and a custom prompt layout, looking sexy from the start.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;-cmder-here&#34;&gt;增加 Cmder Here&lt;/h3&gt;
+&lt;h3 id=&#34;增加-cmder-here&#34;&gt;增加 Cmder Here&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;添加环境变量 &lt;code&gt;CMDER_HOME&lt;/code&gt;设定为Cmder安装目录&lt;code&gt;D:\Software\cmder\&lt;/code&gt;；&lt;/li&gt;
 &lt;li&gt;将&lt;code&gt;%CMDER_HOME%&lt;/code&gt;添加到&lt;code&gt;PATH&lt;/code&gt;环境变量中；&lt;/li&gt;
@@ -357,12 +357,12 @@ sudo make install
     
     <item>
       <title>EditorConfig</title>
-      <link>http://xuchengpeng.com/2018/08/21/editorconfig/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/08/21/editorconfig/</link>
       <pubDate>Tue, 21 Aug 2018 12:37:18 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/08/21/editorconfig/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/08/21/editorconfig/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://editorconfig.org/&#34;&gt;EditorConfig&lt;/a&gt;可以帮助开发者在不同的编辑器和IDE之间定义和维护一致的代码风格。EditorConfig包含一个用于定义代码格式的文件和一批编辑器插件，这些插件可以让编辑器读取配置文件并依此格式化代码。EditorConfig的配置文件十分易读，并且可以很好的在VCS（Version Control System）下工作。&lt;/p&gt;
-&lt;h3 id=&#34;editorconfig&#34;&gt;EditorConfig配置文件是什么样子的？&lt;/h3&gt;
+&lt;h3 id=&#34;editorconfig配置文件是什么样子的&#34;&gt;EditorConfig配置文件是什么样子的？&lt;/h3&gt;
 &lt;p&gt;以下是一个用于Python和Java的行尾和缩进风格.editorconfig配置文件。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# EditorConfig is awesome: https://EditorConfig.org&lt;/span&gt;
 
@@ -402,20 +402,20 @@ sudo make install
     
     <item>
       <title>AMD发布第二代Threadripper</title>
-      <link>http://xuchengpeng.com/2018/08/09/amd-release-threadripper2/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/08/09/amd-release-threadripper2/</link>
       <pubDate>Thu, 09 Aug 2018 09:32:24 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/08/09/amd-release-threadripper2/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/08/09/amd-release-threadripper2/</guid>
       <description>&lt;p&gt;就在昨天AMD第二代线程撕裂者旗舰Threadripper 2990WX外观正式解禁，AMD官网也揭露了其部分性能，得益于其拥有高达32个核心64个线程，Threadripper 2990WX轻松拿下了消费级市场CPU之王的头衔，此前坐在王座上的i9-7980XE被轻松秒杀，可谓一时之间风光无限。但俗话说的好，现在有多风光，以前就有多折堕（落魄的意思），AMD也不例外。就在2年以前，AMD还是一个被Intel无视的对手，产品性能与Intel有巨大的鸿沟，股价最低时仅为2美元出头，濒临破产。AMD会这么落魄，其中一个很主要的原因是因为当年推出的Bulldozer，推土机处理器微架构。&lt;/p&gt;
 &lt;p&gt;就在前两天，国外媒体ExtremeTech就总结了至今为止最糟糕的10款CPU，其中推土机（Bulldozer）进入了前三甲的位置，由此可见推土机的失败，是一个比较公认的事实。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>rsync elpa mirror</title>
-      <link>http://xuchengpeng.com/2018/08/06/rsync-elpa-mirror/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/08/06/rsync-elpa-mirror/</link>
       <pubDate>Mon, 06 Aug 2018 16:48:15 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/08/06/rsync-elpa-mirror/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/08/06/rsync-elpa-mirror/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rsync.samba.org/&#34;&gt;rsync&lt;/a&gt; is an open source utility that provides fast incremental file transfer. rsync is freely available under the GNU General Public License and is currently being maintained by Wayne Davison.&lt;/p&gt;
 &lt;p&gt;rsync is a file transfer program for Unix systems. rsync uses the &amp;ldquo;rsync algorithm&amp;rdquo; which provides a very fast method for bringing remote files into sync. It does this by sending just the differences in the files across the link, without requiring that both sets of files are present at one of the ends of the link beforehand.
 Some features of rsync include&lt;/p&gt;
@@ -431,10 +431,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Byte Compile Elisp Files</title>
-      <link>http://xuchengpeng.com/2018/07/26/emacs-byte-compile/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/07/26/emacs-byte-compile/</link>
       <pubDate>Thu, 26 Jul 2018 12:54:14 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/07/26/emacs-byte-compile/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/07/26/emacs-byte-compile/</guid>
       <description>&lt;p&gt;Emacs lisp files can be byte compiled.&lt;/p&gt;
 &lt;p&gt;Byte compiled elisp file has “.elc” suffix (aka extension). Normal elisp file has “.el” suffix.&lt;/p&gt;
 &lt;h2 id=&#34;advantage-of-byte-compiled-elisp-file&#34;&gt;Advantage of Byte Compiled Elisp File&lt;/h2&gt;
@@ -444,17 +444,17 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>强大的org-capture</title>
-      <link>http://xuchengpeng.com/2018/07/20/powerful-org-capture/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/07/20/powerful-org-capture/</link>
       <pubDate>Fri, 20 Jul 2018 15:00:59 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/07/20/powerful-org-capture/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/07/20/powerful-org-capture/</guid>
       <description>&lt;p&gt;Capture是Org mode中一个非常重要的功能，它可以：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;capture 可以预先设置记录内容的模板和存储入口；&lt;/li&gt;
 &lt;li&gt;capture 提供统一的输入入口；&lt;/li&gt;
 &lt;li&gt;capture 用完即走，不干扰当前工作流；&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;capture&#34;&gt;Capture模板&lt;/h2&gt;
+&lt;h2 id=&#34;capture模板&#34;&gt;Capture模板&lt;/h2&gt;
 &lt;p&gt;默认Capture模板样式如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Task&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;entry&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;file+headline&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Tasks&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;* TODO %?&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;  %u&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;  %a&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
@@ -462,10 +462,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>博客写作工具</title>
-      <link>http://xuchengpeng.com/2018/07/20/blog-writing-tools/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/</link>
       <pubDate>Fri, 20 Jul 2018 09:20:28 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/07/20/blog-writing-tools/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/07/20/blog-writing-tools/</guid>
       <description>&lt;p&gt;基本的工具用途：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;：用来发布博客；&lt;/li&gt;
@@ -476,10 +476,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Setting MathJax with Hugo</title>
-      <link>http://xuchengpeng.com/2018/07/10/setting-mathjax-with-hugo/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/07/10/setting-mathjax-with-hugo/</link>
       <pubDate>Tue, 10 Jul 2018 14:28:41 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/07/10/setting-mathjax-with-hugo/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/07/10/setting-mathjax-with-hugo/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; - Beautiful math in all browsers&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;A JavaScript display engine for mathematics that works in all browsers. No more setup for readers. It just works.&lt;/p&gt;
@@ -488,18 +488,18 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>自定义emacs mode-line</title>
-      <link>http://xuchengpeng.com/2018/07/09/customize-emacs-mode-line/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/07/09/customize-emacs-mode-line/</link>
       <pubDate>Mon, 09 Jul 2018 09:59:51 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/07/09/customize-emacs-mode-line/</guid>
-      <description>&lt;h3 id=&#34;mode-line&#34;&gt;一些常用的mode-line包&lt;/h3&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/07/09/customize-emacs-mode-line/</guid>
+      <description>&lt;h3 id=&#34;一些常用的mode-line包&#34;&gt;一些常用的mode-line包&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/milkypostman/powerline&#34;&gt;powerline&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Malabarba/smart-mode-line&#34;&gt;smart-mode-line&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/TheBB/spaceline&#34;&gt;spaceline&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/dbordak/telephone-line&#34;&gt;telephone-line&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;mode-line-1&#34;&gt;了解mode-line&lt;/h3&gt;
+&lt;h3 id=&#34;了解mode-line&#34;&gt;了解mode-line&lt;/h3&gt;
 &lt;p&gt;mode-line初始值：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;%e&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-front-space&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-mule-info&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-client&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-modified&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-remote&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-frame-identification&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-buffer-identification&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;   &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-position&lt;/span&gt;
  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;vc-mode&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;vc-mode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -509,10 +509,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) SNMP：简单网络管理协议</title>
-      <link>http://xuchengpeng.com/2018/06/14/tcp-ip-illustrated-volume1-snmp/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/06/14/tcp-ip-illustrated-volume1-snmp/</link>
       <pubDate>Thu, 14 Jun 2018 14:24:48 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/06/14/tcp-ip-illustrated-volume1-snmp/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/06/14/tcp-ip-illustrated-volume1-snmp/</guid>
       <description>&lt;p&gt;随着网络技术的飞速发展，网络的数量也越来越多。而网络中的设备来自各个不同的厂家，如何管理这些设备就变得十分重要。本章的内容就是介绍管理这些设备的标准。&lt;/p&gt;
 &lt;p&gt;基于TCP/IP的网络管理包含两个部分：网络管理站（也叫管理进程，manager）和被管的网络单元（也叫被管设备）。被管设备种类繁多，例如：路由器、X终端、终端服务器和打印机等。这些被管设备的共同点就是都运行TCP/IP协议。被管设备端和管理相关的软件叫做代理程序(agent)或代理进程。管理站一般都是带有彩色监视器的工作站，可以显示所有被管设备的状态(例如连接是否掉线、各种连接上的流量状况等)。&lt;/p&gt;
 &lt;p&gt;管理进程和代理进程之间的通信可以有两种方式。一种是管理进程向代理进程发出请求，询问一个具体的参数值（例如：你产生了多少个不可达的ICMP端口？）。另外一种方式是代理进程主动向管理进程报告有某些重要的事件发生（例如：一个连接口掉线了）。当然，管理进程除了可以向代理进程询问某些参数值以外，它还可以按要求改变代理进程的参数值（例如：把默认的IP TTL值改为64）。&lt;/p&gt;</description>
@@ -520,10 +520,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>卖米</title>
-      <link>http://xuchengpeng.com/2018/05/31/maimi-feihua/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/31/maimi-feihua/</link>
       <pubDate>Thu, 31 May 2018 08:59:11 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/31/maimi-feihua/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/31/maimi-feihua/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;作者：飞花&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -542,12 +542,12 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的未来和性能</title>
-      <link>http://xuchengpeng.com/2018/05/26/tcp-ip-illustrated-volume1-futures-and-performance/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/26/tcp-ip-illustrated-volume1-futures-and-performance/</link>
       <pubDate>Sat, 26 May 2018 14:48:35 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/26/tcp-ip-illustrated-volume1-futures-and-performance/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/26/tcp-ip-illustrated-volume1-futures-and-performance/</guid>
       <description>&lt;p&gt;TCP已经在从1200 b/s的拨号SLIP链路到以太数据链路上运行了许多年。在80年代和90年代初期，以太网是运行TCP/IP最主要的数据链路方式。虽然TCP在比以太网速率高的环境（如T2电话线、FDDI及千兆比网络）中也能够正确运行，但在这些高速率环境下，TCP的某些限制就会暴露出来。&lt;/p&gt;
-&lt;h2 id=&#34;mtu&#34;&gt;路径MTU发现&lt;/h2&gt;
+&lt;h2 id=&#34;路径mtu发现&#34;&gt;路径MTU发现&lt;/h2&gt;
 &lt;p&gt;路径MTU即当前在两个主机之间的路径上任何网络上的最小MTU。路径MTU发现在IP首部中继承并设置“不要分片（DF）”比特，来发现当前路径上的路由器是否需要对正在发送的IP数据报进行分片。如果一个待转发的IP数据报被设置DF比特，而其长度又超过了MTU，那么路由器将返回ICMP不可达的差错。&lt;/p&gt;
 &lt;p&gt;TCP的路径MTU发现按如下方式进行：在连接建立时，TCP使用输出接口或对端声明的MSS中的最小MTU作为起始的报文段大小。路径MTU发现不允许TCP超过对端声明的MSS。如果对端没有指定一个MSS，则默认为536。&lt;/p&gt;
 &lt;p&gt;一旦选定了起始的报文段大小，在该连接上的所有被TCP发送的IP数据报都将被设置DF比特。如果某个中间路由器需要对一个设置了DF标志的数据报进行分片，它就丢弃这个数据报，并产生一个ICMP的“不能分片”差错。&lt;/p&gt;
@@ -556,15 +556,15 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Markdown 博客中使用 MathJax 数学公式</title>
-      <link>http://xuchengpeng.com/2018/05/25/mathjax-in-markdown-blog/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/25/mathjax-in-markdown-blog/</link>
       <pubDate>Fri, 25 May 2018 16:28:02 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/25/mathjax-in-markdown-blog/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/25/mathjax-in-markdown-blog/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; - Beautiful math in all browsers&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;A JavaScript display engine for mathematics that works in all browsers. No more setup for readers. It just works.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;mathjax-&#34;&gt;MathJax 使用&lt;/h2&gt;
+&lt;h2 id=&#34;mathjax-使用&#34;&gt;MathJax 使用&lt;/h2&gt;
 &lt;p&gt;网页中增加配置：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;text/x-mathjax-config&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&#34;nx&#34;&gt;MathJax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Hub&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -581,10 +581,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的保活定时器</title>
-      <link>http://xuchengpeng.com/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/</link>
       <pubDate>Fri, 25 May 2018 15:30:19 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/</guid>
       <description>&lt;p&gt;可以没有任何数据流通过一个空闲的TCP连接。也就是说，如果TCP连接的双方都没有向对方发送数据，则在两个TCP模块之间不交换任何信息。例如，没有可以在其他网络协议中发现的轮询。这意味着我们可以启动一个客户与服务器建立一个连接，然后离去数小时、数天、数个星期或者数月，而连接依然保持。中间路由器可以崩溃和重启，电话线可以被挂断再连通，但是只要两端的主机没有被重启，则连接依然保持建立。&lt;/p&gt;
 &lt;p&gt;这意味着两个应用进程—客户进程或服务器进程—都没有使用应用级的定时器来检测非活动状态，而这种非活动状态可以导致应用进程中的任何一个终止其活动。&lt;/p&gt;
 &lt;p&gt;然而，许多时候一个服务器希望知道客户主机是否崩溃并关机或者崩溃又重新启动。许多实现提供的保活定时器可以提供这种能力。&lt;/p&gt;
@@ -596,10 +596,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的坚持定时器</title>
-      <link>http://xuchengpeng.com/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/</link>
       <pubDate>Fri, 25 May 2018 14:31:57 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/</guid>
       <description>&lt;p&gt;TCP通过让接收方指明希望从发送方接收的数据字节数（即窗口大小）来进行流量控制。如果窗口大小为0会发生什么情况呢？这将有效地阻止发送方传送数据，直到窗口变为非0为止。&lt;/p&gt;
 &lt;p&gt;TCP必须能够处理打开此窗口的ACK丢失的情况。ACK的传输并不可靠，也就是说，TCP不对ACK报文段进行确认，TCP只确认那些包含有数据的ACK报文段。&lt;/p&gt;
 &lt;p&gt;如果一个确认丢失了，则双方就有可能因为等待对方而使连接终止：接收方等待接收数据（因为它已经向发送方通告了一个非0的窗口），而发送方在等待允许它继续发送数据的窗口更新。为防止这种死锁情况的发生，发送方使用一个坚持定时器(persist timer)来周期性地向接收方查询，以便发现窗口是否已增大。这些从发送方发出的报文段称为窗口探查(window probe)。&lt;/p&gt;</description>
@@ -607,10 +607,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的超时与重传</title>
-      <link>http://xuchengpeng.com/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/</link>
       <pubDate>Fri, 25 May 2018 10:42:25 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/</guid>
       <description>&lt;p&gt;TCP提供可靠的运输层。它使用的方法之一就是确认从另一端收到的数据。但数据和确认都有可能会丢失。TCP通过在发送时设置一个定时器来解决这种问题。如果当定时器溢出时还没有收到确认，它就重传该数据。对任何实现而言，关键之处就在于超时和重传的策略，即怎样决定超时间隔和如何确定重传的频率。&lt;/p&gt;
 &lt;p&gt;对每个连接，TCP管理4个不同的定时器。&lt;/p&gt;
 &lt;ol&gt;
@@ -623,10 +623,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Stylus 自定义网页字体</title>
-      <link>http://xuchengpeng.com/2018/05/23/stylus-set-web-font/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/23/stylus-set-web-font/</link>
       <pubDate>Wed, 23 May 2018 10:27:11 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/23/stylus-set-web-font/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/23/stylus-set-web-font/</guid>
       <description>&lt;p&gt;使用 Stylus 可以直接使用 &lt;a href=&#34;https://userstyles.org/&#34;&gt;userstyles 网站&lt;/a&gt; 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。&lt;/p&gt;
 &lt;p&gt;这里推荐一款 &lt;a href=&#34;https://userstyles.org/styles/100473/004-forcemyfonts-chinese-firefoxchromeie-catcat520&#34;&gt;ForceMyFont&lt;/a&gt; 的模板，可以设定的选项非常丰富，前提也是需要在电脑上安装你选择的字体。&lt;/p&gt;
 &lt;p&gt;你也可以自定义字体CSS的样式，在 Chrome 浏览器中，这里使用 Stylus 插件，编写新的样式，代码如下：&lt;/p&gt;
@@ -639,12 +639,12 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的成块数据流</title>
-      <link>http://xuchengpeng.com/2018/05/21/tcp-ip-illustrated-volume1-bulk-data-flow/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/21/tcp-ip-illustrated-volume1-bulk-data-flow/</link>
       <pubDate>Mon, 21 May 2018 11:08:08 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/21/tcp-ip-illustrated-volume1-bulk-data-flow/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/21/tcp-ip-illustrated-volume1-bulk-data-flow/</guid>
       <description>&lt;p&gt;TFTP使用了停止等待协议，数据发送方在发送下一个数据块之前需要等待接收对已发送数据的确认。TCP使用了被称为滑动窗口协议的另一种形式的流量控制方法。该协议允许发送方在停止并等待确认前可以连续发送多个分组。由于发送方不必每发一个分组就停下来等待确认，因此该协议可以加速数据的传输。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;滑动窗口&lt;/h2&gt;
+&lt;h2 id=&#34;滑动窗口&#34;&gt;滑动窗口&lt;/h2&gt;
 &lt;p&gt;接收方通告的窗口称为提出的窗口（offered window），发送方计算它的可用窗口，该窗口表明多少数据可以立即被发送。&lt;/p&gt;
 &lt;p&gt;当接收方确认数据后，这个滑动窗口不时地向右移动。窗口两个边沿的相对运动增加或减少了窗口的大小。我们使用三个术语来描述窗口左右边沿的运动：&lt;/p&gt;
 &lt;ol&gt;
@@ -656,23 +656,23 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的交互数据流</title>
-      <link>http://xuchengpeng.com/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/</link>
       <pubDate>Mon, 21 May 2018 10:51:55 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/</guid>
       <description>&lt;p&gt;一些有关TCP通信量的研究如[Caceres et al. 1991]发现，如果按照分组数量计算，约有一半的TCP报文段包含成块数据（如FTP、电子邮件和Usenet新闻），另一半则包含交互数据（如Telnet和Rlogin）。如果按字节计算，则成块数据与交互数据的比例约为90%和10%。这是因为成块数据的报文段基本上都是满长度（full-sized）的（通常为512字节的用户数据），而交互数据则小得多（上述研究表明Telnet和Rlogin分组中通常约90%左右的用户数据小于10个字节）。&lt;/p&gt;
 &lt;p&gt;很明显，TCP需要同时处理这两类数据，但使用的处理算法则有所不同。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;交互式输入&lt;/h2&gt;
+&lt;h2 id=&#34;交互式输入&#34;&gt;交互式输入&lt;/h2&gt;
 &lt;p&gt;首先来观察在一个Rlogin连接上键入一个交互命令时所产生的数据流。许多TCP/IP的初学者很吃惊地发现通常每一个交互按键都会产生一个数据分组，也就是说，每次从客户传到服务器的是一个字节的按键（而不是每次一行）。而且，Rlogin需要远程系统（服务器）回显我们（客户）键入的字符。这样就会产生4个报文段：（1）来自客户的交互按键；（2）来自服务器的按键确认；（3）来自服务器的按键回显；（4）来自客户的按键回显确认。&lt;/p&gt;
 &lt;p&gt;然而，我们一般可以将报文段2和3进行合并—按键确认与按键回显一起发送。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>emacs 字体配置</title>
-      <link>http://xuchengpeng.com/2018/05/18/emacs-font-configuration/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/18/emacs-font-configuration/</link>
       <pubDate>Fri, 18 May 2018 14:02:30 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/18/emacs-font-configuration/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/18/emacs-font-configuration/</guid>
       <description>&lt;p&gt;定义设置中文和英文字体的函数，达到等宽效果：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;defun&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;set-font&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
   &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;interactive&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -707,10 +707,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) TCP连接的建立与终止</title>
-      <link>http://xuchengpeng.com/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/</link>
       <pubDate>Wed, 16 May 2018 15:01:04 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/</guid>
       <description>&lt;p&gt;TCP是一个面向连接的协议。无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。这种两端间连接的建立与无连接协议如UDP不同。一端使用UDP向另一端发送数据报时，无需任何预先的握手。&lt;/p&gt;
 &lt;p&gt;两个进程在使用TCP交换数据之前，它们之间必须建立一条连接。完成后，要关闭这个连接。&lt;/p&gt;
 &lt;p&gt;一个TCP连接由一个4元组唯一确定：本地IP地址、本地端口号、远端IP地址和远端端口号。&lt;/p&gt;</description>
@@ -718,10 +718,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) TCP：传输控制协议</title>
-      <link>http://xuchengpeng.com/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</link>
       <pubDate>Tue, 15 May 2018 15:43:47 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</guid>
       <description>&lt;p&gt;尽管TCP和UDP都使用相同的网络层（IP），TCP却向应用层提供与UDP完全不同的服务。TCP提供一种面向连接的、可靠的字节流服务。&lt;/p&gt;
 &lt;p&gt;面向连接意味着两个使用TCP的应用（通常是一个客户和一个服务器）在彼此交换数据之前必须先建立一个TCP连接。这一过程与打电话很相似，先拨号振铃，等待对方摘机说“喂”，然后才说明是谁。&lt;/p&gt;
 &lt;p&gt;在一个TCP连接中，仅有两方进行彼此通信。&lt;/p&gt;
@@ -739,10 +739,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Markdown 复杂表格</title>
-      <link>http://xuchengpeng.com/2018/05/14/markdown-complex-table/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/14/markdown-complex-table/</link>
       <pubDate>Mon, 14 May 2018 19:46:01 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/14/markdown-complex-table/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/14/markdown-complex-table/</guid>
       <description>&lt;p&gt;由于Markdown语法本身不包含复杂表格的插入，但是可以使用html语法来实现，一般的Markdown编辑器都是支持html语法的。&lt;/p&gt;
 &lt;p&gt;复杂表格与简单表格最大的差异有两点：水平单元格的合并和纵向单元格的合并，通过html语法实现这两个操作本质就是：删除多余的空白单元格，然后使用某些单元格的colspan和rowspan属性进行扩展填充。&lt;/p&gt;
 &lt;ul&gt;
@@ -754,13 +754,13 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) BOOTP：引导程序协议</title>
-      <link>http://xuchengpeng.com/2018/05/14/tcp-ip-illustrated-volume1-bootp/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/14/tcp-ip-illustrated-volume1-bootp/</link>
       <pubDate>Mon, 14 May 2018 17:43:41 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/14/tcp-ip-illustrated-volume1-bootp/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/14/tcp-ip-illustrated-volume1-bootp/</guid>
       <description>&lt;p&gt;一个无盘系统，它在不知道自身IP地址的情况下，在进行系统引导时能够通过RARP来获取它的IP地址。然而使用RARP有两个问题：（1）IP地址是返回的唯一结果；（2）既然RARP使用链路层广播，RARP请求就不会被路由器转发（迫使每个实际网络设置一个RARP服务器）。下面将介绍一种用于无盘系统进行系统引导的替代方法，又称为引导程序协议，或BOOTP。&lt;/p&gt;
 &lt;p&gt;BOOTP使用UDP，且通常需与TFTP协同工作。&lt;/p&gt;
-&lt;h2 id=&#34;bootp-&#34;&gt;BOOTP 的分组格式&lt;/h2&gt;
+&lt;h2 id=&#34;bootp-的分组格式&#34;&gt;BOOTP 的分组格式&lt;/h2&gt;
 &lt;p&gt;BOOTP 请求和应答均被封装在UDP数据报中，IP首部(20字节) - UDP首部(8字节) - BOOTP请求/应答(300字节)。&lt;/p&gt;
 &lt;p&gt;“操作码”字段为1表示请求，为2表示应答。硬件类型字段为1表示10 Mb/s的以太网，这和ARP请求或应答中同名字段表示的含义相同。类似地，对于以太网，硬件地址长度字段为6字节。&lt;/p&gt;
 &lt;p&gt;“跳数”字段由客户设置为0，但也能被一个代理服务器设置。&lt;/p&gt;
@@ -770,12 +770,12 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) TFTP：简单文件传送协议</title>
-      <link>http://xuchengpeng.com/2018/05/14/tcp-ip-illustrated-volume1-tftp/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/14/tcp-ip-illustrated-volume1-tftp/</link>
       <pubDate>Mon, 14 May 2018 17:21:26 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/14/tcp-ip-illustrated-volume1-tftp/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/14/tcp-ip-illustrated-volume1-tftp/</guid>
       <description>&lt;p&gt;TFTP(Trivial File Transfer Protocol)即简单文件传送协议，最初打算用于引导无盘系统（通常是工作站或X终端）。为了保持简单和短小，TFTP将使用UDP。TFTP的代码（和它所需要的UDP、IP和设备驱动程序）都能适合只读存储器。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;协议&lt;/h2&gt;
+&lt;h2 id=&#34;协议&#34;&gt;协议&lt;/h2&gt;
 &lt;p&gt;在开始工作时，TFTP的客户与服务器交换信息，客户发送一个读请求或写请求给服务器。在一个无盘系统进行系统引导的正常情况下，第一个请求是读请求（RRQ）。下图显示了5种TFTP报文格式（操作码为1和2的报文使用相同的格式）。&lt;/p&gt;
 &lt;p&gt;TFTP报文的头两个字节表示操作码。对于读请求和写请求（WRQ），文件名字段说明客户要读或写的位于服务器上的文件。这个文件字段以0字节作为结束。模式字段是一个ASCII码串netascii或octet（可大小写任意组合），同样以0字节结束。netascii表示数据是以成行的ASCII码字符组成，以两个字节—回车字符后跟换行字符（称为CR/LF）作为行结束符。这两个行结束字符在这种格式和本地主机使用的行定界符之间进行转化。octet则将数据看作8bit一组的字节流而不作任何解释。&lt;/p&gt;
 &lt;p&gt;每个数据分组包含一个块编号字段，它以后要在确认分组中使用。以读一个文件作为例子，TFTP客户需要发送一个读请求说明要读的文件名和文件模式(mode)。如果这个文件能被这个客户读取，TFTP服务器就返回一个块编号为1的数据分组。TFTP客户又发送一个块编号为1的ACK。TFTP服务器随后发送块编号为2的数据。TFTP客户发回块编号为2的ACK。重复这个过程直到这个文件传送完。除了最后一个数据分组可含有不足512字节的数据，其他每个数据分组均含有512字节的数据。当TFTP客户收到一个不足512字节的数据分组，就知道它收到最后一个数据分组。&lt;/p&gt;</description>
@@ -783,10 +783,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>软件收藏站点</title>
-      <link>http://xuchengpeng.com/2018/05/14/software-collection-site/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/14/software-collection-site/</link>
       <pubDate>Mon, 14 May 2018 15:05:59 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/14/software-collection-site/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/14/software-collection-site/</guid>
       <description>&lt;p&gt;zd423: &lt;a href=&#34;http://www.zdfans.com/&#34;&gt;http://www.zdfans.com/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;烈火: &lt;a href=&#34;http://hrtsea.com/&#34;&gt;http://hrtsea.com/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;NoCmd: &lt;a href=&#34;https://www.nocmd.com/&#34;&gt;https://www.nocmd.com/&lt;/a&gt;&lt;/p&gt;
@@ -796,10 +796,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) DNS：域名系统</title>
-      <link>http://xuchengpeng.com/2018/05/14/tcp-ip-illustrated-volume1-dns/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/14/tcp-ip-illustrated-volume1-dns/</link>
       <pubDate>Mon, 14 May 2018 09:31:56 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/14/tcp-ip-illustrated-volume1-dns/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/14/tcp-ip-illustrated-volume1-dns/</guid>
       <description>&lt;p&gt;域名系统（DNS）是一种用于TCP/IP应用程序的分布式数据库，它提供主机名字和IP地址之间的转换及有关电子邮件的选路信息。这里提到的分布式是指在Internet上的单个站点不能拥有所有的信息。每个站点（如大学中的系、校园、公司或公司中的部门）保留它自己的信息数据库，并运行一个服务器程序供Internet上的其他系统（客户程序）查询。DNS提供了允许服务器和客户程序相互通信的协议。&lt;/p&gt;
 &lt;p&gt;从应用的角度上看，对DNS的访问是通过一个地址解析器（resolver）来完成的。在Unix主机中，该解析器主要是通过两个库函数gethostbyname和gethostbyaddr来访问的，它们在编译应用程序时与应用程序连接在一起。前者接收主机名字返回IP地址，而后者接收IP地址来寻找主机名字。解析器通过一个或多个名字服务器来完成这种相互转换。&lt;/p&gt;
 &lt;p&gt;解析器并不像TCP/IP协议那样是操作系统的内核。在一个应用程序请求TCP打开一个连接或使用UDP发送一个数据报之前。心须将一个主机名转换为一个IP地址。操作系统内核中的TCP/IP协议族对于DNS一点都不知道。&lt;/p&gt;</description>
@@ -807,10 +807,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Emacs load packages</title>
-      <link>http://xuchengpeng.com/2018/05/11/emacs-load-packages/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/11/emacs-load-packages/</link>
       <pubDate>Fri, 11 May 2018 13:51:45 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/11/emacs-load-packages/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/11/emacs-load-packages/</guid>
       <description>&lt;h2 id=&#34;load&#34;&gt;load&lt;/h2&gt;
 &lt;p&gt;load → is the general function for loading a file.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;load&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;FILE&lt;/span&gt; &lt;span class=&#34;kp&#34;&gt;&amp;amp;optional&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NOERROR&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NOMESSAGE&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NOSUFFIX&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;MUST-SUFFIX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -826,25 +826,25 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) IGMP：Internet组管理协议</title>
-      <link>http://xuchengpeng.com/2018/05/10/tcp-ip-illustrated-volume1-igmp/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/10/tcp-ip-illustrated-volume1-igmp/</link>
       <pubDate>Thu, 10 May 2018 14:07:54 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/10/tcp-ip-illustrated-volume1-igmp/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/10/tcp-ip-illustrated-volume1-igmp/</guid>
       <description>&lt;p&gt;用于支持主机和路由器进行多播的Internet组管理协议（IGMP）。它让一个物理网络上的所有系统知道主机当前所在的多播组。多播路由器需要这些信息以便知道多播数据报应该向哪些接口转发。&lt;/p&gt;
 &lt;p&gt;正如ICMP一样，IGMP也被当作IP层的一部分。IGMP报文通过IP数据报进行传输。不像我们已经见到的其他协议，IGMP有固定的报文长度，没有可选数据。IP首部(20字节) + IGMP报文(8字节)。&lt;/p&gt;
 &lt;p&gt;IGMP报文通过IP首部中协议字段值为2来指明。&lt;/p&gt;
-&lt;h2 id=&#34;igmp&#34;&gt;IGMP报文&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/tcp-ip/igmp-format.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;igmp报文&#34;&gt;IGMP报文&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/tcp-ip/igmp-format.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;这是版本为1的IGMP。IGMP类型为1说明是由多播路由器发出的查询报文，为2说明是主机发出的报告报文。检验和的计算和ICMP协议相同。&lt;/p&gt;
 &lt;p&gt;组地址为D类IP地址。在查询报文中组地址设置为0，在报告报文中组地址为要参加的组地址。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TCP/IP 详解(卷一) 广播和多播</title>
-      <link>http://xuchengpeng.com/2018/05/10/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/10/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</link>
       <pubDate>Thu, 10 May 2018 09:20:39 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/10/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/10/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</guid>
       <description>&lt;p&gt;广播和多播仅应用于UDP，它们对需将报文同时传往多个接收者的应用来说十分重要。TCP是一个面向连接的协议，它意味着分别运行于两主机（由IP地址确定）内的两进程（由端口号确定）间存在一条连接。&lt;/p&gt;
 &lt;p&gt;考虑包含多个主机的共享信道网络如以太网。每个以太网帧包含源主机和目的主机的以太网地址（48bit）。通常每个以太网帧仅发往单个目的主机，目的地址指明单个接收接口，因而称为单播(unicast)。在这种方式下，任意两个主机的通信不会干扰网内其他主机（可能引起争夺共享信道的情况除外）。&lt;/p&gt;
 &lt;p&gt;然而，有时一个主机要向网上的所有其他主机发送帧，这就是广播(broadcast)。通过ARP和RARP可以看到这一过程。多播(multicast)处于单播和广播之间：帧仅传送给属于多播组的多个主机。&lt;/p&gt;</description>
@@ -852,10 +852,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Add shell-pop with eshell</title>
-      <link>http://xuchengpeng.com/2018/05/09/shell-pop-with-eshell/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/09/shell-pop-with-eshell/</link>
       <pubDate>Wed, 09 May 2018 19:40:40 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/09/shell-pop-with-eshell/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/09/shell-pop-with-eshell/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;use-package&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;shell-pop&lt;/span&gt;
   &lt;span class=&#34;nb&#34;&gt;:ensure&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;t&lt;/span&gt;
   &lt;span class=&#34;nb&#34;&gt;:defer&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;t&lt;/span&gt;
@@ -872,10 +872,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) UDP：用户数据报协议</title>
-      <link>http://xuchengpeng.com/2018/05/09/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/09/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</link>
       <pubDate>Wed, 09 May 2018 10:28:49 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/09/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/09/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</guid>
       <description>&lt;p&gt;UDP是一个简单的面向数据报的运输层协议：进程的每个输出操作都正好产生一个UDP数据报，并组装成一份待发送的IP数据报。这与面向流字符的协议不同，如TCP，应用程序产生的全体数据与真正发送的单个IP数据报可能没有什么联系。&lt;/p&gt;
 &lt;p&gt;UDP数据报封装成一份IP数据报的格式：IP首部(20字节) - UDP首部(8字节) - UDP数据。&lt;/p&gt;
 &lt;p&gt;UDP不提供可靠性：它把应用程序传给IP层的数据发送出去，但是并不保证它们能到达目的地。由于缺乏可靠性，我们似乎觉得要避免使用UDP而使用一种可靠协议如TCP。&lt;/p&gt;
@@ -884,13 +884,13 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) 动态选路协议</title>
-      <link>http://xuchengpeng.com/2018/05/08/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/08/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</link>
       <pubDate>Tue, 08 May 2018 09:51:32 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/08/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/08/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</guid>
       <description>&lt;p&gt;静态选路：在配置接口时，以默认方式生成路由表项（对于直接连接的接口），并通过route命令增加表项（通常从系统自引导程序文件），或是通过ICMP重定向生成表项（通常是在默认方式出错的情况下）。&lt;/p&gt;
 &lt;p&gt;在网络很小，且与其他网络只有单个连接点且没有多余路由时（若主路由失败，可以使用备用路由），采用这种方法是可行的。如果上述三种情况不能全部满足，通常使用动态选路。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;动态选路&lt;/h2&gt;
+&lt;h2 id=&#34;动态选路&#34;&gt;动态选路&lt;/h2&gt;
 &lt;p&gt;当相邻路由器之间进行通信，以告知对方每个路由器当前所连接的网络，这时就出现了动态选路。路由器之间必须采用选路协议进行通信，这样的选路协议有很多种。路由器上有一个进程称为路由守护程序（routing daemon），它运行选路协议，并与其相邻的一些路由器进行通信。路由守护程序根据它从相邻路由器接收到的信息，更新内核中的路由表。&lt;/p&gt;
 &lt;p&gt;动态选路并不改变内核在IP层的选路方式。这种选路方式称为选路机制（routing mechanism）。内核搜索路由表，查找主机路由、网络路由以及默认路由的方式并没有改变。仅仅是放置到路由表中的信息改变了—当路由随时间变化时，路由是由路由守护程序动态地增加或删除，而不是来自于自引导程序文件中的route命令。&lt;/p&gt;
 &lt;p&gt;路由守护程序将选路策略（routing policy）加入到系统中，选择路由并加入到内核的路由表中。如果守护程序发现前往同一信宿存在多条路由，那么它（以某种方法）将选择最佳路由并加入内核路由表中。如果路由守护程序发现一条链路已经断开（可能是路由器崩溃或电话线路不好），它可以删除受影响的路由或增加另一条路由以绕过该问题。&lt;/p&gt;</description>
@@ -898,22 +898,22 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) IP选路</title>
-      <link>http://xuchengpeng.com/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/</link>
       <pubDate>Mon, 07 May 2018 10:29:57 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/</guid>
       <description>&lt;p&gt;选路是IP最重要的功能之一。需要进行选路的数据报可以由本地主机产生，也可以由其他主机产生。在后一种情况下，主机必须配置成一个路由器，否则通过网络接口接收到的数据报，如果目的地址不是本机就要被丢弃（例如，悄无声息地被丢弃）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/tcp-ip/ip-layer-process.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/tcp-ip/ip-layer-process.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TCP/IP 详解(卷一) Traceroute程序</title>
-      <link>http://xuchengpeng.com/2018/05/04/tcp-ip-illustrated-volume1-traceroute/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/04/tcp-ip-illustrated-volume1-traceroute/</link>
       <pubDate>Fri, 04 May 2018 10:21:33 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/04/tcp-ip-illustrated-volume1-traceroute/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/04/tcp-ip-illustrated-volume1-traceroute/</guid>
       <description>&lt;p&gt;由Van Jacobson编写的Traceroute程序是一个能更深入探索TCP/IP协议的方便可用的工具。尽管不能保证从源端发往目的端的两份连续的IP数据报具有相同的路由，但是大多数情况下是这样的。Traceroute程序可以让我们看到IP数据报从一台主机传到另一台主机所经过的路由。Traceroute程序还可以让我们使用IP源路由选项。&lt;/p&gt;
-&lt;h2 id=&#34;traceroute&#34;&gt;Traceroute程序的操作&lt;/h2&gt;
+&lt;h2 id=&#34;traceroute程序的操作&#34;&gt;Traceroute程序的操作&lt;/h2&gt;
 &lt;p&gt;为什么不使用IP记录路由选项(RR)这个选项而另外开发一个新的应用程序？有三个方面的原因。
 首先，原先并不是所有的路由器都支持记录路由选项，因此该选项在某些路径上不能使用（Traceroute程序不需要中间路由器具备任何特殊的或可选的功能）。
 其次，记录路由一般是单向的选项。发送端设置了该选项，那么接收端不得不从收到的IP首部中提取出所有的信息，然后全部返回给发送端。在7.3节中，我们看到大多数Ping服务器的实现（内核中的ICMP回显应答功能）把接收到的RR清单返回，但是这样使得记录下来的IP地址翻了一番（一来一回）。这样做会受到一些限制，这一点我们在下一段讨论（Traceroute程序只需要目的端运行一个UDP模块—其他不需要任何特殊的服务器应用程序）。
@@ -924,15 +924,15 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>TCP/IP 详解(卷一) Ping程序</title>
-      <link>http://xuchengpeng.com/2018/05/04/tcp-ip-illustrated-volume1-ping/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/04/tcp-ip-illustrated-volume1-ping/</link>
       <pubDate>Fri, 04 May 2018 08:41:08 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/04/tcp-ip-illustrated-volume1-ping/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/04/tcp-ip-illustrated-volume1-ping/</guid>
       <description>&lt;p&gt;“ping”这个名字源于声纳定位操作。Ping程序由Mike Muuss编写，目的是为了测试另一台主机是否可达。该程序发送一份ICMP回显请求报文给主机，并等待返回ICMP回显应答。&lt;/p&gt;
-&lt;h2 id=&#34;ping&#34;&gt;Ping程序&lt;/h2&gt;
+&lt;h2 id=&#34;ping程序&#34;&gt;Ping程序&lt;/h2&gt;
 &lt;p&gt;我们称发送回显请求的ping程序为客户，而称被ping的主机为服务器。大多数的TCP/IP实现都在内核中直接支持Ping服务器—这种服务器不是一个用户进程（两种ICMP查询服务，地址掩码和时间戳请求，也都是直接在内核中进行处理的）。
 ICMP回显请求和回显应答报文如下：
-&lt;img src=&#34;http://xuchengpeng.com/images/tcp-ip/icmp-echo-format.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/tcp-ip/icmp-echo-format.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;对于其他类型的ICMP查询报文，服务器必须响应标识符和序列号字段。另外，客户发送的选项数据必须回显，假设客户对这些信息都会感兴趣。&lt;/p&gt;
 &lt;p&gt;Unix系统在实现ping程序时是把ICMP报文中的标识符字段置成发送进程的ID号。这样即使在同一台主机上同时运行了多个ping程序实例，ping程序也可以识别出返回的信息。&lt;/p&gt;
 &lt;p&gt;序列号从0开始，每发送一次新的回显请求就加1。ping程序打印出返回的每个分组的序列号，允许我们查看是否有分组丢失、失序或重复。IP是一种最好的数据报传递服务，因此这三个条件都有可能发生。&lt;/p&gt;
@@ -941,52 +941,52 @@ ICMP回显请求和回显应答报文如下：
     
     <item>
       <title>TCP/IP 详解(卷一) ICMP：Internet控制报文协议</title>
-      <link>http://xuchengpeng.com/2018/05/03/tcp-ip-illustrated-volume1-icmp/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/03/tcp-ip-illustrated-volume1-icmp/</link>
       <pubDate>Thu, 03 May 2018 10:40:15 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/03/tcp-ip-illustrated-volume1-icmp/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/03/tcp-ip-illustrated-volume1-icmp/</guid>
       <description>&lt;p&gt;ICMP经常被认为是IP层的一个组成部分。它传递差错报文以及其他需要注意的信息。ICMP报文通常被IP层或更高层协议（TCP或UDP）使用。一些ICMP报文把差错报文返回给用户进程。&lt;/p&gt;
 &lt;p&gt;ICMP报文是在IP数据报内部被传输的，格式为：20个字节的IP首部加上后面的ICMP报文。&lt;/p&gt;
 &lt;p&gt;ICMP 报文格式中，类型字段可以有15个不同的值，以描述特定类型的ICMP报文。某些ICMP报文还使用代码字段的值来进一步描述不同的条件。
 检验和字段覆盖整个ICMP报文。使用的算法与IP首部检验和算法相同。ICMP的检验和是必需的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/tcp-ip/icmp-format.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/tcp-ip/icmp-format.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TCP/IP 详解(卷一) RARP：逆地址解析协议</title>
-      <link>http://xuchengpeng.com/2018/05/03/tcp-ip-illustrated-volume1-rarp/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/03/tcp-ip-illustrated-volume1-rarp/</link>
       <pubDate>Thu, 03 May 2018 09:38:48 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/03/tcp-ip-illustrated-volume1-rarp/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/03/tcp-ip-illustrated-volume1-rarp/</guid>
       <description>&lt;p&gt;具有本地磁盘的系统引导时，一般是从磁盘上的配置文件中读取IP地址。但是无盘机，如X终端或无盘工作站，则需要采用其他方法来获得IP地址。&lt;/p&gt;
 &lt;p&gt;网络上的每个系统都具有唯一的硬件地址，它是由网络接口生产厂家配置的。无盘系统的RARP实现过程是从接口卡上读取唯一的硬件地址，然后发送一份RARP请求（一帧在网络上广播的数据），请求某个主机响应该无盘系统的IP地址（在RARP应答中）。&lt;/p&gt;
-&lt;h2 id=&#34;rarp-&#34;&gt;RARP 的分组格式&lt;/h2&gt;
+&lt;h2 id=&#34;rarp-的分组格式&#34;&gt;RARP 的分组格式&lt;/h2&gt;
 &lt;p&gt;RARP分组的格式与ARP分组基本一致。它们之间主要的差别是RARP请求或应答的帧类型代码为0x8035，而且RARP请求的操作代码为3，应答操作代码为4。&lt;/p&gt;
 &lt;p&gt;对应于ARP，RARP请求以广播方式传送，而RARP应答一般是单播(unicast)传送的。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TCP/IP 详解(卷一) ARP：地址解析协议</title>
-      <link>http://xuchengpeng.com/2018/05/02/tcp-ip-illustrated-volume1-arp/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/02/tcp-ip-illustrated-volume1-arp/</link>
       <pubDate>Wed, 02 May 2018 14:40:12 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/02/tcp-ip-illustrated-volume1-arp/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/02/tcp-ip-illustrated-volume1-arp/</guid>
       <description>&lt;p&gt;数据链路如以太网或令牌环网都有自己的寻址机制（常常为48 bit地址），这是使用数据链路的任何网络层都必须遵从的。&lt;/p&gt;
 &lt;p&gt;当一台主机把以太网数据帧发送到位于同一局域网上的另一台主机时，是根据48 bit的以太网地址来确定目的接口的。设备驱动程序从不检查IP数据报中的目的IP地址。&lt;/p&gt;
 &lt;p&gt;地址解析为这两种不同的地址形式提供映射：32 bit的IP地址和数据链路层使用的任何类型的地址。&lt;/p&gt;
 &lt;p&gt;ARP为IP地址到对应的硬件地址之间提供动态映射。&lt;/p&gt;
-&lt;h2 id=&#34;arp-&#34;&gt;ARP 高速缓存&lt;/h2&gt;
+&lt;h2 id=&#34;arp-高速缓存&#34;&gt;ARP 高速缓存&lt;/h2&gt;
 &lt;p&gt;ARP高效运行的关键是由于每个主机上都有一个ARP高速缓存。这个高速缓存存放了最近Internet地址到硬件地址之间的映射记录。高速缓存中每一项的生存时间一般为20分钟，起始时间从被创建时开始算起。
 使用 &lt;code&gt;arp -a&lt;/code&gt; 命令来检查 ARP 高速缓存。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Windows 10 Version 1803 is out</title>
-      <link>http://xuchengpeng.com/2018/05/02/windows10-version-1803-is-out/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/02/windows10-version-1803-is-out/</link>
       <pubDate>Wed, 02 May 2018 11:27:31 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/02/windows10-version-1803-is-out/</guid>
-      <description>&lt;h2 id=&#34;heading&#34;&gt;简体中文零售版&lt;/h2&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/02/windows10-version-1803-is-out/</guid>
+      <description>&lt;h2 id=&#34;简体中文零售版&#34;&gt;简体中文零售版&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;家庭版、专业版、教育版、家庭单语言版、专业工作站版、专业教育版&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;架构: x64
 文件: cn_windows_10_consumer_editions_version_1803_updated_march_2018_x64_dvd_12063766.iso
@@ -1006,10 +1006,10 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
     
     <item>
       <title>Emacs add yasnippet to company backends</title>
-      <link>http://xuchengpeng.com/2018/04/27/emacs-add-yasnippet-to-company-backends/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/27/emacs-add-yasnippet-to-company-backends/</link>
       <pubDate>Fri, 27 Apr 2018 10:10:07 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/27/emacs-add-yasnippet-to-company-backends/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/27/emacs-add-yasnippet-to-company-backends/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;defvar&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;company-mode/enable-yas&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;t&lt;/span&gt;
   &lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Enable yasnippet for all backends.&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 
@@ -1025,11 +1025,11 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
     
     <item>
       <title>Ubuntu 18.04 LTS is out</title>
-      <link>http://xuchengpeng.com/2018/04/27/ubuntu-18.04-lts-is-out/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/27/ubuntu-18.04-lts-is-out/</link>
       <pubDate>Fri, 27 Apr 2018 09:36:13 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/27/ubuntu-18.04-lts-is-out/</guid>
-      <description>&lt;h2 id=&#34;whats-new-in-1804-lts&#34;&gt;What’s new in 18.04 LTS&lt;/h2&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/27/ubuntu-18.04-lts-is-out/</guid>
+      <description>&lt;h2 id=&#34;whats-new-in-1804-lts-&#34;&gt;What’s new in 18.04 LTS&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Supported by Canonical until 2023&lt;/li&gt;
 &lt;li&gt;Runs on all major architectures – x86, x86-64, ARM v7, ARM64, POWER8 and IBM s390x (LinuxONE)&lt;/li&gt;
@@ -1048,145 +1048,145 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
     
     <item>
       <title>传输对象模式</title>
-      <link>http://xuchengpeng.com/2018/04/26/design-pattern-transfer-object-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-transfer-object-pattern/</link>
       <pubDate>Thu, 26 Apr 2018 15:47:52 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/26/design-pattern-transfer-object-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-transfer-object-pattern/</guid>
       <description>&lt;p&gt;传输对象模式（Transfer Object Pattern）用于从客户端向服务器一次性传递带有多个属性的数据。传输对象也被称为数值对象。传输对象是一个具有 getter/setter 方法的简单的 POJO 类，它是可序列化的，所以它可以通过网络传输。它没有任何的行为。服务器端的业务类通常从数据库读取数据，然后填充 POJO，并把它发送到客户端或按值传递它。对于客户端，传输对象是只读的。客户端可以创建自己的传输对象，并把它传递给服务器，以便一次性更新数据库中的数值。以下是这种设计模式的实体。&lt;/p&gt;
 &lt;p&gt;业务对象（Business Object） - 为传输对象填充数据的业务服务。
 传输对象（Transfer Object） - 简单的 POJO，只有设置/获取属性的方法。
 客户端（Client） - 客户端可以发送请求或者发送传输对象到业务对象。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;实现&lt;/h2&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
 &lt;p&gt;我们将创建一个作为业务对象的 StudentBO 和作为传输对象的 StudentVO，它们都代表了我们的实体。
 TransferObjectPatternDemo，我们的演示类在这里是作为一个客户端，将使用 StudentBO 和 Student 来演示传输对象设计模式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/design-pattern/transferobject_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/design-pattern/transferobject_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>服务定位器模式</title>
-      <link>http://xuchengpeng.com/2018/04/26/design-pattern-service-locator-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-service-locator-pattern/</link>
       <pubDate>Thu, 26 Apr 2018 15:40:37 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/26/design-pattern-service-locator-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-service-locator-pattern/</guid>
       <description>&lt;p&gt;服务定位器模式（Service Locator Pattern）用在我们想使用 JNDI 查询定位各种服务的时候。考虑到为某个服务查找 JNDI 的代价很高，服务定位器模式充分利用了缓存技术。在首次请求某个服务时，服务定位器在 JNDI 中查找服务，并缓存该服务对象。当再次请求相同的服务时，服务定位器会在它的缓存中查找，这样可以在很大程度上提高应用程序的性能。以下是这种设计模式的实体。&lt;/p&gt;
 &lt;p&gt;服务（Service） - 实际处理请求的服务。对这种服务的引用可以在 JNDI 服务器中查找到。
 Context / 初始的 Context - JNDI Context 带有对要查找的服务的引用。
 服务定位器（Service Locator） - 服务定位器是通过 JNDI 查找和缓存服务来获取服务的单点接触。
 缓存（Cache） - 缓存存储服务的引用，以便复用它们。
 客户端（Client） - Client 是通过 ServiceLocator 调用服务的对象。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;实现&lt;/h2&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
 &lt;p&gt;我们将创建 ServiceLocator、InitialContext、Cache、Service 作为表示实体的各种对象。Service1 和 Service2 表示实体服务。
 ServiceLocatorPatternDemo，我们的演示类在这里是作为一个客户端，将使用 ServiceLocator 来演示服务定位器设计模式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/design-pattern/servicelocator_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/design-pattern/servicelocator_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>拦截过滤器模式</title>
-      <link>http://xuchengpeng.com/2018/04/26/design-pattern-intercepting-filter-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-intercepting-filter-pattern/</link>
       <pubDate>Thu, 26 Apr 2018 15:33:02 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/26/design-pattern-intercepting-filter-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-intercepting-filter-pattern/</guid>
       <description>&lt;p&gt;拦截过滤器模式（Intercepting Filter Pattern）用于对应用程序的请求或响应做一些预处理/后处理。定义过滤器，并在把请求传给实际目标应用程序之前应用在请求上。过滤器可以做认证/授权/记录日志，或者跟踪请求，然后把请求传给相应的处理程序。以下是这种设计模式的实体。&lt;/p&gt;
 &lt;p&gt;过滤器（Filter） - 过滤器在请求处理程序执行请求之前或之后，执行某些任务。
 过滤器链（Filter Chain） - 过滤器链带有多个过滤器，并在 Target 上按照定义的顺序执行这些过滤器。
 Target - Target 对象是请求处理程序。
 过滤管理器（Filter Manager） - 过滤管理器管理过滤器和过滤器链。
 客户端（Client） - Client 是向 Target 对象发送请求的对象。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;实现&lt;/h2&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
 &lt;p&gt;我们将创建 FilterChain、FilterManager、Target、Client 作为表示实体的各种对象。AuthenticationFilter 和 DebugFilter 表示实体过滤器。
 InterceptingFilterDemo，我们的演示类使用 Client 来演示拦截过滤器设计模式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/design-pattern/interceptingfilter_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/design-pattern/interceptingfilter_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>前端控制器模式</title>
-      <link>http://xuchengpeng.com/2018/04/26/design-pattern-front-controller-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-front-controller-pattern/</link>
       <pubDate>Thu, 26 Apr 2018 15:26:08 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/26/design-pattern-front-controller-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-front-controller-pattern/</guid>
       <description>&lt;p&gt;前端控制器模式（Front Controller Pattern）是用来提供一个集中的请求处理机制，所有的请求都将由一个单一的处理程序处理。该处理程序可以做认证/授权/记录日志，或者跟踪请求，然后把请求传给相应的处理程序。以下是这种设计模式的实体。&lt;/p&gt;
 &lt;p&gt;前端控制器（Front Controller） - 处理应用程序所有类型请求的单个处理程序，应用程序可以是基于 web 的应用程序，也可以是基于桌面的应用程序。
 调度器（Dispatcher） - 前端控制器可能使用一个调度器对象来调度请求到相应的具体处理程序。
 视图（View） - 视图是为请求而创建的对象。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;实现&lt;/h2&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
 &lt;p&gt;我们将创建 FrontController、Dispatcher 分别当作前端控制器和调度器。HomeView 和 StudentView 表示各种为前端控制器接收到的请求而创建的视图。
 FrontControllerPatternDemo，我们的演示类使用 FrontController 来演示前端控制器设计模式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/design-pattern/frontcontroller_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/design-pattern/frontcontroller_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>数据访问对象模式</title>
-      <link>http://xuchengpeng.com/2018/04/26/design-pattern-data-access-object-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-data-access-object-pattern/</link>
       <pubDate>Thu, 26 Apr 2018 15:17:56 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/26/design-pattern-data-access-object-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-data-access-object-pattern/</guid>
       <description>&lt;p&gt;数据访问对象模式（Data Access Object Pattern）或 DAO 模式用于把低级的数据访问 API 或操作从高级的业务服务中分离出来。以下是数据访问对象模式的参与者。&lt;/p&gt;
 &lt;p&gt;数据访问对象接口（Data Access Object Interface） - 该接口定义了在一个模型对象上要执行的标准操作。
 数据访问对象实体类（Data Access Object concrete class） - 该类实现了上述的接口。该类负责从数据源获取数据，数据源可以是数据库，也可以是 xml，或者是其他的存储机制。
 模型对象/数值对象（Model Object/Value Object） - 该对象是简单的 POJO，包含了 get/set 方法来存储通过使用 DAO 类检索到的数据。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;实现&lt;/h2&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
 &lt;p&gt;我们将创建一个作为模型对象或数值对象的 Student 对象。StudentDao 是数据访问对象接口。StudentDaoImpl 是实现了数据访问对象接口的实体类。DaoPatternDemo，我们的演示类使用 StudentDao 来演示数据访问对象模式的用法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/design-pattern/dao_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/design-pattern/dao_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>组合实体模式</title>
-      <link>http://xuchengpeng.com/2018/04/26/design-pattern-composite-entity-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-composite-entity-pattern/</link>
       <pubDate>Thu, 26 Apr 2018 15:09:03 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/26/design-pattern-composite-entity-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-composite-entity-pattern/</guid>
       <description>&lt;p&gt;组合实体模式（Composite Entity Pattern）用在 EJB 持久化机制中。一个组合实体是一个 EJB 实体 bean，代表了对象的图解。当更新一个组合实体时，内部依赖对象 beans 会自动更新，因为它们是由 EJB 实体 bean 管理的。以下是组合实体 bean 的参与者。&lt;/p&gt;
 &lt;p&gt;组合实体（Composite Entity） - 它是主要的实体 bean。它可以是粗粒的，或者可以包含一个粗粒度对象，用于持续生命周期。
 粗粒度对象（Coarse-Grained Object） - 该对象包含依赖对象。它有自己的生命周期，也能管理依赖对象的生命周期。
 依赖对象（Dependent Object） - 依赖对象是一个持续生命周期依赖于粗粒度对象的对象。
 策略（Strategies） - 策略表示如何实现组合实体。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;实现&lt;/h2&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
 &lt;p&gt;我们将创建作为组合实体的 CompositeEntity 对象。CoarseGrainedObject 是一个包含依赖对象的类。
 CompositeEntityPatternDemo，我们的演示类使用 Client 类来演示组合实体模式的用法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/design-pattern/compositeentity_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/design-pattern/compositeentity_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>业务代表模式</title>
-      <link>http://xuchengpeng.com/2018/04/26/design-pattern-business-delegate-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-business-delegate-pattern/</link>
       <pubDate>Thu, 26 Apr 2018 14:59:24 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/26/design-pattern-business-delegate-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-business-delegate-pattern/</guid>
       <description>&lt;p&gt;业务代表模式（Business Delegate Pattern）用于对表示层和业务层解耦。它基本上是用来减少通信或对表示层代码中的业务层代码的远程查询功能。在业务层中我们有以下实体。&lt;/p&gt;
 &lt;p&gt;客户端（Client） - 表示层代码可以是 JSP、servlet 或 UI java 代码。
 业务代表（Business Delegate） - 一个为客户端实体提供的入口类，它提供了对业务服务方法的访问。
 查询服务（LookUp Service） - 查找服务对象负责获取相关的业务实现，并提供业务对象对业务代表对象的访问。
 业务服务（Business Service） - 业务服务接口。实现了该业务服务的实体类，提供了实际的业务实现逻辑。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;实现&lt;/h2&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
 &lt;p&gt;我们将创建 Client、BusinessDelegate、BusinessService、LookUpService、JMSService 和 EJBService 来表示业务代表模式中的各种实体。
 BusinessDelegatePatternDemo，我们的演示类使用 BusinessDelegate 和 Client 来演示业务代表模式的用法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/design-pattern/business_delegate_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/design-pattern/business_delegate_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MVC 模式</title>
-      <link>http://xuchengpeng.com/2018/04/26/design-pattern-mvc-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-mvc-pattern/</link>
       <pubDate>Thu, 26 Apr 2018 14:48:23 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/26/design-pattern-mvc-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-mvc-pattern/</guid>
       <description>&lt;p&gt;MVC 模式代表 Model-View-Controller（模型-视图-控制器） 模式。这种模式用于应用程序的分层开发。&lt;/p&gt;
 &lt;p&gt;Model（模型） - 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。
 View（视图） - 视图代表模型包含的数据的可视化。
 Controller（控制器） - 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;实现&lt;/h2&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
 &lt;p&gt;我们将创建一个作为模型的 Student 对象。StudentView 是一个把学生详细信息输出到控制台的视图类，StudentController 是负责存储数据到 Student 对象中的控制器类，并相应地更新视图 StudentView。
 MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式的用法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/design-pattern/mvc_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/design-pattern/mvc_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>访问者模式</title>
-      <link>http://xuchengpeng.com/2018/04/26/design-pattern-visitor-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-visitor-pattern/</link>
       <pubDate>Thu, 26 Apr 2018 10:52:28 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/26/design-pattern-visitor-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-visitor-pattern/</guid>
       <description>&lt;p&gt;在访问者模式（Visitor Pattern）中，我们使用了一个访问者类，它改变了元素类的执行算法。通过这种方式，元素的执行算法可以随着访问者改变而改变。这种类型的设计模式属于行为型模式。根据模式，元素对象已接受访问者对象，这样访问者对象就可以处理元素对象上的操作。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：主要将数据结构与数据操作分离。
 主要解决：稳定的数据结构和易变的操作耦合问题。
 何时使用：需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&amp;quot;污染&amp;quot;这些对象的类，使用访问者模式将这些封装到类中。
@@ -1201,25 +1201,25 @@ MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式
     
     <item>
       <title>TCP/IP 详解(卷一) IP：网际协议</title>
-      <link>http://xuchengpeng.com/2018/04/25/tcp-ip-illustrated-volume1-internet-protocol/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/25/tcp-ip-illustrated-volume1-internet-protocol/</link>
       <pubDate>Wed, 25 Apr 2018 09:41:16 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/25/tcp-ip-illustrated-volume1-internet-protocol/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/25/tcp-ip-illustrated-volume1-internet-protocol/</guid>
       <description>&lt;p&gt;IP是TCP/IP协议族中最为核心的协议。所有的TCP、UDP、ICMP及IGMP数据都以IP数据报格式传输。IP提供不可靠、无连接的数据报传送服务。
 不可靠（unreliable）的意思是它不能保证IP数据报能成功地到达目的地。IP仅提供最好的传输服务。如果发生某种错误时，如某个路由器暂时用完了缓冲区，IP有一个简单的错误处理算法：丢弃该数据报，然后发送ICMP消息报给信源端。任何要求的可靠性必须由上层来提供（如TCP）。
 无连接（connectionless）这个术语的意思是IP并不维护任何关于后续数据报的状态信息。每个数据报的处理是相互独立的。这也说明，IP数据报可以不按发送顺序接收。如果一信源向相同的信宿发送两个连续的数据报（先是A，然后是B），每个数据报都是独立地进行路由选择，可能选择不同的路线，因此B可能在A到达之前先到达。&lt;/p&gt;
-&lt;h2 id=&#34;ip&#34;&gt;IP首部&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/tcp-ip/ip-format.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;ip首部-&#34;&gt;IP首部&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/tcp-ip/ip-format.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>模板模式</title>
-      <link>http://xuchengpeng.com/2018/04/25/design-pattern-template-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/25/design-pattern-template-pattern/</link>
       <pubDate>Wed, 25 Apr 2018 09:02:39 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/25/design-pattern-template-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/25/design-pattern-template-pattern/</guid>
       <description>&lt;p&gt;在模板模式（Template Pattern）中，一个抽象类公开定义了执行它的方法的方式/模板。它的子类可以按需要重写方法实现，但调用将以抽象类中定义的方式进行。这种类型的设计模式属于行为型模式。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍-&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。
 主要解决：一些方法通用，却在每一个子类都重新写了这一方法。
 何时使用：有一些通用的方法。
@@ -1234,13 +1234,13 @@ MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式
     
     <item>
       <title>策略模式</title>
-      <link>http://xuchengpeng.com/2018/04/25/design-pattern-strategy-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/25/design-pattern-strategy-pattern/</link>
       <pubDate>Wed, 25 Apr 2018 08:53:18 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/25/design-pattern-strategy-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/25/design-pattern-strategy-pattern/</guid>
       <description>&lt;p&gt;在策略模式（Strategy Pattern）中，一个类的行为或其算法可以在运行时更改。这种类型的设计模式属于行为型模式。
 在策略模式中，我们创建表示各种策略的对象和一个行为随着策略对象改变而改变的 context 对象。策略对象改变 context 对象的执行算法。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍-&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。
 主要解决：在有多种算法相似的情况下，使用 if&amp;hellip;else 所带来的复杂和难以维护。
 何时使用：一个系统有许多许多类，而区分它们的只是他们直接的行为。
@@ -1255,27 +1255,27 @@ MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式
     
     <item>
       <title>空对象模式</title>
-      <link>http://xuchengpeng.com/2018/04/25/design-pattern-null-object-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/25/design-pattern-null-object-pattern/</link>
       <pubDate>Wed, 25 Apr 2018 08:43:05 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/25/design-pattern-null-object-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/25/design-pattern-null-object-pattern/</guid>
       <description>&lt;p&gt;在空对象模式（Null Object Pattern）中，一个空对象取代 NULL 对象实例的检查。Null 对象不是检查空值，而是反应一个不做任何动作的关系。这样的 Null 对象也可以在数据不可用的时候提供默认的行为。
 在空对象模式中，我们创建一个指定各种要执行的操作的抽象类和扩展该类的实体类，还创建一个未对该类做任何实现的空对象类，该空对象类将无缝地使用在需要检查空值的地方。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;实现&lt;/h2&gt;
+&lt;h2 id=&#34;实现-&#34;&gt;实现&lt;/h2&gt;
 &lt;p&gt;我们将创建一个定义操作（在这里，是客户的名称）的 AbstractCustomer 抽象类，和扩展了 AbstractCustomer 类的实体类。工厂类 CustomerFactory 基于客户传递的名字来返回 RealCustomer 或 NullCustomer 对象。
 NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模式的用法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/design-pattern/null_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/design-pattern/null_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>状态模式</title>
-      <link>http://xuchengpeng.com/2018/04/25/design-pattern-state-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/25/design-pattern-state-pattern/</link>
       <pubDate>Wed, 25 Apr 2018 08:32:17 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/25/design-pattern-state-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/25/design-pattern-state-pattern/</guid>
       <description>&lt;p&gt;在状态模式（State Pattern）中，类的行为是基于它的状态改变的。这种类型的设计模式属于行为型模式。
 在状态模式中，我们创建表示各种状态的对象和一个行为随着状态对象改变而改变的 context 对象。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍-&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：允许对象在内部状态发生改变时改变它的行为，对象看起来好像修改了它的类。
 主要解决：对象的行为依赖于它的状态（属性），并且可以根据它的状态改变而改变它的相关行为。
 何时使用：代码中包含大量与对象状态有关的条件语句。
@@ -1290,12 +1290,12 @@ NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模
     
     <item>
       <title>观察者模式</title>
-      <link>http://xuchengpeng.com/2018/04/24/design-pattern-observer-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/24/design-pattern-observer-pattern/</link>
       <pubDate>Tue, 24 Apr 2018 16:20:49 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/24/design-pattern-observer-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/24/design-pattern-observer-pattern/</guid>
       <description>&lt;p&gt;当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知它的依赖对象。观察者模式属于行为型模式。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍-&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。
 主要解决：一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。
 何时使用：一个对象（目标对象）的状态发生改变，所有的依赖对象（观察者对象）都将得到通知，进行广播通知。
@@ -1316,12 +1316,12 @@ NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模
     
     <item>
       <title>备忘录模式</title>
-      <link>http://xuchengpeng.com/2018/04/24/design-pattern-memento-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/24/design-pattern-memento-pattern/</link>
       <pubDate>Tue, 24 Apr 2018 16:05:16 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/24/design-pattern-memento-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/24/design-pattern-memento-pattern/</guid>
       <description>&lt;p&gt;备忘录模式（Memento Pattern）保存一个对象的某个状态，以便在适当的时候恢复对象。备忘录模式属于行为型模式。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍-&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。
 主要解决：所谓备忘录模式就是在不破坏封装的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，这样可以在以后将对象恢复到原先保存的状态。
 何时使用：很多时候我们总是需要记录一个对象的内部状态，这样做的目的就是为了允许用户取消不确定或者错误的操作，能够恢复到他原先的状态，使得他有&amp;quot;后悔药&amp;quot;可吃。
@@ -1336,12 +1336,12 @@ NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模
     
     <item>
       <title>中介者模式</title>
-      <link>http://xuchengpeng.com/2018/04/24/design-pattern-mediator-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/24/design-pattern-mediator-pattern/</link>
       <pubDate>Tue, 24 Apr 2018 15:52:08 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/24/design-pattern-mediator-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/24/design-pattern-mediator-pattern/</guid>
       <description>&lt;p&gt;中介者模式（Mediator Pattern）是用来降低多个对象和类之间的通信复杂性。这种模式提供了一个中介类，该类通常处理不同类之间的通信，并支持松耦合，使代码易于维护。中介者模式属于行为型模式。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍-&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。
 主要解决：对象与对象之间存在大量的关联关系，这样势必会导致系统的结构变得很复杂，同时若一个对象发生改变，我们也需要跟踪与之相关联的对象，同时做出相应的处理。
 何时使用：多个类相互耦合，形成了网状结构。
@@ -1356,13 +1356,13 @@ NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模
     
     <item>
       <title>迭代器模式</title>
-      <link>http://xuchengpeng.com/2018/04/24/design-pattern-iterator-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/24/design-pattern-iterator-pattern/</link>
       <pubDate>Tue, 24 Apr 2018 15:38:52 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/24/design-pattern-iterator-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/24/design-pattern-iterator-pattern/</guid>
       <description>&lt;p&gt;迭代器模式（Iterator Pattern）是 Java 和 .Net 编程环境中非常常用的设计模式。这种模式用于顺序访问集合对象的元素，不需要知道集合对象的底层表示。
 迭代器模式属于行为型模式。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍-&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：提供一种方法顺序访问一个聚合对象中各个元素, 而又无须暴露该对象的内部表示。
 主要解决：不同的方式来遍历整个整合对象。
 何时使用：遍历一个聚合对象。
@@ -1377,12 +1377,12 @@ NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模
     
     <item>
       <title>解释器模式</title>
-      <link>http://xuchengpeng.com/2018/04/24/design-pattern-interpreter-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/24/design-pattern-interpreter-pattern/</link>
       <pubDate>Tue, 24 Apr 2018 10:04:46 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/24/design-pattern-interpreter-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/24/design-pattern-interpreter-pattern/</guid>
       <description>&lt;p&gt;解释器模式（Interpreter Pattern）提供了评估语言的语法或表达式的方式，它属于行为型模式。这种模式实现了一个表达式接口，该接口解释一个特定的上下文。这种模式被用在 SQL 解析、符号处理引擎等。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍-&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：给定一个语言，定义它的文法表示，并定义一个解释器，这个解释器使用该标识来解释语言中的句子。
 主要解决：对于一些固定文法构建一个解释句子的解释器。
 何时使用：如果一种特定类型的问题发生的频率足够高，那么可能就值得将该问题的各个实例表述为一个简单语言中的句子。这样就可以构建一个解释器，该解释器通过解释这些句子来解决该问题。
@@ -1397,28 +1397,28 @@ NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模
     
     <item>
       <title>TCP/IP 详解(卷一) 链路层</title>
-      <link>http://xuchengpeng.com/2018/04/24/tcp-ip-illustrated-volume1-link-layer/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/24/tcp-ip-illustrated-volume1-link-layer/</link>
       <pubDate>Tue, 24 Apr 2018 08:32:37 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/24/tcp-ip-illustrated-volume1-link-layer/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/24/tcp-ip-illustrated-volume1-link-layer/</guid>
       <description>&lt;p&gt;在 TCP/IP 协议族中，链路层主要有三个目的：（1）为 IP 模块发送和接收 IP 数据报；（2）为 ARP 模块发送 ARP 请求和接收 ARP 应答；（3）为 RARP 发送 RARP 请求和接收 RARP 应答。&lt;/p&gt;
-&lt;h2 id=&#34;-ieee-802&#34;&gt;以太网和 IEEE 802封装&lt;/h2&gt;
+&lt;h2 id=&#34;以太网和-ieee-802封装-&#34;&gt;以太网和 IEEE 802封装&lt;/h2&gt;
 &lt;p&gt;主机需求 RFC 要求每台 Internet 主机都与一个10 Mb/s的以太网电缆相连接：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;必须能发送和接收采用 RFC 894（以太网）封装格式的分组。&lt;/li&gt;
 &lt;li&gt;应该能接收与 RFC 894 混合的 RFC 1042（IEEE 802）封装格式的分组。&lt;/li&gt;
 &lt;li&gt;也许能够发送采用 RFC 1042 格式封装的分组。如果主机能同时发送两种类型的分组数据，那么发送的分组必须是可以设置的，而且默认条件下必须是 RFC 894 分组。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/tcp-ip/rfc894-ieee802.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/tcp-ip/rfc894-ieee802.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TCP/IP 详解(卷一) 概述</title>
-      <link>http://xuchengpeng.com/2018/04/23/tcp-ip-illustrated-volume1-introduction/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/23/tcp-ip-illustrated-volume1-introduction/</link>
       <pubDate>Mon, 23 Apr 2018 11:23:35 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/23/tcp-ip-illustrated-volume1-introduction/</guid>
-      <description>&lt;h2 id=&#34;tcpip-&#34;&gt;TCP/IP 的分层&lt;/h2&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/23/tcp-ip-illustrated-volume1-introduction/</guid>
+      <description>&lt;h2 id=&#34;tcpip-的分层&#34;&gt;TCP/IP 的分层&lt;/h2&gt;
 &lt;p&gt;TCP/IP 通常被认为是一个四层协议系统：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;链路层：也称作数据链路层或网络接口层，通常包括操作系统中的设备驱动程序和计算机中对应的网络接口卡。&lt;/li&gt;
@@ -1426,17 +1426,17 @@ NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模
 &lt;li&gt;运输层：主要为两台主机上的应用程序提供端到端的通信。&lt;strong&gt;TCP协议&lt;/strong&gt; 和 &lt;strong&gt;UDP协议&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;应用层：负责处理特定的应用程序细节。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/tcp-ip/tcp-ip-layers.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/tcp-ip/tcp-ip-layers.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>命令模式</title>
-      <link>http://xuchengpeng.com/2018/04/23/design-pattern-command-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/23/design-pattern-command-pattern/</link>
       <pubDate>Mon, 23 Apr 2018 09:18:17 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/23/design-pattern-command-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/23/design-pattern-command-pattern/</guid>
       <description>&lt;p&gt;命令模式（Command Pattern）是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：将一个请求封装成一个对象，从而使您可以用不同的请求对客户进行参数化。
 主要解决：在软件系统中，行为请求者与行为实现者通常是一种紧耦合的关系，但某些场合，比如需要对行为进行记录、撤销或重做、事务等处理时，这种无法抵御变化的紧耦合的设计就不太合适。
 何时使用：在某些场合，比如要对行为进行&amp;quot;记录、撤销/重做、事务&amp;quot;等处理，这种无法抵御变化的紧耦合是不合适的。在这种情况下，如何将&amp;quot;行为请求者&amp;quot;与&amp;quot;行为实现者&amp;quot;解耦？将一组行为抽象为对象，可以实现二者之间的松耦合。
@@ -1451,13 +1451,13 @@ NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模
     
     <item>
       <title>责任链模式</title>
-      <link>http://xuchengpeng.com/2018/04/21/design-pattern-chain-of-responsibility-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/21/design-pattern-chain-of-responsibility-pattern/</link>
       <pubDate>Sat, 21 Apr 2018 14:36:02 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/21/design-pattern-chain-of-responsibility-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/21/design-pattern-chain-of-responsibility-pattern/</guid>
       <description>&lt;p&gt;顾名思义，责任链模式（Chain of Responsibility Pattern）为请求创建了一个接收者对象的链。这种模式给予请求的类型，对请求的发送者和接收者进行解耦。这种类型的设计模式属于行为型模式。
 在这种模式中，通常每个接收者都包含对另一个接收者的引用。如果一个对象不能处理该请求，那么它会把相同的请求传给下一个接收者，依此类推。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：避免请求发送者与接收者耦合在一起，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。
 主要解决：职责链上的处理者负责处理请求，客户只需要将请求发送到职责链上即可，无须关心请求的处理细节和请求的传递，所以职责链将请求的发送者和请求的处理者解耦了。
 何时使用：在处理消息的时候以过滤很多道。
@@ -1472,13 +1472,13 @@ NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模
     
     <item>
       <title>代理模式</title>
-      <link>http://xuchengpeng.com/2018/04/21/design-pattern-proxy-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/21/design-pattern-proxy-pattern/</link>
       <pubDate>Sat, 21 Apr 2018 09:38:16 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/21/design-pattern-proxy-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/21/design-pattern-proxy-pattern/</guid>
       <description>&lt;p&gt;在代理模式（Proxy Pattern）中，一个类代表另一个类的功能。这种类型的设计模式属于结构型模式。
 在代理模式中，我们创建具有现有对象的对象，以便向外界提供功能接口。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：为其他对象提供一种代理以控制对这个对象的访问。
 主要解决：在直接访问对象时带来的问题，比如说：要访问的对象在远程的机器上。在面向对象系统中，有些对象由于某些原因（比如对象创建开销很大，或者某些操作需要安全控制，或者需要进程外的访问），直接访问会给使用者或者系统结构带来很多麻烦，我们可以在访问此对象时加上一个对此对象的访问层。
 何时使用：想在访问一个类时做一些控制。
@@ -1493,23 +1493,23 @@ NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模
     
     <item>
       <title>Ubuntu 升级内核</title>
-      <link>http://xuchengpeng.com/2018/04/20/ubuntu-upgrade-kernel/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/20/ubuntu-upgrade-kernel/</link>
       <pubDate>Fri, 20 Apr 2018 15:34:34 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/20/ubuntu-upgrade-kernel/</guid>
-      <description>&lt;h3 id=&#34;heading&#34;&gt;查看当前内核版本&lt;/h3&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/20/ubuntu-upgrade-kernel/</guid>
+      <description>&lt;h3 id=&#34;查看当前内核版本&#34;&gt;查看当前内核版本&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ uname -r
 4.4.0-53-generic
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading-1&#34;&gt;下载内核&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;下载内核&#34;&gt;下载内核&lt;/h3&gt;
 &lt;p&gt;下载最新 Ubuntu 编译好的内核地址： &lt;a href=&#34;http://kernel.ubuntu.com/~kernel-ppa/mainline/&#34;&gt;http://kernel.ubuntu.com/~kernel-ppa/mainline/&lt;/a&gt;
 选取当前最新的内核 4.16.3 版本进行下载：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ mkdir 4.16.3 &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; 4.16.3
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603_4.16.3-041603.201804190730_all.deb
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-image-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading-2&#34;&gt;安装内核&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;安装内核&#34;&gt;安装内核&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ dpkg -i *.deb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading-3&#34;&gt;卸载旧内核&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;卸载旧内核&#34;&gt;卸载旧内核&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看目前安装的内核&lt;/span&gt;
 $ dpkg -l &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep linux
 ii  linux-image-4.4.0-53-generic       4.4.0-53.74                        amd64        Linux kernel image &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; version 4.4.0 on &lt;span class=&#34;m&#34;&gt;64&lt;/span&gt; bit x86 SMP
@@ -1517,7 +1517,7 @@ ii  linux-image-4.16.3-041603-generic  4.16.3-041603.201804190730         amd64 
 &lt;span class=&#34;c1&#34;&gt;## 卸载旧内核&lt;/span&gt;
 $ apt-get purge linux-image-4.4.0-53-generic linux-headers-4.4.0-53
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果查询的结果中还有显示已卸载的内核，可以使用&lt;code&gt;dpkg -P linux-image-4.4.0-53-generic&lt;/code&gt;命令将其删除。&lt;/p&gt;
-&lt;h3 id=&#34;heading-4&#34;&gt;更新启动引导&lt;/h3&gt;
+&lt;h3 id=&#34;更新启动引导&#34;&gt;更新启动引导&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ update-grub
 &lt;span class=&#34;c1&#34;&gt;# 重启后再查看内核版本验证 uname -a&lt;/span&gt;
 $ reboot
@@ -1526,13 +1526,13 @@ $ reboot
     
     <item>
       <title>享元模式</title>
-      <link>http://xuchengpeng.com/2018/04/20/design-pattern-flyweight-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/20/design-pattern-flyweight-pattern/</link>
       <pubDate>Fri, 20 Apr 2018 09:38:23 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/20/design-pattern-flyweight-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/20/design-pattern-flyweight-pattern/</guid>
       <description>&lt;p&gt;享元模式（Flyweight Pattern）主要用于减少创建对象的数量，以减少内存占用和提高性能。这种类型的设计模式属于结构型模式，它提供了减少对象数量从而改善应用所需的对象结构的方式。
 享元模式尝试重用现有的同类对象，如果未找到匹配的对象，则创建新对象。我们将通过创建 5 个对象来画出 20 个分布于不同位置的圆来演示这种模式。由于只有 5 种可用的颜色，所以 color 属性被用来检查现有的 Circle 对象。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：运用共享技术有效地支持大量细粒度的对象。
 主要解决：在有大量对象时，有可能会造成内存溢出，我们把其中共同的部分抽象出来，如果有相同的业务请求，直接返回在内存中已有的对象，避免重新创建。
 何时使用： 1、系统中有大量对象。 2、这些对象消耗大量内存。 3、这些对象的状态大部分可以外部化。 4、这些对象可以按照内蕴状态分为很多组，当把外蕴对象从对象中剔除出来时，每一组对象都可以用一个对象来代替。 5、系统不依赖于这些对象身份，这些对象是不可分辨的。
@@ -1547,13 +1547,13 @@ $ reboot
     
     <item>
       <title>外观模式</title>
-      <link>http://xuchengpeng.com/2018/04/19/design-pattern-facade-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/19/design-pattern-facade-pattern/</link>
       <pubDate>Thu, 19 Apr 2018 09:19:47 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/19/design-pattern-facade-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/19/design-pattern-facade-pattern/</guid>
       <description>&lt;p&gt;外观模式（Facade Pattern）隐藏系统的复杂性，并向客户端提供了一个客户端可以访问系统的接口。这种类型的设计模式属于结构型模式，它向现有的系统添加一个接口，来隐藏系统的复杂性。
 这种模式涉及到一个单一的类，该类提供了客户端请求的简化方法和对现有系统类方法的委托调用。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：为子系统中的一组接口提供一个一致的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。
 主要解决：降低访问复杂系统的内部子系统时的复杂度，简化客户端与之的接口。
 何时使用： 1、客户端不需要知道系统内部的复杂联系，整个系统只需提供一个&amp;quot;接待员&amp;quot;即可。 2、定义系统的入口。
@@ -1568,14 +1568,14 @@ $ reboot
     
     <item>
       <title>装饰器模式</title>
-      <link>http://xuchengpeng.com/2018/04/18/design-pattern-decorator-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/18/design-pattern-decorator-pattern/</link>
       <pubDate>Wed, 18 Apr 2018 09:01:25 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/18/design-pattern-decorator-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/18/design-pattern-decorator-pattern/</guid>
       <description>&lt;p&gt;装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。
 这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
 我们通过下面的实例来演示装饰器模式的用法。其中，我们将把一个形状装饰上不同的颜色，同时又不改变形状类。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。
 主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。
 何时使用：在不想增加很多子类的情况下扩展类。
@@ -1590,10 +1590,10 @@ $ reboot
     
     <item>
       <title>Ubuntu 增加和删除 PPA 软件源</title>
-      <link>http://xuchengpeng.com/2018/04/13/ubuntu-add-delete-ppa/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/13/ubuntu-add-delete-ppa/</link>
       <pubDate>Fri, 13 Apr 2018 10:50:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/13/ubuntu-add-delete-ppa/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/13/ubuntu-add-delete-ppa/</guid>
       <description>&lt;p&gt;PPA，英文全称为 Personal Package Archives，即个人软件包档案。是 Ubuntu Launchpad 网站提供的一项源服务，允许个人用户上传软件源代码，通过 Launchpad 进行编译并发布为二进制软件包，作为 apt / 新立得（Synaptic）源供其他用户下载和更新。&lt;/p&gt;
 &lt;p&gt;PPA 的一般形式是： &lt;strong&gt;ppa:user/ppa-name&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;添加 PPA 源:&lt;/p&gt;
@@ -1611,11 +1611,11 @@ $ reboot
     
     <item>
       <title>Linode 上搭建 Shadowsocks</title>
-      <link>http://xuchengpeng.com/2018/04/13/setup-shadowsocks-on-linode/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/13/setup-shadowsocks-on-linode/</link>
       <pubDate>Fri, 13 Apr 2018 09:08:00 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/13/setup-shadowsocks-on-linode/</guid>
-      <description>&lt;h2 id=&#34;vps-&#34;&gt;VPS 选择&lt;/h2&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/13/setup-shadowsocks-on-linode/</guid>
+      <description>&lt;h2 id=&#34;vps-选择&#34;&gt;VPS 选择&lt;/h2&gt;
 &lt;h3 id=&#34;linodehttpswwwlinodecomr0a89daeb73aede849b760c66127f1bb8960c73dc&#34;&gt;&lt;a href=&#34;https://www.linode.com/?r=0a89daeb73aede849b760c66127f1bb8960c73dc&#34;&gt;Linode&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;老大哥Linode近年最大的变化是，倍感digitalocean和vultr的压力了。Linode近期最大的福利是，全面由原来的Xen架构改用最流行的KVM架构服务器，套餐内存全部翻倍！&lt;/p&gt;
 &lt;p&gt;例如，过去每月$10只能买1G内存套餐，现在你可购买Linode 2G套餐，目前最低$5可以买1G内存套餐，这也是最低套餐配置了，绝对具有性价比。&lt;/p&gt;
@@ -1633,14 +1633,14 @@ $ reboot
     
     <item>
       <title>组合模式</title>
-      <link>http://xuchengpeng.com/2018/04/12/design-pattern-composite-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/12/design-pattern-composite-pattern/</link>
       <pubDate>Thu, 12 Apr 2018 14:32:26 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/12/design-pattern-composite-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/12/design-pattern-composite-pattern/</guid>
       <description>&lt;p&gt;组合模式（Composite Pattern），又叫部分整体模式，是用于把一组相似的对象当作一个单一的对象。组合模式依据树形结构来组合对象，用来表示部分以及整体层次。这种类型的设计模式属于结构型模式，它创建了对象组的树形结构。
 这种模式创建了一个包含自己对象组的类。该类提供了修改相同对象组的方式。
 我们通过下面的实例来演示组合模式的用法。实例演示了一个组织中员工的层次结构。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：将对象组合成树形结构以表示&amp;quot;部分-整体&amp;quot;的层次结构。组合模式使得用户对单个对象和组合对象的使用具有一致性。
 主要解决：它在我们树型结构的问题中，模糊了简单元素和复杂元素的概念，客户程序可以向处理简单元素一样来处理复杂元素，从而使得客户程序与复杂元素的内部结构解耦。
 何时使用： 1、您想表示对象的部分-整体层次结构（树形结构）。 2、您希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。
@@ -1655,26 +1655,26 @@ $ reboot
     
     <item>
       <title>过滤器模式</title>
-      <link>http://xuchengpeng.com/2018/04/12/design-pattern-filter-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/12/design-pattern-filter-pattern/</link>
       <pubDate>Thu, 12 Apr 2018 09:38:59 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/12/design-pattern-filter-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/12/design-pattern-filter-pattern/</guid>
       <description>&lt;p&gt;过滤器模式（Filter Pattern）或标准模式（Criteria Pattern）是一种设计模式，这种模式允许开发人员使用不同的标准来过滤一组对象，通过逻辑运算以解耦的方式把它们连接起来。这种类型的设计模式属于结构型模式，它结合多个标准来获得单一标准。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;实现&lt;/h2&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
 &lt;p&gt;我们将创建一个 Person 对象、Criteria 接口和实现了该接口的实体类，来过滤 Person 对象的列表。CriteriaPatternDemo，我们的演示类使用 Criteria 对象，基于各种标准和它们的结合来过滤 Person 对象的列表。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/design-pattern/filter_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/design-pattern/filter_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>桥接模式</title>
-      <link>http://xuchengpeng.com/2018/04/10/design-pattern-bridge-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/10/design-pattern-bridge-pattern/</link>
       <pubDate>Tue, 10 Apr 2018 19:50:49 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/10/design-pattern-bridge-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/10/design-pattern-bridge-pattern/</guid>
       <description>&lt;p&gt;桥接（Bridge）是用于把抽象化与实现化解耦，使得二者可以独立变化。这种类型的设计模式属于结构型模式，它通过提供抽象化和实现化之间的桥接结构，来实现二者的解耦。
 这种模式涉及到一个作为桥接的接口，使得实体类的功能独立于接口实现类。这两种类型的类可被结构化改变而互不影响。
 我们通过下面的实例来演示桥接模式（Bridge Pattern）的用法。其中，可以使用相同的抽象类方法但是不同的桥接实现类，来画出不同颜色的圆。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：将抽象部分与实现部分分离，使它们都可以独立的变化。
 主要解决：在有多种可能会变化的情况下，用继承会造成类爆炸问题，扩展起来不灵活。
 何时使用：实现系统可能有多个角度分类，每一种角度都可能变化。
@@ -1689,14 +1689,14 @@ $ reboot
     
     <item>
       <title>适配器模式</title>
-      <link>http://xuchengpeng.com/2018/04/09/design-pattern-adapter-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/09/design-pattern-adapter-pattern/</link>
       <pubDate>Mon, 09 Apr 2018 16:11:00 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/09/design-pattern-adapter-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/09/design-pattern-adapter-pattern/</guid>
       <description>&lt;p&gt;适配器模式（Adapter Pattern）是作为两个不兼容的接口之间的桥梁。这种类型的设计模式属于结构型模式，它结合了两个独立接口的功能。
 这种模式涉及到一个单一的类，该类负责加入独立的或不兼容的接口功能。举个真实的例子，读卡器是作为内存卡和笔记本之间的适配器。您将内存卡插入读卡器，再将读卡器插入笔记本，这样就可以通过笔记本来读取内存卡。
 我们通过下面的实例来演示适配器模式的使用。其中，音频播放器设备只能播放 mp3 文件，通过使用一个更高级的音频播放器来播放 vlc 和 mp4 文件。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：将一个类的接口转换成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。
 主要解决：主要解决在软件系统中，常常要将一些&amp;quot;现存的对象&amp;quot;放到新的环境中，而新环境要求的接口是现对象不能满足的。
 何时使用： 1、系统需要使用现有的类，而此类的接口不符合系统的需要。 2、想要建立一个可以重复使用的类，用于与一些彼此之间没有太大关联的一些类，包括一些可能在将来引进的类一起工作，这些源类不一定有一致的接口。 3、通过接口转换，将一个类插入另一个类系中。（比如老虎和飞禽，现在多了一个飞虎，在不增加实体的需求下，增加一个适配器，在里面包容一个虎对象，实现飞的接口。）
@@ -1711,13 +1711,13 @@ $ reboot
     
     <item>
       <title>原型模式</title>
-      <link>http://xuchengpeng.com/2018/04/08/design-pattern-prototype-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/08/design-pattern-prototype-pattern/</link>
       <pubDate>Sun, 08 Apr 2018 15:22:25 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/08/design-pattern-prototype-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/08/design-pattern-prototype-pattern/</guid>
       <description>&lt;p&gt;原型模式（Prototype Pattern）是用于创建重复的对象，同时又能保证性能。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
 这种模式是实现了一个原型接口，该接口用于创建当前对象的克隆。当直接创建对象的代价比较大时，则采用这种模式。例如，一个对象需要在一个高代价的数据库操作之后被创建。我们可以缓存该对象，在下一个请求时返回它的克隆，在需要的时候更新数据库，以此来减少数据库调用。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
 主要解决：在运行期建立和删除原型。
 何时使用： 1、当一个系统应该独立于它的产品创建，构成和表示时。 2、当要实例化的类是在运行时刻指定时，例如，通过动态装载。 3、为了避免创建一个与产品类层次平行的工厂类层次时。 4、当一个类的实例只能有几个不同状态组合中的一种时。建立相应数目的原型并克隆它们可能比每次用合适的状态手工实例化该类更方便一些。
@@ -1732,13 +1732,13 @@ $ reboot
     
     <item>
       <title>建造者模式</title>
-      <link>http://xuchengpeng.com/2018/04/04/design-pattern-builder-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/04/04/design-pattern-builder-pattern/</link>
       <pubDate>Wed, 04 Apr 2018 21:10:21 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/04/04/design-pattern-builder-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/04/04/design-pattern-builder-pattern/</guid>
       <description>&lt;p&gt;建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
 一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;意图：将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。
 主要解决：主要解决在软件系统中，有时候面临着&amp;quot;一个复杂对象&amp;quot;的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。
 何时使用：一些基本部件不会变，而其组合经常变化的时候。
@@ -1753,10 +1753,10 @@ $ reboot
     
     <item>
       <title>Emacs Native Profiler</title>
-      <link>http://xuchengpeng.com/2018/03/30/emacs-native-profiler/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/30/emacs-native-profiler/</link>
       <pubDate>Fri, 30 Mar 2018 10:02:45 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/30/emacs-native-profiler/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/30/emacs-native-profiler/</guid>
       <description>&lt;p&gt;If your program is working correctly, but you want to make it run more quickly or efficiently, the first thing to do is profile your code so that you know how it is using resources. If you find that one particular function is responsible for a significant portion of the runtime, you can start looking for ways to optimize that piece.&lt;/p&gt;
 &lt;p&gt;Emacs has built-in support for this. To begin profiling, type &lt;code&gt;M-x profiler-start&lt;/code&gt;. You can choose to profile by processor usage, memory usage, or both. After doing some work, type &lt;code&gt;M-x profiler-report&lt;/code&gt; to display a summary buffer for each resource that you chose to profile. The names of the report buffers include the times at which the reports were generated, so you can generate another report later on without erasing previous results. When you have finished profiling, type &lt;code&gt;M-x profiler-stop&lt;/code&gt; (there is a small overhead associated with profiling).&lt;/p&gt;
 &lt;p&gt;The profiler report buffer shows, on each line, a function that was called, followed by how much resource (processor or memory) it used in absolute and percentage times since profiling started. If a given line has a ‘+’ symbol at the left-hand side, you can expand that line by typing &lt;!-- raw HTML omitted --&gt;, in order to see the function(s) called by the higher-level function. Use a prefix argument (&lt;!-- raw HTML omitted --&gt;) to see the whole call tree below a function. Pressing &lt;!-- raw HTML omitted --&gt; again will collapse back to the original state.&lt;/p&gt;</description>
@@ -1764,10 +1764,10 @@ $ reboot
     
     <item>
       <title>Emacs: Show Line Numbers</title>
-      <link>http://xuchengpeng.com/2018/03/30/emacs-show-line-numbers/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/30/emacs-show-line-numbers/</link>
       <pubDate>Fri, 30 Mar 2018 09:52:44 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/30/emacs-show-line-numbers/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/30/emacs-show-line-numbers/</guid>
       <description>&lt;p&gt;emacs has 2 line numbers mode:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Alt + x&lt;/code&gt; linum-mode -&amp;gt; old, hack, slow. Emacs 23.&lt;/li&gt;
@@ -1787,10 +1787,10 @@ $ reboot
     
     <item>
       <title>Speed up emacs startup time</title>
-      <link>http://xuchengpeng.com/2018/03/28/speed-up-emacs-startup-time/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/28/speed-up-emacs-startup-time/</link>
       <pubDate>Wed, 28 Mar 2018 09:11:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/28/speed-up-emacs-startup-time/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/28/speed-up-emacs-startup-time/</guid>
       <description>&lt;p&gt;&lt;em&gt;init.el&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;package-enable-at-startup&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 
@@ -1814,10 +1814,10 @@ $ reboot
     
     <item>
       <title>单例模式</title>
-      <link>http://xuchengpeng.com/2018/03/26/design-pattern-singleton-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/26/design-pattern-singleton-pattern/</link>
       <pubDate>Mon, 26 Mar 2018 16:38:53 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/26/design-pattern-singleton-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/26/design-pattern-singleton-pattern/</guid>
       <description>&lt;p&gt;单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
 这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;:&lt;/p&gt;
@@ -1826,7 +1826,7 @@ $ reboot
 &lt;li&gt;单例类必须自己创建自己的唯一实例。&lt;/li&gt;
 &lt;li&gt;单例类必须给所有其他对象提供这一实例。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;**意图：**保证一个类仅有一个实例，并提供一个访问它的全局访问点。
 **主要解决：**一个全局使用的类频繁地创建与销毁。
 **何时使用：**当您想控制实例数目，节省系统资源的时候。
@@ -1841,10 +1841,10 @@ $ reboot
     
     <item>
       <title>Chuck&#39;s Emacs Configuration</title>
-      <link>http://xuchengpeng.com/2018/03/26/chuck-emacs-configuration/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/26/chuck-emacs-configuration/</link>
       <pubDate>Mon, 26 Mar 2018 07:33:23 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/26/chuck-emacs-configuration/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/26/chuck-emacs-configuration/</guid>
       <description>&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ git clone https://github.com/xuchengpeng/.emacs.d.git ~/.emacs.d
 $ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/.emacs.d
@@ -1862,13 +1862,13 @@ $ cp init.example.el init.el
     
     <item>
       <title>抽象工厂模式</title>
-      <link>http://xuchengpeng.com/2018/03/25/design-pattern-abstract-factory-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/25/design-pattern-abstract-factory-pattern/</link>
       <pubDate>Sun, 25 Mar 2018 09:51:57 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/25/design-pattern-abstract-factory-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/25/design-pattern-abstract-factory-pattern/</guid>
       <description>&lt;p&gt;抽象工厂模式（Abstract Factory Pattern）是围绕一个超级工厂创建其他工厂。该超级工厂又称为其他工厂的工厂。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
 在抽象工厂模式中，接口是负责创建一个相关对象的工厂，不需要显式指定它们的类。每个生成的工厂都能按照工厂模式提供对象。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;**意图：**提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。
 **主要解决：**主要解决接口选择的问题。
 **何时使用：**系统的产品有多于一个的产品族，而系统只消费其中某一族的产品。
@@ -1883,13 +1883,13 @@ $ cp init.example.el init.el
     
     <item>
       <title>工厂模式</title>
-      <link>http://xuchengpeng.com/2018/03/22/design-pattern-factory-pattern/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/22/design-pattern-factory-pattern/</link>
       <pubDate>Thu, 22 Mar 2018 10:32:40 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/22/design-pattern-factory-pattern/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/22/design-pattern-factory-pattern/</guid>
       <description>&lt;p&gt;工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
 在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;意图&lt;/strong&gt;：定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类，工厂模式使其创建过程延迟到子类进行。
 &lt;strong&gt;主要解决&lt;/strong&gt;：主要解决接口选择的问题。
 &lt;strong&gt;何时使用&lt;/strong&gt;：我们明确地计划不同条件下创建不同实例时。
@@ -1904,20 +1904,20 @@ $ cp init.example.el init.el
     
     <item>
       <title>设计模式简介</title>
-      <link>http://xuchengpeng.com/2018/03/20/design-pattern-introduction/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/20/design-pattern-introduction/</link>
       <pubDate>Tue, 20 Mar 2018 17:17:35 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/20/design-pattern-introduction/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/20/design-pattern-introduction/</guid>
       <description>&lt;p&gt;设计模式（Design pattern）代表了最佳的实践，通常被有经验的面向对象的软件开发人员所采用。设计模式是软件开发人员在软件开发过程中面临的一般问题的解决方案。这些解决方案是众多软件开发人员经过相当长的一段时间的试验和错误总结出来的。&lt;/p&gt;
 &lt;p&gt;设计模式是一套被反复使用的、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了重用代码、让代码更容易被他人理解、保证代码可靠性。 毫无疑问，设计模式于己于他人于系统都是多赢的，设计模式使代码编制真正工程化，设计模式是软件工程的基石，如同大厦的一块块砖石一样。项目中合理地运用设计模式可以完美地解决很多问题，每种模式在现实中都有相应的原理来与之对应，每种模式都描述了一个在我们周围不断重复发生的问题，以及该问题的核心解决方案，这也是设计模式能被广泛应用的原因。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Search with ripgrep</title>
-      <link>http://xuchengpeng.com/2018/03/17/search-with-ripgrep/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/17/search-with-ripgrep/</link>
       <pubDate>Sat, 17 Mar 2018 17:34:16 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/17/search-with-ripgrep/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/17/search-with-ripgrep/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/BurntSushi/ripgrep&#34;&gt;ripgrep&lt;/a&gt; is a line-oriented search tool that recursively searches your current directory for a regex pattern while respecting your gitignore rules. ripgrep has first class support on Windows, macOS and Linux, with binary downloads available for every release. ripgrep is similar to other popular search tools like The Silver Searcher, ack and grep.&lt;/p&gt;
 &lt;h2 id=&#34;is-it-really-faster-than-everything-else&#34;&gt;Is it really faster than everything else?&lt;/h2&gt;
 &lt;p&gt;Generally, yes. A large number of benchmarks with detailed analysis for each is
@@ -1935,20 +1935,20 @@ $ cp init.example.el init.el
     
     <item>
       <title>base16 - An architecture for building themes</title>
-      <link>http://xuchengpeng.com/2018/03/08/base16/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/08/base16/</link>
       <pubDate>Thu, 08 Mar 2018 15:47:16 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/08/base16/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/base16.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/08/base16/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/base16.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://chriskempson.com/projects/base16&#34;&gt;An architecture for building themes&lt;/a&gt; based on carefully chosen syntax highlighting using a base of sixteen colours. Base16 provides a set of guidelines detailing how to style syntax and how to code a builder for compiling base16 schemes and templates.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Tomorrow Theme Color Palettes</title>
-      <link>http://xuchengpeng.com/2018/03/07/tomorrow-theme-color-palettes/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/07/tomorrow-theme-color-palettes/</link>
       <pubDate>Wed, 07 Mar 2018 19:04:31 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/07/tomorrow-theme-color-palettes/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/07/tomorrow-theme-color-palettes/</guid>
       <description>&lt;p&gt;&amp;ldquo;Tomorrow Theme&amp;rdquo; - a bright theme with pastel colours and sensible syntax highlighting.&lt;/p&gt;
 &lt;p&gt;A theme should not get in your way but should aid your programming with easily identifiable colours that add meaning and enhance legibility. This was the main focus when developing Tomorrow.&lt;/p&gt;
 &lt;p&gt;Check out &lt;a href=&#34;https://github.com/chriskempson/base16&#34;&gt;base16&lt;/a&gt; the next evolution of Tomorrow Theme!&lt;/p&gt;</description>
@@ -1956,12 +1956,12 @@ $ cp init.example.el init.el
     
     <item>
       <title>Add Emacs elpa configuration</title>
-      <link>http://xuchengpeng.com/2018/03/06/add-emacs-elpa-configuration/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/06/add-emacs-elpa-configuration/</link>
       <pubDate>Tue, 06 Mar 2018 18:56:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/06/add-emacs-elpa-configuration/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/06/add-emacs-elpa-configuration/</guid>
       <description>&lt;h2 id=&#34;elpa-mirror&#34;&gt;ELPA mirror&lt;/h2&gt;
-&lt;h3 id=&#34;emacs-china&#34;&gt;Emacs China镜像&lt;/h3&gt;
+&lt;h3 id=&#34;emacs-china镜像&#34;&gt;Emacs China镜像&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2001,7 +2001,7 @@ $ cp init.example.el init.el
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;如果需要 HTTPS，请将镜像地址中的 &lt;code&gt;http&lt;/code&gt; 改成 &lt;code&gt;https&lt;/code&gt; 。&lt;/p&gt;
-&lt;h3 id=&#34;heading&#34;&gt;清华镜像&lt;/h3&gt;
+&lt;h3 id=&#34;清华镜像&#34;&gt;清华镜像&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2037,10 +2037,10 @@ $ cp init.example.el init.el
     
     <item>
       <title>Travis CI 构建时自动更新 NexT 主题源码</title>
-      <link>http://xuchengpeng.com/2018/02/02/travisci-update-theme-next/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/02/02/travisci-update-theme-next/</link>
       <pubDate>Fri, 02 Feb 2018 17:01:59 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/02/02/travisci-update-theme-next/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/02/02/travisci-update-theme-next/</guid>
       <description>&lt;p&gt;在 {% post_link autodeploy-hexo-blog-with-travisci 使用 Travis CI 自动部署 Hexo 博客 %} 后，每次新增文章或者修改文章就会触发自动构建。&lt;/p&gt;
 &lt;p&gt;加入使用的主题代码更新，还需要手动合并后提交，如我的博客使用的是 NexT 主题，每天都有代码更新，所以还是想办法在构建的时候自动更新主题代码。&lt;/p&gt;
 &lt;p&gt;初步想法是在下载的博客代码后，生成博客之前，再下载一次博客的最新代码即可，Travis CI 构建过程有很多阶段，选择其中一个阶段即可。&lt;/p&gt;
@@ -2062,11 +2062,11 @@ $ cp init.example.el init.el
     
     <item>
       <title>使用 gulp 压缩 hexo 博客资源</title>
-      <link>http://xuchengpeng.com/2018/02/01/compress-hexo-with-gulp/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/02/01/compress-hexo-with-gulp/</link>
       <pubDate>Thu, 01 Feb 2018 14:06:32 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/02/01/compress-hexo-with-gulp/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/gulp.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/02/01/compress-hexo-with-gulp/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/gulp.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;使用 &lt;code&gt;hexo generate&lt;/code&gt; 命令后在 public 文件夹下面生成 html、css、js 等源文件，里面含有大量的空白，而且博客中还有大量的图片占据了很大的空间。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Automate and enhance your workflow.
@@ -2078,29 +2078,29 @@ gulp is a toolkit for automating painful or time-consuming tasks in your develop
     
     <item>
       <title>呼兰河传 - 萧红</title>
-      <link>http://xuchengpeng.com/2018/01/31/xiaohong-hulanhezhuan/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/01/31/xiaohong-hulanhezhuan/</link>
       <pubDate>Wed, 31 Jan 2018 15:00:35 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/01/31/xiaohong-hulanhezhuan/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/01/31/xiaohong-hulanhezhuan/</guid>
       <description>在一九四零年十二月──那正是萧红逝世的前年，那是她的健康还不怎样成问题的时候，她写成了她的最后著作──小说《呼兰河传》。 然而即使在那时，萧红</description>
     </item>
     
     <item>
       <title>好了歌 - 曹雪芹</title>
-      <link>http://xuchengpeng.com/2018/01/31/caoxueqin-haoliaoge/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/01/31/caoxueqin-haoliaoge/</link>
       <pubDate>Wed, 31 Jan 2018 14:42:21 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/01/31/caoxueqin-haoliaoge/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/01/31/caoxueqin-haoliaoge/</guid>
       <description>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。 世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。 世人都晓神仙</description>
     </item>
     
     <item>
       <title>使用 Travis CI 自动部署 Hexo 博客</title>
-      <link>http://xuchengpeng.com/2018/01/30/autodeploy-hexo-blog-with-travisci/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/01/30/autodeploy-hexo-blog-with-travisci/</link>
       <pubDate>Tue, 30 Jan 2018 09:30:40 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/01/30/autodeploy-hexo-blog-with-travisci/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/travis-ci.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/01/30/autodeploy-hexo-blog-with-travisci/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/travis-ci.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;CI 是 &lt;code&gt;Continuous Integration&lt;/code&gt; 的缩写，持续集成之意。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;持续集成是一种软件开发实践，每次集成都通过自动化的构建（包括编译，发布，自动化测试）来验证，从而尽早地发现集成错误。&lt;/p&gt;
@@ -2109,22 +2109,22 @@ gulp is a toolkit for automating painful or time-consuming tasks in your develop
 &lt;blockquote&gt;
 &lt;p&gt;Travis CI是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。这个软件的代码同时也是开源的，可以在GitHub上下载到，尽管开发者当前并不推荐在闭源项目中单独使用它。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;heading&#34;&gt;工作原理&lt;/h2&gt;
+&lt;h2 id=&#34;工作原理&#34;&gt;工作原理&lt;/h2&gt;
 &lt;p&gt;当我们每次进行push等动作时，Travis CI 会自动检测我们的提交，然后根据配置文件，搭建虚拟主机来运行测试，构建等指令。在这里，就是运行 &lt;code&gt;hexo deploy --generate&lt;/code&gt; 等命令来自动生成、部署静态网页。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>通过 Cloudflare 给绑定个人域名的GitHub Pages博客加持https</title>
-      <link>http://xuchengpeng.com/2018/01/29/github-pages-with-cloudflare-https/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/01/29/github-pages-with-cloudflare-https/</link>
       <pubDate>Mon, 29 Jan 2018 07:58:19 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/01/29/github-pages-with-cloudflare-https/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/https&amp;amp;http.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/01/29/github-pages-with-cloudflare-https/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/https&amp;amp;http.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Google宣布了，从2017年1月份正式发布的Chrome 56开始，Google将把某些包含敏感内容的https页面标记为“不安全”。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;GitHub Pages 本身是 https 的站点，但是 {% post_link set-up-aliyun-domain-with-github-pages 绑定个人域名 %} 了以后，站点便是 http 的。&lt;/p&gt;
-&lt;h2 id=&#34;https--http-&#34;&gt;https 和 http 的区别&lt;/h2&gt;
+&lt;h2 id=&#34;https-和-http-的区别&#34;&gt;https 和 http 的区别&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。&lt;/li&gt;
 &lt;li&gt;http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。&lt;/li&gt;
@@ -2135,10 +2135,10 @@ gulp is a toolkit for automating painful or time-consuming tasks in your develop
     
     <item>
       <title>致橡树 - 舒婷</title>
-      <link>http://xuchengpeng.com/2018/01/27/shuting-to-the-oak-tree/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/01/27/shuting-to-the-oak-tree/</link>
       <pubDate>Sat, 27 Jan 2018 07:41:17 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/01/27/shuting-to-the-oak-tree/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/01/27/shuting-to-the-oak-tree/</guid>
       <description>&lt;p&gt;我如果爱你——&lt;/p&gt;
 &lt;p&gt;绝不像攀援的凌霄花，&lt;/p&gt;
 &lt;p&gt;借你的高枝炫耀自己；&lt;/p&gt;
@@ -2153,10 +2153,10 @@ gulp is a toolkit for automating painful or time-consuming tasks in your develop
     
     <item>
       <title>使用 Hexo 数据文件进行主题配置</title>
-      <link>http://xuchengpeng.com/2018/01/19/theme-configuration-with-hexo-data-files/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/01/19/theme-configuration-with-hexo-data-files/</link>
       <pubDate>Fri, 19 Jan 2018 07:41:32 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/01/19/theme-configuration-with-hexo-data-files/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/01/19/theme-configuration-with-hexo-data-files/</guid>
       <description>&lt;p&gt;目前，通过 pull 或下载新的 release 版本来更新 NexT 主题的体验并不平滑。当用户使用 git pull 更新 NexT 主题时经常需要解决冲突问题，而在手动下载 release 版本时也经常需要手动合并配置。&lt;/p&gt;
 &lt;p&gt;现在来说，NexT 推荐用户存储部分配置在站点的 _config.yml 中，而另一部分在主题的 _config.yml 中。这一方式固然可用，但也有一些缺点：&lt;/p&gt;
 &lt;ol&gt;
@@ -2169,11 +2169,11 @@ gulp is a toolkit for automating painful or time-consuming tasks in your develop
     
     <item>
       <title>阿里云域名赠送企业邮箱</title>
-      <link>http://xuchengpeng.com/2018/01/18/alimail-with-aliyun-domain/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/01/18/alimail-with-aliyun-domain/</link>
       <pubDate>Thu, 18 Jan 2018 07:30:32 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/01/18/alimail-with-aliyun-domain/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/alimail-qiye.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/01/18/alimail-with-aliyun-domain/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/alimail-qiye.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;申请 {% post_link set-up-aliyun-domain-with-github-pages 阿里云域名 %} 后，会赠送阿里云企业邮箱免费版。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;50个帐号，5G/帐号；&lt;/li&gt;
@@ -2186,22 +2186,22 @@ gulp is a toolkit for automating painful or time-consuming tasks in your develop
     
     <item>
       <title>GitHub Pages 绑定阿里云域名</title>
-      <link>http://xuchengpeng.com/2018/01/16/set-up-aliyun-domain-with-github-pages/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/01/16/set-up-aliyun-domain-with-github-pages/</link>
       <pubDate>Tue, 16 Jan 2018 11:09:48 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/01/16/set-up-aliyun-domain-with-github-pages/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/aliyun_logo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/01/16/set-up-aliyun-domain-with-github-pages/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/aliyun_logo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;首先在 &lt;a href=&#34;https://www.aliyun.com&#34;&gt;阿里云&lt;/a&gt; 上注册一个域名，阿里云域名更有 &lt;a href=&#34;https://wanwang.aliyun.com/domain/1yuan&#34;&gt;域名一元购专题&lt;/a&gt;，价格十分便宜。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>搭建Hexo NexT主题博客</title>
-      <link>http://xuchengpeng.com/2018/01/09/setup-hexo-next-blog/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/01/09/setup-hexo-next-blog/</link>
       <pubDate>Tue, 09 Jan 2018 14:41:31 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/01/09/setup-hexo-next-blog/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/NextSchemes3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;hexo&#34;&gt;什么是Hexo？&lt;/h2&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2018/01/09/setup-hexo-next-blog/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/NextSchemes3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;什么是hexo&#34;&gt;什么是Hexo？&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt; 是一个快速、简洁且高效的博客框架。Hexo 使用 &lt;a href=&#34;http://daringfireball.net/projects/markdown/&#34;&gt;Markdown&lt;/a&gt;（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/theme-next/hexo-theme-next&#34;&gt;NexT&lt;/a&gt; 是一款简洁优雅且易于使用的主题。&lt;/p&gt;
 &lt;p&gt;在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。&lt;/p&gt;
@@ -2210,77 +2210,77 @@ gulp is a toolkit for automating painful or time-consuming tasks in your develop
     
     <item>
       <title>163邮箱已死</title>
-      <link>http://xuchengpeng.com/2017/12/24/163-mail-dead/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/12/24/163-mail-dead/</link>
       <pubDate>Sun, 24 Dec 2017 09:11:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/12/24/163-mail-dead/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/12/24/163-mail-dead/</guid>
       <description>国内qq邮箱和163邮箱一直是主力使用邮箱。 目前qq邮箱使用授权码仍然可以使用，163邮箱虽然之前推出了授权码功能，但目前已无法使用 Spark 进行第</description>
     </item>
     
     <item>
       <title>Unsplash随机图片</title>
-      <link>http://xuchengpeng.com/2017/12/13/unsplash-random-pic/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/12/13/unsplash-random-pic/</link>
       <pubDate>Wed, 13 Dec 2017 09:56:18 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/12/13/unsplash-random-pic/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/12/13/unsplash-random-pic/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://unsplash.com/&#34;&gt;Unsplash&lt;/a&gt; 是一个完全免费的、无版权的高清图片资源网站。「无版权」是指这个网站上的图片由创作者自愿分享出来，完全免费提供给任何人作为任何用途使用。Unsplash 的原话是「do whatever you want」，进一步说明是「你可以免费对图片进行复制、修改、分发，包括用作商业目的，无需经过允许即可使用」。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://source.unsplash.com/random&#34; alt=&#34;Unsplash随机图片&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>用户样式管理器Stylus</title>
-      <link>http://xuchengpeng.com/2017/12/12/chrome-ext-stylus/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/12/12/chrome-ext-stylus/</link>
       <pubDate>Tue, 12 Dec 2017 16:24:48 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/12/12/chrome-ext-stylus/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/12/12/chrome-ext-stylus/</guid>
       <description>&lt;p&gt;去年 9 月底，流行的浏览器扩展 &lt;a href=&#34;https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe&#34;&gt;Stylish&lt;/a&gt; 及其用户社区 userstyles.org (USo) 更换了所有者。新所有者 Justin Hindman 日前正式宣布 Stylish 及 USo 成为数据分析公司 SimilarWeb 的一部分，最近更新的 Chrome 版已经开始默认收集用户信息。根据 uBlock Origin 作者 gorhill 分析，新的 Chrome 版会记录使用者浏览的每一个链接，包括从哪来和到哪去，加上唯一用户标识符及其他一些信息并进行两次 base64 编码后，发回 &lt;a href=&#34;https://api.userstyles.org/tic/stats&#34;&gt;https://api.userstyles.org/tic/stats&lt;/a&gt; 。目前用户还可以选择排除（opt-out），虽然选择排除后 Stylish 的功能将受到很大限制。根据最后更新时间可以推断，其他浏览器版（Firefox、Safari、Opera）暂未受影响。AMO 审核人员 rctgamer3 表示 Stylish 还没有提交新版。&amp;rdquo;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>网线水晶头接法</title>
-      <link>http://xuchengpeng.com/2017/12/06/network-cable-crystal-head/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/12/06/network-cable-crystal-head/</link>
       <pubDate>Wed, 06 Dec 2017 09:05:10 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/12/06/network-cable-crystal-head/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/12/06/network-cable-crystal-head/</guid>
       <description>网线水晶头有两种接法，一种是直连互联法，一种是交叉互联法。 交叉线的做法是：一头采用568A标准，一头采用568B标准。平行（直通）线的做法是</description>
     </item>
     
     <item>
       <title>为NexT主题部署Gitalk评论插件</title>
-      <link>http://xuchengpeng.com/2017/12/04/gitalk-for-next/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/12/04/gitalk-for-next/</link>
       <pubDate>Mon, 04 Dec 2017 09:29:58 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/12/04/gitalk-for-next/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/12/04/gitalk-for-next/</guid>
       <description>在之前的文章中（{% post_link gitalk-comment-extension Gitalk评论插件 %}），已介绍过Gitalk评论插件，GitHub上为NexT添加Gitalk的pull requ</description>
     </item>
     
     <item>
       <title>The Platinum Seacher for Emacs</title>
-      <link>http://xuchengpeng.com/2017/11/29/pt-emacs/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/11/29/pt-emacs/</link>
       <pubDate>Wed, 29 Nov 2017 09:50:49 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/11/29/pt-emacs/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/11/29/pt-emacs/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/monochromegane/the_platinum_searcher&#34;&gt;pt&lt;/a&gt; is a code search tool similar to ack and the_silver_searcher(ag). It supports multi platforms and multi encodings.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/pt-search-demo.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/pt-search-demo.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>spacemacs - Emacs advanced Kit focused on Evil</title>
-      <link>http://xuchengpeng.com/2017/11/28/spacemacs/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/11/28/spacemacs/</link>
       <pubDate>Tue, 28 Nov 2017 11:06:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/11/28/spacemacs/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/images/spacemacs-logo.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <guid>http://xuchengpeng.com/hugo-blog/2017/11/28/spacemacs/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://xuchengpeng.com/hugo-blog/images/spacemacs-logo.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;A community-driven Emacs distribution - The best editor is neither Emacs nor Vim, it is Emacs and Vim!&lt;/p&gt;
 &lt;p&gt;这是一款定制化程度非常高的emacs配置，同时支持emacs和vim按键模式，无缝切换使用。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>脚本管理器Tampermonkey</title>
-      <link>http://xuchengpeng.com/2017/11/27/chrome-ext-tampermonkey/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/11/27/chrome-ext-tampermonkey/</link>
       <pubDate>Mon, 27 Nov 2017 21:21:27 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/11/27/chrome-ext-tampermonkey/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/11/27/chrome-ext-tampermonkey/</guid>
       <description>&lt;p&gt;不装扩展（Extensions）的 Chrome 只能发挥它 40% 的能力。&lt;/p&gt;
 &lt;p&gt;各类实用的 Chrome 扩展是不少人选择 Chrome 浏览器的重要原因，经过多年发展，Chrome 的扩展种类已经非常丰富，除了那些「即装即用」的小工具之外，也有很多被誉为「神器」的强大扩展程序。&lt;/p&gt;
 &lt;p&gt;少数派此前介绍过的 Stylish 就算一款「神器」，通过安装各类 CSS 模板，它几乎可以美化一切网页。而另一款不得不提的「神器」就是今天要介绍的 Tampermonkey，也被戏称为「油猴」。&lt;/p&gt;</description>
@@ -2288,10 +2288,10 @@ gulp is a toolkit for automating painful or time-consuming tasks in your develop
     
     <item>
       <title>内存的战争</title>
-      <link>http://xuchengpeng.com/2017/11/25/war-of-mem/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/11/25/war-of-mem/</link>
       <pubDate>Sat, 25 Nov 2017 12:42:48 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/11/25/war-of-mem/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/11/25/war-of-mem/</guid>
       <description>&lt;p&gt;2012年2月3日，全球著名内存生产厂商镁光科技的CEO史蒂夫·阿普尔顿（Steve Appleton），在美国爱达荷州的波伊西(Boise)的一个航空展上，驾驶着一架Lancair IV-PT螺旋桨飞机，给观众们做表演。起飞后不久，飞机失去控制，紧急降落失败，直接栽向地面，当场坠毁，CEO享年51岁。&lt;/p&gt;
 &lt;p&gt;喜欢玩心跳的CEO挂了，镁光股价倒是没怎么跌，大洋彼岸的一个叫坂本幸雄(Yukio Sakamoto)的日本人却急得如热锅上的蚂蚁。在上飞机前，阿普尔顿刚刚跟他谈完一份儿秘密协议，对于坂本幸雄担任社长的日本内存巨头尔必达来说，这份协议就是就保命书。&lt;/p&gt;
 &lt;p&gt;尔必达是日本芯片行业的“国家队”， 由日立、NEC和三菱的内存制造业务合并而成，一度风光无限。但08年金融危机之后，内存行业过剩，产品价格不断下跌，加上韩国厂商的挤压，尔必达经营不断恶化。尽管日本政府多次救助，仍然无法挽救，到了2011年底，尔必达已经积累了天量的负债和亏损。&lt;/p&gt;
@@ -2302,64 +2302,64 @@ gulp is a toolkit for automating painful or time-consuming tasks in your develop
     
     <item>
       <title>Gitalk评论插件</title>
-      <link>http://xuchengpeng.com/2017/11/24/gitalk-comment-extension/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/11/24/gitalk-comment-extension/</link>
       <pubDate>Fri, 24 Nov 2017 14:51:01 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/11/24/gitalk-comment-extension/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/11/24/gitalk-comment-extension/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt; 是一个基于 Github Issue 和 Preact 开发的评论插件。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>NexT - Elegant Theme for Hexo</title>
-      <link>http://xuchengpeng.com/2017/11/23/hexo-next-blog/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/11/23/hexo-next-blog/</link>
       <pubDate>Thu, 23 Nov 2017 09:38:00 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/11/23/hexo-next-blog/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/11/23/hexo-next-blog/</guid>
       <description>下一步，学习一下用这个东东搭建一个blog吧。 Hexo NexT 其他教程： http://www.jianshu.com/p/5973c05d7100 http://www.jianshu.com/p/e99ed60390a8</description>
     </item>
     
     <item>
       <title>Google Chrome必备插件</title>
-      <link>http://xuchengpeng.com/2017/11/22/google-chrome-extensions/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/11/22/google-chrome-extensions/</link>
       <pubDate>Wed, 22 Nov 2017 16:28:00 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/11/22/google-chrome-extensions/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/11/22/google-chrome-extensions/</guid>
       <description>&lt;p&gt;收录Chrome最经典的扩展，如Tampermonkey、uBlock Origin、smartUp Gestures等，款款都是神器。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Gitment评论系统</title>
-      <link>http://xuchengpeng.com/2017/11/22/gitment-comment-system/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/11/22/gitment-comment-system/</link>
       <pubDate>Wed, 22 Nov 2017 16:00:00 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/11/22/gitment-comment-system/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/11/22/gitment-comment-system/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/imsun/gitment&#34;&gt;Gitment&lt;/a&gt; 是作者实现的一款基于 GitHub Issues 的评论系统。支持在前端直接引入，不需要任何后端代码。可以在页面进行登录、查看、评论、点赞等操作，同时有完整的 Markdown / GFM 和代码高亮支持。尤为适合各种基于 GitHub Pages 的静态博客或项目页面。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Google Chrome下载地址</title>
-      <link>http://xuchengpeng.com/2017/11/21/google-chrome-download-addr/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/11/21/google-chrome-download-addr/</link>
       <pubDate>Tue, 21 Nov 2017 10:21:41 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/11/21/google-chrome-download-addr/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/11/21/google-chrome-download-addr/</guid>
       <description>&lt;p&gt;以下都是Chrome浏览器的离线版本，包括Stable, Beta, Dev, Canary版本。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>SourceInsight代码检视</title>
-      <link>http://xuchengpeng.com/2017/11/20/sourceinsight-codereview/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2017/11/20/sourceinsight-codereview/</link>
       <pubDate>Mon, 20 Nov 2017 17:10:00 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2017/11/20/sourceinsight-codereview/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2017/11/20/sourceinsight-codereview/</guid>
       <description>&lt;p&gt;这是一个SourceInsight使用的本地代码检视工具，利用Macro实现。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Hello World</title>
-      <link>http://xuchengpeng.com/2015/12/13/hello-world/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2015/12/13/hello-world/</link>
       <pubDate>Sun, 13 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2015/12/13/hello-world/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2015/12/13/hello-world/</guid>
       <description>&lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;quick-start&#34;&gt;Quick Start&lt;/h2&gt;
 &lt;h3 id=&#34;create-a-new-post&#34;&gt;Create a new post&lt;/h3&gt;

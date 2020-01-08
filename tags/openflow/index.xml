@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OpenFlow on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/tags/openflow/</link>
+    <link>http://xuchengpeng.com/hugo-blog/tags/openflow/</link>
     <description>Recent content in OpenFlow on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 11 Sep 2018 11:09:50 +0800</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/tags/openflow/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/openflow/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Open vSwitch</title>
-      <link>http://xuchengpeng.com/2018/09/11/openvswitch/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/11/openvswitch/</link>
       <pubDate>Tue, 11 Sep 2018 11:09:50 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/11/openvswitch/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/11/openvswitch/</guid>
       <description>&lt;p&gt;Open vSwitch 是一个基于Apache 2 license的多层软件交换机。 我们的目标是实现一个支持标准管理接口的，开放转发功能以支持编程扩展和控制的交换机平台。&lt;/p&gt;
 &lt;p&gt;Open vSwitch 非常适合在VM环境中用作虚拟交换机。 除了将标准控制和可视化接口暴露给虚拟网络层外，它还旨在支持跨越多个物理服务器的分布式系统。 Open vSwitch 支持多种基于Linux的虚拟化技术，包括 Xen/XenServer, KVM, 及 VirtualBox。&lt;/p&gt;
 &lt;p&gt;大部分代码是平台无关的C编码，可以轻松地移植到其他环境中。 当前版本的 Open vSwitch 支持以下功能：&lt;/p&gt;

@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/04/26/design-pattern-visitor-pattern/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/04/26/design-pattern-visitor-pattern/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/04/26/design-pattern-visitor-pattern/" >
+                <a href="/hugo-blog/2018/04/26/design-pattern-visitor-pattern/" >
                     <time datetime='2018-04-26T10:52:28.000&#43;00:00' itemprop="datePublished">2018-04-26</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/design-pattern">Design Pattern</a>
                     
                 </div>
             </div>
@@ -97,7 +97,7 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>在访问者模式（Visitor Pattern）中，我们使用了一个访问者类，它改变了元素类的执行算法。通过这种方式，元素的执行算法可以随着访问者改变而改变。这种类型的设计模式属于行为型模式。根据模式，元素对象已接受访问者对象，这样访问者对象就可以处理元素对象上的操作。</p>
-<h2 id="heading">介绍</h2>
+<h2 id="介绍">介绍</h2>
 <p>意图：主要将数据结构与数据操作分离。
 主要解决：稳定的数据结构和易变的操作耦合问题。
 何时使用：需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&quot;污染&quot;这些对象的类，使用访问者模式将这些封装到类中。
@@ -108,17 +108,17 @@
 缺点： 1、具体元素对访问者公布细节，违反了迪米特原则。 2、具体元素变更比较困难。 3、违反了依赖倒置原则，依赖了具体类，没有依赖抽象。
 使用场景： 1、对象结构中对象对应的类很少改变，但经常需要在此对象结构上定义新的操作。 2、需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&quot;污染&quot;这些对象的类，也不希望在增加新操作时修改这些类。
 注意事项：访问者可以对功能进行统一，可以做报表、UI、拦截器与过滤器。</p>
-<h2 id="heading-1">实现</h2>
+<h2 id="实现">实现</h2>
 <p>我们将创建一个定义接受操作的 ComputerPart 接口。Keyboard、Mouse、Monitor 和 Computer 是实现了 ComputerPart 接口的实体类。我们将定义另一个接口 ComputerPartVisitor，它定义了访问者类的操作。Computer 使用实体访问者来执行相应的动作。
 VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类来演示访问者模式的用法。</p>
 <p><img src="/images/design-pattern/visitor_pattern_uml_diagram.jpg" alt=""></p>
-<h3 id="-1">步骤 1</h3>
+<h3 id="步骤-1">步骤 1</h3>
 <p>定义一个表示元素的接口。
 <em>ComputerPart.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ComputerPart</span> <span class="o">{</span>
    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="n">ComputerPartVisitor</span> <span class="n">computerPartVisitor</span><span class="o">)</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-2">步骤 2</h3>
+</code></pre></div><h3 id="步骤-2">步骤 2</h3>
 <p>创建扩展了上述类的实体类。
 <em>Keyboard.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Keyboard</span>  <span class="kd">implements</span> <span class="n">ComputerPart</span> <span class="o">{</span>
@@ -161,7 +161,7 @@ VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类
       <span class="n">computerPartVisitor</span><span class="o">.</span><span class="na">visit</span><span class="o">(</span><span class="k">this</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-3">步骤 3</h3>
+</code></pre></div><h3 id="步骤-3">步骤 3</h3>
 <p>定义一个表示访问者的接口。
 <em>ComputerPartVisitor.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ComputerPartVisitor</span> <span class="o">{</span>
@@ -170,7 +170,7 @@ VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">visit</span><span class="o">(</span><span class="n">Keyboard</span> <span class="n">keyboard</span><span class="o">)</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">visit</span><span class="o">(</span><span class="n">Monitor</span> <span class="n">monitor</span><span class="o">)</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-4">步骤 4</h3>
+</code></pre></div><h3 id="步骤-4">步骤 4</h3>
 <p>创建实现了上述类的实体访问者。
 <em>ComputerPartDisplayVisitor.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ComputerPartDisplayVisitor</span> <span class="kd">implements</span> <span class="n">ComputerPartVisitor</span> <span class="o">{</span>
@@ -195,7 +195,7 @@ VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Displaying Monitor.&#34;</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-5">步骤 5</h3>
+</code></pre></div><h3 id="步骤-5">步骤 5</h3>
 <p>使用 ComputerPartDisplayVisitor 来显示 Computer 的组成部分。
 <em>VisitorPatternDemo.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">VisitorPatternDemo</span> <span class="o">{</span>
@@ -205,7 +205,7 @@ VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类
       <span class="n">computer</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="k">new</span> <span class="n">ComputerPartDisplayVisitor</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-6">步骤 6</h3>
+</code></pre></div><h3 id="步骤-6">步骤 6</h3>
 <p>验证输出。</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Displaying</span> <span class="n">Mouse</span><span class="o">.</span>
 <span class="n">Displaying</span> <span class="n">Keyboard</span><span class="o">.</span>
@@ -220,15 +220,15 @@ VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">介绍</a></li>
-    <li><a href="#heading-1">实现</a>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#实现">实现</a>
       <ul>
-        <li><a href="#-1">步骤 1</a></li>
-        <li><a href="#-2">步骤 2</a></li>
-        <li><a href="#-3">步骤 3</a></li>
-        <li><a href="#-4">步骤 4</a></li>
-        <li><a href="#-5">步骤 5</a></li>
-        <li><a href="#-6">步骤 6</a></li>
+        <li><a href="#步骤-1">步骤 1</a></li>
+        <li><a href="#步骤-2">步骤 2</a></li>
+        <li><a href="#步骤-3">步骤 3</a></li>
+        <li><a href="#步骤-4">步骤 4</a></li>
+        <li><a href="#步骤-5">步骤 5</a></li>
+        <li><a href="#步骤-6">步骤 6</a></li>
       </ul>
     </li>
   </ul>
@@ -246,15 +246,15 @@ VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/04/25/design-pattern-template-pattern/">模板模式</a></li>
+	<li><a href="/hugo-blog/2018/04/25/design-pattern-template-pattern/">模板模式</a></li>
 	
-	<li><a href="/2018/04/25/design-pattern-strategy-pattern/">策略模式</a></li>
+	<li><a href="/hugo-blog/2018/04/25/design-pattern-strategy-pattern/">策略模式</a></li>
 	
-	<li><a href="/2018/04/25/design-pattern-null-object-pattern/">空对象模式</a></li>
+	<li><a href="/hugo-blog/2018/04/25/design-pattern-null-object-pattern/">空对象模式</a></li>
 	
-	<li><a href="/2018/04/25/design-pattern-state-pattern/">状态模式</a></li>
+	<li><a href="/hugo-blog/2018/04/25/design-pattern-state-pattern/">状态模式</a></li>
 	
-	<li><a href="/2018/04/24/design-pattern-observer-pattern/">观察者模式</a></li>
+	<li><a href="/hugo-blog/2018/04/24/design-pattern-observer-pattern/">观察者模式</a></li>
 	
   </ul>
 </section>
@@ -266,7 +266,7 @@ VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">行为型模式
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">行为型模式
                     </a>
                 </li>
                 
@@ -276,12 +276,12 @@ VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/04/26/design-pattern-mvc-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/26/design-pattern-mvc-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">MVC 模式&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/04/25/tcp-ip-illustrated-volume1-internet-protocol/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/25/tcp-ip-illustrated-volume1-internet-protocol/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;TCP/IP 详解(卷一) IP：网际协议</div>
     </a>
     
@@ -292,7 +292,7 @@ VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类
         
   <div class="article-comments">
   
-  <span id="/2018/04/26/design-pattern-visitor-pattern/" class="leancloud-visitors" data-flag-title="访问者模式">
+  <span id="/hugo-blog/2018/04/26/design-pattern-visitor-pattern/" class="leancloud-visitors" data-flag-title="访问者模式">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -317,8 +317,8 @@ VisitorPatternDemo，我们的演示类使用 Computer、ComputerPartVisitor 类
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/" >
+                <a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/" >
                     <time datetime='2018-05-25T15:30:19.000&#43;00:00' itemprop="datePublished">2018-05-25</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                     
                 </div>
             </div>
@@ -106,7 +106,7 @@
 <p>在连接两个端系统的网络出现临时故障的时候，保活选项会引起一个实际上很好的连接终止。例如，如果在一个中间路由器崩溃并重新启动时发送保活探查，那么TCP会认为客户的主机已经崩溃，而实际上所发生的并非如此。</p>
 <p>保活功能主要是为服务器应用程序提供的。服务器应用程序希望知道客户主机是否崩溃，从而可以代表客户使用资源。许多版本的Rlogin和Telnet服务器默认使用这个选项。</p>
 <p>一个说明现在需要使用保活功能的常见例子是当个人计算机用户使用TCP/IP向一个使用Telnet的主机注册时。如果在一天结束时，他们仅仅关闭了电源而没有注销，那么便会留下一个半开放的连接。在图18-16中，我们看到通过一个半开放连接发送数据会导致返回一个复位，但那是在来自正在发送数据的客户端。如果客户已经消失了，使得在服务器上留下一个半开放连接，而服务器又在等待来自客户的数据，则服务器将永远等待下去。保活功能就是试图在服务器端检测到这种半开放的连接。</p>
-<h2 id="heading">描述</h2>
+<h2 id="描述">描述</h2>
 <p>在这个描述中，我们称使用保活选项的一端为服务器，而另一端则为客户。并没有什么使客户不能使用这个选项，但通常都是服务器设置这个功能。如果双方都特别需要了解对方是否已经消失，则双方都可以使用这个选项。</p>
 <p>如果一个给定的连接在两个小时之内没有任何动作，则服务器就向客户发送一个探查报文段。客户主机必须处于以下4个状态之一。</p>
 <ol>
@@ -125,7 +125,7 @@
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">描述</a></li>
+    <li><a href="#描述">描述</a></li>
   </ul>
 </nav>
         </div>
@@ -141,15 +141,15 @@
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/">TCP/IP 详解(卷一) TCP的坚持定时器</a></li>
+	<li><a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/">TCP/IP 详解(卷一) TCP的坚持定时器</a></li>
 	
-	<li><a href="/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/">TCP/IP 详解(卷一) TCP的超时与重传</a></li>
+	<li><a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/">TCP/IP 详解(卷一) TCP的超时与重传</a></li>
 	
-	<li><a href="/2018/05/21/tcp-ip-illustrated-volume1-bulk-data-flow/">TCP/IP 详解(卷一) TCP的成块数据流</a></li>
+	<li><a href="/hugo-blog/2018/05/21/tcp-ip-illustrated-volume1-bulk-data-flow/">TCP/IP 详解(卷一) TCP的成块数据流</a></li>
 	
-	<li><a href="/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/">TCP/IP 详解(卷一) TCP的交互数据流</a></li>
+	<li><a href="/hugo-blog/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/">TCP/IP 详解(卷一) TCP的交互数据流</a></li>
 	
-	<li><a href="/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/">TCP/IP 详解(卷一) TCP连接的建立与终止</a></li>
+	<li><a href="/hugo-blog/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/">TCP/IP 详解(卷一) TCP连接的建立与终止</a></li>
 	
   </ul>
 </section>
@@ -161,7 +161,7 @@
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/tcp">TCP
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/tcp">TCP
                     </a>
                 </li>
                 
@@ -171,12 +171,12 @@
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/05/25/mathjax-in-markdown-blog/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/25/mathjax-in-markdown-blog/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">Markdown 博客中使用 MathJax 数学公式&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;TCP/IP 详解(卷一) TCP的坚持定时器</div>
     </a>
     
@@ -187,7 +187,7 @@
         
   <div class="article-comments">
   
-  <span id="/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) TCP的保活定时器">
+  <span id="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) TCP的保活定时器">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -212,8 +212,8 @@
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

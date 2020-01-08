@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -44,7 +44,7 @@ MathJax.Hub.Config({
 });
 </script>
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -53,18 +53,18 @@ MathJax.Hub.Config({
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -85,7 +85,7 @@ MathJax.Hub.Config({
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/" >
+                <a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/" >
                     <time datetime='2018-05-25T10:42:25.000&#43;00:00' itemprop="datePublished">2018-05-25</time>
                 </a>
             </div>
@@ -98,12 +98,12 @@ MathJax.Hub.Config({
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                     
                 </div>
             </div>
@@ -119,7 +119,7 @@ MathJax.Hub.Config({
 <li>保活(keepalive)定时器可检测到一个空闲连接的另一端何时崩溃或重启。</li>
 <li>2MSL定时器测量一个连接处于TIME_WAIT状态的时间。</li>
 </ol>
-<h2 id="heading">往返时间测量</h2>
+<h2 id="往返时间测量">往返时间测量</h2>
 <p>TCP超时与重传中最重要的部分就是对一个给定连接的往返时间（RTT）的测量。由于路由器和网络流量均会变化，因此我们认为这个时间可能经常会发生变化，TCP应该跟踪这些变化并相应地改变其超时时间。</p>
 <p>首先TCP必须测量在发送一个带有特别序号的字节和接收到包含该字节的确认之间的RTT。</p>
 <p>最初的TCP规范使TCP使用低通过滤器来更新一个被平滑的RTT估计器（记为R）。</p>
@@ -145,7 +145,7 @@ $$RTO = A + 4D$$</p>
 <p>在一个分组重传时会产生这样一个问题：假定一个分组被发送。当超时发生时，分组以更长的RTO进行重传，然后收到一个确认。那么这个ACK是针对第一个分组的还是针对第二个分组呢？这就是所谓的重传多义性问题。</p>
 <p>[Karn and Partridge 1987]规定，当一个超时和重传发生时，在重传数据的确认最后到达之前，不能更新RTT估计器，因为我们并不知道ACK对应哪次传输（也许第一次传输被延迟而并没有被丢弃，也有可能第一次传输的ACK被延迟）。</p>
 <p>并且，由于数据被重传，RTO已经得到了一个指数退避，我们在下一次传输时使用这个退避后的RTO。对一个没有被重传的报文段而言，除非收到了一个确认，否则不要计算新的RTO。</p>
-<h2 id="heading-1">拥塞避免算法</h2>
+<h2 id="拥塞避免算法">拥塞避免算法</h2>
 <p>慢启动算法是在一个连接上发起数据流的方法，但有时我们会达到中间路由器的极限，此时分组将被丢弃。拥塞避免算法是一种处理丢失分组的方法。</p>
 <p>该算法假定由于分组受到损坏引起的丢失是非常少的（远小于1%），因此分组丢失就意味着在源主机和目的主机之间的某处网络上发生了拥塞。有两种分组丢失的指示：发生超时和接收到重复的确认。</p>
 <p>拥塞避免算法和慢启动算法是两个目的不同、独立的算法。但是当拥塞发生时，我们希望降低分组进入网络的传输速率，于是可以调用慢启动来作到这一点。在实际中这两个算法通常在一起实现。</p>
@@ -158,7 +158,7 @@ $$RTO = A + 4D$$</p>
 </ol>
 <p>慢启动算法初始设置cwnd为1个报文段，此后每收到一个确认就加1。</p>
 <p>拥塞避免算法要求每次收到一个确认时将cwnd增加1/cwnd。与慢启动的指数增加比起来，这是一种加性增长(additive increase)。我们希望在一个往返时间内最多为cwnd增加1个报文段（不管在这个RTT中收到了多少个ACK），然而慢启动将根据这个往返时间中所收到的确认的个数增加cwnd。</p>
-<h2 id="heading-2">快速重传与快速恢复算法</h2>
+<h2 id="快速重传与快速恢复算法">快速重传与快速恢复算法</h2>
 <p>拥塞避免算法的修改建议1990年提出[Jacobson 1990b]。</p>
 <p>在介绍修改之前，我们认识到在收到一个失序的报文段时，TCP立即需要产生一个ACK（一个重复的ACK）。这个重复的ACK不应该被迟延。该重复的ACK的在于让对方知道收到一个失序的报文段，并告诉对方自己希望收到的序号。</p>
 <p>由于我们不知道一个重复的ACK是由一个丢失的报文段引起的，还是由于仅仅出现了几个报文段的重新排序，因此我们等待少量重复的ACK到来。假如这只是一些报文段的重新排序，则在重新排序的报文段被处理并产生一个新的ACK之前，只可能产生1~2个重复的ACK。如果一连串收到3个或3个以上的重复ACK，就非常可能是一个报文段丢失了。于是我们就重传丢失的数据报文段，而无需等待超时定时器溢出。这就是<strong>快速重传算法</strong>。接下来执行的不是慢启动算法而是拥塞避免算法。这就是<strong>快速恢复算法</strong>。</p>
@@ -168,14 +168,14 @@ $$RTO = A + 4D$$</p>
 <li>每次收到另一个重复的ACK时，cwnd增加1个报文段大小并发送1个分组（如果新的cwnd允许发送）。</li>
 <li>当下一个确认新数据的ACK到达时，设置cwnd为ssthresh（在第1步中设置的值）。这个ACK应该是在进行重传后的一个往返时间内对步骤1中重传的确认。另外，这个ACK也应该是对丢失的分组和收到的第1个重复的ACK之间的所有中间报文段的确认。这一步采用的是拥塞避免，因为当分组丢失时我们将当前的速率减半。</li>
 </ol>
-<h2 id="icmp">ICMP的差错</h2>
+<h2 id="icmp的差错">ICMP的差错</h2>
 <p>TCP能够遇到的最常见的ICMP差错就是源站抑制、主机不可达和网络不可达。</p>
 <p>当前基于伯克利的实现对这些错误的处理是：</p>
 <ul>
 <li>一个接收到的源站抑制引起拥塞窗口cwnd被置为1个报文段大小来发起慢启动，但是慢启动门限ssthresh没有变化，所以窗口将打开直至它或者开放了所有的通路（受窗口大小和往返时间的限制）或者发生了拥塞。</li>
 <li>一个接收到的主机不可达或网络不可达实际上都被忽略，因为这两个差错都被认为是短暂现象。这有可能是由于中间路由器被关闭而导致选路协议要花费数分钟才能稳定到另一个替换路由。在这个过程中就可能发生这两个ICMP差错中的一个，但是连接并不必被关闭。相反，TCP试图发送引起该差错的数据，尽管最终有可能会超时。当前基于伯克利的实现记录发生的ICMP差错，如果连接超时，ICMP差错被转换为一个更合适的的差错码而不是“连接超时”。</li>
 </ul>
-<h2 id="heading-3">重新分组</h2>
+<h2 id="重新分组">重新分组</h2>
 <p>当TCP超时并重传时，它不一定要重传同样的报文段。相反，TCP允许进行重新分组而发送一个较大的报文段，这将有助于提高性能（当然，这个较大的报文段不能够超过接收方声明的MSS）。在协议中这是允许的，因为TCP是使用字节序号而不是报文段序号来进行识别它所要发送的数据和进行确认。</p>
         </div>
 
@@ -185,11 +185,11 @@ $$RTO = A + 4D$$</p>
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">往返时间测量</a></li>
-    <li><a href="#heading-1">拥塞避免算法</a></li>
-    <li><a href="#heading-2">快速重传与快速恢复算法</a></li>
-    <li><a href="#icmp">ICMP的差错</a></li>
-    <li><a href="#heading-3">重新分组</a></li>
+    <li><a href="#往返时间测量">往返时间测量</a></li>
+    <li><a href="#拥塞避免算法">拥塞避免算法</a></li>
+    <li><a href="#快速重传与快速恢复算法">快速重传与快速恢复算法</a></li>
+    <li><a href="#icmp的差错">ICMP的差错</a></li>
+    <li><a href="#重新分组">重新分组</a></li>
   </ul>
 </nav>
         </div>
@@ -205,13 +205,13 @@ $$RTO = A + 4D$$</p>
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/05/21/tcp-ip-illustrated-volume1-bulk-data-flow/">TCP/IP 详解(卷一) TCP的成块数据流</a></li>
+	<li><a href="/hugo-blog/2018/05/21/tcp-ip-illustrated-volume1-bulk-data-flow/">TCP/IP 详解(卷一) TCP的成块数据流</a></li>
 	
-	<li><a href="/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/">TCP/IP 详解(卷一) TCP的交互数据流</a></li>
+	<li><a href="/hugo-blog/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/">TCP/IP 详解(卷一) TCP的交互数据流</a></li>
 	
-	<li><a href="/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/">TCP/IP 详解(卷一) TCP连接的建立与终止</a></li>
+	<li><a href="/hugo-blog/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/">TCP/IP 详解(卷一) TCP连接的建立与终止</a></li>
 	
-	<li><a href="/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/">TCP/IP 详解(卷一) TCP：传输控制协议</a></li>
+	<li><a href="/hugo-blog/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/">TCP/IP 详解(卷一) TCP：传输控制协议</a></li>
 	
   </ul>
 </section>
@@ -223,7 +223,7 @@ $$RTO = A + 4D$$</p>
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/tcp">TCP
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/tcp">TCP
                     </a>
                 </li>
                 
@@ -233,12 +233,12 @@ $$RTO = A + 4D$$</p>
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">TCP/IP 详解(卷一) TCP的坚持定时器&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/05/23/stylus-set-web-font/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/23/stylus-set-web-font/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;Stylus 自定义网页字体</div>
     </a>
     
@@ -249,7 +249,7 @@ $$RTO = A + 4D$$</p>
         
   <div class="article-comments">
   
-  <span id="/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) TCP的超时与重传">
+  <span id="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) TCP的超时与重传">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -274,8 +274,8 @@ $$RTO = A + 4D$$</p>
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

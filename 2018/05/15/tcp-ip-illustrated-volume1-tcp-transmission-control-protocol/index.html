@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -44,7 +44,7 @@ MathJax.Hub.Config({
 });
 </script>
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -53,18 +53,18 @@ MathJax.Hub.Config({
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -85,7 +85,7 @@ MathJax.Hub.Config({
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/" >
+                <a href="/hugo-blog/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/" >
                     <time datetime='2018-05-15T15:43:47.000&#43;00:00' itemprop="datePublished">2018-05-15</time>
                 </a>
             </div>
@@ -98,12 +98,12 @@ MathJax.Hub.Config({
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                     
                 </div>
             </div>
@@ -129,7 +129,7 @@ MathJax.Hub.Config({
 <blockquote>
 <p>这种对字节流的处理方式与Unix操作系统对文件的处理方式很相似。Unix的内核对一个应用读或写的内容不作任何解释，而是交给应用程序处理。对Unix的内核来说，它无法区分一个二进制文件与一个文本文件。</p>
 </blockquote>
-<h2 id="tcp-">TCP 的首部</h2>
+<h2 id="tcp-的首部">TCP 的首部</h2>
 <p>TCP数据被封装在一个IP数据报中，IP首部(20字节) + TCP首部(20字节) + TCP数据。</p>
 <p>TCP首部的数据格式。如果不计任选字段，它通常是20个字节。</p>
 <p><img src="/images/tcp-ip/tcp-header.jpg" alt=""></p>
@@ -180,7 +180,7 @@ MathJax.Hub.Config({
 <p>检验和覆盖了整个的TCP报文段：TCP首部和TCP数据。这是一个强制性的字段，一定是由发端计算和存储，并由收端进行验证。TCP检验和的计算和UDP检验和的计算相似。</p>
 <p>只有当URG标志置1时紧急指针才有效。紧急指针是一个正的偏移量，和序号字段中的值相加表示紧急数据最后一个字节的序号。TCP的紧急方式是发送端向另一端发送紧急数据的一种方式。</p>
 <p>最常见的可选字段是最长报文大小，又称为MSS(Maximum Segment Size)。每个连接方通常都在通信的第一个报文段（为建立连接而设置SYN标志的那个段）中指明这个选项。它指明本端所能接收的最大长度的报文段。</p>
-<h2 id="heading">小结</h2>
+<h2 id="小结">小结</h2>
 <p>TCP提供了一种可靠的面向连接的字节流运输层服务。</p>
 <p>TCP将用户数据打包构成报文段；它发送数据后启动一个定时器；另一端对收到的数据进行确认，对失序的数据重新排序，丢弃重复数据；TCP提供端到端的流量控制，并计算和验证一个强制性的端到端检验和。</p>
 <p>许多流行的应用程序如Telnet、Rlogin、FTP和SMTP都使用TCP。</p>
@@ -192,8 +192,8 @@ MathJax.Hub.Config({
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#tcp-">TCP 的首部</a></li>
-    <li><a href="#heading">小结</a></li>
+    <li><a href="#tcp-的首部">TCP 的首部</a></li>
+    <li><a href="#小结">小结</a></li>
   </ul>
 </nav>
         </div>
@@ -209,9 +209,9 @@ MathJax.Hub.Config({
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/05/14/tcp-ip-illustrated-volume1-tftp/">TCP/IP 详解(卷一) TFTP：简单文件传送协议</a></li>
+	<li><a href="/hugo-blog/2018/05/14/tcp-ip-illustrated-volume1-tftp/">TCP/IP 详解(卷一) TFTP：简单文件传送协议</a></li>
 	
-	<li><a href="/2018/05/09/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/">TCP/IP 详解(卷一) UDP：用户数据报协议</a></li>
+	<li><a href="/hugo-blog/2018/05/09/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/">TCP/IP 详解(卷一) UDP：用户数据报协议</a></li>
 	
   </ul>
 </section>
@@ -223,17 +223,17 @@ MathJax.Hub.Config({
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/tcp">TCP
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/tcp">TCP
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/udp">UDP
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/udp">UDP
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/socket">socket
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/socket">socket
                     </a>
                 </li>
                 
@@ -243,12 +243,12 @@ MathJax.Hub.Config({
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/16/tcp-ip-illustrated-volume1-tcp-establishment-termination/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">TCP/IP 详解(卷一) TCP连接的建立与终止&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/05/14/markdown-complex-table/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/14/markdown-complex-table/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;Markdown 复杂表格</div>
     </a>
     
@@ -259,7 +259,7 @@ MathJax.Hub.Config({
         
   <div class="article-comments">
   
-  <span id="/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) TCP：传输控制协议">
+  <span id="/hugo-blog/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) TCP：传输控制协议">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -284,8 +284,8 @@ MathJax.Hub.Config({
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

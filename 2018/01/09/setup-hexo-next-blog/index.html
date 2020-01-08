@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/01/09/setup-hexo-next-blog/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/01/09/setup-hexo-next-blog/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/01/09/setup-hexo-next-blog/" >
+                <a href="/hugo-blog/2018/01/09/setup-hexo-next-blog/" >
                     <time datetime='2018-01-09T14:41:31.000&#43;00:00' itemprop="datePublished">2018-01-09</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/technology">Technology</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/hexo">Hexo</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/hexo">Hexo</a>
                     
                 </div>
             </div>
@@ -97,17 +97,17 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p><img src="/images/NextSchemes3.png" alt=""></p>
-<h2 id="hexo">什么是Hexo？</h2>
+<h2 id="什么是hexo">什么是Hexo？</h2>
 <p><a href="https://hexo.io/">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 <p><a href="https://github.com/theme-next/hexo-theme-next">NexT</a> 是一款简洁优雅且易于使用的主题。</p>
 <p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
 <p>为了描述方便，在以下说明中，将前者称为 {% label primary@站点配置文件 %}， 后者称为 {% label info@主题配置文件 %}。</p>
-<h2 id="heading">安装</h2>
-<h3 id="heading-1">安装前提</h3>
+<h2 id="安装">安装</h2>
+<h3 id="安装前提">安装前提</h3>
 <p>安装 <a href="https://nodejs.org/">Node.js</a> 和 <a href="https://git-scm.com/">Git</a>。</p>
-<h3 id="-hexo">安装 Hexo</h3>
+<h3 id="安装-hexo">安装 Hexo</h3>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm install -g hexo-cli
-</code></pre></div><h2 id="heading-2">建站</h2>
+</code></pre></div><h2 id="建站">建站</h2>
 <p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">hexo init &lt;folder&gt;
 <span class="nb">cd</span> &lt;folder&gt;
@@ -121,9 +121,9 @@ npm install
 |   ├── _drafts
 |   └── _posts
 └── themes
-</code></pre><h2 id="heading-3">配置</h2>
+</code></pre><h2 id="配置">配置</h2>
 <p>修改 {% label primary@站点配置文件 %}。</p>
-<h3 id="heading-4">网站</h3>
+<h3 id="网站">网站</h3>
 <table>
 <thead>
 <tr>
@@ -158,7 +158,7 @@ npm install
 </tr>
 </tbody>
 </table>
-<h3 id="heading-5">网址</h3>
+<h3 id="网址">网址</h3>
 <table>
 <thead>
 <tr>
@@ -177,24 +177,24 @@ npm install
 </tr>
 </tbody>
 </table>
-<h2 id="-next-">安装 NexT 主题</h2>
-<h3 id="heading-6">下载主题</h3>
+<h2 id="安装-next-主题">安装 NexT 主题</h2>
+<h3 id="下载主题">下载主题</h3>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/theme-next/hexo-theme-next themes/next
-</code></pre></div><h3 id="heading-7">启用主题</h3>
+</code></pre></div><h3 id="启用主题">启用主题</h3>
 <p>修改 {% label primary@站点配置文件 %}，搜索 <code>theme</code> 字段。</p>
 <pre><code>theme: next
-</code></pre><h3 id="heading-8">主题设定</h3>
-<h4 id="-scheme">选择 Scheme</h4>
+</code></pre><h3 id="主题设定">主题设定</h3>
+<h4 id="选择-scheme">选择 Scheme</h4>
 <p>修改 {% label info@主题配置文件 %}，搜索 <code>scheme</code> 字段。</p>
 <pre><code># Schemes
 scheme: Muse
 #scheme: Mist
 #scheme: Pisces
 #scheme: Gemini
-</code></pre><h4 id="heading-9">设置头像</h4>
+</code></pre><h4 id="设置头像">设置头像</h4>
 <p>修改 {% label info@主题配置文件 %}，搜索 <code>avatar</code> 字段。</p>
 <pre><code>avatar: /images/bio-photo.jpg
-</code></pre><h4 id="favicon-">favicon 设置</h4>
+</code></pre><h4 id="favicon-设置">favicon 设置</h4>
 <pre><code># For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename &amp; redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
@@ -202,10 +202,10 @@ favicon:
   medium: /images/favicon-32x32.ico
   apple_touch_icon: /images/apple-touch-icon.png
   safari_pinned_tab: /images/favicon-logo.svg
-</code></pre><h4 id="heading-10">关键字设置</h4>
+</code></pre><h4 id="关键字设置">关键字设置</h4>
 <pre><code># Set default keywords (Use a comma to separate)
 keywords: &quot;xuchengpeng, Hexo, NexT&quot;
-</code></pre><h4 id="heading-11">页脚设置</h4>
+</code></pre><h4 id="页脚设置">页脚设置</h4>
 <pre><code>footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
@@ -228,8 +228,8 @@ keywords: &quot;xuchengpeng, Hexo, NexT&quot;
   # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by &lt;a target=&quot;_blank&quot; rel=&quot;external nofollow&quot; href=&quot;https://pages.coding.me&quot;&gt;&lt;b&gt;Coding Pages&lt;/b&gt;&lt;/a&gt;
-</code></pre><h3 id="heading-12">主题配置</h3>
-<h4 id="heading-13">添加标签页面</h4>
+</code></pre><h3 id="主题配置">主题配置</h3>
+<h4 id="添加标签页面">添加标签页面</h4>
 <p>{% tabs 添加标签页面 %}</p>
 <!-- raw HTML omitted -->
 <p>{% codeblock lang:sh %}
@@ -254,7 +254,7 @@ tags: /tags/ || tags
 {% endcodeblock %}</p>
 <!-- raw HTML omitted -->
 <p>{% endtabs %}</p>
-<h4 id="heading-14">添加分类页面</h4>
+<h4 id="添加分类页面">添加分类页面</h4>
 <p>{% tabs 添加分类页面 %}</p>
 <!-- raw HTML omitted -->
 <p>{% codeblock lang:sh %}
@@ -279,7 +279,7 @@ categories: /categories/ || th
 {% endcodeblock %}</p>
 <!-- raw HTML omitted -->
 <p>{% endtabs %}</p>
-<h4 id="heading-15">添加留言页面</h4>
+<h4 id="添加留言页面">添加留言页面</h4>
 <p>{% tabs 添加留言页面 %}</p>
 <!-- raw HTML omitted -->
 <p>{% codeblock lang:sh %}
@@ -307,17 +307,17 @@ menu:
 {% endcodeblock %}</p>
 <!-- raw HTML omitted -->
 <p>{% endtabs %}</p>
-<h4 id="heading-16">菜单设置</h4>
+<h4 id="菜单设置">菜单设置</h4>
 <pre><code>menu_settings:
   icons: true
   badges: false
-</code></pre><h4 id="heading-17">社交链接</h4>
+</code></pre><h4 id="社交链接">社交链接</h4>
 <pre><code>social:
   Wuhan, China.: https://www.google.com/maps || location-arrow
   E-Mail: mailto:xucp@outlook.com || envelope
   GitHub: https://github.com/xuchengpeng || github
   Bitbucket: https://bitbucket.org/xuchengpeng/ || bitbucket
-</code></pre><h4 id="heading-18">友情链接</h4>
+</code></pre><h4 id="友情链接">友情链接</h4>
 <pre><code>links_icon: link
 links_title: 友情链接
 links_layout: block
@@ -327,20 +327,20 @@ links:
   FreeSS: https://freess.cx/
   LeanCloud: https://leancloud.cn/
   NexT: https://github.com/theme-next/hexo-theme-next
-</code></pre><h4 id="-license">站点 License</h4>
+</code></pre><h4 id="站点-license">站点 License</h4>
 <pre><code>creative_commons: by-nc-sa
-</code></pre><h4 id="-license-1">文章 License</h4>
+</code></pre><h4 id="文章-license">文章 License</h4>
 <pre><code># Declare license on posts
 post_copyright:
   enable: true
   license: &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-sa/4.0/&quot; rel=&quot;external nofollow&quot; target=&quot;_blank&quot;&gt;CC BY-NC-SA 4.0&lt;/a&gt;
-</code></pre><h4 id="heading-19">打赏</h4>
+</code></pre><h4 id="打赏">打赏</h4>
 <pre><code># Reward
 #reward_comment: Donate comment here
 wechatpay: /images/wechatpay.jpg
 alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
-</code></pre><h4 id="heading-20">文章目录设置</h4>
+</code></pre><h4 id="文章目录设置">文章目录设置</h4>
 <pre><code># Table Of Contents in the Sidebar
 toc:
   enable: true
@@ -350,7 +350,7 @@ toc:
 
   # If true, all words will placed on next lines if header width longer then sidebar width.
   wrap: true
-</code></pre><h4 id="heading-21">侧边栏设置</h4>
+</code></pre><h4 id="侧边栏设置">侧边栏设置</h4>
 <pre><code>sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
   position: left
@@ -377,9 +377,9 @@ toc:
 
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
-</code></pre><h4 id="heading-22">设置代码高亮主题</h4>
+</code></pre><h4 id="设置代码高亮主题">设置代码高亮主题</h4>
 <pre><code>highlight_theme: normal
-</code></pre><h4 id="heading-23">调整内容区域显示的宽度</h4>
+</code></pre><h4 id="调整内容区域显示的宽度">调整内容区域显示的宽度</h4>
 <p>修改 {% label info@主题配置文件 %}：</p>
 <pre><code>custom_file_path:
   variables: source/_data/variables.styl
@@ -392,7 +392,7 @@ $content-desktop-large = 1000px
 </code></pre><p>Pisces 和 Gemini 的修改方法为:</p>
 <pre><code>$main-desktop    = 85%
 $content-desktop = calc(100% - 260px)
-</code></pre><h4 id="heading-24">标签设置</h4>
+</code></pre><h4 id="标签设置">标签设置</h4>
 <pre><code># Note tag (bs-callout).
 note:
   # Note tag style values:
@@ -417,8 +417,8 @@ tabs:
     tabs: true
     labels: true
   border_radius: 0
-</code></pre><h3 id="heading-25">第三方功能</h3>
-<h4 id="heading-26">设置页面文章的篇数</h4>
+</code></pre><h3 id="第三方功能">第三方功能</h3>
+<h4 id="设置页面文章的篇数">设置页面文章的篇数</h4>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm install --save hexo-generator-index
 npm install --save hexo-generator-archive
 npm install --save hexo-generator-tag
@@ -433,7 +433,7 @@ archive_generator:
 
 tag_generator:
   per_page: 10
-</code></pre><h4 id="rss">设置RSS</h4>
+</code></pre><h4 id="设置rss">设置RSS</h4>
 <ol>
 <li>安装插件
 {% codeblock lang:sh %}
@@ -443,17 +443,17 @@ npm install hexo-generator-feed &ndash;save
 修改 {% label primary@站点配置文件 %}：
 {% codeblock %}</li>
 </ol>
-<h1 id="-readmehttpsgithubcomhexojshexo-generator-feed">参数说明查看 README：https://github.com/hexojs/hexo-generator-feed</h1>
+<h1 id="参数说明查看-readmehttpsgithubcomhexojshexo-generator-feed">参数说明查看 README：https://github.com/hexojs/hexo-generator-feed</h1>
 <p>feed:
 type: atom
 path: atom.xml</p>
-<h1 id="0-">文章数，0 为全部</h1>
+<h1 id="文章数0-为全部">文章数，0 为全部</h1>
 <p>limit: 0
 hub:</p>
-<h1 id="heading-27">是否包含文章内容</h1>
+<h1 id="是否包含文章内容">是否包含文章内容</h1>
 <p>content: true
 {% endcodeblock %}</p>
-<h4 id="httpsgithubcomtheme-nexttheme-next-needmoreshare2"><a href="https://github.com/theme-next/theme-next-needmoreshare2">添加分享功能</a></h4>
+<h4 id="添加分享功能httpsgithubcomtheme-nexttheme-next-needmoreshare2"><a href="https://github.com/theme-next/theme-next-needmoreshare2">添加分享功能</a></h4>
 <ol>
 <li>下载插件</li>
 </ol>
@@ -469,7 +469,7 @@ hub:</p>
     enable: false
 </code></pre><p><del>#### Gitalk评论支持
 {% post_link gitalk-for-next 为NexT主题部署Gitalk评论插件 %}</del></p>
-<h4 id="valinehttpsvalinejsorg"><a href="https://valine.js.org/">Valine评论系统</a></h4>
+<h4 id="valine评论系统httpsvalinejsorg"><a href="https://valine.js.org/">Valine评论系统</a></h4>
 <p>Valine 是一款基于Leancloud的快速、简洁且高效的无后端评论系统。</p>
 <ol>
 <li>获取 App ID 和 App Key。
@@ -490,7 +490,7 @@ valine:
   avatar: wavatar # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
-</code></pre><h4 id="heading-28">文章阅读次数统计</h4>
+</code></pre><h4 id="文章阅读次数统计">文章阅读次数统计</h4>
 <ol>
 <li>获取 App ID 和 App Key。
 登录 <a href="https://leancloud.cn">LeadCloud</a>，进入控制台后创建应用，进入应用，在 <code>设置</code> &gt; <code>应用Key</code> 中获取 {% label info@App ID %} 和 {% label info@App Key%}。</li>
@@ -512,7 +512,7 @@ leancloud_visitors:
 <li>修改 {% label info@主题配置文件 %}：</li>
 </ol>
 <pre><code>fancybox: true
-</code></pre><h4 id="httpsgithubcomtheme-nexttheme-next-canvas-nest"><a href="https://github.com/theme-next/theme-next-canvas-nest">设置背景动画</a></h4>
+</code></pre><h4 id="设置背景动画httpsgithubcomtheme-nexttheme-next-canvas-nest"><a href="https://github.com/theme-next/theme-next-canvas-nest">设置背景动画</a></h4>
 <ol>
 <li>下载插件</li>
 </ol>
@@ -521,7 +521,7 @@ leancloud_visitors:
 <li>修改 {% label info@主题配置文件 %}：</li>
 </ol>
 <pre><code>canvas_nest: true
-</code></pre><h4 id="httpsgithubcomtheme-nexthexo-symbols-count-time"><a href="https://github.com/theme-next/hexo-symbols-count-time">字数统计和阅读时长</a></h4>
+</code></pre><h4 id="字数统计和阅读时长httpsgithubcomtheme-nexthexo-symbols-count-time"><a href="https://github.com/theme-next/hexo-symbols-count-time">字数统计和阅读时长</a></h4>
 <ol>
 <li>安装插件</li>
 </ol>
@@ -543,7 +543,7 @@ leancloud_visitors:
   item_text_total: true
   awl: 5
   wpm: 200
-</code></pre><h4 id="httpsgithubcomtheme-nexttheme-next-pace"><a href="https://github.com/theme-next/theme-next-pace">顶部加载进度条</a></h4>
+</code></pre><h4 id="顶部加载进度条httpsgithubcomtheme-nexttheme-next-pace"><a href="https://github.com/theme-next/theme-next-pace">顶部加载进度条</a></h4>
 <ol>
 <li>下载插件</li>
 </ol>
@@ -574,13 +574,13 @@ local_search:
 enable: true
 {% endcodeblock %}</li>
 </ol>
-<h2 id="heading-29">验证主题</h2>
+<h2 id="验证主题">验证主题</h2>
 <p>启动本地站点，并开启调试模式，命令是 <code>hexo server --debug</code>。
 此时可以使用浏览器访问 http://localhost:4000 ，检查是否运行正确。</p>
-<h2 id="heading-30">生成器</h2>
+<h2 id="生成器">生成器</h2>
 <p>使用 Hexo 生成静态文件快速而且简单。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">hexo generate
-</code></pre></div><h2 id="heading-31">部署</h2>
+</code></pre></div><h2 id="部署">部署</h2>
 <p>安装 <a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm install hexo-deployer-git --save
 </code></pre></div><p>修改 {% label primary@站点配置文件 %}。</p>
@@ -590,8 +590,8 @@ enable: true
   branch: master
 </code></pre><p>Hexo 提供了快速方便的一键部署功能，让您只需一条命令就能将网站部署到服务器上。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">hexo deploy
-</code></pre></div><h2 id="heading-32">写作</h2>
-<h3 id="heading-33">修改文章模板</h3>
+</code></pre></div><h2 id="写作">写作</h2>
+<h3 id="修改文章模板">修改文章模板</h3>
 <p>编辑 <code>scaffolds/post.md</code> 文件：</p>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
 title: {{ title }}
@@ -604,7 +604,7 @@ tags:
 
 &lt;!--more--&gt;
 
-</code></pre></div><h3 id="heading-34">多图展示</h3>
+</code></pre></div><h3 id="多图展示">多图展示</h3>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
 title: picture-test
 comments: true
@@ -624,7 +624,7 @@ tags:
   {% img /images/RJ-45-crystal-head.jpg %}
 {% endgp %}
 </code></pre></div><p>多图排版格式见 <a href="https://github.com/iissnan/hexo-theme-next/issues/295">iissnan/hexo-theme-next#295</a>，参考 <code>theme/next/scripts/tags/group-pictures.js</code> 文件定义。</p>
-<h3 id="label-">Label 写作样式</h3>
+<h3 id="label-写作样式">Label 写作样式</h3>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">{% label default@label_default %}
 {% label primary@label_primary %}
 {% label success@label_success %}
@@ -637,7 +637,7 @@ tags:
 {% label info@label_info %}
 {% label warning@label_warning %}
 {% label danger@label_danger %}</p>
-<h3 id="tab-">Tab 写作样式</h3>
+<h3 id="tab-写作样式">Tab 写作样式</h3>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">{% tabs test %}
 &lt;!-- tab aaa --&gt;
 <span class="gs">**这是选项卡 1</span><span class="gs">**</span> 呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈呵呵哈哈哈哈哈哈哈哈……
@@ -660,7 +660,7 @@ tags:
 <p><strong>这是选项卡 3</strong> 哇，你找到我了！φ(≧ω≦*)♪～</p>
 <!-- raw HTML omitted -->
 <p>{% endtabs %}</p>
-<h3 id="note-">Note 写作样式</h3>
+<h3 id="note-写作样式">Note 写作样式</h3>
 <pre><code>{% note default %}
 note default
 {% endnote %}
@@ -702,13 +702,13 @@ note warning
 <p>{% note danger %}
 note danger
 {% endnote %}</p>
-<h3 id="button-">Button 写作样式</h3>
+<h3 id="button-写作样式">Button 写作样式</h3>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">{% button https://www.baidu.com, 点击下载百度, download fa-lg fa-fw %}
-</code></pre></div><p>{% button <a href="https://www.baidu.com,">https://www.baidu.com,</a> 点击下载百度, download fa-lg fa-fw %}</p>
-<h3 id="heading-35">文字字体和颜色</h3>
+</code></pre></div><p>{% button <a href="https://www.baidu.com">https://www.baidu.com</a>, 点击下载百度, download fa-lg fa-fw %}</p>
+<h3 id="文字字体和颜色">文字字体和颜色</h3>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">&lt;font color=red size=6 face=“黑体”&gt;字体颜色&lt;/font&gt;
 </code></pre></div><p><!-- raw HTML omitted -->字体颜色<!-- raw HTML omitted --></p>
-<h3 id="heading-36">文字背景色</h3>
+<h3 id="文字背景色">文字背景色</h3>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=cyan&gt;背景颜色&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 </code></pre></div><!-- raw HTML omitted -->
         </div>
@@ -719,26 +719,26 @@ note danger
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#hexo">什么是Hexo？</a></li>
-    <li><a href="#heading">安装</a>
+    <li><a href="#什么是hexo">什么是Hexo？</a></li>
+    <li><a href="#安装">安装</a>
       <ul>
-        <li><a href="#heading-1">安装前提</a></li>
-        <li><a href="#-hexo">安装 Hexo</a></li>
+        <li><a href="#安装前提">安装前提</a></li>
+        <li><a href="#安装-hexo">安装 Hexo</a></li>
       </ul>
     </li>
-    <li><a href="#heading-2">建站</a></li>
-    <li><a href="#heading-3">配置</a>
+    <li><a href="#建站">建站</a></li>
+    <li><a href="#配置">配置</a>
       <ul>
-        <li><a href="#heading-4">网站</a></li>
-        <li><a href="#heading-5">网址</a></li>
+        <li><a href="#网站">网站</a></li>
+        <li><a href="#网址">网址</a></li>
       </ul>
     </li>
-    <li><a href="#-next-">安装 NexT 主题</a>
+    <li><a href="#安装-next-主题">安装 NexT 主题</a>
       <ul>
-        <li><a href="#heading-6">下载主题</a></li>
-        <li><a href="#heading-7">启用主题</a></li>
-        <li><a href="#heading-8">主题设定</a></li>
-        <li><a href="#heading-12">主题配置</a></li>
+        <li><a href="#下载主题">下载主题</a></li>
+        <li><a href="#启用主题">启用主题</a></li>
+        <li><a href="#主题设定">主题设定</a></li>
+        <li><a href="#主题配置">主题配置</a></li>
       </ul>
     </li>
     <li><a href="#-codeblock-langmarkdown-">修改刚新建的页面，内容如下：{% codeblock lang:markdown %}</a></li>
@@ -757,7 +757,7 @@ note danger
     <li><a href="#comments-true">title: &ldquo;留言&rdquo;date: 2017-11-23 10:50:05type: &ldquo;guestbook&rdquo;comments: true</a>
       <ul>
         <li></li>
-        <li><a href="#heading-25">第三方功能</a></li>
+        <li><a href="#第三方功能">第三方功能</a></li>
       </ul>
     </li>
   </ul>
@@ -768,19 +768,19 @@ note danger
         <li></li>
       </ul>
     </li>
-    <li><a href="#heading-29">验证主题</a></li>
-    <li><a href="#heading-30">生成器</a></li>
-    <li><a href="#heading-31">部署</a></li>
-    <li><a href="#heading-32">写作</a>
+    <li><a href="#验证主题">验证主题</a></li>
+    <li><a href="#生成器">生成器</a></li>
+    <li><a href="#部署">部署</a></li>
+    <li><a href="#写作">写作</a>
       <ul>
-        <li><a href="#heading-33">修改文章模板</a></li>
-        <li><a href="#heading-34">多图展示</a></li>
-        <li><a href="#label-">Label 写作样式</a></li>
-        <li><a href="#tab-">Tab 写作样式</a></li>
-        <li><a href="#note-">Note 写作样式</a></li>
-        <li><a href="#button-">Button 写作样式</a></li>
-        <li><a href="#heading-35">文字字体和颜色</a></li>
-        <li><a href="#heading-36">文字背景色</a></li>
+        <li><a href="#修改文章模板">修改文章模板</a></li>
+        <li><a href="#多图展示">多图展示</a></li>
+        <li><a href="#label-写作样式">Label 写作样式</a></li>
+        <li><a href="#tab-写作样式">Tab 写作样式</a></li>
+        <li><a href="#note-写作样式">Note 写作样式</a></li>
+        <li><a href="#button-写作样式">Button 写作样式</a></li>
+        <li><a href="#文字字体和颜色">文字字体和颜色</a></li>
+        <li><a href="#文字背景色">文字背景色</a></li>
       </ul>
     </li>
   </ul>
@@ -798,11 +798,11 @@ note danger
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2017/11/23/hexo-next-blog/">NexT - Elegant Theme for Hexo</a></li>
+	<li><a href="/hugo-blog/2017/11/23/hexo-next-blog/">NexT - Elegant Theme for Hexo</a></li>
 	
-	<li><a href="/2017/12/04/gitalk-for-next/">为NexT主题部署Gitalk评论插件</a></li>
+	<li><a href="/hugo-blog/2017/12/04/gitalk-for-next/">为NexT主题部署Gitalk评论插件</a></li>
 	
-	<li><a href="/2017/11/24/gitalk-comment-extension/">Gitalk评论插件</a></li>
+	<li><a href="/hugo-blog/2017/11/24/gitalk-comment-extension/">Gitalk评论插件</a></li>
 	
   </ul>
 </section>
@@ -814,12 +814,12 @@ note danger
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/hexo">Hexo
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/hexo">Hexo
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/next">NexT
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/next">NexT
                     </a>
                 </li>
                 
@@ -829,12 +829,12 @@ note danger
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/01/16/set-up-aliyun-domain-with-github-pages/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/01/16/set-up-aliyun-domain-with-github-pages/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">GitHub Pages 绑定阿里云域名&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2017/12/24/163-mail-dead/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2017/12/24/163-mail-dead/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;163邮箱已死</div>
     </a>
     
@@ -845,7 +845,7 @@ note danger
         
   <div class="article-comments">
   
-  <span id="/2018/01/09/setup-hexo-next-blog/" class="leancloud-visitors" data-flag-title="搭建Hexo NexT主题博客">
+  <span id="/hugo-blog/2018/01/09/setup-hexo-next-blog/" class="leancloud-visitors" data-flag-title="搭建Hexo NexT主题博客">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -870,8 +870,8 @@ note danger
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

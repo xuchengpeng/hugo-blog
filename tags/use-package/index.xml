@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>use-package on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/tags/use-package/</link>
+    <link>http://xuchengpeng.com/hugo-blog/tags/use-package/</link>
     <description>Recent content in use-package on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 11 May 2018 13:51:45 +0000</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/tags/use-package/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/use-package/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Emacs load packages</title>
-      <link>http://xuchengpeng.com/2018/05/11/emacs-load-packages/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/05/11/emacs-load-packages/</link>
       <pubDate>Fri, 11 May 2018 13:51:45 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/05/11/emacs-load-packages/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/05/11/emacs-load-packages/</guid>
       <description>&lt;h2 id=&#34;load&#34;&gt;load&lt;/h2&gt;
 &lt;p&gt;load → is the general function for loading a file.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;load&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;FILE&lt;/span&gt; &lt;span class=&#34;kp&#34;&gt;&amp;amp;optional&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NOERROR&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NOMESSAGE&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NOSUFFIX&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;MUST-SUFFIX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -32,10 +32,10 @@
     
     <item>
       <title>Chuck&#39;s Emacs Configuration</title>
-      <link>http://xuchengpeng.com/2018/03/26/chuck-emacs-configuration/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/26/chuck-emacs-configuration/</link>
       <pubDate>Mon, 26 Mar 2018 07:33:23 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/26/chuck-emacs-configuration/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/26/chuck-emacs-configuration/</guid>
       <description>&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ git clone https://github.com/xuchengpeng/.emacs.d.git ~/.emacs.d
 $ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/.emacs.d
@@ -53,12 +53,12 @@ $ cp init.example.el init.el
     
     <item>
       <title>Add Emacs elpa configuration</title>
-      <link>http://xuchengpeng.com/2018/03/06/add-emacs-elpa-configuration/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/03/06/add-emacs-elpa-configuration/</link>
       <pubDate>Tue, 06 Mar 2018 18:56:50 +0000</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/03/06/add-emacs-elpa-configuration/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/03/06/add-emacs-elpa-configuration/</guid>
       <description>&lt;h2 id=&#34;elpa-mirror&#34;&gt;ELPA mirror&lt;/h2&gt;
-&lt;h3 id=&#34;emacs-china&#34;&gt;Emacs China镜像&lt;/h3&gt;
+&lt;h3 id=&#34;emacs-china镜像&#34;&gt;Emacs China镜像&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -98,7 +98,7 @@ $ cp init.example.el init.el
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;如果需要 HTTPS，请将镜像地址中的 &lt;code&gt;http&lt;/code&gt; 改成 &lt;code&gt;https&lt;/code&gt; 。&lt;/p&gt;
-&lt;h3 id=&#34;heading&#34;&gt;清华镜像&lt;/h3&gt;
+&lt;h3 id=&#34;清华镜像&#34;&gt;清华镜像&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;

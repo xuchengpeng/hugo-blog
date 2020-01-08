@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/categories/cloud/</link>
+    <link>http://xuchengpeng.com/hugo-blog/categories/cloud/</link>
     <description>Recent content in Cloud on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 11 Sep 2018 20:15:48 +0800</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>KVM</title>
-      <link>http://xuchengpeng.com/2018/09/11/kvm/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/11/kvm/</link>
       <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/11/kvm/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/11/kvm/</guid>
       <description>&lt;p&gt;KVM 全称是 基于内核的虚拟机（Kernel-based Virtual Machine），它是Linux 的一个内核模块，该内核模块使得 Linux 变成了一个 Hypervisor：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;它由 Quramnet 开发，该公司于 2008年被 Red Hat 收购。&lt;/li&gt;
@@ -29,10 +29,10 @@
     
     <item>
       <title>VXLAN</title>
-      <link>http://xuchengpeng.com/2018/09/11/vxlan/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/11/vxlan/</link>
       <pubDate>Tue, 11 Sep 2018 14:16:49 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/11/vxlan/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/11/vxlan/</guid>
       <description>&lt;p&gt;VXLAN(Virtual eXtential LAN)意为虚拟可拓展局域网。随着大数据、云计算技术的兴起以及虚拟化技术的普及，VLAN技术的弊端逐渐显现出来，具体表现为如下3个方面：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;虚拟化技术的发展促使大数据、云计算技术公司采用单个物理设备虚拟多台虚拟机的方式来进行组网，随着应用模块的增加，对于支持VLAN数目的要求也在提升，802.1Q标准中的最多支持4094个VLAN的能力已经无法满足当下需求。&lt;/li&gt;
@@ -45,10 +45,10 @@
     
     <item>
       <title>Open vSwitch</title>
-      <link>http://xuchengpeng.com/2018/09/11/openvswitch/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/11/openvswitch/</link>
       <pubDate>Tue, 11 Sep 2018 11:09:50 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/11/openvswitch/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/11/openvswitch/</guid>
       <description>&lt;p&gt;Open vSwitch 是一个基于Apache 2 license的多层软件交换机。 我们的目标是实现一个支持标准管理接口的，开放转发功能以支持编程扩展和控制的交换机平台。&lt;/p&gt;
 &lt;p&gt;Open vSwitch 非常适合在VM环境中用作虚拟交换机。 除了将标准控制和可视化接口暴露给虚拟网络层外，它还旨在支持跨越多个物理服务器的分布式系统。 Open vSwitch 支持多种基于Linux的虚拟化技术，包括 Xen/XenServer, KVM, 及 VirtualBox。&lt;/p&gt;
 &lt;p&gt;大部分代码是平台无关的C编码，可以轻松地移植到其他环境中。 当前版本的 Open vSwitch 支持以下功能：&lt;/p&gt;
@@ -72,12 +72,12 @@
     
     <item>
       <title>云计算与边缘计算</title>
-      <link>http://xuchengpeng.com/2018/09/11/cloud-and-edge-computing/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/11/cloud-and-edge-computing/</link>
       <pubDate>Tue, 11 Sep 2018 09:26:07 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/11/cloud-and-edge-computing/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/11/cloud-and-edge-computing/</guid>
       <description>&lt;p&gt;云计算（cloudcomputing）是基于互联网的相关服务的增加、使用和交付模式，通常涉及通过互联网来提供动态易扩展且经常是虚拟化的资源。&lt;/p&gt;
-&lt;h3 id=&#34;heading&#34;&gt;云计算&lt;/h3&gt;
+&lt;h3 id=&#34;云计算&#34;&gt;云计算&lt;/h3&gt;
 &lt;p&gt;云计算系统由云平台、云存储、云终端、云安全四个基本部分组成。&lt;/p&gt;
 &lt;p&gt;云平台从用户的角度可分为公有云、私有云、混合云等。&lt;/p&gt;
 &lt;p&gt;通过从提供服务的层次可分为基础设施即服务（Iaas）、平台即服务（Paas）和软件即服务（Saas）。&lt;/p&gt;

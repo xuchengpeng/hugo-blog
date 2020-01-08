@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>边缘计算 on Chuck&amp;Lucia</title>
-    <link>http://xuchengpeng.com/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/</link>
+    <link>http://xuchengpeng.com/hugo-blog/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/</link>
     <description>Recent content in 边缘计算 on Chuck&amp;Lucia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 11 Sep 2018 09:26:07 +0800</lastBuildDate>
     
-	<atom:link href="http://xuchengpeng.com/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://xuchengpeng.com/hugo-blog/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>云计算与边缘计算</title>
-      <link>http://xuchengpeng.com/2018/09/11/cloud-and-edge-computing/</link>
+      <link>http://xuchengpeng.com/hugo-blog/2018/09/11/cloud-and-edge-computing/</link>
       <pubDate>Tue, 11 Sep 2018 09:26:07 +0800</pubDate>
       
-      <guid>http://xuchengpeng.com/2018/09/11/cloud-and-edge-computing/</guid>
+      <guid>http://xuchengpeng.com/hugo-blog/2018/09/11/cloud-and-edge-computing/</guid>
       <description>&lt;p&gt;云计算（cloudcomputing）是基于互联网的相关服务的增加、使用和交付模式，通常涉及通过互联网来提供动态易扩展且经常是虚拟化的资源。&lt;/p&gt;
-&lt;h3 id=&#34;heading&#34;&gt;云计算&lt;/h3&gt;
+&lt;h3 id=&#34;云计算&#34;&gt;云计算&lt;/h3&gt;
 &lt;p&gt;云计算系统由云平台、云存储、云终端、云安全四个基本部分组成。&lt;/p&gt;
 &lt;p&gt;云平台从用户的角度可分为公有云、私有云、混合云等。&lt;/p&gt;
 &lt;p&gt;通过从提供服务的层次可分为基础设施即服务（Iaas）、平台即服务（Paas）和软件即服务（Saas）。&lt;/p&gt;

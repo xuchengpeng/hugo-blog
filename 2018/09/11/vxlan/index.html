@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/09/11/vxlan/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/09/11/vxlan/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/09/11/vxlan/" >
+                <a href="/hugo-blog/2018/09/11/vxlan/" >
                     <time datetime='2018-09-11T14:16:49.000&#43;08:00' itemprop="datePublished">2018-09-11</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/technology">Technology</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/cloud">Cloud</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/cloud">Cloud</a>
                     
                 </div>
             </div>
@@ -104,7 +104,7 @@
 </ol>
 <p>基于以上需求，VXLAN技术被提出。</p>
 <p>VXLAN技术是网络Overlay技术的一种实现，对于Overlay技术，笔者的理解是：在基于物理网络拓扑的基础上通过一定的技术来构建虚拟的、不同于物理网络拓扑的逻辑网络，而物理网络的拓扑结构对于Overlay终端而言是透明的，终端不会感知到物理网络的存在，而仅仅能感知到逻辑网络结构。对于终端的视角，网络的情况和直接通过物理设备实现逻辑拓扑的效果是相同的。VXLAN技术可以基于三层网络结构来构建二层虚拟网络，通过VLAN技术可以将处于不同网段网络设备整合在同一个逻辑链路层网络中，对于终端用户而言，这些网络设备似乎“真实地”部署在了同一个链路层网络中。</p>
-<h3 id="heading">标准</h3>
+<h3 id="标准">标准</h3>
 <p>文档rfc7348详细地介绍了VXLAN的实现机制。本质上VXLAN是一种隧道技术。通过将虚拟网络中的数据帧封装在实际物理网络中的报文中进行传输。具体实现方式为：将虚拟网络的数据帧添加VXLAN首部后，封装在物理网络中的UDP报文中，然后以传统网路络的通信方式传送该UDP报文，到达目的主机后，去掉物理网络报文的头部信息以及VXLAN首部，将报文交付给目的终端。整个通信过程目的终端不会感知到物理网络的存在。</p>
 <p><img src="/images/vxlan.png" alt=""></p>
 <p>图中两台终端T1和T2位于不同的网络中，二者通过路由器来实现互通，通过VXLAN可以使得这两台终端在“逻辑上”位于“同一个”链路层网络中而与两台终端直接相连的路由器也在逻辑上构建了一条在虚拟链路中的通道vxlan tunnel，这样的路由器我们称之为“vxlan隧道终端”(VXLAN Tunnel End Point, VTEP)。在包含VXLAN的网络中，VXLAN的实现机制仅仅对VTEP节点可见。</p>
@@ -114,7 +114,7 @@
 <p>VXLAN传输过程中，将逻辑链路网络的数据帧添加VXLAN首部后，依次添加UDP首部，IP首部，以太网帧首部后，在物理网络中传输，数据帧的封装格式可以用下图来描述：</p>
 <p><img src="/images/vxlan-construct.png" alt=""></p>
 <p>需要注意的是，外部UDP首部的目的端口号为4789，该数值为默认VXLAN解析程序的端口，外层IP首部中的源IP和目的IP地址均填写通信双方的VTEP地址，协议的其余部分和传统网络相同。</p>
-<h3 id="heading-1">通信过程</h3>
+<h3 id="通信过程">通信过程</h3>
 <p>对于处于同一个VXLAN的两台虚拟终端，其通信过程可以概括为如下的步骤：</p>
 <ol>
 <li>发送方向接收方发送数据帧，帧中包含了发送方和接收方的虚拟MAC地址。</li>
@@ -126,7 +126,7 @@
 <p>通过以上的步骤可以看出：VXLAN的实现细节以及通信过程对于处于VXLAN中的发送方和接收方是不可见的，基于发送方和接收方的视角，其通信过程和二者真实处于同一链路层网络中的情况完全相同。</p>
 <p>其中VTEP2中收到的报文和VTEP1中发送的报文相同，接受者收到的报文和发送者发出的报文也完全相同。</p>
 <p>需要说明的是，VTEP1同样需要将上述封装好的IP报文封装在以太网帧中才能进行传输，这里称之为“外层以太网帧(Outer Ethernet Frame)”,外层以太网帧中数据字段值取决于实际物理网络的实现，因此笔者为在图中给出。在VXLAN的实际实现中，VTEP1和VTEP2可以处于不同的物理网络中，只要保证VTEP1和VTEP2可以通信即可，而对于二者通信所经过的路径，我们不必关心。</p>
-<h3 id="vtep">VTEP节点工作机制</h3>
+<h3 id="vtep节点工作机制">VTEP节点工作机制</h3>
 <p>VTEP节点在VXLAN网络通信中起到了至关重要的作用。在VXLAN网络通信中，VTEP节的职责主要有3项：</p>
 <ol>
 <li>将虚拟网络通信的数据帧添加VXLAN头部和外部UDP和IP首部。</li>
@@ -135,7 +135,7 @@
 </ol>
 <p>对于功能1和3只要按照上文中给出的封装和拆解规则进行处理即可，这里主要说明功能2的实现，即VXLAN数据包的转发过程。当VTEP节点收到一个VXLAN数据包时，需要根据内部以太网帧的目的MAC地址找到与拥有该目的地址的终端直接相连的VTEP地址，因此，这里需要一个目的MAC地址和VTEP节点IP地址的映射关系，VTEP节点利用一个转发表来存储此映射关系。转发表的格式为：<code>&lt;VNI, Inner Dst MAC, VTEP IP&gt;</code>，即给定VNI和目的MAC地址后映射到一个VTEP IP地址。</p>
 <p>需要说明的是，映射VTEP节点IP地址时，之所以需要VNI的信息，是因为当存在多租户的情况下，各个租户将会独立组网，此时，多个租户设定的MAC地址有一定的概率会出现重叠，此时我们必须保证每个租户的网络都能独立地正常通信，因此，在为每个租户配置唯一的一个VNI的情况下，给定VNI和目的MAC地址，唯一确定一个VTEP地址。</p>
-<h3 id="vxlan">VXLAN技术的优势和局限性</h3>
+<h3 id="vxlan技术的优势和局限性">VXLAN技术的优势和局限性</h3>
 <p>相比VLAN技术，VXLAN技术具有以下的优势：</p>
 <ol>
 <li>24位长度的VNI字段值可以支持更多数量的虚拟网络，解决了VLAN数目上限为4094的局限性的问题。</li>
@@ -153,10 +153,10 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#heading">标准</a></li>
-        <li><a href="#heading-1">通信过程</a></li>
-        <li><a href="#vtep">VTEP节点工作机制</a></li>
-        <li><a href="#vxlan">VXLAN技术的优势和局限性</a></li>
+        <li><a href="#标准">标准</a></li>
+        <li><a href="#通信过程">通信过程</a></li>
+        <li><a href="#vtep节点工作机制">VTEP节点工作机制</a></li>
+        <li><a href="#vxlan技术的优势和局限性">VXLAN技术的优势和局限性</a></li>
       </ul>
     </li>
   </ul>
@@ -177,17 +177,17 @@
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/vxlan">VXLAN
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/vxlan">VXLAN
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/vlan">VLAN
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/vlan">VLAN
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/vtep">VTEP
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/vtep">VTEP
                     </a>
                 </li>
                 
@@ -197,12 +197,12 @@
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/09/11/kvm/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/09/11/kvm/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">KVM&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/09/11/openvswitch/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/09/11/openvswitch/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;Open vSwitch</div>
     </a>
     
@@ -213,7 +213,7 @@
         
   <div class="article-comments">
   
-  <span id="/2018/09/11/vxlan/" class="leancloud-visitors" data-flag-title="VXLAN">
+  <span id="/hugo-blog/2018/09/11/vxlan/" class="leancloud-visitors" data-flag-title="VXLAN">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -238,8 +238,8 @@
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

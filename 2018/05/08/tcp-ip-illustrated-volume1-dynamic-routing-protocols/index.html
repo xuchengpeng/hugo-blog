@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/05/08/tcp-ip-illustrated-volume1-dynamic-routing-protocols/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/05/08/tcp-ip-illustrated-volume1-dynamic-routing-protocols/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/05/08/tcp-ip-illustrated-volume1-dynamic-routing-protocols/" >
+                <a href="/hugo-blog/2018/05/08/tcp-ip-illustrated-volume1-dynamic-routing-protocols/" >
                     <time datetime='2018-05-08T09:51:32.000&#43;00:00' itemprop="datePublished">2018-05-08</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                     
                 </div>
             </div>
@@ -98,14 +98,14 @@
         <div class="article-entry" itemprop="articleBody">
             <p>静态选路：在配置接口时，以默认方式生成路由表项（对于直接连接的接口），并通过route命令增加表项（通常从系统自引导程序文件），或是通过ICMP重定向生成表项（通常是在默认方式出错的情况下）。</p>
 <p>在网络很小，且与其他网络只有单个连接点且没有多余路由时（若主路由失败，可以使用备用路由），采用这种方法是可行的。如果上述三种情况不能全部满足，通常使用动态选路。</p>
-<h2 id="heading">动态选路</h2>
+<h2 id="动态选路">动态选路</h2>
 <p>当相邻路由器之间进行通信，以告知对方每个路由器当前所连接的网络，这时就出现了动态选路。路由器之间必须采用选路协议进行通信，这样的选路协议有很多种。路由器上有一个进程称为路由守护程序（routing daemon），它运行选路协议，并与其相邻的一些路由器进行通信。路由守护程序根据它从相邻路由器接收到的信息，更新内核中的路由表。</p>
 <p>动态选路并不改变内核在IP层的选路方式。这种选路方式称为选路机制（routing mechanism）。内核搜索路由表，查找主机路由、网络路由以及默认路由的方式并没有改变。仅仅是放置到路由表中的信息改变了—当路由随时间变化时，路由是由路由守护程序动态地增加或删除，而不是来自于自引导程序文件中的route命令。</p>
 <p>路由守护程序将选路策略（routing policy）加入到系统中，选择路由并加入到内核的路由表中。如果守护程序发现前往同一信宿存在多条路由，那么它（以某种方法）将选择最佳路由并加入内核路由表中。如果路由守护程序发现一条链路已经断开（可能是路由器崩溃或电话线路不好），它可以删除受影响的路由或增加另一条路由以绕过该问题。</p>
 <p>在像Internet这样的系统中，目前采用了许多不同的选路协议。Internet是以一组自治系统(AS，Autonomous System)的方式组织的，每个自治系统通常由单个实体管理。常常将一个公司或大学校园定义为一个自治系统。NSFNET的Internet骨干网形成一个自治系统，这是因为骨干网中的所有路由器都在单个的管理控制之下。</p>
 <p>每个自治系统可以选择该自治系统中各个路由器之间的选路协议。这种协议我们称之为内部网关协议IGP（Interior Gateway Protocol）或域内选路协议（intradomain routing protocol）。最常用的IGP是选路信息协议RIP。一种新的IGP是开放最短路径优先OSPF（Open Shortest Path First）协议。它意在取代RIP。另一种1986年在原来NSFNET骨干网上使用的较早的IGP协议——HELLO，现在已经不用了。</p>
 <p>外部网关协议EGP（Exterier Gateway Protocol）或域内选路协议的分隔选路协议用于不同自治系统之间的路由器。在历史上，（令人容易混淆）改进的EGP有着一个与它名称相同的协议：EGP。新EGP是当前在NSFNET骨干网和一些连接到骨干网的区域性网络上使用的是边界网关协议BGP（Border Gateway Protocol）。BGP意在取代EGP。</p>
-<h2 id="unix-">Unix 选路守护程序</h2>
+<h2 id="unix-选路守护程序">Unix 选路守护程序</h2>
 <p>Unix系统上常常运行名为routed路由守护程序。几乎在所有的TCP/IP实现中都提供该程序。该程序只使用RIP进行通信。这是一种用于小型到中型网络中的协议。</p>
 <p>另一个程序是gated。IGP和EGP都支持它。[Fedor 1998]描述了早期开发的gated。大多数运行路由守护程序的系统都可以运行routed，除非它们需要支持gated所支持的其他协议。</p>
 <table>
@@ -146,8 +146,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="rip-">RIP: 选路信息协议</h2>
-<h3 id="heading-1">报文格式</h3>
+<h2 id="rip-选路信息协议">RIP: 选路信息协议</h2>
+<h3 id="报文格式">报文格式</h3>
 <p>RIP 报文包含在 UDP 数据报中：
 | IP首部(20字节) | UDP首部(8字节) | RIP报文 |</p>
 <p>命令字段为1表示请求，2表示应答。还有两个舍弃不用的命令（3和4），两个非正式的命令：轮询（5）和轮询表项（6）。请求表示要求其他系统发送其全部或部分路由表。应答则包含发送者全部或部分路由表。</p>
@@ -155,7 +155,7 @@
 <p>紧跟在后面的20字节指定地址系列（address family）（对于IP地址来说，其值是2）、IP地址以及相应的度量。RIP的度量是以跳计数的。</p>
 <p>采用这种20字节格式的RIP报文可以通告多达25条路由。上限25是用来保证RIP报文的总长度为20×25+4=504，小于512字节。由于每个报文最多携带25个路由，因此为了发送整个路由表，经常需要多个报文。</p>
 <p><img src="/images/tcp-ip/rip-format.jpg" alt=""></p>
-<h3 id="heading-2">正常运行</h3>
+<h3 id="正常运行">正常运行</h3>
 <p>RIP常用的UDP端口号是520。</p>
 <ul>
 <li>初始化：在启动一个路由守护程序时，它先判断启动了哪些接口，并在每个接口上发送一个请求报文，要求其他路由器发送完整路由表。在点对点链路中，该请求是发送给其他终点的。如果网络支持广播的话，这种请求是以广播形式发送的。目的UDP端口号是520（这是其他路由器的路由守护程序端口号）。 这种请求报文的命令字段为1，但地址系列字段设置为0，而度量字段设置为16。这是一种要求另一端完整路由表的特殊请求报文。</li>
@@ -165,18 +165,18 @@
 <li>触发更新。每当一条路由的度量发生变化时，就对它进行更新。不需要发送完整路由表，而只需要发送那些发生变化的表项。</li>
 </ul>
 <p>每条路由都有与之相关的定时器。如果运行RIP的系统发现一条路由在3分钟内未更新，就将该路由的度量设置成无穷大（16），并标注为删除。这意味着已经在6个30秒更新时间里没收到通告该路由的路由器的更新了。再过60秒，将从本地路由表中删除该路由，以保证该路由的失效已被传播开。</p>
-<h3 id="heading-3">度量</h3>
+<h3 id="度量">度量</h3>
 <p>RIP所使用的度量是以跳(hop)计算的。所有直接连接接口的跳数为1。</p>
 <p><img src="/images/tcp-ip/rip-metrics-example.jpg" alt=""></p>
 <p>路由器R1通过发送广播到N1通告它与N2之间的跳数是1(发送给N1的广播中通告它与N1之间的路由是无用的)。同时也通过发送广播给N2通告它与N1之间的跳数为1。同样，R2通告它与N2的度量为1，与N3的度量为1。</p>
 <p>如果相邻路由器通告它与其他网络由的跳数为1，那么我们与那个网络的度量就是2，这是因为为了发送报文到该网络，我们必须经过那个路由器。在我们的例子中，R2到N1的度量是2，与R1到N3的度量一样。</p>
 <p>由于每个路由器都发送其路由表给邻站，因此，可以判断在同一个自治系统AS内到每个网络的路由。如果在该AS内从一个路由器到一个网络有多条路由，那么路由器将选择跳数最小的路由，而忽略其他路由。</p>
 <p>跳数的最大值是15，这意味着RIP只能用在主机间最大跳数值为15的AS内。度量为16表示到无路由到达该IP地址。</p>
-<h3 id="heading-4">问题</h3>
+<h3 id="问题">问题</h3>
 <p>这种方法看起来很简单，但它有一些缺陷。首先，RIP没有子网地址的概念。例如，如果标准的B类地址中16 bit的主机号不为0，那么RIP无法区分非零部分是一个子网号，或者是一个主机地址。有一些实现中通过接收到的RIP信息，来使用接口的网络掩码，而这有可能出错。</p>
 <p>其次，在路由器或链路发生故障后，需要很长的一段时间才能稳定下来。这段时间通常需要几分钟。在这段建立时间里，可能会发生路由环路。在实现RIP时，必须采用很多微妙的措施来防止路由环路的出现，并使其尽快建立。RFC 1058 [Hedrick 1988a]中指出了很多实现RIP的细节。</p>
 <p>采用跳数作为路由度量忽略了其他一些应该考虑的因素。同时，度量最大值为15则限制了可以使用RIP的网络的大小。</p>
-<h2 id="rip-2">RIP 版本2</h2>
+<h2 id="rip-版本2">RIP 版本2</h2>
 <p>RFC 1388 [Malkin 1993a]中对RIP定义进行了扩充，通常称其结果为RIP-2。这些扩充并不改变协议本身，而是利用版本1中的一些标注为“必须为0”的字段来传递一些额外的信息。如果RIP忽略这些必须为0的字段，那么，RIP和RIP-2可以互操作。</p>
 <p>对于RIP-2来说，其版本字段为2。</p>
 <p><img src="/images/tcp-ip/rip-2-format.jpg" alt=""></p>
@@ -185,7 +185,7 @@
 <p>每个表项的子网掩码应用于相应的IP地址上。下一站IP地址指明发往目的IP地址的报文该发往哪里。该字段为0意味着发往目的地址的报文应该发给发送RIP报文的系统。</p>
 <p>RIP-2提供了一种简单的鉴别机制。可以指定RIP报文的前20字节表项地址系列为0xffff，路由标记为2。表项中的其余16字节包含一个明文口令。</p>
 <p>最后，RIP-2除了广播外，还支持多播。这可以减少不收听RIP-2报文的主机的负载。</p>
-<h2 id="ospf-">OSPF: 开放最短路径优先</h2>
+<h2 id="ospf-开放最短路径优先">OSPF: 开放最短路径优先</h2>
 <p>OSPF是除RIP外的另一个内部网关协议。它克服了RIP的所有限制。RFC 1247[Moy 1991]中对第2版OSPF进行了描述。</p>
 <p>与采用距离向量的RIP协议不同的是，OSPF是一个链路状态协议。距离向量的意思是，RIP发送的报文包含一个距离向量（跳数）。每个路由器都根据它所接收到邻站的这些距离向量来更新自己的路由表。</p>
 <p>在一个链路状态协议中，路由器并不与其邻站交换距离信息。它采用的是每个路由器主动地测试与其邻站相连链路的状态，将这些信息发送给它的其他邻站，而邻站将这些信息在自治系统中传播出去。每个路由器接收这些链路状态信息，并建立起完整的路由表。</p>
@@ -202,7 +202,7 @@
 <li>OSPF采用多播，而不是广播形式，以减少不参与OSPF的系统负载。</li>
 </ol>
 <p>随着大部分厂商支持OSPF，在很多网络中OSPF将逐步取代RIP。</p>
-<h2 id="bgp-">BGP: 边界网关协议</h2>
+<h2 id="bgp-边界网关协议">BGP: 边界网关协议</h2>
 <p>BGP是一种不同自治系统的路由器之间进行通信的外部网关协议。BGP是ARPANET所使用的老EGP的取代品。RFC1267 [Lougheed and Rekhter 1991]对第3版的BGP进行了描述。</p>
 <p>BGP系统与其他BGP系统之间交换网络可到达信息。这些信息包括数据到达这些网络所必须经过的自治系统AS中的所有路径。这些信息足以构造一幅自治系统连接图。然后，可以根据连接图删除选路环，制订选路策略。</p>
 <p>首先，我们将一个自治系统中的IP数据报分成本地流量和通过流量。在自治系统中，本地流量是起始或终止于该自治系统的流量。也就是说，其信源IP地址或信宿IP地址所指定的主机位于该自治系统中。其他的流量则称为通过流量。在Internet中使用BGP的一个目的就是减少通过流量。</p>
@@ -217,7 +217,7 @@
 <p>BGP与RIP和OSPF的不同之处在于BGP使用TCP作为其传输层协议。两个运行BGP的系统之间建立一条TCP连接，然后交换整个BGP路由表。从这个时候开始，在路由表发生变化时，再发送更新信号。</p>
 <p>BGP是一个距离向量协议，但是与（通告到目的地址跳数的）RIP不同的是，BGP列举了到每个目的地址的路由（自治系统到达目的地址的序列号）。这样就排除了一些距离向量协议的问题。采用16 bit数字表示自治系统标识。</p>
 <p>BGP通过定期发送keepalive报文给其邻站来检测TCP连接对端的链路或主机失败。两个报文之间的时间间隔建议值为30秒。应用层的keepalive报文与TCP的keepalive选项是独立的。</p>
-<h2 id="cidr-">CIDR: 无类型域间选路</h2>
+<h2 id="cidr-无类型域间选路">CIDR: 无类型域间选路</h2>
 <p>由于B类地址的缺乏，因此现在的多个网络站点只能采用多个C类网络号，而不采用单个B类网络号。尽管分配这些C类地址解决了一个问题（B类地址的缺乏），但它却带来了另一个问题：每个C类网络都需要一个路由表表项。无类型域间选路（CIDR）是一个防止Internet路由表膨胀的方法，它也称为超网（supernetting）。</p>
 <p>CIDR的基本观点是采用一种分配多个IP地址的方式，使其能够将路由表中的许多表项总和(summarization)成更少的数目。例如，如果给单个站点分配16个C类地址，以一种可以用总和的方式来分配这16个地址，这样，所有这16个地址可以参照Internet上的单个路由表表项。同时，如果有8个不同的站点是通过同一个Internet服务提供商的同一个连接点接入Internet的，且这8个站点分配的8个不同IP地址可以进行总和，那么，对于这8个站点，在Internet上，只需要单个路由表表项。</p>
 <p>要使用这种总和，必须满足以下三种特性：</p>
@@ -238,20 +238,20 @@
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">动态选路</a></li>
-    <li><a href="#unix-">Unix 选路守护程序</a></li>
-    <li><a href="#rip-">RIP: 选路信息协议</a>
+    <li><a href="#动态选路">动态选路</a></li>
+    <li><a href="#unix-选路守护程序">Unix 选路守护程序</a></li>
+    <li><a href="#rip-选路信息协议">RIP: 选路信息协议</a>
       <ul>
-        <li><a href="#heading-1">报文格式</a></li>
-        <li><a href="#heading-2">正常运行</a></li>
-        <li><a href="#heading-3">度量</a></li>
-        <li><a href="#heading-4">问题</a></li>
+        <li><a href="#报文格式">报文格式</a></li>
+        <li><a href="#正常运行">正常运行</a></li>
+        <li><a href="#度量">度量</a></li>
+        <li><a href="#问题">问题</a></li>
       </ul>
     </li>
-    <li><a href="#rip-2">RIP 版本2</a></li>
-    <li><a href="#ospf-">OSPF: 开放最短路径优先</a></li>
-    <li><a href="#bgp-">BGP: 边界网关协议</a></li>
-    <li><a href="#cidr-">CIDR: 无类型域间选路</a></li>
+    <li><a href="#rip-版本2">RIP 版本2</a></li>
+    <li><a href="#ospf-开放最短路径优先">OSPF: 开放最短路径优先</a></li>
+    <li><a href="#bgp-边界网关协议">BGP: 边界网关协议</a></li>
+    <li><a href="#cidr-无类型域间选路">CIDR: 无类型域间选路</a></li>
   </ul>
 </nav>
         </div>
@@ -270,22 +270,22 @@
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/rip">RIP
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/rip">RIP
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/ospf">OSPF
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/ospf">OSPF
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/bgp">BGP
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/bgp">BGP
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/cidr">CIDR
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/cidr">CIDR
                     </a>
                 </li>
                 
@@ -295,12 +295,12 @@
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/05/09/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/09/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">TCP/IP 详解(卷一) UDP：用户数据报协议&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/07/tcp-ip-illustrated-volume1-ip-routing/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;TCP/IP 详解(卷一) IP选路</div>
     </a>
     
@@ -311,7 +311,7 @@
         
   <div class="article-comments">
   
-  <span id="/2018/05/08/tcp-ip-illustrated-volume1-dynamic-routing-protocols/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) 动态选路协议">
+  <span id="/hugo-blog/2018/05/08/tcp-ip-illustrated-volume1-dynamic-routing-protocols/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) 动态选路协议">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -336,8 +336,8 @@
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

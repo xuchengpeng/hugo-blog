@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/04/24/design-pattern-interpreter-pattern/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/04/24/design-pattern-interpreter-pattern/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/04/24/design-pattern-interpreter-pattern/" >
+                <a href="/hugo-blog/2018/04/24/design-pattern-interpreter-pattern/" >
                     <time datetime='2018-04-24T10:04:46.000&#43;00:00' itemprop="datePublished">2018-04-24</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/design-pattern">Design Pattern</a>
                     
                 </div>
             </div>
@@ -97,7 +97,7 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>解释器模式（Interpreter Pattern）提供了评估语言的语法或表达式的方式，它属于行为型模式。这种模式实现了一个表达式接口，该接口解释一个特定的上下文。这种模式被用在 SQL 解析、符号处理引擎等。</p>
-<h2 id="heading">介绍</h2>
+<h2 id="介绍-">介绍</h2>
 <p>意图：给定一个语言，定义它的文法表示，并定义一个解释器，这个解释器使用该标识来解释语言中的句子。
 主要解决：对于一些固定文法构建一个解释句子的解释器。
 何时使用：如果一种特定类型的问题发生的频率足够高，那么可能就值得将该问题的各个实例表述为一个简单语言中的句子。这样就可以构建一个解释器，该解释器通过解释这些句子来解决该问题。
@@ -108,17 +108,17 @@
 缺点： 1、可利用场景比较少。 2、对于复杂的文法比较难维护。 3、解释器模式会引起类膨胀。 4、解释器模式采用递归调用方法。
 使用场景： 1、可以将一个需要解释执行的语言中的句子表示为一个抽象语法树。 2、一些重复出现的问题可以用一种简单的语言来进行表达。 3、一个简单语法需要解释的场景。
 注意事项：可利用场景比较少，JAVA 中如果碰到可以用 expression4J 代替。</p>
-<h2 id="heading-1">实现</h2>
+<h2 id="实现-">实现</h2>
 <p>我们将创建一个接口 Expression 和实现了 Expression 接口的实体类。定义作为上下文中主要解释器的 TerminalExpression 类。其他的类 OrExpression、AndExpression 用于创建组合式表达式。
 InterpreterPatternDemo，我们的演示类使用 Expression 类创建规则和演示表达式的解析。
 <img src="/images/design-pattern/interpreter_pattern_uml_diagram.jpg" alt=""></p>
-<h3 id="-1">步骤 1</h3>
+<h3 id="步骤-1-">步骤 1</h3>
 <p>创建一个表达式接口。
 <em>Expression.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Expression</span> <span class="o">{</span>
    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">interpret</span><span class="o">(</span><span class="n">String</span> <span class="n">context</span><span class="o">)</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-2">步骤 2</h3>
+</code></pre></div><h3 id="步骤-2-">步骤 2</h3>
 <p>创建实现了上述接口的实体类。
 <em>TerminalExpression.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TerminalExpression</span> <span class="kd">implements</span> <span class="n">Expression</span> <span class="o">{</span>
@@ -169,7 +169,7 @@ InterpreterPatternDemo，我们的演示类使用 Expression 类创建规则和�
       <span class="k">return</span> <span class="n">expr1</span><span class="o">.</span><span class="na">interpret</span><span class="o">(</span><span class="n">context</span><span class="o">)</span> <span class="o">&amp;</span><span class="o">&amp;</span> <span class="n">expr2</span><span class="o">.</span><span class="na">interpret</span><span class="o">(</span><span class="n">context</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-3">步骤 3</h3>
+</code></pre></div><h3 id="步骤-3-">步骤 3</h3>
 <p>InterpreterPatternDemo 使用 Expression 类来创建规则，并解析它们。
 <em>InterpreterPatternDemo.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">InterpreterPatternDemo</span> <span class="o">{</span>
@@ -197,7 +197,7 @@ InterpreterPatternDemo，我们的演示类使用 Expression 类创建规则和�
       <span class="o">+</span> <span class="n">isMarriedWoman</span><span class="o">.</span><span class="na">interpret</span><span class="o">(</span><span class="s">&#34;Married Julie&#34;</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-4">步骤 4</h3>
+</code></pre></div><h3 id="步骤-4-">步骤 4</h3>
 <p>验证输出。</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">John</span> <span class="n">is</span> <span class="n">male</span><span class="o">?</span> <span class="kc">true</span>
 <span class="n">Julie</span> <span class="n">is</span> <span class="n">a</span> <span class="n">married</span> <span class="n">women</span><span class="o">?</span> <span class="kc">true</span>
@@ -210,13 +210,13 @@ InterpreterPatternDemo，我们的演示类使用 Expression 类创建规则和�
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">介绍</a></li>
-    <li><a href="#heading-1">实现</a>
+    <li><a href="#介绍-">介绍</a></li>
+    <li><a href="#实现-">实现</a>
       <ul>
-        <li><a href="#-1">步骤 1</a></li>
-        <li><a href="#-2">步骤 2</a></li>
-        <li><a href="#-3">步骤 3</a></li>
-        <li><a href="#-4">步骤 4</a></li>
+        <li><a href="#步骤-1-">步骤 1</a></li>
+        <li><a href="#步骤-2-">步骤 2</a></li>
+        <li><a href="#步骤-3-">步骤 3</a></li>
+        <li><a href="#步骤-4-">步骤 4</a></li>
       </ul>
     </li>
   </ul>
@@ -234,9 +234,9 @@ InterpreterPatternDemo，我们的演示类使用 Expression 类创建规则和�
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/04/23/design-pattern-command-pattern/">命令模式</a></li>
+	<li><a href="/hugo-blog/2018/04/23/design-pattern-command-pattern/">命令模式</a></li>
 	
-	<li><a href="/2018/04/21/design-pattern-chain-of-responsibility-pattern/">责任链模式</a></li>
+	<li><a href="/hugo-blog/2018/04/21/design-pattern-chain-of-responsibility-pattern/">责任链模式</a></li>
 	
   </ul>
 </section>
@@ -248,7 +248,7 @@ InterpreterPatternDemo，我们的演示类使用 Expression 类创建规则和�
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">行为型模式
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">行为型模式
                     </a>
                 </li>
                 
@@ -258,12 +258,12 @@ InterpreterPatternDemo，我们的演示类使用 Expression 类创建规则和�
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/04/24/design-pattern-iterator-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/24/design-pattern-iterator-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">迭代器模式&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/04/24/tcp-ip-illustrated-volume1-link-layer/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/24/tcp-ip-illustrated-volume1-link-layer/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;TCP/IP 详解(卷一) 链路层</div>
     </a>
     
@@ -274,7 +274,7 @@ InterpreterPatternDemo，我们的演示类使用 Expression 类创建规则和�
         
   <div class="article-comments">
   
-  <span id="/2018/04/24/design-pattern-interpreter-pattern/" class="leancloud-visitors" data-flag-title="解释器模式">
+  <span id="/hugo-blog/2018/04/24/design-pattern-interpreter-pattern/" class="leancloud-visitors" data-flag-title="解释器模式">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -299,8 +299,8 @@ InterpreterPatternDemo，我们的演示类使用 Expression 类创建规则和�
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

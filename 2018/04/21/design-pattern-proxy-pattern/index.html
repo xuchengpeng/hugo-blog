@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/04/21/design-pattern-proxy-pattern/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/04/21/design-pattern-proxy-pattern/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/04/21/design-pattern-proxy-pattern/" >
+                <a href="/hugo-blog/2018/04/21/design-pattern-proxy-pattern/" >
                     <time datetime='2018-04-21T09:38:16.000&#43;00:00' itemprop="datePublished">2018-04-21</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/design-pattern">Design Pattern</a>
                     
                 </div>
             </div>
@@ -98,7 +98,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p>在代理模式（Proxy Pattern）中，一个类代表另一个类的功能。这种类型的设计模式属于结构型模式。
 在代理模式中，我们创建具有现有对象的对象，以便向外界提供功能接口。</p>
-<h2 id="heading">介绍</h2>
+<h2 id="介绍">介绍</h2>
 <p>意图：为其他对象提供一种代理以控制对这个对象的访问。
 主要解决：在直接访问对象时带来的问题，比如说：要访问的对象在远程的机器上。在面向对象系统中，有些对象由于某些原因（比如对象创建开销很大，或者某些操作需要安全控制，或者需要进程外的访问），直接访问会给使用者或者系统结构带来很多麻烦，我们可以在访问此对象时加上一个对此对象的访问层。
 何时使用：想在访问一个类时做一些控制。
@@ -109,17 +109,17 @@
 缺点： 1、由于在客户端和真实主题之间增加了代理对象，因此有些类型的代理模式可能会造成请求的处理速度变慢。 2、实现代理模式需要额外的工作，有些代理模式的实现非常复杂。
 使用场景：按职责来划分，通常有以下使用场景： 1、远程代理。 2、虚拟代理。 3、Copy-on-Write 代理。 4、保护（Protect or Access）代理。 5、Cache代理。 6、防火墙（Firewall）代理。 7、同步化（Synchronization）代理。 8、智能引用（Smart Reference）代理。
 注意事项： 1、和适配器模式的区别：适配器模式主要改变所考虑对象的接口，而代理模式不能改变所代理类的接口。 2、和装饰器模式的区别：装饰器模式为了增强功能，而代理模式是为了加以控制。</p>
-<h2 id="heading-1">实现</h2>
+<h2 id="实现">实现</h2>
 <p>我们将创建一个 Image 接口和实现了 Image 接口的实体类。ProxyImage 是一个代理类，减少 RealImage 对象加载的内存占用。
 ProxyPatternDemo，我们的演示类使用 ProxyImage 来获取要加载的 Image 对象，并按照需求进行显示。</p>
 <p><img src="/images/design-pattern/proxy_pattern_uml_diagram.jpg" alt=""></p>
-<h3 id="-1">步骤 1</h3>
+<h3 id="步骤-1">步骤 1</h3>
 <p>创建一个接口。
 <em>Image.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Image</span> <span class="o">{</span>
    <span class="kt">void</span> <span class="nf">display</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-2">步骤 2</h3>
+</code></pre></div><h3 id="步骤-2">步骤 2</h3>
 <p>创建实现接口的实体类。
 <em>RealImage.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RealImage</span> <span class="kd">implements</span> <span class="n">Image</span> <span class="o">{</span>
@@ -158,7 +158,7 @@ ProxyPatternDemo，我们的演示类使用 ProxyImage 来获取要加载的 Ima
       <span class="n">realImage</span><span class="o">.</span><span class="na">display</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-3">步骤 3</h3>
+</code></pre></div><h3 id="步骤-3">步骤 3</h3>
 <p>当被请求时，使用 ProxyImage 来获取 RealImage 类的对象。
 <em>ProxyPatternDemo.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProxyPatternDemo</span> <span class="o">{</span>
@@ -173,7 +173,7 @@ ProxyPatternDemo，我们的演示类使用 ProxyImage 来获取要加载的 Ima
 </span><span class="c1"></span>      <span class="n">image</span><span class="o">.</span><span class="na">display</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-4">步骤 4</h3>
+</code></pre></div><h3 id="步骤-4">步骤 4</h3>
 <p>验证输出。</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Loading</span> <span class="n">test_10mb</span><span class="o">.</span><span class="na">jpg</span>
 <span class="n">Displaying</span> <span class="n">test_10mb</span><span class="o">.</span><span class="na">jpg</span>
@@ -188,13 +188,13 @@ ProxyPatternDemo，我们的演示类使用 ProxyImage 来获取要加载的 Ima
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">介绍</a></li>
-    <li><a href="#heading-1">实现</a>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#实现">实现</a>
       <ul>
-        <li><a href="#-1">步骤 1</a></li>
-        <li><a href="#-2">步骤 2</a></li>
-        <li><a href="#-3">步骤 3</a></li>
-        <li><a href="#-4">步骤 4</a></li>
+        <li><a href="#步骤-1">步骤 1</a></li>
+        <li><a href="#步骤-2">步骤 2</a></li>
+        <li><a href="#步骤-3">步骤 3</a></li>
+        <li><a href="#步骤-4">步骤 4</a></li>
       </ul>
     </li>
   </ul>
@@ -212,15 +212,15 @@ ProxyPatternDemo，我们的演示类使用 ProxyImage 来获取要加载的 Ima
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/04/20/design-pattern-flyweight-pattern/">享元模式</a></li>
+	<li><a href="/hugo-blog/2018/04/20/design-pattern-flyweight-pattern/">享元模式</a></li>
 	
-	<li><a href="/2018/04/19/design-pattern-facade-pattern/">外观模式</a></li>
+	<li><a href="/hugo-blog/2018/04/19/design-pattern-facade-pattern/">外观模式</a></li>
 	
-	<li><a href="/2018/04/18/design-pattern-decorator-pattern/">装饰器模式</a></li>
+	<li><a href="/hugo-blog/2018/04/18/design-pattern-decorator-pattern/">装饰器模式</a></li>
 	
-	<li><a href="/2018/04/12/design-pattern-composite-pattern/">组合模式</a></li>
+	<li><a href="/hugo-blog/2018/04/12/design-pattern-composite-pattern/">组合模式</a></li>
 	
-	<li><a href="/2018/04/12/design-pattern-filter-pattern/">过滤器模式</a></li>
+	<li><a href="/hugo-blog/2018/04/12/design-pattern-filter-pattern/">过滤器模式</a></li>
 	
   </ul>
 </section>
@@ -232,7 +232,7 @@ ProxyPatternDemo，我们的演示类使用 ProxyImage 来获取要加载的 Ima
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F">结构型模式
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F">结构型模式
                     </a>
                 </li>
                 
@@ -242,12 +242,12 @@ ProxyPatternDemo，我们的演示类使用 ProxyImage 来获取要加载的 Ima
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/04/21/design-pattern-chain-of-responsibility-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/21/design-pattern-chain-of-responsibility-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">责任链模式&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/04/20/ubuntu-upgrade-kernel/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/20/ubuntu-upgrade-kernel/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;Ubuntu 升级内核</div>
     </a>
     
@@ -258,7 +258,7 @@ ProxyPatternDemo，我们的演示类使用 ProxyImage 来获取要加载的 Ima
         
   <div class="article-comments">
   
-  <span id="/2018/04/21/design-pattern-proxy-pattern/" class="leancloud-visitors" data-flag-title="代理模式">
+  <span id="/hugo-blog/2018/04/21/design-pattern-proxy-pattern/" class="leancloud-visitors" data-flag-title="代理模式">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -283,8 +283,8 @@ ProxyPatternDemo，我们的演示类使用 ProxyImage 来获取要加载的 Ima
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

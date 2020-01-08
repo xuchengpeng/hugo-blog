@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/02/02/travisci-update-theme-next/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/02/02/travisci-update-theme-next/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/02/02/travisci-update-theme-next/" >
+                <a href="/hugo-blog/2018/02/02/travisci-update-theme-next/" >
                     <time datetime='2018-02-02T17:01:59.000&#43;00:00' itemprop="datePublished">2018-02-02</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/technology">Technology</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/automation">Automation</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/automation">Automation</a>
                     
                 </div>
             </div>
@@ -113,13 +113,13 @@
 <li>OPTIONAL <code>after_deploy</code></li>
 <li><code>after_script</code></li>
 </ol>
-<h2 id="-before-install--next-">在 before_install 阶段更新 NexT 主题源码</h2>
+<h2 id="在-before_install-阶段更新-next-主题源码">在 before_install 阶段更新 NexT 主题源码</h2>
 <p>在 <code>before_install</code> 阶段执行脚本 <code>update-theme-next.sh</code>，来完成主题源码更新：</p>
 <div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml">before_install<span class="p">:</span><span class="w">
 </span><span class="w">  </span>-<span class="w"> </span>export<span class="w"> </span>TZ=<span class="s1">&#39;Asia/Shanghai&#39;</span><span class="w">
 </span><span class="w">  </span>-<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>./update-theme-next.sh<span class="w"> </span><span class="c"># 必须先给权限</span><span class="w">
 </span><span class="w">  </span>-<span class="w"> </span>./update-theme-next.sh<span class="w"> </span><span class="c"># 更新NexT主题</span><span class="w">
-</span></code></pre></div><h2 id="-next-">脚本更新 NexT 主题源码</h2>
+</span></code></pre></div><h2 id="脚本更新-next-主题源码">脚本更新 NexT 主题源码</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/bash
 </span><span class="cp"></span><span class="nb">set</span> -ev
 
@@ -156,8 +156,8 @@ Cloning into <span class="s1">&#39;./themes/next/source/lib/pace&#39;</span>...
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#-before-install--next-">在 before_install 阶段更新 NexT 主题源码</a></li>
-    <li><a href="#-next-">脚本更新 NexT 主题源码</a></li>
+    <li><a href="#在-before_install-阶段更新-next-主题源码">在 before_install 阶段更新 NexT 主题源码</a></li>
+    <li><a href="#脚本更新-next-主题源码">脚本更新 NexT 主题源码</a></li>
   </ul>
 </nav>
         </div>
@@ -173,13 +173,13 @@ Cloning into <span class="s1">&#39;./themes/next/source/lib/pace&#39;</span>...
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/01/30/autodeploy-hexo-blog-with-travisci/">使用 Travis CI 自动部署 Hexo 博客</a></li>
+	<li><a href="/hugo-blog/2018/01/30/autodeploy-hexo-blog-with-travisci/">使用 Travis CI 自动部署 Hexo 博客</a></li>
 	
-	<li><a href="/2018/01/09/setup-hexo-next-blog/">搭建Hexo NexT主题博客</a></li>
+	<li><a href="/hugo-blog/2018/01/09/setup-hexo-next-blog/">搭建Hexo NexT主题博客</a></li>
 	
-	<li><a href="/2017/12/04/gitalk-for-next/">为NexT主题部署Gitalk评论插件</a></li>
+	<li><a href="/hugo-blog/2017/12/04/gitalk-for-next/">为NexT主题部署Gitalk评论插件</a></li>
 	
-	<li><a href="/2017/11/23/hexo-next-blog/">NexT - Elegant Theme for Hexo</a></li>
+	<li><a href="/hugo-blog/2017/11/23/hexo-next-blog/">NexT - Elegant Theme for Hexo</a></li>
 	
   </ul>
 </section>
@@ -191,12 +191,12 @@ Cloning into <span class="s1">&#39;./themes/next/source/lib/pace&#39;</span>...
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/travis-ci">Travis CI
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/travis-ci">Travis CI
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/next">NexT
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/next">NexT
                     </a>
                 </li>
                 
@@ -206,12 +206,12 @@ Cloning into <span class="s1">&#39;./themes/next/source/lib/pace&#39;</span>...
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/03/06/add-emacs-elpa-configuration/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/03/06/add-emacs-elpa-configuration/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">Add Emacs elpa configuration&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/02/01/compress-hexo-with-gulp/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/02/01/compress-hexo-with-gulp/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;使用 gulp 压缩 hexo 博客资源</div>
     </a>
     
@@ -222,7 +222,7 @@ Cloning into <span class="s1">&#39;./themes/next/source/lib/pace&#39;</span>...
         
   <div class="article-comments">
   
-  <span id="/2018/02/02/travisci-update-theme-next/" class="leancloud-visitors" data-flag-title="Travis CI 构建时自动更新 NexT 主题源码">
+  <span id="/hugo-blog/2018/02/02/travisci-update-theme-next/" class="leancloud-visitors" data-flag-title="Travis CI 构建时自动更新 NexT 主题源码">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -247,8 +247,8 @@ Cloning into <span class="s1">&#39;./themes/next/source/lib/pace&#39;</span>...
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/05/26/tcp-ip-illustrated-volume1-futures-and-performance/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/05/26/tcp-ip-illustrated-volume1-futures-and-performance/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -44,7 +44,7 @@ MathJax.Hub.Config({
 });
 </script>
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -53,18 +53,18 @@ MathJax.Hub.Config({
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -85,7 +85,7 @@ MathJax.Hub.Config({
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/05/26/tcp-ip-illustrated-volume1-futures-and-performance/" >
+                <a href="/hugo-blog/2018/05/26/tcp-ip-illustrated-volume1-futures-and-performance/" >
                     <time datetime='2018-05-26T14:48:35.000&#43;00:00' itemprop="datePublished">2018-05-26</time>
                 </a>
             </div>
@@ -98,12 +98,12 @@ MathJax.Hub.Config({
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                     
                 </div>
             </div>
@@ -112,16 +112,16 @@ MathJax.Hub.Config({
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>TCP已经在从1200 b/s的拨号SLIP链路到以太数据链路上运行了许多年。在80年代和90年代初期，以太网是运行TCP/IP最主要的数据链路方式。虽然TCP在比以太网速率高的环境（如T2电话线、FDDI及千兆比网络）中也能够正确运行，但在这些高速率环境下，TCP的某些限制就会暴露出来。</p>
-<h2 id="mtu">路径MTU发现</h2>
+<h2 id="路径mtu发现">路径MTU发现</h2>
 <p>路径MTU即当前在两个主机之间的路径上任何网络上的最小MTU。路径MTU发现在IP首部中继承并设置“不要分片（DF）”比特，来发现当前路径上的路由器是否需要对正在发送的IP数据报进行分片。如果一个待转发的IP数据报被设置DF比特，而其长度又超过了MTU，那么路由器将返回ICMP不可达的差错。</p>
 <p>TCP的路径MTU发现按如下方式进行：在连接建立时，TCP使用输出接口或对端声明的MSS中的最小MTU作为起始的报文段大小。路径MTU发现不允许TCP超过对端声明的MSS。如果对端没有指定一个MSS，则默认为536。</p>
 <p>一旦选定了起始的报文段大小，在该连接上的所有被TCP发送的IP数据报都将被设置DF比特。如果某个中间路由器需要对一个设置了DF标志的数据报进行分片，它就丢弃这个数据报，并产生一个ICMP的“不能分片”差错。</p>
 <p>如果收到这个ICMP差错，TCP就减少段大小并进行重传。如果路由器产生的是一个较新的该类ICMP差错，则报文段大小被设置为下一跳的MTU减去IP和TCP的首部长度。如果是一个较旧的该类ICMP差错，则必须尝试下一个可能的最小MTU。当由这个ICMP差错引起的重传发生时，拥塞窗口不需要变化，但要启动慢启动。</p>
 <p>由于路由可以动态变化，因此在最后一次减少路径MTU的一段时间以后，可以尝试使用一个较大的值（直到等于对端声明的MSS或输出接口MTU的最小值）。RFC 1191推荐这个时间间隔为10分钟。</p>
 <p>在对非本地目的地，默认的MSS通常为536字节，路径MTU发现可以避免在通过MTU小于576（这非常罕见）的中间链路时进行分片。对于本地目的主机，也可以避免在中间链路（如以太网）的MTU小于端点网络（如令牌环网）的情况下进行分片。但为了能使路径MTU更加有用和充分利用MTU大于576的广域网，一个实现必须停止使用为非本地目的制定的536的MTU默认值。MSS的一个较好的选择是输出接口的MTU（当然要减去IP和TCP的首部大小）。</p>
-<h3 id="heading">大分组还是小分组</h3>
+<h3 id="大分组还是小分组">大分组还是小分组</h3>
 <p>常规知识告诉我们较大的分组比较好 [Mogul 1993,15.2.8节]，因为发送较少的大分组比发送较多的小分组“花费”要少（假定分组的大小不足以引起分片，否则会引起其他方面的问题）。这些减少的花费与网络（分组首部负荷）、路由器（选路的决定）和主机（协议处理和设备中断）等有关。</p>
-<h2 id="heading-1">长肥管道</h2>
+<h2 id="长肥管道">长肥管道</h2>
 <p>我们把一个连接的容量表示为:</p>
 <p>$$capacity(b) = bandwidth(b/s) \times round - triptimes(s)$$</p>
 <p>并称之为带宽时延乘积。也可称它为两端的管道大小。</p>
@@ -134,13 +134,13 @@ MathJax.Hub.Config({
 <li>TCP对每个字节数据使用一个32 bit无符号的序号来进行标识。如果在网络中有一个被延迟一段时间的报文段，它所在的连接已被释放，而一个新的连接在这两个主机之间又建立了，怎样才能防止这样的报文段再次出现呢？IP首部中的TTL为每个IP段规定了一个生存时间的上限—255跳或255秒，看哪一个上限先达到。我们定义了最大的报文段生存时间（MSL）作为一个实现的参数来阻止这种情况的发生。推荐的MSL的值为2分钟（给出一个240秒的2MSL）。
 在长肥网络LFN上，TCP的序号会碰到一个不同的问题。由于序号空间是有限的，在已经传输了4294 967 296个字节以后序号会被重用。如果一个包含序号N字节数据的报文段在网络上被迟延并在连接仍然有效时又出现，会发生什么情况呢？这仅仅是一个相同序号N在MSL期间是否被重用的问题，也就是说，网络是否足够快以至于在不到一个MSL的时候序号就发生了回绕。在一个以太网上要发送如此多的数据通常需要60分钟左右，因此不会发生这种情况。但是在带宽增加时，这个时间将会减少：一个T3的电话线（45 Mb/s）在12分钟内会发生回绕，FDDI（100 Mb/s）为5分钟，而一个千兆比网络（1000 Mb/s）则为34秒。这时问题不再是带宽时延乘积，而在于带宽本身。</li>
 </ol>
-<h2 id="heading-2">窗口扩大选项</h2>
+<h2 id="窗口扩大选项">窗口扩大选项</h2>
 <p>窗口扩大选项使TCP的窗口定义从16 bit增加为32 bit。这并不是通过修改TCP首部来实现的，TCP首部仍然使用16 bit，而是通过定义一个选项实现对16 bit的扩大操作(scaling operation)来完成的。于是TCP在内部将实际的窗口大小维持为32 bit的值。</p>
 <p>这个选项只能够出现在一个SYN报文段中，因此当连接建立起来后，在每个方向的扩大因子是固定的。为了使用窗口扩大，两端必须在它们的SYN报文段中发送这个选项。主动建立连接的一方在其SYN中发送这个选项，但是被动建立连接的一方只能够在收到带有这个选项的SYN之后才可以发送这个选项。每个方向上的扩大因子可以不同。</p>
 <p>如果主动连接的一方发送一个非零的扩大因子，但是没有从另一端收到一个窗口扩大选项，它就将发送和接收的移位记数器置为0。这就允许较新的系统能够与较旧的、不理解新选项的系统进行互操作。</p>
 <p>假定我们正在使用窗口扩大选项，发送移位记数为S，而接收移位记数则为R。于是我们从另一端收到的每一个16 bit的通告窗口将被左移R位以获得实际的通告窗口大小。每次当我们向对方发送一个窗口通告的时候，我们将实际的32 bit窗口大小右移S比特，然后用它来替换TCP首部中的16 bit的值。</p>
 <p>TCP根据接收缓存的大小自动选择移位计数。这个大小是由系统设置的，但是通常向应用进程提供了修改途径。</p>
-<h2 id="heading-3">时间戳选项</h2>
+<h2 id="时间戳选项">时间戳选项</h2>
 <p>时间戳选项使发送方在每个报文段中放置一个时间戳值。接收方在确认中返回这个数值，从而允许发送方为每一个收到的ACK计算RTT（我们必须说“每一个收到的ACK”而不是“每一个报文段”，是因为TCP通常用一个ACK来确认多个报文段）。我们提到过目前许多实现为每一个窗口只计算一个RTT，对于包含8个报文段的窗口而言这是正确的。然而，较大的窗口大小则需要进行更好的RTT计算。</p>
 <p>发送方在时间戳选项的第一个字段中防止一个32bit的值，接收方在应答字段中回显这个数值。包含这个选项的TCP首部长度将从正常的20字节增加为32字节。</p>
 <p>时间戳是一个单调递增的值。由于接收方只需要回显收到的内容，因此不需要关注时间戳单元是什么。这个选项不需要在两个主机之间进行任何形式的时钟同步。RFC 1323推荐在1毫秒和1秒之间将时间戳的值加1。</p>
@@ -158,11 +158,11 @@ MathJax.Hub.Config({
 <li>如果一个收到的报文段虽然在窗口范围内但同时又是失序，这就表明前面的报文段已经丢失。当那个丢失的报文段到达时，它的时间戳（而不是失序的报文段的时间戳）将被回显。例如，假定有3个各包含1024字节数据的报文段，按如下顺序接收：包含字节1~1024的报文段1，包含字节2049~4072的报文段3和包含字节1025~2048的报文段2。返回的ACK应该是带有报文段1的时间戳的ACK 1025（一个正常的所期望的对数据的ACK）、带有报文段1的时间戳的ACK 1025（一个重复的、响应位于窗口内但却是失序的报文段的ACK），然后是带有报文段2的时间戳的ACK 3073（不是报文段3中的较后的时间戳）。这与当报文段丢失时的对RTT估计过高具有同样的效果，但这比估计过低要好些。而且，如果最后的ACK含有来自报文段3的时间戳，它可以包括重复的ACK返回和报文段2被重传所需要的时间，或者可以包括发送方的报文段2的重传超时定时器到期的时间。无论在哪一种情况下，回显报文段3的时间戳将引起发送方的RTT计算出现偏差。</li>
 </ol>
 <p>尽管时间戳选项能够更好地计算RTT，它还为发送方提供了一种方法，以避免接收到旧的报文段，并认为它们是现在的数据的一部分。</p>
-<h2 id="paws">PAWS：防止回绕的序号</h2>
+<h2 id="paws防止回绕的序号">PAWS：防止回绕的序号</h2>
 <p>32 bit的序号在高速连接中很容易发生回绕。</p>
 <p>可以将时间戳视为序列号的一个32 bit的扩展。</p>
 <p>PAWS算法不需要在发送方和接收方之间进行任何形式的时间同步。接收方所需要的就是时间戳的值应该单调递增，并且每个窗口至少增加1。</p>
-<h2 id="ttcptcp">T/TCP：为事务用的TCP扩展</h2>
+<h2 id="ttcp为事务用的tcp扩展">T/TCP：为事务用的TCP扩展</h2>
 <p>TCP提供的是一种虚电路方式的运输服务。一个连接的生存时间包括三个不同的阶段：建立、数据传输和终止。这种虚电路服务非常适合诸如远程注册和文件传输之类的应用。</p>
 <p>但是，还有出现其他的应用进程被设计成使用事务服务。一个事务(transaction)就是符合下面这些特征的一个客户请求及其随后的服务器响应。</p>
 <ol>
@@ -204,7 +204,7 @@ MathJax.Hub.Config({
 </ul>
 <p>T/TCP的特征中吸引人的地方在于它对现有协议进行了最小的修改，同时又兼容了现有的实现。它还利用了TCP中现有的工程特征（动态超时和重传、拥塞避免等），而不是迫使应用进程来处理这些问题。</p>
 <p>一个可作为替换的事务协议是通用报文事务协议VMTP（Versatile Message Transaction Protocol），该协议在RFC 1045 [Cheriton 1988]中进行了描述。与T/TCP是现有协议的一个小的扩充不同，VMTP是使用IP的一个完整的运输层。VMTP处理差错检测、重传和重复压缩。它还支持多播通信。</p>
-<h2 id="tcp">TCP的性能</h2>
+<h2 id="tcp的性能">TCP的性能</h2>
 <p>下面这些实际限制适用于任何的实际情况[Borman 1991]。</p>
 <ol>
 <li>不能比最慢的链路运行得更快。</li>
@@ -219,17 +219,17 @@ MathJax.Hub.Config({
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#mtu">路径MTU发现</a>
+    <li><a href="#路径mtu发现">路径MTU发现</a>
       <ul>
-        <li><a href="#heading">大分组还是小分组</a></li>
+        <li><a href="#大分组还是小分组">大分组还是小分组</a></li>
       </ul>
     </li>
-    <li><a href="#heading-1">长肥管道</a></li>
-    <li><a href="#heading-2">窗口扩大选项</a></li>
-    <li><a href="#heading-3">时间戳选项</a></li>
-    <li><a href="#paws">PAWS：防止回绕的序号</a></li>
-    <li><a href="#ttcptcp">T/TCP：为事务用的TCP扩展</a></li>
-    <li><a href="#tcp">TCP的性能</a></li>
+    <li><a href="#长肥管道">长肥管道</a></li>
+    <li><a href="#窗口扩大选项">窗口扩大选项</a></li>
+    <li><a href="#时间戳选项">时间戳选项</a></li>
+    <li><a href="#paws防止回绕的序号">PAWS：防止回绕的序号</a></li>
+    <li><a href="#ttcp为事务用的tcp扩展">T/TCP：为事务用的TCP扩展</a></li>
+    <li><a href="#tcp的性能">TCP的性能</a></li>
   </ul>
 </nav>
         </div>
@@ -245,15 +245,15 @@ MathJax.Hub.Config({
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/">TCP/IP 详解(卷一) TCP的保活定时器</a></li>
+	<li><a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-keepalive-timer/">TCP/IP 详解(卷一) TCP的保活定时器</a></li>
 	
-	<li><a href="/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/">TCP/IP 详解(卷一) TCP的坚持定时器</a></li>
+	<li><a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-persist-timer/">TCP/IP 详解(卷一) TCP的坚持定时器</a></li>
 	
-	<li><a href="/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/">TCP/IP 详解(卷一) TCP的超时与重传</a></li>
+	<li><a href="/hugo-blog/2018/05/25/tcp-ip-illustrated-volume1-timeout-and-retransmission/">TCP/IP 详解(卷一) TCP的超时与重传</a></li>
 	
-	<li><a href="/2018/05/21/tcp-ip-illustrated-volume1-bulk-data-flow/">TCP/IP 详解(卷一) TCP的成块数据流</a></li>
+	<li><a href="/hugo-blog/2018/05/21/tcp-ip-illustrated-volume1-bulk-data-flow/">TCP/IP 详解(卷一) TCP的成块数据流</a></li>
 	
-	<li><a href="/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/">TCP/IP 详解(卷一) TCP的交互数据流</a></li>
+	<li><a href="/hugo-blog/2018/05/21/tcp-ip-illustrated-volume1-interactive-data-flow/">TCP/IP 详解(卷一) TCP的交互数据流</a></li>
 	
   </ul>
 </section>
@@ -265,7 +265,7 @@ MathJax.Hub.Config({
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/tcp">TCP
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/tcp">TCP
                     </a>
                 </li>
                 
@@ -275,12 +275,12 @@ MathJax.Hub.Config({
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/05/31/maimi-feihua/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/31/maimi-feihua/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">卖米&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/05/25/mathjax-in-markdown-blog/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/25/mathjax-in-markdown-blog/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;Markdown 博客中使用 MathJax 数学公式</div>
     </a>
     
@@ -291,7 +291,7 @@ MathJax.Hub.Config({
         
   <div class="article-comments">
   
-  <span id="/2018/05/26/tcp-ip-illustrated-volume1-futures-and-performance/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) TCP的未来和性能">
+  <span id="/hugo-blog/2018/05/26/tcp-ip-illustrated-volume1-futures-and-performance/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) TCP的未来和性能">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -316,8 +316,8 @@ MathJax.Hub.Config({
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

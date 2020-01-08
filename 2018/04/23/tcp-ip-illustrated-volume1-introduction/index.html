@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/04/23/tcp-ip-illustrated-volume1-introduction/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/04/23/tcp-ip-illustrated-volume1-introduction/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/04/23/tcp-ip-illustrated-volume1-introduction/" >
+                <a href="/hugo-blog/2018/04/23/tcp-ip-illustrated-volume1-introduction/" >
                     <time datetime='2018-04-23T11:23:35.000&#43;00:00' itemprop="datePublished">2018-04-23</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/tcp/ip">TCP/IP</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/tcp/ip">TCP/IP</a>
                     
                 </div>
             </div>
@@ -96,7 +96,7 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="tcpip-">TCP/IP 的分层</h2>
+            <h2 id="tcpip-的分层">TCP/IP 的分层</h2>
 <p>TCP/IP 通常被认为是一个四层协议系统：</p>
 <ol>
 <li>链路层：也称作数据链路层或网络接口层，通常包括操作系统中的设备驱动程序和计算机中对应的网络接口卡。</li>
@@ -105,10 +105,10 @@
 <li>应用层：负责处理特定的应用程序细节。</li>
 </ol>
 <p><img src="/images/tcp-ip/tcp-ip-layers.jpg" alt=""></p>
-<h2 id="heading">封装</h2>
+<h2 id="封装">封装</h2>
 <p>当应用程序用 TCP 传送数据时，数据被送入协议栈中，然后逐个通过每一层直到被当作一串比特流送入网络。其中每一层对收到的数据都要增加一些首部信息（有时还要增加尾部信息）。</p>
 <p><img src="/images/tcp-ip/tcp-ip-multiplexing.jpg" alt=""></p>
-<h2 id="heading-1">分用</h2>
+<h2 id="分用">分用</h2>
 <p>当目的主机收到一个以太网数据帧时，数据就开始从协议栈中由底向上升，同时去掉各层协议加上的报文首部。每层协议盒都要去检查报文首部中的协议标识，以确定接收数据的上层协议。</p>
 <p><img src="/images/tcp-ip/tcp-ip-demultiplexing.jpg" alt=""></p>
         </div>
@@ -119,9 +119,9 @@
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#tcpip-">TCP/IP 的分层</a></li>
-    <li><a href="#heading">封装</a></li>
-    <li><a href="#heading-1">分用</a></li>
+    <li><a href="#tcpip-的分层">TCP/IP 的分层</a></li>
+    <li><a href="#封装">封装</a></li>
+    <li><a href="#分用">分用</a></li>
   </ul>
 </nav>
         </div>
@@ -139,12 +139,12 @@
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/04/24/tcp-ip-illustrated-volume1-link-layer/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/24/tcp-ip-illustrated-volume1-link-layer/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">TCP/IP 详解(卷一) 链路层&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/04/23/design-pattern-command-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/23/design-pattern-command-pattern/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;命令模式</div>
     </a>
     
@@ -155,7 +155,7 @@
         
   <div class="article-comments">
   
-  <span id="/2018/04/23/tcp-ip-illustrated-volume1-introduction/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) 概述">
+  <span id="/hugo-blog/2018/04/23/tcp-ip-illustrated-volume1-introduction/" class="leancloud-visitors" data-flag-title="TCP/IP 详解(卷一) 概述">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -180,8 +180,8 @@
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

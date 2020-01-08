@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/03/25/design-pattern-abstract-factory-pattern/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/03/25/design-pattern-abstract-factory-pattern/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/03/25/design-pattern-abstract-factory-pattern/" >
+                <a href="/hugo-blog/2018/03/25/design-pattern-abstract-factory-pattern/" >
                     <time datetime='2018-03-25T09:51:57.000&#43;00:00' itemprop="datePublished">2018-03-25</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/design-pattern">Design Pattern</a>
                     
                 </div>
             </div>
@@ -98,7 +98,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p>抽象工厂模式（Abstract Factory Pattern）是围绕一个超级工厂创建其他工厂。该超级工厂又称为其他工厂的工厂。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
 在抽象工厂模式中，接口是负责创建一个相关对象的工厂，不需要显式指定它们的类。每个生成的工厂都能按照工厂模式提供对象。</p>
-<h2 id="heading">介绍</h2>
+<h2 id="介绍">介绍</h2>
 <p>**意图：**提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。
 **主要解决：**主要解决接口选择的问题。
 **何时使用：**系统的产品有多于一个的产品族，而系统只消费其中某一族的产品。
@@ -109,17 +109,17 @@
 **缺点：**产品族扩展非常困难，要增加一个系列的某一产品，既要在抽象的 Creator 里加代码，又要在具体的里面加代码。
 <strong>使用场景：</strong> 1、QQ 换皮肤，一整套一起换。 2、生成不同操作系统的程序。
 **注意事项：**产品族难扩展，产品等级易扩展。</p>
-<h2 id="heading-1">实现</h2>
+<h2 id="实现">实现</h2>
 <p>我们将创建 Shape 和 Color 接口和实现这些接口的实体类。下一步是创建抽象工厂类 AbstractFactory。接着定义工厂类 ShapeFactory 和 ColorFactory，这两个工厂类都是扩展了 AbstractFactory。然后创建一个工厂创造器/生成器类 FactoryProducer。
 AbstractFactoryPatternDemo，我们的演示类使用 FactoryProducer 来获取 AbstractFactory 对象。它将向 AbstractFactory 传递形状信息 Shape（CIRCLE / RECTANGLE / SQUARE），以便获取它所需对象的类型。同时它还向 AbstractFactory 传递颜色信息 Color（RED / GREEN / BLUE），以便获取它所需对象的类型。</p>
 <p><img src="/images/design-pattern/abstractfactory_pattern_uml_diagram.jpg" alt=""></p>
-<h3 id="-1">步骤 1</h3>
+<h3 id="步骤-1">步骤 1</h3>
 <p>为形状创建一个接口。
 <em>Shape.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Shape</span> <span class="o">{</span>
    <span class="kt">void</span> <span class="nf">draw</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-2">步骤 2</h3>
+</code></pre></div><h3 id="步骤-2">步骤 2</h3>
 <p>创建实现接口的实体类。
 <em>Rectangle.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="o">{</span>
@@ -145,13 +145,13 @@ AbstractFactoryPatternDemo，我们的演示类使用 FactoryProducer 来获取 
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Inside Circle::draw() method.&#34;</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-3">步骤 3</h3>
+</code></pre></div><h3 id="步骤-3">步骤 3</h3>
 <p>为颜色创建一个接口。</p>
 <p><em>Color.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Color</span> <span class="o">{</span>
    <span class="kt">void</span> <span class="nf">fill</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="4">步骤4</h3>
+</code></pre></div><h3 id="步骤4">步骤4</h3>
 <p>创建实现接口的实体类。
 <em>Red.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Red</span> <span class="kd">implements</span> <span class="n">Color</span> <span class="o">{</span>
@@ -177,14 +177,14 @@ AbstractFactoryPatternDemo，我们的演示类使用 FactoryProducer 来获取 
       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Inside Blue::fill() method.&#34;</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-5">步骤 5</h3>
+</code></pre></div><h3 id="步骤-5">步骤 5</h3>
 <p>为 Color 和 Shape 对象创建抽象类来获取工厂。
 <em>AbstractFactory.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">AbstractFactory</span> <span class="o">{</span>
    <span class="kd">abstract</span> <span class="n">Color</span> <span class="nf">getColor</span><span class="o">(</span><span class="n">String</span> <span class="n">color</span><span class="o">)</span><span class="o">;</span>
    <span class="kd">abstract</span> <span class="n">Shape</span> <span class="nf">getShape</span><span class="o">(</span><span class="n">String</span> <span class="n">shape</span><span class="o">)</span> <span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-6">步骤 6</h3>
+</code></pre></div><h3 id="步骤-6">步骤 6</h3>
 <p>创建扩展了 AbstractFactory 的工厂类，基于给定的信息生成实体类的对象。
 <em>ShapeFactory.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ShapeFactory</span> <span class="kd">extends</span> <span class="n">AbstractFactory</span> <span class="o">{</span>
@@ -232,7 +232,7 @@ AbstractFactoryPatternDemo，我们的演示类使用 FactoryProducer 来获取 
       <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-7">步骤 7</h3>
+</code></pre></div><h3 id="步骤-7">步骤 7</h3>
 <p>创建一个工厂创造器/生成器类，通过传递形状或颜色信息来获取工厂。
 <em>FactoryProducer.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FactoryProducer</span> <span class="o">{</span>
@@ -245,7 +245,7 @@ AbstractFactoryPatternDemo，我们的演示类使用 FactoryProducer 来获取 
       <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-8">步骤 8</h3>
+</code></pre></div><h3 id="步骤-8">步骤 8</h3>
 <p>使用 FactoryProducer 来获取 AbstractFactory，通过传递类型信息来获取实体类的对象。
 <em>AbstractFactoryPatternDemo.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AbstractFactoryPatternDemo</span> <span class="o">{</span>
@@ -294,7 +294,7 @@ AbstractFactoryPatternDemo，我们的演示类使用 FactoryProducer 来获取 
 </span><span class="c1"></span>      <span class="n">color3</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-9">步骤 9</h3>
+</code></pre></div><h3 id="步骤-9">步骤 9</h3>
 <p>验证输出。</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Inside</span> <span class="n">Circle</span><span class="o">:</span><span class="o">:</span><span class="n">draw</span><span class="o">(</span><span class="o">)</span> <span class="n">method</span><span class="o">.</span>
 <span class="n">Inside</span> <span class="n">Rectangle</span><span class="o">:</span><span class="o">:</span><span class="n">draw</span><span class="o">(</span><span class="o">)</span> <span class="n">method</span><span class="o">.</span>
@@ -311,18 +311,18 @@ AbstractFactoryPatternDemo，我们的演示类使用 FactoryProducer 来获取 
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">介绍</a></li>
-    <li><a href="#heading-1">实现</a>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#实现">实现</a>
       <ul>
-        <li><a href="#-1">步骤 1</a></li>
-        <li><a href="#-2">步骤 2</a></li>
-        <li><a href="#-3">步骤 3</a></li>
-        <li><a href="#4">步骤4</a></li>
-        <li><a href="#-5">步骤 5</a></li>
-        <li><a href="#-6">步骤 6</a></li>
-        <li><a href="#-7">步骤 7</a></li>
-        <li><a href="#-8">步骤 8</a></li>
-        <li><a href="#-9">步骤 9</a></li>
+        <li><a href="#步骤-1">步骤 1</a></li>
+        <li><a href="#步骤-2">步骤 2</a></li>
+        <li><a href="#步骤-3">步骤 3</a></li>
+        <li><a href="#步骤4">步骤4</a></li>
+        <li><a href="#步骤-5">步骤 5</a></li>
+        <li><a href="#步骤-6">步骤 6</a></li>
+        <li><a href="#步骤-7">步骤 7</a></li>
+        <li><a href="#步骤-8">步骤 8</a></li>
+        <li><a href="#步骤-9">步骤 9</a></li>
       </ul>
     </li>
   </ul>
@@ -340,7 +340,7 @@ AbstractFactoryPatternDemo，我们的演示类使用 FactoryProducer 来获取 
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/03/22/design-pattern-factory-pattern/">工厂模式</a></li>
+	<li><a href="/hugo-blog/2018/03/22/design-pattern-factory-pattern/">工厂模式</a></li>
 	
   </ul>
 </section>
@@ -352,7 +352,7 @@ AbstractFactoryPatternDemo，我们的演示类使用 FactoryProducer 来获取 
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">创建型模式
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">创建型模式
                     </a>
                 </li>
                 
@@ -362,12 +362,12 @@ AbstractFactoryPatternDemo，我们的演示类使用 FactoryProducer 来获取 
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/03/26/chuck-emacs-configuration/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/03/26/chuck-emacs-configuration/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">Chuck&#39;s Emacs Configuration&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/03/22/design-pattern-factory-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/03/22/design-pattern-factory-pattern/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;工厂模式</div>
     </a>
     
@@ -378,7 +378,7 @@ AbstractFactoryPatternDemo，我们的演示类使用 FactoryProducer 来获取 
         
   <div class="article-comments">
   
-  <span id="/2018/03/25/design-pattern-abstract-factory-pattern/" class="leancloud-visitors" data-flag-title="抽象工厂模式">
+  <span id="/hugo-blog/2018/03/25/design-pattern-abstract-factory-pattern/" class="leancloud-visitors" data-flag-title="抽象工厂模式">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -403,8 +403,8 @@ AbstractFactoryPatternDemo，我们的演示类使用 FactoryProducer 来获取 
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

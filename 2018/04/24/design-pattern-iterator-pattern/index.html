@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/04/24/design-pattern-iterator-pattern/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/04/24/design-pattern-iterator-pattern/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/04/24/design-pattern-iterator-pattern/" >
+                <a href="/hugo-blog/2018/04/24/design-pattern-iterator-pattern/" >
                     <time datetime='2018-04-24T15:38:52.000&#43;00:00' itemprop="datePublished">2018-04-24</time>
                 </a>
             </div>
@@ -83,12 +83,12 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/study">Study</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/study">Study</a>
                     
                     
                     <span>&gt;</span>
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/design-pattern">Design Pattern</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/design-pattern">Design Pattern</a>
                     
                 </div>
             </div>
@@ -98,7 +98,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p>迭代器模式（Iterator Pattern）是 Java 和 .Net 编程环境中非常常用的设计模式。这种模式用于顺序访问集合对象的元素，不需要知道集合对象的底层表示。
 迭代器模式属于行为型模式。</p>
-<h2 id="heading">介绍</h2>
+<h2 id="介绍-">介绍</h2>
 <p>意图：提供一种方法顺序访问一个聚合对象中各个元素, 而又无须暴露该对象的内部表示。
 主要解决：不同的方式来遍历整个整合对象。
 何时使用：遍历一个聚合对象。
@@ -109,11 +109,11 @@
 缺点：由于迭代器模式将存储数据和遍历数据的职责分离，增加新的聚合类需要对应增加新的迭代器类，类的个数成对增加，这在一定程度上增加了系统的复杂性。
 使用场景： 1、访问一个聚合对象的内容而无须暴露它的内部表示。 2、需要为聚合对象提供多种遍历方式。 3、为遍历不同的聚合结构提供一个统一的接口。
 注意事项：迭代器模式就是分离了集合对象的遍历行为，抽象出一个迭代器类来负责，这样既可以做到不暴露集合的内部结构，又可让外部代码透明地访问集合内部的数据。</p>
-<h2 id="heading-1">实现</h2>
+<h2 id="实现-">实现</h2>
 <p>我们将创建一个叙述导航方法的 Iterator 接口和一个返回迭代器的 Container 接口。实现了 Container 接口的实体类将负责实现 Iterator 接口。
 IteratorPatternDemo，我们的演示类使用实体类 NamesRepository 来打印 NamesRepository 中存储为集合的 Names。</p>
 <p><img src="/images/design-pattern/iterator_pattern_uml_diagram.jpg" alt=""></p>
-<h3 id="-1">步骤 1</h3>
+<h3 id="步骤-1-">步骤 1</h3>
 <p>创建接口。
 <em>Iterator.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Iterator</span> <span class="o">{</span>
@@ -124,7 +124,7 @@ IteratorPatternDemo，我们的演示类使用实体类 NamesRepository 来打�
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Container</span> <span class="o">{</span>
    <span class="kd">public</span> <span class="n">Iterator</span> <span class="nf">getIterator</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-2">步骤 2</h3>
+</code></pre></div><h3 id="步骤-2-">步骤 2</h3>
 <p>创建实现了 Container 接口的实体类。该类有实现了 Iterator 接口的内部类 NameIterator。
 <em>NameRepository.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NameRepository</span> <span class="kd">implements</span> <span class="n">Container</span> <span class="o">{</span>
@@ -156,7 +156,7 @@ IteratorPatternDemo，我们的演示类使用实体类 NamesRepository 来打�
       <span class="o">}</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-3">步骤 3</h3>
+</code></pre></div><h3 id="步骤-3-">步骤 3</h3>
 <p>使用 NameRepository 来获取迭代器，并打印名字。
 <em>IteratorPatternDemo.java</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IteratorPatternDemo</span> <span class="o">{</span>
@@ -170,7 +170,7 @@ IteratorPatternDemo，我们的演示类使用实体类 NamesRepository 来打�
       <span class="o">}</span>
    <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div><h3 id="-4">步骤 4</h3>
+</code></pre></div><h3 id="步骤-4-">步骤 4</h3>
 <p>验证输出。</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Name</span> <span class="o">:</span> <span class="n">Robert</span>
 <span class="n">Name</span> <span class="o">:</span> <span class="n">John</span>
@@ -185,13 +185,13 @@ IteratorPatternDemo，我们的演示类使用实体类 NamesRepository 来打�
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">介绍</a></li>
-    <li><a href="#heading-1">实现</a>
+    <li><a href="#介绍-">介绍</a></li>
+    <li><a href="#实现-">实现</a>
       <ul>
-        <li><a href="#-1">步骤 1</a></li>
-        <li><a href="#-2">步骤 2</a></li>
-        <li><a href="#-3">步骤 3</a></li>
-        <li><a href="#-4">步骤 4</a></li>
+        <li><a href="#步骤-1-">步骤 1</a></li>
+        <li><a href="#步骤-2-">步骤 2</a></li>
+        <li><a href="#步骤-3-">步骤 3</a></li>
+        <li><a href="#步骤-4-">步骤 4</a></li>
       </ul>
     </li>
   </ul>
@@ -209,11 +209,11 @@ IteratorPatternDemo，我们的演示类使用实体类 NamesRepository 来打�
   <h3>See Also</h3>
   <ul>
 	
-	<li><a href="/2018/04/24/design-pattern-interpreter-pattern/">解释器模式</a></li>
+	<li><a href="/hugo-blog/2018/04/24/design-pattern-interpreter-pattern/">解释器模式</a></li>
 	
-	<li><a href="/2018/04/23/design-pattern-command-pattern/">命令模式</a></li>
+	<li><a href="/hugo-blog/2018/04/23/design-pattern-command-pattern/">命令模式</a></li>
 	
-	<li><a href="/2018/04/21/design-pattern-chain-of-responsibility-pattern/">责任链模式</a></li>
+	<li><a href="/hugo-blog/2018/04/21/design-pattern-chain-of-responsibility-pattern/">责任链模式</a></li>
 	
   </ul>
 </section>
@@ -225,7 +225,7 @@ IteratorPatternDemo，我们的演示类使用实体类 NamesRepository 来打�
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">行为型模式
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F">行为型模式
                     </a>
                 </li>
                 
@@ -235,12 +235,12 @@ IteratorPatternDemo，我们的演示类使用实体类 NamesRepository 来打�
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/04/24/design-pattern-mediator-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/24/design-pattern-mediator-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">中介者模式&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/04/24/design-pattern-interpreter-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/04/24/design-pattern-interpreter-pattern/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;解释器模式</div>
     </a>
     
@@ -251,7 +251,7 @@ IteratorPatternDemo，我们的演示类使用实体类 NamesRepository 来打�
         
   <div class="article-comments">
   
-  <span id="/2018/04/24/design-pattern-iterator-pattern/" class="leancloud-visitors" data-flag-title="迭代器模式">
+  <span id="/hugo-blog/2018/04/24/design-pattern-iterator-pattern/" class="leancloud-visitors" data-flag-title="迭代器模式">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -276,8 +276,8 @@ IteratorPatternDemo，我们的演示类使用实体类 NamesRepository 来打�
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>

@@ -14,14 +14,14 @@
     <meta property="og:description" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="http://xuchengpeng.com/2018/05/14/markdown-complex-table/" />
+    <meta property="og:url" content="http://xuchengpeng.com/hugo-blog/2018/05/14/markdown-complex-table/" />
     
 
     <link href="" rel="alternate" type="application/rss+xml" title="Chuck&amp;Lucia" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/style.css">
-    <link rel="stylesheet" href="http://xuchengpeng.com/css/syntax.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/style.css">
+    <link rel="stylesheet" href="http://xuchengpeng.com/hugo-blog/css/syntax.css">
     
     
     
@@ -29,7 +29,7 @@
     
     
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.63.0-DEV" />
 </head>
 
 <body>
@@ -38,18 +38,18 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://xuchengpeng.com/">Chuck&amp;Lucia</a>
+            <a id="logo" class="logo-text" href="http://xuchengpeng.com/hugo-blog/">Chuck&amp;Lucia</a>
             <nav id="main-nav">
                 
-                <a class="main-nav-link" href="/archives/">归档</a>
+                <a class="main-nav-link" href="/hugo-blog/archives/">归档</a>
                 
-                <a class="main-nav-link" href="/categories/">分类</a>
+                <a class="main-nav-link" href="/hugo-blog/categories/">分类</a>
                 
-                <a class="main-nav-link" href="/tags/">标签</a>
+                <a class="main-nav-link" href="/hugo-blog/tags/">标签</a>
                 
-                <a class="main-nav-link" href="/guestbook/">留言</a>
+                <a class="main-nav-link" href="/hugo-blog/guestbook/">留言</a>
                 
-                <a class="main-nav-link" href="/about/">关于</a>
+                <a class="main-nav-link" href="/hugo-blog/about/">关于</a>
                 
             </nav>
             <nav id="sub-nav">
@@ -70,7 +70,7 @@
         
         <div class="article-meta">
             <div class="article-date">
-                <a href="/2018/05/14/markdown-complex-table/" >
+                <a href="/hugo-blog/2018/05/14/markdown-complex-table/" >
                     <time datetime='2018-05-14T19:46:01.000&#43;00:00' itemprop="datePublished">2018-05-14</time>
                 </a>
             </div>
@@ -83,7 +83,7 @@
                 <div class="article-category">
                     
                     
-                    <a class="article-category-link" href="http://xuchengpeng.com//categories/technology">Technology</a>
+                    <a class="article-category-link" href="http://xuchengpeng.com/hugo-blog//categories/technology">Technology</a>
                     
                 </div>
             </div>
@@ -98,7 +98,7 @@
 <li>纵向单元格的合并：基于rowspan属性，即使一个单元格占多行的空间。</li>
 </ul>
 <p>可以从Word或者Excel中复制表格，通过网站 <a href="http://pressbin.com/tools/excel_to_html_table/index.html">No-Cruft Excel to HTML Table Converter</a> 转换获得html代码。</p>
-<h2 id="heading">合并行</h2>
+<h2 id="合并行">合并行</h2>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">table</span><span class="p"></span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>列一<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
@@ -113,7 +113,7 @@
 <span class="p">&lt;</span><span class="p">/</span><span class="nt">table</span><span class="p">&gt;</span>
 </code></pre></div><p>显示效果：</p>
 <!-- raw HTML omitted -->
-<h2 id="heading-1">合并列</h2>
+<h2 id="合并列">合并列</h2>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">table</span><span class="p"></span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>列一<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
@@ -129,7 +129,7 @@
 <span class="p">&lt;</span><span class="p">/</span><span class="nt">table</span><span class="p">&gt;</span>
 </code></pre></div><p>显示效果：</p>
 <!-- raw HTML omitted -->
-<h2 id="heading-2">合并行列</h2>
+<h2 id="合并行列">合并行列</h2>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">table</span><span class="p"></span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">tr</span><span class="p"></span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">td</span><span class="p"></span><span class="p">&gt;</span>列一<span class="p">&lt;</span><span class="p">/</span><span class="nt">td</span><span class="p">&gt;</span>
@@ -160,9 +160,9 @@
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">合并行</a></li>
-    <li><a href="#heading-1">合并列</a></li>
-    <li><a href="#heading-2">合并行列</a></li>
+    <li><a href="#合并行">合并行</a></li>
+    <li><a href="#合并列">合并列</a></li>
+    <li><a href="#合并行列">合并行列</a></li>
   </ul>
 </nav>
         </div>
@@ -181,7 +181,7 @@
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://xuchengpeng.com//tags/markdown">Markdown
+                    <a class="article-tag-list-link" href="http://xuchengpeng.com/hugo-blog//tags/markdown">Markdown
                     </a>
                 </li>
                 
@@ -191,12 +191,12 @@
     </div>
     <nav id="article-nav">
     
-    <a href="/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/15/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/" id="article-nav-newer" class="article-nav-link-wrap">
         <div class="article-nav-title">TCP/IP 详解(卷一) TCP：传输控制协议&nbsp;<span>&gt;</span></div>
     </a>
     
     
-    <a href="/2018/05/14/tcp-ip-illustrated-volume1-bootp/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/hugo-blog/2018/05/14/tcp-ip-illustrated-volume1-bootp/" id="article-nav-older" class="article-nav-link-wrap">
         <div class="article-nav-title"><span>&lt;</span>&nbsp;TCP/IP 详解(卷一) BOOTP：引导程序协议</div>
     </a>
     
@@ -207,7 +207,7 @@
         
   <div class="article-comments">
   
-  <span id="/2018/05/14/markdown-complex-table/" class="leancloud-visitors" data-flag-title="Markdown 复杂表格">
+  <span id="/hugo-blog/2018/05/14/markdown-complex-table/" class="leancloud-visitors" data-flag-title="Markdown 复杂表格">
     <span class="post-meta-item-text">文章阅读量 </span>
     <span class="leancloud-visitors-count">0</span>
   </span>
@@ -232,8 +232,8 @@
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 Chuck&amp;Lucia&nbsp;
-            <a href="http://xuchengpeng.com/index.xml" type="application/rss+xml" target="_blank" title="RSS">
+            &copy; 2020 Chuck&amp;Lucia&nbsp;
+            <a href="http://xuchengpeng.com/hugo-blog/index.xml" type="application/rss+xml" target="_blank" title="RSS">
                 <i class="fas fa-rss"></i>
             </a>&nbsp;
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
