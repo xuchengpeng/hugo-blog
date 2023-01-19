@@ -1,0 +1,22 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  unix-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out hugo-blog
+        uses: actions/checkout@v2
+      - name: Checkout PaperMod
+        run: git clone https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+      - name: Delete .git
+        run: rm -rf themes/PaperMod/.git
+      - name: Add PaperMod
+        run: git config user.name "xuchengpeng" && git config user.email "330476629@qq.com" && git add . && git commit -m "add PaperMod d3d90be"
+      - name: Upload
+        run: git push
