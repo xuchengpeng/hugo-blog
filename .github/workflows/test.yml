@@ -12,11 +12,15 @@ jobs:
     steps:
       - name: Check out hugo-blog
         uses: actions/checkout@v2
+      - name: Config git
+        run: git config user.name "xuchengpeng" && git config user.email "330476629@qq.com"
       - name: Delete All Themes
         run: rm -rf themes/PaperMod themes/minos themes/whiteplain
+      - name: Delete commit
+        run: git add . && git commit -m "delete all themes"
       - name: Add PaperMod
         run: git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
       - name: Add PaperMod
-        run: git config user.name "xuchengpeng" && git config user.email "330476629@qq.com" && git add . && git commit -m "add PaperMod submodule"
+        run:  git add . && git commit -m "add PaperMod submodule"
       - name: Upload
         run: git push
