@@ -4,12 +4,17 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   unix-test:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
       - name: Check out hugo-blog
         uses: actions/checkout@v2
       - name: Config git
@@ -18,3 +23,15 @@ jobs:
         run: git submodule update --init --recursive
       - name: Update submodule
         run: git submodule update --remote --merge
+      - name: Custom theme
+        run: cp custom/* themes/PaperMod/layouts/partials
+      - name: Build
+        run: hugo --minify
+      - name: Create cname file
+        run: echo 'xuchengpeng.github.io' > public/CNAME
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
