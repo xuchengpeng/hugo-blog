@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>TCP on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/tcp/</link>
+    <description>Recent content in TCP on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 26 May 2018 14:48:35 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP/IP 详解(卷一) TCP的未来和性能</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-futures-and-performance/</link>
+      <pubDate>Sat, 26 May 2018 14:48:35 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-futures-and-performance/</guid>
+      <description>&lt;p&gt;TCP已经在从1200 b/s的拨号SLIP链路到以太数据链路上运行了许多年。在80年代和90年代初期，以太网是运行TCP/IP最主要的数据链路方式。虽然TCP在比以太网速率高的环境（如T2电话线、FDDI及千兆比网络）中也能够正确运行，但在这些高速率环境下，TCP的某些限制就会暴露出来。&lt;/p&gt;
+&lt;h2 id=&#34;路径mtu发现&#34;&gt;路径MTU发现&lt;/h2&gt;
+&lt;p&gt;路径MTU即当前在两个主机之间的路径上任何网络上的最小MTU。路径MTU发现在IP首部中继承并设置“不要分片（DF）”比特，来发现当前路径上的路由器是否需要对正在发送的IP数据报进行分片。如果一个待转发的IP数据报被设置DF比特，而其长度又超过了MTU，那么路由器将返回ICMP不可达的差错。&lt;/p&gt;
+&lt;p&gt;TCP的路径MTU发现按如下方式进行：在连接建立时，TCP使用输出接口或对端声明的MSS中的最小MTU作为起始的报文段大小。路径MTU发现不允许TCP超过对端声明的MSS。如果对端没有指定一个MSS，则默认为536。&lt;/p&gt;
+&lt;p&gt;一旦选定了起始的报文段大小，在该连接上的所有被TCP发送的IP数据报都将被设置DF比特。如果某个中间路由器需要对一个设置了DF标志的数据报进行分片，它就丢弃这个数据报，并产生一个ICMP的“不能分片”差错。&lt;/p&gt;
+&lt;p&gt;如果收到这个ICMP差错，TCP就减少段大小并进行重传。如果路由器产生的是一个较新的该类ICMP差错，则报文段大小被设置为下一跳的MTU减去IP和TCP的首部长度。如果是一个较旧的该类ICMP差错，则必须尝试下一个可能的最小MTU。当由这个ICMP差错引起的重传发生时，拥塞窗口不需要变化，但要启动慢启动。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP的保活定时器</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-keepalive-timer/</link>
+      <pubDate>Fri, 25 May 2018 15:30:19 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-keepalive-timer/</guid>
+      <description>&lt;p&gt;可以没有任何数据流通过一个空闲的TCP连接。也就是说，如果TCP连接的双方都没有向对方发送数据，则在两个TCP模块之间不交换任何信息。例如，没有可以在其他网络协议中发现的轮询。这意味着我们可以启动一个客户与服务器建立一个连接，然后离去数小时、数天、数个星期或者数月，而连接依然保持。中间路由器可以崩溃和重启，电话线可以被挂断再连通，但是只要两端的主机没有被重启，则连接依然保持建立。&lt;/p&gt;
+&lt;p&gt;这意味着两个应用进程—客户进程或服务器进程—都没有使用应用级的定时器来检测非活动状态，而这种非活动状态可以导致应用进程中的任何一个终止其活动。&lt;/p&gt;
+&lt;p&gt;然而，许多时候一个服务器希望知道客户主机是否崩溃并关机或者崩溃又重新启动。许多实现提供的保活定时器可以提供这种能力。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;保活并不是TCP规范中的一部分。Host Requirements RFC提供了3个不使用保活定时器的理由：(1)在出现短暂差错的情况下，这可能会使一个非常好的连接释放掉；（2）它们耗费不必要的带宽；（3）在按分组计费的情况下会在互联网上花掉更多的钱。然而，许多实现提供了保活定时器。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;保活定时器是一个有争论的功能。许多人认为如果需要，这个功能不应该在TCP中提供，而应该由应用程序来完成。这是应当认真对待的一些问题之一，因为在这个论题上有些人表达出了很大的热情。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP的坚持定时器</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-persist-timer/</link>
+      <pubDate>Fri, 25 May 2018 14:31:57 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-persist-timer/</guid>
+      <description>&lt;p&gt;TCP通过让接收方指明希望从发送方接收的数据字节数（即窗口大小）来进行流量控制。如果窗口大小为0会发生什么情况呢？这将有效地阻止发送方传送数据，直到窗口变为非0为止。&lt;/p&gt;
+&lt;p&gt;TCP必须能够处理打开此窗口的ACK丢失的情况。ACK的传输并不可靠，也就是说，TCP不对ACK报文段进行确认，TCP只确认那些包含有数据的ACK报文段。&lt;/p&gt;
+&lt;p&gt;如果一个确认丢失了，则双方就有可能因为等待对方而使连接终止：接收方等待接收数据（因为它已经向发送方通告了一个非0的窗口），而发送方在等待允许它继续发送数据的窗口更新。为防止这种死锁情况的发生，发送方使用一个坚持定时器(persist timer)来周期性地向接收方查询，以便发现窗口是否已增大。这些从发送方发出的报文段称为窗口探查(window probe)。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP的超时与重传</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/</link>
+      <pubDate>Fri, 25 May 2018 10:42:25 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/</guid>
+      <description>&lt;p&gt;TCP提供可靠的运输层。它使用的方法之一就是确认从另一端收到的数据。但数据和确认都有可能会丢失。TCP通过在发送时设置一个定时器来解决这种问题。如果当定时器溢出时还没有收到确认，它就重传该数据。对任何实现而言，关键之处就在于超时和重传的策略，即怎样决定超时间隔和如何确定重传的频率。&lt;/p&gt;
+&lt;p&gt;对每个连接，TCP管理4个不同的定时器。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;重传定时器使用于当希望收到另一端的确认。&lt;/li&gt;
+&lt;li&gt;坚持(persist)定时器使窗口大小信息保持不断流动，即使另一端关闭了其接收窗口。&lt;/li&gt;
+&lt;li&gt;保活(keepalive)定时器可检测到一个空闲连接的另一端何时崩溃或重启。&lt;/li&gt;
+&lt;li&gt;2MSL定时器测量一个连接处于TIME_WAIT状态的时间。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP的成块数据流</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bulk-data-flow/</link>
+      <pubDate>Mon, 21 May 2018 11:08:08 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bulk-data-flow/</guid>
+      <description>&lt;p&gt;TFTP使用了停止等待协议，数据发送方在发送下一个数据块之前需要等待接收对已发送数据的确认。TCP使用了被称为滑动窗口协议的另一种形式的流量控制方法。该协议允许发送方在停止并等待确认前可以连续发送多个分组。由于发送方不必每发一个分组就停下来等待确认，因此该协议可以加速数据的传输。&lt;/p&gt;
+&lt;h2 id=&#34;滑动窗口&#34;&gt;滑动窗口&lt;/h2&gt;
+&lt;p&gt;接收方通告的窗口称为提出的窗口（offered window），发送方计算它的可用窗口，该窗口表明多少数据可以立即被发送。&lt;/p&gt;
+&lt;p&gt;当接收方确认数据后，这个滑动窗口不时地向右移动。窗口两个边沿的相对运动增加或减少了窗口的大小。我们使用三个术语来描述窗口左右边沿的运动：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;称窗口左边沿向右边沿靠近为窗口合拢。这种现象发生在数据被发送和确认时。&lt;/li&gt;
+&lt;li&gt;当窗口右边沿向右移动时将允许发送更多的数据，我们称之为窗口张开。这种现象发生在另一端的接收进程读取已经确认的数据并释放了TCP的接收缓存时。&lt;/li&gt;
+&lt;li&gt;当右边沿向左移动时，我们称之为窗口收缩。Host Requirements RFC强烈建议不要使用这种方式。但TCP必须能够在某一端产生这种情况时进行处理。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP的交互数据流</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-interactive-data-flow/</link>
+      <pubDate>Mon, 21 May 2018 10:51:55 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-interactive-data-flow/</guid>
+      <description>&lt;p&gt;一些有关TCP通信量的研究如[Caceres et al. 1991]发现，如果按照分组数量计算，约有一半的TCP报文段包含成块数据（如FTP、电子邮件和Usenet新闻），另一半则包含交互数据（如Telnet和Rlogin）。如果按字节计算，则成块数据与交互数据的比例约为90%和10%。这是因为成块数据的报文段基本上都是满长度（full-sized）的（通常为512字节的用户数据），而交互数据则小得多（上述研究表明Telnet和Rlogin分组中通常约90%左右的用户数据小于10个字节）。&lt;/p&gt;
+&lt;p&gt;很明显，TCP需要同时处理这两类数据，但使用的处理算法则有所不同。&lt;/p&gt;
+&lt;h2 id=&#34;交互式输入&#34;&gt;交互式输入&lt;/h2&gt;
+&lt;p&gt;首先来观察在一个Rlogin连接上键入一个交互命令时所产生的数据流。许多TCP/IP的初学者很吃惊地发现通常每一个交互按键都会产生一个数据分组，也就是说，每次从客户传到服务器的是一个字节的按键（而不是每次一行）。而且，Rlogin需要远程系统（服务器）回显我们（客户）键入的字符。这样就会产生4个报文段：（1）来自客户的交互按键；（2）来自服务器的按键确认；（3）来自服务器的按键回显；（4）来自客户的按键回显确认。&lt;/p&gt;
+&lt;p&gt;然而，我们一般可以将报文段2和3进行合并—按键确认与按键回显一起发送。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP连接的建立与终止</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-establishment-termination/</link>
+      <pubDate>Wed, 16 May 2018 15:01:04 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-establishment-termination/</guid>
+      <description>&lt;p&gt;TCP是一个面向连接的协议。无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。这种两端间连接的建立与无连接协议如UDP不同。一端使用UDP向另一端发送数据报时，无需任何预先的握手。&lt;/p&gt;
+&lt;p&gt;两个进程在使用TCP交换数据之前，它们之间必须建立一条连接。完成后，要关闭这个连接。&lt;/p&gt;
+&lt;p&gt;一个TCP连接由一个4元组唯一确定：本地IP地址、本地端口号、远端IP地址和远端端口号。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP：传输控制协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</link>
+      <pubDate>Tue, 15 May 2018 15:43:47 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</guid>
+      <description>&lt;p&gt;尽管TCP和UDP都使用相同的网络层（IP），TCP却向应用层提供与UDP完全不同的服务。TCP提供一种面向连接的、可靠的字节流服务。&lt;/p&gt;
+&lt;p&gt;面向连接意味着两个使用TCP的应用（通常是一个客户和一个服务器）在彼此交换数据之前必须先建立一个TCP连接。这一过程与打电话很相似，先拨号振铃，等待对方摘机说“喂”，然后才说明是谁。&lt;/p&gt;
+&lt;p&gt;在一个TCP连接中，仅有两方进行彼此通信。&lt;/p&gt;
+&lt;p&gt;TCP通过下列方式来提供可靠性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;应用数据被分割成TCP认为最适合发送的数据块。这和UDP完全不同，应用程序产生的数据报长度将保持不变。由TCP传递给IP的信息单位称为报文段或段（segment）。&lt;/li&gt;
+&lt;li&gt;当TCP发出一个段后，它启动一个定时器，等待目的端确认收到这个报文段。如果不能及时收到一个确认，将重发这个报文段。&lt;/li&gt;
+&lt;li&gt;当TCP收到发自TCP连接另一端的数据，它将发送一个确认。这个确认不是立即发送，通常将推迟几分之一秒。&lt;/li&gt;
+&lt;li&gt;TCP将保持它首部和数据的检验和。这是一个端到端的检验和，目的是检测数据在传输过程中的任何变化。如果收到段的检验和有差错，TCP将丢弃这个报文段和不确认收到此报文段（希望发端超时并重发）。&lt;/li&gt;
+&lt;li&gt;既然TCP报文段作为IP数据报来传输，而IP数据报的到达可能会失序，因此TCP报文段的到达也可能会失序。如果必要，TCP将对收到的数据进行重新排序，将收到的数据以正确的顺序交给应用层。&lt;/li&gt;
+&lt;li&gt;既然IP数据报会发生重复，TCP的接收端必须丢弃重复的数据。&lt;/li&gt;
+&lt;li&gt;TCP还能提供流量控制。TCP连接的每一方都有固定大小的缓冲空间。TCP的接收端只允许另一端发送接收端缓冲区所能接纳的数据。这将防止较快主机致使较慢主机的缓冲区溢出。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

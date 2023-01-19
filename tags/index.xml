@@ -1,0 +1,1085 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/</link>
+    <description>Recent content in Tags on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 22 Dec 2018 14:39:11 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>astyle</title>
+      <link>https://xuchengpeng.github.io/tags/astyle/</link>
+      <pubDate>Sat, 22 Dec 2018 14:39:11 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/astyle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clang-format</title>
+      <link>https://xuchengpeng.github.io/tags/clang-format/</link>
+      <pubDate>Sat, 22 Dec 2018 14:39:11 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/clang-format/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SourceInsight</title>
+      <link>https://xuchengpeng.github.io/tags/sourceinsight/</link>
+      <pubDate>Sat, 22 Dec 2018 14:39:11 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/sourceinsight/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emacs</title>
+      <link>https://xuchengpeng.github.io/tags/emacs/</link>
+      <pubDate>Thu, 06 Dec 2018 09:07:28 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://xuchengpeng.github.io/tags/linux/</link>
+      <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Samba</title>
+      <link>https://xuchengpeng.github.io/tags/samba/</link>
+      <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/samba/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>https://xuchengpeng.github.io/tags/ubuntu/</link>
+      <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://xuchengpeng.github.io/tags/shell/</link>
+      <pubDate>Tue, 30 Oct 2018 14:19:55 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regex</title>
+      <link>https://xuchengpeng.github.io/tags/regex/</link>
+      <pubDate>Thu, 27 Sep 2018 09:20:09 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/regex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regexp</title>
+      <link>https://xuchengpeng.github.io/tags/regexp/</link>
+      <pubDate>Thu, 27 Sep 2018 09:20:09 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/regexp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regular Expressions</title>
+      <link>https://xuchengpeng.github.io/tags/regular-expressions/</link>
+      <pubDate>Thu, 27 Sep 2018 09:20:09 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/regular-expressions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://xuchengpeng.github.io/tags/go/</link>
+      <pubDate>Wed, 26 Sep 2018 16:47:46 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hypervisor</title>
+      <link>https://xuchengpeng.github.io/tags/hypervisor/</link>
+      <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/hypervisor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KVM</title>
+      <link>https://xuchengpeng.github.io/tags/kvm/</link>
+      <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/kvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>libvirt</title>
+      <link>https://xuchengpeng.github.io/tags/libvirt/</link>
+      <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/libvirt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>QEMU</title>
+      <link>https://xuchengpeng.github.io/tags/qemu/</link>
+      <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/qemu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virsh</title>
+      <link>https://xuchengpeng.github.io/tags/virsh/</link>
+      <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/virsh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VLAN</title>
+      <link>https://xuchengpeng.github.io/tags/vlan/</link>
+      <pubDate>Tue, 11 Sep 2018 14:16:49 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/vlan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VTEP</title>
+      <link>https://xuchengpeng.github.io/tags/vtep/</link>
+      <pubDate>Tue, 11 Sep 2018 14:16:49 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/vtep/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VXLAN</title>
+      <link>https://xuchengpeng.github.io/tags/vxlan/</link>
+      <pubDate>Tue, 11 Sep 2018 14:16:49 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/vxlan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open vSwitch</title>
+      <link>https://xuchengpeng.github.io/tags/open-vswitch/</link>
+      <pubDate>Tue, 11 Sep 2018 11:09:50 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/open-vswitch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenFlow</title>
+      <link>https://xuchengpeng.github.io/tags/openflow/</link>
+      <pubDate>Tue, 11 Sep 2018 11:09:50 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/openflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OVS</title>
+      <link>https://xuchengpeng.github.io/tags/ovs/</link>
+      <pubDate>Tue, 11 Sep 2018 11:09:50 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/ovs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>云计算</title>
+      <link>https://xuchengpeng.github.io/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/</link>
+      <pubDate>Tue, 11 Sep 2018 09:26:07 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>边缘计算</title>
+      <link>https://xuchengpeng.github.io/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/</link>
+      <pubDate>Tue, 11 Sep 2018 09:26:07 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>autoload</title>
+      <link>https://xuchengpeng.github.io/tags/autoload/</link>
+      <pubDate>Thu, 06 Sep 2018 11:25:46 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/autoload/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cmder</title>
+      <link>https://xuchengpeng.github.io/tags/cmder/</link>
+      <pubDate>Wed, 05 Sep 2018 09:31:48 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/cmder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ConEmu</title>
+      <link>https://xuchengpeng.github.io/tags/conemu/</link>
+      <pubDate>Wed, 05 Sep 2018 09:31:48 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/conemu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EditorConfig</title>
+      <link>https://xuchengpeng.github.io/tags/editorconfig/</link>
+      <pubDate>Tue, 21 Aug 2018 12:37:18 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/editorconfig/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AMD</title>
+      <link>https://xuchengpeng.github.io/tags/amd/</link>
+      <pubDate>Thu, 09 Aug 2018 09:32:24 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/amd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intel</title>
+      <link>https://xuchengpeng.github.io/tags/intel/</link>
+      <pubDate>Thu, 09 Aug 2018 09:32:24 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/intel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ryzen</title>
+      <link>https://xuchengpeng.github.io/tags/ryzen/</link>
+      <pubDate>Thu, 09 Aug 2018 09:32:24 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/ryzen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Threadripper</title>
+      <link>https://xuchengpeng.github.io/tags/threadripper/</link>
+      <pubDate>Thu, 09 Aug 2018 09:32:24 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/threadripper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rsync</title>
+      <link>https://xuchengpeng.github.io/tags/rsync/</link>
+      <pubDate>Mon, 06 Aug 2018 16:48:15 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/rsync/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>org-mode</title>
+      <link>https://xuchengpeng.github.io/tags/org-mode/</link>
+      <pubDate>Fri, 20 Jul 2018 15:00:59 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/org-mode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://xuchengpeng.github.io/tags/hugo/</link>
+      <pubDate>Fri, 20 Jul 2018 09:20:28 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>orgmode</title>
+      <link>https://xuchengpeng.github.io/tags/orgmode/</link>
+      <pubDate>Fri, 20 Jul 2018 09:20:28 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/orgmode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ox-hugo</title>
+      <link>https://xuchengpeng.github.io/tags/ox-hugo/</link>
+      <pubDate>Fri, 20 Jul 2018 09:20:28 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/ox-hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MathJax</title>
+      <link>https://xuchengpeng.github.io/tags/mathjax/</link>
+      <pubDate>Tue, 10 Jul 2018 14:28:41 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/mathjax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diminish</title>
+      <link>https://xuchengpeng.github.io/tags/diminish/</link>
+      <pubDate>Mon, 09 Jul 2018 09:59:51 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/diminish/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mode-line</title>
+      <link>https://xuchengpeng.github.io/tags/mode-line/</link>
+      <pubDate>Mon, 09 Jul 2018 09:59:51 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/mode-line/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SNMP</title>
+      <link>https://xuchengpeng.github.io/tags/snmp/</link>
+      <pubDate>Thu, 14 Jun 2018 14:24:48 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/snmp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UDP</title>
+      <link>https://xuchengpeng.github.io/tags/udp/</link>
+      <pubDate>Thu, 14 Jun 2018 14:24:48 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/udp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>飞花</title>
+      <link>https://xuchengpeng.github.io/tags/%E9%A3%9E%E8%8A%B1/</link>
+      <pubDate>Thu, 31 May 2018 08:59:11 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/%E9%A3%9E%E8%8A%B1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TCP</title>
+      <link>https://xuchengpeng.github.io/tags/tcp/</link>
+      <pubDate>Sat, 26 May 2018 14:48:35 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/tcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LaTeX</title>
+      <link>https://xuchengpeng.github.io/tags/latex/</link>
+      <pubDate>Fri, 25 May 2018 16:28:02 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://xuchengpeng.github.io/tags/markdown/</link>
+      <pubDate>Fri, 25 May 2018 16:28:02 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>https://xuchengpeng.github.io/tags/css/</link>
+      <pubDate>Wed, 23 May 2018 10:27:11 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stylish</title>
+      <link>https://xuchengpeng.github.io/tags/stylish/</link>
+      <pubDate>Wed, 23 May 2018 10:27:11 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/stylish/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stylus</title>
+      <link>https://xuchengpeng.github.io/tags/stylus/</link>
+      <pubDate>Wed, 23 May 2018 10:27:11 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/stylus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>socket</title>
+      <link>https://xuchengpeng.github.io/tags/socket/</link>
+      <pubDate>Tue, 15 May 2018 15:43:47 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/socket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ARP</title>
+      <link>https://xuchengpeng.github.io/tags/arp/</link>
+      <pubDate>Mon, 14 May 2018 17:43:41 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/arp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BOOTP</title>
+      <link>https://xuchengpeng.github.io/tags/bootp/</link>
+      <pubDate>Mon, 14 May 2018 17:43:41 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/bootp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RARP</title>
+      <link>https://xuchengpeng.github.io/tags/rarp/</link>
+      <pubDate>Mon, 14 May 2018 17:43:41 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/rarp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TFTP</title>
+      <link>https://xuchengpeng.github.io/tags/tftp/</link>
+      <pubDate>Mon, 14 May 2018 17:21:26 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/tftp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DNS</title>
+      <link>https://xuchengpeng.github.io/tags/dns/</link>
+      <pubDate>Mon, 14 May 2018 09:31:56 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>require</title>
+      <link>https://xuchengpeng.github.io/tags/require/</link>
+      <pubDate>Fri, 11 May 2018 13:51:45 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/require/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>use-package</title>
+      <link>https://xuchengpeng.github.io/tags/use-package/</link>
+      <pubDate>Fri, 11 May 2018 13:51:45 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/use-package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>with-eval-after-load</title>
+      <link>https://xuchengpeng.github.io/tags/with-eval-after-load/</link>
+      <pubDate>Fri, 11 May 2018 13:51:45 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/with-eval-after-load/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IGMP</title>
+      <link>https://xuchengpeng.github.io/tags/igmp/</link>
+      <pubDate>Thu, 10 May 2018 14:07:54 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/igmp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multicast</title>
+      <link>https://xuchengpeng.github.io/tags/multicast/</link>
+      <pubDate>Thu, 10 May 2018 14:07:54 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/multicast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>broadcast</title>
+      <link>https://xuchengpeng.github.io/tags/broadcast/</link>
+      <pubDate>Thu, 10 May 2018 09:20:39 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/broadcast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eshell</title>
+      <link>https://xuchengpeng.github.io/tags/eshell/</link>
+      <pubDate>Wed, 09 May 2018 19:40:40 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/eshell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell-pop</title>
+      <link>https://xuchengpeng.github.io/tags/shell-pop/</link>
+      <pubDate>Wed, 09 May 2018 19:40:40 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/shell-pop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ICMP</title>
+      <link>https://xuchengpeng.github.io/tags/icmp/</link>
+      <pubDate>Wed, 09 May 2018 10:28:49 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/icmp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IP</title>
+      <link>https://xuchengpeng.github.io/tags/ip/</link>
+      <pubDate>Wed, 09 May 2018 10:28:49 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/ip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BGP</title>
+      <link>https://xuchengpeng.github.io/tags/bgp/</link>
+      <pubDate>Tue, 08 May 2018 09:51:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/bgp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CIDR</title>
+      <link>https://xuchengpeng.github.io/tags/cidr/</link>
+      <pubDate>Tue, 08 May 2018 09:51:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/cidr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OSPF</title>
+      <link>https://xuchengpeng.github.io/tags/ospf/</link>
+      <pubDate>Tue, 08 May 2018 09:51:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/ospf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RIP</title>
+      <link>https://xuchengpeng.github.io/tags/rip/</link>
+      <pubDate>Tue, 08 May 2018 09:51:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/rip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IP选路</title>
+      <link>https://xuchengpeng.github.io/tags/ip%E9%80%89%E8%B7%AF/</link>
+      <pubDate>Mon, 07 May 2018 10:29:57 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/ip%E9%80%89%E8%B7%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Traceroute</title>
+      <link>https://xuchengpeng.github.io/tags/traceroute/</link>
+      <pubDate>Fri, 04 May 2018 10:21:33 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/traceroute/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ping</title>
+      <link>https://xuchengpeng.github.io/tags/ping/</link>
+      <pubDate>Fri, 04 May 2018 08:41:08 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/ping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://xuchengpeng.github.io/tags/windows/</link>
+      <pubDate>Wed, 02 May 2018 11:27:31 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>company</title>
+      <link>https://xuchengpeng.github.io/tags/company/</link>
+      <pubDate>Fri, 27 Apr 2018 10:10:07 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/company/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yasnippet</title>
+      <link>https://xuchengpeng.github.io/tags/yasnippet/</link>
+      <pubDate>Fri, 27 Apr 2018 10:10:07 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/yasnippet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>J2EE模式</title>
+      <link>https://xuchengpeng.github.io/tags/j2ee%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 26 Apr 2018 15:47:52 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/j2ee%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>行为型模式</title>
+      <link>https://xuchengpeng.github.io/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 26 Apr 2018 10:52:28 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Link Layer</title>
+      <link>https://xuchengpeng.github.io/tags/link-layer/</link>
+      <pubDate>Tue, 24 Apr 2018 08:32:37 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/link-layer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>结构型模式</title>
+      <link>https://xuchengpeng.github.io/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Sat, 21 Apr 2018 09:38:16 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linode</title>
+      <link>https://xuchengpeng.github.io/tags/linode/</link>
+      <pubDate>Fri, 20 Apr 2018 15:34:34 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/linode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PPA</title>
+      <link>https://xuchengpeng.github.io/tags/ppa/</link>
+      <pubDate>Fri, 13 Apr 2018 10:50:50 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/ppa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bbr</title>
+      <link>https://xuchengpeng.github.io/tags/bbr/</link>
+      <pubDate>Fri, 13 Apr 2018 09:08:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/bbr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shadowsocks</title>
+      <link>https://xuchengpeng.github.io/tags/shadowsocks/</link>
+      <pubDate>Fri, 13 Apr 2018 09:08:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/shadowsocks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>创建型模式</title>
+      <link>https://xuchengpeng.github.io/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Sun, 08 Apr 2018 15:22:25 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>profiler</title>
+      <link>https://xuchengpeng.github.io/tags/profiler/</link>
+      <pubDate>Fri, 30 Mar 2018 10:02:45 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/profiler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ripgrep</title>
+      <link>https://xuchengpeng.github.io/tags/ripgrep/</link>
+      <pubDate>Sat, 17 Mar 2018 17:34:16 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/ripgrep/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>base16</title>
+      <link>https://xuchengpeng.github.io/tags/base16/</link>
+      <pubDate>Thu, 08 Mar 2018 15:47:16 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/base16/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tomorrow Theme</title>
+      <link>https://xuchengpeng.github.io/tags/tomorrow-theme/</link>
+      <pubDate>Wed, 07 Mar 2018 19:04:31 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/tomorrow-theme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elpa</title>
+      <link>https://xuchengpeng.github.io/tags/elpa/</link>
+      <pubDate>Tue, 06 Mar 2018 18:56:50 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/elpa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>require-package</title>
+      <link>https://xuchengpeng.github.io/tags/require-package/</link>
+      <pubDate>Tue, 06 Mar 2018 18:56:50 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/require-package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NexT</title>
+      <link>https://xuchengpeng.github.io/tags/next/</link>
+      <pubDate>Fri, 02 Feb 2018 17:01:59 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/next/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travis CI</title>
+      <link>https://xuchengpeng.github.io/tags/travis-ci/</link>
+      <pubDate>Fri, 02 Feb 2018 17:01:59 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/travis-ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gulp</title>
+      <link>https://xuchengpeng.github.io/tags/gulp/</link>
+      <pubDate>Thu, 01 Feb 2018 14:06:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/gulp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>https://xuchengpeng.github.io/tags/hexo/</link>
+      <pubDate>Thu, 01 Feb 2018 14:06:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>待读的书</title>
+      <link>https://xuchengpeng.github.io/tags/%E5%BE%85%E8%AF%BB%E7%9A%84%E4%B9%A6/</link>
+      <pubDate>Wed, 31 Jan 2018 15:00:35 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/%E5%BE%85%E8%AF%BB%E7%9A%84%E4%B9%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>萧红</title>
+      <link>https://xuchengpeng.github.io/tags/%E8%90%A7%E7%BA%A2/</link>
+      <pubDate>Wed, 31 Jan 2018 15:00:35 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/%E8%90%A7%E7%BA%A2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>曹雪芹</title>
+      <link>https://xuchengpeng.github.io/tags/%E6%9B%B9%E9%9B%AA%E8%8A%B9/</link>
+      <pubDate>Wed, 31 Jan 2018 14:42:21 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/%E6%9B%B9%E9%9B%AA%E8%8A%B9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloudflare</title>
+      <link>https://xuchengpeng.github.io/tags/cloudflare/</link>
+      <pubDate>Mon, 29 Jan 2018 07:58:19 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/cloudflare/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>https</title>
+      <link>https://xuchengpeng.github.io/tags/https/</link>
+      <pubDate>Mon, 29 Jan 2018 07:58:19 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/https/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>舒婷</title>
+      <link>https://xuchengpeng.github.io/tags/%E8%88%92%E5%A9%B7/</link>
+      <pubDate>Sat, 27 Jan 2018 07:41:17 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/%E8%88%92%E5%A9%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aliyun</title>
+      <link>https://xuchengpeng.github.io/tags/aliyun/</link>
+      <pubDate>Thu, 18 Jan 2018 07:30:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/aliyun/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>E-mail</title>
+      <link>https://xuchengpeng.github.io/tags/e-mail/</link>
+      <pubDate>Thu, 18 Jan 2018 07:30:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/e-mail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitHub Pages</title>
+      <link>https://xuchengpeng.github.io/tags/github-pages/</link>
+      <pubDate>Tue, 16 Jan 2018 11:09:48 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/github-pages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Speed Dial 2</title>
+      <link>https://xuchengpeng.github.io/tags/speed-dial-2/</link>
+      <pubDate>Wed, 13 Dec 2017 09:56:18 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/speed-dial-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unsplash</title>
+      <link>https://xuchengpeng.github.io/tags/unsplash/</link>
+      <pubDate>Wed, 13 Dec 2017 09:56:18 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/unsplash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chrome</title>
+      <link>https://xuchengpeng.github.io/tags/chrome/</link>
+      <pubDate>Tue, 12 Dec 2017 16:24:48 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/chrome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Extension</title>
+      <link>https://xuchengpeng.github.io/tags/extension/</link>
+      <pubDate>Tue, 12 Dec 2017 16:24:48 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/extension/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RJ-45</title>
+      <link>https://xuchengpeng.github.io/tags/rj-45/</link>
+      <pubDate>Wed, 06 Dec 2017 09:05:10 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/rj-45/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gitalk</title>
+      <link>https://xuchengpeng.github.io/tags/gitalk/</link>
+      <pubDate>Mon, 04 Dec 2017 09:29:58 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/gitalk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gitment</title>
+      <link>https://xuchengpeng.github.io/tags/gitment/</link>
+      <pubDate>Mon, 04 Dec 2017 09:29:58 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/gitment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pt</title>
+      <link>https://xuchengpeng.github.io/tags/pt/</link>
+      <pubDate>Wed, 29 Nov 2017 09:50:49 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/pt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spacemacs</title>
+      <link>https://xuchengpeng.github.io/tags/spacemacs/</link>
+      <pubDate>Wed, 29 Nov 2017 09:50:49 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/spacemacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://xuchengpeng.github.io/tags/vim/</link>
+      <pubDate>Tue, 28 Nov 2017 11:06:50 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Script</title>
+      <link>https://xuchengpeng.github.io/tags/script/</link>
+      <pubDate>Mon, 27 Nov 2017 21:21:27 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/script/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Memory</title>
+      <link>https://xuchengpeng.github.io/tags/memory/</link>
+      <pubDate>Sat, 25 Nov 2017 12:42:48 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/memory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>https://xuchengpeng.github.io/tags/github/</link>
+      <pubDate>Wed, 22 Nov 2017 16:00:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CodeReview</title>
+      <link>https://xuchengpeng.github.io/tags/codereview/</link>
+      <pubDate>Mon, 20 Nov 2017 17:10:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/codereview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>T568A/B</title>
+      <link>https://xuchengpeng.github.io/tags/t568a/b/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/tags/t568a/b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

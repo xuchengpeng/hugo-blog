@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Regular Expressions on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/regular-expressions/</link>
+    <description>Recent content in Regular Expressions on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 27 Sep 2018 09:20:09 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/regular-expressions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>正则表达式</title>
+      <link>https://xuchengpeng.github.io/post/regular-expressions/</link>
+      <pubDate>Thu, 27 Sep 2018 09:20:09 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/regular-expressions/</guid>
+      <description>&lt;p&gt;除非您以前使用过正则表达式，否则您可能不熟悉一些术语。但是，毫无疑问，您已经使用过不涉及脚本的某些正则表达式概念。&lt;/p&gt;
+&lt;p&gt;例如，您很可能使用 ? 和 * 通配符来查找硬盘上的文件。? 通配符匹配文件名中的 0 个或 1 个字符，而 * 通配符匹配零个或多个字符。像 &lt;code&gt;data(\w)?\.dat&lt;/code&gt; 这样的模式将查找下列文件：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;data.dat
+data1.dat
+data2.dat
+datax.dat
+dataN.dat
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用 * 字符代替 ? 字符扩大了找到的文件的数量。&lt;code&gt;data.*\.dat&lt;/code&gt; 匹配下列所有文件：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;data.dat
+data1.dat
+data2.dat
+data12.dat
+datax.dat
+dataXYZ.dat
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;尽管这种搜索方法很有用，但它还是有限的。通过理解 * 通配符的工作原理，引入了正则表达式所依赖的概念，但正则表达式功能更强大，而且更加灵活。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

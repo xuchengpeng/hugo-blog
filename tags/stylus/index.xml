@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Stylus on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/stylus/</link>
+    <description>Recent content in Stylus on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 23 May 2018 10:27:11 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/stylus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stylus 自定义网页字体</title>
+      <link>https://xuchengpeng.github.io/post/stylus-set-web-font/</link>
+      <pubDate>Wed, 23 May 2018 10:27:11 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/stylus-set-web-font/</guid>
+      <description>&lt;p&gt;使用 Stylus 可以直接使用 &lt;a href=&#34;https://userstyles.org/&#34;&gt;userstyles 网站&lt;/a&gt; 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。&lt;/p&gt;
+&lt;p&gt;这里推荐一款 &lt;a href=&#34;https://userstyles.org/styles/100473/004-forcemyfonts-chinese-firefoxchromeie-catcat520&#34;&gt;ForceMyFont&lt;/a&gt; 的模板，可以设定的选项非常丰富，前提也是需要在电脑上安装你选择的字体。&lt;/p&gt;
+&lt;p&gt;你也可以自定义字体CSS的样式，在 Chrome 浏览器中，这里使用 Stylus 插件，编写新的样式，代码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;font-weight&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;500&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;font-family&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Arial&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;思源宋体&amp;#34;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第一行设定字重，第二行设定英文字体和中文字体。如果要添加字体阴影，可以添加以下代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;text-shadow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#999999&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中的数值依次代表阴影的 X 轴偏移、Y 轴偏移、阴影大小，以及字体颜色。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

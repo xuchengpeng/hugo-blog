@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>OVS on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/ovs/</link>
+    <description>Recent content in OVS on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 11 Sep 2018 11:09:50 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/ovs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open vSwitch</title>
+      <link>https://xuchengpeng.github.io/post/openvswitch/</link>
+      <pubDate>Tue, 11 Sep 2018 11:09:50 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/openvswitch/</guid>
+      <description>&lt;p&gt;Open vSwitch 是一个基于Apache 2 license的多层软件交换机。 我们的目标是实现一个支持标准管理接口的，开放转发功能以支持编程扩展和控制的交换机平台。&lt;/p&gt;
+&lt;p&gt;Open vSwitch 非常适合在VM环境中用作虚拟交换机。 除了将标准控制和可视化接口暴露给虚拟网络层外，它还旨在支持跨越多个物理服务器的分布式系统。 Open vSwitch 支持多种基于Linux的虚拟化技术，包括 Xen/XenServer, KVM, 及 VirtualBox。&lt;/p&gt;
+&lt;p&gt;大部分代码是平台无关的C编码，可以轻松地移植到其他环境中。 当前版本的 Open vSwitch 支持以下功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;具有trunk和access口的标准 802.1Q VLAN 功能&lt;/li&gt;
+&lt;li&gt;上游交换机上连接或不链接LACP的NIC&lt;/li&gt;
+&lt;li&gt;NetFlow, sFlow(R), 及镜像，以提高可视化&lt;/li&gt;
+&lt;li&gt;QoS 配置，加上策列&lt;/li&gt;
+&lt;li&gt;Geneve, GRE, VXLAN, STT, 及 LISP 隧道&lt;/li&gt;
+&lt;li&gt;802.1ag 连接故障管理&lt;/li&gt;
+&lt;li&gt;OpenFlow 1.0 加大量扩展&lt;/li&gt;
+&lt;li&gt;具有C和Python绑定的事物配置数据库&lt;/li&gt;
+&lt;li&gt;使用Linux内核模块的高性能转发&lt;/li&gt;
+&lt;li&gt;Linux 内核模块支持 Linux 3.10及以上版本。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Open vSwitch 也可以完全在用户空间运行，无需内核模块协助。 这个用户空间实现应该比基于内核的交换机更容易进行移植。 用户空间中的OVS可以访问Linux或DPDK设备。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用用户空间实现，且没有用DPDK做加速处理的OVS被认为是测试性的，具有性能成本。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,177 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>观察者模式 | Chuck</title><meta name=keywords content="行为型模式"><meta name=description content="当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知它的依赖对象。观察者模式属于行为型模式。
+介绍
+意图：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。
+主要解决：一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。
+何时使用：一个对象（目标对象）的状态发生改变，所有的依赖对象（观察者对象）都将得到通知，进行广播通知。
+如何解决：使用面向对象技术，可以将这种依赖关系弱化。
+关键代码：在抽象类里有一个 ArrayList 存放观察者们。
+应用实例： 1、拍卖的时候，拍卖师观察最高标价，然后通知给其他竞价者竞价。 2、西游记里面悟空请求菩萨降服红孩儿，菩萨洒了一地水招来一个老乌龟，这个乌龟就是观察者，他观察菩萨洒水这个动作。
+优点： 1、观察者和被观察者是抽象耦合的。 2、建立一套触发机制。
+缺点： 1、如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。 2、如果在观察者和观察目标之间有循环依赖的话，观察目标会触发它们之间进行循环调用，可能导致系统崩溃。 3、观察者模式没有相应的机制让观察者知道所观察的目标对象是怎么发生变化的，而仅仅只是知道观察目标发生了变化。
+使用场景：
+
+一个抽象模型有两个方面，其中一个方面依赖于另一个方面。将这些方面封装在独立的对象中使它们可以各自独立地改变和复用。
+一个对象的改变将导致其他一个或多个对象也发生改变，而不知道具体有多少对象将发生改变，可以降低对象之间的耦合度。
+一个对象必须通知其他对象，而并不知道这些对象是谁。
+需要在系统中创建一个触发链，A对象的行为将影响B对象，B对象的行为将影响C对象……，可以使用观察者模式创建一种链式触发机制。
+
+注意事项： 1、JAVA 中已经有了对观察者模式的支持类。 2、避免循环引用。 3、如果顺序执行，某一观察者错误会导致系统卡壳，一般采用异步方式。"><meta name=author content="Chuck"><link rel=canonical href=https://xuchengpeng.github.io/post/design-pattern-observer-pattern/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=text/javascript async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type=text/x-mathjax-config>
+    MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\[','\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+        TeX: { equationNumbers: { autoNumber: "AMS" },
+            extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    </script><meta property="og:title" content="观察者模式"><meta property="og:description" content="当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知它的依赖对象。观察者模式属于行为型模式。
+介绍
+意图：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。
+主要解决：一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。
+何时使用：一个对象（目标对象）的状态发生改变，所有的依赖对象（观察者对象）都将得到通知，进行广播通知。
+如何解决：使用面向对象技术，可以将这种依赖关系弱化。
+关键代码：在抽象类里有一个 ArrayList 存放观察者们。
+应用实例： 1、拍卖的时候，拍卖师观察最高标价，然后通知给其他竞价者竞价。 2、西游记里面悟空请求菩萨降服红孩儿，菩萨洒了一地水招来一个老乌龟，这个乌龟就是观察者，他观察菩萨洒水这个动作。
+优点： 1、观察者和被观察者是抽象耦合的。 2、建立一套触发机制。
+缺点： 1、如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。 2、如果在观察者和观察目标之间有循环依赖的话，观察目标会触发它们之间进行循环调用，可能导致系统崩溃。 3、观察者模式没有相应的机制让观察者知道所观察的目标对象是怎么发生变化的，而仅仅只是知道观察目标发生了变化。
+使用场景：
+
+一个抽象模型有两个方面，其中一个方面依赖于另一个方面。将这些方面封装在独立的对象中使它们可以各自独立地改变和复用。
+一个对象的改变将导致其他一个或多个对象也发生改变，而不知道具体有多少对象将发生改变，可以降低对象之间的耦合度。
+一个对象必须通知其他对象，而并不知道这些对象是谁。
+需要在系统中创建一个触发链，A对象的行为将影响B对象，B对象的行为将影响C对象……，可以使用观察者模式创建一种链式触发机制。
+
+注意事项： 1、JAVA 中已经有了对观察者模式的支持类。 2、避免循环引用。 3、如果顺序执行，某一观察者错误会导致系统卡壳，一般采用异步方式。"><meta property="og:type" content="article"><meta property="og:url" content="https://xuchengpeng.github.io/post/design-pattern-observer-pattern/"><meta property="og:image" content="https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="post"><meta property="article:published_time" content="2018-04-24T16:20:49+00:00"><meta property="article:modified_time" content="2018-04-24T16:20:49+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="观察者模式"><meta name=twitter:description content="当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知它的依赖对象。观察者模式属于行为型模式。
+介绍
+意图：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。
+主要解决：一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。
+何时使用：一个对象（目标对象）的状态发生改变，所有的依赖对象（观察者对象）都将得到通知，进行广播通知。
+如何解决：使用面向对象技术，可以将这种依赖关系弱化。
+关键代码：在抽象类里有一个 ArrayList 存放观察者们。
+应用实例： 1、拍卖的时候，拍卖师观察最高标价，然后通知给其他竞价者竞价。 2、西游记里面悟空请求菩萨降服红孩儿，菩萨洒了一地水招来一个老乌龟，这个乌龟就是观察者，他观察菩萨洒水这个动作。
+优点： 1、观察者和被观察者是抽象耦合的。 2、建立一套触发机制。
+缺点： 1、如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。 2、如果在观察者和观察目标之间有循环依赖的话，观察目标会触发它们之间进行循环调用，可能导致系统崩溃。 3、观察者模式没有相应的机制让观察者知道所观察的目标对象是怎么发生变化的，而仅仅只是知道观察目标发生了变化。
+使用场景：
+
+一个抽象模型有两个方面，其中一个方面依赖于另一个方面。将这些方面封装在独立的对象中使它们可以各自独立地改变和复用。
+一个对象的改变将导致其他一个或多个对象也发生改变，而不知道具体有多少对象将发生改变，可以降低对象之间的耦合度。
+一个对象必须通知其他对象，而并不知道这些对象是谁。
+需要在系统中创建一个触发链，A对象的行为将影响B对象，B对象的行为将影响C对象……，可以使用观察者模式创建一种链式触发机制。
+
+注意事项： 1、JAVA 中已经有了对观察者模式的支持类。 2、避免循环引用。 3、如果顺序执行，某一观察者错误会导致系统卡壳，一般采用异步方式。"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://xuchengpeng.github.io/post/"},{"@type":"ListItem","position":2,"name":"观察者模式","item":"https://xuchengpeng.github.io/post/design-pattern-observer-pattern/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"观察者模式","name":"观察者模式","description":"当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知它的依赖对象。观察者模式属于行为型模式。\n介绍 意图：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。 主要解决：一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。 何时使用：一个对象（目标对象）的状态发生改变，所有的依赖对象（观察者对象）都将得到通知，进行广播通知。 如何解决：使用面向对象技术，可以将这种依赖关系弱化。 关键代码：在抽象类里有一个 ArrayList 存放观察者们。 应用实例： 1、拍卖的时候，拍卖师观察最高标价，然后通知给其他竞价者竞价。 2、西游记里面悟空请求菩萨降服红孩儿，菩萨洒了一地水招来一个老乌龟，这个乌龟就是观察者，他观察菩萨洒水这个动作。 优点： 1、观察者和被观察者是抽象耦合的。 2、建立一套触发机制。 缺点： 1、如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。 2、如果在观察者和观察目标之间有循环依赖的话，观察目标会触发它们之间进行循环调用，可能导致系统崩溃。 3、观察者模式没有相应的机制让观察者知道所观察的目标对象是怎么发生变化的，而仅仅只是知道观察目标发生了变化。 使用场景：\n一个抽象模型有两个方面，其中一个方面依赖于另一个方面。将这些方面封装在独立的对象中使它们可以各自独立地改变和复用。 一个对象的改变将导致其他一个或多个对象也发生改变，而不知道具体有多少对象将发生改变，可以降低对象之间的耦合度。 一个对象必须通知其他对象，而并不知道这些对象是谁。 需要在系统中创建一个触发链，A对象的行为将影响B对象，B对象的行为将影响C对象……，可以使用观察者模式创建一种链式触发机制。 注意事项： 1、JAVA 中已经有了对观察者模式的支持类。 2、避免循环引用。 3、如果顺序执行，某一观察者错误会导致系统卡壳，一般采用异步方式。\n","keywords":["行为型模式"],"articleBody":"当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知它的依赖对象。观察者模式属于行为型模式。\n介绍 意图：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。 主要解决：一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。 何时使用：一个对象（目标对象）的状态发生改变，所有的依赖对象（观察者对象）都将得到通知，进行广播通知。 如何解决：使用面向对象技术，可以将这种依赖关系弱化。 关键代码：在抽象类里有一个 ArrayList 存放观察者们。 应用实例： 1、拍卖的时候，拍卖师观察最高标价，然后通知给其他竞价者竞价。 2、西游记里面悟空请求菩萨降服红孩儿，菩萨洒了一地水招来一个老乌龟，这个乌龟就是观察者，他观察菩萨洒水这个动作。 优点： 1、观察者和被观察者是抽象耦合的。 2、建立一套触发机制。 缺点： 1、如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。 2、如果在观察者和观察目标之间有循环依赖的话，观察目标会触发它们之间进行循环调用，可能导致系统崩溃。 3、观察者模式没有相应的机制让观察者知道所观察的目标对象是怎么发生变化的，而仅仅只是知道观察目标发生了变化。 使用场景：\n一个抽象模型有两个方面，其中一个方面依赖于另一个方面。将这些方面封装在独立的对象中使它们可以各自独立地改变和复用。 一个对象的改变将导致其他一个或多个对象也发生改变，而不知道具体有多少对象将发生改变，可以降低对象之间的耦合度。 一个对象必须通知其他对象，而并不知道这些对象是谁。 需要在系统中创建一个触发链，A对象的行为将影响B对象，B对象的行为将影响C对象……，可以使用观察者模式创建一种链式触发机制。 注意事项： 1、JAVA 中已经有了对观察者模式的支持类。 2、避免循环引用。 3、如果顺序执行，某一观察者错误会导致系统卡壳，一般采用异步方式。\n实现 观察者模式使用三个类 Subject、Observer 和 Client。Subject 对象带有绑定观察者到 Client 对象和从 Client 对象解绑观察者的方法。我们创建 Subject 类、Observer 抽象类和扩展了抽象类 Observer 的实体类。 ObserverPatternDemo，我们的演示类使用 Subject 和实体类对象来演示观察者模式。\n步骤 1 创建 Subject 类。 Subject.java\nimport java.util.ArrayList; import java.util.List; public class Subject { private List\u003cObserver\u003e observers = new ArrayList\u003cObserver\u003e(); private int state; public int getState() { return state; } public void setState(int state) { this.state = state; notifyAllObservers(); } public void attach(Observer observer){ observers.add(observer); } public void notifyAllObservers(){ for (Observer observer : observers) { observer.update(); } } } 步骤 2 创建 Observer 类。 Observer.java\npublic abstract class Observer { protected Subject subject; public abstract void update(); } 步骤 3 创建实体观察者类。 BinaryObserver.java\npublic class BinaryObserver extends Observer{ public BinaryObserver(Subject subject){ this.subject = subject; this.subject.attach(this); } @Override public void update() { System.out.println( \"Binary String: \" + Integer.toBinaryString( subject.getState() ) ); } } OctalObserver.java\npublic class OctalObserver extends Observer{ public OctalObserver(Subject subject){ this.subject = subject; this.subject.attach(this); } @Override public void update() { System.out.println( \"Octal String: \" + Integer.toOctalString( subject.getState() ) ); } } HexaObserver.java\npublic class HexaObserver extends Observer{ public HexaObserver(Subject subject){ this.subject = subject; this.subject.attach(this); } @Override public void update() { System.out.println( \"Hex String: \" + Integer.toHexString( subject.getState() ).toUpperCase() ); } } 步骤 4 使用 Subject 和实体观察者对象。 ObserverPatternDemo.java\npublic class ObserverPatternDemo { public static void main(String[] args) { Subject subject = new Subject(); new HexaObserver(subject); new OctalObserver(subject); new BinaryObserver(subject); System.out.println(\"First state change: 15\"); subject.setState(15); System.out.println(\"Second state change: 10\"); subject.setState(10); } } 步骤 5 验证输出。\nFirst state change: 15 Hex String: F Octal String: 17 Binary String: 1111 Second state change: 10 Hex String: A Octal String: 12 Binary String: 1010 ","wordCount":"287","inLanguage":"en","datePublished":"2018-04-24T16:20:49Z","dateModified":"2018-04-24T16:20:49Z","author":{"@type":"Person","name":"Chuck"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xuchengpeng.github.io/post/design-pattern-observer-pattern/"},"publisher":{"@type":"Organization","name":"Chuck","logo":{"@type":"ImageObject","url":"https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://xuchengpeng.github.io/ accesskey=h title="Chuck (Alt + H)"><img src=https://xuchengpeng.github.io/apple-touch-icon.png alt aria-label=logo height=35>Chuck</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://xuchengpeng.github.io/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://xuchengpeng.github.io/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://xuchengpeng.github.io/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://xuchengpeng.github.io/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://xuchengpeng.github.io/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://xuchengpeng.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://xuchengpeng.github.io/post/>Posts</a></div><h1 class=post-title>观察者模式</h1><div class=post-meta><span title='2018-04-24 16:20:49 +0000 UTC'>April 24, 2018</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;287 words&nbsp;·&nbsp;Chuck&nbsp;|&nbsp;<a href=https://github.com/xuchengpeng/hugo-blog/tree/master/content/post/design-pattern-observer-pattern.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#介绍>介绍</a></li><li><a href=#实现>实现</a><ul><li><a href=#步骤-1>步骤 1</a></li><li><a href=#步骤-2>步骤 2</a></li><li><a href=#步骤-3>步骤 3</a></li><li><a href=#步骤-4>步骤 4</a></li><li><a href=#步骤-5>步骤 5</a></li></ul></li></ul></nav></div></details></div><div class=post-content><p>当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知它的依赖对象。观察者模式属于行为型模式。</p><h2 id=介绍>介绍<a hidden class=anchor aria-hidden=true href=#介绍>#</a></h2><p>意图：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。
+主要解决：一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。
+何时使用：一个对象（目标对象）的状态发生改变，所有的依赖对象（观察者对象）都将得到通知，进行广播通知。
+如何解决：使用面向对象技术，可以将这种依赖关系弱化。
+关键代码：在抽象类里有一个 ArrayList 存放观察者们。
+应用实例： 1、拍卖的时候，拍卖师观察最高标价，然后通知给其他竞价者竞价。 2、西游记里面悟空请求菩萨降服红孩儿，菩萨洒了一地水招来一个老乌龟，这个乌龟就是观察者，他观察菩萨洒水这个动作。
+优点： 1、观察者和被观察者是抽象耦合的。 2、建立一套触发机制。
+缺点： 1、如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。 2、如果在观察者和观察目标之间有循环依赖的话，观察目标会触发它们之间进行循环调用，可能导致系统崩溃。 3、观察者模式没有相应的机制让观察者知道所观察的目标对象是怎么发生变化的，而仅仅只是知道观察目标发生了变化。
+使用场景：</p><ul><li>一个抽象模型有两个方面，其中一个方面依赖于另一个方面。将这些方面封装在独立的对象中使它们可以各自独立地改变和复用。</li><li>一个对象的改变将导致其他一个或多个对象也发生改变，而不知道具体有多少对象将发生改变，可以降低对象之间的耦合度。</li><li>一个对象必须通知其他对象，而并不知道这些对象是谁。</li><li>需要在系统中创建一个触发链，A对象的行为将影响B对象，B对象的行为将影响C对象……，可以使用观察者模式创建一种链式触发机制。</li></ul><p>注意事项： 1、JAVA 中已经有了对观察者模式的支持类。 2、避免循环引用。 3、如果顺序执行，某一观察者错误会导致系统卡壳，一般采用异步方式。</p><h2 id=实现>实现<a hidden class=anchor aria-hidden=true href=#实现>#</a></h2><p>观察者模式使用三个类 Subject、Observer 和 Client。Subject 对象带有绑定观察者到 Client 对象和从 Client 对象解绑观察者的方法。我们创建 Subject 类、Observer 抽象类和扩展了抽象类 Observer 的实体类。
+ObserverPatternDemo，我们的演示类使用 Subject 和实体类对象来演示观察者模式。</p><p><img loading=lazy src=/images/design-pattern/observer_pattern_uml_diagram.jpg alt></p><h3 id=步骤-1>步骤 1<a hidden class=anchor aria-hidden=true href=#步骤-1>#</a></h3><p>创建 Subject 类。
+<em>Subject.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.ArrayList</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.List</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Subject</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>private</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>Observer</span><span class=o>&gt;</span> <span class=n>observers</span>
+</span></span><span class=line><span class=cl>      <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Observer</span><span class=o>&gt;();</span>
+</span></span><span class=line><span class=cl>   <span class=kd>private</span> <span class=kt>int</span> <span class=n>state</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>int</span> <span class=nf>getState</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=n>state</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>setState</span><span class=o>(</span><span class=kt>int</span> <span class=n>state</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>this</span><span class=o>.</span><span class=na>state</span> <span class=o>=</span> <span class=n>state</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>      <span class=n>notifyAllObservers</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>attach</span><span class=o>(</span><span class=n>Observer</span> <span class=n>observer</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>      <span class=n>observers</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>observer</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>notifyAllObservers</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>      <span class=k>for</span> <span class=o>(</span><span class=n>Observer</span> <span class=n>observer</span> <span class=o>:</span> <span class=n>observers</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>         <span class=n>observer</span><span class=o>.</span><span class=na>update</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>      <span class=o>}</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-2>步骤 2<a hidden class=anchor aria-hidden=true href=#步骤-2>#</a></h3><p>创建 Observer 类。
+<em>Observer.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>abstract</span> <span class=kd>class</span> <span class=nc>Observer</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>   <span class=kd>protected</span> <span class=n>Subject</span> <span class=n>subject</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kd>abstract</span> <span class=kt>void</span> <span class=nf>update</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-3>步骤 3<a hidden class=anchor aria-hidden=true href=#步骤-3>#</a></h3><p>创建实体观察者类。
+<em>BinaryObserver.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>BinaryObserver</span> <span class=kd>extends</span> <span class=n>Observer</span><span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=nf>BinaryObserver</span><span class=o>(</span><span class=n>Subject</span> <span class=n>subject</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>      <span class=k>this</span><span class=o>.</span><span class=na>subject</span> <span class=o>=</span> <span class=n>subject</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>      <span class=k>this</span><span class=o>.</span><span class=na>subject</span><span class=o>.</span><span class=na>attach</span><span class=o>(</span><span class=k>this</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>update</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span> <span class=s>&#34;Binary String: &#34;</span>
+</span></span><span class=line><span class=cl>      <span class=o>+</span> <span class=n>Integer</span><span class=o>.</span><span class=na>toBinaryString</span><span class=o>(</span> <span class=n>subject</span><span class=o>.</span><span class=na>getState</span><span class=o>()</span> <span class=o>)</span> <span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p><em>OctalObserver.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>OctalObserver</span> <span class=kd>extends</span> <span class=n>Observer</span><span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=nf>OctalObserver</span><span class=o>(</span><span class=n>Subject</span> <span class=n>subject</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>      <span class=k>this</span><span class=o>.</span><span class=na>subject</span> <span class=o>=</span> <span class=n>subject</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>      <span class=k>this</span><span class=o>.</span><span class=na>subject</span><span class=o>.</span><span class=na>attach</span><span class=o>(</span><span class=k>this</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>update</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>     <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span> <span class=s>&#34;Octal String: &#34;</span>
+</span></span><span class=line><span class=cl>     <span class=o>+</span> <span class=n>Integer</span><span class=o>.</span><span class=na>toOctalString</span><span class=o>(</span> <span class=n>subject</span><span class=o>.</span><span class=na>getState</span><span class=o>()</span> <span class=o>)</span> <span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p><em>HexaObserver.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>HexaObserver</span> <span class=kd>extends</span> <span class=n>Observer</span><span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=nf>HexaObserver</span><span class=o>(</span><span class=n>Subject</span> <span class=n>subject</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>      <span class=k>this</span><span class=o>.</span><span class=na>subject</span> <span class=o>=</span> <span class=n>subject</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>      <span class=k>this</span><span class=o>.</span><span class=na>subject</span><span class=o>.</span><span class=na>attach</span><span class=o>(</span><span class=k>this</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>update</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span> <span class=s>&#34;Hex String: &#34;</span>
+</span></span><span class=line><span class=cl>      <span class=o>+</span> <span class=n>Integer</span><span class=o>.</span><span class=na>toHexString</span><span class=o>(</span> <span class=n>subject</span><span class=o>.</span><span class=na>getState</span><span class=o>()</span> <span class=o>).</span><span class=na>toUpperCase</span><span class=o>()</span> <span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-4>步骤 4<a hidden class=anchor aria-hidden=true href=#步骤-4>#</a></h3><p>使用 Subject 和实体观察者对象。
+<em>ObserverPatternDemo.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ObserverPatternDemo</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>Subject</span> <span class=n>subject</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Subject</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=k>new</span> <span class=n>HexaObserver</span><span class=o>(</span><span class=n>subject</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>      <span class=k>new</span> <span class=n>OctalObserver</span><span class=o>(</span><span class=n>subject</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>      <span class=k>new</span> <span class=n>BinaryObserver</span><span class=o>(</span><span class=n>subject</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;First state change: 15&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>subject</span><span class=o>.</span><span class=na>setState</span><span class=o>(</span><span class=mi>15</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Second state change: 10&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>subject</span><span class=o>.</span><span class=na>setState</span><span class=o>(</span><span class=mi>10</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-5>步骤 5<a hidden class=anchor aria-hidden=true href=#步骤-5>#</a></h3><p>验证输出。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>First</span> <span class=n>state</span> <span class=n>change</span><span class=o>:</span> <span class=mi>15</span>
+</span></span><span class=line><span class=cl><span class=n>Hex</span> <span class=n>String</span><span class=o>:</span> <span class=n>F</span>
+</span></span><span class=line><span class=cl><span class=n>Octal</span> <span class=n>String</span><span class=o>:</span> <span class=mi>17</span>
+</span></span><span class=line><span class=cl><span class=n>Binary</span> <span class=n>String</span><span class=o>:</span> <span class=mi>1111</span>
+</span></span><span class=line><span class=cl><span class=n>Second</span> <span class=n>state</span> <span class=n>change</span><span class=o>:</span> <span class=mi>10</span>
+</span></span><span class=line><span class=cl><span class=n>Hex</span> <span class=n>String</span><span class=o>:</span> <span class=n>A</span>
+</span></span><span class=line><span class=cl><span class=n>Octal</span> <span class=n>String</span><span class=o>:</span> <span class=mi>12</span>
+</span></span><span class=line><span class=cl><span class=n>Binary</span> <span class=n>String</span><span class=o>:</span> <span class=mi>1010</span>
+</span></span></code></pre></div></div><footer class=post-footer><ul class=post-tags><li><a href=https://xuchengpeng.github.io/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/>行为型模式</a></li></ul><nav class=paginav><a class=prev href=https://xuchengpeng.github.io/post/design-pattern-state-pattern/><span class=title>« Prev</span><br><span>状态模式</span></a>
+<a class=next href=https://xuchengpeng.github.io/post/design-pattern-memento-pattern/><span class=title>Next »</span><br><span>备忘录模式</span></a></nav></footer><div class=article-comments><span id=/post/design-pattern-observer-pattern/ class=leancloud-visitors data-flag-title=观察者模式><span class=post-meta-item-text>文章阅读量</span>
+<span class=leancloud-visitors-count>0</span></span><div id=vcomments></div><script src=//unpkg.com/valine/dist/Valine.min.js></script>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"",appKey:"",notify:"",verify:"",avatar:"",placeholder:"",visitor:""})</script></div></article></main><footer class=footer><span>&copy; 2023 <a href=https://xuchengpeng.github.io/>Chuck</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

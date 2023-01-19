@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>E-mail on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/e-mail/</link>
+    <description>Recent content in E-mail on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 18 Jan 2018 07:30:32 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/e-mail/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>阿里云域名赠送企业邮箱</title>
+      <link>https://xuchengpeng.github.io/post/alimail-with-aliyun-domain/</link>
+      <pubDate>Thu, 18 Jan 2018 07:30:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/alimail-with-aliyun-domain/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/alimail-qiye.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;申请 {% post_link set-up-aliyun-domain-with-github-pages 阿里云域名 %} 后，会赠送阿里云企业邮箱免费版。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;50个帐号，5G/帐号；&lt;/li&gt;
+&lt;li&gt;域名注册成功后，自动开通企业邮箱并添加邮箱解析；&lt;/li&gt;
+&lt;li&gt;每位会员只能开通一个企业邮箱免费版;&lt;/li&gt;
+&lt;li&gt;仅 .top 域名注册送免费企业邮箱。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;开通企业邮箱免费版后一定要尽快使其生效，否则七天内会被收回。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>163邮箱已死</title>
+      <link>https://xuchengpeng.github.io/post/163-mail-dead/</link>
+      <pubDate>Sun, 24 Dec 2017 09:11:50 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/163-mail-dead/</guid>
+      <description>国内qq邮箱和163邮箱一直是主力使用邮箱。 目前qq邮箱使用授权码仍然可以使用，163邮箱虽然之前推出了授权码功能，但目前已无法使用 Spark 进行第三方登录，而只能使用网易邮箱大师这种体验非常差的官方客户端，国内互联网公司，做产品的态度可见一斑。 已弃用了163邮箱了，注册Outlook邮箱好好用，干净可靠。</description>
+    </item>
+    
+  </channel>
+</rss>

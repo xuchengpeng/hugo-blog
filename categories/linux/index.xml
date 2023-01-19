@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Chuck</title>
+    <link>https://xuchengpeng.github.io/categories/linux/</link>
+    <description>Recent content in Linux on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 07 Nov 2018 08:59:03 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu安装Samba</title>
+      <link>https://xuchengpeng.github.io/post/ubuntu-install-samba/</link>
+      <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/ubuntu-install-samba/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt-get install samba
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改 /etc/samba/smb.conf 文件：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[share]
+  path = /
+  available = yes
+  valid users = root
+  read only = no
+  browseable = yes
+  public = yes
+  writable = yes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改Samba登陆的密码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;smbpasswd -a root
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;这里也可以使用非root用户，必须是Linux系统中已存在的用户。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;重启Samba服务：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/etc/init.d/smbd restart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Shell - Here Documents</title>
+      <link>https://xuchengpeng.github.io/post/shell-here-documents/</link>
+      <pubDate>Tue, 30 Oct 2018 14:19:55 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/shell-here-documents/</guid>
+      <description>&lt;p&gt;Here Documents 是 Shell 中的一种特殊的重定向方式，用来将输入重定向到一个交互式 Shell 脚本或程序。&lt;/p&gt;
+&lt;p&gt;它的基本的形式如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; delimiter
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    document
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;delimiter&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;它的作用是将两个 delimiter 之间的内容(document) 作为输入传递给 command。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;结尾的delimiter 一定要顶格写，前面不能有任何字符，后面也不能有任何字符，包括空格和 tab 缩进。&lt;/li&gt;
+&lt;li&gt;开始的delimiter前后的空格会被忽略掉。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux系统Shell特殊变量</title>
+      <link>https://xuchengpeng.github.io/post/linux-shell-special-variables/</link>
+      <pubDate>Thu, 20 Sep 2018 13:55:54 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/linux-shell-special-variables/</guid>
+      <description>&lt;p&gt;变量名只能包含数字、字母和下划线，因为某些包含其他字符的变量有特殊含义，这样的变量被称为特殊变量。&lt;/p&gt;
+&lt;p&gt;例如，$ 表示当前Shell进程的ID，即pid，看下面的代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# echo $$&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;38977&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;变量&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;当前脚本的文件名&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$n&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$#&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;传递给脚本或函数的参数个数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$*&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;传递给脚本或函数的所有参数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$@&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;传递给脚本或函数的所有参数。被双引号(&amp;quot; &amp;ldquo;)包含时，与 $* 稍有不同&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$?&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;上个命令的退出状态，或函数的返回值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$$&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 升级内核</title>
+      <link>https://xuchengpeng.github.io/post/ubuntu-upgrade-kernel/</link>
+      <pubDate>Fri, 20 Apr 2018 15:34:34 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/ubuntu-upgrade-kernel/</guid>
+      <description>&lt;h3 id=&#34;查看当前内核版本&#34;&gt;查看当前内核版本&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ uname -r
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4.4.0-53-generic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;下载内核&#34;&gt;下载内核&lt;/h3&gt;
+&lt;p&gt;下载最新 Ubuntu 编译好的内核地址： &lt;a href=&#34;http://kernel.ubuntu.com/~kernel-ppa/mainline/&#34;&gt;http://kernel.ubuntu.com/~kernel-ppa/mainline/&lt;/a&gt;
+选取当前最新的内核 4.16.3 版本进行下载：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ mkdir 4.16.3 &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; 4.16.3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603_4.16.3-041603.201804190730_all.deb
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-image-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;安装内核&#34;&gt;安装内核&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dpkg -i *.deb
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;卸载旧内核&#34;&gt;卸载旧内核&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看目前安装的内核&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dpkg -l &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep linux
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ii  linux-image-4.4.0-53-generic       4.4.0-53.74                        amd64        Linux kernel image &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; version 4.4.0 on &lt;span class=&#34;m&#34;&gt;64&lt;/span&gt; bit x86 SMP
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ii  linux-image-4.16.3-041603-generic  4.16.3-041603.201804190730         amd64        Linux kernel image &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; version 4.16.3 on &lt;span class=&#34;m&#34;&gt;64&lt;/span&gt; bit x86 SMP
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;## 卸载旧内核&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt-get purge linux-image-4.4.0-53-generic linux-headers-4.4.0-53
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果查询的结果中还有显示已卸载的内核，可以使用&lt;code&gt;dpkg -P linux-image-4.4.0-53-generic&lt;/code&gt;命令将其删除。&lt;/p&gt;
+&lt;h3 id=&#34;更新启动引导&#34;&gt;更新启动引导&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ update-grub
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 重启后再查看内核版本验证 uname -a&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 增加和删除 PPA 软件源</title>
+      <link>https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/</link>
+      <pubDate>Fri, 13 Apr 2018 10:50:50 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/</guid>
+      <description>&lt;p&gt;PPA，英文全称为 Personal Package Archives，即个人软件包档案。是 Ubuntu Launchpad 网站提供的一项源服务，允许个人用户上传软件源代码，通过 Launchpad 进行编译并发布为二进制软件包，作为 apt / 新立得（Synaptic）源供其他用户下载和更新。&lt;/p&gt;
+&lt;p&gt;PPA 的一般形式是： &lt;strong&gt;ppa:user/ppa-name&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;添加 PPA 源:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;添加 PPA 源的命令为： sudo add-apt-repository ppa:user/ppa-name&lt;/li&gt;
+&lt;li&gt;添加好记得要更新一下： sudo apt-get update&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;删除 PPA 源:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;删除 PPA 源的命令格式则为：sudo add-apt-repository -r ppa:user/ppa-name&lt;/li&gt;
+&lt;li&gt;然后进入 /etc/apt/sources.list.d 目录，将相应 ppa 源的保存文件删除。&lt;/li&gt;
+&lt;li&gt;最后同样更新一下：sudo apt-get update&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

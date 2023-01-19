@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Chrome on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/chrome/</link>
+    <description>Recent content in Chrome on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 12 Dec 2017 16:24:48 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用户样式管理器Stylus</title>
+      <link>https://xuchengpeng.github.io/post/chrome-ext-stylus/</link>
+      <pubDate>Tue, 12 Dec 2017 16:24:48 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/chrome-ext-stylus/</guid>
+      <description>&lt;p&gt;去年 9 月底，流行的浏览器扩展 &lt;a href=&#34;https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe&#34;&gt;Stylish&lt;/a&gt; 及其用户社区 userstyles.org (USo) 更换了所有者。新所有者 Justin Hindman 日前正式宣布 Stylish 及 USo 成为数据分析公司 SimilarWeb 的一部分，最近更新的 Chrome 版已经开始默认收集用户信息。根据 uBlock Origin 作者 gorhill 分析，新的 Chrome 版会记录使用者浏览的每一个链接，包括从哪来和到哪去，加上唯一用户标识符及其他一些信息并进行两次 base64 编码后，发回 &lt;a href=&#34;https://api.userstyles.org/tic/stats&#34;&gt;https://api.userstyles.org/tic/stats&lt;/a&gt; 。目前用户还可以选择排除（opt-out），虽然选择排除后 Stylish 的功能将受到很大限制。根据最后更新时间可以推断，其他浏览器版（Firefox、Safari、Opera）暂未受影响。AMO 审核人员 rctgamer3 表示 Stylish 还没有提交新版。&amp;quot;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>脚本管理器Tampermonkey</title>
+      <link>https://xuchengpeng.github.io/post/chrome-ext-tampermonkey/</link>
+      <pubDate>Mon, 27 Nov 2017 21:21:27 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/chrome-ext-tampermonkey/</guid>
+      <description>&lt;p&gt;不装扩展（Extensions）的 Chrome 只能发挥它 40% 的能力。&lt;/p&gt;
+&lt;p&gt;各类实用的 Chrome 扩展是不少人选择 Chrome 浏览器的重要原因，经过多年发展，Chrome 的扩展种类已经非常丰富，除了那些「即装即用」的小工具之外，也有很多被誉为「神器」的强大扩展程序。&lt;/p&gt;
+&lt;p&gt;少数派此前介绍过的 Stylish 就算一款「神器」，通过安装各类 CSS 模板，它几乎可以美化一切网页。而另一款不得不提的「神器」就是今天要介绍的 Tampermonkey，也被戏称为「油猴」。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Google Chrome必备插件</title>
+      <link>https://xuchengpeng.github.io/post/google-chrome-extensions/</link>
+      <pubDate>Wed, 22 Nov 2017 16:28:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/google-chrome-extensions/</guid>
+      <description>&lt;p&gt;收录Chrome最经典的扩展，如Tampermonkey、uBlock Origin、smartUp Gestures等，款款都是神器。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Google Chrome下载地址</title>
+      <link>https://xuchengpeng.github.io/post/google-chrome-download-addr/</link>
+      <pubDate>Tue, 21 Nov 2017 10:21:41 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/google-chrome-download-addr/</guid>
+      <description>&lt;p&gt;以下都是Chrome浏览器的离线版本，包括Stable, Beta, Dev, Canary版本。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>边缘计算 on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/</link>
+    <description>Recent content in 边缘计算 on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 11 Sep 2018 09:26:07 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>云计算与边缘计算</title>
+      <link>https://xuchengpeng.github.io/post/cloud-and-edge-computing/</link>
+      <pubDate>Tue, 11 Sep 2018 09:26:07 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/cloud-and-edge-computing/</guid>
+      <description>&lt;p&gt;云计算（cloudcomputing）是基于互联网的相关服务的增加、使用和交付模式，通常涉及通过互联网来提供动态易扩展且经常是虚拟化的资源。&lt;/p&gt;
+&lt;h3 id=&#34;云计算&#34;&gt;云计算&lt;/h3&gt;
+&lt;p&gt;云计算系统由云平台、云存储、云终端、云安全四个基本部分组成。&lt;/p&gt;
+&lt;p&gt;云平台从用户的角度可分为公有云、私有云、混合云等。&lt;/p&gt;
+&lt;p&gt;通过从提供服务的层次可分为基础设施即服务（Iaas）、平台即服务（Paas）和软件即服务（Saas）。&lt;/p&gt;
+&lt;p&gt;将应用部署到云端后，可以不必再关注那些令人头疼的硬件和软件问题，它们会由云服务提供商的专业团队去解决。使用的是共享的硬件，这意味着像使用一个工具一样去利用云服务（就像插上插座，你就能使用电一样简单）。只需要按照你的需要来支付相应的费用，而关于软件的更新，资源的按需扩展都能自动完成。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

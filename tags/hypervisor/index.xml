@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hypervisor on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/hypervisor/</link>
+    <description>Recent content in Hypervisor on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 11 Sep 2018 20:15:48 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/hypervisor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KVM</title>
+      <link>https://xuchengpeng.github.io/post/kvm/</link>
+      <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/kvm/</guid>
+      <description>&lt;p&gt;KVM 全称是 基于内核的虚拟机（Kernel-based Virtual Machine），它是Linux 的一个内核模块，该内核模块使得 Linux 变成了一个 Hypervisor：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;它由 Quramnet 开发，该公司于 2008年被 Red Hat 收购。&lt;/li&gt;
+&lt;li&gt;它支持 x86 (32 and 64 位), s390, Powerpc 等 CPU。&lt;/li&gt;
+&lt;li&gt;它从 Linux 2.6.20 起就作为一模块被包含在 Linux 内核中。&lt;/li&gt;
+&lt;li&gt;它需要支持虚拟化扩展的 CPU。&lt;/li&gt;
+&lt;li&gt;它是完全开源的。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

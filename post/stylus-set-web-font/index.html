@@ -1,0 +1,317 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Stylus 自定义网页字体 | Chuck</title><meta name=keywords content="Stylus,Stylish,CSS"><meta name=description content="使用 Stylus 可以直接使用 userstyles 网站 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。
+这里推荐一款 ForceMyFont 的模板，可以设定的选项非常丰富，前提也是需要在电脑上安装你选择的字体。
+你也可以自定义字体CSS的样式，在 Chrome 浏览器中，这里使用 Stylus 插件，编写新的样式，代码如下：
+*{font-weight:500!important;}
+*{font-family: Arial, &#34;思源宋体&#34;!important;}
+第一行设定字重，第二行设定英文字体和中文字体。如果要添加字体阴影，可以添加以下代码：
+*{text-shadow:0.01em 0.01em 0.01em #999999 !important;}
+其中的数值依次代表阴影的 X 轴偏移、Y 轴偏移、阴影大小，以及字体颜色。"><meta name=author content="Chuck"><link rel=canonical href=https://xuchengpeng.github.io/post/stylus-set-web-font/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Stylus 自定义网页字体"><meta property="og:description" content="使用 Stylus 可以直接使用 userstyles 网站 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。
+这里推荐一款 ForceMyFont 的模板，可以设定的选项非常丰富，前提也是需要在电脑上安装你选择的字体。
+你也可以自定义字体CSS的样式，在 Chrome 浏览器中，这里使用 Stylus 插件，编写新的样式，代码如下：
+*{font-weight:500!important;}
+*{font-family: Arial, &#34;思源宋体&#34;!important;}
+第一行设定字重，第二行设定英文字体和中文字体。如果要添加字体阴影，可以添加以下代码：
+*{text-shadow:0.01em 0.01em 0.01em #999999 !important;}
+其中的数值依次代表阴影的 X 轴偏移、Y 轴偏移、阴影大小，以及字体颜色。"><meta property="og:type" content="article"><meta property="og:url" content="https://xuchengpeng.github.io/post/stylus-set-web-font/"><meta property="og:image" content="https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="post"><meta property="article:published_time" content="2018-05-23T10:27:11+08:00"><meta property="article:modified_time" content="2018-05-23T10:27:11+08:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Stylus 自定义网页字体"><meta name=twitter:description content="使用 Stylus 可以直接使用 userstyles 网站 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。
+这里推荐一款 ForceMyFont 的模板，可以设定的选项非常丰富，前提也是需要在电脑上安装你选择的字体。
+你也可以自定义字体CSS的样式，在 Chrome 浏览器中，这里使用 Stylus 插件，编写新的样式，代码如下：
+*{font-weight:500!important;}
+*{font-family: Arial, &#34;思源宋体&#34;!important;}
+第一行设定字重，第二行设定英文字体和中文字体。如果要添加字体阴影，可以添加以下代码：
+*{text-shadow:0.01em 0.01em 0.01em #999999 !important;}
+其中的数值依次代表阴影的 X 轴偏移、Y 轴偏移、阴影大小，以及字体颜色。"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://xuchengpeng.github.io/post/"},{"@type":"ListItem","position":2,"name":"Stylus 自定义网页字体","item":"https://xuchengpeng.github.io/post/stylus-set-web-font/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Stylus 自定义网页字体","name":"Stylus 自定义网页字体","description":"使用 Stylus 可以直接使用 userstyles 网站 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。\n这里推荐一款 ForceMyFont 的模板，可以设定的选项非常丰富，前提也是需要在电脑上安装你选择的字体。\n你也可以自定义字体CSS的样式，在 Chrome 浏览器中，这里使用 Stylus 插件，编写新的样式，代码如下：\n*{font-weight:500!important;} *{font-family: Arial, \u0026#34;思源宋体\u0026#34;!important;} 第一行设定字重，第二行设定英文字体和中文字体。如果要添加字体阴影，可以添加以下代码：\n*{text-shadow:0.01em 0.01em 0.01em #999999 !important;} 其中的数值依次代表阴影的 X 轴偏移、Y 轴偏移、阴影大小，以及字体颜色。\n","keywords":["Stylus","Stylish","CSS"],"articleBody":"使用 Stylus 可以直接使用 userstyles 网站 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。\n这里推荐一款 ForceMyFont 的模板，可以设定的选项非常丰富，前提也是需要在电脑上安装你选择的字体。\n你也可以自定义字体CSS的样式，在 Chrome 浏览器中，这里使用 Stylus 插件，编写新的样式，代码如下：\n*{font-weight:500!important;} *{font-family: Arial, \"思源宋体\"!important;} 第一行设定字重，第二行设定英文字体和中文字体。如果要添加字体阴影，可以添加以下代码：\n*{text-shadow:0.01em 0.01em 0.01em #999999 !important;} 其中的数值依次代表阴影的 X 轴偏移、Y 轴偏移、阴影大小，以及字体颜色。\n网页上的图标显示成框框，可用以下办法解决：\n*:not([class*=\"icon\"]):not(i) { font-family: \"DejaVu Sans Mono\", \"思源黑体 Regular\" !important; } 我的自己使用的思源黑体配置：\n@namespace url(http://www.w3.org/1999/xhtml); html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; font-family: \"Source Han Sans SC\",\"Source Han Sans\",\"HanHei SC\",-apple-system,BlinkMacSystemFont,system-ui,sans-serif; quotes: \"“\" \"”\"; } html:lang(de) { quotes: \"„\" \"“\"; } html:lang(es),html:lang(no) { quotes: \"«\" \"»\"; } html:lang(fr) { quotes: \"« \" \" »\"; } html:lang(zh-CN),html:lang(zh-SG) { font-family: \"Source Han Sans SC\",\"Source Han Sans\",\"HanHei SC\",-apple-system,BlinkMacSystemFont,system-ui,sans-serif; } html:lang(zh-TW),html:lang(zh-HK),html:lang(zh-MO) { font-family: \"Source Han Sans TC\",\"Source Han Sans\",\"HanHei TC\",-apple-system,BlinkMacSystemFont,system-ui,sans-serif; quotes: \"「\" \"」\"; } html:lang(ja) { font-family: \"Source Han Sans\",\"Hiragino Kaku Gothic Pro\",-apple-system,BlinkMacSystemFont,system-ui,sans-serif; quotes: \"「\" \"」\"; } html:lang(ko) { font-family: \"Source Han Sans K\",\"Source Han Sans\",\"Apple Gothic\",-apple-system,BlinkMacSystemFont,system-ui,sans-serif; } body,input,textarea,keygen,select,button { font-family: inherit; } body:disabled,input:disabled,textarea:disabled,keygen:disabled,select:disabled,button:disabled { cursor: not-allowed; } @font-face { font-family:\"Arial\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"Georgia\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"Helvetica\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"Helvetica Neue\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"Segoe UI\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"Tahoma\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"Times\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"Time New Roman\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"Trebuchet\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"Trebuchet MS\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"Verdana\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"Consolas\";src:local(\"Source Code Pro\"); } @font-face { font-family:\"Courier\";src:local(\"Source Code Pro\"); } @font-face { font-family:\"Courier New\";src:local(\"Source Code Pro\"); } @font-face { font-family:\"SimSun\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"SimSun-ExtB\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"宋体\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"NSimSun\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"新宋体\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"SimHei\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"黑体\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"Microsoft YaHei\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"微软雅黑\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"STHeiti SC\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"PingFang SC\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"苹方-简\";src:local(\"Source Han Sans SC\"); } @font-face { font-family:\"MingLiU\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"MingLiU-ExtB\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"MingLiU_HKSCS\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"MingLiU_HKSCS-ExtB\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"PMingLiU\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"PMingLiU-ExtB\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"Microsoft JhengHei\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"微軟正黑體\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"STHeiti TC\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"PingFang TC\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"蘋方-繁\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"PingFang HK\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"蘋方-港\";src:local(\"Source Han Sans TC\"); } @font-face { font-family:\"MS Gothic\";src:local(\"Source Han Sans\"); } @font-face { font-family:\"MS PGothic\";src:local(\"Source Han Sans\"); } @font-face { font-family:\"MS UI Gothic\";src:local(\"Source Han Sans\"); } @font-face { font-family:\"Yu Gothic\";src:local(\"Source Han Sans\"); } @font-face { font-family:\"Yu Gothic UI\";src:local(\"Source Han Sans\"); } @font-face { font-family:\"Malgun Gothic\";src:local(\"Source Han Sans K\"); } ","wordCount":"469","inLanguage":"en","datePublished":"2018-05-23T10:27:11+08:00","dateModified":"2018-05-23T10:27:11+08:00","author":{"@type":"Person","name":"Chuck"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xuchengpeng.github.io/post/stylus-set-web-font/"},"publisher":{"@type":"Organization","name":"Chuck","logo":{"@type":"ImageObject","url":"https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://xuchengpeng.github.io/ accesskey=h title="Chuck (Alt + H)"><img src=https://xuchengpeng.github.io/apple-touch-icon.png alt aria-label=logo height=35>Chuck</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://xuchengpeng.github.io/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://xuchengpeng.github.io/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://xuchengpeng.github.io/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://xuchengpeng.github.io/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://xuchengpeng.github.io/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://xuchengpeng.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://xuchengpeng.github.io/post/>Posts</a></div><h1 class=post-title>Stylus 自定义网页字体</h1><div class=post-meta><span title='2018-05-23 10:27:11 +0800 +0800'>May 23, 2018</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;469 words&nbsp;·&nbsp;Chuck&nbsp;|&nbsp;<a href=https://github.com/xuchengpeng/hugo-blog/tree/master/content/post/stylus-set-web-font.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=post-content><p>使用 Stylus 可以直接使用 <a href=https://userstyles.org/>userstyles 网站</a> 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。</p><p>这里推荐一款 <a href=https://userstyles.org/styles/100473/004-forcemyfonts-chinese-firefoxchromeie-catcat520>ForceMyFont</a> 的模板，可以设定的选项非常丰富，前提也是需要在电脑上安装你选择的字体。</p><p>你也可以自定义字体CSS的样式，在 Chrome 浏览器中，这里使用 Stylus 插件，编写新的样式，代码如下：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=o>*</span><span class=p>{</span><span class=k>font-weight</span><span class=p>:</span><span class=mi>500</span><span class=cp>!important</span><span class=p>;}</span>
+</span></span><span class=line><span class=cl><span class=o>*</span><span class=p>{</span><span class=k>font-family</span><span class=p>:</span> <span class=n>Arial</span><span class=p>,</span> <span class=s2>&#34;思源宋体&#34;</span><span class=cp>!important</span><span class=p>;}</span>
+</span></span></code></pre></div><p>第一行设定字重，第二行设定英文字体和中文字体。如果要添加字体阴影，可以添加以下代码：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=o>*</span><span class=p>{</span><span class=k>text-shadow</span><span class=p>:</span><span class=mf>0.01</span><span class=kt>em</span> <span class=mf>0.01</span><span class=kt>em</span> <span class=mf>0.01</span><span class=kt>em</span> <span class=mh>#999999</span> <span class=cp>!important</span><span class=p>;}</span>
+</span></span></code></pre></div><p>其中的数值依次代表阴影的 X 轴偏移、Y 轴偏移、阴影大小，以及字体颜色。</p><p>网页上的图标显示成框框，可用以下办法解决：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=o>*</span><span class=p>:</span><span class=nd>not</span><span class=o>([</span><span class=nt>class</span><span class=o>*=</span><span class=s2>&#34;icon&#34;</span><span class=o>])</span><span class=p>:</span><span class=nd>not</span><span class=o>(</span><span class=nt>i</span><span class=o>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>font-family</span><span class=p>:</span> <span class=s2>&#34;DejaVu Sans Mono&#34;</span><span class=p>,</span> <span class=s2>&#34;思源黑体 Regular&#34;</span> <span class=cp>!important</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>我的自己使用的思源黑体配置：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>@</span><span class=k>namespace</span> <span class=nt>url</span><span class=o>(</span><span class=nt>http</span><span class=o>://</span><span class=nt>www</span><span class=p>.</span><span class=nc>w3</span><span class=p>.</span><span class=nc>org</span><span class=o>/</span><span class=nt>1999</span><span class=o>/</span><span class=nt>xhtml</span><span class=o>)</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>html</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kp>-webkit-</span><span class=n>font-smoothing</span><span class=p>:</span> <span class=n>antialiased</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kp>-moz-</span><span class=n>osx-font-smoothing</span><span class=p>:</span> <span class=n>grayscale</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=n>text-rendering</span><span class=p>:</span> <span class=kc>optimizeLegibility</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=k>font-family</span><span class=p>:</span> <span class=s2>&#34;Source Han Sans SC&#34;</span><span class=p>,</span><span class=s2>&#34;Source Han Sans&#34;</span><span class=p>,</span><span class=s2>&#34;HanHei SC&#34;</span><span class=p>,</span><span class=o>-</span><span class=n>apple-system</span><span class=p>,</span><span class=n>BlinkMacSystemFont</span><span class=p>,</span><span class=n>system-ui</span><span class=p>,</span><span class=kc>sans-serif</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=k>quotes</span><span class=p>:</span> <span class=s2>&#34;“&#34;</span> <span class=s2>&#34;”&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>html</span><span class=p>:</span><span class=nd>lang</span><span class=o>(</span><span class=nt>de</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>quotes</span><span class=p>:</span> <span class=s2>&#34;„&#34;</span> <span class=s2>&#34;“&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>html</span><span class=p>:</span><span class=nd>lang</span><span class=o>(</span><span class=nt>es</span><span class=o>),</span><span class=nt>html</span><span class=p>:</span><span class=nd>lang</span><span class=o>(</span><span class=nt>no</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>quotes</span><span class=p>:</span> <span class=s2>&#34;«&#34;</span> <span class=s2>&#34;»&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>html</span><span class=p>:</span><span class=nd>lang</span><span class=o>(</span><span class=nt>fr</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>quotes</span><span class=p>:</span> <span class=s2>&#34;« &#34;</span> <span class=s2>&#34; »&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>html</span><span class=p>:</span><span class=nd>lang</span><span class=o>(</span><span class=nt>zh-CN</span><span class=o>),</span><span class=nt>html</span><span class=p>:</span><span class=nd>lang</span><span class=o>(</span><span class=nt>zh-SG</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>font-family</span><span class=p>:</span> <span class=s2>&#34;Source Han Sans SC&#34;</span><span class=p>,</span><span class=s2>&#34;Source Han Sans&#34;</span><span class=p>,</span><span class=s2>&#34;HanHei SC&#34;</span><span class=p>,</span><span class=o>-</span><span class=n>apple-system</span><span class=p>,</span><span class=n>BlinkMacSystemFont</span><span class=p>,</span><span class=n>system-ui</span><span class=p>,</span><span class=kc>sans-serif</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>html</span><span class=p>:</span><span class=nd>lang</span><span class=o>(</span><span class=nt>zh-TW</span><span class=o>),</span><span class=nt>html</span><span class=p>:</span><span class=nd>lang</span><span class=o>(</span><span class=nt>zh-HK</span><span class=o>),</span><span class=nt>html</span><span class=p>:</span><span class=nd>lang</span><span class=o>(</span><span class=nt>zh-MO</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>font-family</span><span class=p>:</span> <span class=s2>&#34;Source Han Sans TC&#34;</span><span class=p>,</span><span class=s2>&#34;Source Han Sans&#34;</span><span class=p>,</span><span class=s2>&#34;HanHei TC&#34;</span><span class=p>,</span><span class=o>-</span><span class=n>apple-system</span><span class=p>,</span><span class=n>BlinkMacSystemFont</span><span class=p>,</span><span class=n>system-ui</span><span class=p>,</span><span class=kc>sans-serif</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=k>quotes</span><span class=p>:</span> <span class=s2>&#34;「&#34;</span> <span class=s2>&#34;」&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>html</span><span class=p>:</span><span class=nd>lang</span><span class=o>(</span><span class=nt>ja</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>font-family</span><span class=p>:</span> <span class=s2>&#34;Source Han Sans&#34;</span><span class=p>,</span><span class=s2>&#34;Hiragino Kaku Gothic Pro&#34;</span><span class=p>,</span><span class=o>-</span><span class=n>apple-system</span><span class=p>,</span><span class=n>BlinkMacSystemFont</span><span class=p>,</span><span class=n>system-ui</span><span class=p>,</span><span class=kc>sans-serif</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=k>quotes</span><span class=p>:</span> <span class=s2>&#34;「&#34;</span> <span class=s2>&#34;」&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>html</span><span class=p>:</span><span class=nd>lang</span><span class=o>(</span><span class=nt>ko</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>font-family</span><span class=p>:</span> <span class=s2>&#34;Source Han Sans K&#34;</span><span class=p>,</span><span class=s2>&#34;Source Han Sans&#34;</span><span class=p>,</span><span class=s2>&#34;Apple Gothic&#34;</span><span class=p>,</span><span class=o>-</span><span class=n>apple-system</span><span class=p>,</span><span class=n>BlinkMacSystemFont</span><span class=p>,</span><span class=n>system-ui</span><span class=p>,</span><span class=kc>sans-serif</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>body</span><span class=o>,</span><span class=nt>input</span><span class=o>,</span><span class=nt>textarea</span><span class=o>,</span><span class=nt>keygen</span><span class=o>,</span><span class=nt>select</span><span class=o>,</span><span class=nt>button</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>font-family</span><span class=p>:</span> <span class=kc>inherit</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>body</span><span class=p>:</span><span class=nd>disabled</span><span class=o>,</span><span class=nt>input</span><span class=p>:</span><span class=nd>disabled</span><span class=o>,</span><span class=nt>textarea</span><span class=p>:</span><span class=nd>disabled</span><span class=o>,</span><span class=nt>keygen</span><span class=p>:</span><span class=nd>disabled</span><span class=o>,</span><span class=nt>select</span><span class=p>:</span><span class=nd>disabled</span><span class=o>,</span><span class=nt>button</span><span class=p>:</span><span class=nd>disabled</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>cursor</span><span class=p>:</span> <span class=kc>not-allowed</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Arial&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Georgia&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Helvetica&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Helvetica Neue&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Segoe UI&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Tahoma&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Times&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Time New Roman&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Trebuchet&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Trebuchet MS&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Verdana&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Consolas&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Code Pro&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Courier&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Code Pro&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Courier New&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Code Pro&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;SimSun&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;SimSun-ExtB&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;宋体&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;NSimSun&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;新宋体&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;SimHei&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;黑体&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Microsoft YaHei&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;微软雅黑&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;STHeiti SC&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;PingFang SC&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;苹方-简&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans SC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;MingLiU&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;MingLiU-ExtB&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;MingLiU_HKSCS&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;MingLiU_HKSCS-ExtB&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;PMingLiU&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;PMingLiU-ExtB&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Microsoft JhengHei&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;微軟正黑體&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;STHeiti TC&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;PingFang TC&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;蘋方-繁&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;PingFang HK&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;蘋方-港&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans TC&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;MS Gothic&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;MS PGothic&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;MS UI Gothic&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Yu Gothic&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Yu Gothic UI&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span><span class=s2>&#34;Malgun Gothic&#34;</span><span class=o>;</span><span class=nt>src</span><span class=p>:</span><span class=nd>local</span><span class=o>(</span><span class=s2>&#34;Source Han Sans K&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div></div><footer class=post-footer><ul class=post-tags><li><a href=https://xuchengpeng.github.io/tags/stylus/>Stylus</a></li><li><a href=https://xuchengpeng.github.io/tags/stylish/>Stylish</a></li><li><a href=https://xuchengpeng.github.io/tags/css/>CSS</a></li></ul><nav class=paginav><a class=prev href=https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/><span class=title>« Prev</span><br><span>TCP/IP 详解(卷一) TCP的超时与重传</span></a>
+<a class=next href=https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bulk-data-flow/><span class=title>Next »</span><br><span>TCP/IP 详解(卷一) TCP的成块数据流</span></a></nav></footer><div class=article-comments><span id=/post/stylus-set-web-font/ class=leancloud-visitors data-flag-title="Stylus 自定义网页字体"><span class=post-meta-item-text>文章阅读量</span>
+<span class=leancloud-visitors-count>0</span></span><div id=vcomments></div><script src=//unpkg.com/valine/dist/Valine.min.js></script>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"",appKey:"",notify:"",verify:"",avatar:"",placeholder:"",visitor:""})</script></div></article></main><footer class=footer><span>&copy; 2023 <a href=https://xuchengpeng.github.io/>Chuck</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

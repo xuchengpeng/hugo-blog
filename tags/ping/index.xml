@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ping on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/ping/</link>
+    <description>Recent content in Ping on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 04 May 2018 08:41:08 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/ping/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP/IP 详解(卷一) Ping程序</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-ping/</link>
+      <pubDate>Fri, 04 May 2018 08:41:08 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-ping/</guid>
+      <description>&lt;p&gt;“ping”这个名字源于声纳定位操作。Ping程序由Mike Muuss编写，目的是为了测试另一台主机是否可达。该程序发送一份ICMP回显请求报文给主机，并等待返回ICMP回显应答。&lt;/p&gt;
+&lt;h2 id=&#34;ping程序&#34;&gt;Ping程序&lt;/h2&gt;
+&lt;p&gt;我们称发送回显请求的ping程序为客户，而称被ping的主机为服务器。大多数的TCP/IP实现都在内核中直接支持Ping服务器—这种服务器不是一个用户进程（两种ICMP查询服务，地址掩码和时间戳请求，也都是直接在内核中进行处理的）。
+ICMP回显请求和回显应答报文如下：
+&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/icmp-echo-format.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;对于其他类型的ICMP查询报文，服务器必须响应标识符和序列号字段。另外，客户发送的选项数据必须回显，假设客户对这些信息都会感兴趣。&lt;/p&gt;
+&lt;p&gt;Unix系统在实现ping程序时是把ICMP报文中的标识符字段置成发送进程的ID号。这样即使在同一台主机上同时运行了多个ping程序实例，ping程序也可以识别出返回的信息。&lt;/p&gt;
+&lt;p&gt;序列号从0开始，每发送一次新的回显请求就加1。ping程序打印出返回的每个分组的序列号，允许我们查看是否有分组丢失、失序或重复。IP是一种最好的数据报传递服务，因此这三个条件都有可能发生。&lt;/p&gt;
+&lt;p&gt;旧版本的ping程序曾经以这种模式运行，即每秒发送一个回显请求，并打印出返回的每个回显应答。但是，新版本的实现需要加上-s选项才能以这种模式运行。默认情况下，新版本的ping程序只发送一个回显请求。如果收到回显应答，则输出“host is alive”；否则，在20秒内没有收到应答就输出“no answer（没有回答）”。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

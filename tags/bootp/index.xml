@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>BOOTP on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/bootp/</link>
+    <description>Recent content in BOOTP on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 14 May 2018 17:43:41 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/bootp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP/IP 详解(卷一) BOOTP：引导程序协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bootp/</link>
+      <pubDate>Mon, 14 May 2018 17:43:41 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bootp/</guid>
+      <description>&lt;p&gt;一个无盘系统，它在不知道自身IP地址的情况下，在进行系统引导时能够通过RARP来获取它的IP地址。然而使用RARP有两个问题：（1）IP地址是返回的唯一结果；（2）既然RARP使用链路层广播，RARP请求就不会被路由器转发（迫使每个实际网络设置一个RARP服务器）。下面将介绍一种用于无盘系统进行系统引导的替代方法，又称为引导程序协议，或BOOTP。&lt;/p&gt;
+&lt;p&gt;BOOTP使用UDP，且通常需与TFTP协同工作。&lt;/p&gt;
+&lt;h2 id=&#34;bootp-的分组格式&#34;&gt;BOOTP 的分组格式&lt;/h2&gt;
+&lt;p&gt;BOOTP 请求和应答均被封装在UDP数据报中，IP首部(20字节) - UDP首部(8字节) - BOOTP请求/应答(300字节)。&lt;/p&gt;
+&lt;p&gt;“操作码”字段为1表示请求，为2表示应答。硬件类型字段为1表示10 Mb/s的以太网，这和ARP请求或应答中同名字段表示的含义相同。类似地，对于以太网，硬件地址长度字段为6字节。&lt;/p&gt;
+&lt;p&gt;“跳数”字段由客户设置为0，但也能被一个代理服务器设置。&lt;/p&gt;
+&lt;p&gt;“事务标识”字段是一个由客户设置并由服务器返回的32 bit整数。客户用它对请求和应答进行匹配。对每个请求，客户应该将该字段设置为一个随机数。&lt;/p&gt;
+&lt;p&gt;客户开始进行引导时，将“秒数”字段设置为一个时间值。服务器能够看到这个时间值，备用服务器在等待时间超过这个时间值后才会响应客户的请求，这意味着主服务器没有启动。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

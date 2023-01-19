@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>astyle on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/astyle/</link>
+    <description>Recent content in astyle on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 22 Dec 2018 14:39:11 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/astyle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clang-Format code</title>
+      <link>https://xuchengpeng.github.io/post/clangformat-code/</link>
+      <pubDate>Sat, 22 Dec 2018 14:39:11 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/clangformat-code/</guid>
+      <description>&lt;p&gt;Download clang-format from &lt;a href=&#34;http://llvm.org&#34;&gt;http://llvm.org&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;LLVM -i test.c
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clang-format -style&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Google -dump-config &amp;gt; google.clang-format
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用AStyle格式化代码</title>
+      <link>https://xuchengpeng.github.io/post/astyle-code/</link>
+      <pubDate>Thu, 20 Dec 2018 18:59:10 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/astyle-code/</guid>
+      <description>&lt;p&gt;从 &lt;a href=&#34;http://astyle.sourceforge.net/&#34;&gt;astyle.sourceforge.net&lt;/a&gt; 下载安装 astyle。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;AStyle.exe -A8 -s4 -k3 -W3 -S -p -xn -xc -xk -xV -xf -xh -H -Y -w -xW -n -c -z2 /path/to/code.c
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;-A8 Linux style&lt;/li&gt;
+&lt;li&gt;-s4 4个空格缩进&lt;/li&gt;
+&lt;li&gt;-k3 指针*靠近变量&lt;/li&gt;
+&lt;li&gt;-W3 引用&amp;amp;靠近变量&lt;/li&gt;
+&lt;li&gt;-S switch下的case添加缩进&lt;/li&gt;
+&lt;li&gt;-p 在操作符两边添加空格&lt;/li&gt;
+&lt;li&gt;-xn 花括号在namespace之后&lt;/li&gt;
+&lt;li&gt;-xc 花括号在class之后&lt;/li&gt;
+&lt;li&gt;-xk 花括号在extern &amp;ldquo;C&amp;quot;之后&lt;/li&gt;
+&lt;li&gt;-xV do-while语句中，while在关闭花括号之后&lt;/li&gt;
+&lt;li&gt;-xf 函数定义中，返回类型和函数名在同一行&lt;/li&gt;
+&lt;li&gt;-xh 函数声明中，返回类型和函数名在同一行&lt;/li&gt;
+&lt;li&gt;-H 在if,for,while&amp;hellip;之后添加空格&lt;/li&gt;
+&lt;li&gt;-Y 缩进注释&lt;/li&gt;
+&lt;li&gt;-w 宏定义换行后缩进&lt;/li&gt;
+&lt;li&gt;-xW 嵌套预处理缩进&lt;/li&gt;
+&lt;li&gt;-n 不生成备份文件&lt;/li&gt;
+&lt;li&gt;-c tab转换为空格&lt;/li&gt;
+&lt;li&gt;-z2 linux(LF)换行&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

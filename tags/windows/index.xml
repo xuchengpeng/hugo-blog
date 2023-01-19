@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Windows on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/windows/</link>
+    <description>Recent content in Windows on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 02 May 2018 11:27:31 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows 10 Version 1803 is out</title>
+      <link>https://xuchengpeng.github.io/post/windows10-version-1803-is-out/</link>
+      <pubDate>Wed, 02 May 2018 11:27:31 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/windows10-version-1803-is-out/</guid>
+      <description>&lt;h2 id=&#34;简体中文零售版&#34;&gt;简体中文零售版&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;家庭版、专业版、教育版、家庭单语言版、专业工作站版、专业教育版&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;架构: x64
+文件: cn_windows_10_consumer_editions_version_1803_updated_march_2018_x64_dvd_12063766.iso
+SHA-1: 82091D67FFF5B49726FFC22D35D9C1CBE81DC443
+文件大小: 4.38 GB
+释出时间: 2018-04-30
+下载地址：
+ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x64_dvd_12063766.iso|4714162176|FB8C05DE594CD7E58D88993652DD2102|/&lt;/p&gt;
+&lt;p&gt;架构: x86
+文件: cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86_dvd_12063452.iso
+SHA-1: D5E89FB54169F5A2E610C75813CE833A4CB9A4E4
+文件大小: 3.24 GB
+释出时间: 2018-04-30
+下载地址：
+ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86_dvd_12063452.iso|3480692736|0EC3C40EF13D772798209981F18B6A5D|/&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

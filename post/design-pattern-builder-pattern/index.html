@@ -1,0 +1,232 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>建造者模式 | Chuck</title><meta name=keywords content="创建型模式"><meta name=description content="建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。
+介绍
+意图：将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。
+主要解决：主要解决在软件系统中，有时候面临着&#34;一个复杂对象&#34;的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。
+何时使用：一些基本部件不会变，而其组合经常变化的时候。
+如何解决：将变与不变分离开。
+关键代码：建造者：创建和提供实例，导演：管理建造出来的实例的依赖关系。
+应用实例： 1、去肯德基，汉堡、可乐、薯条、炸鸡翅等是不变的，而其组合是经常变化的，生成出所谓的&#34;套餐&#34;。 2、JAVA 中的 StringBuilder。
+优点： 1、建造者独立，易扩展。 2、便于控制细节风险。
+缺点： 1、产品必须有共同点，范围有限制。 2、如内部变化复杂，会有很多的建造类。
+使用场景： 1、需要生成的对象具有复杂的内部结构。 2、需要生成的对象内部属性本身相互依赖。
+注意事项：与工厂模式的区别是：建造者模式更加关注与零件装配的顺序。"><meta name=author content="Chuck"><link rel=canonical href=https://xuchengpeng.github.io/post/design-pattern-builder-pattern/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=text/javascript async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type=text/x-mathjax-config>
+    MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\[','\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+        TeX: { equationNumbers: { autoNumber: "AMS" },
+            extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    </script><meta property="og:title" content="建造者模式"><meta property="og:description" content="建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。
+介绍
+意图：将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。
+主要解决：主要解决在软件系统中，有时候面临着&#34;一个复杂对象&#34;的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。
+何时使用：一些基本部件不会变，而其组合经常变化的时候。
+如何解决：将变与不变分离开。
+关键代码：建造者：创建和提供实例，导演：管理建造出来的实例的依赖关系。
+应用实例： 1、去肯德基，汉堡、可乐、薯条、炸鸡翅等是不变的，而其组合是经常变化的，生成出所谓的&#34;套餐&#34;。 2、JAVA 中的 StringBuilder。
+优点： 1、建造者独立，易扩展。 2、便于控制细节风险。
+缺点： 1、产品必须有共同点，范围有限制。 2、如内部变化复杂，会有很多的建造类。
+使用场景： 1、需要生成的对象具有复杂的内部结构。 2、需要生成的对象内部属性本身相互依赖。
+注意事项：与工厂模式的区别是：建造者模式更加关注与零件装配的顺序。"><meta property="og:type" content="article"><meta property="og:url" content="https://xuchengpeng.github.io/post/design-pattern-builder-pattern/"><meta property="og:image" content="https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="post"><meta property="article:published_time" content="2018-04-04T21:10:21+00:00"><meta property="article:modified_time" content="2018-04-04T21:10:21+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="建造者模式"><meta name=twitter:description content="建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。
+介绍
+意图：将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。
+主要解决：主要解决在软件系统中，有时候面临着&#34;一个复杂对象&#34;的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。
+何时使用：一些基本部件不会变，而其组合经常变化的时候。
+如何解决：将变与不变分离开。
+关键代码：建造者：创建和提供实例，导演：管理建造出来的实例的依赖关系。
+应用实例： 1、去肯德基，汉堡、可乐、薯条、炸鸡翅等是不变的，而其组合是经常变化的，生成出所谓的&#34;套餐&#34;。 2、JAVA 中的 StringBuilder。
+优点： 1、建造者独立，易扩展。 2、便于控制细节风险。
+缺点： 1、产品必须有共同点，范围有限制。 2、如内部变化复杂，会有很多的建造类。
+使用场景： 1、需要生成的对象具有复杂的内部结构。 2、需要生成的对象内部属性本身相互依赖。
+注意事项：与工厂模式的区别是：建造者模式更加关注与零件装配的顺序。"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://xuchengpeng.github.io/post/"},{"@type":"ListItem","position":2,"name":"建造者模式","item":"https://xuchengpeng.github.io/post/design-pattern-builder-pattern/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"建造者模式","name":"建造者模式","description":"建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。 一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。\n介绍 意图：将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。 主要解决：主要解决在软件系统中，有时候面临着\u0026quot;一个复杂对象\u0026quot;的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。 何时使用：一些基本部件不会变，而其组合经常变化的时候。 如何解决：将变与不变分离开。 关键代码：建造者：创建和提供实例，导演：管理建造出来的实例的依赖关系。 应用实例： 1、去肯德基，汉堡、可乐、薯条、炸鸡翅等是不变的，而其组合是经常变化的，生成出所谓的\u0026quot;套餐\u0026quot;。 2、JAVA 中的 StringBuilder。 优点： 1、建造者独立，易扩展。 2、便于控制细节风险。 缺点： 1、产品必须有共同点，范围有限制。 2、如内部变化复杂，会有很多的建造类。 使用场景： 1、需要生成的对象具有复杂的内部结构。 2、需要生成的对象内部属性本身相互依赖。 注意事项：与工厂模式的区别是：建造者模式更加关注与零件装配的顺序。\n","keywords":["创建型模式"],"articleBody":"建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。 一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。\n介绍 意图：将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。 主要解决：主要解决在软件系统中，有时候面临着\"一个复杂对象\"的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。 何时使用：一些基本部件不会变，而其组合经常变化的时候。 如何解决：将变与不变分离开。 关键代码：建造者：创建和提供实例，导演：管理建造出来的实例的依赖关系。 应用实例： 1、去肯德基，汉堡、可乐、薯条、炸鸡翅等是不变的，而其组合是经常变化的，生成出所谓的\"套餐\"。 2、JAVA 中的 StringBuilder。 优点： 1、建造者独立，易扩展。 2、便于控制细节风险。 缺点： 1、产品必须有共同点，范围有限制。 2、如内部变化复杂，会有很多的建造类。 使用场景： 1、需要生成的对象具有复杂的内部结构。 2、需要生成的对象内部属性本身相互依赖。 注意事项：与工厂模式的区别是：建造者模式更加关注与零件装配的顺序。\n实现 我们假设一个快餐店的商业案例，其中，一个典型的套餐可以是一个汉堡（Burger）和一杯冷饮（Cold drink）。汉堡（Burger）可以是素食汉堡（Veg Burger）或鸡肉汉堡（Chicken Burger），它们是包在纸盒中。冷饮（Cold drink）可以是可口可乐（coke）或百事可乐（pepsi），它们是装在瓶子中。 我们将创建一个表示食物条目（比如汉堡和冷饮）的 Item 接口和实现 Item 接口的实体类，以及一个表示食物包装的 Packing 接口和实现 Packing 接口的实体类，汉堡是包在纸盒中，冷饮是装在瓶子中。 然后我们创建一个 Meal 类，带有 Item 的 ArrayList 和一个通过结合 Item 来创建不同类型的 Meal 对象的 MealBuilder。BuilderPatternDemo，我们的演示类使用 MealBuilder 来创建一个 Meal。\n步骤 1 创建一个表示食物条目和食物包装的接口。 Item.java\npublic interface Item { public String name(); public Packing packing(); public float price(); } Packing.java\npublic interface Packing { public String pack(); } 步骤 2 创建实现 Packing 接口的实体类。 Wrapper.java\npublic class Wrapper implements Packing { @Override public String pack() { return \"Wrapper\"; } } Bottle.java\npublic class Bottle implements Packing { @Override public String pack() { return \"Bottle\"; } } 步骤 3 创建实现 Item 接口的抽象类，该类提供了默认的功能。 Burger.java\npublic abstract class Burger implements Item { @Override public Packing packing() { return new Wrapper(); } @Override public abstract float price(); } ColdDrink.java\npublic abstract class ColdDrink implements Item { @Override public Packing packing() { return new Bottle(); } @Override public abstract float price(); } 步骤 4 创建扩展了 Burger 和 ColdDrink 的实体类。 VegBurger.java\npublic class VegBurger extends Burger { @Override public float price() { return 25.0f; } @Override public String name() { return \"Veg Burger\"; } } ChickenBurger.java\npublic class ChickenBurger extends Burger { @Override public float price() { return 50.5f; } @Override public String name() { return \"Chicken Burger\"; } } Coke.java\npublic class Coke extends ColdDrink { @Override public float price() { return 30.0f; } @Override public String name() { return \"Coke\"; } } Pepsi.java\npublic class Pepsi extends ColdDrink { @Override public float price() { return 35.0f; } @Override public String name() { return \"Pepsi\"; } } 步骤 5 创建一个 Meal 类，带有上面定义的 Item 对象。 Meal.java\nimport java.util.ArrayList; import java.util.List; public class Meal { private List\u003cItem\u003e items = new ArrayList\u003cItem\u003e(); public void addItem(Item item){ items.add(item); } public float getCost(){ float cost = 0.0f; for (Item item : items) { cost += item.price(); } return cost; } public void showItems(){ for (Item item : items) { System.out.print(\"Item : \"+item.name()); System.out.print(\", Packing : \"+item.packing().pack()); System.out.println(\", Price : \"+item.price()); } } } 步骤 6 创建一个 MealBuilder 类，实际的 builder 类负责创建 Meal 对象。 MealBuilder.java\npublic class MealBuilder { public Meal prepareVegMeal (){ Meal meal = new Meal(); meal.addItem(new VegBurger()); meal.addItem(new Coke()); return meal; } public Meal prepareNonVegMeal (){ Meal meal = new Meal(); meal.addItem(new ChickenBurger()); meal.addItem(new Pepsi()); return meal; } } 步骤 7 BuiderPatternDemo 使用 MealBuider 来演示建造者模式（Builder Pattern）。 BuilderPatternDemo.java\npublic class BuilderPatternDemo { public static void main(String[] args) { MealBuilder mealBuilder = new MealBuilder(); Meal vegMeal = mealBuilder.prepareVegMeal(); System.out.println(\"Veg Meal\"); vegMeal.showItems(); System.out.println(\"Total Cost: \" +vegMeal.getCost()); Meal nonVegMeal = mealBuilder.prepareNonVegMeal(); System.out.println(\"\\n\\nNon-Veg Meal\"); nonVegMeal.showItems(); System.out.println(\"Total Cost: \" +nonVegMeal.getCost()); } } 步骤 8 验证输出。\nVeg Meal Item : Veg Burger, Packing : Wrapper, Price : 25.0 Item : Coke, Packing : Bottle, Price : 30.0 Total Cost: 55.0 Non-Veg Meal Item : Chicken Burger, Packing : Wrapper, Price : 50.5 Item : Pepsi, Packing : Bottle, Price : 35.0 Total Cost: 85.5 ","wordCount":"494","inLanguage":"en","datePublished":"2018-04-04T21:10:21Z","dateModified":"2018-04-04T21:10:21Z","author":{"@type":"Person","name":"Chuck"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xuchengpeng.github.io/post/design-pattern-builder-pattern/"},"publisher":{"@type":"Organization","name":"Chuck","logo":{"@type":"ImageObject","url":"https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://xuchengpeng.github.io/ accesskey=h title="Chuck (Alt + H)"><img src=https://xuchengpeng.github.io/apple-touch-icon.png alt aria-label=logo height=35>Chuck</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://xuchengpeng.github.io/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://xuchengpeng.github.io/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://xuchengpeng.github.io/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://xuchengpeng.github.io/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://xuchengpeng.github.io/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://xuchengpeng.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://xuchengpeng.github.io/post/>Posts</a></div><h1 class=post-title>建造者模式</h1><div class=post-meta><span title='2018-04-04 21:10:21 +0000 UTC'>April 4, 2018</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;494 words&nbsp;·&nbsp;Chuck&nbsp;|&nbsp;<a href=https://github.com/xuchengpeng/hugo-blog/tree/master/content/post/design-pattern-builder-pattern.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#介绍>介绍</a></li><li><a href=#实现>实现</a><ul><li><a href=#步骤-1>步骤 1</a></li><li><a href=#步骤-2>步骤 2</a></li><li><a href=#步骤-3>步骤 3</a></li><li><a href=#步骤-4>步骤 4</a></li><li><a href=#步骤-5>步骤 5</a></li><li><a href=#步骤-6>步骤 6</a></li><li><a href=#步骤-7>步骤 7</a></li><li><a href=#步骤-8>步骤 8</a></li></ul></li></ul></nav></div></details></div><div class=post-content><p>建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。</p><h2 id=介绍>介绍<a hidden class=anchor aria-hidden=true href=#介绍>#</a></h2><p>意图：将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。
+主要解决：主要解决在软件系统中，有时候面临着"一个复杂对象"的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。
+何时使用：一些基本部件不会变，而其组合经常变化的时候。
+如何解决：将变与不变分离开。
+关键代码：建造者：创建和提供实例，导演：管理建造出来的实例的依赖关系。
+应用实例： 1、去肯德基，汉堡、可乐、薯条、炸鸡翅等是不变的，而其组合是经常变化的，生成出所谓的"套餐"。 2、JAVA 中的 StringBuilder。
+优点： 1、建造者独立，易扩展。 2、便于控制细节风险。
+缺点： 1、产品必须有共同点，范围有限制。 2、如内部变化复杂，会有很多的建造类。
+使用场景： 1、需要生成的对象具有复杂的内部结构。 2、需要生成的对象内部属性本身相互依赖。
+注意事项：与工厂模式的区别是：建造者模式更加关注与零件装配的顺序。</p><h2 id=实现>实现<a hidden class=anchor aria-hidden=true href=#实现>#</a></h2><p>我们假设一个快餐店的商业案例，其中，一个典型的套餐可以是一个汉堡（Burger）和一杯冷饮（Cold drink）。汉堡（Burger）可以是素食汉堡（Veg Burger）或鸡肉汉堡（Chicken Burger），它们是包在纸盒中。冷饮（Cold drink）可以是可口可乐（coke）或百事可乐（pepsi），它们是装在瓶子中。
+我们将创建一个表示食物条目（比如汉堡和冷饮）的 Item 接口和实现 Item 接口的实体类，以及一个表示食物包装的 Packing 接口和实现 Packing 接口的实体类，汉堡是包在纸盒中，冷饮是装在瓶子中。
+然后我们创建一个 Meal 类，带有 Item 的 ArrayList 和一个通过结合 Item 来创建不同类型的 Meal 对象的 MealBuilder。BuilderPatternDemo，我们的演示类使用 MealBuilder 来创建一个 Meal。</p><p><img loading=lazy src=/images/design-pattern/builder_pattern_uml_diagram.jpg alt></p><h3 id=步骤-1>步骤 1<a hidden class=anchor aria-hidden=true href=#步骤-1>#</a></h3><p>创建一个表示食物条目和食物包装的接口。
+<em>Item.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>interface</span> <span class=nc>Item</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>String</span> <span class=nf>name</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>Packing</span> <span class=nf>packing</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>float</span> <span class=nf>price</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p><em>Packing.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>interface</span> <span class=nc>Packing</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>String</span> <span class=nf>pack</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-2>步骤 2<a hidden class=anchor aria-hidden=true href=#步骤-2>#</a></h3><p>创建实现 Packing 接口的实体类。
+<em>Wrapper.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Wrapper</span> <span class=kd>implements</span> <span class=n>Packing</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>String</span> <span class=nf>pack</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=s>&#34;Wrapper&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p><em>Bottle.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Bottle</span> <span class=kd>implements</span> <span class=n>Packing</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>String</span> <span class=nf>pack</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=s>&#34;Bottle&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-3>步骤 3<a hidden class=anchor aria-hidden=true href=#步骤-3>#</a></h3><p>创建实现 Item 接口的抽象类，该类提供了默认的功能。
+<em>Burger.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>abstract</span> <span class=kd>class</span> <span class=nc>Burger</span> <span class=kd>implements</span> <span class=n>Item</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>Packing</span> <span class=nf>packing</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=k>new</span> <span class=n>Wrapper</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kd>abstract</span> <span class=kt>float</span> <span class=nf>price</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p><em>ColdDrink.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>abstract</span> <span class=kd>class</span> <span class=nc>ColdDrink</span> <span class=kd>implements</span> <span class=n>Item</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Packing</span> <span class=nf>packing</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>       <span class=k>return</span> <span class=k>new</span> <span class=n>Bottle</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>abstract</span> <span class=kt>float</span> <span class=nf>price</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-4>步骤 4<a hidden class=anchor aria-hidden=true href=#步骤-4>#</a></h3><p>创建扩展了 Burger 和 ColdDrink 的实体类。
+<em>VegBurger.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>VegBurger</span> <span class=kd>extends</span> <span class=n>Burger</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>float</span> <span class=nf>price</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=mf>25.0f</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>String</span> <span class=nf>name</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=s>&#34;Veg Burger&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p><em>ChickenBurger.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ChickenBurger</span> <span class=kd>extends</span> <span class=n>Burger</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>float</span> <span class=nf>price</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=mf>50.5f</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>String</span> <span class=nf>name</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=s>&#34;Chicken Burger&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p><em>Coke.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Coke</span> <span class=kd>extends</span> <span class=n>ColdDrink</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>float</span> <span class=nf>price</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=mf>30.0f</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>String</span> <span class=nf>name</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=s>&#34;Coke&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p><em>Pepsi.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Pepsi</span> <span class=kd>extends</span> <span class=n>ColdDrink</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>float</span> <span class=nf>price</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=mf>35.0f</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>String</span> <span class=nf>name</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=s>&#34;Pepsi&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-5>步骤 5<a hidden class=anchor aria-hidden=true href=#步骤-5>#</a></h3><p>创建一个 Meal 类，带有上面定义的 Item 对象。
+<em>Meal.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.ArrayList</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.List</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Meal</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>   <span class=kd>private</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>Item</span><span class=o>&gt;</span> <span class=n>items</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Item</span><span class=o>&gt;();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>addItem</span><span class=o>(</span><span class=n>Item</span> <span class=n>item</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>      <span class=n>items</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>item</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>float</span> <span class=nf>getCost</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>      <span class=kt>float</span> <span class=n>cost</span> <span class=o>=</span> <span class=mf>0.0f</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>      <span class=k>for</span> <span class=o>(</span><span class=n>Item</span> <span class=n>item</span> <span class=o>:</span> <span class=n>items</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>         <span class=n>cost</span> <span class=o>+=</span> <span class=n>item</span><span class=o>.</span><span class=na>price</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>      <span class=o>}</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=n>cost</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>showItems</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>      <span class=k>for</span> <span class=o>(</span><span class=n>Item</span> <span class=n>item</span> <span class=o>:</span> <span class=n>items</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>         <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>print</span><span class=o>(</span><span class=s>&#34;Item : &#34;</span><span class=o>+</span><span class=n>item</span><span class=o>.</span><span class=na>name</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>         <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>print</span><span class=o>(</span><span class=s>&#34;, Packing : &#34;</span><span class=o>+</span><span class=n>item</span><span class=o>.</span><span class=na>packing</span><span class=o>().</span><span class=na>pack</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>         <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;, Price : &#34;</span><span class=o>+</span><span class=n>item</span><span class=o>.</span><span class=na>price</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>      <span class=o>}</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-6>步骤 6<a hidden class=anchor aria-hidden=true href=#步骤-6>#</a></h3><p>创建一个 MealBuilder 类，实际的 builder 类负责创建 Meal 对象。
+<em>MealBuilder.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>MealBuilder</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>Meal</span> <span class=nf>prepareVegMeal</span> <span class=o>(){</span>
+</span></span><span class=line><span class=cl>      <span class=n>Meal</span> <span class=n>meal</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Meal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>      <span class=n>meal</span><span class=o>.</span><span class=na>addItem</span><span class=o>(</span><span class=k>new</span> <span class=n>VegBurger</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>      <span class=n>meal</span><span class=o>.</span><span class=na>addItem</span><span class=o>(</span><span class=k>new</span> <span class=n>Coke</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=n>meal</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=n>Meal</span> <span class=nf>prepareNonVegMeal</span> <span class=o>(){</span>
+</span></span><span class=line><span class=cl>      <span class=n>Meal</span> <span class=n>meal</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Meal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>      <span class=n>meal</span><span class=o>.</span><span class=na>addItem</span><span class=o>(</span><span class=k>new</span> <span class=n>ChickenBurger</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>      <span class=n>meal</span><span class=o>.</span><span class=na>addItem</span><span class=o>(</span><span class=k>new</span> <span class=n>Pepsi</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=n>meal</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-7>步骤 7<a hidden class=anchor aria-hidden=true href=#步骤-7>#</a></h3><p>BuiderPatternDemo 使用 MealBuider 来演示建造者模式（Builder Pattern）。
+<em>BuilderPatternDemo.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>BuilderPatternDemo</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>MealBuilder</span> <span class=n>mealBuilder</span> <span class=o>=</span> <span class=k>new</span> <span class=n>MealBuilder</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=n>Meal</span> <span class=n>vegMeal</span> <span class=o>=</span> <span class=n>mealBuilder</span><span class=o>.</span><span class=na>prepareVegMeal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Veg Meal&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>vegMeal</span><span class=o>.</span><span class=na>showItems</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Total Cost: &#34;</span> <span class=o>+</span><span class=n>vegMeal</span><span class=o>.</span><span class=na>getCost</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=n>Meal</span> <span class=n>nonVegMeal</span> <span class=o>=</span> <span class=n>mealBuilder</span><span class=o>.</span><span class=na>prepareNonVegMeal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;\n\nNon-Veg Meal&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>nonVegMeal</span><span class=o>.</span><span class=na>showItems</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Total Cost: &#34;</span> <span class=o>+</span><span class=n>nonVegMeal</span><span class=o>.</span><span class=na>getCost</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-8>步骤 8<a hidden class=anchor aria-hidden=true href=#步骤-8>#</a></h3><p>验证输出。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>Veg</span> <span class=n>Meal</span>
+</span></span><span class=line><span class=cl><span class=n>Item</span> <span class=o>:</span> <span class=n>Veg</span> <span class=n>Burger</span><span class=o>,</span> <span class=n>Packing</span> <span class=o>:</span> <span class=n>Wrapper</span><span class=o>,</span> <span class=n>Price</span> <span class=o>:</span> <span class=mf>25.0</span>
+</span></span><span class=line><span class=cl><span class=n>Item</span> <span class=o>:</span> <span class=n>Coke</span><span class=o>,</span> <span class=n>Packing</span> <span class=o>:</span> <span class=n>Bottle</span><span class=o>,</span> <span class=n>Price</span> <span class=o>:</span> <span class=mf>30.0</span>
+</span></span><span class=line><span class=cl><span class=n>Total</span> <span class=n>Cost</span><span class=o>:</span> <span class=mf>55.0</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>Non</span><span class=o>-</span><span class=n>Veg</span> <span class=n>Meal</span>
+</span></span><span class=line><span class=cl><span class=n>Item</span> <span class=o>:</span> <span class=n>Chicken</span> <span class=n>Burger</span><span class=o>,</span> <span class=n>Packing</span> <span class=o>:</span> <span class=n>Wrapper</span><span class=o>,</span> <span class=n>Price</span> <span class=o>:</span> <span class=mf>50.5</span>
+</span></span><span class=line><span class=cl><span class=n>Item</span> <span class=o>:</span> <span class=n>Pepsi</span><span class=o>,</span> <span class=n>Packing</span> <span class=o>:</span> <span class=n>Bottle</span><span class=o>,</span> <span class=n>Price</span> <span class=o>:</span> <span class=mf>35.0</span>
+</span></span><span class=line><span class=cl><span class=n>Total</span> <span class=n>Cost</span><span class=o>:</span> <span class=mf>85.5</span>
+</span></span></code></pre></div></div><footer class=post-footer><ul class=post-tags><li><a href=https://xuchengpeng.github.io/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/>创建型模式</a></li></ul><nav class=paginav><a class=prev href=https://xuchengpeng.github.io/post/design-pattern-prototype-pattern/><span class=title>« Prev</span><br><span>原型模式</span></a>
+<a class=next href=https://xuchengpeng.github.io/post/emacs-native-profiler/><span class=title>Next »</span><br><span>Emacs Native Profiler</span></a></nav></footer><div class=article-comments><span id=/post/design-pattern-builder-pattern/ class=leancloud-visitors data-flag-title=建造者模式><span class=post-meta-item-text>文章阅读量</span>
+<span class=leancloud-visitors-count>0</span></span><div id=vcomments></div><script src=//unpkg.com/valine/dist/Valine.min.js></script>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"",appKey:"",notify:"",verify:"",avatar:"",placeholder:"",visitor:""})</script></div></article></main><footer class=footer><span>&copy; 2023 <a href=https://xuchengpeng.github.io/>Chuck</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

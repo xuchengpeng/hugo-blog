@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hexo on Chuck</title>
+    <link>https://xuchengpeng.github.io/categories/hexo/</link>
+    <description>Recent content in Hexo on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 01 Feb 2018 14:06:32 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/categories/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 gulp 压缩 hexo 博客资源</title>
+      <link>https://xuchengpeng.github.io/post/compress-hexo-with-gulp/</link>
+      <pubDate>Thu, 01 Feb 2018 14:06:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/compress-hexo-with-gulp/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/gulp.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;hexo generate&lt;/code&gt; 命令后在 public 文件夹下面生成 html、css、js 等源文件，里面含有大量的空白，而且博客中还有大量的图片占据了很大的空间。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Automate and enhance your workflow.
+gulp is a toolkit for automating painful or time-consuming tasks in your development workflow, so you can stop messing around and build something.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://gulpjs.com/&#34;&gt;gulp&lt;/a&gt; 用自动化构建工具增强你的工作流程！&lt;/p&gt;
+&lt;p&gt;我们可以通过一些 gulp 插件实现对html、css、js、image等静态资源的高效压缩，通过压缩这些静态资源，可以减少请求的数据量从而达到优化博客访问速度的目的。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Hexo 数据文件进行主题配置</title>
+      <link>https://xuchengpeng.github.io/post/theme-configuration-with-hexo-data-files/</link>
+      <pubDate>Fri, 19 Jan 2018 07:41:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/theme-configuration-with-hexo-data-files/</guid>
+      <description>&lt;p&gt;目前，通过 pull 或下载新的 release 版本来更新 NexT 主题的体验并不平滑。当用户使用 git pull 更新 NexT 主题时经常需要解决冲突问题，而在手动下载 release 版本时也经常需要手动合并配置。&lt;/p&gt;
+&lt;p&gt;现在来说，NexT 推荐用户存储部分配置在站点的 _config.yml 中，而另一部分在主题的 _config.yml 中。这一方式固然可用，但也有一些缺点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;配置项被分裂为两部分；&lt;/li&gt;
+&lt;li&gt;用户难以弄清何处存放配置选项。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;为了解决这一问题，NexT 将利用 Hexo 的&lt;a href=&#34;https://hexo.io/docs/data-files.html&#34;&gt;数据文件&lt;/a&gt;特性。因为数据文件是在 Hexo 3 中被引入，所以你需要更新至 Hexo 3.0 以后的版本来使用这一特性。&lt;/p&gt;
+&lt;p&gt;如果你仍然希望使用 Hexo 2.x，你依旧可以按老的方式进行配置。NexT 仍然兼容 Hexo 2.x（但可能会出现错误）。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>搭建Hexo NexT主题博客</title>
+      <link>https://xuchengpeng.github.io/post/setup-hexo-next-blog/</link>
+      <pubDate>Tue, 09 Jan 2018 14:41:31 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/setup-hexo-next-blog/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/NextSchemes3.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;什么是hexo&#34;&gt;什么是Hexo？&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt; 是一个快速、简洁且高效的博客框架。Hexo 使用 &lt;a href=&#34;http://daringfireball.net/projects/markdown/&#34;&gt;Markdown&lt;/a&gt;（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/theme-next/hexo-theme-next&#34;&gt;NexT&lt;/a&gt; 是一款简洁优雅且易于使用的主题。&lt;/p&gt;
+&lt;p&gt;在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。&lt;/p&gt;
+&lt;p&gt;为了描述方便，在以下说明中，将前者称为 {% label primary@站点配置文件 %}， 后者称为 {% label info@主题配置文件 %}。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>为NexT主题部署Gitalk评论插件</title>
+      <link>https://xuchengpeng.github.io/post/gitalk-for-next/</link>
+      <pubDate>Mon, 04 Dec 2017 09:29:58 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/gitalk-for-next/</guid>
+      <description>在之前的文章中（{% post_link gitalk-comment-extension Gitalk评论插件 %}），已介绍过Gitalk评论插件，GitHub上为NexT添加Gitalk的pull request一直没有合入，自己手动本地部署吧。
+为什么选择Gitalk 由于国内网络大环境的原因，Disqus 等优秀的评论系统都需要梯子才能使用，多说已经停运，NexT 已支持的 Gitment 目前存在一些问题，作者好像也已经很久没有维护了，故选择现在还在活跃的 Gitalk。
+新增插件代码 新建 layout/_third-party/comments/gitalk.swig 文件，添加以下代码：
+{% if theme.gitalk.enable %} {% if page.comments %} &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://unpkg.com/gitalk/dist/gitalk.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://unpkg.com/gitalk/dist/gitalk.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; const gitalk = new Gitalk({ clientID: &amp;#39;{{theme.gitalk.clientID}}&amp;#39;, clientSecret: &amp;#39;{{theme.gitalk.clientSecret}}&amp;#39;, repo: &amp;#39;{{theme.gitalk.repo}}&amp;#39;, owner: &amp;#39;{{theme.gitalk.owner}}&amp;#39;, admin: &amp;#39;{{theme.gitalk.admin}}&amp;#39;.split(&amp;#39;,&amp;#39;), id: location.pathname, // facebook-like distraction free mode distractionFreeMode: &amp;#39;{{ theme.gitalk.distractionFreeMode }}&amp;#39;, createIssueManually: &amp;#39;{{ theme.gitalk.createIssueManually }}&amp;#39; }) gitalk.render(&amp;#39;gitalk-container&amp;#39;) &amp;lt;/script&amp;gt; {% endif %} {% endif %} 添加插件到NexT主题中 修改 layout/_third-party/comments/index.</description>
+    </item>
+    
+    <item>
+      <title>NexT - Elegant Theme for Hexo</title>
+      <link>https://xuchengpeng.github.io/post/hexo-next-blog/</link>
+      <pubDate>Thu, 23 Nov 2017 09:38:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/hexo-next-blog/</guid>
+      <description>下一步，学习一下用这个东东搭建一个blog吧。
+Hexo
+NexT
+其他教程：
+http://www.jianshu.com/p/5973c05d7100
+http://www.jianshu.com/p/e99ed60390a8</description>
+    </item>
+    
+  </channel>
+</rss>

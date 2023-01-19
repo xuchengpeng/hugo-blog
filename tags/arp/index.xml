@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ARP on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/arp/</link>
+    <description>Recent content in ARP on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 14 May 2018 17:43:41 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/arp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP/IP 详解(卷一) BOOTP：引导程序协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bootp/</link>
+      <pubDate>Mon, 14 May 2018 17:43:41 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bootp/</guid>
+      <description>&lt;p&gt;一个无盘系统，它在不知道自身IP地址的情况下，在进行系统引导时能够通过RARP来获取它的IP地址。然而使用RARP有两个问题：（1）IP地址是返回的唯一结果；（2）既然RARP使用链路层广播，RARP请求就不会被路由器转发（迫使每个实际网络设置一个RARP服务器）。下面将介绍一种用于无盘系统进行系统引导的替代方法，又称为引导程序协议，或BOOTP。&lt;/p&gt;
+&lt;p&gt;BOOTP使用UDP，且通常需与TFTP协同工作。&lt;/p&gt;
+&lt;h2 id=&#34;bootp-的分组格式&#34;&gt;BOOTP 的分组格式&lt;/h2&gt;
+&lt;p&gt;BOOTP 请求和应答均被封装在UDP数据报中，IP首部(20字节) - UDP首部(8字节) - BOOTP请求/应答(300字节)。&lt;/p&gt;
+&lt;p&gt;“操作码”字段为1表示请求，为2表示应答。硬件类型字段为1表示10 Mb/s的以太网，这和ARP请求或应答中同名字段表示的含义相同。类似地，对于以太网，硬件地址长度字段为6字节。&lt;/p&gt;
+&lt;p&gt;“跳数”字段由客户设置为0，但也能被一个代理服务器设置。&lt;/p&gt;
+&lt;p&gt;“事务标识”字段是一个由客户设置并由服务器返回的32 bit整数。客户用它对请求和应答进行匹配。对每个请求，客户应该将该字段设置为一个随机数。&lt;/p&gt;
+&lt;p&gt;客户开始进行引导时，将“秒数”字段设置为一个时间值。服务器能够看到这个时间值，备用服务器在等待时间超过这个时间值后才会响应客户的请求，这意味着主服务器没有启动。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) UDP：用户数据报协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</link>
+      <pubDate>Wed, 09 May 2018 10:28:49 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</guid>
+      <description>&lt;p&gt;UDP是一个简单的面向数据报的运输层协议：进程的每个输出操作都正好产生一个UDP数据报，并组装成一份待发送的IP数据报。这与面向流字符的协议不同，如TCP，应用程序产生的全体数据与真正发送的单个IP数据报可能没有什么联系。&lt;/p&gt;
+&lt;p&gt;UDP数据报封装成一份IP数据报的格式：IP首部(20字节) - UDP首部(8字节) - UDP数据。&lt;/p&gt;
+&lt;p&gt;UDP不提供可靠性：它把应用程序传给IP层的数据发送出去，但是并不保证它们能到达目的地。由于缺乏可靠性，我们似乎觉得要避免使用UDP而使用一种可靠协议如TCP。&lt;/p&gt;
+&lt;p&gt;应用程序必须关心IP数据报的长度。如果它超过网络的MTU，那么就要对IP数据报进行分片。如果需要，源端到目的端之间的每个网络都要进行分片，并不只是发送端主机连接第一个网络才这样做。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) ARP：地址解析协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-arp/</link>
+      <pubDate>Wed, 02 May 2018 14:40:12 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-arp/</guid>
+      <description>&lt;p&gt;数据链路如以太网或令牌环网都有自己的寻址机制（常常为48 bit地址），这是使用数据链路的任何网络层都必须遵从的。&lt;/p&gt;
+&lt;p&gt;当一台主机把以太网数据帧发送到位于同一局域网上的另一台主机时，是根据48 bit的以太网地址来确定目的接口的。设备驱动程序从不检查IP数据报中的目的IP地址。&lt;/p&gt;
+&lt;p&gt;地址解析为这两种不同的地址形式提供映射：32 bit的IP地址和数据链路层使用的任何类型的地址。&lt;/p&gt;
+&lt;p&gt;ARP为IP地址到对应的硬件地址之间提供动态映射。&lt;/p&gt;
+&lt;h2 id=&#34;arp-高速缓存&#34;&gt;ARP 高速缓存&lt;/h2&gt;
+&lt;p&gt;ARP高效运行的关键是由于每个主机上都有一个ARP高速缓存。这个高速缓存存放了最近Internet地址到硬件地址之间的映射记录。高速缓存中每一项的生存时间一般为20分钟，起始时间从被创建时开始算起。
+使用 &lt;code&gt;arp -a&lt;/code&gt; 命令来检查 ARP 高速缓存。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

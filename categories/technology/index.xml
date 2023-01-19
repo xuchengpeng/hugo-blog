@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Technology on Chuck</title>
+    <link>https://xuchengpeng.github.io/categories/technology/</link>
+    <description>Recent content in Technology on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 07 Nov 2018 08:59:03 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu安装Samba</title>
+      <link>https://xuchengpeng.github.io/post/ubuntu-install-samba/</link>
+      <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/ubuntu-install-samba/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt-get install samba
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改 /etc/samba/smb.conf 文件：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[share]
+  path = /
+  available = yes
+  valid users = root
+  read only = no
+  browseable = yes
+  public = yes
+  writable = yes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改Samba登陆的密码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;smbpasswd -a root
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;这里也可以使用非root用户，必须是Linux系统中已存在的用户。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;重启Samba服务：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/etc/init.d/smbd restart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Shell - Here Documents</title>
+      <link>https://xuchengpeng.github.io/post/shell-here-documents/</link>
+      <pubDate>Tue, 30 Oct 2018 14:19:55 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/shell-here-documents/</guid>
+      <description>&lt;p&gt;Here Documents 是 Shell 中的一种特殊的重定向方式，用来将输入重定向到一个交互式 Shell 脚本或程序。&lt;/p&gt;
+&lt;p&gt;它的基本的形式如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; delimiter
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    document
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;delimiter&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;它的作用是将两个 delimiter 之间的内容(document) 作为输入传递给 command。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;结尾的delimiter 一定要顶格写，前面不能有任何字符，后面也不能有任何字符，包括空格和 tab 缩进。&lt;/li&gt;
+&lt;li&gt;开始的delimiter前后的空格会被忽略掉。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux系统Shell特殊变量</title>
+      <link>https://xuchengpeng.github.io/post/linux-shell-special-variables/</link>
+      <pubDate>Thu, 20 Sep 2018 13:55:54 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/linux-shell-special-variables/</guid>
+      <description>&lt;p&gt;变量名只能包含数字、字母和下划线，因为某些包含其他字符的变量有特殊含义，这样的变量被称为特殊变量。&lt;/p&gt;
+&lt;p&gt;例如，$ 表示当前Shell进程的ID，即pid，看下面的代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# echo $$&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;38977&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;变量&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;当前脚本的文件名&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$n&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$#&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;传递给脚本或函数的参数个数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$*&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;传递给脚本或函数的所有参数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$@&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;传递给脚本或函数的所有参数。被双引号(&amp;quot; &amp;ldquo;)包含时，与 $* 稍有不同&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$?&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;上个命令的退出状态，或函数的返回值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;$$&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+    
+    <item>
+      <title>KVM</title>
+      <link>https://xuchengpeng.github.io/post/kvm/</link>
+      <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/kvm/</guid>
+      <description>&lt;p&gt;KVM 全称是 基于内核的虚拟机（Kernel-based Virtual Machine），它是Linux 的一个内核模块，该内核模块使得 Linux 变成了一个 Hypervisor：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;它由 Quramnet 开发，该公司于 2008年被 Red Hat 收购。&lt;/li&gt;
+&lt;li&gt;它支持 x86 (32 and 64 位), s390, Powerpc 等 CPU。&lt;/li&gt;
+&lt;li&gt;它从 Linux 2.6.20 起就作为一模块被包含在 Linux 内核中。&lt;/li&gt;
+&lt;li&gt;它需要支持虚拟化扩展的 CPU。&lt;/li&gt;
+&lt;li&gt;它是完全开源的。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>VXLAN</title>
+      <link>https://xuchengpeng.github.io/post/vxlan/</link>
+      <pubDate>Tue, 11 Sep 2018 14:16:49 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/vxlan/</guid>
+      <description>&lt;p&gt;VXLAN(Virtual eXtential LAN)意为虚拟可拓展局域网。随着大数据、云计算技术的兴起以及虚拟化技术的普及，VLAN技术的弊端逐渐显现出来，具体表现为如下3个方面：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;虚拟化技术的发展促使大数据、云计算技术公司采用单个物理设备虚拟多台虚拟机的方式来进行组网，随着应用模块的增加，对于支持VLAN数目的要求也在提升，802.1Q标准中的最多支持4094个VLAN的能力已经无法满足当下需求。&lt;/li&gt;
+&lt;li&gt;公有云提供商的业务要求将实体网络租借给多个不同的用户，这些用户对于网络的要求有所不同，而不同用户租借的网络有很大的可能会出现IP地址、MAC地址的重叠，传统的VLAN仅仅解决了同一链路层网络广播域隔离的问题，而并没有涉及到网络地址重叠的问题，因此需要一种新的技术来保证在多个租户网络中存在地址重叠的情况下依旧能有效通信的技术。&lt;/li&gt;
+&lt;li&gt;虚拟化技术的出现增加了交换机的负担，对于大型的数据中心而言，单台交换机必须支持数十台以上主机的通信连接才足以满足应用需求，而虚拟化技术使得单台主机可以虚拟化出多台虚拟机同时运行，而每台虚拟机都会有其唯一的MAC地址。这样，为了保证集群中所有虚机可以正常通信，交换机必须保存每台虚机的MAC地址，这样就导致了交换机中的MAC表异常庞大，从而影响交换机的转发性能。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基于以上需求，VXLAN技术被提出。&lt;/p&gt;
+&lt;p&gt;VXLAN技术是网络Overlay技术的一种实现，对于Overlay技术，笔者的理解是：在基于物理网络拓扑的基础上通过一定的技术来构建虚拟的、不同于物理网络拓扑的逻辑网络，而物理网络的拓扑结构对于Overlay终端而言是透明的，终端不会感知到物理网络的存在，而仅仅能感知到逻辑网络结构。对于终端的视角，网络的情况和直接通过物理设备实现逻辑拓扑的效果是相同的。VXLAN技术可以基于三层网络结构来构建二层虚拟网络，通过VLAN技术可以将处于不同网段网络设备整合在同一个逻辑链路层网络中，对于终端用户而言，这些网络设备似乎“真实地”部署在了同一个链路层网络中。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Open vSwitch</title>
+      <link>https://xuchengpeng.github.io/post/openvswitch/</link>
+      <pubDate>Tue, 11 Sep 2018 11:09:50 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/openvswitch/</guid>
+      <description>&lt;p&gt;Open vSwitch 是一个基于Apache 2 license的多层软件交换机。 我们的目标是实现一个支持标准管理接口的，开放转发功能以支持编程扩展和控制的交换机平台。&lt;/p&gt;
+&lt;p&gt;Open vSwitch 非常适合在VM环境中用作虚拟交换机。 除了将标准控制和可视化接口暴露给虚拟网络层外，它还旨在支持跨越多个物理服务器的分布式系统。 Open vSwitch 支持多种基于Linux的虚拟化技术，包括 Xen/XenServer, KVM, 及 VirtualBox。&lt;/p&gt;
+&lt;p&gt;大部分代码是平台无关的C编码，可以轻松地移植到其他环境中。 当前版本的 Open vSwitch 支持以下功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;具有trunk和access口的标准 802.1Q VLAN 功能&lt;/li&gt;
+&lt;li&gt;上游交换机上连接或不链接LACP的NIC&lt;/li&gt;
+&lt;li&gt;NetFlow, sFlow(R), 及镜像，以提高可视化&lt;/li&gt;
+&lt;li&gt;QoS 配置，加上策列&lt;/li&gt;
+&lt;li&gt;Geneve, GRE, VXLAN, STT, 及 LISP 隧道&lt;/li&gt;
+&lt;li&gt;802.1ag 连接故障管理&lt;/li&gt;
+&lt;li&gt;OpenFlow 1.0 加大量扩展&lt;/li&gt;
+&lt;li&gt;具有C和Python绑定的事物配置数据库&lt;/li&gt;
+&lt;li&gt;使用Linux内核模块的高性能转发&lt;/li&gt;
+&lt;li&gt;Linux 内核模块支持 Linux 3.10及以上版本。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Open vSwitch 也可以完全在用户空间运行，无需内核模块协助。 这个用户空间实现应该比基于内核的交换机更容易进行移植。 用户空间中的OVS可以访问Linux或DPDK设备。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用用户空间实现，且没有用DPDK做加速处理的OVS被认为是测试性的，具有性能成本。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>云计算与边缘计算</title>
+      <link>https://xuchengpeng.github.io/post/cloud-and-edge-computing/</link>
+      <pubDate>Tue, 11 Sep 2018 09:26:07 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/cloud-and-edge-computing/</guid>
+      <description>&lt;p&gt;云计算（cloudcomputing）是基于互联网的相关服务的增加、使用和交付模式，通常涉及通过互联网来提供动态易扩展且经常是虚拟化的资源。&lt;/p&gt;
+&lt;h3 id=&#34;云计算&#34;&gt;云计算&lt;/h3&gt;
+&lt;p&gt;云计算系统由云平台、云存储、云终端、云安全四个基本部分组成。&lt;/p&gt;
+&lt;p&gt;云平台从用户的角度可分为公有云、私有云、混合云等。&lt;/p&gt;
+&lt;p&gt;通过从提供服务的层次可分为基础设施即服务（Iaas）、平台即服务（Paas）和软件即服务（Saas）。&lt;/p&gt;
+&lt;p&gt;将应用部署到云端后，可以不必再关注那些令人头疼的硬件和软件问题，它们会由云服务提供商的专业团队去解决。使用的是共享的硬件，这意味着像使用一个工具一样去利用云服务（就像插上插座，你就能使用电一样简单）。只需要按照你的需要来支付相应的费用，而关于软件的更新，资源的按需扩展都能自动完成。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting MathJax with Hugo</title>
+      <link>https://xuchengpeng.github.io/post/setting-mathjax-with-hugo/</link>
+      <pubDate>Tue, 10 Jul 2018 14:28:41 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/setting-mathjax-with-hugo/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; - Beautiful math in all browsers&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A JavaScript display engine for mathematics that works in all browsers. No more setup for readers. It just works.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Markdown 博客中使用 MathJax 数学公式</title>
+      <link>https://xuchengpeng.github.io/post/mathjax-in-markdown-blog/</link>
+      <pubDate>Fri, 25 May 2018 16:28:02 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/mathjax-in-markdown-blog/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; - Beautiful math in all browsers&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A JavaScript display engine for mathematics that works in all browsers. No more setup for readers. It just works.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;mathjax-使用&#34;&gt;MathJax 使用&lt;/h2&gt;
+&lt;p&gt;网页中增加配置：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;text/x-mathjax-config&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;MathJax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Hub&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;tex2jax&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;inlineMath&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;$&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;$&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;\\(&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;\\)&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;processEscapes&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;https://cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#39;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;async&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Stylus 自定义网页字体</title>
+      <link>https://xuchengpeng.github.io/post/stylus-set-web-font/</link>
+      <pubDate>Wed, 23 May 2018 10:27:11 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/stylus-set-web-font/</guid>
+      <description>&lt;p&gt;使用 Stylus 可以直接使用 &lt;a href=&#34;https://userstyles.org/&#34;&gt;userstyles 网站&lt;/a&gt; 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。&lt;/p&gt;
+&lt;p&gt;这里推荐一款 &lt;a href=&#34;https://userstyles.org/styles/100473/004-forcemyfonts-chinese-firefoxchromeie-catcat520&#34;&gt;ForceMyFont&lt;/a&gt; 的模板，可以设定的选项非常丰富，前提也是需要在电脑上安装你选择的字体。&lt;/p&gt;
+&lt;p&gt;你也可以自定义字体CSS的样式，在 Chrome 浏览器中，这里使用 Stylus 插件，编写新的样式，代码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;font-weight&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;500&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;font-family&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Arial&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;思源宋体&amp;#34;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第一行设定字重，第二行设定英文字体和中文字体。如果要添加字体阴影，可以添加以下代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;text-shadow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#999999&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中的数值依次代表阴影的 X 轴偏移、Y 轴偏移、阴影大小，以及字体颜色。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Markdown 复杂表格</title>
+      <link>https://xuchengpeng.github.io/post/markdown-complex-table/</link>
+      <pubDate>Mon, 14 May 2018 19:46:01 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/markdown-complex-table/</guid>
+      <description>&lt;p&gt;由于Markdown语法本身不包含复杂表格的插入，但是可以使用html语法来实现，一般的Markdown编辑器都是支持html语法的。&lt;/p&gt;
+&lt;p&gt;复杂表格与简单表格最大的差异有两点：水平单元格的合并和纵向单元格的合并，通过html语法实现这两个操作本质就是：删除多余的空白单元格，然后使用某些单元格的colspan和rowspan属性进行扩展填充。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;水平单元格的合并：基于colspan属性，即使一个单元格占多列的空间。&lt;/li&gt;
+&lt;li&gt;纵向单元格的合并：基于rowspan属性，即使一个单元格占多行的空间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以从Word或者Excel中复制表格，通过网站 &lt;a href=&#34;http://pressbin.com/tools/excel_to_html_table/index.html&#34;&gt;No-Cruft Excel to HTML Table Converter&lt;/a&gt; 转换获得html代码。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 升级内核</title>
+      <link>https://xuchengpeng.github.io/post/ubuntu-upgrade-kernel/</link>
+      <pubDate>Fri, 20 Apr 2018 15:34:34 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/ubuntu-upgrade-kernel/</guid>
+      <description>&lt;h3 id=&#34;查看当前内核版本&#34;&gt;查看当前内核版本&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ uname -r
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4.4.0-53-generic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;下载内核&#34;&gt;下载内核&lt;/h3&gt;
+&lt;p&gt;下载最新 Ubuntu 编译好的内核地址： &lt;a href=&#34;http://kernel.ubuntu.com/~kernel-ppa/mainline/&#34;&gt;http://kernel.ubuntu.com/~kernel-ppa/mainline/&lt;/a&gt;
+选取当前最新的内核 4.16.3 版本进行下载：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ mkdir 4.16.3 &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; 4.16.3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603_4.16.3-041603.201804190730_all.deb
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-image-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;安装内核&#34;&gt;安装内核&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dpkg -i *.deb
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;卸载旧内核&#34;&gt;卸载旧内核&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看目前安装的内核&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dpkg -l &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep linux
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ii  linux-image-4.4.0-53-generic       4.4.0-53.74                        amd64        Linux kernel image &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; version 4.4.0 on &lt;span class=&#34;m&#34;&gt;64&lt;/span&gt; bit x86 SMP
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ii  linux-image-4.16.3-041603-generic  4.16.3-041603.201804190730         amd64        Linux kernel image &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; version 4.16.3 on &lt;span class=&#34;m&#34;&gt;64&lt;/span&gt; bit x86 SMP
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;## 卸载旧内核&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt-get purge linux-image-4.4.0-53-generic linux-headers-4.4.0-53
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果查询的结果中还有显示已卸载的内核，可以使用&lt;code&gt;dpkg -P linux-image-4.4.0-53-generic&lt;/code&gt;命令将其删除。&lt;/p&gt;
+&lt;h3 id=&#34;更新启动引导&#34;&gt;更新启动引导&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ update-grub
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 重启后再查看内核版本验证 uname -a&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 增加和删除 PPA 软件源</title>
+      <link>https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/</link>
+      <pubDate>Fri, 13 Apr 2018 10:50:50 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/</guid>
+      <description>&lt;p&gt;PPA，英文全称为 Personal Package Archives，即个人软件包档案。是 Ubuntu Launchpad 网站提供的一项源服务，允许个人用户上传软件源代码，通过 Launchpad 进行编译并发布为二进制软件包，作为 apt / 新立得（Synaptic）源供其他用户下载和更新。&lt;/p&gt;
+&lt;p&gt;PPA 的一般形式是： &lt;strong&gt;ppa:user/ppa-name&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;添加 PPA 源:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;添加 PPA 源的命令为： sudo add-apt-repository ppa:user/ppa-name&lt;/li&gt;
+&lt;li&gt;添加好记得要更新一下： sudo apt-get update&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;删除 PPA 源:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;删除 PPA 源的命令格式则为：sudo add-apt-repository -r ppa:user/ppa-name&lt;/li&gt;
+&lt;li&gt;然后进入 /etc/apt/sources.list.d 目录，将相应 ppa 源的保存文件删除。&lt;/li&gt;
+&lt;li&gt;最后同样更新一下：sudo apt-get update&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linode 上搭建 Shadowsocks</title>
+      <link>https://xuchengpeng.github.io/post/setup-shadowsocks-on-linode/</link>
+      <pubDate>Fri, 13 Apr 2018 09:08:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/setup-shadowsocks-on-linode/</guid>
+      <description>&lt;h2 id=&#34;vps-选择&#34;&gt;VPS 选择&lt;/h2&gt;
+&lt;h3 id=&#34;linodehttpswwwlinodecomr0a89daeb73aede849b760c66127f1bb8960c73dc&#34;&gt;&lt;a href=&#34;https://www.linode.com/?r=0a89daeb73aede849b760c66127f1bb8960c73dc&#34;&gt;Linode&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;老大哥Linode近年最大的变化是，倍感digitalocean和vultr的压力了。Linode近期最大的福利是，全面由原来的Xen架构改用最流行的KVM架构服务器，套餐内存全部翻倍！&lt;/p&gt;
+&lt;p&gt;例如，过去每月$10只能买1G内存套餐，现在你可购买Linode 2G套餐，目前最低$5可以买1G内存套餐，这也是最低套餐配置了，绝对具有性价比。&lt;/p&gt;
+&lt;p&gt;Linode也允许用户按月付费，仍然采用信用卡付款的方式。新增了Paypal付款方式，目前处于测试阶段。需要提醒中国用户，Paypal仍然会要求你绑定一张双币信用卡（支持国内发行的visa信用卡），所以你应当尽快申请一张属于自己的信用卡。&lt;/p&gt;
+&lt;p&gt;Linode日本机房长期缺货，无法购买。美国西海岸Fremont机房位于加州，是中国大陆用户最应当购买的机房位置。&lt;/p&gt;
+&lt;h3 id=&#34;vultrwwwvultrcom&#34;&gt;&lt;a href=&#34;www.vultr.com&#34;&gt;Vultr&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Vultr这两年的增长速度惊人，中国站长把原来digitalocean的服务器搬到了vultr，原因是vultr日本机房速度很快、同样的1G内存套餐，每月只要$8，具有超高性价比。&lt;/p&gt;
+&lt;p&gt;日本机房速度一直很快，没有绕行美国。今年9月初，杭州开会期间，Vultr日本机房线路突然变得非常慢，ping丢包严重，但是此事件仅持续了一周左右时间，又恢复正常，怀疑是中国电信国际出口线路调整导致的。在该期间，用户可把vps搬家到Vultr美国SFO机房，速度仍然很棒。&lt;/p&gt;
+&lt;h3 id=&#34;digitaloceanwwwdigitaloceancom&#34;&gt;&lt;a href=&#34;www.digitalocean.com&#34;&gt;digitalocean&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;digitalocean新增SFO 2号机房，是对中国用户来说相当不错的选择。印度机房虽然距离中国近，但线路并未优化，速度不如美国西海岸机房。&lt;/p&gt;
+&lt;p&gt;价格方便，$10每月享受1G内存、2TB月流量、单核CPU、KVM架构，在当前竞争激烈的VPS市场，表现中庸。&lt;/p&gt;
+&lt;p&gt;digitalocean最大的变化是，过去三年间，中国买家疯狂涌入，导致线路表现不佳。大批用户搭建出国梯子，导致digitalocean机房很多IP被封。&lt;/p&gt;
+&lt;p&gt;不明就里的新用户兴奋地创建一个新账号，结果竟然ping不通服务器，无法连接ssh，其实是因为自动分配的IP被墙的原因。目前，digitalocean线路稳定，原因之一是竞争对手vultr把很多中国用户吸引了过去。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Travis CI 构建时自动更新 NexT 主题源码</title>
+      <link>https://xuchengpeng.github.io/post/travisci-update-theme-next/</link>
+      <pubDate>Fri, 02 Feb 2018 17:01:59 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/travisci-update-theme-next/</guid>
+      <description>&lt;p&gt;在 {% post_link autodeploy-hexo-blog-with-travisci 使用 Travis CI 自动部署 Hexo 博客 %} 后，每次新增文章或者修改文章就会触发自动构建。&lt;/p&gt;
+&lt;p&gt;加入使用的主题代码更新，还需要手动合并后提交，如我的博客使用的是 NexT 主题，每天都有代码更新，所以还是想办法在构建的时候自动更新主题代码。&lt;/p&gt;
+&lt;p&gt;初步想法是在下载的博客代码后，生成博客之前，再下载一次博客的最新代码即可，Travis CI 构建过程有很多阶段，选择其中一个阶段即可。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;OPTIONAL Install &lt;code&gt;apt addons&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;OPTIONAL Install &lt;code&gt;cache components&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;before_install&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;install&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;before_script&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;script&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;OPTIONAL &lt;code&gt;before_cache&lt;/code&gt; (for cleaning up cache)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;after_success&lt;/code&gt; or &lt;code&gt;after_failure&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;OPTIONAL &lt;code&gt;before_deploy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;OPTIONAL &lt;code&gt;deploy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;OPTIONAL &lt;code&gt;after_deploy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;after_script&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 gulp 压缩 hexo 博客资源</title>
+      <link>https://xuchengpeng.github.io/post/compress-hexo-with-gulp/</link>
+      <pubDate>Thu, 01 Feb 2018 14:06:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/compress-hexo-with-gulp/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/gulp.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;hexo generate&lt;/code&gt; 命令后在 public 文件夹下面生成 html、css、js 等源文件，里面含有大量的空白，而且博客中还有大量的图片占据了很大的空间。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Automate and enhance your workflow.
+gulp is a toolkit for automating painful or time-consuming tasks in your development workflow, so you can stop messing around and build something.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://gulpjs.com/&#34;&gt;gulp&lt;/a&gt; 用自动化构建工具增强你的工作流程！&lt;/p&gt;
+&lt;p&gt;我们可以通过一些 gulp 插件实现对html、css、js、image等静态资源的高效压缩，通过压缩这些静态资源，可以减少请求的数据量从而达到优化博客访问速度的目的。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Travis CI 自动部署 Hexo 博客</title>
+      <link>https://xuchengpeng.github.io/post/autodeploy-hexo-blog-with-travisci/</link>
+      <pubDate>Tue, 30 Jan 2018 09:30:40 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/autodeploy-hexo-blog-with-travisci/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/travis-ci.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;CI 是 &lt;code&gt;Continuous Integration&lt;/code&gt; 的缩写，持续集成之意。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;持续集成是一种软件开发实践，每次集成都通过自动化的构建（包括编译，发布，自动化测试）来验证，从而尽早地发现集成错误。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://travis-ci.org/&#34;&gt;Travis CI&lt;/a&gt; 是目前新兴的开源持续集成构建项目，用来构建托管在GitHub上的代码。它提供了多种编程语言的支持，包括Ruby，JavaScript，Java，Scala，PHP，Haskell和Erlang在内的多种语言。许多知名的开源项目使用它来在每次提交的时候进行构建测试，比如Ruby on Rails，Ruby和Node.js。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Travis CI是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。这个软件的代码同时也是开源的，可以在GitHub上下载到，尽管开发者当前并不推荐在闭源项目中单独使用它。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;工作原理&#34;&gt;工作原理&lt;/h2&gt;
+&lt;p&gt;当我们每次进行push等动作时，Travis CI 会自动检测我们的提交，然后根据配置文件，搭建虚拟主机来运行测试，构建等指令。在这里，就是运行 &lt;code&gt;hexo deploy --generate&lt;/code&gt; 等命令来自动生成、部署静态网页。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>通过 Cloudflare 给绑定个人域名的GitHub Pages博客加持https</title>
+      <link>https://xuchengpeng.github.io/post/github-pages-with-cloudflare-https/</link>
+      <pubDate>Mon, 29 Jan 2018 07:58:19 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/github-pages-with-cloudflare-https/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/https&amp;amp;http.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Google宣布了，从2017年1月份正式发布的Chrome 56开始，Google将把某些包含敏感内容的https页面标记为“不安全”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GitHub Pages 本身是 https 的站点，但是 {% post_link set-up-aliyun-domain-with-github-pages 绑定个人域名 %} 了以后，站点便是 http 的。&lt;/p&gt;
+&lt;h2 id=&#34;https-和-http-的区别&#34;&gt;https 和 http 的区别&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。&lt;/li&gt;
+&lt;li&gt;http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。&lt;/li&gt;
+&lt;li&gt;http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。&lt;/li&gt;
+&lt;li&gt;http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Hexo 数据文件进行主题配置</title>
+      <link>https://xuchengpeng.github.io/post/theme-configuration-with-hexo-data-files/</link>
+      <pubDate>Fri, 19 Jan 2018 07:41:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/theme-configuration-with-hexo-data-files/</guid>
+      <description>&lt;p&gt;目前，通过 pull 或下载新的 release 版本来更新 NexT 主题的体验并不平滑。当用户使用 git pull 更新 NexT 主题时经常需要解决冲突问题，而在手动下载 release 版本时也经常需要手动合并配置。&lt;/p&gt;
+&lt;p&gt;现在来说，NexT 推荐用户存储部分配置在站点的 _config.yml 中，而另一部分在主题的 _config.yml 中。这一方式固然可用，但也有一些缺点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;配置项被分裂为两部分；&lt;/li&gt;
+&lt;li&gt;用户难以弄清何处存放配置选项。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;为了解决这一问题，NexT 将利用 Hexo 的&lt;a href=&#34;https://hexo.io/docs/data-files.html&#34;&gt;数据文件&lt;/a&gt;特性。因为数据文件是在 Hexo 3 中被引入，所以你需要更新至 Hexo 3.0 以后的版本来使用这一特性。&lt;/p&gt;
+&lt;p&gt;如果你仍然希望使用 Hexo 2.x，你依旧可以按老的方式进行配置。NexT 仍然兼容 Hexo 2.x（但可能会出现错误）。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>阿里云域名赠送企业邮箱</title>
+      <link>https://xuchengpeng.github.io/post/alimail-with-aliyun-domain/</link>
+      <pubDate>Thu, 18 Jan 2018 07:30:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/alimail-with-aliyun-domain/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/alimail-qiye.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;申请 {% post_link set-up-aliyun-domain-with-github-pages 阿里云域名 %} 后，会赠送阿里云企业邮箱免费版。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;50个帐号，5G/帐号；&lt;/li&gt;
+&lt;li&gt;域名注册成功后，自动开通企业邮箱并添加邮箱解析；&lt;/li&gt;
+&lt;li&gt;每位会员只能开通一个企业邮箱免费版;&lt;/li&gt;
+&lt;li&gt;仅 .top 域名注册送免费企业邮箱。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;开通企业邮箱免费版后一定要尽快使其生效，否则七天内会被收回。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub Pages 绑定阿里云域名</title>
+      <link>https://xuchengpeng.github.io/post/set-up-aliyun-domain-with-github-pages/</link>
+      <pubDate>Tue, 16 Jan 2018 11:09:48 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/set-up-aliyun-domain-with-github-pages/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/aliyun_logo.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;首先在 &lt;a href=&#34;https://www.aliyun.com&#34;&gt;阿里云&lt;/a&gt; 上注册一个域名，阿里云域名更有 &lt;a href=&#34;https://wanwang.aliyun.com/domain/1yuan&#34;&gt;域名一元购专题&lt;/a&gt;，价格十分便宜。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>搭建Hexo NexT主题博客</title>
+      <link>https://xuchengpeng.github.io/post/setup-hexo-next-blog/</link>
+      <pubDate>Tue, 09 Jan 2018 14:41:31 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/setup-hexo-next-blog/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/NextSchemes3.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;什么是hexo&#34;&gt;什么是Hexo？&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt; 是一个快速、简洁且高效的博客框架。Hexo 使用 &lt;a href=&#34;http://daringfireball.net/projects/markdown/&#34;&gt;Markdown&lt;/a&gt;（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/theme-next/hexo-theme-next&#34;&gt;NexT&lt;/a&gt; 是一款简洁优雅且易于使用的主题。&lt;/p&gt;
+&lt;p&gt;在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。&lt;/p&gt;
+&lt;p&gt;为了描述方便，在以下说明中，将前者称为 {% label primary@站点配置文件 %}， 后者称为 {% label info@主题配置文件 %}。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Unsplash随机图片</title>
+      <link>https://xuchengpeng.github.io/post/unsplash-random-pic/</link>
+      <pubDate>Wed, 13 Dec 2017 09:56:18 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/unsplash-random-pic/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://unsplash.com/&#34;&gt;Unsplash&lt;/a&gt; 是一个完全免费的、无版权的高清图片资源网站。「无版权」是指这个网站上的图片由创作者自愿分享出来，完全免费提供给任何人作为任何用途使用。Unsplash 的原话是「do whatever you want」，进一步说明是「你可以免费对图片进行复制、修改、分发，包括用作商业目的，无需经过允许即可使用」。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://source.unsplash.com/random&#34; alt=&#34;Unsplash随机图片&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>网线水晶头接法</title>
+      <link>https://xuchengpeng.github.io/post/network-cable-crystal-head/</link>
+      <pubDate>Wed, 06 Dec 2017 09:05:10 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/network-cable-crystal-head/</guid>
+      <description>网线水晶头有两种接法，一种是直连互联法，一种是交叉互联法。 交叉线的做法是：一头采用568A标准，一头采用568B标准。平行（直通）线的做法是：两头同为568A标准或568B标准。
+如果连接的双方地位不对等的，则使用平行（直通）线，例如电脑连接到路由器或交换机； 如果连接的两台设备是对等的，则使用交叉线，例如电脑连接到电脑。</description>
+    </item>
+    
+    <item>
+      <title>为NexT主题部署Gitalk评论插件</title>
+      <link>https://xuchengpeng.github.io/post/gitalk-for-next/</link>
+      <pubDate>Mon, 04 Dec 2017 09:29:58 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/gitalk-for-next/</guid>
+      <description>在之前的文章中（{% post_link gitalk-comment-extension Gitalk评论插件 %}），已介绍过Gitalk评论插件，GitHub上为NexT添加Gitalk的pull request一直没有合入，自己手动本地部署吧。
+为什么选择Gitalk 由于国内网络大环境的原因，Disqus 等优秀的评论系统都需要梯子才能使用，多说已经停运，NexT 已支持的 Gitment 目前存在一些问题，作者好像也已经很久没有维护了，故选择现在还在活跃的 Gitalk。
+新增插件代码 新建 layout/_third-party/comments/gitalk.swig 文件，添加以下代码：
+{% if theme.gitalk.enable %} {% if page.comments %} &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://unpkg.com/gitalk/dist/gitalk.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://unpkg.com/gitalk/dist/gitalk.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; const gitalk = new Gitalk({ clientID: &amp;#39;{{theme.gitalk.clientID}}&amp;#39;, clientSecret: &amp;#39;{{theme.gitalk.clientSecret}}&amp;#39;, repo: &amp;#39;{{theme.gitalk.repo}}&amp;#39;, owner: &amp;#39;{{theme.gitalk.owner}}&amp;#39;, admin: &amp;#39;{{theme.gitalk.admin}}&amp;#39;.split(&amp;#39;,&amp;#39;), id: location.pathname, // facebook-like distraction free mode distractionFreeMode: &amp;#39;{{ theme.gitalk.distractionFreeMode }}&amp;#39;, createIssueManually: &amp;#39;{{ theme.gitalk.createIssueManually }}&amp;#39; }) gitalk.render(&amp;#39;gitalk-container&amp;#39;) &amp;lt;/script&amp;gt; {% endif %} {% endif %} 添加插件到NexT主题中 修改 layout/_third-party/comments/index.</description>
+    </item>
+    
+    <item>
+      <title>Gitalk评论插件</title>
+      <link>https://xuchengpeng.github.io/post/gitalk-comment-extension/</link>
+      <pubDate>Fri, 24 Nov 2017 14:51:01 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/gitalk-comment-extension/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt; 是一个基于 Github Issue 和 Preact 开发的评论插件。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>NexT - Elegant Theme for Hexo</title>
+      <link>https://xuchengpeng.github.io/post/hexo-next-blog/</link>
+      <pubDate>Thu, 23 Nov 2017 09:38:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/hexo-next-blog/</guid>
+      <description>下一步，学习一下用这个东东搭建一个blog吧。
+Hexo
+NexT
+其他教程：
+http://www.jianshu.com/p/5973c05d7100
+http://www.jianshu.com/p/e99ed60390a8</description>
+    </item>
+    
+    <item>
+      <title>Gitment评论系统</title>
+      <link>https://xuchengpeng.github.io/post/gitment-comment-system/</link>
+      <pubDate>Wed, 22 Nov 2017 16:00:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/gitment-comment-system/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/imsun/gitment&#34;&gt;Gitment&lt;/a&gt; 是作者实现的一款基于 GitHub Issues 的评论系统。支持在前端直接引入，不需要任何后端代码。可以在页面进行登录、查看、评论、点赞等操作，同时有完整的 Markdown / GFM 和代码高亮支持。尤为适合各种基于 GitHub Pages 的静态博客或项目页面。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SourceInsight代码检视</title>
+      <link>https://xuchengpeng.github.io/post/sourceinsight-codereview/</link>
+      <pubDate>Mon, 20 Nov 2017 17:10:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/sourceinsight-codereview/</guid>
+      <description>&lt;p&gt;这是一个SourceInsight使用的本地代码检视工具，利用Macro实现。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

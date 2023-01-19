@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>diminish on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/diminish/</link>
+    <description>Recent content in diminish on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 09 Jul 2018 09:59:51 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/diminish/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自定义emacs mode-line</title>
+      <link>https://xuchengpeng.github.io/post/customize-emacs-mode-line/</link>
+      <pubDate>Mon, 09 Jul 2018 09:59:51 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/customize-emacs-mode-line/</guid>
+      <description>&lt;h3 id=&#34;一些常用的mode-line包&#34;&gt;一些常用的mode-line包&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/milkypostman/powerline&#34;&gt;powerline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Malabarba/smart-mode-line&#34;&gt;smart-mode-line&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/TheBB/spaceline&#34;&gt;spaceline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dbordak/telephone-line&#34;&gt;telephone-line&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;了解mode-line&#34;&gt;了解mode-line&lt;/h3&gt;
+&lt;p&gt;mode-line初始值：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%e&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-front-space&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-mule-info&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-client&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-modified&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-remote&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-frame-identification&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-buffer-identification&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;   &amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-position&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;vc-mode&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;vc-mode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;  &amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-modes&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-misc-info&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mode-line-end-spaces&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

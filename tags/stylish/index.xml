@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Stylish on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/stylish/</link>
+    <description>Recent content in Stylish on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 23 May 2018 10:27:11 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/stylish/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stylus 自定义网页字体</title>
+      <link>https://xuchengpeng.github.io/post/stylus-set-web-font/</link>
+      <pubDate>Wed, 23 May 2018 10:27:11 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/stylus-set-web-font/</guid>
+      <description>&lt;p&gt;使用 Stylus 可以直接使用 &lt;a href=&#34;https://userstyles.org/&#34;&gt;userstyles 网站&lt;/a&gt; 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。&lt;/p&gt;
+&lt;p&gt;这里推荐一款 &lt;a href=&#34;https://userstyles.org/styles/100473/004-forcemyfonts-chinese-firefoxchromeie-catcat520&#34;&gt;ForceMyFont&lt;/a&gt; 的模板，可以设定的选项非常丰富，前提也是需要在电脑上安装你选择的字体。&lt;/p&gt;
+&lt;p&gt;你也可以自定义字体CSS的样式，在 Chrome 浏览器中，这里使用 Stylus 插件，编写新的样式，代码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;font-weight&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;500&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;font-family&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Arial&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;思源宋体&amp;#34;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第一行设定字重，第二行设定英文字体和中文字体。如果要添加字体阴影，可以添加以下代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;text-shadow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#999999&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中的数值依次代表阴影的 X 轴偏移、Y 轴偏移、阴影大小，以及字体颜色。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>用户样式管理器Stylus</title>
+      <link>https://xuchengpeng.github.io/post/chrome-ext-stylus/</link>
+      <pubDate>Tue, 12 Dec 2017 16:24:48 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/chrome-ext-stylus/</guid>
+      <description>&lt;p&gt;去年 9 月底，流行的浏览器扩展 &lt;a href=&#34;https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe&#34;&gt;Stylish&lt;/a&gt; 及其用户社区 userstyles.org (USo) 更换了所有者。新所有者 Justin Hindman 日前正式宣布 Stylish 及 USo 成为数据分析公司 SimilarWeb 的一部分，最近更新的 Chrome 版已经开始默认收集用户信息。根据 uBlock Origin 作者 gorhill 分析，新的 Chrome 版会记录使用者浏览的每一个链接，包括从哪来和到哪去，加上唯一用户标识符及其他一些信息并进行两次 base64 编码后，发回 &lt;a href=&#34;https://api.userstyles.org/tic/stats&#34;&gt;https://api.userstyles.org/tic/stats&lt;/a&gt; 。目前用户还可以选择排除（opt-out），虽然选择排除后 Stylish 的功能将受到很大限制。根据最后更新时间可以推断，其他浏览器版（Firefox、Safari、Opera）暂未受影响。AMO 审核人员 rctgamer3 表示 Stylish 还没有提交新版。&amp;quot;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

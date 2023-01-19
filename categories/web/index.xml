@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Web on Chuck</title>
+    <link>https://xuchengpeng.github.io/categories/web/</link>
+    <description>Recent content in Web on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 10 Jul 2018 14:28:41 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting MathJax with Hugo</title>
+      <link>https://xuchengpeng.github.io/post/setting-mathjax-with-hugo/</link>
+      <pubDate>Tue, 10 Jul 2018 14:28:41 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/setting-mathjax-with-hugo/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; - Beautiful math in all browsers&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A JavaScript display engine for mathematics that works in all browsers. No more setup for readers. It just works.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Markdown 博客中使用 MathJax 数学公式</title>
+      <link>https://xuchengpeng.github.io/post/mathjax-in-markdown-blog/</link>
+      <pubDate>Fri, 25 May 2018 16:28:02 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/mathjax-in-markdown-blog/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; - Beautiful math in all browsers&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A JavaScript display engine for mathematics that works in all browsers. No more setup for readers. It just works.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;mathjax-使用&#34;&gt;MathJax 使用&lt;/h2&gt;
+&lt;p&gt;网页中增加配置：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;text/x-mathjax-config&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;MathJax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Hub&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nx&#34;&gt;tex2jax&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;inlineMath&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;$&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;$&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;\\(&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;\\)&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;processEscapes&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;https://cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#39;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;async&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Stylus 自定义网页字体</title>
+      <link>https://xuchengpeng.github.io/post/stylus-set-web-font/</link>
+      <pubDate>Wed, 23 May 2018 10:27:11 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/stylus-set-web-font/</guid>
+      <description>&lt;p&gt;使用 Stylus 可以直接使用 &lt;a href=&#34;https://userstyles.org/&#34;&gt;userstyles 网站&lt;/a&gt; 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。&lt;/p&gt;
+&lt;p&gt;这里推荐一款 &lt;a href=&#34;https://userstyles.org/styles/100473/004-forcemyfonts-chinese-firefoxchromeie-catcat520&#34;&gt;ForceMyFont&lt;/a&gt; 的模板，可以设定的选项非常丰富，前提也是需要在电脑上安装你选择的字体。&lt;/p&gt;
+&lt;p&gt;你也可以自定义字体CSS的样式，在 Chrome 浏览器中，这里使用 Stylus 插件，编写新的样式，代码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;font-weight&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;500&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;font-family&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Arial&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;思源宋体&amp;#34;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第一行设定字重，第二行设定英文字体和中文字体。如果要添加字体阴影，可以添加以下代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;text-shadow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;em&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;#999999&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;!important&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中的数值依次代表阴影的 X 轴偏移、Y 轴偏移、阴影大小，以及字体颜色。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>通过 Cloudflare 给绑定个人域名的GitHub Pages博客加持https</title>
+      <link>https://xuchengpeng.github.io/post/github-pages-with-cloudflare-https/</link>
+      <pubDate>Mon, 29 Jan 2018 07:58:19 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/github-pages-with-cloudflare-https/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/https&amp;amp;http.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Google宣布了，从2017年1月份正式发布的Chrome 56开始，Google将把某些包含敏感内容的https页面标记为“不安全”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GitHub Pages 本身是 https 的站点，但是 {% post_link set-up-aliyun-domain-with-github-pages 绑定个人域名 %} 了以后，站点便是 http 的。&lt;/p&gt;
+&lt;h2 id=&#34;https-和-http-的区别&#34;&gt;https 和 http 的区别&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。&lt;/li&gt;
+&lt;li&gt;http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。&lt;/li&gt;
+&lt;li&gt;http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。&lt;/li&gt;
+&lt;li&gt;http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>阿里云域名赠送企业邮箱</title>
+      <link>https://xuchengpeng.github.io/post/alimail-with-aliyun-domain/</link>
+      <pubDate>Thu, 18 Jan 2018 07:30:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/alimail-with-aliyun-domain/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/alimail-qiye.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;申请 {% post_link set-up-aliyun-domain-with-github-pages 阿里云域名 %} 后，会赠送阿里云企业邮箱免费版。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;50个帐号，5G/帐号；&lt;/li&gt;
+&lt;li&gt;域名注册成功后，自动开通企业邮箱并添加邮箱解析；&lt;/li&gt;
+&lt;li&gt;每位会员只能开通一个企业邮箱免费版;&lt;/li&gt;
+&lt;li&gt;仅 .top 域名注册送免费企业邮箱。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;开通企业邮箱免费版后一定要尽快使其生效，否则七天内会被收回。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub Pages 绑定阿里云域名</title>
+      <link>https://xuchengpeng.github.io/post/set-up-aliyun-domain-with-github-pages/</link>
+      <pubDate>Tue, 16 Jan 2018 11:09:48 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/set-up-aliyun-domain-with-github-pages/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/aliyun_logo.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;首先在 &lt;a href=&#34;https://www.aliyun.com&#34;&gt;阿里云&lt;/a&gt; 上注册一个域名，阿里云域名更有 &lt;a href=&#34;https://wanwang.aliyun.com/domain/1yuan&#34;&gt;域名一元购专题&lt;/a&gt;，价格十分便宜。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>TFTP on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/tftp/</link>
+    <description>Recent content in TFTP on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 14 May 2018 17:21:26 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/tftp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP/IP 详解(卷一) TFTP：简单文件传送协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tftp/</link>
+      <pubDate>Mon, 14 May 2018 17:21:26 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tftp/</guid>
+      <description>&lt;p&gt;TFTP(Trivial File Transfer Protocol)即简单文件传送协议，最初打算用于引导无盘系统（通常是工作站或X终端）。为了保持简单和短小，TFTP将使用UDP。TFTP的代码（和它所需要的UDP、IP和设备驱动程序）都能适合只读存储器。&lt;/p&gt;
+&lt;h2 id=&#34;协议&#34;&gt;协议&lt;/h2&gt;
+&lt;p&gt;在开始工作时，TFTP的客户与服务器交换信息，客户发送一个读请求或写请求给服务器。在一个无盘系统进行系统引导的正常情况下，第一个请求是读请求（RRQ）。下图显示了5种TFTP报文格式（操作码为1和2的报文使用相同的格式）。&lt;/p&gt;
+&lt;p&gt;TFTP报文的头两个字节表示操作码。对于读请求和写请求（WRQ），文件名字段说明客户要读或写的位于服务器上的文件。这个文件字段以0字节作为结束。模式字段是一个ASCII码串netascii或octet（可大小写任意组合），同样以0字节结束。netascii表示数据是以成行的ASCII码字符组成，以两个字节—回车字符后跟换行字符（称为CR/LF）作为行结束符。这两个行结束字符在这种格式和本地主机使用的行定界符之间进行转化。octet则将数据看作8bit一组的字节流而不作任何解释。&lt;/p&gt;
+&lt;p&gt;每个数据分组包含一个块编号字段，它以后要在确认分组中使用。以读一个文件作为例子，TFTP客户需要发送一个读请求说明要读的文件名和文件模式(mode)。如果这个文件能被这个客户读取，TFTP服务器就返回一个块编号为1的数据分组。TFTP客户又发送一个块编号为1的ACK。TFTP服务器随后发送块编号为2的数据。TFTP客户发回块编号为2的ACK。重复这个过程直到这个文件传送完。除了最后一个数据分组可含有不足512字节的数据，其他每个数据分组均含有512字节的数据。当TFTP客户收到一个不足512字节的数据分组，就知道它收到最后一个数据分组。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

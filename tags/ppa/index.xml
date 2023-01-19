@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PPA on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/ppa/</link>
+    <description>Recent content in PPA on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 13 Apr 2018 10:50:50 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/ppa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 增加和删除 PPA 软件源</title>
+      <link>https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/</link>
+      <pubDate>Fri, 13 Apr 2018 10:50:50 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/</guid>
+      <description>&lt;p&gt;PPA，英文全称为 Personal Package Archives，即个人软件包档案。是 Ubuntu Launchpad 网站提供的一项源服务，允许个人用户上传软件源代码，通过 Launchpad 进行编译并发布为二进制软件包，作为 apt / 新立得（Synaptic）源供其他用户下载和更新。&lt;/p&gt;
+&lt;p&gt;PPA 的一般形式是： &lt;strong&gt;ppa:user/ppa-name&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;添加 PPA 源:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;添加 PPA 源的命令为： sudo add-apt-repository ppa:user/ppa-name&lt;/li&gt;
+&lt;li&gt;添加好记得要更新一下： sudo apt-get update&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;删除 PPA 源:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;删除 PPA 源的命令格式则为：sudo add-apt-repository -r ppa:user/ppa-name&lt;/li&gt;
+&lt;li&gt;然后进入 /etc/apt/sources.list.d 目录，将相应 ppa 源的保存文件删除。&lt;/li&gt;
+&lt;li&gt;最后同样更新一下：sudo apt-get update&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

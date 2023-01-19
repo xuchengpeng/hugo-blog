@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ICMP on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/icmp/</link>
+    <description>Recent content in ICMP on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 09 May 2018 10:28:49 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/icmp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP/IP 详解(卷一) UDP：用户数据报协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</link>
+      <pubDate>Wed, 09 May 2018 10:28:49 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</guid>
+      <description>&lt;p&gt;UDP是一个简单的面向数据报的运输层协议：进程的每个输出操作都正好产生一个UDP数据报，并组装成一份待发送的IP数据报。这与面向流字符的协议不同，如TCP，应用程序产生的全体数据与真正发送的单个IP数据报可能没有什么联系。&lt;/p&gt;
+&lt;p&gt;UDP数据报封装成一份IP数据报的格式：IP首部(20字节) - UDP首部(8字节) - UDP数据。&lt;/p&gt;
+&lt;p&gt;UDP不提供可靠性：它把应用程序传给IP层的数据发送出去，但是并不保证它们能到达目的地。由于缺乏可靠性，我们似乎觉得要避免使用UDP而使用一种可靠协议如TCP。&lt;/p&gt;
+&lt;p&gt;应用程序必须关心IP数据报的长度。如果它超过网络的MTU，那么就要对IP数据报进行分片。如果需要，源端到目的端之间的每个网络都要进行分片，并不只是发送端主机连接第一个网络才这样做。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) ICMP：Internet控制报文协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-icmp/</link>
+      <pubDate>Thu, 03 May 2018 10:40:15 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-icmp/</guid>
+      <description>&lt;p&gt;ICMP经常被认为是IP层的一个组成部分。它传递差错报文以及其他需要注意的信息。ICMP报文通常被IP层或更高层协议（TCP或UDP）使用。一些ICMP报文把差错报文返回给用户进程。&lt;/p&gt;
+&lt;p&gt;ICMP报文是在IP数据报内部被传输的，格式为：20个字节的IP首部加上后面的ICMP报文。&lt;/p&gt;
+&lt;p&gt;ICMP 报文格式中，类型字段可以有15个不同的值，以描述特定类型的ICMP报文。某些ICMP报文还使用代码字段的值来进一步描述不同的条件。
+检验和字段覆盖整个ICMP报文。使用的算法与IP首部检验和算法相同。ICMP的检验和是必需的。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/icmp-format.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

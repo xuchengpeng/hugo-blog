@@ -1,0 +1,149 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>装饰器模式 | Chuck</title><meta name=keywords content="结构型模式"><meta name=description content="装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。
+这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
+我们通过下面的实例来演示装饰器模式的用法。其中，我们将把一个形状装饰上不同的颜色，同时又不改变形状类。
+介绍
+意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。
+主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。
+何时使用：在不想增加很多子类的情况下扩展类。
+如何解决：将具体功能职责划分，同时继承装饰者模式。
+关键代码： 1、Component 类充当抽象角色，不应该具体实现。 2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。
+应用实例： 1、孙悟空有 72 变，当他变成&#34;庙宇&#34;后，他的根本还是一只猴子，但是他又有了庙宇的功能。 2、不论一幅画有没有画框都可以挂在墙上，但是通常都是有画框的，并且实际上是画框被挂在墙上。在挂在墙上之前，画可以被蒙上玻璃，装到框子里；这时画、玻璃和画框形成了一个物体。
+优点：装饰类和被装饰类可以独立发展，不会相互耦合，装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能。
+缺点：多层装饰比较复杂。
+使用场景： 1、扩展一个类的功能。 2、动态增加功能，动态撤销。
+注意事项：可代替继承。"><meta name=author content="Chuck"><link rel=canonical href=https://xuchengpeng.github.io/post/design-pattern-decorator-pattern/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=text/javascript async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type=text/x-mathjax-config>
+    MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\[','\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+        TeX: { equationNumbers: { autoNumber: "AMS" },
+            extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    </script><meta property="og:title" content="装饰器模式"><meta property="og:description" content="装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。
+这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
+我们通过下面的实例来演示装饰器模式的用法。其中，我们将把一个形状装饰上不同的颜色，同时又不改变形状类。
+介绍
+意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。
+主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。
+何时使用：在不想增加很多子类的情况下扩展类。
+如何解决：将具体功能职责划分，同时继承装饰者模式。
+关键代码： 1、Component 类充当抽象角色，不应该具体实现。 2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。
+应用实例： 1、孙悟空有 72 变，当他变成&#34;庙宇&#34;后，他的根本还是一只猴子，但是他又有了庙宇的功能。 2、不论一幅画有没有画框都可以挂在墙上，但是通常都是有画框的，并且实际上是画框被挂在墙上。在挂在墙上之前，画可以被蒙上玻璃，装到框子里；这时画、玻璃和画框形成了一个物体。
+优点：装饰类和被装饰类可以独立发展，不会相互耦合，装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能。
+缺点：多层装饰比较复杂。
+使用场景： 1、扩展一个类的功能。 2、动态增加功能，动态撤销。
+注意事项：可代替继承。"><meta property="og:type" content="article"><meta property="og:url" content="https://xuchengpeng.github.io/post/design-pattern-decorator-pattern/"><meta property="og:image" content="https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="post"><meta property="article:published_time" content="2018-04-18T09:01:25+00:00"><meta property="article:modified_time" content="2018-04-18T09:01:25+00:00"><meta property="og:site_name" content="ExampleSite"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="装饰器模式"><meta name=twitter:description content="装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。
+这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
+我们通过下面的实例来演示装饰器模式的用法。其中，我们将把一个形状装饰上不同的颜色，同时又不改变形状类。
+介绍
+意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。
+主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。
+何时使用：在不想增加很多子类的情况下扩展类。
+如何解决：将具体功能职责划分，同时继承装饰者模式。
+关键代码： 1、Component 类充当抽象角色，不应该具体实现。 2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。
+应用实例： 1、孙悟空有 72 变，当他变成&#34;庙宇&#34;后，他的根本还是一只猴子，但是他又有了庙宇的功能。 2、不论一幅画有没有画框都可以挂在墙上，但是通常都是有画框的，并且实际上是画框被挂在墙上。在挂在墙上之前，画可以被蒙上玻璃，装到框子里；这时画、玻璃和画框形成了一个物体。
+优点：装饰类和被装饰类可以独立发展，不会相互耦合，装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能。
+缺点：多层装饰比较复杂。
+使用场景： 1、扩展一个类的功能。 2、动态增加功能，动态撤销。
+注意事项：可代替继承。"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://xuchengpeng.github.io/post/"},{"@type":"ListItem","position":2,"name":"装饰器模式","item":"https://xuchengpeng.github.io/post/design-pattern-decorator-pattern/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"装饰器模式","name":"装饰器模式","description":"装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。 这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。 我们通过下面的实例来演示装饰器模式的用法。其中，我们将把一个形状装饰上不同的颜色，同时又不改变形状类。\n介绍 意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。 主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。 何时使用：在不想增加很多子类的情况下扩展类。 如何解决：将具体功能职责划分，同时继承装饰者模式。 关键代码： 1、Component 类充当抽象角色，不应该具体实现。 2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。 应用实例： 1、孙悟空有 72 变，当他变成\u0026quot;庙宇\u0026quot;后，他的根本还是一只猴子，但是他又有了庙宇的功能。 2、不论一幅画有没有画框都可以挂在墙上，但是通常都是有画框的，并且实际上是画框被挂在墙上。在挂在墙上之前，画可以被蒙上玻璃，装到框子里；这时画、玻璃和画框形成了一个物体。 优点：装饰类和被装饰类可以独立发展，不会相互耦合，装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能。 缺点：多层装饰比较复杂。 使用场景： 1、扩展一个类的功能。 2、动态增加功能，动态撤销。 注意事项：可代替继承。\n","keywords":["结构型模式"],"articleBody":"装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。 这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。 我们通过下面的实例来演示装饰器模式的用法。其中，我们将把一个形状装饰上不同的颜色，同时又不改变形状类。\n介绍 意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。 主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。 何时使用：在不想增加很多子类的情况下扩展类。 如何解决：将具体功能职责划分，同时继承装饰者模式。 关键代码： 1、Component 类充当抽象角色，不应该具体实现。 2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。 应用实例： 1、孙悟空有 72 变，当他变成\"庙宇\"后，他的根本还是一只猴子，但是他又有了庙宇的功能。 2、不论一幅画有没有画框都可以挂在墙上，但是通常都是有画框的，并且实际上是画框被挂在墙上。在挂在墙上之前，画可以被蒙上玻璃，装到框子里；这时画、玻璃和画框形成了一个物体。 优点：装饰类和被装饰类可以独立发展，不会相互耦合，装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能。 缺点：多层装饰比较复杂。 使用场景： 1、扩展一个类的功能。 2、动态增加功能，动态撤销。 注意事项：可代替继承。\n实现 我们将创建一个 Shape 接口和实现了 Shape 接口的实体类。然后我们创建一个实现了 Shape 接口的抽象装饰类 ShapeDecorator，并把 Shape 对象作为它的实例变量。 RedShapeDecorator 是实现了 ShapeDecorator 的实体类。 DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shape 对象。\n步骤 1 创建一个接口。 Shape.java\npublic interface Shape { void draw(); } 步骤 2 创建实现接口的实体类。 Rectangle.java\npublic class Rectangle implements Shape { @Override public void draw() { System.out.println(\"Shape: Rectangle\"); } } Circle.java\npublic class Circle implements Shape { @Override public void draw() { System.out.println(\"Shape: Circle\"); } } 步骤 3 创建实现了 Shape 接口的抽象装饰类。 ShapeDecorator.java\npublic abstract class ShapeDecorator implements Shape { protected Shape decoratedShape; public ShapeDecorator(Shape decoratedShape){ this.decoratedShape = decoratedShape; } public void draw(){ decoratedShape.draw(); } } 步骤 4 创建扩展了 ShapeDecorator 类的实体装饰类。 RedShapeDecorator.java\npublic class RedShapeDecorator extends ShapeDecorator { public RedShapeDecorator(Shape decoratedShape) { super(decoratedShape); } @Override public void draw() { decoratedShape.draw(); setRedBorder(decoratedShape); } private void setRedBorder(Shape decoratedShape){ System.out.println(\"Border Color: Red\"); } } 步骤 5 使用 RedShapeDecorator 来装饰 Shape 对象。 DecoratorPatternDemo.java\npublic class DecoratorPatternDemo { public static void main(String[] args) { Shape circle = new Circle(); Shape redCircle = new RedShapeDecorator(new Circle()); Shape redRectangle = new RedShapeDecorator(new Rectangle()); System.out.println(\"Circle with normal border\"); circle.draw(); System.out.println(\"\\nCircle of red border\"); redCircle.draw(); System.out.println(\"\\nRectangle of red border\"); redRectangle.draw(); } } 步骤 6 验证输出。\nCircle with normal border Shape: Circle Circle of red border Shape: Circle Border Color: Red Rectangle of red border Shape: Rectangle Border Color: Red ","wordCount":"235","inLanguage":"en","datePublished":"2018-04-18T09:01:25Z","dateModified":"2018-04-18T09:01:25Z","author":{"@type":"Person","name":"Chuck"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xuchengpeng.github.io/post/design-pattern-decorator-pattern/"},"publisher":{"@type":"Organization","name":"Chuck","logo":{"@type":"ImageObject","url":"https://xuchengpeng.github.io/%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://xuchengpeng.github.io/ accesskey=h title="Chuck (Alt + H)"><img src=https://xuchengpeng.github.io/apple-touch-icon.png alt aria-label=logo height=35>Chuck</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://xuchengpeng.github.io/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://xuchengpeng.github.io/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://xuchengpeng.github.io/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://xuchengpeng.github.io/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://xuchengpeng.github.io/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://xuchengpeng.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://xuchengpeng.github.io/post/>Posts</a></div><h1 class=post-title>装饰器模式</h1><div class=post-meta><span title='2018-04-18 09:01:25 +0000 UTC'>April 18, 2018</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;235 words&nbsp;·&nbsp;Chuck&nbsp;|&nbsp;<a href=https://github.com/xuchengpeng/hugo-blog/tree/master/content/post/design-pattern-decorator-pattern.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#介绍>介绍</a></li><li><a href=#实现>实现</a><ul><li><a href=#步骤-1>步骤 1</a></li><li><a href=#步骤-2>步骤 2</a></li><li><a href=#步骤-3>步骤 3</a></li><li><a href=#步骤-4>步骤 4</a></li><li><a href=#步骤-5>步骤 5</a></li><li><a href=#步骤-6>步骤 6</a></li></ul></li></ul></nav></div></details></div><div class=post-content><p>装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。
+这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
+我们通过下面的实例来演示装饰器模式的用法。其中，我们将把一个形状装饰上不同的颜色，同时又不改变形状类。</p><h2 id=介绍>介绍<a hidden class=anchor aria-hidden=true href=#介绍>#</a></h2><p>意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。
+主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。
+何时使用：在不想增加很多子类的情况下扩展类。
+如何解决：将具体功能职责划分，同时继承装饰者模式。
+关键代码： 1、Component 类充当抽象角色，不应该具体实现。 2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。
+应用实例： 1、孙悟空有 72 变，当他变成"庙宇"后，他的根本还是一只猴子，但是他又有了庙宇的功能。 2、不论一幅画有没有画框都可以挂在墙上，但是通常都是有画框的，并且实际上是画框被挂在墙上。在挂在墙上之前，画可以被蒙上玻璃，装到框子里；这时画、玻璃和画框形成了一个物体。
+优点：装饰类和被装饰类可以独立发展，不会相互耦合，装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能。
+缺点：多层装饰比较复杂。
+使用场景： 1、扩展一个类的功能。 2、动态增加功能，动态撤销。
+注意事项：可代替继承。</p><h2 id=实现>实现<a hidden class=anchor aria-hidden=true href=#实现>#</a></h2><p>我们将创建一个 Shape 接口和实现了 Shape 接口的实体类。然后我们创建一个实现了 Shape 接口的抽象装饰类 ShapeDecorator，并把 Shape 对象作为它的实例变量。
+RedShapeDecorator 是实现了 ShapeDecorator 的实体类。
+DecoratorPatternDemo，我们的演示类使用 RedShapeDecorator 来装饰 Shape 对象。</p><p><img loading=lazy src=/images/design-pattern/decorator_pattern_uml_diagram.jpg alt></p><h3 id=步骤-1>步骤 1<a hidden class=anchor aria-hidden=true href=#步骤-1>#</a></h3><p>创建一个接口。
+<em>Shape.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>interface</span> <span class=nc>Shape</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>   <span class=kt>void</span> <span class=nf>draw</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-2>步骤 2<a hidden class=anchor aria-hidden=true href=#步骤-2>#</a></h3><p>创建实现接口的实体类。
+<em>Rectangle.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Rectangle</span> <span class=kd>implements</span> <span class=n>Shape</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>draw</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Shape: Rectangle&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p><em>Circle.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Circle</span> <span class=kd>implements</span> <span class=n>Shape</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>draw</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Shape: Circle&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-3>步骤 3<a hidden class=anchor aria-hidden=true href=#步骤-3>#</a></h3><p>创建实现了 Shape 接口的抽象装饰类。
+<em>ShapeDecorator.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>abstract</span> <span class=kd>class</span> <span class=nc>ShapeDecorator</span> <span class=kd>implements</span> <span class=n>Shape</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>   <span class=kd>protected</span> <span class=n>Shape</span> <span class=n>decoratedShape</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=nf>ShapeDecorator</span><span class=o>(</span><span class=n>Shape</span> <span class=n>decoratedShape</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>      <span class=k>this</span><span class=o>.</span><span class=na>decoratedShape</span> <span class=o>=</span> <span class=n>decoratedShape</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>draw</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>      <span class=n>decoratedShape</span><span class=o>.</span><span class=na>draw</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-4>步骤 4<a hidden class=anchor aria-hidden=true href=#步骤-4>#</a></h3><p>创建扩展了 ShapeDecorator 类的实体装饰类。
+<em>RedShapeDecorator.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>RedShapeDecorator</span> <span class=kd>extends</span> <span class=n>ShapeDecorator</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=nf>RedShapeDecorator</span><span class=o>(</span><span class=n>Shape</span> <span class=n>decoratedShape</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=kd>super</span><span class=o>(</span><span class=n>decoratedShape</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>draw</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>decoratedShape</span><span class=o>.</span><span class=na>draw</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>      <span class=n>setRedBorder</span><span class=o>(</span><span class=n>decoratedShape</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=kd>private</span> <span class=kt>void</span> <span class=nf>setRedBorder</span><span class=o>(</span><span class=n>Shape</span> <span class=n>decoratedShape</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Border Color: Red&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-5>步骤 5<a hidden class=anchor aria-hidden=true href=#步骤-5>#</a></h3><p>使用 RedShapeDecorator 来装饰 Shape 对象。
+<em>DecoratorPatternDemo.java</em></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>DecoratorPatternDemo</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>   <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=n>Shape</span> <span class=n>circle</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Circle</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=n>Shape</span> <span class=n>redCircle</span> <span class=o>=</span> <span class=k>new</span> <span class=n>RedShapeDecorator</span><span class=o>(</span><span class=k>new</span> <span class=n>Circle</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=n>Shape</span> <span class=n>redRectangle</span> <span class=o>=</span> <span class=k>new</span> <span class=n>RedShapeDecorator</span><span class=o>(</span><span class=k>new</span> <span class=n>Rectangle</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Circle with normal border&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>circle</span><span class=o>.</span><span class=na>draw</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;\nCircle of red border&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>redCircle</span><span class=o>.</span><span class=na>draw</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;\nRectangle of red border&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>redRectangle</span><span class=o>.</span><span class=na>draw</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>   <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><h3 id=步骤-6>步骤 6<a hidden class=anchor aria-hidden=true href=#步骤-6>#</a></h3><p>验证输出。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>Circle</span> <span class=n>with</span> <span class=n>normal</span> <span class=n>border</span>
+</span></span><span class=line><span class=cl><span class=nl>Shape:</span> <span class=n>Circle</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>Circle</span> <span class=n>of</span> <span class=n>red</span> <span class=n>border</span>
+</span></span><span class=line><span class=cl><span class=nl>Shape:</span> <span class=n>Circle</span>
+</span></span><span class=line><span class=cl><span class=n>Border</span> <span class=n>Color</span><span class=o>:</span> <span class=n>Red</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>Rectangle</span> <span class=n>of</span> <span class=n>red</span> <span class=n>border</span>
+</span></span><span class=line><span class=cl><span class=nl>Shape:</span> <span class=n>Rectangle</span>
+</span></span><span class=line><span class=cl><span class=n>Border</span> <span class=n>Color</span><span class=o>:</span> <span class=n>Red</span>
+</span></span></code></pre></div></div><footer class=post-footer><ul class=post-tags><li><a href=https://xuchengpeng.github.io/tags/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/>结构型模式</a></li></ul><nav class=paginav><a class=prev href=https://xuchengpeng.github.io/post/design-pattern-facade-pattern/><span class=title>« Prev</span><br><span>外观模式</span></a>
+<a class=next href=https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/><span class=title>Next »</span><br><span>Ubuntu 增加和删除 PPA 软件源</span></a></nav></footer><div class=article-comments><span id=/post/design-pattern-decorator-pattern/ class=leancloud-visitors data-flag-title=装饰器模式><span class=post-meta-item-text>文章阅读量</span>
+<span class=leancloud-visitors-count>0</span></span><div id=vcomments></div><script src=//unpkg.com/valine/dist/Valine.min.js></script>
+<script type=text/javascript>new Valine({el:"#vcomments",appId:"",appKey:"",notify:"",verify:"",avatar:"",placeholder:"",visitor:""})</script></div></article></main><footer class=footer><span>&copy; 2023 <a href=https://xuchengpeng.github.io/>Chuck</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

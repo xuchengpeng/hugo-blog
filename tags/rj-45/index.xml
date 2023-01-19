@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>RJ-45 on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/rj-45/</link>
+    <description>Recent content in RJ-45 on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 06 Dec 2017 09:05:10 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/rj-45/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>网线水晶头接法</title>
+      <link>https://xuchengpeng.github.io/post/network-cable-crystal-head/</link>
+      <pubDate>Wed, 06 Dec 2017 09:05:10 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/network-cable-crystal-head/</guid>
+      <description>网线水晶头有两种接法，一种是直连互联法，一种是交叉互联法。 交叉线的做法是：一头采用568A标准，一头采用568B标准。平行（直通）线的做法是：两头同为568A标准或568B标准。
+如果连接的双方地位不对等的，则使用平行（直通）线，例如电脑连接到路由器或交换机； 如果连接的两台设备是对等的，则使用交叉线，例如电脑连接到电脑。</description>
+    </item>
+    
+  </channel>
+</rss>

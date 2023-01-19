@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cloud on Chuck</title>
+    <link>https://xuchengpeng.github.io/categories/cloud/</link>
+    <description>Recent content in Cloud on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 11 Sep 2018 20:15:48 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KVM</title>
+      <link>https://xuchengpeng.github.io/post/kvm/</link>
+      <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/kvm/</guid>
+      <description>&lt;p&gt;KVM 全称是 基于内核的虚拟机（Kernel-based Virtual Machine），它是Linux 的一个内核模块，该内核模块使得 Linux 变成了一个 Hypervisor：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;它由 Quramnet 开发，该公司于 2008年被 Red Hat 收购。&lt;/li&gt;
+&lt;li&gt;它支持 x86 (32 and 64 位), s390, Powerpc 等 CPU。&lt;/li&gt;
+&lt;li&gt;它从 Linux 2.6.20 起就作为一模块被包含在 Linux 内核中。&lt;/li&gt;
+&lt;li&gt;它需要支持虚拟化扩展的 CPU。&lt;/li&gt;
+&lt;li&gt;它是完全开源的。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>VXLAN</title>
+      <link>https://xuchengpeng.github.io/post/vxlan/</link>
+      <pubDate>Tue, 11 Sep 2018 14:16:49 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/vxlan/</guid>
+      <description>&lt;p&gt;VXLAN(Virtual eXtential LAN)意为虚拟可拓展局域网。随着大数据、云计算技术的兴起以及虚拟化技术的普及，VLAN技术的弊端逐渐显现出来，具体表现为如下3个方面：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;虚拟化技术的发展促使大数据、云计算技术公司采用单个物理设备虚拟多台虚拟机的方式来进行组网，随着应用模块的增加，对于支持VLAN数目的要求也在提升，802.1Q标准中的最多支持4094个VLAN的能力已经无法满足当下需求。&lt;/li&gt;
+&lt;li&gt;公有云提供商的业务要求将实体网络租借给多个不同的用户，这些用户对于网络的要求有所不同，而不同用户租借的网络有很大的可能会出现IP地址、MAC地址的重叠，传统的VLAN仅仅解决了同一链路层网络广播域隔离的问题，而并没有涉及到网络地址重叠的问题，因此需要一种新的技术来保证在多个租户网络中存在地址重叠的情况下依旧能有效通信的技术。&lt;/li&gt;
+&lt;li&gt;虚拟化技术的出现增加了交换机的负担，对于大型的数据中心而言，单台交换机必须支持数十台以上主机的通信连接才足以满足应用需求，而虚拟化技术使得单台主机可以虚拟化出多台虚拟机同时运行，而每台虚拟机都会有其唯一的MAC地址。这样，为了保证集群中所有虚机可以正常通信，交换机必须保存每台虚机的MAC地址，这样就导致了交换机中的MAC表异常庞大，从而影响交换机的转发性能。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基于以上需求，VXLAN技术被提出。&lt;/p&gt;
+&lt;p&gt;VXLAN技术是网络Overlay技术的一种实现，对于Overlay技术，笔者的理解是：在基于物理网络拓扑的基础上通过一定的技术来构建虚拟的、不同于物理网络拓扑的逻辑网络，而物理网络的拓扑结构对于Overlay终端而言是透明的，终端不会感知到物理网络的存在，而仅仅能感知到逻辑网络结构。对于终端的视角，网络的情况和直接通过物理设备实现逻辑拓扑的效果是相同的。VXLAN技术可以基于三层网络结构来构建二层虚拟网络，通过VLAN技术可以将处于不同网段网络设备整合在同一个逻辑链路层网络中，对于终端用户而言，这些网络设备似乎“真实地”部署在了同一个链路层网络中。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Open vSwitch</title>
+      <link>https://xuchengpeng.github.io/post/openvswitch/</link>
+      <pubDate>Tue, 11 Sep 2018 11:09:50 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/openvswitch/</guid>
+      <description>&lt;p&gt;Open vSwitch 是一个基于Apache 2 license的多层软件交换机。 我们的目标是实现一个支持标准管理接口的，开放转发功能以支持编程扩展和控制的交换机平台。&lt;/p&gt;
+&lt;p&gt;Open vSwitch 非常适合在VM环境中用作虚拟交换机。 除了将标准控制和可视化接口暴露给虚拟网络层外，它还旨在支持跨越多个物理服务器的分布式系统。 Open vSwitch 支持多种基于Linux的虚拟化技术，包括 Xen/XenServer, KVM, 及 VirtualBox。&lt;/p&gt;
+&lt;p&gt;大部分代码是平台无关的C编码，可以轻松地移植到其他环境中。 当前版本的 Open vSwitch 支持以下功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;具有trunk和access口的标准 802.1Q VLAN 功能&lt;/li&gt;
+&lt;li&gt;上游交换机上连接或不链接LACP的NIC&lt;/li&gt;
+&lt;li&gt;NetFlow, sFlow(R), 及镜像，以提高可视化&lt;/li&gt;
+&lt;li&gt;QoS 配置，加上策列&lt;/li&gt;
+&lt;li&gt;Geneve, GRE, VXLAN, STT, 及 LISP 隧道&lt;/li&gt;
+&lt;li&gt;802.1ag 连接故障管理&lt;/li&gt;
+&lt;li&gt;OpenFlow 1.0 加大量扩展&lt;/li&gt;
+&lt;li&gt;具有C和Python绑定的事物配置数据库&lt;/li&gt;
+&lt;li&gt;使用Linux内核模块的高性能转发&lt;/li&gt;
+&lt;li&gt;Linux 内核模块支持 Linux 3.10及以上版本。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Open vSwitch 也可以完全在用户空间运行，无需内核模块协助。 这个用户空间实现应该比基于内核的交换机更容易进行移植。 用户空间中的OVS可以访问Linux或DPDK设备。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用用户空间实现，且没有用DPDK做加速处理的OVS被认为是测试性的，具有性能成本。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>云计算与边缘计算</title>
+      <link>https://xuchengpeng.github.io/post/cloud-and-edge-computing/</link>
+      <pubDate>Tue, 11 Sep 2018 09:26:07 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/cloud-and-edge-computing/</guid>
+      <description>&lt;p&gt;云计算（cloudcomputing）是基于互联网的相关服务的增加、使用和交付模式，通常涉及通过互联网来提供动态易扩展且经常是虚拟化的资源。&lt;/p&gt;
+&lt;h3 id=&#34;云计算&#34;&gt;云计算&lt;/h3&gt;
+&lt;p&gt;云计算系统由云平台、云存储、云终端、云安全四个基本部分组成。&lt;/p&gt;
+&lt;p&gt;云平台从用户的角度可分为公有云、私有云、混合云等。&lt;/p&gt;
+&lt;p&gt;通过从提供服务的层次可分为基础设施即服务（Iaas）、平台即服务（Paas）和软件即服务（Saas）。&lt;/p&gt;
+&lt;p&gt;将应用部署到云端后，可以不必再关注那些令人头疼的硬件和软件问题，它们会由云服务提供商的专业团队去解决。使用的是共享的硬件，这意味着像使用一个工具一样去利用云服务（就像插上插座，你就能使用电一样简单）。只需要按照你的需要来支付相应的费用，而关于软件的更新，资源的按需扩展都能自动完成。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

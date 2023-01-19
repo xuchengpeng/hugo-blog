@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>elpa on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/elpa/</link>
+    <description>Recent content in elpa on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 06 Mar 2018 18:56:50 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/elpa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add Emacs elpa configuration</title>
+      <link>https://xuchengpeng.github.io/post/add-emacs-elpa-configuration/</link>
+      <pubDate>Tue, 06 Mar 2018 18:56:50 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/add-emacs-elpa-configuration/</guid>
+      <description>&lt;h2 id=&#34;elpa-mirror&#34;&gt;ELPA mirror&lt;/h2&gt;
+&lt;h3 id=&#34;emacs-china镜像&#34;&gt;Emacs China镜像&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ELPA&lt;/th&gt;
+&lt;th&gt;镜像地址&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://elpa.gnu.org/&#34;&gt;GNU ELPA&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://elpa.emacs-china.org/gnu/&#34;&gt;http://elpa.emacs-china.org/gnu/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://melpa.org/&#34;&gt;MELPA&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://elpa.emacs-china.org/melpa/&#34;&gt;http://elpa.emacs-china.org/melpa/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://stable.melpa.org/#/&#34;&gt;MELPA Stable&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://elpa.emacs-china.org/melpa-stable/&#34;&gt;http://elpa.emacs-china.org/melpa-stable/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;Https://marmalade-repo.org/&#34;&gt;Marmalade&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://elpa.emacs-china.org/marmalade/&#34;&gt;http://elpa.emacs-china.org/marmalade/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://orgmode.org/elpa.html&#34;&gt;Org&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://elpa.emacs-china.org/org/&#34;&gt;http://elpa.emacs-china.org/org/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.emacswiki.org/emacs/Sunrise_Commander&#34;&gt;Sunrise Commander ELPA&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://elpa.emacs-china.org/sunrise-commander/&#34;&gt;http://elpa.emacs-china.org/sunrise-commander/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://user42.tuxfamily.org/elpa/index.html&#34;&gt;user42 ELPA&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://elpa.emacs-china.org/user42/&#34;&gt;http://elpa.emacs-china.org/user42/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;如果需要 HTTPS，请将镜像地址中的 &lt;code&gt;http&lt;/code&gt; 改成 &lt;code&gt;https&lt;/code&gt; 。&lt;/p&gt;
+&lt;h3 id=&#34;清华镜像&#34;&gt;清华镜像&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ELPA&lt;/th&gt;
+&lt;th&gt;镜像地址&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://elpa.gnu.org/&#34;&gt;GNU ELPA&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/&#34;&gt;http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://melpa.org/&#34;&gt;MELPA&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/&#34;&gt;http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://stable.melpa.org/#/&#34;&gt;MELPA Stable&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/&#34;&gt;http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://marmalade-repo.org/&#34;&gt;Marmalade&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/&#34;&gt;http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://orgmode.org/elpa.html&#34;&gt;Org&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://mirrors.tuna.tsinghua.edu.cn/elpa/org/&#34;&gt;http://mirrors.tuna.tsinghua.edu.cn/elpa/org/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;em&gt;可以从 &lt;a href=&#34;https://github.com/d12frosted/elpa-mirror&#34;&gt;d12frosted/elpa-mirror&lt;/a&gt; 下载包镜像到本地使用。&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cmder on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/cmder/</link>
+    <description>Recent content in Cmder on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 05 Sep 2018 09:31:48 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/cmder/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cmder | Console Emulator</title>
+      <link>https://xuchengpeng.github.io/post/cmder-console-emulator/</link>
+      <pubDate>Wed, 05 Sep 2018 09:31:48 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/cmder-console-emulator/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Cmder is a software package created out of pure frustration over the absence of nice console emulators on Windows. It is based on amazing software, and spiced up with the Monokai color scheme and a custom prompt layout, looking sexy from the start.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;增加-cmder-here&#34;&gt;增加 Cmder Here&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;添加环境变量 &lt;code&gt;CMDER_HOME&lt;/code&gt;设定为Cmder安装目录&lt;code&gt;D:\Software\cmder\&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;将&lt;code&gt;%CMDER_HOME%&lt;/code&gt;添加到&lt;code&gt;PATH&lt;/code&gt;环境变量中；&lt;/li&gt;
+&lt;li&gt;在cmd中执行&lt;code&gt;Cmder.exe /REGISTER ALL&lt;/code&gt;注册右键菜单；&lt;/li&gt;
+&lt;li&gt;修改Cmder初始任务，设定为&lt;code&gt;*cmd /k &amp;quot;&amp;quot;%ConEmuDir%\..\init.bat&amp;quot; &amp;quot; -new_console:d:%CD%&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

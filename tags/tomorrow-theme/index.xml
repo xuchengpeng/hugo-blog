@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tomorrow Theme on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/tomorrow-theme/</link>
+    <description>Recent content in Tomorrow Theme on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 07 Mar 2018 19:04:31 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/tomorrow-theme/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tomorrow Theme Color Palettes</title>
+      <link>https://xuchengpeng.github.io/post/tomorrow-theme-color-palettes/</link>
+      <pubDate>Wed, 07 Mar 2018 19:04:31 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tomorrow-theme-color-palettes/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Tomorrow Theme&amp;rdquo; - a bright theme with pastel colours and sensible syntax highlighting.&lt;/p&gt;
+&lt;p&gt;A theme should not get in your way but should aid your programming with easily identifiable colours that add meaning and enhance legibility. This was the main focus when developing Tomorrow.&lt;/p&gt;
+&lt;p&gt;Check out &lt;a href=&#34;https://github.com/chriskempson/base16&#34;&gt;base16&lt;/a&gt; the next evolution of Tomorrow Theme!&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

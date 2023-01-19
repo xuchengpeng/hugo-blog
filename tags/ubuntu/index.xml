@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ubuntu on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/ubuntu/</link>
+    <description>Recent content in Ubuntu on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 07 Nov 2018 08:59:03 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu安装Samba</title>
+      <link>https://xuchengpeng.github.io/post/ubuntu-install-samba/</link>
+      <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/ubuntu-install-samba/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt-get install samba
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改 /etc/samba/smb.conf 文件：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[share]
+  path = /
+  available = yes
+  valid users = root
+  read only = no
+  browseable = yes
+  public = yes
+  writable = yes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改Samba登陆的密码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;smbpasswd -a root
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;这里也可以使用非root用户，必须是Linux系统中已存在的用户。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;重启Samba服务：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/etc/init.d/smbd restart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Build Emacs on Linux</title>
+      <link>https://xuchengpeng.github.io/post/build-emacs-on-linux/</link>
+      <pubDate>Wed, 19 Sep 2018 17:12:20 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/build-emacs-on-linux/</guid>
+      <description>&lt;p&gt;Build Emacs 26.1 on Ubuntu:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install build-essential
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get build-dep emacs24
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; emacs-26.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./configure --prefix&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/local/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo make -j4
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo make install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 18.04 LTS is out</title>
+      <link>https://xuchengpeng.github.io/post/ubuntu-18.04-lts-is-out/</link>
+      <pubDate>Fri, 27 Apr 2018 09:36:13 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/ubuntu-18.04-lts-is-out/</guid>
+      <description>&lt;h2 id=&#34;whats-new-in-1804-lts&#34;&gt;What’s new in 18.04 LTS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Supported by Canonical until 2023&lt;/li&gt;
+&lt;li&gt;Runs on all major architectures – x86, x86-64, ARM v7, ARM64, POWER8 and IBM s390x (LinuxONE)&lt;/li&gt;
+&lt;li&gt;New ubuntu-minimal images that are smaller and boot faster&lt;/li&gt;
+&lt;li&gt;Fast and accurate time synchronization with chrony&lt;/li&gt;
+&lt;li&gt;A new, default server installer ISO with a new interface and faster install&lt;/li&gt;
+&lt;li&gt;Supports ZFS, the next-generation volume management/ file system ideal for servers and containers&lt;/li&gt;
+&lt;li&gt;LXD 3.0 - Linux containers including clustering, Qos, and resource controls (CPU, memory, block I/O/ graphics, and storage quota)&lt;/li&gt;
+&lt;li&gt;Updates to LXD (v3.0), DPDK (v17.11.1), Postgresql (v10.3), Libvirt (v4.0), NGINX (v1.13), Qemu (v2.11.1), Docker (v17.03), Puppet (v4.10), MySQL (v5.7), PHP (v7.2), and more&lt;/li&gt;
+&lt;li&gt;Install snaps for simple application installation and release management&lt;/li&gt;
+&lt;li&gt;Linux 4.15 kernel&lt;/li&gt;
+&lt;li&gt;Certification as a guest on AWS, Microsoft Azure, Joyent, IBM, Google Cloud Platform and Rackspace&lt;/li&gt;
+&lt;li&gt;Easily configure networking through netplan.io&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 升级内核</title>
+      <link>https://xuchengpeng.github.io/post/ubuntu-upgrade-kernel/</link>
+      <pubDate>Fri, 20 Apr 2018 15:34:34 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/ubuntu-upgrade-kernel/</guid>
+      <description>&lt;h3 id=&#34;查看当前内核版本&#34;&gt;查看当前内核版本&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ uname -r
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4.4.0-53-generic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;下载内核&#34;&gt;下载内核&lt;/h3&gt;
+&lt;p&gt;下载最新 Ubuntu 编译好的内核地址： &lt;a href=&#34;http://kernel.ubuntu.com/~kernel-ppa/mainline/&#34;&gt;http://kernel.ubuntu.com/~kernel-ppa/mainline/&lt;/a&gt;
+选取当前最新的内核 4.16.3 版本进行下载：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ mkdir 4.16.3 &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; 4.16.3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603_4.16.3-041603.201804190730_all.deb
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-headers-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.16.3/linux-image-4.16.3-041603-generic_4.16.3-041603.201804190730_amd64.deb
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;安装内核&#34;&gt;安装内核&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dpkg -i *.deb
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;卸载旧内核&#34;&gt;卸载旧内核&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看目前安装的内核&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dpkg -l &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep linux
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ii  linux-image-4.4.0-53-generic       4.4.0-53.74                        amd64        Linux kernel image &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; version 4.4.0 on &lt;span class=&#34;m&#34;&gt;64&lt;/span&gt; bit x86 SMP
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ii  linux-image-4.16.3-041603-generic  4.16.3-041603.201804190730         amd64        Linux kernel image &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; version 4.16.3 on &lt;span class=&#34;m&#34;&gt;64&lt;/span&gt; bit x86 SMP
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;## 卸载旧内核&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ apt-get purge linux-image-4.4.0-53-generic linux-headers-4.4.0-53
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果查询的结果中还有显示已卸载的内核，可以使用&lt;code&gt;dpkg -P linux-image-4.4.0-53-generic&lt;/code&gt;命令将其删除。&lt;/p&gt;
+&lt;h3 id=&#34;更新启动引导&#34;&gt;更新启动引导&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ update-grub
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 重启后再查看内核版本验证 uname -a&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 增加和删除 PPA 软件源</title>
+      <link>https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/</link>
+      <pubDate>Fri, 13 Apr 2018 10:50:50 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/</guid>
+      <description>&lt;p&gt;PPA，英文全称为 Personal Package Archives，即个人软件包档案。是 Ubuntu Launchpad 网站提供的一项源服务，允许个人用户上传软件源代码，通过 Launchpad 进行编译并发布为二进制软件包，作为 apt / 新立得（Synaptic）源供其他用户下载和更新。&lt;/p&gt;
+&lt;p&gt;PPA 的一般形式是： &lt;strong&gt;ppa:user/ppa-name&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;添加 PPA 源:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;添加 PPA 源的命令为： sudo add-apt-repository ppa:user/ppa-name&lt;/li&gt;
+&lt;li&gt;添加好记得要更新一下： sudo apt-get update&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;删除 PPA 源:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;删除 PPA 源的命令格式则为：sudo add-apt-repository -r ppa:user/ppa-name&lt;/li&gt;
+&lt;li&gt;然后进入 /etc/apt/sources.list.d 目录，将相应 ppa 源的保存文件删除。&lt;/li&gt;
+&lt;li&gt;最后同样更新一下：sudo apt-get update&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

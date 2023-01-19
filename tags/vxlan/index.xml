@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>VXLAN on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/vxlan/</link>
+    <description>Recent content in VXLAN on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 11 Sep 2018 14:16:49 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/vxlan/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VXLAN</title>
+      <link>https://xuchengpeng.github.io/post/vxlan/</link>
+      <pubDate>Tue, 11 Sep 2018 14:16:49 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/vxlan/</guid>
+      <description>&lt;p&gt;VXLAN(Virtual eXtential LAN)意为虚拟可拓展局域网。随着大数据、云计算技术的兴起以及虚拟化技术的普及，VLAN技术的弊端逐渐显现出来，具体表现为如下3个方面：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;虚拟化技术的发展促使大数据、云计算技术公司采用单个物理设备虚拟多台虚拟机的方式来进行组网，随着应用模块的增加，对于支持VLAN数目的要求也在提升，802.1Q标准中的最多支持4094个VLAN的能力已经无法满足当下需求。&lt;/li&gt;
+&lt;li&gt;公有云提供商的业务要求将实体网络租借给多个不同的用户，这些用户对于网络的要求有所不同，而不同用户租借的网络有很大的可能会出现IP地址、MAC地址的重叠，传统的VLAN仅仅解决了同一链路层网络广播域隔离的问题，而并没有涉及到网络地址重叠的问题，因此需要一种新的技术来保证在多个租户网络中存在地址重叠的情况下依旧能有效通信的技术。&lt;/li&gt;
+&lt;li&gt;虚拟化技术的出现增加了交换机的负担，对于大型的数据中心而言，单台交换机必须支持数十台以上主机的通信连接才足以满足应用需求，而虚拟化技术使得单台主机可以虚拟化出多台虚拟机同时运行，而每台虚拟机都会有其唯一的MAC地址。这样，为了保证集群中所有虚机可以正常通信，交换机必须保存每台虚机的MAC地址，这样就导致了交换机中的MAC表异常庞大，从而影响交换机的转发性能。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基于以上需求，VXLAN技术被提出。&lt;/p&gt;
+&lt;p&gt;VXLAN技术是网络Overlay技术的一种实现，对于Overlay技术，笔者的理解是：在基于物理网络拓扑的基础上通过一定的技术来构建虚拟的、不同于物理网络拓扑的逻辑网络，而物理网络的拓扑结构对于Overlay终端而言是透明的，终端不会感知到物理网络的存在，而仅仅能感知到逻辑网络结构。对于终端的视角，网络的情况和直接通过物理设备实现逻辑拓扑的效果是相同的。VXLAN技术可以基于三层网络结构来构建二层虚拟网络，通过VLAN技术可以将处于不同网段网络设备整合在同一个逻辑链路层网络中，对于终端用户而言，这些网络设备似乎“真实地”部署在了同一个链路层网络中。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

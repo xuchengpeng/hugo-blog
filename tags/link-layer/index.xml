@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Link Layer on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/link-layer/</link>
+    <description>Recent content in Link Layer on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 24 Apr 2018 08:32:37 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/link-layer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP/IP 详解(卷一) 链路层</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-link-layer/</link>
+      <pubDate>Tue, 24 Apr 2018 08:32:37 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-link-layer/</guid>
+      <description>&lt;p&gt;在 TCP/IP 协议族中，链路层主要有三个目的：（1）为 IP 模块发送和接收 IP 数据报；（2）为 ARP 模块发送 ARP 请求和接收 ARP 应答；（3）为 RARP 发送 RARP 请求和接收 RARP 应答。&lt;/p&gt;
+&lt;h2 id=&#34;以太网和-ieee-802封装&#34;&gt;以太网和 IEEE 802封装&lt;/h2&gt;
+&lt;p&gt;主机需求 RFC 要求每台 Internet 主机都与一个10 Mb/s的以太网电缆相连接：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;必须能发送和接收采用 RFC 894（以太网）封装格式的分组。&lt;/li&gt;
+&lt;li&gt;应该能接收与 RFC 894 混合的 RFC 1042（IEEE 802）封装格式的分组。&lt;/li&gt;
+&lt;li&gt;也许能够发送采用 RFC 1042 格式封装的分组。如果主机能同时发送两种类型的分组数据，那么发送的分组必须是可以设置的，而且默认条件下必须是 RFC 894 分组。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/rfc894-ieee802.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

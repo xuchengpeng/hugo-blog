@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Study on Chuck</title>
+    <link>https://xuchengpeng.github.io/categories/study/</link>
+    <description>Recent content in Study on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 27 Sep 2018 09:20:09 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>正则表达式</title>
+      <link>https://xuchengpeng.github.io/post/regular-expressions/</link>
+      <pubDate>Thu, 27 Sep 2018 09:20:09 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/regular-expressions/</guid>
+      <description>&lt;p&gt;除非您以前使用过正则表达式，否则您可能不熟悉一些术语。但是，毫无疑问，您已经使用过不涉及脚本的某些正则表达式概念。&lt;/p&gt;
+&lt;p&gt;例如，您很可能使用 ? 和 * 通配符来查找硬盘上的文件。? 通配符匹配文件名中的 0 个或 1 个字符，而 * 通配符匹配零个或多个字符。像 &lt;code&gt;data(\w)?\.dat&lt;/code&gt; 这样的模式将查找下列文件：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;data.dat
+data1.dat
+data2.dat
+datax.dat
+dataN.dat
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用 * 字符代替 ? 字符扩大了找到的文件的数量。&lt;code&gt;data.*\.dat&lt;/code&gt; 匹配下列所有文件：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;data.dat
+data1.dat
+data2.dat
+data12.dat
+datax.dat
+dataXYZ.dat
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;尽管这种搜索方法很有用，但它还是有限的。通过理解 * 通配符的工作原理，引入了正则表达式所依赖的概念，但正则表达式功能更强大，而且更加灵活。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Go语言匿名结构</title>
+      <link>https://xuchengpeng.github.io/post/go-anonymous-struct/</link>
+      <pubDate>Wed, 26 Sep 2018 16:47:46 +0800</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/go-anonymous-struct/</guid>
+      <description>&lt;p&gt;Go语言也提供了继承，但是采用了组合的文法，所以我们将其称为匿名组合：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Base&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;Name&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;base&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Base&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Foo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;base&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Base&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Bar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Foo&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;Base&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;foo&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Foo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Bar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Base&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Bar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以上代码定义了一个Base类（实现了Foo()和Bar()两个成员方法），然后定义了一个Foo类，该类从Base类“继承”并改写了Bar()方法（该方法实现时先调用了基类的Bar()方法）。&lt;/p&gt;
+&lt;p&gt;在“派生类”Foo没有改写“基类”Base的成员方法时，相应的方法就被“继承”，例如在上面的例子中，调用foo.Foo()和调用foo.Base.Foo()效果一致。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) SNMP：简单网络管理协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-snmp/</link>
+      <pubDate>Thu, 14 Jun 2018 14:24:48 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-snmp/</guid>
+      <description>&lt;p&gt;随着网络技术的飞速发展，网络的数量也越来越多。而网络中的设备来自各个不同的厂家，如何管理这些设备就变得十分重要。本章的内容就是介绍管理这些设备的标准。&lt;/p&gt;
+&lt;p&gt;基于TCP/IP的网络管理包含两个部分：网络管理站（也叫管理进程，manager）和被管的网络单元（也叫被管设备）。被管设备种类繁多，例如：路由器、X终端、终端服务器和打印机等。这些被管设备的共同点就是都运行TCP/IP协议。被管设备端和管理相关的软件叫做代理程序(agent)或代理进程。管理站一般都是带有彩色监视器的工作站，可以显示所有被管设备的状态(例如连接是否掉线、各种连接上的流量状况等)。&lt;/p&gt;
+&lt;p&gt;管理进程和代理进程之间的通信可以有两种方式。一种是管理进程向代理进程发出请求，询问一个具体的参数值（例如：你产生了多少个不可达的ICMP端口？）。另外一种方式是代理进程主动向管理进程报告有某些重要的事件发生（例如：一个连接口掉线了）。当然，管理进程除了可以向代理进程询问某些参数值以外，它还可以按要求改变代理进程的参数值（例如：把默认的IP TTL值改为64）。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP的未来和性能</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-futures-and-performance/</link>
+      <pubDate>Sat, 26 May 2018 14:48:35 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-futures-and-performance/</guid>
+      <description>&lt;p&gt;TCP已经在从1200 b/s的拨号SLIP链路到以太数据链路上运行了许多年。在80年代和90年代初期，以太网是运行TCP/IP最主要的数据链路方式。虽然TCP在比以太网速率高的环境（如T2电话线、FDDI及千兆比网络）中也能够正确运行，但在这些高速率环境下，TCP的某些限制就会暴露出来。&lt;/p&gt;
+&lt;h2 id=&#34;路径mtu发现&#34;&gt;路径MTU发现&lt;/h2&gt;
+&lt;p&gt;路径MTU即当前在两个主机之间的路径上任何网络上的最小MTU。路径MTU发现在IP首部中继承并设置“不要分片（DF）”比特，来发现当前路径上的路由器是否需要对正在发送的IP数据报进行分片。如果一个待转发的IP数据报被设置DF比特，而其长度又超过了MTU，那么路由器将返回ICMP不可达的差错。&lt;/p&gt;
+&lt;p&gt;TCP的路径MTU发现按如下方式进行：在连接建立时，TCP使用输出接口或对端声明的MSS中的最小MTU作为起始的报文段大小。路径MTU发现不允许TCP超过对端声明的MSS。如果对端没有指定一个MSS，则默认为536。&lt;/p&gt;
+&lt;p&gt;一旦选定了起始的报文段大小，在该连接上的所有被TCP发送的IP数据报都将被设置DF比特。如果某个中间路由器需要对一个设置了DF标志的数据报进行分片，它就丢弃这个数据报，并产生一个ICMP的“不能分片”差错。&lt;/p&gt;
+&lt;p&gt;如果收到这个ICMP差错，TCP就减少段大小并进行重传。如果路由器产生的是一个较新的该类ICMP差错，则报文段大小被设置为下一跳的MTU减去IP和TCP的首部长度。如果是一个较旧的该类ICMP差错，则必须尝试下一个可能的最小MTU。当由这个ICMP差错引起的重传发生时，拥塞窗口不需要变化，但要启动慢启动。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP的保活定时器</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-keepalive-timer/</link>
+      <pubDate>Fri, 25 May 2018 15:30:19 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-keepalive-timer/</guid>
+      <description>&lt;p&gt;可以没有任何数据流通过一个空闲的TCP连接。也就是说，如果TCP连接的双方都没有向对方发送数据，则在两个TCP模块之间不交换任何信息。例如，没有可以在其他网络协议中发现的轮询。这意味着我们可以启动一个客户与服务器建立一个连接，然后离去数小时、数天、数个星期或者数月，而连接依然保持。中间路由器可以崩溃和重启，电话线可以被挂断再连通，但是只要两端的主机没有被重启，则连接依然保持建立。&lt;/p&gt;
+&lt;p&gt;这意味着两个应用进程—客户进程或服务器进程—都没有使用应用级的定时器来检测非活动状态，而这种非活动状态可以导致应用进程中的任何一个终止其活动。&lt;/p&gt;
+&lt;p&gt;然而，许多时候一个服务器希望知道客户主机是否崩溃并关机或者崩溃又重新启动。许多实现提供的保活定时器可以提供这种能力。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;保活并不是TCP规范中的一部分。Host Requirements RFC提供了3个不使用保活定时器的理由：(1)在出现短暂差错的情况下，这可能会使一个非常好的连接释放掉；（2）它们耗费不必要的带宽；（3）在按分组计费的情况下会在互联网上花掉更多的钱。然而，许多实现提供了保活定时器。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;保活定时器是一个有争论的功能。许多人认为如果需要，这个功能不应该在TCP中提供，而应该由应用程序来完成。这是应当认真对待的一些问题之一，因为在这个论题上有些人表达出了很大的热情。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP的坚持定时器</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-persist-timer/</link>
+      <pubDate>Fri, 25 May 2018 14:31:57 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-persist-timer/</guid>
+      <description>&lt;p&gt;TCP通过让接收方指明希望从发送方接收的数据字节数（即窗口大小）来进行流量控制。如果窗口大小为0会发生什么情况呢？这将有效地阻止发送方传送数据，直到窗口变为非0为止。&lt;/p&gt;
+&lt;p&gt;TCP必须能够处理打开此窗口的ACK丢失的情况。ACK的传输并不可靠，也就是说，TCP不对ACK报文段进行确认，TCP只确认那些包含有数据的ACK报文段。&lt;/p&gt;
+&lt;p&gt;如果一个确认丢失了，则双方就有可能因为等待对方而使连接终止：接收方等待接收数据（因为它已经向发送方通告了一个非0的窗口），而发送方在等待允许它继续发送数据的窗口更新。为防止这种死锁情况的发生，发送方使用一个坚持定时器(persist timer)来周期性地向接收方查询，以便发现窗口是否已增大。这些从发送方发出的报文段称为窗口探查(window probe)。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP的超时与重传</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/</link>
+      <pubDate>Fri, 25 May 2018 10:42:25 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/</guid>
+      <description>&lt;p&gt;TCP提供可靠的运输层。它使用的方法之一就是确认从另一端收到的数据。但数据和确认都有可能会丢失。TCP通过在发送时设置一个定时器来解决这种问题。如果当定时器溢出时还没有收到确认，它就重传该数据。对任何实现而言，关键之处就在于超时和重传的策略，即怎样决定超时间隔和如何确定重传的频率。&lt;/p&gt;
+&lt;p&gt;对每个连接，TCP管理4个不同的定时器。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;重传定时器使用于当希望收到另一端的确认。&lt;/li&gt;
+&lt;li&gt;坚持(persist)定时器使窗口大小信息保持不断流动，即使另一端关闭了其接收窗口。&lt;/li&gt;
+&lt;li&gt;保活(keepalive)定时器可检测到一个空闲连接的另一端何时崩溃或重启。&lt;/li&gt;
+&lt;li&gt;2MSL定时器测量一个连接处于TIME_WAIT状态的时间。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP的成块数据流</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bulk-data-flow/</link>
+      <pubDate>Mon, 21 May 2018 11:08:08 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bulk-data-flow/</guid>
+      <description>&lt;p&gt;TFTP使用了停止等待协议，数据发送方在发送下一个数据块之前需要等待接收对已发送数据的确认。TCP使用了被称为滑动窗口协议的另一种形式的流量控制方法。该协议允许发送方在停止并等待确认前可以连续发送多个分组。由于发送方不必每发一个分组就停下来等待确认，因此该协议可以加速数据的传输。&lt;/p&gt;
+&lt;h2 id=&#34;滑动窗口&#34;&gt;滑动窗口&lt;/h2&gt;
+&lt;p&gt;接收方通告的窗口称为提出的窗口（offered window），发送方计算它的可用窗口，该窗口表明多少数据可以立即被发送。&lt;/p&gt;
+&lt;p&gt;当接收方确认数据后，这个滑动窗口不时地向右移动。窗口两个边沿的相对运动增加或减少了窗口的大小。我们使用三个术语来描述窗口左右边沿的运动：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;称窗口左边沿向右边沿靠近为窗口合拢。这种现象发生在数据被发送和确认时。&lt;/li&gt;
+&lt;li&gt;当窗口右边沿向右移动时将允许发送更多的数据，我们称之为窗口张开。这种现象发生在另一端的接收进程读取已经确认的数据并释放了TCP的接收缓存时。&lt;/li&gt;
+&lt;li&gt;当右边沿向左移动时，我们称之为窗口收缩。Host Requirements RFC强烈建议不要使用这种方式。但TCP必须能够在某一端产生这种情况时进行处理。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP的交互数据流</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-interactive-data-flow/</link>
+      <pubDate>Mon, 21 May 2018 10:51:55 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-interactive-data-flow/</guid>
+      <description>&lt;p&gt;一些有关TCP通信量的研究如[Caceres et al. 1991]发现，如果按照分组数量计算，约有一半的TCP报文段包含成块数据（如FTP、电子邮件和Usenet新闻），另一半则包含交互数据（如Telnet和Rlogin）。如果按字节计算，则成块数据与交互数据的比例约为90%和10%。这是因为成块数据的报文段基本上都是满长度（full-sized）的（通常为512字节的用户数据），而交互数据则小得多（上述研究表明Telnet和Rlogin分组中通常约90%左右的用户数据小于10个字节）。&lt;/p&gt;
+&lt;p&gt;很明显，TCP需要同时处理这两类数据，但使用的处理算法则有所不同。&lt;/p&gt;
+&lt;h2 id=&#34;交互式输入&#34;&gt;交互式输入&lt;/h2&gt;
+&lt;p&gt;首先来观察在一个Rlogin连接上键入一个交互命令时所产生的数据流。许多TCP/IP的初学者很吃惊地发现通常每一个交互按键都会产生一个数据分组，也就是说，每次从客户传到服务器的是一个字节的按键（而不是每次一行）。而且，Rlogin需要远程系统（服务器）回显我们（客户）键入的字符。这样就会产生4个报文段：（1）来自客户的交互按键；（2）来自服务器的按键确认；（3）来自服务器的按键回显；（4）来自客户的按键回显确认。&lt;/p&gt;
+&lt;p&gt;然而，我们一般可以将报文段2和3进行合并—按键确认与按键回显一起发送。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP连接的建立与终止</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-establishment-termination/</link>
+      <pubDate>Wed, 16 May 2018 15:01:04 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-establishment-termination/</guid>
+      <description>&lt;p&gt;TCP是一个面向连接的协议。无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。这种两端间连接的建立与无连接协议如UDP不同。一端使用UDP向另一端发送数据报时，无需任何预先的握手。&lt;/p&gt;
+&lt;p&gt;两个进程在使用TCP交换数据之前，它们之间必须建立一条连接。完成后，要关闭这个连接。&lt;/p&gt;
+&lt;p&gt;一个TCP连接由一个4元组唯一确定：本地IP地址、本地端口号、远端IP地址和远端端口号。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TCP：传输控制协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</link>
+      <pubDate>Tue, 15 May 2018 15:43:47 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</guid>
+      <description>&lt;p&gt;尽管TCP和UDP都使用相同的网络层（IP），TCP却向应用层提供与UDP完全不同的服务。TCP提供一种面向连接的、可靠的字节流服务。&lt;/p&gt;
+&lt;p&gt;面向连接意味着两个使用TCP的应用（通常是一个客户和一个服务器）在彼此交换数据之前必须先建立一个TCP连接。这一过程与打电话很相似，先拨号振铃，等待对方摘机说“喂”，然后才说明是谁。&lt;/p&gt;
+&lt;p&gt;在一个TCP连接中，仅有两方进行彼此通信。&lt;/p&gt;
+&lt;p&gt;TCP通过下列方式来提供可靠性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;应用数据被分割成TCP认为最适合发送的数据块。这和UDP完全不同，应用程序产生的数据报长度将保持不变。由TCP传递给IP的信息单位称为报文段或段（segment）。&lt;/li&gt;
+&lt;li&gt;当TCP发出一个段后，它启动一个定时器，等待目的端确认收到这个报文段。如果不能及时收到一个确认，将重发这个报文段。&lt;/li&gt;
+&lt;li&gt;当TCP收到发自TCP连接另一端的数据，它将发送一个确认。这个确认不是立即发送，通常将推迟几分之一秒。&lt;/li&gt;
+&lt;li&gt;TCP将保持它首部和数据的检验和。这是一个端到端的检验和，目的是检测数据在传输过程中的任何变化。如果收到段的检验和有差错，TCP将丢弃这个报文段和不确认收到此报文段（希望发端超时并重发）。&lt;/li&gt;
+&lt;li&gt;既然TCP报文段作为IP数据报来传输，而IP数据报的到达可能会失序，因此TCP报文段的到达也可能会失序。如果必要，TCP将对收到的数据进行重新排序，将收到的数据以正确的顺序交给应用层。&lt;/li&gt;
+&lt;li&gt;既然IP数据报会发生重复，TCP的接收端必须丢弃重复的数据。&lt;/li&gt;
+&lt;li&gt;TCP还能提供流量控制。TCP连接的每一方都有固定大小的缓冲空间。TCP的接收端只允许另一端发送接收端缓冲区所能接纳的数据。这将防止较快主机致使较慢主机的缓冲区溢出。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) BOOTP：引导程序协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bootp/</link>
+      <pubDate>Mon, 14 May 2018 17:43:41 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bootp/</guid>
+      <description>&lt;p&gt;一个无盘系统，它在不知道自身IP地址的情况下，在进行系统引导时能够通过RARP来获取它的IP地址。然而使用RARP有两个问题：（1）IP地址是返回的唯一结果；（2）既然RARP使用链路层广播，RARP请求就不会被路由器转发（迫使每个实际网络设置一个RARP服务器）。下面将介绍一种用于无盘系统进行系统引导的替代方法，又称为引导程序协议，或BOOTP。&lt;/p&gt;
+&lt;p&gt;BOOTP使用UDP，且通常需与TFTP协同工作。&lt;/p&gt;
+&lt;h2 id=&#34;bootp-的分组格式&#34;&gt;BOOTP 的分组格式&lt;/h2&gt;
+&lt;p&gt;BOOTP 请求和应答均被封装在UDP数据报中，IP首部(20字节) - UDP首部(8字节) - BOOTP请求/应答(300字节)。&lt;/p&gt;
+&lt;p&gt;“操作码”字段为1表示请求，为2表示应答。硬件类型字段为1表示10 Mb/s的以太网，这和ARP请求或应答中同名字段表示的含义相同。类似地，对于以太网，硬件地址长度字段为6字节。&lt;/p&gt;
+&lt;p&gt;“跳数”字段由客户设置为0，但也能被一个代理服务器设置。&lt;/p&gt;
+&lt;p&gt;“事务标识”字段是一个由客户设置并由服务器返回的32 bit整数。客户用它对请求和应答进行匹配。对每个请求，客户应该将该字段设置为一个随机数。&lt;/p&gt;
+&lt;p&gt;客户开始进行引导时，将“秒数”字段设置为一个时间值。服务器能够看到这个时间值，备用服务器在等待时间超过这个时间值后才会响应客户的请求，这意味着主服务器没有启动。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) TFTP：简单文件传送协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tftp/</link>
+      <pubDate>Mon, 14 May 2018 17:21:26 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tftp/</guid>
+      <description>&lt;p&gt;TFTP(Trivial File Transfer Protocol)即简单文件传送协议，最初打算用于引导无盘系统（通常是工作站或X终端）。为了保持简单和短小，TFTP将使用UDP。TFTP的代码（和它所需要的UDP、IP和设备驱动程序）都能适合只读存储器。&lt;/p&gt;
+&lt;h2 id=&#34;协议&#34;&gt;协议&lt;/h2&gt;
+&lt;p&gt;在开始工作时，TFTP的客户与服务器交换信息，客户发送一个读请求或写请求给服务器。在一个无盘系统进行系统引导的正常情况下，第一个请求是读请求（RRQ）。下图显示了5种TFTP报文格式（操作码为1和2的报文使用相同的格式）。&lt;/p&gt;
+&lt;p&gt;TFTP报文的头两个字节表示操作码。对于读请求和写请求（WRQ），文件名字段说明客户要读或写的位于服务器上的文件。这个文件字段以0字节作为结束。模式字段是一个ASCII码串netascii或octet（可大小写任意组合），同样以0字节结束。netascii表示数据是以成行的ASCII码字符组成，以两个字节—回车字符后跟换行字符（称为CR/LF）作为行结束符。这两个行结束字符在这种格式和本地主机使用的行定界符之间进行转化。octet则将数据看作8bit一组的字节流而不作任何解释。&lt;/p&gt;
+&lt;p&gt;每个数据分组包含一个块编号字段，它以后要在确认分组中使用。以读一个文件作为例子，TFTP客户需要发送一个读请求说明要读的文件名和文件模式(mode)。如果这个文件能被这个客户读取，TFTP服务器就返回一个块编号为1的数据分组。TFTP客户又发送一个块编号为1的ACK。TFTP服务器随后发送块编号为2的数据。TFTP客户发回块编号为2的ACK。重复这个过程直到这个文件传送完。除了最后一个数据分组可含有不足512字节的数据，其他每个数据分组均含有512字节的数据。当TFTP客户收到一个不足512字节的数据分组，就知道它收到最后一个数据分组。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) DNS：域名系统</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-dns/</link>
+      <pubDate>Mon, 14 May 2018 09:31:56 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-dns/</guid>
+      <description>&lt;p&gt;域名系统（DNS）是一种用于TCP/IP应用程序的分布式数据库，它提供主机名字和IP地址之间的转换及有关电子邮件的选路信息。这里提到的分布式是指在Internet上的单个站点不能拥有所有的信息。每个站点（如大学中的系、校园、公司或公司中的部门）保留它自己的信息数据库，并运行一个服务器程序供Internet上的其他系统（客户程序）查询。DNS提供了允许服务器和客户程序相互通信的协议。&lt;/p&gt;
+&lt;p&gt;从应用的角度上看，对DNS的访问是通过一个地址解析器（resolver）来完成的。在Unix主机中，该解析器主要是通过两个库函数gethostbyname和gethostbyaddr来访问的，它们在编译应用程序时与应用程序连接在一起。前者接收主机名字返回IP地址，而后者接收IP地址来寻找主机名字。解析器通过一个或多个名字服务器来完成这种相互转换。&lt;/p&gt;
+&lt;p&gt;解析器并不像TCP/IP协议那样是操作系统的内核。在一个应用程序请求TCP打开一个连接或使用UDP发送一个数据报之前。心须将一个主机名转换为一个IP地址。操作系统内核中的TCP/IP协议族对于DNS一点都不知道。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) IGMP：Internet组管理协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-igmp/</link>
+      <pubDate>Thu, 10 May 2018 14:07:54 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-igmp/</guid>
+      <description>&lt;p&gt;用于支持主机和路由器进行多播的Internet组管理协议（IGMP）。它让一个物理网络上的所有系统知道主机当前所在的多播组。多播路由器需要这些信息以便知道多播数据报应该向哪些接口转发。&lt;/p&gt;
+&lt;p&gt;正如ICMP一样，IGMP也被当作IP层的一部分。IGMP报文通过IP数据报进行传输。不像我们已经见到的其他协议，IGMP有固定的报文长度，没有可选数据。IP首部(20字节) + IGMP报文(8字节)。&lt;/p&gt;
+&lt;p&gt;IGMP报文通过IP首部中协议字段值为2来指明。&lt;/p&gt;
+&lt;h2 id=&#34;igmp报文&#34;&gt;IGMP报文&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/igmp-format.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;这是版本为1的IGMP。IGMP类型为1说明是由多播路由器发出的查询报文，为2说明是主机发出的报告报文。检验和的计算和ICMP协议相同。&lt;/p&gt;
+&lt;p&gt;组地址为D类IP地址。在查询报文中组地址设置为0，在报告报文中组地址为要参加的组地址。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) 广播和多播</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</link>
+      <pubDate>Thu, 10 May 2018 09:20:39 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</guid>
+      <description>&lt;p&gt;广播和多播仅应用于UDP，它们对需将报文同时传往多个接收者的应用来说十分重要。TCP是一个面向连接的协议，它意味着分别运行于两主机（由IP地址确定）内的两进程（由端口号确定）间存在一条连接。&lt;/p&gt;
+&lt;p&gt;考虑包含多个主机的共享信道网络如以太网。每个以太网帧包含源主机和目的主机的以太网地址（48bit）。通常每个以太网帧仅发往单个目的主机，目的地址指明单个接收接口，因而称为单播(unicast)。在这种方式下，任意两个主机的通信不会干扰网内其他主机（可能引起争夺共享信道的情况除外）。&lt;/p&gt;
+&lt;p&gt;然而，有时一个主机要向网上的所有其他主机发送帧，这就是广播(broadcast)。通过ARP和RARP可以看到这一过程。多播(multicast)处于单播和广播之间：帧仅传送给属于多播组的多个主机。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) UDP：用户数据报协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</link>
+      <pubDate>Wed, 09 May 2018 10:28:49 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</guid>
+      <description>&lt;p&gt;UDP是一个简单的面向数据报的运输层协议：进程的每个输出操作都正好产生一个UDP数据报，并组装成一份待发送的IP数据报。这与面向流字符的协议不同，如TCP，应用程序产生的全体数据与真正发送的单个IP数据报可能没有什么联系。&lt;/p&gt;
+&lt;p&gt;UDP数据报封装成一份IP数据报的格式：IP首部(20字节) - UDP首部(8字节) - UDP数据。&lt;/p&gt;
+&lt;p&gt;UDP不提供可靠性：它把应用程序传给IP层的数据发送出去，但是并不保证它们能到达目的地。由于缺乏可靠性，我们似乎觉得要避免使用UDP而使用一种可靠协议如TCP。&lt;/p&gt;
+&lt;p&gt;应用程序必须关心IP数据报的长度。如果它超过网络的MTU，那么就要对IP数据报进行分片。如果需要，源端到目的端之间的每个网络都要进行分片，并不只是发送端主机连接第一个网络才这样做。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) 动态选路协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</link>
+      <pubDate>Tue, 08 May 2018 09:51:32 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</guid>
+      <description>&lt;p&gt;静态选路：在配置接口时，以默认方式生成路由表项（对于直接连接的接口），并通过route命令增加表项（通常从系统自引导程序文件），或是通过ICMP重定向生成表项（通常是在默认方式出错的情况下）。&lt;/p&gt;
+&lt;p&gt;在网络很小，且与其他网络只有单个连接点且没有多余路由时（若主路由失败，可以使用备用路由），采用这种方法是可行的。如果上述三种情况不能全部满足，通常使用动态选路。&lt;/p&gt;
+&lt;h2 id=&#34;动态选路&#34;&gt;动态选路&lt;/h2&gt;
+&lt;p&gt;当相邻路由器之间进行通信，以告知对方每个路由器当前所连接的网络，这时就出现了动态选路。路由器之间必须采用选路协议进行通信，这样的选路协议有很多种。路由器上有一个进程称为路由守护程序（routing daemon），它运行选路协议，并与其相邻的一些路由器进行通信。路由守护程序根据它从相邻路由器接收到的信息，更新内核中的路由表。&lt;/p&gt;
+&lt;p&gt;动态选路并不改变内核在IP层的选路方式。这种选路方式称为选路机制（routing mechanism）。内核搜索路由表，查找主机路由、网络路由以及默认路由的方式并没有改变。仅仅是放置到路由表中的信息改变了—当路由随时间变化时，路由是由路由守护程序动态地增加或删除，而不是来自于自引导程序文件中的route命令。&lt;/p&gt;
+&lt;p&gt;路由守护程序将选路策略（routing policy）加入到系统中，选择路由并加入到内核的路由表中。如果守护程序发现前往同一信宿存在多条路由，那么它（以某种方法）将选择最佳路由并加入内核路由表中。如果路由守护程序发现一条链路已经断开（可能是路由器崩溃或电话线路不好），它可以删除受影响的路由或增加另一条路由以绕过该问题。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) IP选路</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-ip-routing/</link>
+      <pubDate>Mon, 07 May 2018 10:29:57 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-ip-routing/</guid>
+      <description>&lt;p&gt;选路是IP最重要的功能之一。需要进行选路的数据报可以由本地主机产生，也可以由其他主机产生。在后一种情况下，主机必须配置成一个路由器，否则通过网络接口接收到的数据报，如果目的地址不是本机就要被丢弃（例如，悄无声息地被丢弃）。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/ip-layer-process.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) Traceroute程序</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-traceroute/</link>
+      <pubDate>Fri, 04 May 2018 10:21:33 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-traceroute/</guid>
+      <description>&lt;p&gt;由Van Jacobson编写的Traceroute程序是一个能更深入探索TCP/IP协议的方便可用的工具。尽管不能保证从源端发往目的端的两份连续的IP数据报具有相同的路由，但是大多数情况下是这样的。Traceroute程序可以让我们看到IP数据报从一台主机传到另一台主机所经过的路由。Traceroute程序还可以让我们使用IP源路由选项。&lt;/p&gt;
+&lt;h2 id=&#34;traceroute程序的操作&#34;&gt;Traceroute程序的操作&lt;/h2&gt;
+&lt;p&gt;为什么不使用IP记录路由选项(RR)这个选项而另外开发一个新的应用程序？有三个方面的原因。
+首先，原先并不是所有的路由器都支持记录路由选项，因此该选项在某些路径上不能使用（Traceroute程序不需要中间路由器具备任何特殊的或可选的功能）。
+其次，记录路由一般是单向的选项。发送端设置了该选项，那么接收端不得不从收到的IP首部中提取出所有的信息，然后全部返回给发送端。在7.3节中，我们看到大多数Ping服务器的实现（内核中的ICMP回显应答功能）把接收到的RR清单返回，但是这样使得记录下来的IP地址翻了一番（一来一回）。这样做会受到一些限制，这一点我们在下一段讨论（Traceroute程序只需要目的端运行一个UDP模块—其他不需要任何特殊的服务器应用程序）。
+最后一个原因也是最主要的原因是，IP首部中留给选项的空间有限，不能存放当前大多数的路径。在IP首部选项字段中最多只能存放9个IP地址。在原先的ARPANET中这是足够的，但是对现在来说是远远不够的。&lt;/p&gt;
+&lt;p&gt;Traceroute程序使用ICMP报文和IP首部中的TTL字段（生存周期）。TTL字段是由发送端初始设置一个8bit字段。推荐的初始值由分配数字RFC指定，当前值为64。较老版本的系统经常初始化为15或32。我们从第7章中的一些ping程序例子中可以看出，发送ICMP回显应答时经常把TTL设为最大值255。&lt;/p&gt;
+&lt;p&gt;每个处理数据报的路由器都需要把TTL的值减1或减去数据报在路由器中停留的秒数。由于大多数的路由器转发数据报的时延都小于1秒钟，因此TTL最终成为一个跳站的计数器，所经过的每个路由器都将其值减1。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) Ping程序</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-ping/</link>
+      <pubDate>Fri, 04 May 2018 08:41:08 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-ping/</guid>
+      <description>&lt;p&gt;“ping”这个名字源于声纳定位操作。Ping程序由Mike Muuss编写，目的是为了测试另一台主机是否可达。该程序发送一份ICMP回显请求报文给主机，并等待返回ICMP回显应答。&lt;/p&gt;
+&lt;h2 id=&#34;ping程序&#34;&gt;Ping程序&lt;/h2&gt;
+&lt;p&gt;我们称发送回显请求的ping程序为客户，而称被ping的主机为服务器。大多数的TCP/IP实现都在内核中直接支持Ping服务器—这种服务器不是一个用户进程（两种ICMP查询服务，地址掩码和时间戳请求，也都是直接在内核中进行处理的）。
+ICMP回显请求和回显应答报文如下：
+&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/icmp-echo-format.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;对于其他类型的ICMP查询报文，服务器必须响应标识符和序列号字段。另外，客户发送的选项数据必须回显，假设客户对这些信息都会感兴趣。&lt;/p&gt;
+&lt;p&gt;Unix系统在实现ping程序时是把ICMP报文中的标识符字段置成发送进程的ID号。这样即使在同一台主机上同时运行了多个ping程序实例，ping程序也可以识别出返回的信息。&lt;/p&gt;
+&lt;p&gt;序列号从0开始，每发送一次新的回显请求就加1。ping程序打印出返回的每个分组的序列号，允许我们查看是否有分组丢失、失序或重复。IP是一种最好的数据报传递服务，因此这三个条件都有可能发生。&lt;/p&gt;
+&lt;p&gt;旧版本的ping程序曾经以这种模式运行，即每秒发送一个回显请求，并打印出返回的每个回显应答。但是，新版本的实现需要加上-s选项才能以这种模式运行。默认情况下，新版本的ping程序只发送一个回显请求。如果收到回显应答，则输出“host is alive”；否则，在20秒内没有收到应答就输出“no answer（没有回答）”。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) ICMP：Internet控制报文协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-icmp/</link>
+      <pubDate>Thu, 03 May 2018 10:40:15 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-icmp/</guid>
+      <description>&lt;p&gt;ICMP经常被认为是IP层的一个组成部分。它传递差错报文以及其他需要注意的信息。ICMP报文通常被IP层或更高层协议（TCP或UDP）使用。一些ICMP报文把差错报文返回给用户进程。&lt;/p&gt;
+&lt;p&gt;ICMP报文是在IP数据报内部被传输的，格式为：20个字节的IP首部加上后面的ICMP报文。&lt;/p&gt;
+&lt;p&gt;ICMP 报文格式中，类型字段可以有15个不同的值，以描述特定类型的ICMP报文。某些ICMP报文还使用代码字段的值来进一步描述不同的条件。
+检验和字段覆盖整个ICMP报文。使用的算法与IP首部检验和算法相同。ICMP的检验和是必需的。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/icmp-format.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) RARP：逆地址解析协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-rarp/</link>
+      <pubDate>Thu, 03 May 2018 09:38:48 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-rarp/</guid>
+      <description>&lt;p&gt;具有本地磁盘的系统引导时，一般是从磁盘上的配置文件中读取IP地址。但是无盘机，如X终端或无盘工作站，则需要采用其他方法来获得IP地址。&lt;/p&gt;
+&lt;p&gt;网络上的每个系统都具有唯一的硬件地址，它是由网络接口生产厂家配置的。无盘系统的RARP实现过程是从接口卡上读取唯一的硬件地址，然后发送一份RARP请求（一帧在网络上广播的数据），请求某个主机响应该无盘系统的IP地址（在RARP应答中）。&lt;/p&gt;
+&lt;h2 id=&#34;rarp-的分组格式&#34;&gt;RARP 的分组格式&lt;/h2&gt;
+&lt;p&gt;RARP分组的格式与ARP分组基本一致。它们之间主要的差别是RARP请求或应答的帧类型代码为0x8035，而且RARP请求的操作代码为3，应答操作代码为4。&lt;/p&gt;
+&lt;p&gt;对应于ARP，RARP请求以广播方式传送，而RARP应答一般是单播(unicast)传送的。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) ARP：地址解析协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-arp/</link>
+      <pubDate>Wed, 02 May 2018 14:40:12 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-arp/</guid>
+      <description>&lt;p&gt;数据链路如以太网或令牌环网都有自己的寻址机制（常常为48 bit地址），这是使用数据链路的任何网络层都必须遵从的。&lt;/p&gt;
+&lt;p&gt;当一台主机把以太网数据帧发送到位于同一局域网上的另一台主机时，是根据48 bit的以太网地址来确定目的接口的。设备驱动程序从不检查IP数据报中的目的IP地址。&lt;/p&gt;
+&lt;p&gt;地址解析为这两种不同的地址形式提供映射：32 bit的IP地址和数据链路层使用的任何类型的地址。&lt;/p&gt;
+&lt;p&gt;ARP为IP地址到对应的硬件地址之间提供动态映射。&lt;/p&gt;
+&lt;h2 id=&#34;arp-高速缓存&#34;&gt;ARP 高速缓存&lt;/h2&gt;
+&lt;p&gt;ARP高效运行的关键是由于每个主机上都有一个ARP高速缓存。这个高速缓存存放了最近Internet地址到硬件地址之间的映射记录。高速缓存中每一项的生存时间一般为20分钟，起始时间从被创建时开始算起。
+使用 &lt;code&gt;arp -a&lt;/code&gt; 命令来检查 ARP 高速缓存。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>传输对象模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-transfer-object-pattern/</link>
+      <pubDate>Thu, 26 Apr 2018 15:47:52 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-transfer-object-pattern/</guid>
+      <description>&lt;p&gt;传输对象模式（Transfer Object Pattern）用于从客户端向服务器一次性传递带有多个属性的数据。传输对象也被称为数值对象。传输对象是一个具有 getter/setter 方法的简单的 POJO 类，它是可序列化的，所以它可以通过网络传输。它没有任何的行为。服务器端的业务类通常从数据库读取数据，然后填充 POJO，并把它发送到客户端或按值传递它。对于客户端，传输对象是只读的。客户端可以创建自己的传输对象，并把它传递给服务器，以便一次性更新数据库中的数值。以下是这种设计模式的实体。&lt;/p&gt;
+&lt;p&gt;业务对象（Business Object） - 为传输对象填充数据的业务服务。
+传输对象（Transfer Object） - 简单的 POJO，只有设置/获取属性的方法。
+客户端（Client） - 客户端可以发送请求或者发送传输对象到业务对象。&lt;/p&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
+&lt;p&gt;我们将创建一个作为业务对象的 StudentBO 和作为传输对象的 StudentVO，它们都代表了我们的实体。
+TransferObjectPatternDemo，我们的演示类在这里是作为一个客户端，将使用 StudentBO 和 Student 来演示传输对象设计模式。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/design-pattern/transferobject_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>服务定位器模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-service-locator-pattern/</link>
+      <pubDate>Thu, 26 Apr 2018 15:40:37 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-service-locator-pattern/</guid>
+      <description>&lt;p&gt;服务定位器模式（Service Locator Pattern）用在我们想使用 JNDI 查询定位各种服务的时候。考虑到为某个服务查找 JNDI 的代价很高，服务定位器模式充分利用了缓存技术。在首次请求某个服务时，服务定位器在 JNDI 中查找服务，并缓存该服务对象。当再次请求相同的服务时，服务定位器会在它的缓存中查找，这样可以在很大程度上提高应用程序的性能。以下是这种设计模式的实体。&lt;/p&gt;
+&lt;p&gt;服务（Service） - 实际处理请求的服务。对这种服务的引用可以在 JNDI 服务器中查找到。
+Context / 初始的 Context - JNDI Context 带有对要查找的服务的引用。
+服务定位器（Service Locator） - 服务定位器是通过 JNDI 查找和缓存服务来获取服务的单点接触。
+缓存（Cache） - 缓存存储服务的引用，以便复用它们。
+客户端（Client） - Client 是通过 ServiceLocator 调用服务的对象。&lt;/p&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
+&lt;p&gt;我们将创建 ServiceLocator、InitialContext、Cache、Service 作为表示实体的各种对象。Service1 和 Service2 表示实体服务。
+ServiceLocatorPatternDemo，我们的演示类在这里是作为一个客户端，将使用 ServiceLocator 来演示服务定位器设计模式。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/design-pattern/servicelocator_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>拦截过滤器模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-intercepting-filter-pattern/</link>
+      <pubDate>Thu, 26 Apr 2018 15:33:02 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-intercepting-filter-pattern/</guid>
+      <description>&lt;p&gt;拦截过滤器模式（Intercepting Filter Pattern）用于对应用程序的请求或响应做一些预处理/后处理。定义过滤器，并在把请求传给实际目标应用程序之前应用在请求上。过滤器可以做认证/授权/记录日志，或者跟踪请求，然后把请求传给相应的处理程序。以下是这种设计模式的实体。&lt;/p&gt;
+&lt;p&gt;过滤器（Filter） - 过滤器在请求处理程序执行请求之前或之后，执行某些任务。
+过滤器链（Filter Chain） - 过滤器链带有多个过滤器，并在 Target 上按照定义的顺序执行这些过滤器。
+Target - Target 对象是请求处理程序。
+过滤管理器（Filter Manager） - 过滤管理器管理过滤器和过滤器链。
+客户端（Client） - Client 是向 Target 对象发送请求的对象。&lt;/p&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
+&lt;p&gt;我们将创建 FilterChain、FilterManager、Target、Client 作为表示实体的各种对象。AuthenticationFilter 和 DebugFilter 表示实体过滤器。
+InterceptingFilterDemo，我们的演示类使用 Client 来演示拦截过滤器设计模式。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/design-pattern/interceptingfilter_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>前端控制器模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-front-controller-pattern/</link>
+      <pubDate>Thu, 26 Apr 2018 15:26:08 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-front-controller-pattern/</guid>
+      <description>&lt;p&gt;前端控制器模式（Front Controller Pattern）是用来提供一个集中的请求处理机制，所有的请求都将由一个单一的处理程序处理。该处理程序可以做认证/授权/记录日志，或者跟踪请求，然后把请求传给相应的处理程序。以下是这种设计模式的实体。&lt;/p&gt;
+&lt;p&gt;前端控制器（Front Controller） - 处理应用程序所有类型请求的单个处理程序，应用程序可以是基于 web 的应用程序，也可以是基于桌面的应用程序。
+调度器（Dispatcher） - 前端控制器可能使用一个调度器对象来调度请求到相应的具体处理程序。
+视图（View） - 视图是为请求而创建的对象。&lt;/p&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
+&lt;p&gt;我们将创建 FrontController、Dispatcher 分别当作前端控制器和调度器。HomeView 和 StudentView 表示各种为前端控制器接收到的请求而创建的视图。
+FrontControllerPatternDemo，我们的演示类使用 FrontController 来演示前端控制器设计模式。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/design-pattern/frontcontroller_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>数据访问对象模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-data-access-object-pattern/</link>
+      <pubDate>Thu, 26 Apr 2018 15:17:56 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-data-access-object-pattern/</guid>
+      <description>&lt;p&gt;数据访问对象模式（Data Access Object Pattern）或 DAO 模式用于把低级的数据访问 API 或操作从高级的业务服务中分离出来。以下是数据访问对象模式的参与者。&lt;/p&gt;
+&lt;p&gt;数据访问对象接口（Data Access Object Interface） - 该接口定义了在一个模型对象上要执行的标准操作。
+数据访问对象实体类（Data Access Object concrete class） - 该类实现了上述的接口。该类负责从数据源获取数据，数据源可以是数据库，也可以是 xml，或者是其他的存储机制。
+模型对象/数值对象（Model Object/Value Object） - 该对象是简单的 POJO，包含了 get/set 方法来存储通过使用 DAO 类检索到的数据。&lt;/p&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
+&lt;p&gt;我们将创建一个作为模型对象或数值对象的 Student 对象。StudentDao 是数据访问对象接口。StudentDaoImpl 是实现了数据访问对象接口的实体类。DaoPatternDemo，我们的演示类使用 StudentDao 来演示数据访问对象模式的用法。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/design-pattern/dao_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>组合实体模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-composite-entity-pattern/</link>
+      <pubDate>Thu, 26 Apr 2018 15:09:03 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-composite-entity-pattern/</guid>
+      <description>&lt;p&gt;组合实体模式（Composite Entity Pattern）用在 EJB 持久化机制中。一个组合实体是一个 EJB 实体 bean，代表了对象的图解。当更新一个组合实体时，内部依赖对象 beans 会自动更新，因为它们是由 EJB 实体 bean 管理的。以下是组合实体 bean 的参与者。&lt;/p&gt;
+&lt;p&gt;组合实体（Composite Entity） - 它是主要的实体 bean。它可以是粗粒的，或者可以包含一个粗粒度对象，用于持续生命周期。
+粗粒度对象（Coarse-Grained Object） - 该对象包含依赖对象。它有自己的生命周期，也能管理依赖对象的生命周期。
+依赖对象（Dependent Object） - 依赖对象是一个持续生命周期依赖于粗粒度对象的对象。
+策略（Strategies） - 策略表示如何实现组合实体。&lt;/p&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
+&lt;p&gt;我们将创建作为组合实体的 CompositeEntity 对象。CoarseGrainedObject 是一个包含依赖对象的类。
+CompositeEntityPatternDemo，我们的演示类使用 Client 类来演示组合实体模式的用法。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/design-pattern/compositeentity_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>业务代表模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-business-delegate-pattern/</link>
+      <pubDate>Thu, 26 Apr 2018 14:59:24 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-business-delegate-pattern/</guid>
+      <description>&lt;p&gt;业务代表模式（Business Delegate Pattern）用于对表示层和业务层解耦。它基本上是用来减少通信或对表示层代码中的业务层代码的远程查询功能。在业务层中我们有以下实体。&lt;/p&gt;
+&lt;p&gt;客户端（Client） - 表示层代码可以是 JSP、servlet 或 UI java 代码。
+业务代表（Business Delegate） - 一个为客户端实体提供的入口类，它提供了对业务服务方法的访问。
+查询服务（LookUp Service） - 查找服务对象负责获取相关的业务实现，并提供业务对象对业务代表对象的访问。
+业务服务（Business Service） - 业务服务接口。实现了该业务服务的实体类，提供了实际的业务实现逻辑。&lt;/p&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
+&lt;p&gt;我们将创建 Client、BusinessDelegate、BusinessService、LookUpService、JMSService 和 EJBService 来表示业务代表模式中的各种实体。
+BusinessDelegatePatternDemo，我们的演示类使用 BusinessDelegate 和 Client 来演示业务代表模式的用法。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/design-pattern/business_delegate_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MVC 模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-mvc-pattern/</link>
+      <pubDate>Thu, 26 Apr 2018 14:48:23 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-mvc-pattern/</guid>
+      <description>&lt;p&gt;MVC 模式代表 Model-View-Controller（模型-视图-控制器） 模式。这种模式用于应用程序的分层开发。&lt;/p&gt;
+&lt;p&gt;Model（模型） - 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。
+View（视图） - 视图代表模型包含的数据的可视化。
+Controller（控制器） - 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。&lt;/p&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
+&lt;p&gt;我们将创建一个作为模型的 Student 对象。StudentView 是一个把学生详细信息输出到控制台的视图类，StudentController 是负责存储数据到 Student 对象中的控制器类，并相应地更新视图 StudentView。
+MVCPatternDemo，我们的演示类使用 StudentController 来演示 MVC 模式的用法。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/design-pattern/mvc_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>访问者模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-visitor-pattern/</link>
+      <pubDate>Thu, 26 Apr 2018 10:52:28 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-visitor-pattern/</guid>
+      <description>&lt;p&gt;在访问者模式（Visitor Pattern）中，我们使用了一个访问者类，它改变了元素类的执行算法。通过这种方式，元素的执行算法可以随着访问者改变而改变。这种类型的设计模式属于行为型模式。根据模式，元素对象已接受访问者对象，这样访问者对象就可以处理元素对象上的操作。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：主要将数据结构与数据操作分离。
+主要解决：稳定的数据结构和易变的操作耦合问题。
+何时使用：需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&amp;quot;污染&amp;quot;这些对象的类，使用访问者模式将这些封装到类中。
+如何解决：在被访问的类里面加一个对外提供接待访问者的接口。
+关键代码：在数据基础类里面有一个方法接受访问者，将自身引用传入访问者。
+应用实例：您在朋友家做客，您是访问者，朋友接受您的访问，您通过朋友的描述，然后对朋友的描述做出一个判断，这就是访问者模式。
+优点： 1、符合单一职责原则。 2、优秀的扩展性。 3、灵活性。
+缺点： 1、具体元素对访问者公布细节，违反了迪米特原则。 2、具体元素变更比较困难。 3、违反了依赖倒置原则，依赖了具体类，没有依赖抽象。
+使用场景： 1、对象结构中对象对应的类很少改变，但经常需要在此对象结构上定义新的操作。 2、需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作&amp;quot;污染&amp;quot;这些对象的类，也不希望在增加新操作时修改这些类。
+注意事项：访问者可以对功能进行统一，可以做报表、UI、拦截器与过滤器。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) IP：网际协议</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-internet-protocol/</link>
+      <pubDate>Wed, 25 Apr 2018 09:41:16 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-internet-protocol/</guid>
+      <description>&lt;p&gt;IP是TCP/IP协议族中最为核心的协议。所有的TCP、UDP、ICMP及IGMP数据都以IP数据报格式传输。IP提供不可靠、无连接的数据报传送服务。
+不可靠（unreliable）的意思是它不能保证IP数据报能成功地到达目的地。IP仅提供最好的传输服务。如果发生某种错误时，如某个路由器暂时用完了缓冲区，IP有一个简单的错误处理算法：丢弃该数据报，然后发送ICMP消息报给信源端。任何要求的可靠性必须由上层来提供（如TCP）。
+无连接（connectionless）这个术语的意思是IP并不维护任何关于后续数据报的状态信息。每个数据报的处理是相互独立的。这也说明，IP数据报可以不按发送顺序接收。如果一信源向相同的信宿发送两个连续的数据报（先是A，然后是B），每个数据报都是独立地进行路由选择，可能选择不同的路线，因此B可能在A到达之前先到达。&lt;/p&gt;
+&lt;h2 id=&#34;ip首部&#34;&gt;IP首部&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/ip-format.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>模板模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-template-pattern/</link>
+      <pubDate>Wed, 25 Apr 2018 09:02:39 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-template-pattern/</guid>
+      <description>&lt;p&gt;在模板模式（Template Pattern）中，一个抽象类公开定义了执行它的方法的方式/模板。它的子类可以按需要重写方法实现，但调用将以抽象类中定义的方式进行。这种类型的设计模式属于行为型模式。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。
+主要解决：一些方法通用，却在每一个子类都重新写了这一方法。
+何时使用：有一些通用的方法。
+如何解决：将这些通用算法抽象出来。
+关键代码：在抽象类实现，其他步骤在子类实现。
+应用实例： 1、在造房子的时候，地基、走线、水管都一样，只有在建筑的后期才有加壁橱加栅栏等差异。 2、西游记里面菩萨定好的 81 难，这就是一个顶层的逻辑骨架。 3、spring 中对 Hibernate 的支持，将一些已经定好的方法封装起来，比如开启事务、获取 Session、关闭 Session 等，程序员不重复写那些已经规范好的代码，直接丢一个实体就可以保存。
+优点： 1、封装不变部分，扩展可变部分。 2、提取公共代码，便于维护。 3、行为由父类控制，子类实现。
+缺点：每一个不同的实现都需要一个子类来实现，导致类的个数增加，使得系统更加庞大。
+使用场景： 1、有多个子类共有的方法，且逻辑相同。 2、重要的、复杂的方法，可以考虑作为模板方法。
+注意事项：为防止恶意操作，一般模板方法都加上 final 关键词。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>策略模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-strategy-pattern/</link>
+      <pubDate>Wed, 25 Apr 2018 08:53:18 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-strategy-pattern/</guid>
+      <description>&lt;p&gt;在策略模式（Strategy Pattern）中，一个类的行为或其算法可以在运行时更改。这种类型的设计模式属于行为型模式。
+在策略模式中，我们创建表示各种策略的对象和一个行为随着策略对象改变而改变的 context 对象。策略对象改变 context 对象的执行算法。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。
+主要解决：在有多种算法相似的情况下，使用 if&amp;hellip;else 所带来的复杂和难以维护。
+何时使用：一个系统有许多许多类，而区分它们的只是他们直接的行为。
+如何解决：将这些算法封装成一个一个的类，任意地替换。
+关键代码：实现同一个接口。
+应用实例： 1、诸葛亮的锦囊妙计，每一个锦囊就是一个策略。 2、旅行的出游方式，选择骑自行车、坐汽车，每一种旅行方式都是一个策略。 3、JAVA AWT 中的 LayoutManager。
+优点： 1、算法可以自由切换。 2、避免使用多重条件判断。 3、扩展性良好。
+缺点： 1、策略类会增多。 2、所有策略类都需要对外暴露。
+使用场景： 1、如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。 2、一个系统需要动态地在几种算法中选择一种。 3、如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。
+注意事项：如果一个系统的策略多于四个，就需要考虑使用混合模式，解决策略类膨胀的问题。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>空对象模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-null-object-pattern/</link>
+      <pubDate>Wed, 25 Apr 2018 08:43:05 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-null-object-pattern/</guid>
+      <description>&lt;p&gt;在空对象模式（Null Object Pattern）中，一个空对象取代 NULL 对象实例的检查。Null 对象不是检查空值，而是反应一个不做任何动作的关系。这样的 Null 对象也可以在数据不可用的时候提供默认的行为。
+在空对象模式中，我们创建一个指定各种要执行的操作的抽象类和扩展该类的实体类，还创建一个未对该类做任何实现的空对象类，该空对象类将无缝地使用在需要检查空值的地方。&lt;/p&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
+&lt;p&gt;我们将创建一个定义操作（在这里，是客户的名称）的 AbstractCustomer 抽象类，和扩展了 AbstractCustomer 类的实体类。工厂类 CustomerFactory 基于客户传递的名字来返回 RealCustomer 或 NullCustomer 对象。
+NullPatternDemo，我们的演示类使用 CustomerFactory 来演示空对象模式的用法。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/design-pattern/null_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>状态模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-state-pattern/</link>
+      <pubDate>Wed, 25 Apr 2018 08:32:17 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-state-pattern/</guid>
+      <description>&lt;p&gt;在状态模式（State Pattern）中，类的行为是基于它的状态改变的。这种类型的设计模式属于行为型模式。
+在状态模式中，我们创建表示各种状态的对象和一个行为随着状态对象改变而改变的 context 对象。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：允许对象在内部状态发生改变时改变它的行为，对象看起来好像修改了它的类。
+主要解决：对象的行为依赖于它的状态（属性），并且可以根据它的状态改变而改变它的相关行为。
+何时使用：代码中包含大量与对象状态有关的条件语句。
+如何解决：将各种具体的状态类抽象出来。
+关键代码：通常命令模式的接口中只有一个方法。而状态模式的接口中有一个或者多个方法。而且，状态模式的实现类的方法，一般返回值，或者是改变实例变量的值。也就是说，状态模式一般和对象的状态有关。实现类的方法有不同的功能，覆盖接口中的方法。状态模式和命令模式一样，也可以用于消除 if&amp;hellip;else 等条件选择语句。
+应用实例： 1、打篮球的时候运动员可以有正常状态、不正常状态和超常状态。 2、曾侯乙编钟中，&amp;lsquo;钟是抽象接口&amp;rsquo;,&amp;lsquo;钟A&amp;rsquo;等是具体状态，&amp;lsquo;曾侯乙编钟&amp;rsquo;是具体环境（Context）。
+优点： 1、封装了转换规则。 2、枚举可能的状态，在枚举状态之前需要确定状态种类。 3、将所有与某个状态有关的行为放到一个类中，并且可以方便地增加新的状态，只需要改变对象状态即可改变对象的行为。 4、允许状态转换逻辑与状态对象合成一体，而不是某一个巨大的条件语句块。 5、可以让多个环境对象共享一个状态对象，从而减少系统中对象的个数。
+缺点： 1、状态模式的使用必然会增加系统类和对象的个数。 2、状态模式的结构与实现都较为复杂，如果使用不当将导致程序结构和代码的混乱。 3、状态模式对&amp;quot;开闭原则&amp;quot;的支持并不太好，对于可以切换状态的状态模式，增加新的状态类需要修改那些负责状态转换的源代码，否则无法切换到新增状态，而且修改某个状态类的行为也需修改对应类的源代码。
+使用场景： 1、行为随状态改变而改变的场景。 2、条件、分支语句的代替者。
+注意事项：在行为受状态约束的时候使用状态模式，而且状态不超过 5 个。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>观察者模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-observer-pattern/</link>
+      <pubDate>Tue, 24 Apr 2018 16:20:49 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-observer-pattern/</guid>
+      <description>&lt;p&gt;当对象间存在一对多关系时，则使用观察者模式（Observer Pattern）。比如，当一个对象被修改时，则会自动通知它的依赖对象。观察者模式属于行为型模式。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。
+主要解决：一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。
+何时使用：一个对象（目标对象）的状态发生改变，所有的依赖对象（观察者对象）都将得到通知，进行广播通知。
+如何解决：使用面向对象技术，可以将这种依赖关系弱化。
+关键代码：在抽象类里有一个 ArrayList 存放观察者们。
+应用实例： 1、拍卖的时候，拍卖师观察最高标价，然后通知给其他竞价者竞价。 2、西游记里面悟空请求菩萨降服红孩儿，菩萨洒了一地水招来一个老乌龟，这个乌龟就是观察者，他观察菩萨洒水这个动作。
+优点： 1、观察者和被观察者是抽象耦合的。 2、建立一套触发机制。
+缺点： 1、如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。 2、如果在观察者和观察目标之间有循环依赖的话，观察目标会触发它们之间进行循环调用，可能导致系统崩溃。 3、观察者模式没有相应的机制让观察者知道所观察的目标对象是怎么发生变化的，而仅仅只是知道观察目标发生了变化。
+使用场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一个抽象模型有两个方面，其中一个方面依赖于另一个方面。将这些方面封装在独立的对象中使它们可以各自独立地改变和复用。&lt;/li&gt;
+&lt;li&gt;一个对象的改变将导致其他一个或多个对象也发生改变，而不知道具体有多少对象将发生改变，可以降低对象之间的耦合度。&lt;/li&gt;
+&lt;li&gt;一个对象必须通知其他对象，而并不知道这些对象是谁。&lt;/li&gt;
+&lt;li&gt;需要在系统中创建一个触发链，A对象的行为将影响B对象，B对象的行为将影响C对象……，可以使用观察者模式创建一种链式触发机制。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注意事项： 1、JAVA 中已经有了对观察者模式的支持类。 2、避免循环引用。 3、如果顺序执行，某一观察者错误会导致系统卡壳，一般采用异步方式。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>备忘录模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-memento-pattern/</link>
+      <pubDate>Tue, 24 Apr 2018 16:05:16 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-memento-pattern/</guid>
+      <description>&lt;p&gt;备忘录模式（Memento Pattern）保存一个对象的某个状态，以便在适当的时候恢复对象。备忘录模式属于行为型模式。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。
+主要解决：所谓备忘录模式就是在不破坏封装的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，这样可以在以后将对象恢复到原先保存的状态。
+何时使用：很多时候我们总是需要记录一个对象的内部状态，这样做的目的就是为了允许用户取消不确定或者错误的操作，能够恢复到他原先的状态，使得他有&amp;quot;后悔药&amp;quot;可吃。
+如何解决：通过一个备忘录类专门存储对象状态。
+关键代码：客户不与备忘录类耦合，与备忘录管理类耦合。
+应用实例： 1、后悔药。 2、打游戏时的存档。 3、Windows 里的 ctri + z。 4、IE 中的后退。 4、数据库的事务管理。
+优点： 1、给用户提供了一种可以恢复状态的机制，可以使用户能够比较方便地回到某个历史的状态。 2、实现了信息的封装，使得用户不需要关心状态的保存细节。
+缺点：消耗资源。如果类的成员变量过多，势必会占用比较大的资源，而且每一次保存都会消耗一定的内存。
+使用场景： 1、需要保存/恢复数据的相关状态场景。 2、提供一个可回滚的操作。
+注意事项： 1、为了符合迪米特原则，还要增加一个管理备忘录的类。 2、为了节约内存，可使用原型模式+备忘录模式。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>中介者模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-mediator-pattern/</link>
+      <pubDate>Tue, 24 Apr 2018 15:52:08 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-mediator-pattern/</guid>
+      <description>&lt;p&gt;中介者模式（Mediator Pattern）是用来降低多个对象和类之间的通信复杂性。这种模式提供了一个中介类，该类通常处理不同类之间的通信，并支持松耦合，使代码易于维护。中介者模式属于行为型模式。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。
+主要解决：对象与对象之间存在大量的关联关系，这样势必会导致系统的结构变得很复杂，同时若一个对象发生改变，我们也需要跟踪与之相关联的对象，同时做出相应的处理。
+何时使用：多个类相互耦合，形成了网状结构。
+如何解决：将上述网状结构分离为星型结构。
+关键代码：对象 Colleague 之间的通信封装到一个类中单独处理。
+应用实例： 1、中国加入 WTO 之前是各个国家相互贸易，结构复杂，现在是各个国家通过 WTO 来互相贸易。 2、机场调度系统。 3、MVC 框架，其中C（控制器）就是 M（模型）和 V（视图）的中介者。
+优点： 1、降低了类的复杂度，将一对多转化成了一对一。 2、各个类之间的解耦。 3、符合迪米特原则。
+缺点：中介者会庞大，变得复杂难以维护。
+使用场景： 1、系统中对象之间存在比较复杂的引用关系，导致它们之间的依赖关系结构混乱而且难以复用该对象。 2、想通过一个中间类来封装多个类中的行为，而又不想生成太多的子类。
+注意事项：不应当在职责混乱的时候使用。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>迭代器模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-iterator-pattern/</link>
+      <pubDate>Tue, 24 Apr 2018 15:38:52 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-iterator-pattern/</guid>
+      <description>&lt;p&gt;迭代器模式（Iterator Pattern）是 Java 和 .Net 编程环境中非常常用的设计模式。这种模式用于顺序访问集合对象的元素，不需要知道集合对象的底层表示。
+迭代器模式属于行为型模式。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：提供一种方法顺序访问一个聚合对象中各个元素, 而又无须暴露该对象的内部表示。
+主要解决：不同的方式来遍历整个整合对象。
+何时使用：遍历一个聚合对象。
+如何解决：把在元素之间游走的责任交给迭代器，而不是聚合对象。
+关键代码：定义接口：hasNext, next。
+应用实例：JAVA 中的 iterator。
+优点： 1、它支持以不同的方式遍历一个聚合对象。 2、迭代器简化了聚合类。 3、在同一个聚合上可以有多个遍历。 4、在迭代器模式中，增加新的聚合类和迭代器类都很方便，无须修改原有代码。
+缺点：由于迭代器模式将存储数据和遍历数据的职责分离，增加新的聚合类需要对应增加新的迭代器类，类的个数成对增加，这在一定程度上增加了系统的复杂性。
+使用场景： 1、访问一个聚合对象的内容而无须暴露它的内部表示。 2、需要为聚合对象提供多种遍历方式。 3、为遍历不同的聚合结构提供一个统一的接口。
+注意事项：迭代器模式就是分离了集合对象的遍历行为，抽象出一个迭代器类来负责，这样既可以做到不暴露集合的内部结构，又可让外部代码透明地访问集合内部的数据。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>解释器模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-interpreter-pattern/</link>
+      <pubDate>Tue, 24 Apr 2018 10:04:46 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-interpreter-pattern/</guid>
+      <description>&lt;p&gt;解释器模式（Interpreter Pattern）提供了评估语言的语法或表达式的方式，它属于行为型模式。这种模式实现了一个表达式接口，该接口解释一个特定的上下文。这种模式被用在 SQL 解析、符号处理引擎等。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：给定一个语言，定义它的文法表示，并定义一个解释器，这个解释器使用该标识来解释语言中的句子。
+主要解决：对于一些固定文法构建一个解释句子的解释器。
+何时使用：如果一种特定类型的问题发生的频率足够高，那么可能就值得将该问题的各个实例表述为一个简单语言中的句子。这样就可以构建一个解释器，该解释器通过解释这些句子来解决该问题。
+如何解决：构件语法树，定义终结符与非终结符。
+关键代码：构件环境类，包含解释器之外的一些全局信息，一般是 HashMap。
+应用实例：编译器、运算表达式计算。
+优点： 1、可扩展性比较好，灵活。 2、增加了新的解释表达式的方式。 3、易于实现简单文法。
+缺点： 1、可利用场景比较少。 2、对于复杂的文法比较难维护。 3、解释器模式会引起类膨胀。 4、解释器模式采用递归调用方法。
+使用场景： 1、可以将一个需要解释执行的语言中的句子表示为一个抽象语法树。 2、一些重复出现的问题可以用一种简单的语言来进行表达。 3、一个简单语法需要解释的场景。
+注意事项：可利用场景比较少，JAVA 中如果碰到可以用 expression4J 代替。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) 链路层</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-link-layer/</link>
+      <pubDate>Tue, 24 Apr 2018 08:32:37 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-link-layer/</guid>
+      <description>&lt;p&gt;在 TCP/IP 协议族中，链路层主要有三个目的：（1）为 IP 模块发送和接收 IP 数据报；（2）为 ARP 模块发送 ARP 请求和接收 ARP 应答；（3）为 RARP 发送 RARP 请求和接收 RARP 应答。&lt;/p&gt;
+&lt;h2 id=&#34;以太网和-ieee-802封装&#34;&gt;以太网和 IEEE 802封装&lt;/h2&gt;
+&lt;p&gt;主机需求 RFC 要求每台 Internet 主机都与一个10 Mb/s的以太网电缆相连接：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;必须能发送和接收采用 RFC 894（以太网）封装格式的分组。&lt;/li&gt;
+&lt;li&gt;应该能接收与 RFC 894 混合的 RFC 1042（IEEE 802）封装格式的分组。&lt;/li&gt;
+&lt;li&gt;也许能够发送采用 RFC 1042 格式封装的分组。如果主机能同时发送两种类型的分组数据，那么发送的分组必须是可以设置的，而且默认条件下必须是 RFC 894 分组。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/rfc894-ieee802.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP 详解(卷一) 概述</title>
+      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-introduction/</link>
+      <pubDate>Mon, 23 Apr 2018 11:23:35 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-introduction/</guid>
+      <description>&lt;h2 id=&#34;tcpip-的分层&#34;&gt;TCP/IP 的分层&lt;/h2&gt;
+&lt;p&gt;TCP/IP 通常被认为是一个四层协议系统：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;链路层：也称作数据链路层或网络接口层，通常包括操作系统中的设备驱动程序和计算机中对应的网络接口卡。&lt;/li&gt;
+&lt;li&gt;网络层：处理分组在网络中的活动，例如分组的选路。在 TCP/IP 协议族中，网络层协议包括 &lt;strong&gt;IP协议&lt;/strong&gt;、&lt;strong&gt;ICMP协议&lt;/strong&gt;以及 &lt;strong&gt;IGMP协议&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;运输层：主要为两台主机上的应用程序提供端到端的通信。&lt;strong&gt;TCP协议&lt;/strong&gt; 和 &lt;strong&gt;UDP协议&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;应用层：负责处理特定的应用程序细节。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/tcp-ip-layers.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>命令模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-command-pattern/</link>
+      <pubDate>Mon, 23 Apr 2018 09:18:17 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-command-pattern/</guid>
+      <description>&lt;p&gt;命令模式（Command Pattern）是一种数据驱动的设计模式，它属于行为型模式。请求以命令的形式包裹在对象中，并传给调用对象。调用对象寻找可以处理该命令的合适的对象，并把该命令传给相应的对象，该对象执行命令。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：将一个请求封装成一个对象，从而使您可以用不同的请求对客户进行参数化。
+主要解决：在软件系统中，行为请求者与行为实现者通常是一种紧耦合的关系，但某些场合，比如需要对行为进行记录、撤销或重做、事务等处理时，这种无法抵御变化的紧耦合的设计就不太合适。
+何时使用：在某些场合，比如要对行为进行&amp;quot;记录、撤销/重做、事务&amp;quot;等处理，这种无法抵御变化的紧耦合是不合适的。在这种情况下，如何将&amp;quot;行为请求者&amp;quot;与&amp;quot;行为实现者&amp;quot;解耦？将一组行为抽象为对象，可以实现二者之间的松耦合。
+如何解决：通过调用者调用接受者执行命令，顺序：调用者→接受者→命令。
+关键代码：定义三个角色：1、received 真正的命令执行对象 2、Command 3、invoker 使用命令对象的入口
+应用实例：struts 1 中的 action 核心控制器 ActionServlet 只有一个，相当于 Invoker，而模型层的类会随着不同的应用有不同的模型类，相当于具体的 Command。
+优点： 1、降低了系统耦合度。 2、新的命令可以很容易添加到系统中去。
+缺点：使用命令模式可能会导致某些系统有过多的具体命令类。
+使用场景：认为是命令的地方都可以使用命令模式，比如： 1、GUI 中每一个按钮都是一条命令。 2、模拟 CMD。
+注意事项：系统需要支持命令的撤销(Undo)操作和恢复(Redo)操作，也可以考虑使用命令模式，见命令模式的扩展。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>责任链模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-chain-of-responsibility-pattern/</link>
+      <pubDate>Sat, 21 Apr 2018 14:36:02 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-chain-of-responsibility-pattern/</guid>
+      <description>&lt;p&gt;顾名思义，责任链模式（Chain of Responsibility Pattern）为请求创建了一个接收者对象的链。这种模式给予请求的类型，对请求的发送者和接收者进行解耦。这种类型的设计模式属于行为型模式。
+在这种模式中，通常每个接收者都包含对另一个接收者的引用。如果一个对象不能处理该请求，那么它会把相同的请求传给下一个接收者，依此类推。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：避免请求发送者与接收者耦合在一起，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。
+主要解决：职责链上的处理者负责处理请求，客户只需要将请求发送到职责链上即可，无须关心请求的处理细节和请求的传递，所以职责链将请求的发送者和请求的处理者解耦了。
+何时使用：在处理消息的时候以过滤很多道。
+如何解决：拦截的类都实现统一接口。
+关键代码：Handler 里面聚合它自己，在 HanleRequest 里判断是否合适，如果没达到条件则向下传递，向谁传递之前 set 进去。
+应用实例： 1、红楼梦中的&amp;quot;击鼓传花&amp;quot;。 2、JS 中的事件冒泡。 3、JAVA WEB 中 Apache Tomcat 对 Encoding 的处理，Struts2 的拦截器，jsp servlet 的 Filter。
+优点： 1、降低耦合度。它将请求的发送者和接收者解耦。 2、简化了对象。使得对象不需要知道链的结构。 3、增强给对象指派职责的灵活性。通过改变链内的成员或者调动它们的次序，允许动态地新增或者删除责任。 4、增加新的请求处理类很方便。
+缺点： 1、不能保证请求一定被接收。 2、系统性能将受到一定影响，而且在进行代码调试时不太方便，可能会造成循环调用。 3、可能不容易观察运行时的特征，有碍于除错。
+使用场景： 1、有多个对象可以处理同一个请求，具体哪个对象处理该请求由运行时刻自动确定。 2、在不明确指定接收者的情况下，向多个对象中的一个提交一个请求。 3、可动态指定一组对象处理请求。
+注意事项：在 JAVA WEB 中遇到很多应用。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>代理模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-proxy-pattern/</link>
+      <pubDate>Sat, 21 Apr 2018 09:38:16 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-proxy-pattern/</guid>
+      <description>&lt;p&gt;在代理模式（Proxy Pattern）中，一个类代表另一个类的功能。这种类型的设计模式属于结构型模式。
+在代理模式中，我们创建具有现有对象的对象，以便向外界提供功能接口。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：为其他对象提供一种代理以控制对这个对象的访问。
+主要解决：在直接访问对象时带来的问题，比如说：要访问的对象在远程的机器上。在面向对象系统中，有些对象由于某些原因（比如对象创建开销很大，或者某些操作需要安全控制，或者需要进程外的访问），直接访问会给使用者或者系统结构带来很多麻烦，我们可以在访问此对象时加上一个对此对象的访问层。
+何时使用：想在访问一个类时做一些控制。
+如何解决：增加中间层。
+关键代码：实现与被代理类组合。
+应用实例： 1、Windows 里面的快捷方式。 2、猪八戒去找高翠兰结果是孙悟空变的，可以这样理解：把高翠兰的外貌抽象出来，高翠兰本人和孙悟空都实现了这个接口，猪八戒访问高翠兰的时候看不出来这个是孙悟空，所以说孙悟空是高翠兰代理类。 3、买火车票不一定在火车站买，也可以去代售点。 4、一张支票或银行存单是账户中资金的代理。支票在市场交易中用来代替现金，并提供对签发人账号上资金的控制。 5、spring aop。
+优点： 1、职责清晰。 2、高扩展性。 3、智能化。
+缺点： 1、由于在客户端和真实主题之间增加了代理对象，因此有些类型的代理模式可能会造成请求的处理速度变慢。 2、实现代理模式需要额外的工作，有些代理模式的实现非常复杂。
+使用场景：按职责来划分，通常有以下使用场景： 1、远程代理。 2、虚拟代理。 3、Copy-on-Write 代理。 4、保护（Protect or Access）代理。 5、Cache代理。 6、防火墙（Firewall）代理。 7、同步化（Synchronization）代理。 8、智能引用（Smart Reference）代理。
+注意事项： 1、和适配器模式的区别：适配器模式主要改变所考虑对象的接口，而代理模式不能改变所代理类的接口。 2、和装饰器模式的区别：装饰器模式为了增强功能，而代理模式是为了加以控制。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>享元模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-flyweight-pattern/</link>
+      <pubDate>Fri, 20 Apr 2018 09:38:23 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-flyweight-pattern/</guid>
+      <description>&lt;p&gt;享元模式（Flyweight Pattern）主要用于减少创建对象的数量，以减少内存占用和提高性能。这种类型的设计模式属于结构型模式，它提供了减少对象数量从而改善应用所需的对象结构的方式。
+享元模式尝试重用现有的同类对象，如果未找到匹配的对象，则创建新对象。我们将通过创建 5 个对象来画出 20 个分布于不同位置的圆来演示这种模式。由于只有 5 种可用的颜色，所以 color 属性被用来检查现有的 Circle 对象。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：运用共享技术有效地支持大量细粒度的对象。
+主要解决：在有大量对象时，有可能会造成内存溢出，我们把其中共同的部分抽象出来，如果有相同的业务请求，直接返回在内存中已有的对象，避免重新创建。
+何时使用： 1、系统中有大量对象。 2、这些对象消耗大量内存。 3、这些对象的状态大部分可以外部化。 4、这些对象可以按照内蕴状态分为很多组，当把外蕴对象从对象中剔除出来时，每一组对象都可以用一个对象来代替。 5、系统不依赖于这些对象身份，这些对象是不可分辨的。
+如何解决：用唯一标识码判断，如果在内存中有，则返回这个唯一标识码所标识的对象。
+关键代码：用 HashMap 存储这些对象。
+应用实例： 1、JAVA 中的 String，如果有则返回，如果没有则创建一个字符串保存在字符串缓存池里面。 2、数据库的数据池。
+优点：大大减少对象的创建，降低系统的内存，使效率提高。
+缺点：提高了系统的复杂度，需要分离出外部状态和内部状态，而且外部状态具有固有化的性质，不应该随着内部状态的变化而变化，否则会造成系统的混乱。
+使用场景： 1、系统有大量相似对象。 2、需要缓冲池的场景。
+注意事项： 1、注意划分外部状态和内部状态，否则可能会引起线程安全问题。 2、这些类必须有一个工厂对象加以控制。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>外观模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-facade-pattern/</link>
+      <pubDate>Thu, 19 Apr 2018 09:19:47 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-facade-pattern/</guid>
+      <description>&lt;p&gt;外观模式（Facade Pattern）隐藏系统的复杂性，并向客户端提供了一个客户端可以访问系统的接口。这种类型的设计模式属于结构型模式，它向现有的系统添加一个接口，来隐藏系统的复杂性。
+这种模式涉及到一个单一的类，该类提供了客户端请求的简化方法和对现有系统类方法的委托调用。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：为子系统中的一组接口提供一个一致的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。
+主要解决：降低访问复杂系统的内部子系统时的复杂度，简化客户端与之的接口。
+何时使用： 1、客户端不需要知道系统内部的复杂联系，整个系统只需提供一个&amp;quot;接待员&amp;quot;即可。 2、定义系统的入口。
+如何解决：客户端不与系统耦合，外观类与系统耦合。
+关键代码：在客户端和复杂系统之间再加一层，这一层将调用顺序、依赖关系等处理好。
+应用实例： 1、去医院看病，可能要去挂号、门诊、划价、取药，让患者或患者家属觉得很复杂，如果有提供接待人员，只让接待人员来处理，就很方便。 2、JAVA 的三层开发模式。
+优点： 1、减少系统相互依赖。 2、提高灵活性。 3、提高了安全性。
+缺点：不符合开闭原则，如果要改东西很麻烦，继承重写都不合适。
+使用场景： 1、为复杂的模块或子系统提供外界访问的模块。 2、子系统相对独立。 3、预防低水平人员带来的风险。
+注意事项：在层次化结构中，可以使用外观模式定义系统中每一层的入口。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>装饰器模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-decorator-pattern/</link>
+      <pubDate>Wed, 18 Apr 2018 09:01:25 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-decorator-pattern/</guid>
+      <description>&lt;p&gt;装饰器模式（Decorator Pattern）允许向一个现有的对象添加新的功能，同时又不改变其结构。这种类型的设计模式属于结构型模式，它是作为现有的类的一个包装。
+这种模式创建了一个装饰类，用来包装原有的类，并在保持类方法签名完整性的前提下，提供了额外的功能。
+我们通过下面的实例来演示装饰器模式的用法。其中，我们将把一个形状装饰上不同的颜色，同时又不改变形状类。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。
+主要解决：一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。
+何时使用：在不想增加很多子类的情况下扩展类。
+如何解决：将具体功能职责划分，同时继承装饰者模式。
+关键代码： 1、Component 类充当抽象角色，不应该具体实现。 2、修饰类引用和继承 Component 类，具体扩展类重写父类方法。
+应用实例： 1、孙悟空有 72 变，当他变成&amp;quot;庙宇&amp;quot;后，他的根本还是一只猴子，但是他又有了庙宇的功能。 2、不论一幅画有没有画框都可以挂在墙上，但是通常都是有画框的，并且实际上是画框被挂在墙上。在挂在墙上之前，画可以被蒙上玻璃，装到框子里；这时画、玻璃和画框形成了一个物体。
+优点：装饰类和被装饰类可以独立发展，不会相互耦合，装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能。
+缺点：多层装饰比较复杂。
+使用场景： 1、扩展一个类的功能。 2、动态增加功能，动态撤销。
+注意事项：可代替继承。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>组合模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-composite-pattern/</link>
+      <pubDate>Thu, 12 Apr 2018 14:32:26 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-composite-pattern/</guid>
+      <description>&lt;p&gt;组合模式（Composite Pattern），又叫部分整体模式，是用于把一组相似的对象当作一个单一的对象。组合模式依据树形结构来组合对象，用来表示部分以及整体层次。这种类型的设计模式属于结构型模式，它创建了对象组的树形结构。
+这种模式创建了一个包含自己对象组的类。该类提供了修改相同对象组的方式。
+我们通过下面的实例来演示组合模式的用法。实例演示了一个组织中员工的层次结构。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：将对象组合成树形结构以表示&amp;quot;部分-整体&amp;quot;的层次结构。组合模式使得用户对单个对象和组合对象的使用具有一致性。
+主要解决：它在我们树型结构的问题中，模糊了简单元素和复杂元素的概念，客户程序可以向处理简单元素一样来处理复杂元素，从而使得客户程序与复杂元素的内部结构解耦。
+何时使用： 1、您想表示对象的部分-整体层次结构（树形结构）。 2、您希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。
+如何解决：树枝和叶子实现统一接口，树枝内部组合该接口。
+关键代码：树枝内部组合该接口，并且含有内部属性 List，里面放 Component。
+应用实例： 1、算术表达式包括操作数、操作符和另一个操作数，其中，另一个操作符也可以是操作树、操作符和另一个操作数。 2、在 JAVA AWT 和 SWING 中，对于 Button 和 Checkbox 是树叶，Container 是树枝。
+优点： 1、高层模块调用简单。 2、节点自由增加。
+缺点：在使用组合模式时，其叶子和树枝的声明都是实现类，而不是接口，违反了依赖倒置原则。
+使用场景：部分、整体场景，如树形菜单，文件、文件夹的管理。
+注意事项：定义时为具体类。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>过滤器模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-filter-pattern/</link>
+      <pubDate>Thu, 12 Apr 2018 09:38:59 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-filter-pattern/</guid>
+      <description>&lt;p&gt;过滤器模式（Filter Pattern）或标准模式（Criteria Pattern）是一种设计模式，这种模式允许开发人员使用不同的标准来过滤一组对象，通过逻辑运算以解耦的方式把它们连接起来。这种类型的设计模式属于结构型模式，它结合多个标准来获得单一标准。&lt;/p&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
+&lt;p&gt;我们将创建一个 Person 对象、Criteria 接口和实现了该接口的实体类，来过滤 Person 对象的列表。CriteriaPatternDemo，我们的演示类使用 Criteria 对象，基于各种标准和它们的结合来过滤 Person 对象的列表。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/design-pattern/filter_pattern_uml_diagram.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>桥接模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-bridge-pattern/</link>
+      <pubDate>Tue, 10 Apr 2018 19:50:49 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-bridge-pattern/</guid>
+      <description>&lt;p&gt;桥接（Bridge）是用于把抽象化与实现化解耦，使得二者可以独立变化。这种类型的设计模式属于结构型模式，它通过提供抽象化和实现化之间的桥接结构，来实现二者的解耦。
+这种模式涉及到一个作为桥接的接口，使得实体类的功能独立于接口实现类。这两种类型的类可被结构化改变而互不影响。
+我们通过下面的实例来演示桥接模式（Bridge Pattern）的用法。其中，可以使用相同的抽象类方法但是不同的桥接实现类，来画出不同颜色的圆。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：将抽象部分与实现部分分离，使它们都可以独立的变化。
+主要解决：在有多种可能会变化的情况下，用继承会造成类爆炸问题，扩展起来不灵活。
+何时使用：实现系统可能有多个角度分类，每一种角度都可能变化。
+如何解决：把这种多角度分类分离出来，让它们独立变化，减少它们之间耦合。
+关键代码：抽象类依赖实现类。
+应用实例： 1、猪八戒从天蓬元帅转世投胎到猪，转世投胎的机制将尘世划分为两个等级，即：灵魂和肉体，前者相当于抽象化，后者相当于实现化。生灵通过功能的委派，调用肉体对象的功能，使得生灵可以动态地选择。 2、墙上的开关，可以看到的开关是抽象的，不用管里面具体怎么实现的。
+优点： 1、抽象和实现的分离。 2、优秀的扩展能力。 3、实现细节对客户透明。
+缺点：桥接模式的引入会增加系统的理解与设计难度，由于聚合关联关系建立在抽象层，要求开发者针对抽象进行设计与编程。
+使用场景： 1、如果一个系统需要在构件的抽象化角色和具体化角色之间增加更多的灵活性，避免在两个层次之间建立静态的继承联系，通过桥接模式可以使它们在抽象层建立一个关联关系。 2、对于那些不希望使用继承或因为多层次继承导致系统类的个数急剧增加的系统，桥接模式尤为适用。 3、一个类存在两个独立变化的维度，且这两个维度都需要进行扩展。
+注意事项：对于两个独立变化的维度，使用桥接模式再适合不过了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>适配器模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-adapter-pattern/</link>
+      <pubDate>Mon, 09 Apr 2018 16:11:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-adapter-pattern/</guid>
+      <description>&lt;p&gt;适配器模式（Adapter Pattern）是作为两个不兼容的接口之间的桥梁。这种类型的设计模式属于结构型模式，它结合了两个独立接口的功能。
+这种模式涉及到一个单一的类，该类负责加入独立的或不兼容的接口功能。举个真实的例子，读卡器是作为内存卡和笔记本之间的适配器。您将内存卡插入读卡器，再将读卡器插入笔记本，这样就可以通过笔记本来读取内存卡。
+我们通过下面的实例来演示适配器模式的使用。其中，音频播放器设备只能播放 mp3 文件，通过使用一个更高级的音频播放器来播放 vlc 和 mp4 文件。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：将一个类的接口转换成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。
+主要解决：主要解决在软件系统中，常常要将一些&amp;quot;现存的对象&amp;quot;放到新的环境中，而新环境要求的接口是现对象不能满足的。
+何时使用： 1、系统需要使用现有的类，而此类的接口不符合系统的需要。 2、想要建立一个可以重复使用的类，用于与一些彼此之间没有太大关联的一些类，包括一些可能在将来引进的类一起工作，这些源类不一定有一致的接口。 3、通过接口转换，将一个类插入另一个类系中。（比如老虎和飞禽，现在多了一个飞虎，在不增加实体的需求下，增加一个适配器，在里面包容一个虎对象，实现飞的接口。）
+如何解决：继承或依赖（推荐）。
+关键代码：适配器继承或依赖已有的对象，实现想要的目标接口。
+应用实例： 1、美国电器 110V，中国 220V，就要有一个适配器将 110V 转化为 220V。 2、JAVA JDK 1.1 提供了 Enumeration 接口，而在 1.2 中提供了 Iterator 接口，想要使用 1.2 的 JDK，则要将以前系统的 Enumeration 接口转化为 Iterator 接口，这时就需要适配器模式。 3、在 LINUX 上运行 WINDOWS 程序。 4、JAVA 中的 jdbc。
+优点： 1、可以让任何两个没有关联的类一起运行。 2、提高了类的复用。 3、增加了类的透明度。 4、灵活性好。
+缺点： 1、过多地使用适配器，会让系统非常零乱，不易整体进行把握。比如，明明看到调用的是 A 接口，其实内部被适配成了 B 接口的实现，一个系统如果太多出现这种情况，无异于一场灾难。因此如果不是很有必要，可以不使用适配器，而是直接对系统进行重构。 2.由于 JAVA 至多继承一个类，所以至多只能适配一个适配者类，而且目标类必须是抽象类。
+使用场景：有动机地修改一个正常运行的系统的接口，这时应该考虑使用适配器模式。
+注意事项：适配器不是在详细设计时添加的，而是解决正在服役的项目的问题。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>原型模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-prototype-pattern/</link>
+      <pubDate>Sun, 08 Apr 2018 15:22:25 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-prototype-pattern/</guid>
+      <description>&lt;p&gt;原型模式（Prototype Pattern）是用于创建重复的对象，同时又能保证性能。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+这种模式是实现了一个原型接口，该接口用于创建当前对象的克隆。当直接创建对象的代价比较大时，则采用这种模式。例如，一个对象需要在一个高代价的数据库操作之后被创建。我们可以缓存该对象，在下一个请求时返回它的克隆，在需要的时候更新数据库，以此来减少数据库调用。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
+主要解决：在运行期建立和删除原型。
+何时使用： 1、当一个系统应该独立于它的产品创建，构成和表示时。 2、当要实例化的类是在运行时刻指定时，例如，通过动态装载。 3、为了避免创建一个与产品类层次平行的工厂类层次时。 4、当一个类的实例只能有几个不同状态组合中的一种时。建立相应数目的原型并克隆它们可能比每次用合适的状态手工实例化该类更方便一些。
+如何解决：利用已有的一个原型对象，快速地生成和原型对象一样的实例。
+关键代码： 1、实现克隆操作，在 JAVA 继承 Cloneable，重写 clone()，在 .NET 中可以使用 Object 类的 MemberwiseClone() 方法来实现对象的浅拷贝或通过序列化的方式来实现深拷贝。 2、原型模式同样用于隔离类对象的使用者和具体类型（易变类）之间的耦合关系，它同样要求这些&amp;quot;易变类&amp;quot;拥有稳定的接口。
+应用实例： 1、细胞分裂。 2、JAVA 中的 Object clone() 方法。
+优点： 1、性能提高。 2、逃避构造函数的约束。
+缺点： 1、配备克隆方法需要对类的功能进行通盘考虑，这对于全新的类不是很难，但对于已有的类不一定很容易，特别当一个类引用不支持串行化的间接对象，或者引用含有循环结构的时候。 2、必须实现 Cloneable 接口。
+使用场景： 1、资源优化场景。 2、类初始化需要消化非常多的资源，这个资源包括数据、硬件资源等。 3、性能和安全要求的场景。 4、通过 new 产生一个对象需要非常繁琐的数据准备或访问权限，则可以使用原型模式。 5、一个对象多个修改者的场景。 6、一个对象需要提供给其他对象访问，而且各个调用者可能都需要修改其值时，可以考虑使用原型模式拷贝多个对象供调用者使用。 7、在实际项目中，原型模式很少单独出现，一般是和工厂方法模式一起出现，通过 clone 的方法创建一个对象，然后由工厂方法提供给调用者。原型模式已经与 Java 融为浑然一体，大家可以随手拿来使用。
+注意事项：与通过对一个类进行实例化来构造新对象不同的是，原型模式是通过拷贝一个现有对象生成新对象的。浅拷贝实现 Cloneable，重写，深拷贝是通过实现 Serializable 读取二进制流。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>建造者模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-builder-pattern/</link>
+      <pubDate>Wed, 04 Apr 2018 21:10:21 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-builder-pattern/</guid>
+      <description>&lt;p&gt;建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;意图：将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示。
+主要解决：主要解决在软件系统中，有时候面临着&amp;quot;一个复杂对象&amp;quot;的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。
+何时使用：一些基本部件不会变，而其组合经常变化的时候。
+如何解决：将变与不变分离开。
+关键代码：建造者：创建和提供实例，导演：管理建造出来的实例的依赖关系。
+应用实例： 1、去肯德基，汉堡、可乐、薯条、炸鸡翅等是不变的，而其组合是经常变化的，生成出所谓的&amp;quot;套餐&amp;quot;。 2、JAVA 中的 StringBuilder。
+优点： 1、建造者独立，易扩展。 2、便于控制细节风险。
+缺点： 1、产品必须有共同点，范围有限制。 2、如内部变化复杂，会有很多的建造类。
+使用场景： 1、需要生成的对象具有复杂的内部结构。 2、需要生成的对象内部属性本身相互依赖。
+注意事项：与工厂模式的区别是：建造者模式更加关注与零件装配的顺序。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>单例模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-singleton-pattern/</link>
+      <pubDate>Mon, 26 Mar 2018 16:38:53 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-singleton-pattern/</guid>
+      <description>&lt;p&gt;单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;单例类只能有一个实例。&lt;/li&gt;
+&lt;li&gt;单例类必须自己创建自己的唯一实例。&lt;/li&gt;
+&lt;li&gt;单例类必须给所有其他对象提供这一实例。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;**意图：**保证一个类仅有一个实例，并提供一个访问它的全局访问点。
+**主要解决：**一个全局使用的类频繁地创建与销毁。
+**何时使用：**当您想控制实例数目，节省系统资源的时候。
+**如何解决：**判断系统是否已经有这个单例，如果有则返回，如果没有则创建。
+**关键代码：**构造函数是私有的。
+&lt;strong&gt;应用实例：&lt;/strong&gt; 1、一个党只能有一个主席。 2、Windows 是多进程多线程的，在操作一个文件的时候，就不可避免地出现多个进程或线程同时操作一个文件的现象，所以所有文件的处理必须通过唯一的实例来进行。 3、一些设备管理器常常设计为单例模式，比如一个电脑有两台打印机，在输出的时候就要处理不能两台打印机打印同一个文件。
+&lt;strong&gt;优点：&lt;/strong&gt; 1、在内存里只有一个实例，减少了内存的开销，尤其是频繁的创建和销毁实例（比如管理学院首页页面缓存）。 2、避免对资源的多重占用（比如写文件操作）。
+**缺点：**没有接口，不能继承，与单一职责原则冲突，一个类应该只关心内部逻辑，而不关心外面怎么样来实例化。
+&lt;strong&gt;使用场景：&lt;/strong&gt; 1、要求生产唯一序列号。 2、WEB 中的计数器，不用每次刷新都在数据库里加一次，用单例先缓存起来。 3、创建的一个对象需要消耗的资源过多，比如 I/O 与数据库的连接等。
+**注意事项：**getInstance() 方法中需要使用同步锁 synchronized (Singleton.class) 防止多线程同时进入造成 instance 被多次实例化。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>抽象工厂模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-abstract-factory-pattern/</link>
+      <pubDate>Sun, 25 Mar 2018 09:51:57 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-abstract-factory-pattern/</guid>
+      <description>&lt;p&gt;抽象工厂模式（Abstract Factory Pattern）是围绕一个超级工厂创建其他工厂。该超级工厂又称为其他工厂的工厂。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+在抽象工厂模式中，接口是负责创建一个相关对象的工厂，不需要显式指定它们的类。每个生成的工厂都能按照工厂模式提供对象。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;**意图：**提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。
+**主要解决：**主要解决接口选择的问题。
+**何时使用：**系统的产品有多于一个的产品族，而系统只消费其中某一族的产品。
+**如何解决：**在一个产品族里面，定义多个产品。
+**关键代码：**在一个工厂里聚合多个同类产品。
+**应用实例：**工作了，为了参加一些聚会，肯定有两套或多套衣服吧，比如说有商务装（成套，一系列具体产品）、时尚装（成套，一系列具体产品），甚至对于一个家庭来说，可能有商务女装、商务男装、时尚女装、时尚男装，这些也都是成套的，即一系列具体产品。假设一种情况（现实中是不存在的，要不然，没法进入共产主义了，但有利于说明抽象工厂模式），在您的家中，某一个衣柜（具体工厂）只能存放某一种这样的衣服（成套，一系列具体产品），每次拿这种成套的衣服时也自然要从这个衣柜中取出了。用 OO 的思想去理解，所有的衣柜（具体工厂）都是衣柜类的（抽象工厂）某一个，而每一件成套的衣服又包括具体的上衣（某一具体产品），裤子（某一具体产品），这些具体的上衣其实也都是上衣（抽象产品），具体的裤子也都是裤子（另一个抽象产品）。
+**优点：**当一个产品族中的多个对象被设计成一起工作时，它能保证客户端始终只使用同一个产品族中的对象。
+**缺点：**产品族扩展非常困难，要增加一个系列的某一产品，既要在抽象的 Creator 里加代码，又要在具体的里面加代码。
+&lt;strong&gt;使用场景：&lt;/strong&gt; 1、QQ 换皮肤，一整套一起换。 2、生成不同操作系统的程序。
+**注意事项：**产品族难扩展，产品等级易扩展。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>工厂模式</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-factory-pattern/</link>
+      <pubDate>Thu, 22 Mar 2018 10:32:40 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-factory-pattern/</guid>
+      <description>&lt;p&gt;工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。&lt;/p&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;意图&lt;/strong&gt;：定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类，工厂模式使其创建过程延迟到子类进行。
+&lt;strong&gt;主要解决&lt;/strong&gt;：主要解决接口选择的问题。
+&lt;strong&gt;何时使用&lt;/strong&gt;：我们明确地计划不同条件下创建不同实例时。
+&lt;strong&gt;如何解决&lt;/strong&gt;：让其子类实现工厂接口，返回的也是一个抽象的产品。
+&lt;strong&gt;关键代码&lt;/strong&gt;：创建过程在其子类执行。
+&lt;strong&gt;应用实例&lt;/strong&gt;： 1、您需要一辆汽车，可以直接从工厂里面提货，而不用去管这辆汽车是怎么做出来的，以及这个汽车里面的具体实现。 2、Hibernate 换数据库只需换方言和驱动就可以。
+&lt;strong&gt;优点&lt;/strong&gt;： 1、一个调用者想创建一个对象，只要知道其名称就可以了。 2、扩展性高，如果想增加一个产品，只要扩展一个工厂类就可以。 3、屏蔽产品的具体实现，调用者只关心产品的接口。
+&lt;strong&gt;缺点&lt;/strong&gt;：每次增加一个产品时，都需要增加一个具体类和对象实现工厂，使得系统中类的个数成倍增加，在一定程度上增加了系统的复杂度，同时也增加了系统具体类的依赖。这并不是什么好事。
+&lt;strong&gt;使用场景&lt;/strong&gt;： 1、日志记录器：记录可能记录到本地硬盘、系统事件、远程服务器等，用户可以选择记录日志到什么地方。 2、数据库访问，当用户不知道最后系统采用哪一类数据库，以及数据库可能有变化时。 3、设计一个连接服务器的框架，需要三个协议，&amp;ldquo;POP3&amp;rdquo;、&amp;ldquo;IMAP&amp;rdquo;、&amp;ldquo;HTTP&amp;rdquo;，可以把这三个作为产品类，共同实现一个接口。
+&lt;strong&gt;注意事项&lt;/strong&gt;：作为一种创建类模式，在任何需要生成复杂对象的地方，都可以使用工厂方法模式。有一点需要注意的地方就是复杂对象适合使用工厂模式，而简单对象，特别是只需要通过 new 就可以完成创建的对象，无需使用工厂模式。如果使用工厂模式，就需要引入一个工厂类，会增加系统的复杂度。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>设计模式简介</title>
+      <link>https://xuchengpeng.github.io/post/design-pattern-introduction/</link>
+      <pubDate>Tue, 20 Mar 2018 17:17:35 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/design-pattern-introduction/</guid>
+      <description>&lt;p&gt;设计模式（Design pattern）代表了最佳的实践，通常被有经验的面向对象的软件开发人员所采用。设计模式是软件开发人员在软件开发过程中面临的一般问题的解决方案。这些解决方案是众多软件开发人员经过相当长的一段时间的试验和错误总结出来的。&lt;/p&gt;
+&lt;p&gt;设计模式是一套被反复使用的、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了重用代码、让代码更容易被他人理解、保证代码可靠性。 毫无疑问，设计模式于己于他人于系统都是多赢的，设计模式使代码编制真正工程化，设计模式是软件工程的基石，如同大厦的一块块砖石一样。项目中合理地运用设计模式可以完美地解决很多问题，每种模式在现实中都有相应的原理来与之对应，每种模式都描述了一个在我们周围不断重复发生的问题，以及该问题的核心解决方案，这也是设计模式能被广泛应用的原因。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

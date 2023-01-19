@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GitHub on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/github/</link>
+    <description>Recent content in GitHub on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 22 Nov 2017 16:00:00 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gitment评论系统</title>
+      <link>https://xuchengpeng.github.io/post/gitment-comment-system/</link>
+      <pubDate>Wed, 22 Nov 2017 16:00:00 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/gitment-comment-system/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/imsun/gitment&#34;&gt;Gitment&lt;/a&gt; 是作者实现的一款基于 GitHub Issues 的评论系统。支持在前端直接引入，不需要任何后端代码。可以在页面进行登录、查看、评论、点赞等操作，同时有完整的 Markdown / GFM 和代码高亮支持。尤为适合各种基于 GitHub Pages 的静态博客或项目页面。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

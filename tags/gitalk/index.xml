@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Gitalk on Chuck</title>
+    <link>https://xuchengpeng.github.io/tags/gitalk/</link>
+    <description>Recent content in Gitalk on Chuck</description>
+    <image>
+      <url>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://xuchengpeng.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 04 Dec 2017 09:29:58 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/gitalk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>为NexT主题部署Gitalk评论插件</title>
+      <link>https://xuchengpeng.github.io/post/gitalk-for-next/</link>
+      <pubDate>Mon, 04 Dec 2017 09:29:58 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/gitalk-for-next/</guid>
+      <description>在之前的文章中（{% post_link gitalk-comment-extension Gitalk评论插件 %}），已介绍过Gitalk评论插件，GitHub上为NexT添加Gitalk的pull request一直没有合入，自己手动本地部署吧。
+为什么选择Gitalk 由于国内网络大环境的原因，Disqus 等优秀的评论系统都需要梯子才能使用，多说已经停运，NexT 已支持的 Gitment 目前存在一些问题，作者好像也已经很久没有维护了，故选择现在还在活跃的 Gitalk。
+新增插件代码 新建 layout/_third-party/comments/gitalk.swig 文件，添加以下代码：
+{% if theme.gitalk.enable %} {% if page.comments %} &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://unpkg.com/gitalk/dist/gitalk.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://unpkg.com/gitalk/dist/gitalk.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; const gitalk = new Gitalk({ clientID: &amp;#39;{{theme.gitalk.clientID}}&amp;#39;, clientSecret: &amp;#39;{{theme.gitalk.clientSecret}}&amp;#39;, repo: &amp;#39;{{theme.gitalk.repo}}&amp;#39;, owner: &amp;#39;{{theme.gitalk.owner}}&amp;#39;, admin: &amp;#39;{{theme.gitalk.admin}}&amp;#39;.split(&amp;#39;,&amp;#39;), id: location.pathname, // facebook-like distraction free mode distractionFreeMode: &amp;#39;{{ theme.gitalk.distractionFreeMode }}&amp;#39;, createIssueManually: &amp;#39;{{ theme.gitalk.createIssueManually }}&amp;#39; }) gitalk.render(&amp;#39;gitalk-container&amp;#39;) &amp;lt;/script&amp;gt; {% endif %} {% endif %} 添加插件到NexT主题中 修改 layout/_third-party/comments/index.</description>
+    </item>
+    
+    <item>
+      <title>Gitalk评论插件</title>
+      <link>https://xuchengpeng.github.io/post/gitalk-comment-extension/</link>
+      <pubDate>Fri, 24 Nov 2017 14:51:01 +0000</pubDate>
+      
+      <guid>https://xuchengpeng.github.io/post/gitalk-comment-extension/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt; 是一个基于 Github Issue 和 Preact 开发的评论插件。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
