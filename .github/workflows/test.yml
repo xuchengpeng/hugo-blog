@@ -13,7 +13,7 @@ jobs:
       - name: Check out hugo-blog
         uses: actions/checkout@v2
       - name: Delete All Themes
-        uses: rm -rf themes/PaperMod themes/minos themes/whiteplain
+        run: rm -rf themes/PaperMod themes/minos themes/whiteplain
       - name: Add PaperMod
         run: git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
       - name: Add PaperMod
