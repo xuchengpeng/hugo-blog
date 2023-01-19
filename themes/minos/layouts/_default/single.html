@@ -1,9 +1,0 @@
-{{ define "main" }}
-    <section id="main" class="outer">
-        {{ partial "article.html" . }}
-        {{ if and (not .Params.nocomment) .Site.Params.disqusShortname }}
-            {{ template "_internal/disqus.html" . }}
-        {{ end }}
-        {{ partial "comments.html" . }}
-    </section>
-{{ end }}
