@@ -109,15 +109,15 @@ params:
   #   minMatchCharLength: 0
   #   keys: ["title", "permalink", "summary", "content"]
 
-  # valine:
-  #   enable: true
-  #   appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz'
-  #   appKey: 'eQc0CtLv9s4VTdObz6ux8lVW'
-  #   notify: false  # mail notifier , https://github.com/xCss/Valine/wiki
-  #   verify: false # Verification code
-  #   avatar: 'wavatar' 
-  #   placeholder: 'Leave your comments here...'
-  #   visitor: true
+  valine:
+    enable: true
+    appId: '8cGx0mI721mXnuSact0PLKmV-gzGzoHsz'
+    appKey: 'eQc0CtLv9s4VTdObz6ux8lVW'
+    notify: false  # mail notifier , https://github.com/xCss/Valine/wiki
+    verify: false # Verification code
+    avatar: 'wavatar' 
+    placeholder: 'Leave your comments here...'
+    visitor: true
 
 menu:
   main:
