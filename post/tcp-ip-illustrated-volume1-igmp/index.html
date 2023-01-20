@@ -6,19 +6,7 @@ IGMP报文
 
 这是版本为1的IGMP。IGMP类型为1说明是由多播路由器发出的查询报文，为2说明是主机发出的报告报文。检验和的计算和ICMP协议相同。
 组地址为D类IP地址。在查询报文中组地址设置为0，在报告报文中组地址为要参加的组地址。"><meta name=author content="Chuck"><link rel=canonical href=https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-igmp/><link crossorigin=anonymous href=/assets/css/stylesheet.87a71c9fa3c46cbcceecb41d06747705e92409331a78d74e3ac78ce8b2f38eb1.css integrity="sha256-h6ccn6PEbLzO7LQdBnR3BekkCTMaeNdOOseM6LLzjrE=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://xuchengpeng.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://xuchengpeng.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://xuchengpeng.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://xuchengpeng.github.io/apple-touch-icon.png><link rel=mask-icon href=https://xuchengpeng.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=text/javascript async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type=text/x-mathjax-config>
-    MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [['$$','$$'], ['\[','\]']],
-        processEscapes: true,
-        processEnvironments: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
-        TeX: { equationNumbers: { autoNumber: "AMS" },
-            extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    </script><meta property="og:title" content="TCP/IP 详解(卷一) IGMP：Internet组管理协议"><meta property="og:description" content="用于支持主机和路由器进行多播的Internet组管理协议（IGMP）。它让一个物理网络上的所有系统知道主机当前所在的多播组。多播路由器需要这些信息以便知道多播数据报应该向哪些接口转发。
+<link rel=icon href=https://xuchengpeng.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://xuchengpeng.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://xuchengpeng.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://xuchengpeng.github.io/apple-touch-icon.png><link rel=mask-icon href=https://xuchengpeng.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="TCP/IP 详解(卷一) IGMP：Internet组管理协议"><meta property="og:description" content="用于支持主机和路由器进行多播的Internet组管理协议（IGMP）。它让一个物理网络上的所有系统知道主机当前所在的多播组。多播路由器需要这些信息以便知道多播数据报应该向哪些接口转发。
 正如ICMP一样，IGMP也被当作IP层的一部分。IGMP报文通过IP数据报进行传输。不像我们已经见到的其他协议，IGMP有固定的报文长度，没有可选数据。IP首部(20字节) + IGMP报文(8字节)。
 IGMP报文通过IP首部中协议字段值为2来指明。
 IGMP报文

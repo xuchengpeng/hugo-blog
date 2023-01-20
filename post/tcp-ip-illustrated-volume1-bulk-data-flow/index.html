@@ -7,19 +7,7 @@
 当窗口右边沿向右移动时将允许发送更多的数据，我们称之为窗口张开。这种现象发生在另一端的接收进程读取已经确认的数据并释放了TCP的接收缓存时。
 当右边沿向左移动时，我们称之为窗口收缩。Host Requirements RFC强烈建议不要使用这种方式。但TCP必须能够在某一端产生这种情况时进行处理。
 "><meta name=author content="Chuck"><link rel=canonical href=https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bulk-data-flow/><link crossorigin=anonymous href=/assets/css/stylesheet.87a71c9fa3c46cbcceecb41d06747705e92409331a78d74e3ac78ce8b2f38eb1.css integrity="sha256-h6ccn6PEbLzO7LQdBnR3BekkCTMaeNdOOseM6LLzjrE=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://xuchengpeng.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://xuchengpeng.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://xuchengpeng.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://xuchengpeng.github.io/apple-touch-icon.png><link rel=mask-icon href=https://xuchengpeng.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=text/javascript async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type=text/x-mathjax-config>
-    MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [['$$','$$'], ['\[','\]']],
-        processEscapes: true,
-        processEnvironments: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
-        TeX: { equationNumbers: { autoNumber: "AMS" },
-            extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    </script><meta property="og:title" content="TCP/IP 详解(卷一) TCP的成块数据流"><meta property="og:description" content="TFTP使用了停止等待协议，数据发送方在发送下一个数据块之前需要等待接收对已发送数据的确认。TCP使用了被称为滑动窗口协议的另一种形式的流量控制方法。该协议允许发送方在停止并等待确认前可以连续发送多个分组。由于发送方不必每发一个分组就停下来等待确认，因此该协议可以加速数据的传输。
+<link rel=icon href=https://xuchengpeng.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://xuchengpeng.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://xuchengpeng.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://xuchengpeng.github.io/apple-touch-icon.png><link rel=mask-icon href=https://xuchengpeng.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="TCP/IP 详解(卷一) TCP的成块数据流"><meta property="og:description" content="TFTP使用了停止等待协议，数据发送方在发送下一个数据块之前需要等待接收对已发送数据的确认。TCP使用了被称为滑动窗口协议的另一种形式的流量控制方法。该协议允许发送方在停止并等待确认前可以连续发送多个分组。由于发送方不必每发一个分组就停下来等待确认，因此该协议可以加速数据的传输。
 滑动窗口
 接收方通告的窗口称为提出的窗口（offered window），发送方计算它的可用窗口，该窗口表明多少数据可以立即被发送。
 当接收方确认数据后，这个滑动窗口不时地向右移动。窗口两个边沿的相对运动增加或减少了窗口的大小。我们使用三个术语来描述窗口左右边沿的运动：

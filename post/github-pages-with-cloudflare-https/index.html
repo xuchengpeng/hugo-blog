@@ -11,19 +11,7 @@ http是超文本传输协议，信息是明文传输，https则是具有安全�
 http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。
 http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。
 "><meta name=author content="Chuck"><link rel=canonical href=https://xuchengpeng.github.io/post/github-pages-with-cloudflare-https/><link crossorigin=anonymous href=/assets/css/stylesheet.87a71c9fa3c46cbcceecb41d06747705e92409331a78d74e3ac78ce8b2f38eb1.css integrity="sha256-h6ccn6PEbLzO7LQdBnR3BekkCTMaeNdOOseM6LLzjrE=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://xuchengpeng.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://xuchengpeng.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://xuchengpeng.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://xuchengpeng.github.io/apple-touch-icon.png><link rel=mask-icon href=https://xuchengpeng.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=text/javascript async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type=text/x-mathjax-config>
-    MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [['$$','$$'], ['\[','\]']],
-        processEscapes: true,
-        processEnvironments: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
-        TeX: { equationNumbers: { autoNumber: "AMS" },
-            extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    </script><meta property="og:title" content="通过 Cloudflare 给绑定个人域名的GitHub Pages博客加持https"><meta property="og:description" content="
+<link rel=icon href=https://xuchengpeng.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://xuchengpeng.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://xuchengpeng.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://xuchengpeng.github.io/apple-touch-icon.png><link rel=mask-icon href=https://xuchengpeng.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="通过 Cloudflare 给绑定个人域名的GitHub Pages博客加持https"><meta property="og:description" content="
 
 
 Google宣布了，从2017年1月份正式发布的Chrome 56开始，Google将把某些包含敏感内容的https页面标记为“不安全”。
