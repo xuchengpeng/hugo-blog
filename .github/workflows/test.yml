@@ -16,9 +16,7 @@ jobs:
           hugo-version: 'latest'
           extended: true
       - name: Check out hugo-blog
-        uses: actions/checkout@v2
-      - name: Config git
-        run: git config user.name "xuchengpeng" && git config user.email "330476629@qq.com"
+        uses: actions/checkout@v3
       - name: Clone submodule
         run: git submodule update --init --recursive
       - name: Build site
