@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>RARP on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/rarp/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/rarp/</link>
     <description>Recent content in RARP on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 14 May 2018 17:43:41 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/rarp/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 14 May 2018 17:43:41 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/rarp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TCP/IP 详解(卷一) BOOTP：引导程序协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bootp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-bootp/</link>
       <pubDate>Mon, 14 May 2018 17:43:41 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bootp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-bootp/</guid>
       <description>&lt;p&gt;一个无盘系统，它在不知道自身IP地址的情况下，在进行系统引导时能够通过RARP来获取它的IP地址。然而使用RARP有两个问题：（1）IP地址是返回的唯一结果；（2）既然RARP使用链路层广播，RARP请求就不会被路由器转发（迫使每个实际网络设置一个RARP服务器）。下面将介绍一种用于无盘系统进行系统引导的替代方法，又称为引导程序协议，或BOOTP。&lt;/p&gt;
 &lt;p&gt;BOOTP使用UDP，且通常需与TFTP协同工作。&lt;/p&gt;
 &lt;h2 id=&#34;bootp-的分组格式&#34;&gt;BOOTP 的分组格式&lt;/h2&gt;
@@ -24,10 +25,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) RARP：逆地址解析协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-rarp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-rarp/</link>
       <pubDate>Thu, 03 May 2018 09:38:48 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-rarp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-rarp/</guid>
       <description>&lt;p&gt;具有本地磁盘的系统引导时，一般是从磁盘上的配置文件中读取IP地址。但是无盘机，如X终端或无盘工作站，则需要采用其他方法来获得IP地址。&lt;/p&gt;
 &lt;p&gt;网络上的每个系统都具有唯一的硬件地址，它是由网络接口生产厂家配置的。无盘系统的RARP实现过程是从接口卡上读取唯一的硬件地址，然后发送一份RARP请求（一帧在网络上广播的数据），请求某个主机响应该无盘系统的IP地址（在RARP应答中）。&lt;/p&gt;
 &lt;h2 id=&#34;rarp-的分组格式&#34;&gt;RARP 的分组格式&lt;/h2&gt;

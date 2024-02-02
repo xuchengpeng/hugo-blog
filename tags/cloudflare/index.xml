@@ -2,17 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Cloudflare on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/cloudflare/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/cloudflare/</link>
     <description>Recent content in Cloudflare on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 29 Jan 2018 07:58:19 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 29 Jan 2018 07:58:19 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>通过 Cloudflare 给绑定个人域名的GitHub Pages博客加持https</title>
-      <link>https://xuchengpeng.github.io/post/github-pages-with-cloudflare-https/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/github-pages-with-cloudflare-https/</link>
       <pubDate>Mon, 29 Jan 2018 07:58:19 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/github-pages-with-cloudflare-https/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/https&amp;amp;http.jpg&#34; alt=&#34;&#34;  /&gt;
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/github-pages-with-cloudflare-https/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/https&amp;amp;http.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Google宣布了，从2017年1月份正式发布的Chrome 56开始，Google将把某些包含敏感内容的https页面标记为“不安全”。&lt;/p&gt;

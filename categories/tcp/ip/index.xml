@@ -2,15 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>TCP/IP on Chuck</title>
-    <link>https://xuchengpeng.github.io/categories/tcp/ip/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/categories/tcp/ip/</link>
     <description>Recent content in TCP/IP on Chuck</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://xuchengpeng.github.io/categories/tcp/ip/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://xuchengpeng.github.io/hugo-blog/categories/tcp/ip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TCP/IP 详解(卷一) SNMP：简单网络管理协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-snmp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-snmp/</link>
       <pubDate>Thu, 14 Jun 2018 14:24:48 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-snmp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-snmp/</guid>
       <description>&lt;p&gt;随着网络技术的飞速发展，网络的数量也越来越多。而网络中的设备来自各个不同的厂家，如何管理这些设备就变得十分重要。本章的内容就是介绍管理这些设备的标准。&lt;/p&gt;
 &lt;p&gt;基于TCP/IP的网络管理包含两个部分：网络管理站（也叫管理进程，manager）和被管的网络单元（也叫被管设备）。被管设备种类繁多，例如：路由器、X终端、终端服务器和打印机等。这些被管设备的共同点就是都运行TCP/IP协议。被管设备端和管理相关的软件叫做代理程序(agent)或代理进程。管理站一般都是带有彩色监视器的工作站，可以显示所有被管设备的状态(例如连接是否掉线、各种连接上的流量状况等)。&lt;/p&gt;
 &lt;p&gt;管理进程和代理进程之间的通信可以有两种方式。一种是管理进程向代理进程发出请求，询问一个具体的参数值（例如：你产生了多少个不可达的ICMP端口？）。另外一种方式是代理进程主动向管理进程报告有某些重要的事件发生（例如：一个连接口掉线了）。当然，管理进程除了可以向代理进程询问某些参数值以外，它还可以按要求改变代理进程的参数值（例如：把默认的IP TTL值改为64）。&lt;/p&gt;</description>
@@ -18,10 +19,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的未来和性能</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-futures-and-performance/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-futures-and-performance/</link>
       <pubDate>Sat, 26 May 2018 14:48:35 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-futures-and-performance/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-futures-and-performance/</guid>
       <description>&lt;p&gt;TCP已经在从1200 b/s的拨号SLIP链路到以太数据链路上运行了许多年。在80年代和90年代初期，以太网是运行TCP/IP最主要的数据链路方式。虽然TCP在比以太网速率高的环境（如T2电话线、FDDI及千兆比网络）中也能够正确运行，但在这些高速率环境下，TCP的某些限制就会暴露出来。&lt;/p&gt;
 &lt;h2 id=&#34;路径mtu发现&#34;&gt;路径MTU发现&lt;/h2&gt;
 &lt;p&gt;路径MTU即当前在两个主机之间的路径上任何网络上的最小MTU。路径MTU发现在IP首部中继承并设置“不要分片（DF）”比特，来发现当前路径上的路由器是否需要对正在发送的IP数据报进行分片。如果一个待转发的IP数据报被设置DF比特，而其长度又超过了MTU，那么路由器将返回ICMP不可达的差错。&lt;/p&gt;
@@ -32,10 +33,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的保活定时器</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-keepalive-timer/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-keepalive-timer/</link>
       <pubDate>Fri, 25 May 2018 15:30:19 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-keepalive-timer/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-keepalive-timer/</guid>
       <description>&lt;p&gt;可以没有任何数据流通过一个空闲的TCP连接。也就是说，如果TCP连接的双方都没有向对方发送数据，则在两个TCP模块之间不交换任何信息。例如，没有可以在其他网络协议中发现的轮询。这意味着我们可以启动一个客户与服务器建立一个连接，然后离去数小时、数天、数个星期或者数月，而连接依然保持。中间路由器可以崩溃和重启，电话线可以被挂断再连通，但是只要两端的主机没有被重启，则连接依然保持建立。&lt;/p&gt;
 &lt;p&gt;这意味着两个应用进程—客户进程或服务器进程—都没有使用应用级的定时器来检测非活动状态，而这种非活动状态可以导致应用进程中的任何一个终止其活动。&lt;/p&gt;
 &lt;p&gt;然而，许多时候一个服务器希望知道客户主机是否崩溃并关机或者崩溃又重新启动。许多实现提供的保活定时器可以提供这种能力。&lt;/p&gt;
@@ -47,10 +48,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的坚持定时器</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-persist-timer/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-persist-timer/</link>
       <pubDate>Fri, 25 May 2018 14:31:57 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-persist-timer/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-persist-timer/</guid>
       <description>&lt;p&gt;TCP通过让接收方指明希望从发送方接收的数据字节数（即窗口大小）来进行流量控制。如果窗口大小为0会发生什么情况呢？这将有效地阻止发送方传送数据，直到窗口变为非0为止。&lt;/p&gt;
 &lt;p&gt;TCP必须能够处理打开此窗口的ACK丢失的情况。ACK的传输并不可靠，也就是说，TCP不对ACK报文段进行确认，TCP只确认那些包含有数据的ACK报文段。&lt;/p&gt;
 &lt;p&gt;如果一个确认丢失了，则双方就有可能因为等待对方而使连接终止：接收方等待接收数据（因为它已经向发送方通告了一个非0的窗口），而发送方在等待允许它继续发送数据的窗口更新。为防止这种死锁情况的发生，发送方使用一个坚持定时器(persist timer)来周期性地向接收方查询，以便发现窗口是否已增大。这些从发送方发出的报文段称为窗口探查(window probe)。&lt;/p&gt;</description>
@@ -58,10 +59,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的超时与重传</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/</link>
       <pubDate>Fri, 25 May 2018 10:42:25 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/</guid>
       <description>&lt;p&gt;TCP提供可靠的运输层。它使用的方法之一就是确认从另一端收到的数据。但数据和确认都有可能会丢失。TCP通过在发送时设置一个定时器来解决这种问题。如果当定时器溢出时还没有收到确认，它就重传该数据。对任何实现而言，关键之处就在于超时和重传的策略，即怎样决定超时间隔和如何确定重传的频率。&lt;/p&gt;
 &lt;p&gt;对每个连接，TCP管理4个不同的定时器。&lt;/p&gt;
 &lt;ol&gt;
@@ -74,10 +75,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的成块数据流</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bulk-data-flow/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-bulk-data-flow/</link>
       <pubDate>Mon, 21 May 2018 11:08:08 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bulk-data-flow/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-bulk-data-flow/</guid>
       <description>&lt;p&gt;TFTP使用了停止等待协议，数据发送方在发送下一个数据块之前需要等待接收对已发送数据的确认。TCP使用了被称为滑动窗口协议的另一种形式的流量控制方法。该协议允许发送方在停止并等待确认前可以连续发送多个分组。由于发送方不必每发一个分组就停下来等待确认，因此该协议可以加速数据的传输。&lt;/p&gt;
 &lt;h2 id=&#34;滑动窗口&#34;&gt;滑动窗口&lt;/h2&gt;
 &lt;p&gt;接收方通告的窗口称为提出的窗口（offered window），发送方计算它的可用窗口，该窗口表明多少数据可以立即被发送。&lt;/p&gt;
@@ -91,10 +92,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的交互数据流</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-interactive-data-flow/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-interactive-data-flow/</link>
       <pubDate>Mon, 21 May 2018 10:51:55 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-interactive-data-flow/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-interactive-data-flow/</guid>
       <description>&lt;p&gt;一些有关TCP通信量的研究如[Caceres et al. 1991]发现，如果按照分组数量计算，约有一半的TCP报文段包含成块数据（如FTP、电子邮件和Usenet新闻），另一半则包含交互数据（如Telnet和Rlogin）。如果按字节计算，则成块数据与交互数据的比例约为90%和10%。这是因为成块数据的报文段基本上都是满长度（full-sized）的（通常为512字节的用户数据），而交互数据则小得多（上述研究表明Telnet和Rlogin分组中通常约90%左右的用户数据小于10个字节）。&lt;/p&gt;
 &lt;p&gt;很明显，TCP需要同时处理这两类数据，但使用的处理算法则有所不同。&lt;/p&gt;
 &lt;h2 id=&#34;交互式输入&#34;&gt;交互式输入&lt;/h2&gt;
@@ -104,10 +105,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP连接的建立与终止</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-establishment-termination/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tcp-establishment-termination/</link>
       <pubDate>Wed, 16 May 2018 15:01:04 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-establishment-termination/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tcp-establishment-termination/</guid>
       <description>&lt;p&gt;TCP是一个面向连接的协议。无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。这种两端间连接的建立与无连接协议如UDP不同。一端使用UDP向另一端发送数据报时，无需任何预先的握手。&lt;/p&gt;
 &lt;p&gt;两个进程在使用TCP交换数据之前，它们之间必须建立一条连接。完成后，要关闭这个连接。&lt;/p&gt;
 &lt;p&gt;一个TCP连接由一个4元组唯一确定：本地IP地址、本地端口号、远端IP地址和远端端口号。&lt;/p&gt;</description>
@@ -115,10 +116,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP：传输控制协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</link>
       <pubDate>Tue, 15 May 2018 15:43:47 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</guid>
       <description>&lt;p&gt;尽管TCP和UDP都使用相同的网络层（IP），TCP却向应用层提供与UDP完全不同的服务。TCP提供一种面向连接的、可靠的字节流服务。&lt;/p&gt;
 &lt;p&gt;面向连接意味着两个使用TCP的应用（通常是一个客户和一个服务器）在彼此交换数据之前必须先建立一个TCP连接。这一过程与打电话很相似，先拨号振铃，等待对方摘机说“喂”，然后才说明是谁。&lt;/p&gt;
 &lt;p&gt;在一个TCP连接中，仅有两方进行彼此通信。&lt;/p&gt;
@@ -136,10 +137,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) BOOTP：引导程序协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bootp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-bootp/</link>
       <pubDate>Mon, 14 May 2018 17:43:41 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bootp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-bootp/</guid>
       <description>&lt;p&gt;一个无盘系统，它在不知道自身IP地址的情况下，在进行系统引导时能够通过RARP来获取它的IP地址。然而使用RARP有两个问题：（1）IP地址是返回的唯一结果；（2）既然RARP使用链路层广播，RARP请求就不会被路由器转发（迫使每个实际网络设置一个RARP服务器）。下面将介绍一种用于无盘系统进行系统引导的替代方法，又称为引导程序协议，或BOOTP。&lt;/p&gt;
 &lt;p&gt;BOOTP使用UDP，且通常需与TFTP协同工作。&lt;/p&gt;
 &lt;h2 id=&#34;bootp-的分组格式&#34;&gt;BOOTP 的分组格式&lt;/h2&gt;
@@ -152,10 +153,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TFTP：简单文件传送协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tftp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tftp/</link>
       <pubDate>Mon, 14 May 2018 17:21:26 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tftp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tftp/</guid>
       <description>&lt;p&gt;TFTP(Trivial File Transfer Protocol)即简单文件传送协议，最初打算用于引导无盘系统（通常是工作站或X终端）。为了保持简单和短小，TFTP将使用UDP。TFTP的代码（和它所需要的UDP、IP和设备驱动程序）都能适合只读存储器。&lt;/p&gt;
 &lt;h2 id=&#34;协议&#34;&gt;协议&lt;/h2&gt;
 &lt;p&gt;在开始工作时，TFTP的客户与服务器交换信息，客户发送一个读请求或写请求给服务器。在一个无盘系统进行系统引导的正常情况下，第一个请求是读请求（RRQ）。下图显示了5种TFTP报文格式（操作码为1和2的报文使用相同的格式）。&lt;/p&gt;
@@ -165,10 +166,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) DNS：域名系统</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-dns/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-dns/</link>
       <pubDate>Mon, 14 May 2018 09:31:56 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-dns/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-dns/</guid>
       <description>&lt;p&gt;域名系统（DNS）是一种用于TCP/IP应用程序的分布式数据库，它提供主机名字和IP地址之间的转换及有关电子邮件的选路信息。这里提到的分布式是指在Internet上的单个站点不能拥有所有的信息。每个站点（如大学中的系、校园、公司或公司中的部门）保留它自己的信息数据库，并运行一个服务器程序供Internet上的其他系统（客户程序）查询。DNS提供了允许服务器和客户程序相互通信的协议。&lt;/p&gt;
 &lt;p&gt;从应用的角度上看，对DNS的访问是通过一个地址解析器（resolver）来完成的。在Unix主机中，该解析器主要是通过两个库函数gethostbyname和gethostbyaddr来访问的，它们在编译应用程序时与应用程序连接在一起。前者接收主机名字返回IP地址，而后者接收IP地址来寻找主机名字。解析器通过一个或多个名字服务器来完成这种相互转换。&lt;/p&gt;
 &lt;p&gt;解析器并不像TCP/IP协议那样是操作系统的内核。在一个应用程序请求TCP打开一个连接或使用UDP发送一个数据报之前。心须将一个主机名转换为一个IP地址。操作系统内核中的TCP/IP协议族对于DNS一点都不知道。&lt;/p&gt;</description>
@@ -176,15 +177,15 @@
     
     <item>
       <title>TCP/IP 详解(卷一) IGMP：Internet组管理协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-igmp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-igmp/</link>
       <pubDate>Thu, 10 May 2018 14:07:54 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-igmp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-igmp/</guid>
       <description>&lt;p&gt;用于支持主机和路由器进行多播的Internet组管理协议（IGMP）。它让一个物理网络上的所有系统知道主机当前所在的多播组。多播路由器需要这些信息以便知道多播数据报应该向哪些接口转发。&lt;/p&gt;
 &lt;p&gt;正如ICMP一样，IGMP也被当作IP层的一部分。IGMP报文通过IP数据报进行传输。不像我们已经见到的其他协议，IGMP有固定的报文长度，没有可选数据。IP首部(20字节) + IGMP报文(8字节)。&lt;/p&gt;
 &lt;p&gt;IGMP报文通过IP首部中协议字段值为2来指明。&lt;/p&gt;
 &lt;h2 id=&#34;igmp报文&#34;&gt;IGMP报文&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/igmp-format.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/tcp-ip/igmp-format.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;
 &lt;p&gt;这是版本为1的IGMP。IGMP类型为1说明是由多播路由器发出的查询报文，为2说明是主机发出的报告报文。检验和的计算和ICMP协议相同。&lt;/p&gt;
 &lt;p&gt;组地址为D类IP地址。在查询报文中组地址设置为0，在报告报文中组地址为要参加的组地址。&lt;/p&gt;</description>
@@ -192,10 +193,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) 广播和多播</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</link>
       <pubDate>Thu, 10 May 2018 09:20:39 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</guid>
       <description>&lt;p&gt;广播和多播仅应用于UDP，它们对需将报文同时传往多个接收者的应用来说十分重要。TCP是一个面向连接的协议，它意味着分别运行于两主机（由IP地址确定）内的两进程（由端口号确定）间存在一条连接。&lt;/p&gt;
 &lt;p&gt;考虑包含多个主机的共享信道网络如以太网。每个以太网帧包含源主机和目的主机的以太网地址（48bit）。通常每个以太网帧仅发往单个目的主机，目的地址指明单个接收接口，因而称为单播(unicast)。在这种方式下，任意两个主机的通信不会干扰网内其他主机（可能引起争夺共享信道的情况除外）。&lt;/p&gt;
 &lt;p&gt;然而，有时一个主机要向网上的所有其他主机发送帧，这就是广播(broadcast)。通过ARP和RARP可以看到这一过程。多播(multicast)处于单播和广播之间：帧仅传送给属于多播组的多个主机。&lt;/p&gt;</description>
@@ -203,10 +204,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) UDP：用户数据报协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</link>
       <pubDate>Wed, 09 May 2018 10:28:49 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</guid>
       <description>&lt;p&gt;UDP是一个简单的面向数据报的运输层协议：进程的每个输出操作都正好产生一个UDP数据报，并组装成一份待发送的IP数据报。这与面向流字符的协议不同，如TCP，应用程序产生的全体数据与真正发送的单个IP数据报可能没有什么联系。&lt;/p&gt;
 &lt;p&gt;UDP数据报封装成一份IP数据报的格式：IP首部(20字节) - UDP首部(8字节) - UDP数据。&lt;/p&gt;
 &lt;p&gt;UDP不提供可靠性：它把应用程序传给IP层的数据发送出去，但是并不保证它们能到达目的地。由于缺乏可靠性，我们似乎觉得要避免使用UDP而使用一种可靠协议如TCP。&lt;/p&gt;
@@ -215,10 +216,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) 动态选路协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</link>
       <pubDate>Tue, 08 May 2018 09:51:32 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</guid>
       <description>&lt;p&gt;静态选路：在配置接口时，以默认方式生成路由表项（对于直接连接的接口），并通过route命令增加表项（通常从系统自引导程序文件），或是通过ICMP重定向生成表项（通常是在默认方式出错的情况下）。&lt;/p&gt;
 &lt;p&gt;在网络很小，且与其他网络只有单个连接点且没有多余路由时（若主路由失败，可以使用备用路由），采用这种方法是可行的。如果上述三种情况不能全部满足，通常使用动态选路。&lt;/p&gt;
 &lt;h2 id=&#34;动态选路&#34;&gt;动态选路&lt;/h2&gt;
@@ -229,21 +230,21 @@
     
     <item>
       <title>TCP/IP 详解(卷一) IP选路</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-ip-routing/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-ip-routing/</link>
       <pubDate>Mon, 07 May 2018 10:29:57 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-ip-routing/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-ip-routing/</guid>
       <description>&lt;p&gt;选路是IP最重要的功能之一。需要进行选路的数据报可以由本地主机产生，也可以由其他主机产生。在后一种情况下，主机必须配置成一个路由器，否则通过网络接口接收到的数据报，如果目的地址不是本机就要被丢弃（例如，悄无声息地被丢弃）。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/ip-layer-process.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/tcp-ip/ip-layer-process.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TCP/IP 详解(卷一) Traceroute程序</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-traceroute/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-traceroute/</link>
       <pubDate>Fri, 04 May 2018 10:21:33 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-traceroute/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-traceroute/</guid>
       <description>&lt;p&gt;由Van Jacobson编写的Traceroute程序是一个能更深入探索TCP/IP协议的方便可用的工具。尽管不能保证从源端发往目的端的两份连续的IP数据报具有相同的路由，但是大多数情况下是这样的。Traceroute程序可以让我们看到IP数据报从一台主机传到另一台主机所经过的路由。Traceroute程序还可以让我们使用IP源路由选项。&lt;/p&gt;
 &lt;h2 id=&#34;traceroute程序的操作&#34;&gt;Traceroute程序的操作&lt;/h2&gt;
 &lt;p&gt;为什么不使用IP记录路由选项(RR)这个选项而另外开发一个新的应用程序？有三个方面的原因。
@@ -256,15 +257,15 @@
     
     <item>
       <title>TCP/IP 详解(卷一) Ping程序</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-ping/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-ping/</link>
       <pubDate>Fri, 04 May 2018 08:41:08 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-ping/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-ping/</guid>
       <description>&lt;p&gt;“ping”这个名字源于声纳定位操作。Ping程序由Mike Muuss编写，目的是为了测试另一台主机是否可达。该程序发送一份ICMP回显请求报文给主机，并等待返回ICMP回显应答。&lt;/p&gt;
 &lt;h2 id=&#34;ping程序&#34;&gt;Ping程序&lt;/h2&gt;
 &lt;p&gt;我们称发送回显请求的ping程序为客户，而称被ping的主机为服务器。大多数的TCP/IP实现都在内核中直接支持Ping服务器—这种服务器不是一个用户进程（两种ICMP查询服务，地址掩码和时间戳请求，也都是直接在内核中进行处理的）。
 ICMP回显请求和回显应答报文如下：
-&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/icmp-echo-format.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/tcp-ip/icmp-echo-format.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;
 &lt;p&gt;对于其他类型的ICMP查询报文，服务器必须响应标识符和序列号字段。另外，客户发送的选项数据必须回显，假设客户对这些信息都会感兴趣。&lt;/p&gt;
 &lt;p&gt;Unix系统在实现ping程序时是把ICMP报文中的标识符字段置成发送进程的ID号。这样即使在同一台主机上同时运行了多个ping程序实例，ping程序也可以识别出返回的信息。&lt;/p&gt;
@@ -274,24 +275,24 @@ ICMP回显请求和回显应答报文如下：
     
     <item>
       <title>TCP/IP 详解(卷一) ICMP：Internet控制报文协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-icmp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-icmp/</link>
       <pubDate>Thu, 03 May 2018 10:40:15 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-icmp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-icmp/</guid>
       <description>&lt;p&gt;ICMP经常被认为是IP层的一个组成部分。它传递差错报文以及其他需要注意的信息。ICMP报文通常被IP层或更高层协议（TCP或UDP）使用。一些ICMP报文把差错报文返回给用户进程。&lt;/p&gt;
 &lt;p&gt;ICMP报文是在IP数据报内部被传输的，格式为：20个字节的IP首部加上后面的ICMP报文。&lt;/p&gt;
 &lt;p&gt;ICMP 报文格式中，类型字段可以有15个不同的值，以描述特定类型的ICMP报文。某些ICMP报文还使用代码字段的值来进一步描述不同的条件。
 检验和字段覆盖整个ICMP报文。使用的算法与IP首部检验和算法相同。ICMP的检验和是必需的。&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/icmp-format.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/tcp-ip/icmp-format.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TCP/IP 详解(卷一) RARP：逆地址解析协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-rarp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-rarp/</link>
       <pubDate>Thu, 03 May 2018 09:38:48 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-rarp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-rarp/</guid>
       <description>&lt;p&gt;具有本地磁盘的系统引导时，一般是从磁盘上的配置文件中读取IP地址。但是无盘机，如X终端或无盘工作站，则需要采用其他方法来获得IP地址。&lt;/p&gt;
 &lt;p&gt;网络上的每个系统都具有唯一的硬件地址，它是由网络接口生产厂家配置的。无盘系统的RARP实现过程是从接口卡上读取唯一的硬件地址，然后发送一份RARP请求（一帧在网络上广播的数据），请求某个主机响应该无盘系统的IP地址（在RARP应答中）。&lt;/p&gt;
 &lt;h2 id=&#34;rarp-的分组格式&#34;&gt;RARP 的分组格式&lt;/h2&gt;
@@ -301,10 +302,10 @@ ICMP回显请求和回显应答报文如下：
     
     <item>
       <title>TCP/IP 详解(卷一) ARP：地址解析协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-arp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-arp/</link>
       <pubDate>Wed, 02 May 2018 14:40:12 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-arp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-arp/</guid>
       <description>&lt;p&gt;数据链路如以太网或令牌环网都有自己的寻址机制（常常为48 bit地址），这是使用数据链路的任何网络层都必须遵从的。&lt;/p&gt;
 &lt;p&gt;当一台主机把以太网数据帧发送到位于同一局域网上的另一台主机时，是根据48 bit的以太网地址来确定目的接口的。设备驱动程序从不检查IP数据报中的目的IP地址。&lt;/p&gt;
 &lt;p&gt;地址解析为这两种不同的地址形式提供映射：32 bit的IP地址和数据链路层使用的任何类型的地址。&lt;/p&gt;
@@ -316,24 +317,24 @@ ICMP回显请求和回显应答报文如下：
     
     <item>
       <title>TCP/IP 详解(卷一) IP：网际协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-internet-protocol/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-internet-protocol/</link>
       <pubDate>Wed, 25 Apr 2018 09:41:16 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-internet-protocol/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-internet-protocol/</guid>
       <description>&lt;p&gt;IP是TCP/IP协议族中最为核心的协议。所有的TCP、UDP、ICMP及IGMP数据都以IP数据报格式传输。IP提供不可靠、无连接的数据报传送服务。
 不可靠（unreliable）的意思是它不能保证IP数据报能成功地到达目的地。IP仅提供最好的传输服务。如果发生某种错误时，如某个路由器暂时用完了缓冲区，IP有一个简单的错误处理算法：丢弃该数据报，然后发送ICMP消息报给信源端。任何要求的可靠性必须由上层来提供（如TCP）。
 无连接（connectionless）这个术语的意思是IP并不维护任何关于后续数据报的状态信息。每个数据报的处理是相互独立的。这也说明，IP数据报可以不按发送顺序接收。如果一信源向相同的信宿发送两个连续的数据报（先是A，然后是B），每个数据报都是独立地进行路由选择，可能选择不同的路线，因此B可能在A到达之前先到达。&lt;/p&gt;
 &lt;h2 id=&#34;ip首部&#34;&gt;IP首部&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/ip-format.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/tcp-ip/ip-format.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TCP/IP 详解(卷一) 链路层</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-link-layer/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-link-layer/</link>
       <pubDate>Tue, 24 Apr 2018 08:32:37 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-link-layer/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-link-layer/</guid>
       <description>&lt;p&gt;在 TCP/IP 协议族中，链路层主要有三个目的：（1）为 IP 模块发送和接收 IP 数据报；（2）为 ARP 模块发送 ARP 请求和接收 ARP 应答；（3）为 RARP 发送 RARP 请求和接收 RARP 应答。&lt;/p&gt;
 &lt;h2 id=&#34;以太网和-ieee-802封装&#34;&gt;以太网和 IEEE 802封装&lt;/h2&gt;
 &lt;p&gt;主机需求 RFC 要求每台 Internet 主机都与一个10 Mb/s的以太网电缆相连接：&lt;/p&gt;
@@ -342,16 +343,16 @@ ICMP回显请求和回显应答报文如下：
 &lt;li&gt;应该能接收与 RFC 894 混合的 RFC 1042（IEEE 802）封装格式的分组。&lt;/li&gt;
 &lt;li&gt;也许能够发送采用 RFC 1042 格式封装的分组。如果主机能同时发送两种类型的分组数据，那么发送的分组必须是可以设置的，而且默认条件下必须是 RFC 894 分组。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/rfc894-ieee802.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/tcp-ip/rfc894-ieee802.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TCP/IP 详解(卷一) 概述</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-introduction/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-introduction/</link>
       <pubDate>Mon, 23 Apr 2018 11:23:35 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-introduction/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-introduction/</guid>
       <description>&lt;h2 id=&#34;tcpip-的分层&#34;&gt;TCP/IP 的分层&lt;/h2&gt;
 &lt;p&gt;TCP/IP 通常被认为是一个四层协议系统：&lt;/p&gt;
 &lt;ol&gt;
@@ -360,7 +361,7 @@ ICMP回显请求和回显应答报文如下：
 &lt;li&gt;运输层：主要为两台主机上的应用程序提供端到端的通信。&lt;strong&gt;TCP协议&lt;/strong&gt; 和 &lt;strong&gt;UDP协议&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;应用层：负责处理特定的应用程序细节。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/tcp-ip-layers.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/tcp-ip/tcp-ip-layers.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     

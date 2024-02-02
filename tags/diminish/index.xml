@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>diminish on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/diminish/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/diminish/</link>
     <description>Recent content in diminish on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 09 Jul 2018 09:59:51 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/diminish/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Jul 2018 09:59:51 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/diminish/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>自定义emacs mode-line</title>
-      <link>https://xuchengpeng.github.io/post/customize-emacs-mode-line/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/customize-emacs-mode-line/</link>
       <pubDate>Mon, 09 Jul 2018 09:59:51 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/customize-emacs-mode-line/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/customize-emacs-mode-line/</guid>
       <description>&lt;h3 id=&#34;一些常用的mode-line包&#34;&gt;一些常用的mode-line包&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/milkypostman/powerline&#34;&gt;powerline&lt;/a&gt;&lt;/li&gt;

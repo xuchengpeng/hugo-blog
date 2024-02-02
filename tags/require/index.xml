@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>require on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/require/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/require/</link>
     <description>Recent content in require on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 11 May 2018 13:51:45 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/require/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 11 May 2018 13:51:45 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/require/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs load packages</title>
-      <link>https://xuchengpeng.github.io/post/emacs-load-packages/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/emacs-load-packages/</link>
       <pubDate>Fri, 11 May 2018 13:51:45 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/emacs-load-packages/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/emacs-load-packages/</guid>
       <description>&lt;h2 id=&#34;load&#34;&gt;load&lt;/h2&gt;
 &lt;p&gt;load → is the general function for loading a file.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;load&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;FILE&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;&amp;amp;optional&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NOERROR&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NOMESSAGE&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NOSUFFIX&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;MUST-SUFFIX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;load&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;FILE&lt;/span&gt; &lt;span class=&#34;kp&#34;&gt;&amp;amp;optional&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NOERROR&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NOMESSAGE&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NOSUFFIX&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;MUST-SUFFIX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;举个例子，如果你的代码是 &lt;code&gt;(load &amp;quot;x&amp;quot;)&lt;/code&gt;，emacs 将从 load-path 中尝试加载 x.elc、x.el、x 文件。&lt;/p&gt;
 &lt;h2 id=&#34;load-file&#34;&gt;load-file&lt;/h2&gt;
 &lt;p&gt;load-file → load one specific file. The file name argument should contain file name extension, such as .el .elc&lt;/p&gt;

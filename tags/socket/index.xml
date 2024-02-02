@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>socket on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/socket/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/socket/</link>
     <description>Recent content in socket on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 15 May 2018 15:43:47 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/socket/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 15 May 2018 15:43:47 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/socket/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TCP/IP 详解(卷一) TCP：传输控制协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</link>
       <pubDate>Tue, 15 May 2018 15:43:47 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</guid>
       <description>&lt;p&gt;尽管TCP和UDP都使用相同的网络层（IP），TCP却向应用层提供与UDP完全不同的服务。TCP提供一种面向连接的、可靠的字节流服务。&lt;/p&gt;
 &lt;p&gt;面向连接意味着两个使用TCP的应用（通常是一个客户和一个服务器）在彼此交换数据之前必须先建立一个TCP连接。这一过程与打电话很相似，先拨号振铃，等待对方摘机说“喂”，然后才说明是谁。&lt;/p&gt;
 &lt;p&gt;在一个TCP连接中，仅有两方进行彼此通信。&lt;/p&gt;

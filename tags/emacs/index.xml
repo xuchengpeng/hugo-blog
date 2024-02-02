@@ -2,26 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>emacs on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/emacs/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/emacs/</link>
     <description>Recent content in emacs on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 Dec 2018 09:07:28 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 06 Dec 2018 09:07:28 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs 根据时间切换主题</title>
-      <link>https://xuchengpeng.github.io/post/emacs-change-theme-with-time/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/emacs-change-theme-with-time/</link>
       <pubDate>Thu, 06 Dec 2018 09:07:28 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/emacs-change-theme-with-time/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/emacs-change-theme-with-time/</guid>
       <description>&lt;p&gt;根据时间，自动切换亮色和暗色主题。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;day-theme&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;light-blue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dark-theme&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;misterioso&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;defun&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;synchronize-theme&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;hour&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;string-to-number&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;substring&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;current-time-string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;11&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;member&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;hour&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;number-sequence&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;now&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;day-theme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;now&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dark-theme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;day-theme&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;light-blue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dark-theme&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;misterioso&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;defun&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;synchronize-theme&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;hour&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;string-to-number&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;substring&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;current-time-string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;11&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;member&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;hour&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;number-sequence&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;now&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;day-theme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;now&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dark-theme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;load-theme&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;now&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;run-with-timer&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3600&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;synchronize-theme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -30,10 +31,10 @@
     
     <item>
       <title>Build Emacs on Linux</title>
-      <link>https://xuchengpeng.github.io/post/build-emacs-on-linux/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/build-emacs-on-linux/</link>
       <pubDate>Wed, 19 Sep 2018 17:12:20 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/build-emacs-on-linux/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/build-emacs-on-linux/</guid>
       <description>&lt;p&gt;Build Emacs 26.1 on Ubuntu:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get update
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install build-essential
@@ -47,11 +48,11 @@
     
     <item>
       <title>Emacs Proxy</title>
-      <link>https://xuchengpeng.github.io/post/emacs-proxy/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/emacs-proxy/</link>
       <pubDate>Wed, 05 Sep 2018 12:51:10 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/emacs-proxy/</guid>
-      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;url-proxy-services&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;no_proxy&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;^\\(localhost\\|10.*\\)&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/emacs-proxy/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;url-proxy-services&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;no_proxy&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;^\\(localhost\\|10.*\\)&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                           &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;proxy.com:80&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                           &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;https&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;proxy.com:80&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
@@ -59,10 +60,10 @@
     
     <item>
       <title>rsync elpa mirror</title>
-      <link>https://xuchengpeng.github.io/post/rsync-elpa-mirror/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/rsync-elpa-mirror/</link>
       <pubDate>Mon, 06 Aug 2018 16:48:15 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/rsync-elpa-mirror/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/rsync-elpa-mirror/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rsync.samba.org/&#34;&gt;rsync&lt;/a&gt; is an open source utility that provides fast incremental file transfer. rsync is freely available under the GNU General Public License and is currently being maintained by Wayne Davison.&lt;/p&gt;
 &lt;p&gt;rsync is a file transfer program for Unix systems. rsync uses the &amp;ldquo;rsync algorithm&amp;rdquo; which provides a very fast method for bringing remote files into sync. It does this by sending just the differences in the files across the link, without requiring that both sets of files are present at one of the ends of the link beforehand.
 Some features of rsync include&lt;/p&gt;
@@ -78,10 +79,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Byte Compile Elisp Files</title>
-      <link>https://xuchengpeng.github.io/post/emacs-byte-compile/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/emacs-byte-compile/</link>
       <pubDate>Thu, 26 Jul 2018 12:54:14 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/emacs-byte-compile/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/emacs-byte-compile/</guid>
       <description>&lt;p&gt;Emacs lisp files can be byte compiled.&lt;/p&gt;
 &lt;p&gt;Byte compiled elisp file has “.elc” suffix (aka extension). Normal elisp file has “.el” suffix.&lt;/p&gt;
 &lt;h2 id=&#34;advantage-of-byte-compiled-elisp-file&#34;&gt;Advantage of Byte Compiled Elisp File&lt;/h2&gt;
@@ -91,10 +92,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>强大的org-capture</title>
-      <link>https://xuchengpeng.github.io/post/powerful-org-capture/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/powerful-org-capture/</link>
       <pubDate>Fri, 20 Jul 2018 15:00:59 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/powerful-org-capture/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/powerful-org-capture/</guid>
       <description>&lt;p&gt;Capture是Org mode中一个非常重要的功能，它可以：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;capture 可以预先设置记录内容的模板和存储入口；&lt;/li&gt;
@@ -109,10 +110,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>博客写作工具</title>
-      <link>https://xuchengpeng.github.io/post/blog-writing-tools/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/blog-writing-tools/</link>
       <pubDate>Fri, 20 Jul 2018 09:20:28 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/blog-writing-tools/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/blog-writing-tools/</guid>
       <description>&lt;p&gt;基本的工具用途：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;：用来发布博客；&lt;/li&gt;
@@ -123,48 +124,48 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>emacs 字体配置</title>
-      <link>https://xuchengpeng.github.io/post/emacs-font-configuration/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/emacs-font-configuration/</link>
       <pubDate>Fri, 18 May 2018 14:02:30 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/emacs-font-configuration/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/emacs-font-configuration/</guid>
       <description>&lt;p&gt;定义设置中文和英文字体的函数，达到等宽效果：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;defun&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;set-font&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;interactive&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;defun&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;set-font&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;interactive&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;;; Setting English Font&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;member&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;DejaVu Sans Mono&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;font-family-list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;member&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;DejaVu Sans Mono&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;font-family-list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;set-face-attribute&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;default&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;:font&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;format&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;%s:pixelsize=%d&amp;#34;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;DejaVu Sans Mono&amp;#34;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;format&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;%s:pixelsize=%d&amp;#34;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;DejaVu Sans Mono&amp;#34;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;;; Setting Chinese font&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;dolist&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;charset&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;kana&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;han&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;symbol&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;cjk-misc&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;bopomofo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;set-fontset-font&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;frame-parameter&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;font&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;dolist&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;charset&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;kana&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;han&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;symbol&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;cjk-misc&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;bopomofo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;set-fontset-font&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;frame-parameter&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;font&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                      &lt;span class=&#34;nv&#34;&gt;charset&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                      &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;font-spec&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;:family&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Microsoft Yahei&amp;#34;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;:size&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                      &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;font-spec&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;:family&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Microsoft Yahei&amp;#34;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;:size&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;;; Fix chinese font width and rescale&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;face-font-rescale-alist&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;STHeiti&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;STFangsong&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Microsoft Yahei&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;WenQuanYi Micro Hei Mono&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;face-font-rescale-alist&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;STHeiti&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;STFangsong&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Microsoft Yahei&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;WenQuanYi Micro Hei Mono&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;调用 set-font 函数可使设置生效：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;add-to-list&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;after-make-frame-functions&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;lambda&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;new-frame&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;select-frame&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;new-frame&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;window-system&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;lambda&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;new-frame&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;select-frame&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;new-frame&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;window-system&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                   &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;set-font&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;window-system&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;window-system&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;set-font&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
       <title>Ubuntu 增加和删除 PPA 软件源</title>
-      <link>https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-add-delete-ppa/</link>
       <pubDate>Fri, 13 Apr 2018 10:50:50 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-add-delete-ppa/</guid>
       <description>&lt;p&gt;PPA，英文全称为 Personal Package Archives，即个人软件包档案。是 Ubuntu Launchpad 网站提供的一项源服务，允许个人用户上传软件源代码，通过 Launchpad 进行编译并发布为二进制软件包，作为 apt / 新立得（Synaptic）源供其他用户下载和更新。&lt;/p&gt;
 &lt;p&gt;PPA 的一般形式是： &lt;strong&gt;ppa:user/ppa-name&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;添加 PPA 源:&lt;/p&gt;
@@ -182,10 +183,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Emacs Native Profiler</title>
-      <link>https://xuchengpeng.github.io/post/emacs-native-profiler/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/emacs-native-profiler/</link>
       <pubDate>Fri, 30 Mar 2018 10:02:45 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/emacs-native-profiler/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/emacs-native-profiler/</guid>
       <description>&lt;p&gt;If your program is working correctly, but you want to make it run more quickly or efficiently, the first thing to do is profile your code so that you know how it is using resources. If you find that one particular function is responsible for a significant portion of the runtime, you can start looking for ways to optimize that piece.&lt;/p&gt;
 &lt;p&gt;Emacs has built-in support for this. To begin profiling, type &lt;code&gt;M-x profiler-start&lt;/code&gt;. You can choose to profile by processor usage, memory usage, or both. After doing some work, type &lt;code&gt;M-x profiler-report&lt;/code&gt; to display a summary buffer for each resource that you chose to profile. The names of the report buffers include the times at which the reports were generated, so you can generate another report later on without erasing previous results. When you have finished profiling, type &lt;code&gt;M-x profiler-stop&lt;/code&gt; (there is a small overhead associated with profiling).&lt;/p&gt;
 &lt;p&gt;The profiler report buffer shows, on each line, a function that was called, followed by how much resource (processor or memory) it used in absolute and percentage times since profiling started. If a given line has a ‘+’ symbol at the left-hand side, you can expand that line by typing &lt;!-- raw HTML omitted --&gt;, in order to see the function(s) called by the higher-level function. Use a prefix argument (&lt;!-- raw HTML omitted --&gt;) to see the whole call tree below a function. Pressing &lt;!-- raw HTML omitted --&gt; again will collapse back to the original state.&lt;/p&gt;</description>
@@ -193,10 +194,10 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>Emacs: Show Line Numbers</title>
-      <link>https://xuchengpeng.github.io/post/emacs-show-line-numbers/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/emacs-show-line-numbers/</link>
       <pubDate>Fri, 30 Mar 2018 09:52:44 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/emacs-show-line-numbers/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/emacs-show-line-numbers/</guid>
       <description>&lt;p&gt;emacs has 2 line numbers mode:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Alt + x&lt;/code&gt; linum-mode -&amp;gt; old, hack, slow. Emacs 23.&lt;/li&gt;
@@ -209,44 +210,44 @@ Some features of rsync include&lt;/p&gt;
 &lt;li&gt;display-line-numbers-mode -&amp;gt; show line numbers in current buffers.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Put this in your emacs init file:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;version&amp;lt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;26.0.50&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;emacs-version&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;version&amp;lt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;26.0.50&amp;#34;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;emacs-version&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;global-display-line-numbers-mode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
       <title>Speed up emacs startup time</title>
-      <link>https://xuchengpeng.github.io/post/speed-up-emacs-startup-time/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/speed-up-emacs-startup-time/</link>
       <pubDate>Wed, 28 Mar 2018 09:11:50 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/speed-up-emacs-startup-time/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/speed-up-emacs-startup-time/</guid>
       <description>&lt;p&gt;&lt;em&gt;init.el&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;package-enable-at-startup&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;package-enable-at-startup&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;defvar&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;file-name-handler-alist-old&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;file-name-handler-alist&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;defvar&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;file-name-handler-alist-old&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;file-name-handler-alist&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;file-name-handler-alist&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;nil&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;file-name-handler-alist&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;nil&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nv&#34;&gt;gc-cons-threshold&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;402653184&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nv&#34;&gt;gc-cons-percentage&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;add-hook&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;after-init-hook&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;lambda&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;file-name-handler-alist&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;file-name-handler-alist-old&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;lambda&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;file-name-handler-alist&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;file-name-handler-alist-old&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                  &lt;span class=&#34;nv&#34;&gt;gc-cons-threshold&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;16777216&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                  &lt;span class=&#34;nv&#34;&gt;gc-cons-percentage&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;your&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;code&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;here...&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;provide&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;init&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;provide&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;init&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
       <title>Chuck&#39;s Emacs Configuration</title>
-      <link>https://xuchengpeng.github.io/post/chuck-emacs-configuration/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/chuck-emacs-configuration/</link>
       <pubDate>Mon, 26 Mar 2018 07:33:23 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/chuck-emacs-configuration/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/chuck-emacs-configuration/</guid>
       <description>&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git clone https://github.com/xuchengpeng/.emacs.d.git ~/.emacs.d
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/.emacs.d
@@ -254,29 +255,29 @@ Some features of rsync include&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;customization&#34;&gt;Customization&lt;/h2&gt;
 &lt;p&gt;Change the configurations at the beginning of your &lt;code&gt;custom.el&lt;/code&gt; or &lt;code&gt;init.el&lt;/code&gt;, then restart emacs.&lt;/p&gt;
 &lt;p&gt;For example:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dotemacs-full-name&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;user name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;; User full name&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dotemacs-mail-address&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;user@email.com&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;; Email address&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dotemacs-package-archives&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;emacs-china&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;; Package repo: melpa, emacs-china, tuna or custom&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dotemacs-theme&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;dotemacs-one&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;             &lt;span class=&#34;c1&#34;&gt;; Color theme: dotemacs-one, dotemacs-one-light...&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dotemacs-company-enable-yas&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;            &lt;span class=&#34;c1&#34;&gt;; Enable/disable yasnippet for company: t or nil&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-el&#34; data-lang=&#34;el&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dotemacs-full-name&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;user name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;; User full name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dotemacs-mail-address&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;user@email.com&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;; Email address&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dotemacs-package-archives&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;emacs-china&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;; Package repo: melpa, emacs-china, tuna or custom&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dotemacs-theme&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;dotemacs-one&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;             &lt;span class=&#34;c1&#34;&gt;; Color theme: dotemacs-one, dotemacs-one-light...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dotemacs-company-enable-yas&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;            &lt;span class=&#34;c1&#34;&gt;; Enable/disable yasnippet for company: t or nil&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
       <title>base16 - An architecture for building themes</title>
-      <link>https://xuchengpeng.github.io/post/base16/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/base16/</link>
       <pubDate>Thu, 08 Mar 2018 15:47:16 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/base16/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/base16/</guid>
       <description>An architecture for building themes based on carefully chosen syntax highlighting using a base of sixteen colours. Base16 provides a set of guidelines detailing how to style syntax and how to code a builder for compiling base16 schemes and templates.</description>
     </item>
     
     <item>
       <title>Add Emacs elpa configuration</title>
-      <link>https://xuchengpeng.github.io/post/add-emacs-elpa-configuration/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/add-emacs-elpa-configuration/</link>
       <pubDate>Tue, 06 Mar 2018 18:56:50 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/add-emacs-elpa-configuration/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/add-emacs-elpa-configuration/</guid>
       <description>&lt;h2 id=&#34;elpa-mirror&#34;&gt;ELPA mirror&lt;/h2&gt;
 &lt;h3 id=&#34;emacs-china镜像&#34;&gt;Emacs China镜像&lt;/h3&gt;
 &lt;table&gt;
@@ -354,22 +355,22 @@ Some features of rsync include&lt;/p&gt;
     
     <item>
       <title>The Platinum Seacher for Emacs</title>
-      <link>https://xuchengpeng.github.io/post/pt-emacs/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/pt-emacs/</link>
       <pubDate>Wed, 29 Nov 2017 09:50:49 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/pt-emacs/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/pt-emacs/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/monochromegane/the_platinum_searcher&#34;&gt;pt&lt;/a&gt; is a code search tool similar to ack and the_silver_searcher(ag). It supports multi platforms and multi encodings.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/pt-search-demo.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/pt-search-demo.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>spacemacs - Emacs advanced Kit focused on Evil</title>
-      <link>https://xuchengpeng.github.io/post/spacemacs/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/spacemacs/</link>
       <pubDate>Tue, 28 Nov 2017 11:06:50 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/spacemacs/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/spacemacs-logo.svg&#34; alt=&#34;&#34;  /&gt;
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/spacemacs/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/spacemacs-logo.svg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;
 &lt;p&gt;A community-driven Emacs distribution - The best editor is neither Emacs nor Vim, it is Emacs and Vim!&lt;/p&gt;
 &lt;p&gt;这是一款定制化程度非常高的emacs配置，同时支持emacs和vim按键模式，无缝切换使用。&lt;/p&gt;</description>

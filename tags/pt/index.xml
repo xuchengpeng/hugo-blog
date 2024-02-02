@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>pt on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/pt/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/pt/</link>
     <description>Recent content in pt on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 29 Nov 2017 09:50:49 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/pt/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 29 Nov 2017 09:50:49 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/pt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Platinum Seacher for Emacs</title>
-      <link>https://xuchengpeng.github.io/post/pt-emacs/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/pt-emacs/</link>
       <pubDate>Wed, 29 Nov 2017 09:50:49 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/pt-emacs/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/pt-emacs/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/monochromegane/the_platinum_searcher&#34;&gt;pt&lt;/a&gt; is a code search tool similar to ack and the_silver_searcher(ag). It supports multi platforms and multi encodings.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/pt-search-demo.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/pt-search-demo.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
     

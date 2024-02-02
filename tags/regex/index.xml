@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>regex on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/regex/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/regex/</link>
     <description>Recent content in regex on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 27 Sep 2018 09:20:09 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/regex/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 27 Sep 2018 09:20:09 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/regex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>正则表达式</title>
-      <link>https://xuchengpeng.github.io/post/regular-expressions/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/regular-expressions/</link>
       <pubDate>Thu, 27 Sep 2018 09:20:09 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/regular-expressions/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/regular-expressions/</guid>
       <description>&lt;p&gt;除非您以前使用过正则表达式，否则您可能不熟悉一些术语。但是，毫无疑问，您已经使用过不涉及脚本的某些正则表达式概念。&lt;/p&gt;
 &lt;p&gt;例如，您很可能使用 ? 和 * 通配符来查找硬盘上的文件。? 通配符匹配文件名中的 0 个或 1 个字符，而 * 通配符匹配零个或多个字符。像 &lt;code&gt;data(\w)?\.dat&lt;/code&gt; 这样的模式将查找下列文件：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;data.dat

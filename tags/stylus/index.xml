@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Stylus on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/stylus/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/stylus/</link>
     <description>Recent content in Stylus on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 23 May 2018 10:27:11 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/stylus/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 23 May 2018 10:27:11 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/stylus/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stylus 自定义网页字体</title>
-      <link>https://xuchengpeng.github.io/post/stylus-set-web-font/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/stylus-set-web-font/</link>
       <pubDate>Wed, 23 May 2018 10:27:11 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/stylus-set-web-font/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/stylus-set-web-font/</guid>
       <description>&lt;p&gt;使用 Stylus 可以直接使用 &lt;a href=&#34;https://userstyles.org/&#34;&gt;userstyles 网站&lt;/a&gt; 提供的模板，很多下载后几乎不用设定即可使用，前提是现在电脑上安装相应的字体。&lt;/p&gt;
 &lt;p&gt;这里推荐一款 &lt;a href=&#34;https://userstyles.org/styles/100473/004-forcemyfonts-chinese-firefoxchromeie-catcat520&#34;&gt;ForceMyFont&lt;/a&gt; 的模板，可以设定的选项非常丰富，前提也是需要在电脑上安装你选择的字体。&lt;/p&gt;
 &lt;p&gt;你也可以自定义字体CSS的样式，在 Chrome 浏览器中，这里使用 Stylus 插件，编写新的样式，代码如下：&lt;/p&gt;

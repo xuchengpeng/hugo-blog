@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>舒婷 on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/%E8%88%92%E5%A9%B7/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/%E8%88%92%E5%A9%B7/</link>
     <description>Recent content in 舒婷 on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 27 Jan 2018 07:41:17 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/%E8%88%92%E5%A9%B7/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 27 Jan 2018 07:41:17 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/%E8%88%92%E5%A9%B7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>致橡树 - 舒婷</title>
-      <link>https://xuchengpeng.github.io/post/shuting-to-the-oak-tree/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/shuting-to-the-oak-tree/</link>
       <pubDate>Sat, 27 Jan 2018 07:41:17 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/shuting-to-the-oak-tree/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/shuting-to-the-oak-tree/</guid>
       <description>&lt;p&gt;我如果爱你——&lt;/p&gt;
 &lt;p&gt;绝不像攀援的凌霄花，&lt;/p&gt;
 &lt;p&gt;借你的高枝炫耀自己；&lt;/p&gt;

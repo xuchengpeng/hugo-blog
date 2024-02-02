@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Traceroute on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/traceroute/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/traceroute/</link>
     <description>Recent content in Traceroute on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 04 May 2018 10:21:33 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/traceroute/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 04 May 2018 10:21:33 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/traceroute/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TCP/IP 详解(卷一) Traceroute程序</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-traceroute/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-traceroute/</link>
       <pubDate>Fri, 04 May 2018 10:21:33 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-traceroute/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-traceroute/</guid>
       <description>&lt;p&gt;由Van Jacobson编写的Traceroute程序是一个能更深入探索TCP/IP协议的方便可用的工具。尽管不能保证从源端发往目的端的两份连续的IP数据报具有相同的路由，但是大多数情况下是这样的。Traceroute程序可以让我们看到IP数据报从一台主机传到另一台主机所经过的路由。Traceroute程序还可以让我们使用IP源路由选项。&lt;/p&gt;
 &lt;h2 id=&#34;traceroute程序的操作&#34;&gt;Traceroute程序的操作&lt;/h2&gt;
 &lt;p&gt;为什么不使用IP记录路由选项(RR)这个选项而另外开发一个新的应用程序？有三个方面的原因。

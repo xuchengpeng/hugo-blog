@@ -2,17 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>gulp on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/gulp/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/gulp/</link>
     <description>Recent content in gulp on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 01 Feb 2018 14:06:32 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/gulp/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 01 Feb 2018 14:06:32 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/gulp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用 gulp 压缩 hexo 博客资源</title>
-      <link>https://xuchengpeng.github.io/post/compress-hexo-with-gulp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/compress-hexo-with-gulp/</link>
       <pubDate>Thu, 01 Feb 2018 14:06:32 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/compress-hexo-with-gulp/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/gulp.jpg&#34; alt=&#34;&#34;  /&gt;
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/compress-hexo-with-gulp/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/gulp.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;
 &lt;p&gt;使用 &lt;code&gt;hexo generate&lt;/code&gt; 命令后在 public 文件夹下面生成 html、css、js 等源文件，里面含有大量的空白，而且博客中还有大量的图片占据了很大的空间。&lt;/p&gt;
 &lt;blockquote&gt;

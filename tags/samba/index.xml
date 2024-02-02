@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Samba on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/samba/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/samba/</link>
     <description>Recent content in Samba on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 07 Nov 2018 08:59:03 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/samba/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 07 Nov 2018 08:59:03 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/samba/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu安装Samba</title>
-      <link>https://xuchengpeng.github.io/post/ubuntu-install-samba/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-install-samba/</link>
       <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/ubuntu-install-samba/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-install-samba/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt-get install samba
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改 /etc/samba/smb.conf 文件：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[share]

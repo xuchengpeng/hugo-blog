@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>UDP on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/udp/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/udp/</link>
     <description>Recent content in UDP on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 14 Jun 2018 14:24:48 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/udp/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 14 Jun 2018 14:24:48 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/udp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TCP/IP 详解(卷一) SNMP：简单网络管理协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-snmp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-snmp/</link>
       <pubDate>Thu, 14 Jun 2018 14:24:48 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-snmp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-snmp/</guid>
       <description>&lt;p&gt;随着网络技术的飞速发展，网络的数量也越来越多。而网络中的设备来自各个不同的厂家，如何管理这些设备就变得十分重要。本章的内容就是介绍管理这些设备的标准。&lt;/p&gt;
 &lt;p&gt;基于TCP/IP的网络管理包含两个部分：网络管理站（也叫管理进程，manager）和被管的网络单元（也叫被管设备）。被管设备种类繁多，例如：路由器、X终端、终端服务器和打印机等。这些被管设备的共同点就是都运行TCP/IP协议。被管设备端和管理相关的软件叫做代理程序(agent)或代理进程。管理站一般都是带有彩色监视器的工作站，可以显示所有被管设备的状态(例如连接是否掉线、各种连接上的流量状况等)。&lt;/p&gt;
 &lt;p&gt;管理进程和代理进程之间的通信可以有两种方式。一种是管理进程向代理进程发出请求，询问一个具体的参数值（例如：你产生了多少个不可达的ICMP端口？）。另外一种方式是代理进程主动向管理进程报告有某些重要的事件发生（例如：一个连接口掉线了）。当然，管理进程除了可以向代理进程询问某些参数值以外，它还可以按要求改变代理进程的参数值（例如：把默认的IP TTL值改为64）。&lt;/p&gt;</description>
@@ -19,10 +20,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP：传输控制协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</link>
       <pubDate>Tue, 15 May 2018 15:43:47 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</guid>
       <description>&lt;p&gt;尽管TCP和UDP都使用相同的网络层（IP），TCP却向应用层提供与UDP完全不同的服务。TCP提供一种面向连接的、可靠的字节流服务。&lt;/p&gt;
 &lt;p&gt;面向连接意味着两个使用TCP的应用（通常是一个客户和一个服务器）在彼此交换数据之前必须先建立一个TCP连接。这一过程与打电话很相似，先拨号振铃，等待对方摘机说“喂”，然后才说明是谁。&lt;/p&gt;
 &lt;p&gt;在一个TCP连接中，仅有两方进行彼此通信。&lt;/p&gt;
@@ -40,10 +41,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TFTP：简单文件传送协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tftp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tftp/</link>
       <pubDate>Mon, 14 May 2018 17:21:26 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tftp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tftp/</guid>
       <description>&lt;p&gt;TFTP(Trivial File Transfer Protocol)即简单文件传送协议，最初打算用于引导无盘系统（通常是工作站或X终端）。为了保持简单和短小，TFTP将使用UDP。TFTP的代码（和它所需要的UDP、IP和设备驱动程序）都能适合只读存储器。&lt;/p&gt;
 &lt;h2 id=&#34;协议&#34;&gt;协议&lt;/h2&gt;
 &lt;p&gt;在开始工作时，TFTP的客户与服务器交换信息，客户发送一个读请求或写请求给服务器。在一个无盘系统进行系统引导的正常情况下，第一个请求是读请求（RRQ）。下图显示了5种TFTP报文格式（操作码为1和2的报文使用相同的格式）。&lt;/p&gt;
@@ -53,10 +54,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) UDP：用户数据报协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</link>
       <pubDate>Wed, 09 May 2018 10:28:49 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-udp-user-datagram-protocol/</guid>
       <description>&lt;p&gt;UDP是一个简单的面向数据报的运输层协议：进程的每个输出操作都正好产生一个UDP数据报，并组装成一份待发送的IP数据报。这与面向流字符的协议不同，如TCP，应用程序产生的全体数据与真正发送的单个IP数据报可能没有什么联系。&lt;/p&gt;
 &lt;p&gt;UDP数据报封装成一份IP数据报的格式：IP首部(20字节) - UDP首部(8字节) - UDP数据。&lt;/p&gt;
 &lt;p&gt;UDP不提供可靠性：它把应用程序传给IP层的数据发送出去，但是并不保证它们能到达目的地。由于缺乏可靠性，我们似乎觉得要避免使用UDP而使用一种可靠协议如TCP。&lt;/p&gt;

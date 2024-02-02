@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>require-package on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/require-package/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/require-package/</link>
     <description>Recent content in require-package on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 06 Mar 2018 18:56:50 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/require-package/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 06 Mar 2018 18:56:50 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/require-package/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Add Emacs elpa configuration</title>
-      <link>https://xuchengpeng.github.io/post/add-emacs-elpa-configuration/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/add-emacs-elpa-configuration/</link>
       <pubDate>Tue, 06 Mar 2018 18:56:50 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/add-emacs-elpa-configuration/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/add-emacs-elpa-configuration/</guid>
       <description>&lt;h2 id=&#34;elpa-mirror&#34;&gt;ELPA mirror&lt;/h2&gt;
 &lt;h3 id=&#34;emacs-china镜像&#34;&gt;Emacs China镜像&lt;/h3&gt;
 &lt;table&gt;

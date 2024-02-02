@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>飞花 on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/%E9%A3%9E%E8%8A%B1/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/%E9%A3%9E%E8%8A%B1/</link>
     <description>Recent content in 飞花 on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 31 May 2018 08:59:11 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/%E9%A3%9E%E8%8A%B1/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 31 May 2018 08:59:11 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/%E9%A3%9E%E8%8A%B1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>卖米</title>
-      <link>https://xuchengpeng.github.io/post/maimi-feihua/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/maimi-feihua/</link>
       <pubDate>Thu, 31 May 2018 08:59:11 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/maimi-feihua/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/maimi-feihua/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;作者：飞花&lt;/p&gt;
 &lt;/blockquote&gt;

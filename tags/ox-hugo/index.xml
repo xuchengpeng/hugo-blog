@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>ox-hugo on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/ox-hugo/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/ox-hugo/</link>
     <description>Recent content in ox-hugo on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 20 Jul 2018 09:20:28 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/ox-hugo/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 20 Jul 2018 09:20:28 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/ox-hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>博客写作工具</title>
-      <link>https://xuchengpeng.github.io/post/blog-writing-tools/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/blog-writing-tools/</link>
       <pubDate>Fri, 20 Jul 2018 09:20:28 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/blog-writing-tools/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/blog-writing-tools/</guid>
       <description>&lt;p&gt;基本的工具用途：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;：用来发布博客；&lt;/li&gt;

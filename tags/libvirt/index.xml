@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>libvirt on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/libvirt/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/libvirt/</link>
     <description>Recent content in libvirt on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 11 Sep 2018 20:15:48 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/libvirt/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 11 Sep 2018 20:15:48 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/libvirt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>KVM</title>
-      <link>https://xuchengpeng.github.io/post/kvm/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/kvm/</link>
       <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/kvm/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/kvm/</guid>
       <description>&lt;p&gt;KVM 全称是 基于内核的虚拟机（Kernel-based Virtual Machine），它是Linux 的一个内核模块，该内核模块使得 Linux 变成了一个 Hypervisor：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;它由 Quramnet 开发，该公司于 2008年被 Red Hat 收购。&lt;/li&gt;

@@ -2,187 +2,188 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Chuck</title>
-    <link>https://xuchengpeng.github.io/categories/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/categories/</link>
     <description>Recent content in Categories on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 22 Dec 2018 14:39:11 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 22 Dec 2018 14:39:11 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tools</title>
-      <link>https://xuchengpeng.github.io/categories/tools/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/tools/</link>
       <pubDate>Sat, 22 Dec 2018 14:39:11 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/tools/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>emacs</title>
-      <link>https://xuchengpeng.github.io/categories/emacs/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/emacs/</link>
       <pubDate>Thu, 06 Dec 2018 09:07:28 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/emacs/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/emacs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Software</title>
-      <link>https://xuchengpeng.github.io/categories/software/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/software/</link>
       <pubDate>Thu, 06 Dec 2018 09:07:28 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/software/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/software/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://xuchengpeng.github.io/categories/linux/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/linux/</link>
       <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/linux/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Technology</title>
-      <link>https://xuchengpeng.github.io/categories/technology/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/technology/</link>
       <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/technology/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/technology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Study</title>
-      <link>https://xuchengpeng.github.io/categories/study/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/study/</link>
       <pubDate>Thu, 27 Sep 2018 09:20:09 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/study/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/study/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go</title>
-      <link>https://xuchengpeng.github.io/categories/go/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/go/</link>
       <pubDate>Wed, 26 Sep 2018 16:47:46 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/go/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cloud</title>
-      <link>https://xuchengpeng.github.io/categories/cloud/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/cloud/</link>
       <pubDate>Tue, 11 Sep 2018 20:15:48 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/cloud/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/cloud/</guid>
       <description></description>
     </item>
     
     <item>
       <title>News</title>
-      <link>https://xuchengpeng.github.io/categories/news/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/news/</link>
       <pubDate>Thu, 09 Aug 2018 09:32:24 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/news/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/news/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web</title>
-      <link>https://xuchengpeng.github.io/categories/web/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/web/</link>
       <pubDate>Tue, 10 Jul 2018 14:28:41 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/web/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/web/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Books</title>
-      <link>https://xuchengpeng.github.io/categories/books/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/books/</link>
       <pubDate>Thu, 31 May 2018 08:59:11 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/books/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/books/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Novel</title>
-      <link>https://xuchengpeng.github.io/categories/novel/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/novel/</link>
       <pubDate>Thu, 31 May 2018 08:59:11 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/novel/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/novel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Design Pattern</title>
-      <link>https://xuchengpeng.github.io/categories/design-pattern/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/design-pattern/</link>
       <pubDate>Thu, 26 Apr 2018 15:47:52 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/design-pattern/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/design-pattern/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shadowsocks</title>
-      <link>https://xuchengpeng.github.io/categories/shadowsocks/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/shadowsocks/</link>
       <pubDate>Fri, 13 Apr 2018 09:08:00 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/shadowsocks/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/shadowsocks/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Themes</title>
-      <link>https://xuchengpeng.github.io/categories/themes/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/themes/</link>
       <pubDate>Thu, 08 Mar 2018 15:47:16 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/themes/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/themes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Automation</title>
-      <link>https://xuchengpeng.github.io/categories/automation/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/automation/</link>
       <pubDate>Fri, 02 Feb 2018 17:01:59 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/automation/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/automation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hexo</title>
-      <link>https://xuchengpeng.github.io/categories/hexo/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/hexo/</link>
       <pubDate>Thu, 01 Feb 2018 14:06:32 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/hexo/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Poetry</title>
-      <link>https://xuchengpeng.github.io/categories/poetry/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/poetry/</link>
       <pubDate>Wed, 31 Jan 2018 14:42:21 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/poetry/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/poetry/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Search</title>
-      <link>https://xuchengpeng.github.io/categories/search/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/search/</link>
       <pubDate>Wed, 29 Nov 2017 09:50:49 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/search/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/search/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TCP/IP</title>
-      <link>https://xuchengpeng.github.io/categories/tcp/ip/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/categories/tcp/ip/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/categories/tcp/ip/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/categories/tcp/ip/</guid>
       <description></description>
     </item>
     

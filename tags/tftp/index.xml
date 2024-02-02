@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>TFTP on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/tftp/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/tftp/</link>
     <description>Recent content in TFTP on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 14 May 2018 17:21:26 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/tftp/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 14 May 2018 17:21:26 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/tftp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TCP/IP 详解(卷一) TFTP：简单文件传送协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tftp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tftp/</link>
       <pubDate>Mon, 14 May 2018 17:21:26 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tftp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tftp/</guid>
       <description>&lt;p&gt;TFTP(Trivial File Transfer Protocol)即简单文件传送协议，最初打算用于引导无盘系统（通常是工作站或X终端）。为了保持简单和短小，TFTP将使用UDP。TFTP的代码（和它所需要的UDP、IP和设备驱动程序）都能适合只读存储器。&lt;/p&gt;
 &lt;h2 id=&#34;协议&#34;&gt;协议&lt;/h2&gt;
 &lt;p&gt;在开始工作时，TFTP的客户与服务器交换信息，客户发送一个读请求或写请求给服务器。在一个无盘系统进行系统引导的正常情况下，第一个请求是读请求（RRQ）。下图显示了5种TFTP报文格式（操作码为1和2的报文使用相同的格式）。&lt;/p&gt;

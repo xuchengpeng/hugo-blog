@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linode on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/linode/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/linode/</link>
     <description>Recent content in Linode on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 20 Apr 2018 15:34:34 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/linode/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 20 Apr 2018 15:34:34 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/linode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu 升级内核</title>
-      <link>https://xuchengpeng.github.io/post/ubuntu-upgrade-kernel/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-upgrade-kernel/</link>
       <pubDate>Fri, 20 Apr 2018 15:34:34 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/ubuntu-upgrade-kernel/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-upgrade-kernel/</guid>
       <description>&lt;h3 id=&#34;查看当前内核版本&#34;&gt;查看当前内核版本&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ uname -r
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4.4.0-53-generic
@@ -41,10 +42,10 @@
     
     <item>
       <title>Linode 上搭建 Shadowsocks</title>
-      <link>https://xuchengpeng.github.io/post/setup-shadowsocks-on-linode/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/setup-shadowsocks-on-linode/</link>
       <pubDate>Fri, 13 Apr 2018 09:08:00 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/setup-shadowsocks-on-linode/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/setup-shadowsocks-on-linode/</guid>
       <description>&lt;h2 id=&#34;vps-选择&#34;&gt;VPS 选择&lt;/h2&gt;
 &lt;h3 id=&#34;linodehttpswwwlinodecomr0a89daeb73aede849b760c66127f1bb8960c73dc&#34;&gt;&lt;a href=&#34;https://www.linode.com/?r=0a89daeb73aede849b760c66127f1bb8960c73dc&#34;&gt;Linode&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;老大哥Linode近年最大的变化是，倍感digitalocean和vultr的压力了。Linode近期最大的福利是，全面由原来的Xen架构改用最流行的KVM架构服务器，套餐内存全部翻倍！&lt;/p&gt;

@@ -2,21 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>multicast on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/multicast/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/multicast/</link>
     <description>Recent content in multicast on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 10 May 2018 14:07:54 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/multicast/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 10 May 2018 14:07:54 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/multicast/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TCP/IP 详解(卷一) IGMP：Internet组管理协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-igmp/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-igmp/</link>
       <pubDate>Thu, 10 May 2018 14:07:54 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-igmp/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-igmp/</guid>
       <description>&lt;p&gt;用于支持主机和路由器进行多播的Internet组管理协议（IGMP）。它让一个物理网络上的所有系统知道主机当前所在的多播组。多播路由器需要这些信息以便知道多播数据报应该向哪些接口转发。&lt;/p&gt;
 &lt;p&gt;正如ICMP一样，IGMP也被当作IP层的一部分。IGMP报文通过IP数据报进行传输。不像我们已经见到的其他协议，IGMP有固定的报文长度，没有可选数据。IP首部(20字节) + IGMP报文(8字节)。&lt;/p&gt;
 &lt;p&gt;IGMP报文通过IP首部中协议字段值为2来指明。&lt;/p&gt;
 &lt;h2 id=&#34;igmp报文&#34;&gt;IGMP报文&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/tcp-ip/igmp-format.jpg&#34; alt=&#34;&#34;  /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/tcp-ip/igmp-format.jpg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;
 &lt;p&gt;这是版本为1的IGMP。IGMP类型为1说明是由多播路由器发出的查询报文，为2说明是主机发出的报告报文。检验和的计算和ICMP协议相同。&lt;/p&gt;
 &lt;p&gt;组地址为D类IP地址。在查询报文中组地址设置为0，在报告报文中组地址为要参加的组地址。&lt;/p&gt;</description>
@@ -24,10 +25,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) 广播和多播</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</link>
       <pubDate>Thu, 10 May 2018 09:20:39 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-broadcasting-and-multicasting/</guid>
       <description>&lt;p&gt;广播和多播仅应用于UDP，它们对需将报文同时传往多个接收者的应用来说十分重要。TCP是一个面向连接的协议，它意味着分别运行于两主机（由IP地址确定）内的两进程（由端口号确定）间存在一条连接。&lt;/p&gt;
 &lt;p&gt;考虑包含多个主机的共享信道网络如以太网。每个以太网帧包含源主机和目的主机的以太网地址（48bit）。通常每个以太网帧仅发往单个目的主机，目的地址指明单个接收接口，因而称为单播(unicast)。在这种方式下，任意两个主机的通信不会干扰网内其他主机（可能引起争夺共享信道的情况除外）。&lt;/p&gt;
 &lt;p&gt;然而，有时一个主机要向网上的所有其他主机发送帧，这就是广播(broadcast)。通过ARP和RARP可以看到这一过程。多播(multicast)处于单播和广播之间：帧仅传送给属于多播组的多个主机。&lt;/p&gt;</description>

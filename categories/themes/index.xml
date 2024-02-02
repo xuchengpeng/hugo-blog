@@ -2,25 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Themes on Chuck</title>
-    <link>https://xuchengpeng.github.io/categories/themes/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/categories/themes/</link>
     <description>Recent content in Themes on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 08 Mar 2018 15:47:16 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/categories/themes/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 08 Mar 2018 15:47:16 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/categories/themes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>base16 - An architecture for building themes</title>
-      <link>https://xuchengpeng.github.io/post/base16/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/base16/</link>
       <pubDate>Thu, 08 Mar 2018 15:47:16 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/base16/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/base16/</guid>
       <description>An architecture for building themes based on carefully chosen syntax highlighting using a base of sixteen colours. Base16 provides a set of guidelines detailing how to style syntax and how to code a builder for compiling base16 schemes and templates.</description>
     </item>
     
     <item>
       <title>Tomorrow Theme Color Palettes</title>
-      <link>https://xuchengpeng.github.io/post/tomorrow-theme-color-palettes/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tomorrow-theme-color-palettes/</link>
       <pubDate>Wed, 07 Mar 2018 19:04:31 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tomorrow-theme-color-palettes/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tomorrow-theme-color-palettes/</guid>
       <description>&lt;p&gt;&amp;ldquo;Tomorrow Theme&amp;rdquo; - a bright theme with pastel colours and sensible syntax highlighting.&lt;/p&gt;
 &lt;p&gt;A theme should not get in your way but should aid your programming with easily identifiable colours that add meaning and enhance legibility. This was the main focus when developing Tomorrow.&lt;/p&gt;
 &lt;p&gt;Check out &lt;a href=&#34;https://github.com/chriskempson/base16&#34;&gt;base16&lt;/a&gt; the next evolution of Tomorrow Theme!&lt;/p&gt;</description>

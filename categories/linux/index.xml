@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on Chuck</title>
-    <link>https://xuchengpeng.github.io/categories/linux/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/categories/linux/</link>
     <description>Recent content in Linux on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 07 Nov 2018 08:59:03 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 07 Nov 2018 08:59:03 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu安装Samba</title>
-      <link>https://xuchengpeng.github.io/post/ubuntu-install-samba/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-install-samba/</link>
       <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/ubuntu-install-samba/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-install-samba/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt-get install samba
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改 /etc/samba/smb.conf 文件：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[share]
@@ -34,10 +35,10 @@
     
     <item>
       <title>Shell - Here Documents</title>
-      <link>https://xuchengpeng.github.io/post/shell-here-documents/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/shell-here-documents/</link>
       <pubDate>Tue, 30 Oct 2018 14:19:55 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/shell-here-documents/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/shell-here-documents/</guid>
       <description>&lt;p&gt;Here Documents 是 Shell 中的一种特殊的重定向方式，用来将输入重定向到一个交互式 Shell 脚本或程序。&lt;/p&gt;
 &lt;p&gt;它的基本的形式如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; delimiter
@@ -55,10 +56,10 @@
     
     <item>
       <title>Linux系统Shell特殊变量</title>
-      <link>https://xuchengpeng.github.io/post/linux-shell-special-variables/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/linux-shell-special-variables/</link>
       <pubDate>Thu, 20 Sep 2018 13:55:54 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/linux-shell-special-variables/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/linux-shell-special-variables/</guid>
       <description>&lt;p&gt;变量名只能包含数字、字母和下划线，因为某些包含其他字符的变量有特殊含义，这样的变量被称为特殊变量。&lt;/p&gt;
 &lt;p&gt;例如，$ 表示当前Shell进程的ID，即pid，看下面的代码：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# echo $$&lt;/span&gt;
@@ -105,10 +106,10 @@
     
     <item>
       <title>Ubuntu 升级内核</title>
-      <link>https://xuchengpeng.github.io/post/ubuntu-upgrade-kernel/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-upgrade-kernel/</link>
       <pubDate>Fri, 20 Apr 2018 15:34:34 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/ubuntu-upgrade-kernel/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-upgrade-kernel/</guid>
       <description>&lt;h3 id=&#34;查看当前内核版本&#34;&gt;查看当前内核版本&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ uname -r
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4.4.0-53-generic
@@ -138,10 +139,10 @@
     
     <item>
       <title>Ubuntu 增加和删除 PPA 软件源</title>
-      <link>https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-add-delete-ppa/</link>
       <pubDate>Fri, 13 Apr 2018 10:50:50 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/ubuntu-add-delete-ppa/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-add-delete-ppa/</guid>
       <description>&lt;p&gt;PPA，英文全称为 Personal Package Archives，即个人软件包档案。是 Ubuntu Launchpad 网站提供的一项源服务，允许个人用户上传软件源代码，通过 Launchpad 进行编译并发布为二进制软件包，作为 apt / 新立得（Synaptic）源供其他用户下载和更新。&lt;/p&gt;
 &lt;p&gt;PPA 的一般形式是： &lt;strong&gt;ppa:user/ppa-name&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;添加 PPA 源:&lt;/p&gt;

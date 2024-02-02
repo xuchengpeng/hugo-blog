@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>RIP on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/rip/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/rip/</link>
     <description>Recent content in RIP on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 08 May 2018 09:51:32 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/rip/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 08 May 2018 09:51:32 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/rip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TCP/IP 详解(卷一) 动态选路协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</link>
       <pubDate>Tue, 08 May 2018 09:51:32 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-dynamic-routing-protocols/</guid>
       <description>&lt;p&gt;静态选路：在配置接口时，以默认方式生成路由表项（对于直接连接的接口），并通过route命令增加表项（通常从系统自引导程序文件），或是通过ICMP重定向生成表项（通常是在默认方式出错的情况下）。&lt;/p&gt;
 &lt;p&gt;在网络很小，且与其他网络只有单个连接点且没有多余路由时（若主路由失败，可以使用备用路由），采用这种方法是可行的。如果上述三种情况不能全部满足，通常使用动态选路。&lt;/p&gt;
 &lt;h2 id=&#34;动态选路&#34;&gt;动态选路&lt;/h2&gt;

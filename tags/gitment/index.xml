@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Gitment on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/gitment/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/gitment/</link>
     <description>Recent content in Gitment on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 04 Dec 2017 09:29:58 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/gitment/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 04 Dec 2017 09:29:58 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/gitment/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为NexT主题部署Gitalk评论插件</title>
-      <link>https://xuchengpeng.github.io/post/gitalk-for-next/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/gitalk-for-next/</link>
       <pubDate>Mon, 04 Dec 2017 09:29:58 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/gitalk-for-next/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/gitalk-for-next/</guid>
       <description>在之前的文章中（{% post_link gitalk-comment-extension Gitalk评论插件 %}），已介绍过Gitalk评论插件，GitHub上为NexT添加Gitalk的pull request一直没有合入，自己手动本地部署吧。
 为什么选择Gitalk 由于国内网络大环境的原因，Disqus 等优秀的评论系统都需要梯子才能使用，多说已经停运，NexT 已支持的 Gitment 目前存在一些问题，作者好像也已经很久没有维护了，故选择现在还在活跃的 Gitalk。
 新增插件代码 新建 layout/_third-party/comments/gitalk.swig 文件，添加以下代码：
@@ -20,19 +21,19 @@
     
     <item>
       <title>Gitalk评论插件</title>
-      <link>https://xuchengpeng.github.io/post/gitalk-comment-extension/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/gitalk-comment-extension/</link>
       <pubDate>Fri, 24 Nov 2017 14:51:01 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/gitalk-comment-extension/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/gitalk-comment-extension/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt; 是一个基于 Github Issue 和 Preact 开发的评论插件。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Gitment评论系统</title>
-      <link>https://xuchengpeng.github.io/post/gitment-comment-system/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/gitment-comment-system/</link>
       <pubDate>Wed, 22 Nov 2017 16:00:00 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/gitment-comment-system/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/gitment-comment-system/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/imsun/gitment&#34;&gt;Gitment&lt;/a&gt; 是作者实现的一款基于 GitHub Issues 的评论系统。支持在前端直接引入，不需要任何后端代码。可以在页面进行登录、查看、评论、点赞等操作，同时有完整的 Markdown / GFM 和代码高亮支持。尤为适合各种基于 GitHub Pages 的静态博客或项目页面。&lt;/p&gt;</description>
     </item>
     

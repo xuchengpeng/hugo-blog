@@ -2,26 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>News on Chuck</title>
-    <link>https://xuchengpeng.github.io/categories/news/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/categories/news/</link>
     <description>Recent content in News on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 09 Aug 2018 09:32:24 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/categories/news/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 09 Aug 2018 09:32:24 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/categories/news/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AMD发布第二代Threadripper</title>
-      <link>https://xuchengpeng.github.io/post/amd-release-threadripper2/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/amd-release-threadripper2/</link>
       <pubDate>Thu, 09 Aug 2018 09:32:24 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/amd-release-threadripper2/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/amd-release-threadripper2/</guid>
       <description>&lt;p&gt;就在昨天AMD第二代线程撕裂者旗舰Threadripper 2990WX外观正式解禁，AMD官网也揭露了其部分性能，得益于其拥有高达32个核心64个线程，Threadripper 2990WX轻松拿下了消费级市场CPU之王的头衔，此前坐在王座上的i9-7980XE被轻松秒杀，可谓一时之间风光无限。但俗话说的好，现在有多风光，以前就有多折堕（落魄的意思），AMD也不例外。就在2年以前，AMD还是一个被Intel无视的对手，产品性能与Intel有巨大的鸿沟，股价最低时仅为2美元出头，濒临破产。AMD会这么落魄，其中一个很主要的原因是因为当年推出的Bulldozer，推土机处理器微架构。&lt;/p&gt;
 &lt;p&gt;就在前两天，国外媒体ExtremeTech就总结了至今为止最糟糕的10款CPU，其中推土机（Bulldozer）进入了前三甲的位置，由此可见推土机的失败，是一个比较公认的事实。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Windows 10 Version 1803 is out</title>
-      <link>https://xuchengpeng.github.io/post/windows10-version-1803-is-out/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/windows10-version-1803-is-out/</link>
       <pubDate>Wed, 02 May 2018 11:27:31 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/windows10-version-1803-is-out/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/windows10-version-1803-is-out/</guid>
       <description>&lt;h2 id=&#34;简体中文零售版&#34;&gt;简体中文零售版&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;家庭版、专业版、教育版、家庭单语言版、专业工作站版、专业教育版&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;架构: x64
@@ -42,10 +43,10 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
     
     <item>
       <title>Ubuntu 18.04 LTS is out</title>
-      <link>https://xuchengpeng.github.io/post/ubuntu-18.04-lts-is-out/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-18.04-lts-is-out/</link>
       <pubDate>Fri, 27 Apr 2018 09:36:13 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/ubuntu-18.04-lts-is-out/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-18.04-lts-is-out/</guid>
       <description>&lt;h2 id=&#34;whats-new-in-1804-lts&#34;&gt;What’s new in 18.04 LTS&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Supported by Canonical until 2023&lt;/li&gt;
@@ -65,10 +66,10 @@ ed2k://|file|cn_windows_10_consumer_editions_version_1803_updated_march_2018_x86
     
     <item>
       <title>内存的战争</title>
-      <link>https://xuchengpeng.github.io/post/war-of-mem/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/war-of-mem/</link>
       <pubDate>Sat, 25 Nov 2017 12:42:48 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/war-of-mem/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/war-of-mem/</guid>
       <description>&lt;p&gt;2012年2月3日，全球著名内存生产厂商镁光科技的CEO史蒂夫·阿普尔顿（Steve Appleton），在美国爱达荷州的波伊西(Boise)的一个航空展上，驾驶着一架Lancair IV-PT螺旋桨飞机，给观众们做表演。起飞后不久，飞机失去控制，紧急降落失败，直接栽向地面，当场坠毁，CEO享年51岁。&lt;/p&gt;
 &lt;p&gt;喜欢玩心跳的CEO挂了，镁光股价倒是没怎么跌，大洋彼岸的一个叫坂本幸雄(Yukio Sakamoto)的日本人却急得如热锅上的蚂蚁。在上飞机前，阿普尔顿刚刚跟他谈完一份儿秘密协议，对于坂本幸雄担任社长的日本内存巨头尔必达来说，这份协议就是就保命书。&lt;/p&gt;
 &lt;p&gt;尔必达是日本芯片行业的“国家队”， 由日立、NEC和三菱的内存制造业务合并而成，一度风光无限。但08年金融危机之后，内存行业过剩，产品价格不断下跌，加上韩国厂商的挤压，尔必达经营不断恶化。尽管日本政府多次救助，仍然无法挽救，到了2011年底，尔必达已经积累了天量的负债和亏损。&lt;/p&gt;

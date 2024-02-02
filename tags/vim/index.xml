@@ -2,17 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>vim on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/vim/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/vim/</link>
     <description>Recent content in vim on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 28 Nov 2017 11:06:50 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 28 Nov 2017 11:06:50 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>spacemacs - Emacs advanced Kit focused on Evil</title>
-      <link>https://xuchengpeng.github.io/post/spacemacs/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/spacemacs/</link>
       <pubDate>Tue, 28 Nov 2017 11:06:50 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/spacemacs/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/images/spacemacs-logo.svg&#34; alt=&#34;&#34;  /&gt;
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/spacemacs/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://xuchengpeng.github.io/hugo-blog/images/spacemacs-logo.svg&#34; alt=&#34;&#34;  /&gt;
 &lt;/p&gt;
 &lt;p&gt;A community-driven Emacs distribution - The best editor is neither Emacs nor Vim, it is Emacs and Vim!&lt;/p&gt;
 &lt;p&gt;这是一款定制化程度非常高的emacs配置，同时支持emacs和vim按键模式，无缝切换使用。&lt;/p&gt;</description>

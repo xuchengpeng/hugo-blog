@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/linux/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/linux/</link>
     <description>Recent content in Linux on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 07 Nov 2018 08:59:03 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 07 Nov 2018 08:59:03 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu安装Samba</title>
-      <link>https://xuchengpeng.github.io/post/ubuntu-install-samba/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-install-samba/</link>
       <pubDate>Wed, 07 Nov 2018 08:59:03 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/ubuntu-install-samba/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/ubuntu-install-samba/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt-get install samba
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改 /etc/samba/smb.conf 文件：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[share]
@@ -34,10 +35,10 @@
     
     <item>
       <title>Shell - Here Documents</title>
-      <link>https://xuchengpeng.github.io/post/shell-here-documents/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/shell-here-documents/</link>
       <pubDate>Tue, 30 Oct 2018 14:19:55 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/shell-here-documents/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/shell-here-documents/</guid>
       <description>&lt;p&gt;Here Documents 是 Shell 中的一种特殊的重定向方式，用来将输入重定向到一个交互式 Shell 脚本或程序。&lt;/p&gt;
 &lt;p&gt;它的基本的形式如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; delimiter
@@ -55,10 +56,10 @@
     
     <item>
       <title>Linux系统Shell特殊变量</title>
-      <link>https://xuchengpeng.github.io/post/linux-shell-special-variables/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/linux-shell-special-variables/</link>
       <pubDate>Thu, 20 Sep 2018 13:55:54 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/linux-shell-special-variables/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/linux-shell-special-variables/</guid>
       <description>&lt;p&gt;变量名只能包含数字、字母和下划线，因为某些包含其他字符的变量有特殊含义，这样的变量被称为特殊变量。&lt;/p&gt;
 &lt;p&gt;例如，$ 表示当前Shell进程的ID，即pid，看下面的代码：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# echo $$&lt;/span&gt;
@@ -105,10 +106,10 @@
     
     <item>
       <title>Build Emacs on Linux</title>
-      <link>https://xuchengpeng.github.io/post/build-emacs-on-linux/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/build-emacs-on-linux/</link>
       <pubDate>Wed, 19 Sep 2018 17:12:20 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/build-emacs-on-linux/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/build-emacs-on-linux/</guid>
       <description>&lt;p&gt;Build Emacs 26.1 on Ubuntu:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get update
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install build-essential

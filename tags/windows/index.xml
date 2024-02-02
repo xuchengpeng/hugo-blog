@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Windows on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/windows/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/windows/</link>
     <description>Recent content in Windows on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 02 May 2018 11:27:31 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 02 May 2018 11:27:31 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows 10 Version 1803 is out</title>
-      <link>https://xuchengpeng.github.io/post/windows10-version-1803-is-out/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/windows10-version-1803-is-out/</link>
       <pubDate>Wed, 02 May 2018 11:27:31 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/windows10-version-1803-is-out/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/windows10-version-1803-is-out/</guid>
       <description>&lt;h2 id=&#34;简体中文零售版&#34;&gt;简体中文零售版&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;家庭版、专业版、教育版、家庭单语言版、专业工作站版、专业教育版&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;架构: x64

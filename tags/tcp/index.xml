@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>TCP on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/tcp/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/tcp/</link>
     <description>Recent content in TCP on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 26 May 2018 14:48:35 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 26 May 2018 14:48:35 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TCP/IP 详解(卷一) TCP的未来和性能</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-futures-and-performance/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-futures-and-performance/</link>
       <pubDate>Sat, 26 May 2018 14:48:35 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-futures-and-performance/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-futures-and-performance/</guid>
       <description>&lt;p&gt;TCP已经在从1200 b/s的拨号SLIP链路到以太数据链路上运行了许多年。在80年代和90年代初期，以太网是运行TCP/IP最主要的数据链路方式。虽然TCP在比以太网速率高的环境（如T2电话线、FDDI及千兆比网络）中也能够正确运行，但在这些高速率环境下，TCP的某些限制就会暴露出来。&lt;/p&gt;
 &lt;h2 id=&#34;路径mtu发现&#34;&gt;路径MTU发现&lt;/h2&gt;
 &lt;p&gt;路径MTU即当前在两个主机之间的路径上任何网络上的最小MTU。路径MTU发现在IP首部中继承并设置“不要分片（DF）”比特，来发现当前路径上的路由器是否需要对正在发送的IP数据报进行分片。如果一个待转发的IP数据报被设置DF比特，而其长度又超过了MTU，那么路由器将返回ICMP不可达的差错。&lt;/p&gt;
@@ -22,10 +23,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的保活定时器</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-keepalive-timer/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-keepalive-timer/</link>
       <pubDate>Fri, 25 May 2018 15:30:19 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-keepalive-timer/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-keepalive-timer/</guid>
       <description>&lt;p&gt;可以没有任何数据流通过一个空闲的TCP连接。也就是说，如果TCP连接的双方都没有向对方发送数据，则在两个TCP模块之间不交换任何信息。例如，没有可以在其他网络协议中发现的轮询。这意味着我们可以启动一个客户与服务器建立一个连接，然后离去数小时、数天、数个星期或者数月，而连接依然保持。中间路由器可以崩溃和重启，电话线可以被挂断再连通，但是只要两端的主机没有被重启，则连接依然保持建立。&lt;/p&gt;
 &lt;p&gt;这意味着两个应用进程—客户进程或服务器进程—都没有使用应用级的定时器来检测非活动状态，而这种非活动状态可以导致应用进程中的任何一个终止其活动。&lt;/p&gt;
 &lt;p&gt;然而，许多时候一个服务器希望知道客户主机是否崩溃并关机或者崩溃又重新启动。许多实现提供的保活定时器可以提供这种能力。&lt;/p&gt;
@@ -37,10 +38,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的坚持定时器</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-persist-timer/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-persist-timer/</link>
       <pubDate>Fri, 25 May 2018 14:31:57 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-persist-timer/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-persist-timer/</guid>
       <description>&lt;p&gt;TCP通过让接收方指明希望从发送方接收的数据字节数（即窗口大小）来进行流量控制。如果窗口大小为0会发生什么情况呢？这将有效地阻止发送方传送数据，直到窗口变为非0为止。&lt;/p&gt;
 &lt;p&gt;TCP必须能够处理打开此窗口的ACK丢失的情况。ACK的传输并不可靠，也就是说，TCP不对ACK报文段进行确认，TCP只确认那些包含有数据的ACK报文段。&lt;/p&gt;
 &lt;p&gt;如果一个确认丢失了，则双方就有可能因为等待对方而使连接终止：接收方等待接收数据（因为它已经向发送方通告了一个非0的窗口），而发送方在等待允许它继续发送数据的窗口更新。为防止这种死锁情况的发生，发送方使用一个坚持定时器(persist timer)来周期性地向接收方查询，以便发现窗口是否已增大。这些从发送方发出的报文段称为窗口探查(window probe)。&lt;/p&gt;</description>
@@ -48,10 +49,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的超时与重传</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/</link>
       <pubDate>Fri, 25 May 2018 10:42:25 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-timeout-and-retransmission/</guid>
       <description>&lt;p&gt;TCP提供可靠的运输层。它使用的方法之一就是确认从另一端收到的数据。但数据和确认都有可能会丢失。TCP通过在发送时设置一个定时器来解决这种问题。如果当定时器溢出时还没有收到确认，它就重传该数据。对任何实现而言，关键之处就在于超时和重传的策略，即怎样决定超时间隔和如何确定重传的频率。&lt;/p&gt;
 &lt;p&gt;对每个连接，TCP管理4个不同的定时器。&lt;/p&gt;
 &lt;ol&gt;
@@ -64,10 +65,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的成块数据流</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bulk-data-flow/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-bulk-data-flow/</link>
       <pubDate>Mon, 21 May 2018 11:08:08 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-bulk-data-flow/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-bulk-data-flow/</guid>
       <description>&lt;p&gt;TFTP使用了停止等待协议，数据发送方在发送下一个数据块之前需要等待接收对已发送数据的确认。TCP使用了被称为滑动窗口协议的另一种形式的流量控制方法。该协议允许发送方在停止并等待确认前可以连续发送多个分组。由于发送方不必每发一个分组就停下来等待确认，因此该协议可以加速数据的传输。&lt;/p&gt;
 &lt;h2 id=&#34;滑动窗口&#34;&gt;滑动窗口&lt;/h2&gt;
 &lt;p&gt;接收方通告的窗口称为提出的窗口（offered window），发送方计算它的可用窗口，该窗口表明多少数据可以立即被发送。&lt;/p&gt;
@@ -81,10 +82,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP的交互数据流</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-interactive-data-flow/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-interactive-data-flow/</link>
       <pubDate>Mon, 21 May 2018 10:51:55 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-interactive-data-flow/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-interactive-data-flow/</guid>
       <description>&lt;p&gt;一些有关TCP通信量的研究如[Caceres et al. 1991]发现，如果按照分组数量计算，约有一半的TCP报文段包含成块数据（如FTP、电子邮件和Usenet新闻），另一半则包含交互数据（如Telnet和Rlogin）。如果按字节计算，则成块数据与交互数据的比例约为90%和10%。这是因为成块数据的报文段基本上都是满长度（full-sized）的（通常为512字节的用户数据），而交互数据则小得多（上述研究表明Telnet和Rlogin分组中通常约90%左右的用户数据小于10个字节）。&lt;/p&gt;
 &lt;p&gt;很明显，TCP需要同时处理这两类数据，但使用的处理算法则有所不同。&lt;/p&gt;
 &lt;h2 id=&#34;交互式输入&#34;&gt;交互式输入&lt;/h2&gt;
@@ -94,10 +95,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP连接的建立与终止</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-establishment-termination/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tcp-establishment-termination/</link>
       <pubDate>Wed, 16 May 2018 15:01:04 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-establishment-termination/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tcp-establishment-termination/</guid>
       <description>&lt;p&gt;TCP是一个面向连接的协议。无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。这种两端间连接的建立与无连接协议如UDP不同。一端使用UDP向另一端发送数据报时，无需任何预先的握手。&lt;/p&gt;
 &lt;p&gt;两个进程在使用TCP交换数据之前，它们之间必须建立一条连接。完成后，要关闭这个连接。&lt;/p&gt;
 &lt;p&gt;一个TCP连接由一个4元组唯一确定：本地IP地址、本地端口号、远端IP地址和远端端口号。&lt;/p&gt;</description>
@@ -105,10 +106,10 @@
     
     <item>
       <title>TCP/IP 详解(卷一) TCP：传输控制协议</title>
-      <link>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</link>
       <pubDate>Tue, 15 May 2018 15:43:47 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/tcp-ip-illustrated-volume1-tcp-transmission-control-protocol/</guid>
       <description>&lt;p&gt;尽管TCP和UDP都使用相同的网络层（IP），TCP却向应用层提供与UDP完全不同的服务。TCP提供一种面向连接的、可靠的字节流服务。&lt;/p&gt;
 &lt;p&gt;面向连接意味着两个使用TCP的应用（通常是一个客户和一个服务器）在彼此交换数据之前必须先建立一个TCP连接。这一过程与打电话很相似，先拨号振铃，等待对方摘机说“喂”，然后才说明是谁。&lt;/p&gt;
 &lt;p&gt;在一个TCP连接中，仅有两方进行彼此通信。&lt;/p&gt;

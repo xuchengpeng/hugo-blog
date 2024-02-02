@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>rsync on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/rsync/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/rsync/</link>
     <description>Recent content in rsync on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 06 Aug 2018 16:48:15 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Aug 2018 16:48:15 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>rsync elpa mirror</title>
-      <link>https://xuchengpeng.github.io/post/rsync-elpa-mirror/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/rsync-elpa-mirror/</link>
       <pubDate>Mon, 06 Aug 2018 16:48:15 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/rsync-elpa-mirror/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/rsync-elpa-mirror/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rsync.samba.org/&#34;&gt;rsync&lt;/a&gt; is an open source utility that provides fast incremental file transfer. rsync is freely available under the GNU General Public License and is currently being maintained by Wayne Davison.&lt;/p&gt;
 &lt;p&gt;rsync is a file transfer program for Unix systems. rsync uses the &amp;ldquo;rsync algorithm&amp;rdquo; which provides a very fast method for bringing remote files into sync. It does this by sending just the differences in the files across the link, without requiring that both sets of files are present at one of the ends of the link beforehand.
 Some features of rsync include&lt;/p&gt;

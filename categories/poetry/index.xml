@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Poetry on Chuck</title>
-    <link>https://xuchengpeng.github.io/categories/poetry/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/categories/poetry/</link>
     <description>Recent content in Poetry on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 31 Jan 2018 14:42:21 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/categories/poetry/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 31 Jan 2018 14:42:21 +0000</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/categories/poetry/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>好了歌 - 曹雪芹</title>
-      <link>https://xuchengpeng.github.io/post/caoxueqin-haoliaoge/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/caoxueqin-haoliaoge/</link>
       <pubDate>Wed, 31 Jan 2018 14:42:21 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/caoxueqin-haoliaoge/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/caoxueqin-haoliaoge/</guid>
       <description>世人都晓神仙好，惟有功名忘不了！
 古今将相在何方？荒冢一堆草没了。
 世人都晓神仙好，只有金银忘不了！
@@ -24,10 +25,10 @@
     
     <item>
       <title>致橡树 - 舒婷</title>
-      <link>https://xuchengpeng.github.io/post/shuting-to-the-oak-tree/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/shuting-to-the-oak-tree/</link>
       <pubDate>Sat, 27 Jan 2018 07:41:17 +0000</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/shuting-to-the-oak-tree/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/shuting-to-the-oak-tree/</guid>
       <description>&lt;p&gt;我如果爱你——&lt;/p&gt;
 &lt;p&gt;绝不像攀援的凌霄花，&lt;/p&gt;
 &lt;p&gt;借你的高枝炫耀自己；&lt;/p&gt;

@@ -2,16 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>OVS on Chuck</title>
-    <link>https://xuchengpeng.github.io/tags/ovs/</link>
+    <link>https://xuchengpeng.github.io/hugo-blog/tags/ovs/</link>
     <description>Recent content in OVS on Chuck</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 11 Sep 2018 11:09:50 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/tags/ovs/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 11 Sep 2018 11:09:50 +0800</lastBuildDate><atom:link href="https://xuchengpeng.github.io/hugo-blog/tags/ovs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Open vSwitch</title>
-      <link>https://xuchengpeng.github.io/post/openvswitch/</link>
+      <link>https://xuchengpeng.github.io/hugo-blog/post/openvswitch/</link>
       <pubDate>Tue, 11 Sep 2018 11:09:50 +0800</pubDate>
       
-      <guid>https://xuchengpeng.github.io/post/openvswitch/</guid>
+      <guid>https://xuchengpeng.github.io/hugo-blog/post/openvswitch/</guid>
       <description>&lt;p&gt;Open vSwitch 是一个基于Apache 2 license的多层软件交换机。 我们的目标是实现一个支持标准管理接口的，开放转发功能以支持编程扩展和控制的交换机平台。&lt;/p&gt;
 &lt;p&gt;Open vSwitch 非常适合在VM环境中用作虚拟交换机。 除了将标准控制和可视化接口暴露给虚拟网络层外，它还旨在支持跨越多个物理服务器的分布式系统。 Open vSwitch 支持多种基于Linux的虚拟化技术，包括 Xen/XenServer, KVM, 及 VirtualBox。&lt;/p&gt;
 &lt;p&gt;大部分代码是平台无关的C编码，可以轻松地移植到其他环境中。 当前版本的 Open vSwitch 支持以下功能：&lt;/p&gt;
