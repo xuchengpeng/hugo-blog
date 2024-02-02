@@ -1,4 +1,4 @@
-baseURL: "https://xuchengpeng.github.io/"
+baseURL: "https://xuchengpeng.github.io/hugo-blog"
 title: "Chuck"
 paginate: 5
 theme: PaperMod
